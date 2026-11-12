@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg: 255 255 255;
+  --card: 255 255 255;
+  --fg: 22 24 28;
+  --muted: 91 97 104;
+  --line: 230 227 221;
+  --paper: 244 242 238;
+  --orange-soft: 255 243 230;
+  --green-soft: 231 243 236;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: 14 15 17;
+  --card: 22 24 28;
+  --fg: 240 238 234;
+  --muted: 160 166 173;
+  --line: 44 47 52;
+  --paper: 24 26 30;
+  --orange-soft: 58 35 10;
+  --green-soft: 12 44 30;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="system"] {
+    color-scheme: dark;
+    --bg: 14 15 17;
+    --card: 22 24 28;
+    --fg: 240 238 234;
+    --muted: 160 166 173;
+    --line: 44 47 52;
+    --paper: 24 26 30;
+    --orange-soft: 58 35 10;
+    --green-soft: 12 44 30;
+  }
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @apply bg-bg text-ink font-sans antialiased;
+}
+
+::selection {
+  background: #ffe1bf;
+  color: #16181c;
+}
+
+.container-x {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+}
+
+.btn {
+  @apply inline-flex h-12 items-center justify-center gap-2 rounded-full px-6 text-[15px] font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:cursor-not-allowed disabled:opacity-60;
+}
+.btn-primary {
+  @apply btn bg-green text-white hover:bg-green-deep;
+}
+.btn-ghost {
+  @apply btn border border-line bg-card text-ink hover:bg-paper;
+}
+.btn-dark {
+  @apply btn bg-ink text-bg hover:opacity-90;
+}
+.btn-sm {
+  @apply h-9 px-4 text-[14px];
+}
+
+.input {
+  @apply h-12 w-full rounded-2xl border border-line bg-card px-4 text-[15px] text-ink placeholder:text-muted focus:border-green focus:outline-none focus:ring-2 focus:ring-green/30 disabled:opacity-60;
+}
+.textarea {
+  @apply input h-auto min-h-[96px] resize-y py-3;
+}
+.select {
+  @apply input appearance-none bg-no-repeat pr-10;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235B6168' stroke-width='2'><path d='m6 9 6 6 6-6'/></svg>");
+  background-position: right 14px center;
+}
+.label {
+  @apply mb-1.5 block text-[13px] font-semibold text-muted;
+}
+
+.chip {
+  @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[12px] font-semibold;
+}
+
+.flag {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid rgb(var(--line));
+  flex: none;
+}
+.flag > span {
+  flex: 1;
+}
+.flag > span:nth-child(1) {
+  background: #f07c00;
+}
+.flag > span:nth-child(2) {
+  background: #ffffff;
+}
+.flag > span:nth-child(3) {
+  background: #0a7a4a;
+}
+
+.post-text a {
+  @apply text-green-deep hover:underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
