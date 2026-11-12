@@ -1,7 +1,8 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
-const PROTECTED = ["/accueil", "/explorer", "/notifications", "/messages", "/mes-elus", "/parametres", "/admin", "/signets", "/idees", "/barometre"];
+// Explore, the officials directory, profiles, posts and the idea box stay readable signed out.
+const PROTECTED = ["/accueil", "/notifications", "/messages", "/mes-elus", "/parametres", "/admin", "/signets", "/barometre", "/bienvenue"];
 const AUTH_PAGES = ["/connexion", "/inscription"];
 
 export async function middleware(req: NextRequest) {

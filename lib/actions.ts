@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { z } from "zod";
-import { createClient, getViewer } from "@/lib/supabase/server";
+import { createClient, createServiceClient, getViewer } from "@/lib/supabase/server";
 import type { Media } from "@/lib/types";
 
 type Result<T = undefined> = { ok: true; data?: T } | { ok: false; error: string };
@@ -230,6 +230,19 @@ export async function requestVerification(input: z.infer<typeof verifSchema>): P
 }
 
 export async function signOut() {
+  const supabase = await createClient();
+  await supabase.auth.signOut();
+  redirect("/");
+}
+
+/** Permanently deletes the account. Every table cascades from auth.users. */
+export async function deleteAccount(confirmHandle: string): Promise<Result> {
+  const viewer = await viewerOrFail();
+  if (confirmHandle.replace(/^@/, "").toLowerCase() !== viewer.handle.toLowerCase()) return { ok: false, error: "confirm" };
+  const admin = createServiceClient();
+  if (!admin) return { ok: false, error: "unavailable" };
+  const { error } = await admin.auth.admin.deleteUser(viewer.id);
+  if (error) return { ok: false, error: error.message };
   const supabase = await createClient();
   await supabase.auth.signOut();
   redirect("/");
