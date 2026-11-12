@@ -1,30 +1,69 @@
-# POLITIQUE — pre-launch website
+# POLITIQUE
 
-Marketing site and waitlist for POLITIQUE, the political social network for Côte d'Ivoire. French at `/`, English at `/en`.
+The political social network for Côte d'Ivoire: citizens and the people who represent them on the same public square. This repo holds the public landing page and the web app.
 
-Built with Next.js 15 (App Router), React 19 and Tailwind, the same stack as [prototypex.org](https://prototypex.org). The product itself (web app, mobile app, API) lives elsewhere; this repo is only the public site.
+Built with Next.js 15 (App Router), React 19, Tailwind and Supabase (Postgres, Auth, Realtime, Storage), the same stack as [prototypex.org](https://prototypex.org). French first, English second.
+
+## What is in the app
+
+Social core: posts (500 characters, up to 4 images or videos, polls, quotes, replies, hashtags, mentions), likes, reposts, bookmarks, follows, blocks, mutes, a "Pour vous" feed and a following feed, search, trends, profiles, notifications in real time and direct messages.
+
+Built for Ivorian politics:
+
+- **Voting place at sign-up.** Every account registers the region, department and commune where the person votes. It is private (see below) and links the account to its mayor, MP, senators and regional council.
+- **Mes élus.** The officials whose mandate covers where you vote, their open questions and upcoming office hours.
+- **Interpellations.** Public questions to an official. Citizens back them, the official answers publicly, and the page keeps the answer rate. The official sees what share of the backers are their own constituents, rounded and only above 20 backers.
+- **Promesses.** A promise tracker per official, with a source for every promise and every status change.
+- **Permanences numériques.** Scheduled live question sessions held by an official.
+- **Baromètre.** One national question a month, with results per commune of vote once 50 people there have voted.
+- **Boîte à idées.** Proposals per commune that neighbours back and the town hall can mark as studied, adopted or declined.
+- **Badges and labels.** Green for elected officials, grey for institutions, orange for media, granted after a document check. Moderators and verified media can attach context or fact-check labels to a post.
+- **Low-data mode, WhatsApp sharing, light and dark themes.**
+
+## Privacy of the voting place
+
+The voting place lives in `private_profiles`, a table whose only row level security policies are "the owner reads and writes their own row". Nothing else reads it directly. Features that need it go through `security definer` functions that return aggregates behind thresholds (`my_officials`, `official_constituents_count`, `interpellation_constituent_share`, `barometer_results`). Moderators and officials cannot read it. `tests/schema.test.mjs` checks this as real database roles.
 
 ## Run locally
 
 ```bash
 npm install
-cp .env.example .env.local   # optional, see below
+cp .env.example .env.local   # fill in the Supabase values to use the app
 npm run dev                   # http://localhost:3000
 ```
 
-Checks: `npm run lint`, `npm run type-check`, `npm run build`.
+Checks: `npm run lint`, `npm run type-check`, `npm run build`, `node tests/schema.test.mjs` (applies the schema to an in-process Postgres and runs smoke and access checks).
 
-## Content
+Without Supabase variables the landing page, rules and privacy pages work and the app pages show a "not connected" notice.
 
-All copy lives in `lib/content.ts`, one object per language. Change text there, not in the components. The feed mock-up on the hero (`app/components/mock-feed.tsx`) uses made-up names and numbers.
+## Connect a Supabase project
+
+1. Create a project (Paris, `eu-west-3`, is the closest region to Abidjan).
+2. In the SQL editor, run `supabase/migrations/0001_schema.sql`, then `supabase/seed/ci_geo.sql`.
+3. Authentication → Emails: in the "Magic Link" and "Confirm signup" templates, show the code with `{{ .Token }}`. The app asks people to type that code. Links in the email also work and land on `/auth/confirm`.
+4. Authentication → URL configuration: set the site URL and add `<site>/auth/confirm` to the redirect URLs. Set up custom SMTP (for example Resend) before opening sign-ups: the built-in sender is limited to a few emails an hour.
+5. Set `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SERVICE_ROLE_KEY` and `NEXT_PUBLIC_BETA_OPEN=1` in the host's environment.
+6. Sign up, then make yourself admin once in the SQL editor:
+   `update profiles set is_admin = true, is_moderator = true where handle = 'your_handle';`
+7. Open `/admin` to add officials to the directory, review badge requests and reports, and publish the monthly barometer.
+
+## Where things are
+
+- `app/page.tsx`, `app/en`, `lib/content.ts`: landing page and its copy. The feed mock-up on the hero uses made-up names and numbers.
+- `app/(app)`: the signed-in app (feed, post, profile, explore, messages, Mes élus, directory, interpellations, barometer, idea box, settings, admin).
+- `app/(auth)`, `app/bienvenue`, `app/auth/confirm`: log-in, sign-up with the voting-place step, and email links.
+- `app/(legal)`: community rules and privacy policy. Have a lawyer review both before launch.
+- `lib/actions.ts`, `lib/auth-actions.ts`, `lib/feed-actions.ts`: server actions. `lib/data`: read queries. `lib/i18n.ts`: interface copy in French and English.
+- `lib/ci-geo.ts`: regions, departments and communes. After editing it, run `node scripts/gen-geo-sql.mjs` to regenerate the seed.
+- `supabase/migrations/0001_schema.sql`: tables, triggers, functions, row level security, storage buckets.
 
 ## Waitlist
 
-`POST /api/waitlist` takes `{ email, role, lang }`. With `RESEND_API_KEY` and `RESEND_AUDIENCE_ID` set, each sign-up becomes a contact in that Resend audience (role and language are stored in the contact's first name as `role/lang` until contact properties are set up). Without them, sign-ups are only logged, so set both before sharing the site. `WAITLIST_NOTIFY_TO` plus `WAITLIST_FROM` (a verified Resend sender) sends you an email per sign-up.
+`POST /api/waitlist` takes `{ email, role, lang }`. With `RESEND_API_KEY` and `RESEND_AUDIENCE_ID` set, each sign-up becomes a contact in that Resend audience. Without them, sign-ups are only logged, so set both before sharing the site.
 
 ## Hosting
 
 Deployed on Vercel. Two ways to put it under prototypex.org:
 
-- **Subdomain** `politique.prototypex.org`: add the domain to the Vercel project and a CNAME at the DNS host. No change to the main site. Leave `NEXT_PUBLIC_BASE_PATH` empty.
-- **Path** `prototypex.org/politique`: set `NEXT_PUBLIC_BASE_PATH=/politique` here, add a custom domain to this project, and add a rewrite from `/politique/:path*` to that domain in the prototype-x repo.
+- **Subdomain** `politique.prototypex.org` (recommended for an app with accounts): add the domain to the Vercel project and one CNAME at the DNS host. No change to the main site. Leave `NEXT_PUBLIC_BASE_PATH` empty.
+- **Path** `prototypex.org/politique`: set `NEXT_PUBLIC_BASE_PATH=/politique` here and add a rewrite from `/politique/:path*` to this project in the prototype-x repo.

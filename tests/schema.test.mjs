@@ -19,6 +19,7 @@ await db.exec(`
   create table storage.objects (id uuid default gen_random_uuid(), bucket_id text, name text);
   create or replace function storage.foldername(name text) returns text[] language sql as $$ select (string_to_array(name, '/'))[1:array_length(string_to_array(name,'/'),1)-1] $$;
   create publication supabase_realtime;
+  create role anon nologin; create role authenticated nologin; create role service_role nologin;
 `);
 
 let schema = readFileSync(new URL("../supabase/migrations/0001_schema.sql", import.meta.url), "utf8");
@@ -104,18 +105,29 @@ const br = (await sql(`select * from barometer_results($1)`, [b.id])).rows;
 assert(br.length === 1 && br[0].commune_id === null && br[0].votes === 2, "barometer national only " + JSON.stringify(br));
 
 // --- RLS as a real non-superuser role -------------------------------------------
+// Table and function privileges come from the migration itself; only the stub schemas need grants here.
 await db.exec(`
-  create role authenticated nologin;
-  grant usage on schema public, auth, storage to authenticated;
-  grant all on all tables in schema public to authenticated;
-  grant execute on all functions in schema public to authenticated;
-  grant execute on all functions in schema auth to authenticated;
+  grant usage on schema auth, storage to anon, authenticated;
+  grant execute on all functions in schema auth to anon, authenticated;
 `);
-const asRole = async (uid, fn) => {
-  await db.exec(`set role authenticated; select set_config('app.uid', '${uid}', false)`);
+const asRole = async (uid, fn, role = "authenticated") => {
+  await db.exec(`set role ${role}; select set_config('app.uid', '${uid ?? ""}', false)`);
   try { return await fn(); } finally { await db.exec(`reset role`); }
 };
 const fails = async (fn, m) => { let ok = false; try { await fn(); } catch { ok = true; } assert(ok, "should be refused: " + m); };
+
+// A signed-out visitor reads the public square and nothing private.
+await asRole(null, async () => {
+  assert((await sql(`select count(*)::int n from profiles`)).rows[0].n === 3, "anon reads profiles");
+  assert((await sql(`select count(*)::int n from posts`)).rows[0].n >= 1, "anon reads posts");
+  assert((await sql(`select count(*)::int n from officials`)).rows[0].n === 1, "anon reads the directory");
+  assert((await sql(`select handle_available('libre_456') a`)).rows[0].a === true, "anon checks a handle at sign-up");
+  await fails(() => sql(`select * from private_profiles`), "anon reading voting places");
+  await fails(() => sql(`select * from messages`), "anon reading messages");
+  await fails(() => sql(`select * from barometer_votes`), "anon reading barometer votes");
+  await fails(() => sql(`insert into posts (author_id, text) values ($1, 'x')`, [kof]), "anon posting");
+  assert((await sql(`select count(*)::int n from my_officials()`)).rows[0].n === 0, "anon has no officials");
+}, "anon");
 
 // The voting place is private: yao cannot read kofi's, kofi reads only his own.
 await asRole(yao, async () => {

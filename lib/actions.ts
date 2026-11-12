@@ -73,9 +73,15 @@ async function toggle(table: "likes" | "reposts" | "bookmarks", postId: string, 
   if (error && !error.message.includes("duplicate")) return { ok: false, error: error.message };
   return { ok: true };
 }
-export const toggleLike = (postId: string, on: boolean) => toggle("likes", postId, on);
-export const toggleRepost = (postId: string, on: boolean) => toggle("reposts", postId, on);
-export const toggleBookmark = (postId: string, on: boolean) => toggle("bookmarks", postId, on);
+export async function toggleLike(postId: string, on: boolean): Promise<Result> {
+  return toggle("likes", postId, on);
+}
+export async function toggleRepost(postId: string, on: boolean): Promise<Result> {
+  return toggle("reposts", postId, on);
+}
+export async function toggleBookmark(postId: string, on: boolean): Promise<Result> {
+  return toggle("bookmarks", postId, on);
+}
 
 export async function votePoll(postId: string, optionIdx: number): Promise<Result> {
   const viewer = await viewerOrFail();

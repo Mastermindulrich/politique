@@ -49,7 +49,7 @@ export default async function MyOfficialsPage() {
       <div className="border-b border-line bg-paper px-4 py-4">
         <p className="text-[14px] leading-relaxed text-muted">{t.myOfficials.intro}</p>
         {placeText && (
-          <p className="mt-3 inline-flex flex-wrap items-center gap-2 rounded-full border border-line bg-card px-3 py-1.5 text-[13px]">
+          <p className="mt-3 flex flex-wrap items-center gap-2 rounded-2xl border border-line bg-card px-3 py-2 text-[13px]">
             <I.pin className="h-4 w-4 text-green-deep" />
             <span>{t.myOfficials.yourVotingPlace} <b>{placeText}</b></span>
             <span className="chip bg-paper text-muted">{t.myOfficials.privateNote}</span>

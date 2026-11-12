@@ -1,12 +1,15 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { I } from "../ui/icons";
 
-export function SearchBox({ placeholder, initial = "", autoFocus = false }: { placeholder: string; initial?: string; autoFocus?: boolean }) {
+export function SearchBox({ placeholder, initial = "", autoFocus = false, hideOn }: { placeholder: string; initial?: string; autoFocus?: boolean; hideOn?: string }) {
   const router = useRouter();
+  const pathname = usePathname();
   const [q, setQ] = useState(initial);
+  // The explore page has its own search field; the sidebar copy steps aside there.
+  if (hideOn && pathname === hideOn) return null;
   return (
     <form
       role="search"

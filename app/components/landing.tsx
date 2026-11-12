@@ -17,12 +17,15 @@ function Wordmark() {
   );
 }
 
-export default function Landing({ lang }: { lang: Lang }) {
+export default function Landing({ lang, open = false }: { lang: Lang; open?: boolean }) {
   const t = content[lang];
+  // When the beta is open the page leads to the app instead of the waitlist.
+  const login = lang === "fr" ? "Se connecter" : "Log in";
+  const signup = lang === "fr" ? "Créer un compte" : "Create account";
   const home = lang === "fr" ? "/" : "/en";
 
   return (
-    <>
+    <div data-theme="light" className="bg-bg text-ink">
       <a href="#waitlist" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-white">
         {t.nav.cta}
       </a>
@@ -42,9 +45,16 @@ export default function Landing({ lang }: { lang: Lang }) {
             <Link href={t.nav.switchHref} hrefLang={lang === "fr" ? "en" : "fr"} className="btn-ghost h-10 px-4 text-[14px]">
               {t.nav.switchLabel}
             </Link>
-            <a href="#waitlist" className="btn-primary hidden h-10 px-4 text-[14px] sm:inline-flex">
-              {t.nav.cta}
-            </a>
+            {open ? (
+              <>
+                <Link href="/connexion" className="btn-ghost hidden h-10 px-4 text-[14px] sm:inline-flex">{login}</Link>
+                <Link href="/inscription" className="btn-primary h-10 px-4 text-[14px]">{signup}</Link>
+              </>
+            ) : (
+              <a href="#waitlist" className="btn-primary hidden h-10 px-4 text-[14px] sm:inline-flex">
+                {t.nav.cta}
+              </a>
+            )}
           </div>
         </div>
       </header>
@@ -64,7 +74,7 @@ export default function Landing({ lang }: { lang: Lang }) {
             </h1>
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted sm:text-lg">{t.hero.body}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#waitlist" className="btn-primary">{t.hero.primary}</a>
+              {open ? <Link href="/inscription" className="btn-primary">{signup}</Link> : <a href="#waitlist" className="btn-primary">{t.hero.primary}</a>}
               <a href="#features" className="btn-ghost">{t.hero.secondary}</a>
             </div>
             <p className="mt-4 text-[14px] text-muted">{t.hero.note}</p>
@@ -191,6 +201,6 @@ export default function Landing({ lang }: { lang: Lang }) {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 }

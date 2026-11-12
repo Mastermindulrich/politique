@@ -4,6 +4,8 @@ export const site = {
   name: "POLITIQUE",
   origin: process.env.SITE_URL || "https://politique.prototypex.org",
   parent: { name: "Prototype X", url: "https://prototypex.org" },
+  /** Public contact address for privacy and moderation requests. Falls back to the parent site. */
+  contact: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
 };
 
 type Feature = { title: string; body: string; icon: IconName };

@@ -1202,3 +1202,20 @@ create policy media_delete on storage.objects for delete using (
 create policy documents_own on storage.objects for all using (
   bucket_id = 'documents' and ((storage.foldername(name))[1] = auth.uid()::text or is_moderator()))
   with check (bucket_id = 'documents' and (storage.foldername(name))[1] = auth.uid()::text);
+
+-- ---------------------------------------------------------------------------
+-- Privileges. Stated explicitly so the schema does not depend on a project's
+-- default grants. Row level security above decides what each role can see or
+-- change; the revokes below are a second lock on data a signed-out visitor
+-- never needs.
+-- ---------------------------------------------------------------------------
+grant usage on schema public to anon, authenticated, service_role;
+grant select on all tables in schema public to anon;
+grant select, insert, update, delete on all tables in schema public to authenticated;
+grant all on all tables in schema public to service_role;
+grant usage, select on all sequences in schema public to authenticated, service_role;
+grant execute on all functions in schema public to anon, authenticated, service_role;
+
+revoke all on private_profiles, notifications, conversations, conversation_members, messages,
+  bookmarks, blocks, mutes, poll_votes, barometer_votes, interpellation_votes, proposition_votes,
+  reports, moderation_actions, verification_requests, waitlist from anon;

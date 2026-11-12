@@ -81,7 +81,7 @@ export async function Shell({ viewer, children, hideRight = false }: { viewer: P
       {/* Right rail */}
       {!hideRight && (
         <aside className="sticky top-0 hidden h-screen w-[340px] flex-none flex-col gap-4 overflow-y-auto px-5 py-3 lg:flex">
-          <SearchBox placeholder={t.explore.search} />
+          <SearchBox placeholder={t.explore.search} hideOn="/explorer" />
           <section className="rounded-2xl border border-line">
             <h2 className="px-4 pt-3 font-display text-[19px] font-bold">{city ? `${t.explore.trendsIn} ${city}` : t.explore.trends}</h2>
             {trends.length === 0 ? (

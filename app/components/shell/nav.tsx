@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { t as dict } from "@/lib/i18n";
 import { supabaseBrowser } from "@/lib/supabase/client";
 import { Composer } from "../composer";
@@ -33,6 +33,8 @@ function items(lang: "fr" | "en", handle: string | null, unread: Unread, isModer
 function useLiveUnread(initial: Unread, signedIn: boolean) {
   const [unread, setUnread] = useState(initial);
   const pathname = usePathname();
+  // The desktop and mobile navs each mount this hook: a channel name can only be subscribed once.
+  const instance = useId();
   useEffect(() => setUnread(initial), [initial.notifications, initial.messages]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!signedIn) return;
@@ -43,7 +45,7 @@ function useLiveUnread(initial: Unread, signedIn: boolean) {
       const uid = data.user?.id;
       if (!uid || cancelled) return;
       channel = supabase
-        .channel(`notif-${uid}`)
+        .channel(`notif-${uid}-${instance}`)
         .on("postgres_changes", { event: "INSERT", schema: "public", table: "notifications", filter: `user_id=eq.${uid}` }, (payload: { new: { type: string } }) => {
           setUnread((u) => (payload.new.type === "message" ? { ...u, messages: u.messages + 1 } : { ...u, notifications: u.notifications + 1 }));
         })
@@ -53,7 +55,7 @@ function useLiveUnread(initial: Unread, signedIn: boolean) {
       cancelled = true;
       if (channel) supabase.removeChannel(channel);
     };
-  }, [signedIn]);
+  }, [signedIn, instance]);
   // Opening the page clears its badge locally; the server marks rows read.
   useEffect(() => {
     if (pathname === "/notifications") setUnread((u) => ({ ...u, notifications: 0 }));
