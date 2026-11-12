@@ -45,6 +45,8 @@ export const regions: Region[] = [
   { id: 31, district: "Woroba", name: "Worodougou" },
   { id: 32, district: "Zanzan", name: "Bounkani" },
   { id: 33, district: "Zanzan", name: "Gontougo" },
+  // Ivorians abroad vote at embassies and consulates.
+  { id: 34, district: "Diaspora", name: "Diaspora (vote à l'étranger)" },
 ];
 
 const deps: [number, string[]][] = [
@@ -81,6 +83,7 @@ const deps: [number, string[]][] = [
   [31, ["Séguéla", "Kani"]],
   [32, ["Bouna", "Doropo", "Nassian", "Téhini"]],
   [33, ["Bondoukou", "Koun-Fao", "Sandégué", "Tanda", "Transua"]],
+  [34, ["Diaspora — Afrique", "Diaspora — Europe", "Diaspora — Amériques", "Diaspora — Asie et Océanie"]],
 ];
 
 export const departments: Department[] = [];

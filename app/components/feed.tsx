@@ -15,7 +15,7 @@ type Props = {
   showReason?: boolean;
   empty?: React.ReactNode;
   /** Server action returning the next page given the last item's timestamp. Omit for a fixed list. */
-  loadMore?: (before: string) => Promise<FeedPost[]>;
+  loadMore?: (before: string, count: number) => Promise<FeedPost[]>;
 };
 
 export function Feed({ initial, viewerId, lang, lowData, isModerator, showReason, empty, loadMore }: Props) {
@@ -44,7 +44,7 @@ export function Feed({ initial, viewerId, lang, lowData, isModerator, showReason
     if (!loadMore || pending || done || !posts.length) return;
     const last = posts[posts.length - 1] as FeedPost & { created_at_sort?: string };
     start(async () => {
-      const next = await loadMore(last.created_at_sort ?? last.created_at);
+      const next = await loadMore(last.created_at_sort ?? last.created_at, posts.length);
       const known = new Set(posts.map((p) => p.id));
       const add = next.filter((p) => !known.has(p.id));
       if (!add.length) setDone(true);

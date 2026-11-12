@@ -527,6 +527,15 @@ language sql stable security definer set search_path = public as $$
   select exists (select 1 from follows where follower_id = follower and followee_id = followee)
 $$;
 
+create or replace function is_conversation_member(cid uuid) returns boolean
+language sql stable security definer set search_path = public as $$
+  select exists (select 1 from conversation_members m where m.conversation_id = cid and m.user_id = auth.uid())
+$$;
+create or replace function post_author(pid uuid) returns uuid
+language sql stable security definer set search_path = public as $$
+  select author_id from posts where id = pid
+$$;
+
 create or replace function set_updated_at() returns trigger language plpgsql as $$
 begin new.updated_at = now(); return new; end $$;
 create trigger profiles_updated before update on profiles for each row execute function set_updated_at();
@@ -780,6 +789,7 @@ declare o officials%rowtype; total int; inside int;
 begin
   select o2.* into o from officials o2 join interpellations i on i.official_id = o2.id where i.id = iid;
   if not found then return null; end if;
+  if not (o.profile_id = auth.uid() or is_moderator()) then return null; end if;
   select count(*),
          count(*) filter (where (o.commune_id is not null and pp.vote_commune_id = o.commune_id)
                              or (o.commune_id is null and o.department_id is not null and pp.vote_department_id = o.department_id)
@@ -788,7 +798,7 @@ begin
   from interpellation_votes v join private_profiles pp on pp.user_id = v.user_id
   where v.interpellation_id = iid;
   if total < 20 then return null; end if;
-  return round(100.0 * inside / total, 1);
+  return round(100.0 * inside / total / 5) * 5;   -- nearest 5 %
 end $$;
 
 -- Aggregate audience of an official: how many registered users vote in their
@@ -839,7 +849,7 @@ $$;
 
 -- Ranked "Pour vous" feed. Score = engagement * freshness, boosted for people
 -- you follow, verified officials, and (privately) the officials of where you vote.
-create or replace function feed_for_you(lim int default 30, before timestamptz default now())
+create or replace function feed_for_you(lim int default 30, before timestamptz default now(), off int default 0)
 returns table (post_id uuid, score double precision, reason text)
 language sql stable security definer set search_path = public as $$
   with me as (select auth.uid() as id),
@@ -864,8 +874,8 @@ language sql stable security definer set search_path = public as $$
          when exists (select 1 from follows f, me where f.follower_id = me.id and f.followee_id = c.author_id) then 'abonnement'
          else 'tendance' end as reason
   from cand c
-  order by score desc
-  limit lim
+  order by score desc, c.created_at desc
+  limit lim offset off
 $$;
 
 -- Trending hashtags, optionally for one commune (public opt-in post location).
@@ -1010,6 +1020,52 @@ create policy profiles_update_own on profiles for update using (id = auth.uid())
               and suspended_until is not distinct from (select suspended_until from profiles p where p.id = auth.uid()));
 create policy profiles_admin on profiles for update using (is_admin()) with check (is_admin());
 
+-- Moderator operations go through functions so moderators never get blanket UPDATE on profiles.
+create or replace function mod_notify(uid uuid, ntype notification_type, pid uuid default null) returns void
+language plpgsql security definer set search_path = public as $$
+begin
+  if not is_moderator() then raise exception 'forbidden'; end if;
+  insert into notifications (user_id, actor_id, type, post_id) values (uid, null, ntype, pid);
+end $$;
+
+create or replace function mod_suspend(uid uuid, until timestamptz, why text default null) returns void
+language plpgsql security definer set search_path = public as $$
+begin
+  if not is_moderator() then raise exception 'forbidden'; end if;
+  if exists (select 1 from profiles where id = uid and (is_admin or is_moderator)) and not is_admin() then raise exception 'forbidden'; end if;
+  update profiles set suspended_until = until where id = uid;
+  insert into moderation_actions (moderator_id, target_user_id, action, reason, expires_at)
+  values (auth.uid(), uid, case when until is null then 'unban' when until > now() + interval '1 year' then 'ban' else 'suspend' end::moderation_action_type, why, until);
+  if until is not null then
+    insert into notifications (user_id, actor_id, type) values (uid, null, 'moderation');
+  end if;
+end $$;
+
+create or replace function review_verification(rid uuid, approve boolean, note text default null) returns void
+language plpgsql security definer set search_path = public as $$
+declare r verification_requests%rowtype;
+begin
+  if not is_moderator() then raise exception 'forbidden'; end if;
+  select * into r from verification_requests where id = rid for update;
+  if not found then raise exception 'not_found'; end if;
+  update verification_requests set status = case when approve then 'approved' else 'rejected' end::verification_status,
+         reviewed_by = auth.uid(), reviewed_at = now(), notes = note where id = rid;
+  if approve then
+    update profiles set verified = true, verified_at = now(), account_type = r.requested_type where id = r.user_id;
+    if r.official_id is not null then
+      update officials set profile_id = r.user_id, claimed_at = now() where id = r.official_id;
+    end if;
+    insert into moderation_actions (moderator_id, target_user_id, action) values (auth.uid(), r.user_id, 'verify');
+  end if;
+  insert into notifications (user_id, actor_id, type) values (r.user_id, null, 'verification');
+end $$;
+
+-- Handle availability for the sign-up form (profiles are public, this just avoids a round of RLS).
+create or replace function handle_available(h text) returns boolean
+language sql stable security definer set search_path = public as $$
+  select h ~ '^[a-z0-9_]{3,20}$' and not exists (select 1 from profiles where handle = h)
+$$;
+
 -- Private profile: owner only. No other policy, ever.
 create policy private_own_select on private_profiles for select using (user_id = auth.uid());
 create policy private_own_update on private_profiles for update using (user_id = auth.uid()) with check (user_id = auth.uid());
@@ -1036,7 +1092,7 @@ create policy posts_read on posts for select using (
 );
 create policy posts_insert on posts for insert with check (
   author_id = auth.uid() and not is_suspended(auth.uid())
-  and (parent_id is null or not is_blocked_between(auth.uid(), (select author_id from posts p where p.id = parent_id)))
+  and (parent_id is null or not is_blocked_between(auth.uid(), post_author(parent_id)))
 );
 create policy posts_update_own on posts for update using (author_id = auth.uid()) with check (author_id = auth.uid());
 create policy posts_mod on posts for update using (is_moderator()) with check (is_moderator());
@@ -1066,17 +1122,16 @@ create policy notifications_own on notifications for select using (user_id = aut
 create policy notifications_update on notifications for update using (user_id = auth.uid()) with check (user_id = auth.uid());
 
 -- Messages: members only
-create policy conversations_read on conversations for select using (exists (select 1 from conversation_members m where m.conversation_id = id and m.user_id = auth.uid()));
+create policy conversations_read on conversations for select using (is_conversation_member(id) or created_by = auth.uid());
 create policy conversations_insert on conversations for insert with check (created_by = auth.uid());
-create policy members_read on conversation_members for select using (
-  user_id = auth.uid() or exists (select 1 from conversation_members m where m.conversation_id = conversation_members.conversation_id and m.user_id = auth.uid()));
+create policy members_read on conversation_members for select using (user_id = auth.uid() or is_conversation_member(conversation_id));
 create policy members_insert on conversation_members for insert with check (
   exists (select 1 from conversations c where c.id = conversation_id and c.created_by = auth.uid()) and not is_blocked_between(auth.uid(), user_id));
 create policy members_update_own on conversation_members for update using (user_id = auth.uid()) with check (user_id = auth.uid());
-create policy messages_read on messages for select using (exists (select 1 from conversation_members m where m.conversation_id = messages.conversation_id and m.user_id = auth.uid()));
+create policy messages_read on messages for select using (is_conversation_member(conversation_id));
 create policy messages_insert on messages for insert with check (
   sender_id = auth.uid() and not is_suspended(auth.uid())
-  and exists (select 1 from conversation_members m where m.conversation_id = messages.conversation_id and m.user_id = auth.uid()));
+  and is_conversation_member(conversation_id));
 create policy messages_delete_own on messages for update using (sender_id = auth.uid()) with check (sender_id = auth.uid());
 
 -- Moderation
@@ -1095,7 +1150,6 @@ create policy interp_insert on interpellations for insert with check (author_id 
 create policy interp_author on interpellations for update using (author_id = auth.uid() and status = 'ouverte') with check (author_id = auth.uid());
 create policy interp_official on interpellations for update using (
   exists (select 1 from officials o where o.id = official_id and o.profile_id = auth.uid()) or is_moderator());
-create policy interp_votes_read on interpellation_votes for select using (true);
 create policy interp_votes_own on interpellation_votes for all using (user_id = auth.uid()) with check (user_id = auth.uid() and not is_suspended(auth.uid()));
 
 create policy promises_read on promises for select using (true);
@@ -1119,8 +1173,7 @@ create policy barometer_votes_insert on barometer_votes for insert with check (
 create policy propositions_read on propositions for select using (true);
 create policy propositions_insert on propositions for insert with check (author_id = auth.uid() and not is_suspended(auth.uid()));
 create policy propositions_update on propositions for update using (
-  author_id = auth.uid() or is_moderator() or exists (select 1 from officials o where o.commune_id = commune_id and o.profile_id = auth.uid()));
-create policy proposition_votes_read on proposition_votes for select using (true);
+  author_id = auth.uid() or is_moderator() or exists (select 1 from officials o where o.commune_id = propositions.commune_id and o.profile_id = auth.uid()));
 create policy proposition_votes_own on proposition_votes for all using (user_id = auth.uid()) with check (user_id = auth.uid());
 
 create policy waitlist_admin on waitlist for select using (is_admin());

@@ -32,7 +32,8 @@ insert into ci_regions (id, district, name, slug, is_autonomous_district) values
   (30, 'Woroba', 'Béré', 'bere', false),
   (31, 'Woroba', 'Worodougou', 'worodougou', false),
   (32, 'Zanzan', 'Bounkani', 'bounkani', false),
-  (33, 'Zanzan', 'Gontougo', 'gontougo', false)
+  (33, 'Zanzan', 'Gontougo', 'gontougo', false),
+  (34, 'Diaspora', 'Diaspora (vote à l''étranger)', 'diaspora-vote-a-l-etranger', false)
 on conflict (id) do update set district = excluded.district, name = excluded.name, slug = excluded.slug, is_autonomous_district = excluded.is_autonomous_district;
 
 insert into ci_departments (id, region_id, name, slug) values
@@ -143,7 +144,11 @@ insert into ci_departments (id, region_id, name, slug) values
   (105, 33, 'Koun-Fao', 'koun-fao'),
   (106, 33, 'Sandégué', 'sandegue'),
   (107, 33, 'Tanda', 'tanda'),
-  (108, 33, 'Transua', 'transua')
+  (108, 33, 'Transua', 'transua'),
+  (109, 34, 'Diaspora — Afrique', 'diaspora-afrique'),
+  (110, 34, 'Diaspora — Europe', 'diaspora-europe'),
+  (111, 34, 'Diaspora — Amériques', 'diaspora-ameriques'),
+  (112, 34, 'Diaspora — Asie et Océanie', 'diaspora-asie-et-oceanie')
 on conflict (id) do update set region_id = excluded.region_id, name = excluded.name, slug = excluded.slug;
 
 insert into ci_communes (id, department_id, name, slug) values
@@ -266,5 +271,9 @@ insert into ci_communes (id, department_id, name, slug) values
   (117, 105, 'Koun-Fao', 'koun-fao'),
   (118, 106, 'Sandégué', 'sandegue'),
   (119, 107, 'Tanda', 'tanda'),
-  (120, 108, 'Transua', 'transua')
+  (120, 108, 'Transua', 'transua'),
+  (121, 109, 'Diaspora — Afrique', 'diaspora-afrique'),
+  (122, 110, 'Diaspora — Europe', 'diaspora-europe'),
+  (123, 111, 'Diaspora — Amériques', 'diaspora-ameriques'),
+  (124, 112, 'Diaspora — Asie et Océanie', 'diaspora-asie-et-oceanie')
 on conflict (id) do update set department_id = excluded.department_id, name = excluded.name, slug = excluded.slug;

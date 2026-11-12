@@ -103,5 +103,78 @@ await sql(`insert into barometer_votes (barometer_id, user_id, option_idx) value
 const br = (await sql(`select * from barometer_results($1)`, [b.id])).rows;
 assert(br.length === 1 && br[0].commune_id === null && br[0].votes === 2, "barometer national only " + JSON.stringify(br));
 
-console.log("schema OK: all smoke checks passed");
+// --- RLS as a real non-superuser role -------------------------------------------
+await db.exec(`
+  create role authenticated nologin;
+  grant usage on schema public, auth, storage to authenticated;
+  grant all on all tables in schema public to authenticated;
+  grant execute on all functions in schema public to authenticated;
+  grant execute on all functions in schema auth to authenticated;
+`);
+const asRole = async (uid, fn) => {
+  await db.exec(`set role authenticated; select set_config('app.uid', '${uid}', false)`);
+  try { return await fn(); } finally { await db.exec(`reset role`); }
+};
+const fails = async (fn, m) => { let ok = false; try { await fn(); } catch { ok = true; } assert(ok, "should be refused: " + m); };
+
+// The voting place is private: yao cannot read kofi's, kofi reads only his own.
+await asRole(yao, async () => {
+  const r = (await sql(`select user_id from private_profiles`)).rows;
+  assert(r.length === 1 && r[0].user_id === yao, "private_profiles: own row only, got " + r.length);
+  const upd = await sql(`update private_profiles set vote_commune_id = 1 where user_id = $1`, [kof]);
+  assert(upd.affectedRows === 0, "cannot update someone else's voting place");
+  // public tables still readable
+  assert((await sql(`select count(*)::int n from profiles`)).rows[0].n === 3, "profiles public");
+  assert((await sql(`select count(*)::int n from posts`)).rows[0].n >= 2, "posts public");
+  // cannot self-verify or self-promote
+  await fails(() => sql(`update profiles set verified = true where id = $1`, [yao]), "self-verify");
+  await fails(() => sql(`update profiles set is_admin = true where id = $1`, [yao]), "self-admin");
+  await sql(`update profiles set bio = 'Yop city' where id = $1`, [yao]);
+  // cannot post as someone else, can post as self, reply, like
+  await fails(() => sql(`insert into posts (author_id, text) values ($1, 'x')`, [kof]), "post as other");
+  const mine = (await sql(`insert into posts (author_id, text) values ($1, 'Bonjour #Yopougon') returning id`, [yao])).rows[0].id;
+  await sql(`insert into posts (author_id, kind, parent_id, text) values ($1, 'reply', $2, 'réponse')`, [yao, post.id]);
+  await sql(`insert into likes (user_id, post_id) values ($1, $2)`, [yao, post.id]);
+  await sql(`insert into follows (follower_id, followee_id) values ($1, $2)`, [yao, awa]);
+  // not a member of kofi/awa's conversation
+  assert((await sql(`select count(*)::int n from messages`)).rows[0].n === 0, "messages hidden from non-members");
+  assert((await sql(`select count(*)::int n from conversations`)).rows[0].n === 0, "conversations hidden");
+  await fails(() => sql(`insert into messages (conversation_id, sender_id, text) values ($1, $2, 'intrus')`, [cid, yao]), "message into foreign conversation");
+  // others' notifications hidden; interpellation upvoters hidden
+  assert((await sql(`select count(*)::int n from notifications where user_id <> $1`, [yao])).rows[0].n === 0, "notifications own only");
+  assert((await sql(`select count(*)::int n from interpellation_votes`)).rows[0].n === 0, "interpellation voters hidden");
+  // moderation is closed to citizens
+  await fails(() => sql(`select mod_suspend($1, now() + interval '1 day')`, [kof]), "mod_suspend");
+  await fails(() => sql(`insert into post_labels (post_id, label, labeled_by) values ($1, 'fausse', $2)`, [post.id, yao]), "label post");
+  const hid = await sql(`update posts set is_hidden = true where id = $1`, [post.id]);
+  assert(hid.affectedRows === 0, "cannot hide someone's post");
+  // can start a DM, report, vote on an interpellation, propose an idea
+  const c2 = (await sql(`select get_or_create_dm($1) id`, [awa])).rows[0].id;
+  await sql(`insert into messages (conversation_id, sender_id, text) values ($1, $2, 'Bonjour Madame la députée')`, [c2, yao]);
+  assert((await sql(`select count(*)::int n from messages`)).rows[0].n === 1, "own messages visible");
+  await sql(`insert into reports (reporter_id, post_id, reason) values ($1, $2, 'spam')`, [yao, post.id]);
+  await sql(`insert into interpellation_votes (interpellation_id, user_id) values ($1, $2)`, [ip.id, yao]);
+  await sql(`insert into propositions (author_id, commune_id, title, body) values ($1, $2, 'Un marché couvert', 'Près de la gare')`, [yao, yop]);
+  assert((await sql(`select interpellation_constituent_share($1) s`, [ip.id])).rows[0].s === null, "share only for the official");
+  assert((await sql(`select handle_available('yaok') a, handle_available('libre_123') b`)).rows[0].b === true, "handle_available");
+  assert((await sql(`select * from feed_for_you(10, now(), 0)`)).rows.length >= 2, "feed as role");
+});
+// The official answers and sees only aggregates.
+await asRole(awa, async () => {
+  assert((await sql(`select count(*)::int n from private_profiles`)).rows[0].n === 1, "official sees only own private row");
+  assert((await sql(`select official_constituents_count($1) n`, [off])).rows[0].n === null, "constituent count hidden under 50");
+});
+// Moderator powers.
+await sql(`update profiles set is_moderator = true where id = $1`, [kof]);
+await asRole(kof, async () => {
+  assert((await sql(`select count(*)::int n from reports`)).rows[0].n === 1, "moderator sees reports");
+  await sql(`select mod_suspend($1, now() + interval '7 days', 'test')`, [yao]);
+  await sql(`insert into post_labels (post_id, label, labeled_by) values ($1, 'contexte', $2)`, [post.id, kof]);
+  assert((await sql(`select count(*)::int n from private_profiles`)).rows[0].n === 1, "moderators cannot read voting places either");
+});
+await asRole(yao, async () => {
+  await fails(() => sql(`insert into posts (author_id, text) values ($1, 'suspendu')`, [yao]), "suspended user posting");
+});
+
+console.log("schema OK: all smoke and RLS checks passed");
 await db.close();

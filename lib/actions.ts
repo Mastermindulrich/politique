@@ -243,9 +243,14 @@ export async function createInterpellation(input: { officialId: string; title: s
   const s = z.object({ officialId: z.string().uuid(), title: z.string().min(5).max(140), body: z.string().max(2000).optional() }).safeParse(input);
   if (!s.success) return { ok: false, error: "invalid" };
   const supabase = await createClient();
-  const { data: official } = await supabase.from("officials").select("full_name, profile_id, profile:profiles(handle)").eq("id", s.data.officialId).maybeSingle();
+  const { data: official } = await supabase.from("officials").select("full_name, profile_id").eq("id", s.data.officialId).maybeSingle();
+  if (!official) return { ok: false, error: "not_found" };
   // The question is also a public post so it lives in the feed and can be replied to.
-  const handle = (official as { profile?: { handle: string } | null } | null)?.profile?.handle;
+  let handle: string | null = null;
+  if (official.profile_id) {
+    const { data: p } = await supabase.from("profiles").select("handle").eq("id", official.profile_id).maybeSingle();
+    handle = p?.handle ?? null;
+  }
   const text = `${handle ? "@" + handle + " " : ""}${s.data.title}${s.data.body ? "\n\n" + s.data.body : ""}\n#Interpellation`.slice(0, 1000);
   const { data: post } = await supabase.from("posts").insert({ author_id: viewer.id, kind: "post", text, lang: viewer.lang }).select("id").single();
   const { data, error } = await supabase.from("interpellations").insert({ author_id: viewer.id, official_id: s.data.officialId, post_id: post?.id ?? null, title: s.data.title, body: s.data.body ?? null }).select("id").single();
@@ -407,18 +412,22 @@ export async function markNotificationsRead() {
 // ---------------------------------------------------------------------------
 // Moderation (RLS enforces is_moderator / is_admin)
 // ---------------------------------------------------------------------------
-export async function moderate(input: { reportId?: string; postId?: string; userId?: string; action: "hide_post" | "unhide_post" | "suspend" | "ban" | "dismiss"; reason?: string }): Promise<Result> {
+export async function moderate(input: { reportId?: string; postId?: string; userId?: string; action: "hide_post" | "unhide_post" | "suspend" | "ban" | "unban" | "dismiss"; reason?: string }): Promise<Result> {
   const viewer = await viewerOrFail();
   if (!viewer.is_moderator && !viewer.is_admin) return { ok: false, error: "forbidden" };
   const supabase = await createClient();
   const now = new Date();
-  if (input.action === "hide_post" && input.postId) await supabase.from("posts").update({ is_hidden: true }).eq("id", input.postId);
+  if (input.action === "hide_post" && input.postId) {
+    await supabase.from("posts").update({ is_hidden: true }).eq("id", input.postId);
+    await supabase.from("moderation_actions").insert({ moderator_id: viewer.id, target_user_id: input.userId ?? null, post_id: input.postId, report_id: input.reportId ?? null, action: "hide_post", reason: input.reason ?? null });
+    if (input.userId) await supabase.rpc("mod_notify", { uid: input.userId, ntype: "moderation", pid: input.postId });
+  }
   if (input.action === "unhide_post" && input.postId) await supabase.from("posts").update({ is_hidden: false }).eq("id", input.postId);
-  if (input.action === "suspend" && input.userId) await supabase.from("profiles").update({ suspended_until: new Date(now.getTime() + 7 * 86400_000).toISOString() }).eq("id", input.userId);
-  if (input.action === "ban" && input.userId) await supabase.from("profiles").update({ suspended_until: "2999-01-01T00:00:00Z" }).eq("id", input.userId);
-  await supabase.from("moderation_actions").insert({ moderator_id: viewer.id, target_user_id: input.userId ?? null, post_id: input.postId ?? null, report_id: input.reportId ?? null, action: input.action === "unhide_post" ? "dismiss" : input.action === "suspend" ? "suspend" : input.action, reason: input.reason ?? null });
+  if (input.action === "suspend" && input.userId) await supabase.rpc("mod_suspend", { uid: input.userId, until: new Date(now.getTime() + 7 * 86400_000).toISOString(), why: input.reason ?? null });
+  if (input.action === "ban" && input.userId) await supabase.rpc("mod_suspend", { uid: input.userId, until: "2999-01-01T00:00:00Z", why: input.reason ?? null });
+  if (input.action === "unban" && input.userId) await supabase.rpc("mod_suspend", { uid: input.userId, until: null, why: input.reason ?? null });
+  if (input.action === "dismiss") await supabase.from("moderation_actions").insert({ moderator_id: viewer.id, report_id: input.reportId ?? null, action: "dismiss", reason: input.reason ?? null });
   if (input.reportId) await supabase.from("reports").update({ status: input.action === "dismiss" ? "dismissed" : "actioned", reviewed_by: viewer.id, reviewed_at: now.toISOString() }).eq("id", input.reportId);
-  if (input.userId) await supabase.from("notifications").insert({ user_id: input.userId, actor_id: null, type: "moderation", post_id: input.postId ?? null });
   revalidatePath("/admin");
   return { ok: true };
 }
@@ -427,16 +436,25 @@ export async function reviewVerification(id: string, approve: boolean, notes?: s
   const viewer = await viewerOrFail();
   if (!viewer.is_moderator && !viewer.is_admin) return { ok: false, error: "forbidden" };
   const supabase = await createClient();
-  const { data: req } = await supabase.from("verification_requests").select("*").eq("id", id).maybeSingle();
-  if (!req) return { ok: false, error: "not_found" };
-  await supabase.from("verification_requests").update({ status: approve ? "approved" : "rejected", reviewed_by: viewer.id, reviewed_at: new Date().toISOString(), notes: notes ?? null }).eq("id", id);
-  if (approve) {
-    await supabase.from("profiles").update({ verified: true, verified_at: new Date().toISOString(), account_type: req.requested_type }).eq("id", req.user_id);
-    if (req.official_id) await supabase.from("officials").update({ profile_id: req.user_id, claimed_at: new Date().toISOString() }).eq("id", req.official_id);
-  }
-  await supabase.from("notifications").insert({ user_id: req.user_id, actor_id: null, type: "verification" });
+  const { error } = await supabase.rpc("review_verification", { rid: id, approve, note: notes ?? null });
+  if (error) return { ok: false, error: error.message };
   revalidatePath("/admin");
   return { ok: true };
+}
+
+export async function labelPost(input: { postId: string; label: "contexte" | "contestee" | "fausse" | "satire" | "officiel"; note?: string; source_url?: string }): Promise<Result> {
+  const viewer = await viewerOrFail();
+  const supabase = await createClient();
+  const { error } = await supabase.from("post_labels").insert({ post_id: input.postId, label: input.label, note: input.note?.slice(0, 500) || null, source_url: input.source_url || null, labeled_by: viewer.id });
+  if (error) return { ok: false, error: error.message };
+  revalidatePath(`/p/${input.postId}`);
+  return { ok: true };
+}
+
+export async function checkHandle(handle: string): Promise<boolean> {
+  const supabase = await createClient();
+  const { data } = await supabase.rpc("handle_available", { h: handle.toLowerCase() });
+  return Boolean(data);
 }
 
 const officialSchema = z.object({

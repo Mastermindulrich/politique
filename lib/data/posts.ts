@@ -62,8 +62,8 @@ export async function hydratePosts(supabase: SupabaseClient, rows: Post[], viewe
 }
 
 /** "Pour vous": ranked by the SQL function, then hydrated. */
-export async function fetchForYou(supabase: SupabaseClient, viewerId: string | null, before?: string) {
-  const { data, error } = await supabase.rpc("feed_for_you", { lim: PAGE, before: before ?? new Date().toISOString() });
+export async function fetchForYou(supabase: SupabaseClient, viewerId: string | null, offset = 0) {
+  const { data, error } = await supabase.rpc("feed_for_you", { lim: PAGE, before: new Date().toISOString(), off: offset });
   if (error || !data?.length) return [] as FeedPost[];
   const ranked = data as { post_id: string; score: number; reason: string }[];
   const { data: rows } = await supabase.from("posts").select("*").in("id", ranked.map((r) => r.post_id));
