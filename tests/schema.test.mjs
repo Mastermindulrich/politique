@@ -228,7 +228,11 @@ await asRole(boss, async () => {
 await asRole(awa, async () => {
   await fails(() => sql(`insert into posts (author_id, text) values ($1, 'coupé')`, [awa]), "posting while posting is switched off");
 });
+await asRole(null, async () => {
+  await fails(() => sql(`select detach_member($1, $2)`, [awa, kof]), "visitor detaching a member's records");
+}, "anon");
 await asRole(kof, async () => {
+  await fails(() => sql(`select detach_member($1, $2)`, [awa, kof]), "admin detaching a member's records");
   assert((await sql(`select email from admin_members() limit 1`)).rows[0].email === null, "admins do not see e-mails");
   await fails(() => sql(`select mod_suspend($1, now() + interval '1 day', 'x')`, [boss]), "admin suspending the owner");
   await fails(() => sql(`select owner_set_role($1, 'member')`, [awa]), "admin changing roles");

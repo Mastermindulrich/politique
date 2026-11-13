@@ -208,7 +208,8 @@ end $$;
 create or replace function detach_member(uid uuid, heir uuid) returns void
 language plpgsql security definer set search_path = politique, extensions, public as $$
 begin
-  if auth.uid() is not null and not is_owner() then raise exception 'forbidden'; end if;
+  -- Callable by the owner, or by the project itself (service role); never by visitors.
+  if coalesce(current_setting('role', true), 'none') in ('authenticated', 'anon') and not is_owner() then raise exception 'forbidden'; end if;
   update officials set created_by = null where created_by = uid;
   update post_labels set labeled_by = heir where labeled_by = uid;
   update conversations set created_by = null where created_by = uid;
@@ -278,6 +279,10 @@ begin
   limit least(greatest(lim, 1), 200) offset greatest(off, 0);
 end $$;
 
+revoke execute on function detach_member(uuid, uuid) from public, anon, authenticated;
+grant execute on function detach_member(uuid, uuid) to service_role;
+revoke execute on function owner_set_setting(text, jsonb), owner_set_role(uuid, text), admin_set_badge(uuid, boolean),
+  owner_remove_member(uuid), admin_stats(), admin_members(text, text, int, int) from public, anon;
 grant execute on function owner_set_setting(text, jsonb), owner_set_role(uuid, text), admin_set_badge(uuid, boolean),
   owner_remove_member(uuid), admin_stats(), admin_members(text, text, int, int) to authenticated;
 grant select on site_settings to anon, authenticated;
