@@ -51,18 +51,20 @@ export function SignupForm({ lang }: { lang: "fr" | "en" }) {
 
   const handleValid = /^[a-z0-9_]{3,20}$/.test(handle);
 
+  const form = () => ({
+    email: email.trim(),
+    display_name: displayName.trim(),
+    handle,
+    lang,
+    vote_region_id: place.vote_region_id as number,
+    vote_department_id: place.vote_department_id as number,
+    vote_commune_id: place.vote_commune_id,
+    vote_locality: place.vote_locality,
+    is_registered_voter: place.is_registered_voter,
+  });
+
   const send = async () => {
-    const r = await requestSignupCode({
-      email: email.trim(),
-      display_name: displayName.trim(),
-      handle,
-      lang,
-      vote_region_id: place.vote_region_id as number,
-      vote_department_id: place.vote_department_id as number,
-      vote_commune_id: place.vote_commune_id,
-      vote_locality: place.vote_locality,
-      is_registered_voter: place.is_registered_voter,
-    });
+    const r = await requestSignupCode(form());
     if (!r.ok) {
       setError(
         r.error === "handle_taken" ? t.auth.handleTaken
@@ -182,6 +184,7 @@ export function SignupForm({ lang }: { lang: "fr" | "en" }) {
           lang={lang}
           onBack={() => setStep(2)}
           onResend={send}
+          signup={form()}
           onDone={() => {
             // Officials, institutions and media go straight to the badge request.
             router.replace(type === "citoyen" ? "/mes-elus" : `/parametres?badge=${type}#verification`);

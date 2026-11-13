@@ -25,14 +25,24 @@ await db.exec(`
 let schema = readFileSync(new URL("../supabase/migrations/0001_schema.sql", import.meta.url), "utf8");
 await db.exec(schema);
 await db.exec(readFileSync(new URL("../supabase/seed/ci_geo.sql", import.meta.url), "utf8"));
+await db.exec(`set search_path = politique, public`);
 
 // --- Smoke tests ---------------------------------------------------------------
 const as = (uid) => db.exec(`select set_config('app.uid', '${uid ?? ""}', false)`);
-const u = async (handle, meta = {}) => {
-  const r = await sql(`insert into auth.users (email, raw_user_meta_data) values ($1, $2) returning id`, [`${handle}@x.ci`, { handle, display_name: handle, ...meta }]);
-  return r.rows[0].id;
-};
 const assert = (c, m) => { if (!c) throw new Error("ASSERT: " + m); };
+const u = async (handle, meta = {}) => {
+  const r = await sql(`insert into auth.users (email, raw_user_meta_data) values ($1, $2) returning id`, [`${handle}@x.ci`, { app: "politique", handle, display_name: handle, ...meta }]);
+  const id = r.rows[0].id;
+  await as(id);
+  assert((await sql(`select join_politique() j`)).rows[0].j === true, "join_politique creates the profile");
+  assert((await sql(`select join_politique() j`)).rows[0].j === false, "join_politique is a no-op the second time");
+  await as(null);
+  return id;
+};
+
+// A user of the other app sharing the project gets nothing until they join.
+const other = (await sql(`insert into auth.users (email, raw_user_meta_data) values ('site@x.ci', '{"name":"Site"}') returning id`)).rows[0].id;
+assert((await sql(`select count(*)::int n from profiles`)).rows[0].n === 0, "no profile for a non-POLITIQUE auth user");
 
 const cocody = (await sql(`select id from ci_communes where name='Cocody'`)).rows[0].id;
 const yop = (await sql(`select id from ci_communes where name='Yopougon'`)).rows[0].id;
@@ -187,6 +197,13 @@ await asRole(kof, async () => {
 await asRole(yao, async () => {
   await fails(() => sql(`insert into posts (author_id, text) values ($1, 'suspendu')`, [yao]), "suspended user posting");
 });
+
+// The other app's user joins POLITIQUE later, passing the sign-up form.
+await as(other);
+assert((await sql(`select join_politique($1) j`, [{ handle: "awakone", display_name: "Site", vote_region_id: "1", vote_department_id: "1" }])).rows[0].j === true, "existing auth user can join");
+const joined = (await sql(`select p.handle, pp.vote_region_id from profiles p join private_profiles pp on pp.user_id = p.id where p.id = $1`, [other])).rows[0];
+assert(joined.handle !== "awakone" && joined.vote_region_id === 1, "taken handle replaced, voting place kept: " + JSON.stringify(joined));
+await as(null);
 
 console.log("schema OK: all smoke and RLS checks passed");
 await db.close();

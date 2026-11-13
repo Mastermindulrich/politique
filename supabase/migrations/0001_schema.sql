@@ -1,16 +1,25 @@
 -- POLITIQUE — core schema
 -- Postgres 17 / Supabase. Apply with `supabase db push` or the Supabase MCP apply_migration.
--- Conventions: all tables in public, RLS on everything, counters kept by triggers,
+-- Everything lives in its own `politique` schema so it can share a Supabase project
+-- with another app and be moved out later (pg_dump --schema=politique).
+-- Nothing is attached to auth.users: a person joins POLITIQUE through politique.join_politique().
+-- Conventions: RLS on everything, counters kept by triggers,
 -- anything touching the PRIVATE voting location goes through SECURITY DEFINER
 -- functions that only ever return aggregates or the caller's own row.
 
-create extension if not exists citext;
-create extension if not exists pg_trgm;
-create extension if not exists unaccent;
+create schema if not exists politique;
+create schema if not exists extensions;
+create extension if not exists citext with schema extensions;
+create extension if not exists pg_trgm with schema extensions;
+create extension if not exists unaccent with schema extensions;
+-- Extensions that were already installed elsewhere stay where they are; public stays on the path for that.
+set search_path = politique, extensions, public;
 
 -- unaccent() is STABLE; generated columns need IMMUTABLE.
 create or replace function f_unaccent(t text) returns text
-language sql immutable parallel safe strict as $$ select public.unaccent('public.unaccent', t) $$;
+language plpgsql immutable parallel safe strict set search_path = politique, extensions, public as $$
+begin return unaccent(t); end $$;
+-- plpgsql (not sql) so the search_path above is honoured wherever unaccent was installed.
 
 -- ---------------------------------------------------------------------------
 -- Enums
@@ -501,38 +510,38 @@ create table waitlist (
 -- Helper functions
 -- ---------------------------------------------------------------------------
 create or replace function is_admin() returns boolean
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select coalesce((select is_admin from profiles where id = auth.uid()), false)
 $$;
 create or replace function is_moderator() returns boolean
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select coalesce((select is_admin or is_moderator from profiles where id = auth.uid()), false)
 $$;
 create or replace function is_verified_media() returns boolean
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select coalesce((select verified and account_type = 'media' from profiles where id = auth.uid()), false)
 $$;
 create or replace function is_suspended(uid uuid) returns boolean
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select coalesce((select suspended_until > now() from profiles where id = uid), false)
 $$;
 create or replace function is_blocked_between(a uuid, b uuid) returns boolean
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select exists (
     select 1 from blocks where (blocker_id = a and blocked_id = b) or (blocker_id = b and blocked_id = a)
   )
 $$;
 create or replace function follows_user(follower uuid, followee uuid) returns boolean
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select exists (select 1 from follows where follower_id = follower and followee_id = followee)
 $$;
 
 create or replace function is_conversation_member(cid uuid) returns boolean
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select exists (select 1 from conversation_members m where m.conversation_id = cid and m.user_id = auth.uid())
 $$;
 create or replace function post_author(pid uuid) returns uuid
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select author_id from posts where id = pid
 $$;
 
@@ -543,35 +552,44 @@ create trigger private_profiles_updated before update on private_profiles for ea
 create trigger officials_updated before update on officials for each row execute function set_updated_at();
 create trigger promises_updated before update on promises for each row execute function set_updated_at();
 
--- New auth user -> profile + private profile from sign-up metadata.
--- The app always sends: handle, display_name, lang, vote_region_id, vote_department_id, vote_commune_id.
-create or replace function handle_new_user() returns trigger
-language plpgsql security definer set search_path = public as $$
+-- Joining POLITIQUE -> profile + private profile.
+-- The auth user list is shared with another app, so nothing fires on auth.users.
+-- The app calls join_politique() after sign-in. It reads the sign-up form (meta) or, failing that,
+-- the sign-up metadata stored on the auth user when it was tagged app = politique.
+-- Does nothing if the caller already has a profile.
+create or replace function join_politique(meta jsonb default null) returns boolean
+language plpgsql security definer set search_path = politique, extensions, public as $$
 declare
-  m jsonb := coalesce(new.raw_user_meta_data, '{}'::jsonb);
-  h text := lower(coalesce(m->>'handle', 'u' || substr(replace(new.id::text, '-', ''), 1, 12)));
+  uid uuid := auth.uid();
+  u record;
+  m jsonb;
+  h text;
 begin
+  if uid is null then return false; end if;
+  if exists (select 1 from profiles where id = uid) then return false; end if;
+  select id, email, phone, raw_user_meta_data into u from auth.users where id = uid;
+  if not found then return false; end if;
+  m := coalesce(meta, case when u.raw_user_meta_data->>'app' = 'politique' then u.raw_user_meta_data end, '{}'::jsonb);
+  h := lower(coalesce(m->>'handle', ''));
   if h !~ '^[a-z0-9_]{3,20}$' or exists (select 1 from profiles where handle = h) then
-    h := 'u' || substr(replace(new.id::text, '-', ''), 1, 12);
+    h := 'u' || substr(replace(uid::text, '-', ''), 1, 12);
   end if;
   insert into profiles (id, handle, display_name, lang)
-  values (new.id, h, coalesce(nullif(m->>'display_name', ''), split_part(coalesce(new.email, 'citoyen'), '@', 1)),
+  values (uid, h, left(coalesce(nullif(m->>'display_name', ''), split_part(coalesce(u.email, 'citoyen'), '@', 1)), 50),
           case when m->>'lang' = 'en' then 'en' else 'fr' end);
   insert into private_profiles (user_id, vote_region_id, vote_department_id, vote_commune_id, vote_locality, is_registered_voter, phone)
-  values (new.id,
+  values (uid,
           nullif(m->>'vote_region_id', '')::smallint,
           nullif(m->>'vote_department_id', '')::smallint,
           nullif(m->>'vote_commune_id', '')::smallint,
           nullif(m->>'vote_locality', ''),
           case when m ? 'is_registered_voter' then (m->>'is_registered_voter')::boolean else null end,
-          new.phone);
-  return new;
+          u.phone);
+  return true;
 end $$;
-create trigger on_auth_user_created after insert on auth.users
-  for each row execute function handle_new_user();
 
 -- Counters -------------------------------------------------------------------
-create or replace function trg_follows() returns trigger language plpgsql security definer set search_path = public as $$
+create or replace function trg_follows() returns trigger language plpgsql security definer set search_path = politique, extensions, public as $$
 begin
   if tg_op = 'INSERT' then
     update profiles set followers_count = followers_count + 1 where id = new.followee_id;
@@ -586,7 +604,7 @@ begin
 end $$;
 create trigger follows_counts after insert or delete on follows for each row execute function trg_follows();
 
-create or replace function trg_likes() returns trigger language plpgsql security definer set search_path = public as $$
+create or replace function trg_likes() returns trigger language plpgsql security definer set search_path = politique, extensions, public as $$
 declare a uuid;
 begin
   if tg_op = 'INSERT' then
@@ -602,7 +620,7 @@ begin
 end $$;
 create trigger likes_counts after insert or delete on likes for each row execute function trg_likes();
 
-create or replace function trg_reposts() returns trigger language plpgsql security definer set search_path = public as $$
+create or replace function trg_reposts() returns trigger language plpgsql security definer set search_path = politique, extensions, public as $$
 declare a uuid;
 begin
   if tg_op = 'INSERT' then
@@ -618,7 +636,7 @@ begin
 end $$;
 create trigger reposts_counts after insert or delete on reposts for each row execute function trg_reposts();
 
-create or replace function trg_bookmarks() returns trigger language plpgsql security definer set search_path = public as $$
+create or replace function trg_bookmarks() returns trigger language plpgsql security definer set search_path = politique, extensions, public as $$
 begin
   if tg_op = 'INSERT' then
     update posts set bookmark_count = bookmark_count + 1 where id = new.post_id; return new;
@@ -629,7 +647,7 @@ end $$;
 create trigger bookmarks_counts after insert or delete on bookmarks for each row execute function trg_bookmarks();
 
 -- Posts: thread root, counters, hashtags, mentions, notifications, official fan-out
-create or replace function trg_posts_before() returns trigger language plpgsql security definer set search_path = public as $$
+create or replace function trg_posts_before() returns trigger language plpgsql security definer set search_path = politique, extensions, public as $$
 declare p posts%rowtype; tags text[]; mentions_arr uuid[];
 begin
   if new.parent_id is not null then
@@ -649,7 +667,7 @@ begin
 end $$;
 create trigger posts_before before insert on posts for each row execute function trg_posts_before();
 
-create or replace function trg_posts_after() returns trigger language plpgsql security definer set search_path = public as $$
+create or replace function trg_posts_after() returns trigger language plpgsql security definer set search_path = politique, extensions, public as $$
 declare t text; m uuid; parent_author uuid; quoted_author uuid; o officials%rowtype;
 begin
   if tg_op = 'INSERT' then
@@ -703,7 +721,7 @@ begin
 end $$;
 create trigger posts_after after insert or update on posts for each row execute function trg_posts_after();
 
-create or replace function trg_poll_votes() returns trigger language plpgsql security definer set search_path = public as $$
+create or replace function trg_poll_votes() returns trigger language plpgsql security definer set search_path = politique, extensions, public as $$
 declare c integer[];
 begin
   select counts into c from polls where post_id = new.post_id for update;
@@ -713,7 +731,7 @@ begin
 end $$;
 create trigger poll_votes_counts after insert on poll_votes for each row execute function trg_poll_votes();
 
-create or replace function trg_interpellation_votes() returns trigger language plpgsql security definer set search_path = public as $$
+create or replace function trg_interpellation_votes() returns trigger language plpgsql security definer set search_path = politique, extensions, public as $$
 begin
   if tg_op = 'INSERT' then
     update interpellations set upvotes_count = upvotes_count + 1 where id = new.interpellation_id; return new;
@@ -723,7 +741,7 @@ begin
 end $$;
 create trigger interpellation_votes_counts after insert or delete on interpellation_votes for each row execute function trg_interpellation_votes();
 
-create or replace function trg_proposition_votes() returns trigger language plpgsql security definer set search_path = public as $$
+create or replace function trg_proposition_votes() returns trigger language plpgsql security definer set search_path = politique, extensions, public as $$
 begin
   if tg_op = 'INSERT' then
     update propositions set votes_count = votes_count + 1 where id = new.proposition_id; return new;
@@ -733,7 +751,7 @@ begin
 end $$;
 create trigger proposition_votes_counts after insert or delete on proposition_votes for each row execute function trg_proposition_votes();
 
-create or replace function trg_messages() returns trigger language plpgsql security definer set search_path = public as $$
+create or replace function trg_messages() returns trigger language plpgsql security definer set search_path = politique, extensions, public as $$
 begin
   update conversations set last_message_at = new.created_at where id = new.conversation_id;
   update conversation_members set last_read_at = new.created_at where conversation_id = new.conversation_id and user_id = new.sender_id;
@@ -745,7 +763,7 @@ end $$;
 create trigger messages_after after insert on messages for each row execute function trg_messages();
 
 -- Interpellation answered by the official -> notify author and upvoters
-create or replace function trg_interpellation_answered() returns trigger language plpgsql security definer set search_path = public as $$
+create or replace function trg_interpellation_answered() returns trigger language plpgsql security definer set search_path = politique, extensions, public as $$
 begin
   if new.status = 'repondue' and old.status <> 'repondue' then
     new.answered_at := now();
@@ -765,7 +783,7 @@ create trigger interpellations_answered before update on interpellations for eac
 -- "Mes élus": the officials whose mandate covers where the caller votes.
 create or replace function my_officials()
 returns setof officials
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select o.* from officials o, private_profiles pp
   where pp.user_id = auth.uid()
     and (
@@ -784,7 +802,7 @@ $$;
 -- constituency. Returns null under 20 voters so nobody can be singled out.
 create or replace function interpellation_constituent_share(iid uuid)
 returns numeric
-language plpgsql stable security definer set search_path = public as $$
+language plpgsql stable security definer set search_path = politique, extensions, public as $$
 declare o officials%rowtype; total int; inside int;
 begin
   select o2.* into o from officials o2 join interpellations i on i.official_id = o2.id where i.id = iid;
@@ -805,7 +823,7 @@ end $$;
 -- constituency (rounded to the nearest 10, hidden under 50).
 create or replace function official_constituents_count(oid uuid)
 returns integer
-language plpgsql stable security definer set search_path = public as $$
+language plpgsql stable security definer set search_path = politique, extensions, public as $$
 declare o officials%rowtype; n int;
 begin
   select * into o from officials where id = oid;
@@ -821,7 +839,7 @@ end $$;
 -- Barometer results per commune of vote, only where >= 50 votes; plus national totals.
 create or replace function barometer_results(bid uuid)
 returns table (commune_id smallint, commune_name text, votes integer, counts integer[])
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   with v as (
     select pp.vote_commune_id as cid, bv.option_idx
     from barometer_votes bv join private_profiles pp on pp.user_id = bv.user_id
@@ -851,7 +869,7 @@ $$;
 -- you follow, verified officials, and (privately) the officials of where you vote.
 create or replace function feed_for_you(lim int default 30, before timestamptz default now(), off int default 0)
 returns table (post_id uuid, score double precision, reason text)
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   with me as (select auth.uid() as id),
   mine as (select profile_id from my_officials() where profile_id is not null),
   cand as (
@@ -881,7 +899,7 @@ $$;
 -- Trending hashtags, optionally for one commune (public opt-in post location).
 create or replace function trending_hashtags(cid smallint default null, lim int default 10)
 returns table (tag citext, posts_24h bigint, posts_total integer)
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select ph.tag, count(*) as posts_24h, h.posts_count
   from post_hashtags ph join hashtags h on h.tag = ph.tag
   where ph.created_at > now() - interval '24 hours' and (cid is null or ph.commune_id = cid)
@@ -893,7 +911,7 @@ $$;
 -- Who to follow: verified officials and media near the caller's shown commune, then popular accounts.
 create or replace function suggested_profiles(lim int default 6)
 returns setof profiles
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select p.* from profiles p
   where p.id <> coalesce(auth.uid(), '00000000-0000-0000-0000-000000000000'::uuid)
     and p.deleted_at is null and p.suspended_until is null
@@ -907,7 +925,7 @@ $$;
 -- Search posts (full text, French) and profiles (trigram)
 create or replace function search_posts(q text, lim int default 30)
 returns setof posts
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select p.* from posts p
   where p.deleted_at is null and p.is_hidden = false and p.visibility = 'public'
     and p.search @@ websearch_to_tsquery('french', f_unaccent(q))
@@ -916,7 +934,7 @@ language sql stable security definer set search_path = public as $$
 $$;
 create or replace function search_profiles(q text, lim int default 10)
 returns setof profiles
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select p.* from profiles p
   where p.deleted_at is null and (p.handle::text ilike '%' || q || '%' or p.display_name ilike '%' || q || '%')
   order by p.verified desc, similarity(p.display_name, q) desc, p.followers_count desc
@@ -925,13 +943,13 @@ $$;
 
 -- Post views (fire-and-forget from the client; no auth needed, bounded by RLS on nothing else)
 create or replace function record_views(ids uuid[]) returns void
-language sql security definer set search_path = public as $$
+language sql security definer set search_path = politique, extensions, public as $$
   update posts set view_count = view_count + 1 where id = any(ids)
 $$;
 
 -- Start or reuse a 1:1 conversation
 create or replace function get_or_create_dm(other uuid) returns uuid
-language plpgsql security definer set search_path = public as $$
+language plpgsql security definer set search_path = politique, extensions, public as $$
 declare cid uuid; me uuid := auth.uid();
 begin
   if me is null or other = me then raise exception 'invalid'; end if;
@@ -949,14 +967,14 @@ end $$;
 
 -- Mark notifications read
 create or replace function mark_notifications_read() returns void
-language sql security definer set search_path = public as $$
+language sql security definer set search_path = politique, extensions, public as $$
   update notifications set read_at = now() where user_id = auth.uid() and read_at is null
 $$;
 
 -- Unread counts for the shell badges
 create or replace function unread_counts()
 returns table (notifications bigint, messages bigint)
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select
     (select count(*) from notifications n where n.user_id = auth.uid() and n.read_at is null and n.type <> 'message'),
     (select count(*) from conversation_members cm join conversations c on c.id = cm.conversation_id
@@ -1022,14 +1040,14 @@ create policy profiles_admin on profiles for update using (is_admin()) with chec
 
 -- Moderator operations go through functions so moderators never get blanket UPDATE on profiles.
 create or replace function mod_notify(uid uuid, ntype notification_type, pid uuid default null) returns void
-language plpgsql security definer set search_path = public as $$
+language plpgsql security definer set search_path = politique, extensions, public as $$
 begin
   if not is_moderator() then raise exception 'forbidden'; end if;
   insert into notifications (user_id, actor_id, type, post_id) values (uid, null, ntype, pid);
 end $$;
 
 create or replace function mod_suspend(uid uuid, until timestamptz, why text default null) returns void
-language plpgsql security definer set search_path = public as $$
+language plpgsql security definer set search_path = politique, extensions, public as $$
 begin
   if not is_moderator() then raise exception 'forbidden'; end if;
   if exists (select 1 from profiles where id = uid and (is_admin or is_moderator)) and not is_admin() then raise exception 'forbidden'; end if;
@@ -1042,7 +1060,7 @@ begin
 end $$;
 
 create or replace function review_verification(rid uuid, approve boolean, note text default null) returns void
-language plpgsql security definer set search_path = public as $$
+language plpgsql security definer set search_path = politique, extensions, public as $$
 declare r verification_requests%rowtype;
 begin
   if not is_moderator() then raise exception 'forbidden'; end if;
@@ -1062,7 +1080,7 @@ end $$;
 
 -- Handle availability for the sign-up form (profiles are public, this just avoids a round of RLS).
 create or replace function handle_available(h text) returns boolean
-language sql stable security definer set search_path = public as $$
+language sql stable security definer set search_path = politique, extensions, public as $$
   select h ~ '^[a-z0-9_]{3,20}$' and not exists (select 1 from profiles where handle = h)
 $$;
 
@@ -1188,20 +1206,20 @@ alter publication supabase_realtime add table notifications, messages;
 -- "documents" (private: ID documents for verification)
 -- ---------------------------------------------------------------------------
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
-values ('media', 'media', true, 52428800, array['image/jpeg','image/png','image/webp','image/gif','video/mp4','video/webm'])
+values ('politique-media', 'politique-media', true, 52428800, array['image/jpeg','image/png','image/webp','image/gif','video/mp4','video/webm'])
 on conflict (id) do nothing;
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
-values ('documents', 'documents', false, 10485760, array['image/jpeg','image/png','application/pdf'])
+values ('politique-documents', 'politique-documents', false, 10485760, array['image/jpeg','image/png','application/pdf'])
 on conflict (id) do nothing;
 
-create policy media_read on storage.objects for select using (bucket_id = 'media');
-create policy media_write on storage.objects for insert with check (
-  bucket_id = 'media' and auth.uid() is not null and (storage.foldername(name))[1] = auth.uid()::text);
-create policy media_delete on storage.objects for delete using (
-  bucket_id = 'media' and (storage.foldername(name))[1] = auth.uid()::text);
-create policy documents_own on storage.objects for all using (
-  bucket_id = 'documents' and ((storage.foldername(name))[1] = auth.uid()::text or is_moderator()))
-  with check (bucket_id = 'documents' and (storage.foldername(name))[1] = auth.uid()::text);
+create policy politique_media_read on storage.objects for select using (bucket_id = 'politique-media');
+create policy politique_media_write on storage.objects for insert with check (
+  bucket_id = 'politique-media' and auth.uid() is not null and (storage.foldername(name))[1] = auth.uid()::text);
+create policy politique_media_delete on storage.objects for delete using (
+  bucket_id = 'politique-media' and (storage.foldername(name))[1] = auth.uid()::text);
+create policy politique_documents_own on storage.objects for all using (
+  bucket_id = 'politique-documents' and ((storage.foldername(name))[1] = auth.uid()::text or is_moderator()))
+  with check (bucket_id = 'politique-documents' and (storage.foldername(name))[1] = auth.uid()::text);
 
 -- ---------------------------------------------------------------------------
 -- Privileges. Stated explicitly so the schema does not depend on a project's
@@ -1209,12 +1227,12 @@ create policy documents_own on storage.objects for all using (
 -- change; the revokes below are a second lock on data a signed-out visitor
 -- never needs.
 -- ---------------------------------------------------------------------------
-grant usage on schema public to anon, authenticated, service_role;
-grant select on all tables in schema public to anon;
-grant select, insert, update, delete on all tables in schema public to authenticated;
-grant all on all tables in schema public to service_role;
-grant usage, select on all sequences in schema public to authenticated, service_role;
-grant execute on all functions in schema public to anon, authenticated, service_role;
+grant usage on schema politique, extensions to anon, authenticated, service_role;
+grant select on all tables in schema politique to anon;
+grant select, insert, update, delete on all tables in schema politique to authenticated;
+grant all on all tables in schema politique to service_role;
+grant usage, select on all sequences in schema politique to authenticated, service_role;
+grant execute on all functions in schema politique to anon, authenticated, service_role;
 
 revoke all on private_profiles, notifications, conversations, conversation_members, messages,
   bookmarks, blocks, mutes, poll_votes, barometer_votes, interpellation_votes, proposition_votes,

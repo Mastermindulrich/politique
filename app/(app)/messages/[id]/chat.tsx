@@ -24,7 +24,7 @@ export function Chat({ conversationId, viewerId, lang, initial, members }: Props
     const supabase = supabaseBrowser();
     const channel = supabase
       .channel(`conv-${conversationId}`)
-      .on("postgres_changes", { event: "INSERT", schema: "public", table: "messages", filter: `conversation_id=eq.${conversationId}` }, (payload: { new: Message }) => {
+      .on("postgres_changes", { event: "INSERT", schema: "politique", table: "messages", filter: `conversation_id=eq.${conversationId}` }, (payload: { new: Message }) => {
         setMessages((m) => (m.some((x) => x.id === payload.new.id) ? m : [...m.filter((x) => !(x.id.startsWith("tmp-") && x.text === payload.new.text && x.sender_id === payload.new.sender_id)), payload.new]));
         if (payload.new.sender_id !== viewerId) void markConversationRead(conversationId);
       })

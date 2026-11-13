@@ -1,4 +1,4 @@
-import type { SupabaseClient } from "@supabase/supabase-js";
+import type { Db as SupabaseClient } from "@/lib/supabase/schema";
 import { cache } from "react";
 import { createClient, getViewer } from "@/lib/supabase/server";
 import type { FeedPost, Official, PrivateProfile } from "@/lib/types";
