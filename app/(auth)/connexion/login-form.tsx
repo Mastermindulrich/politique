@@ -27,7 +27,7 @@ export function LoginForm({ lang, next }: { lang: "fr" | "en"; next: string }) {
         email={email}
         lang={lang}
         onBack={() => setSent(false)}
-        onResend={async () => (await requestLoginCode(email)).ok}
+        onResend={async () => (await requestLoginCode(email, lang)).ok}
         onDone={() => { router.replace(next); router.refresh(); }}
       />
     );
@@ -40,7 +40,7 @@ export function LoginForm({ lang, next }: { lang: "fr" | "en"; next: string }) {
         e.preventDefault();
         start(async () => {
           setError(null);
-          const r = await requestLoginCode(email.trim());
+          const r = await requestLoginCode(email.trim(), lang);
           if (!r.ok) return setError(message(r.error));
           setSent(true);
         });
