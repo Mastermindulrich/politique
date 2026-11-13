@@ -13,7 +13,7 @@ const sql = (s, p) => db.query(s, p);
 // --- Supabase stubs -----------------------------------------------------------
 await db.exec(`
   create schema auth; create schema storage;
-  create table auth.users (id uuid primary key default gen_random_uuid(), email text, phone text, raw_user_meta_data jsonb);
+  create table auth.users (id uuid primary key default gen_random_uuid(), email text, phone text, raw_user_meta_data jsonb, last_sign_in_at timestamptz);
   create or replace function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('app.uid', true), '')::uuid $$;
   create table storage.buckets (id text primary key, name text, public boolean, file_size_limit bigint, allowed_mime_types text[]);
   create table storage.objects (id uuid default gen_random_uuid(), bucket_id text, name text);
@@ -24,6 +24,8 @@ await db.exec(`
 
 let schema = readFileSync(new URL("../supabase/migrations/0001_schema.sql", import.meta.url), "utf8");
 await db.exec(schema);
+await db.exec(readFileSync(new URL("../supabase/migrations/0002_auth_email_log.sql", import.meta.url), "utf8"));
+await db.exec(readFileSync(new URL("../supabase/migrations/0003_control_center.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/seed/ci_geo.sql", import.meta.url), "utf8"));
 await db.exec(`set search_path = politique, public`);
 
@@ -204,6 +206,51 @@ assert((await sql(`select join_politique($1) j`, [{ handle: "awakone", display_n
 const joined = (await sql(`select p.handle, pp.vote_region_id from profiles p join private_profiles pp on pp.user_id = p.id where p.id = $1`, [other])).rows[0];
 assert(joined.handle !== "awakone" && joined.vote_region_id === 1, "taken handle replaced, voting place kept: " + JSON.stringify(joined));
 await as(null);
+
+// Owner control center.
+await sql(`insert into owner_claims (email) values ('boss@x.ci')`);
+const boss = await u("boss");
+assert((await sql(`select is_owner from profiles where id = $1`, [boss])).rows[0].is_owner === true, "claimed e-mail becomes owner");
+assert((await sql(`select is_owner from profiles where id = $1`, [yao])).rows[0].is_owner === false, "others are not owner");
+await asRole(yao, async () => {
+  await fails(() => sql(`update profiles set is_admin = true where id = $1`, [yao]), "self-promotion to admin");
+  await fails(() => sql(`select owner_set_setting('posting', 'false')`), "non-owner changing a setting");
+  await fails(() => sql(`select admin_stats()`), "member reading admin stats");
+});
+await asRole(boss, async () => {
+  await sql(`select owner_set_role($1, 'admin')`, [kof]);
+  await sql(`select owner_set_setting('posting', 'false')`);
+  const m = (await sql(`select * from admin_members(null, 'staff')`)).rows;
+  assert(m.length === 2 && m.every((r) => r.email), "owner lists staff with e-mails");
+  assert((await sql(`select (admin_stats()->>'members')::int n`)).rows[0].n >= 4, "owner reads stats");
+  await sql(`insert into posts (author_id, text) values ($1, 'le patron teste')`, [boss]);
+});
+await asRole(awa, async () => {
+  await fails(() => sql(`insert into posts (author_id, text) values ($1, 'coupé')`, [awa]), "posting while posting is switched off");
+});
+await asRole(null, async () => {
+  await fails(() => sql(`select detach_member($1, $2)`, [awa, kof]), "visitor detaching a member's records");
+}, "anon");
+await asRole(kof, async () => {
+  await fails(() => sql(`select detach_member($1, $2)`, [awa, kof]), "admin detaching a member's records");
+  assert((await sql(`select email from admin_members() limit 1`)).rows[0].email === null, "admins do not see e-mails");
+  await fails(() => sql(`select mod_suspend($1, now() + interval '1 day', 'x')`, [boss]), "admin suspending the owner");
+  await fails(() => sql(`select owner_set_role($1, 'member')`, [awa]), "admin changing roles");
+});
+await asRole(boss, async () => {
+  await sql(`select owner_set_setting('posting', 'true')`);
+  await sql(`select owner_set_setting('signups_open', 'false')`);
+});
+const late = (await sql(`insert into auth.users (email) values ('late@x.ci') returning id`)).rows[0].id;
+await as(late);
+assert((await sql(`select join_politique() j`)).rows[0].j === false, "closed sign-ups block joining");
+await as(null);
+await asRole(boss, async () => {
+  await sql(`select owner_set_setting('signups_open', 'true')`);
+  await sql(`select owner_remove_member($1)`, [yao]);
+  assert((await sql(`select count(*)::int n from admin_log`)).rows[0].n >= 5, "actions are logged");
+});
+assert((await sql(`select count(*)::int n from profiles where id = $1`, [yao])).rows[0].n === 0, "owner removed a member");
 
 console.log("schema OK: all smoke and RLS checks passed");
 await db.close();

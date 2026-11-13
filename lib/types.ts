@@ -22,6 +22,7 @@ export type Profile = {
   followers_count: number;
   following_count: number;
   posts_count: number;
+  is_owner?: boolean;
   is_admin: boolean;
   is_moderator: boolean;
   suspended_until: string | null;

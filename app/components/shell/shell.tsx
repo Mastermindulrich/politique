@@ -54,7 +54,7 @@ export async function Shell({ viewer, children, hideRight = false }: { viewer: P
           <Link href={viewer ? "/accueil" : "/"} className="mb-2 flex h-12 items-center px-3" aria-label="POLITIQUE">
             <Wordmark />
           </Link>
-          <NavLinks lang={lang} handle={viewer?.handle ?? null} unread={unread} isModerator={Boolean(viewer?.is_moderator || viewer?.is_admin)} signedIn={Boolean(viewer)} />
+          <NavLinks lang={lang} handle={viewer?.handle ?? null} unread={unread} isModerator={Boolean(viewer?.is_moderator || viewer?.is_admin || viewer?.is_owner)} isStaff={Boolean(viewer?.is_admin || viewer?.is_owner)} signedIn={Boolean(viewer)} />
         </div>
         {viewer ? (
           <Link href={`/u/${viewer.handle}`} className="flex items-center gap-3 rounded-full p-2 hover:bg-paper">

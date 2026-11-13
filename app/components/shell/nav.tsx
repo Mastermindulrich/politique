@@ -11,7 +11,7 @@ import { I } from "../ui/icons";
 type Unread = { notifications: number; messages: number };
 type Item = { href: string; label: string; icon: keyof typeof I; badge?: number; match?: string[] };
 
-function items(lang: "fr" | "en", handle: string | null, unread: Unread, isModerator: boolean, signedIn: boolean): Item[] {
+function items(lang: "fr" | "en", handle: string | null, unread: Unread, isModerator: boolean, signedIn: boolean, isStaff = false): Item[] {
   const t = dict(lang).nav;
   const pub: Item[] = [
     { href: signedIn ? "/accueil" : "/explorer", label: signedIn ? t.home : t.explore, icon: signedIn ? "home" : "search" },
@@ -27,6 +27,7 @@ function items(lang: "fr" | "en", handle: string | null, unread: Unread, isModer
     { href: `/u/${handle}`, label: t.profile, icon: "user" },
     { href: "/parametres", label: t.settings, icon: "settings" },
     ...(isModerator ? [{ href: "/admin", label: t.admin, icon: "shield" as const }] : []),
+    ...(isStaff ? [{ href: "/controle", label: lang === "fr" ? "Centre de contrôle" : "Control center", icon: "sliders" as const }] : []),
   ];
 }
 
@@ -69,7 +70,7 @@ function active(pathname: string, it: Item) {
   return m.some((p) => pathname === p || pathname.startsWith(p.endsWith("/") ? p : p + "/"));
 }
 
-export function NavLinks({ lang, handle, unread: initial, isModerator, signedIn }: { lang: "fr" | "en"; handle: string | null; unread: Unread; isModerator: boolean; signedIn: boolean }) {
+export function NavLinks({ lang, handle, unread: initial, isModerator, isStaff = false, signedIn }: { lang: "fr" | "en"; handle: string | null; unread: Unread; isModerator: boolean; isStaff?: boolean; signedIn: boolean }) {
   const pathname = usePathname();
   const unread = useLiveUnread(initial, signedIn);
   const [open, setOpen] = useState(false);
@@ -78,7 +79,7 @@ export function NavLinks({ lang, handle, unread: initial, isModerator, signedIn 
   return (
     <>
       <nav aria-label="Navigation principale" className="flex flex-col gap-0.5">
-        {items(lang, handle, unread, isModerator, signedIn).map((it) => {
+        {items(lang, handle, unread, isModerator, signedIn, isStaff).map((it) => {
           const Icon = I[it.icon];
           const on = active(pathname, it);
           return (

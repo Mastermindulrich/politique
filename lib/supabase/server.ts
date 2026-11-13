@@ -45,11 +45,14 @@ export const getViewer = cache(async (): Promise<Profile | null> => {
   } = await supabase.auth.getUser();
   if (!user) return null;
   const { data } = await supabase.from("profiles").select("*").eq("id", user.id).maybeSingle();
-  if (data) return data as Profile;
+  if (data) return withOwner(data as Profile);
   // Signed in to the shared auth project but not a POLITIQUE member yet (for example an
   // account made on the other site): join now; /bienvenue then asks where they vote.
   const { data: joined } = await supabase.rpc("join_politique");
   if (!joined) return null;
   const { data: fresh } = await supabase.from("profiles").select("*").eq("id", user.id).maybeSingle();
-  return (fresh as Profile | null) ?? null;
+  return fresh ? withOwner(fresh as Profile) : null;
 });
+
+/** The owner has every admin power; the database's is_admin() says the same. */
+const withOwner = (p: Profile): Profile => (p.is_owner ? { ...p, is_admin: true } : p);
