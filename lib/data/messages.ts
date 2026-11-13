@@ -1,4 +1,4 @@
-import type { SupabaseClient } from "@supabase/supabase-js";
+import type { Db as SupabaseClient } from "@/lib/supabase/schema";
 import type { Conversation, Message } from "@/lib/types";
 import { fetchAuthors } from "./people";
 

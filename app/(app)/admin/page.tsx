@@ -98,7 +98,7 @@ async function Verifications({ supabase, lang }: { supabase: Client; lang: "fr" 
   const { data: offRows } = officialIds.length ? await supabase.from("officials").select("*").in("id", officialIds) : { data: [] };
   const officials = new Map(((offRows ?? []) as Official[]).map((o) => [o.id, o]));
   // Short-lived signed links: documents never get a public URL.
-  const sign = async (path: string | null) => (path ? (await supabase.storage.from("documents").createSignedUrl(path, 600)).data?.signedUrl ?? null : null);
+  const sign = async (path: string | null) => (path ? (await supabase.storage.from("politique-documents").createSignedUrl(path, 600)).data?.signedUrl ?? null : null);
   const links = await Promise.all(rows.map(async (r) => ({ id: r.id, doc: await sign(r.document_path), proof: await sign(r.proof_path) })));
   const linkById = new Map(links.map((l) => [l.id, l]));
   return (

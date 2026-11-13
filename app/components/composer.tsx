@@ -59,12 +59,12 @@ export function Composer({ lang, parentId, replyTo, quotedId, quotedPreview, aut
         }
         const ext = (file.name.split(".").pop() || "bin").toLowerCase().replace(/[^a-z0-9]/g, "");
         const path = `${uid}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
-        const { error: upErr } = await supabase.storage.from("media").upload(path, file, { contentType: file.type, cacheControl: "31536000" });
+        const { error: upErr } = await supabase.storage.from("politique-media").upload(path, file, { contentType: file.type, cacheControl: "31536000" });
         if (upErr) {
           setError(upErr.message);
           continue;
         }
-        const { data } = supabase.storage.from("media").getPublicUrl(path);
+        const { data } = supabase.storage.from("politique-media").getPublicUrl(path);
         next.push({ type: isVideo ? "video" : "image", url: data.publicUrl, alt: "" });
       }
       setMedia((m) => [...m, ...next].slice(0, 4));

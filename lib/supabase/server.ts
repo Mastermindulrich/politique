@@ -2,6 +2,7 @@ import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { cache } from "react";
 import type { Profile } from "@/lib/types";
+import { DB_SCHEMA } from "./schema";
 
 export const env = {
   url: process.env.NEXT_PUBLIC_SUPABASE_URL || "",
@@ -14,6 +15,7 @@ export const supabaseConfigured = Boolean(env.url && env.key);
 export async function createClient() {
   const store = await cookies();
   return createServerClient(env.url, env.key, {
+    db: { schema: DB_SCHEMA },
     cookies: {
       getAll: () => store.getAll(),
       setAll: (list) => {
@@ -31,7 +33,7 @@ export async function createClient() {
 export function createServiceClient() {
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!key) return null;
-  return createServerClient(env.url, key, { cookies: { getAll: () => [], setAll: () => {} } });
+  return createServerClient(env.url, key, { db: { schema: DB_SCHEMA }, cookies: { getAll: () => [], setAll: () => {} } });
 }
 
 /** The signed-in user's profile, or null. Cached per request. */
@@ -43,5 +45,11 @@ export const getViewer = cache(async (): Promise<Profile | null> => {
   } = await supabase.auth.getUser();
   if (!user) return null;
   const { data } = await supabase.from("profiles").select("*").eq("id", user.id).maybeSingle();
-  return (data as Profile | null) ?? null;
+  if (data) return data as Profile;
+  // Signed in to the shared auth project but not a POLITIQUE member yet (for example an
+  // account made on the other site): join now; /bienvenue then asks where they vote.
+  const { data: joined } = await supabase.rpc("join_politique");
+  if (!joined) return null;
+  const { data: fresh } = await supabase.from("profiles").select("*").eq("id", user.id).maybeSingle();
+  return (fresh as Profile | null) ?? null;
 });

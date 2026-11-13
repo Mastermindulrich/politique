@@ -39,12 +39,14 @@ Without Supabase variables the landing page, rules and privacy pages work and th
 ## Connect a Supabase project
 
 1. Create a project (Paris, `eu-west-3`, is the closest region to Abidjan).
-2. In the SQL editor, run `supabase/migrations/0001_schema.sql`, then `supabase/seed/ci_geo.sql`.
+2. In the SQL editor, run `supabase/migrations/0001_schema.sql`, then `supabase/seed/ci_geo.sql`. Everything goes into a `politique` schema (storage buckets `politique-media` and `politique-documents`), so the project can be shared with another app.
+   Then Settings → API → Exposed schemas: add `politique`.
+   Sharing a project means sharing its auth users and email templates. Nothing is attached to `auth.users`: people become members through `politique.join_politique()`, which the app calls after sign-in, and deleting a POLITIQUE account removes only the POLITIQUE data. To move out later: `pg_dump --schema=politique`, restore into the new project, and copy the members' auth users.
 3. Authentication → Emails: in the "Magic Link" and "Confirm signup" templates, show the code with `{{ .Token }}`. The app asks people to type that code. Links in the email also work and land on `/auth/confirm`.
 4. Authentication → URL configuration: set the site URL and add `<site>/auth/confirm` to the redirect URLs. Set up custom SMTP (for example Resend) before opening sign-ups: the built-in sender is limited to a few emails an hour.
 5. Set `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SERVICE_ROLE_KEY` and `NEXT_PUBLIC_BETA_OPEN=1` in the host's environment.
 6. Sign up, then make yourself admin once in the SQL editor:
-   `update profiles set is_admin = true, is_moderator = true where handle = 'your_handle';`
+   `update politique.profiles set is_admin = true, is_moderator = true where handle = 'your_handle';`
 7. Open `/admin` to add officials to the directory, review badge requests and reports, and publish the monthly barometer.
 
 ## Where things are
