@@ -22,16 +22,8 @@ export type IconName =
 export type Content = {
   htmlLang: string;
   meta: { title: string; description: string };
-  nav: { features: string; who: string; roadmap: string; faq: string; cta: string; switchLabel: string; switchHref: string };
-  hero: {
-    eyebrow: string;
-    title: string;
-    titleAccent: string;
-    body: string;
-    primary: string;
-    secondary: string;
-    note: string;
-  };
+  nav: { features: string; who: string; how: string; faq: string; login: string; signup: string; switchLabel: string; switchHref: string };
+  hero: { eyebrow: string; title: string; titleAccent: string; body: string; primary: string; secondary: string; note: string };
   mock: {
     tabs: [string, string];
     mp: { name: string; handle: string; role: string; time: string; text: string; likes: string; replies: string; reposts: string };
@@ -41,21 +33,10 @@ export type Content = {
   };
   who: { title: string; body: string; groups: { tag: string; title: string; points: string[] }[] };
   features: { title: string; body: string; items: Feature[] };
-  roadmap: { title: string; body: string; steps: { when: string; title: string; body: string; state: "done" | "now" | "next" }[] };
+  how: { title: string; body: string; steps: { title: string; body: string }[] };
   faq: { title: string; items: { q: string; a: string }[] };
-  cta: { title: string; body: string };
-  form: {
-    email: string;
-    emailPlaceholder: string;
-    role: string;
-    roles: { value: string; label: string }[];
-    submit: string;
-    sending: string;
-    success: string;
-    error: string;
-    consent: string;
-  };
-  footer: { madeBy: string; rights: string; privacy: string; contact: string };
+  cta: { title: string; body: string; button: string; login: string };
+  footer: { madeBy: string; rights: string; rules: string; privacy: string; directory: string };
 };
 
 const fr: Content = {
@@ -63,26 +44,18 @@ const fr: Content = {
   meta: {
     title: "POLITIQUE — Le réseau social politique de la Côte d'Ivoire",
     description:
-      "POLITIQUE met les citoyens et leurs élus sur la même place publique : posts, sondages, débats vidéo et comptes vérifiés. Inscrivez-vous pour la bêta.",
+      "Sur POLITIQUE, les citoyens interpellent leurs élus, suivent leurs promesses et débattent à visage découvert. Le réseau social de la vie politique ivoirienne.",
   },
-  nav: {
-    features: "Fonctions",
-    who: "Pour qui",
-    roadmap: "Calendrier",
-    faq: "Questions",
-    cta: "Rejoindre la bêta",
-    switchLabel: "English",
-    switchHref: "/en",
-  },
+  nav: { features: "Fonctionnalités", who: "Pour qui", how: "Comment ça marche", faq: "Questions", login: "Se connecter", signup: "Créer un compte", switchLabel: "English", switchHref: "/en" },
   hero: {
-    eyebrow: "Bientôt en Côte d'Ivoire",
-    title: "La parole des citoyens,",
-    titleAccent: "en face de leurs élus.",
+    eyebrow: "Le réseau social de la vie politique ivoirienne",
+    title: "Vos élus vous doivent",
+    titleAccent: "des réponses.",
     body:
-      "POLITIQUE est un réseau social dédié à la vie politique ivoirienne. Un fil public où les citoyens, les élus, les institutions et les médias se parlent directement, avec des comptes vérifiés et des règles claires.",
-    primary: "Rejoindre la liste d'attente",
-    secondary: "Voir les fonctions",
-    note: "Gratuit. Français et anglais. Web et Android d'abord, iOS ensuite.",
+      "Sur POLITIQUE, citoyens, élus, institutions et médias se parlent sans intermédiaire. Retrouvez les élus de votre commune, posez-leur vos questions en public et suivez leurs engagements, du conseil municipal à l'Assemblée nationale.",
+    primary: "Créer mon compte",
+    secondary: "Découvrir",
+    note: "Gratuit, en français et en anglais. Votre lieu de vote reste privé.",
   },
   mock: {
     tabs: ["Pour vous", "Abonnements"],
@@ -92,7 +65,7 @@ const fr: Content = {
       handle: "@awakone",
       role: "Députée · Cocody",
       time: "2 h",
-      text: "Ce matin en commission : le budget 2027 des routes communales est passé. Je publie le détail par quartier cet après-midi. Vos questions ici, j'y réponds ce soir.",
+      text: "Le budget 2027 des routes communales est passé ce matin en commission. Je publie le détail quartier par quartier cet après-midi. Posez vos questions en réponse, je vous lis ce soir.",
       likes: "1 240",
       replies: "312",
       reposts: "208",
@@ -102,118 +75,98 @@ const fr: Content = {
       handle: "@yaok",
       role: "Citoyen · Yopougon",
       time: "5 h",
-      question: "Priorité n°1 pour la commune en 2027 ?",
+      question: "Quelle doit être la priorité de la commune en 2027 ?",
       options: [
-        { label: "Routes et drainage", pct: 46 },
+        { label: "Routes et caniveaux", pct: 46 },
         { label: "Écoles", pct: 28 },
         { label: "Santé", pct: 18 },
         { label: "Sécurité", pct: 8 },
       ],
-      votes: "4 812 votes · 2 jours restants",
+      votes: "4 812 votes · encore 2 jours",
     },
     video: {
-      name: "Fraternité Matin",
-      handle: "@fratmat",
+      name: "Lagune Infos",
+      handle: "@laguneinfos",
       role: "Média",
       time: "Hier",
-      text: "Débat : la décentralisation, dix ans après. Avec trois maires et un économiste.",
-      duration: "28:14",
-      caption: "Sous-titres FR",
+      text: "Débat : où en est la décentralisation ? Trois maires et un économiste face à vos questions.",
+      duration: "4:58",
+      caption: "Extrait",
     },
   },
   who: {
-    title: "Une place publique pour tout le monde",
-    body: "POLITIQUE est pensé pour trois publics qui, aujourd'hui, se parlent peu et mal.",
+    title: "Une place publique pour tous",
+    body: "Le débat politique se passe déjà en ligne, mais éparpillé et sans règles. POLITIQUE le rassemble en un seul lieu, où chacun sait à qui il parle.",
     groups: [
       {
         tag: "Citoyens",
-        title: "Suivre, questionner, voter",
+        title: "Suivre, interpeller, peser",
         points: [
-          "Retrouvez les élus de votre commune et suivez ce qu'ils font.",
-          "Posez une question publique, obtenez une réponse publique.",
-          "Votez dans des sondages ouverts et voyez les résultats en direct.",
+          "Retrouvez automatiquement les élus de l'endroit où vous votez.",
+          "Posez une question publique : plus elle est soutenue, plus la réponse est attendue.",
+          "Votez au baromètre du mois et proposez des idées pour votre commune.",
         ],
       },
       {
         tag: "Élus et institutions",
-        title: "Parler directement, sans filtre",
+        title: "Parler directement à ses administrés",
         points: [
-          "Un compte vérifié avec votre fonction et votre circonscription.",
-          "Des séances de questions-réponses programmées avec vos administrés.",
-          "Des statistiques claires sur ce qui est lu, partagé et débattu.",
+          "Un compte vérifié qui affiche votre mandat et votre circonscription.",
+          "Des permanences en ligne pour répondre en direct, devant tout le monde.",
+          "Le nombre de vos électeurs présents sur POLITIQUE, sans jamais savoir qui ils sont.",
         ],
       },
       {
         tag: "Médias",
         title: "Informer là où le débat se tient",
         points: [
-          "Des comptes média identifiés, avec aperçu des articles.",
-          "Des vidéos longues, jusqu'à 30 minutes, avec sous-titres.",
-          "Des tendances par ville pour suivre ce qui monte.",
+          "Un compte média identifié par un badge.",
+          "La possibilité d'ajouter du contexte à une publication trompeuse.",
+          "Les tendances commune par commune, pour voir ce qui monte.",
         ],
       },
     ],
   },
   features: {
-    title: "Tout ce qu'un réseau social fait, adapté à la Côte d'Ivoire",
-    body: "Posts, réponses, reposts, messages privés, sondages et vidéos. Plus ce qui manque ailleurs : la vérification des élus et une modération en français.",
+    title: "Un vrai réseau social, pensé pour la Côte d'Ivoire",
+    body: "Publications, réponses, republications, messages privés et sondages, comme ailleurs. Et en plus, des outils faits pour demander des comptes.",
     items: [
-      { icon: "feed", title: "Deux fils, un choix", body: "« Pour vous » classe par pertinence. « Abonnements » reste chronologique. Vous décidez." },
-      { icon: "badge", title: "Élus vérifiés", body: "Députés, maires, ministères et médias passent une vérification d'identité avant d'obtenir leur badge." },
-      { icon: "poll", title: "Sondages", body: "Jusqu'à quatre choix, un vote par personne, résultats publics." },
-      { icon: "video", title: "Vidéos jusqu'à 30 min", body: "Débats, conseils municipaux, interviews. Avec sous-titres et lecture adaptée aux connexions mobiles." },
-      { icon: "map", title: "Explorer par ville", body: "Tendances et élus filtrés par commune : Abidjan, Bouaké, Yamoussoukro, Korhogo, San-Pédro et les autres." },
-      { icon: "shield", title: "Modération claire", body: "Signalement en un geste, règles publiées en français, revue humaine pour chaque sanction." },
-      { icon: "chat", title: "Messages privés", body: "Conversations à deux ou en groupe, avec blocage et sourdine." },
-      { icon: "chart", title: "Statistiques utiles", body: "Chaque compte voit sa portée. Les comptes vérifiés en voient davantage." },
+      { icon: "map", title: "Mes élus", body: "Maire, député, conseil régional : POLITIQUE vous montre qui vous représente, à partir de l'endroit où vous votez." },
+      { icon: "chat", title: "Interpellations", body: "Une question publique adressée à un élu. Les citoyens la soutiennent, l'élu y répond devant tous." },
+      { icon: "badge", title: "Promesses suivies", body: "Chaque engagement est daté et sourcé : annoncé, en cours, tenu ou non tenu." },
+      { icon: "chart", title: "Le baromètre", body: "Une question par mois posée à tout le pays, avec des résultats par commune à partir de 50 votes." },
+      { icon: "poll", title: "Boîte à idées", body: "Proposez une idée concrète pour votre commune. Les plus soutenues sont transmises à vos élus." },
+      { icon: "video", title: "Permanences en ligne", body: "L'élu ouvre un créneau et répond en direct aux questions de ses administrés." },
+      { icon: "feed", title: "Deux fils", body: "« Pour vous » met en avant ce qui compte autour de vous. « Abonnements » reste chronologique." },
+      { icon: "shield", title: "Modération humaine", body: "Règles publiées, signalement en un geste et décisions prises par des personnes, jamais par un robot seul." },
     ],
   },
-  roadmap: {
-    title: "Où en est-on",
-    body: "Le projet a démarré en novembre 2026. Les dates ci-dessous sont des objectifs, pas des promesses.",
+  how: {
+    title: "Comment ça marche",
+    body: "Trois minutes suffisent pour créer votre compte.",
     steps: [
-      { when: "Novembre 2026", title: "Conception et mise en place", body: "Spécification, choix techniques, ce site et la liste d'attente.", state: "now" },
-      { when: "Début 2027", title: "Bêta fermée", body: "Web et Android, sur invitation. Les premiers inscrits sur cette page entrent en premier.", state: "next" },
-      { when: "Premier trimestre 2027", title: "Lancement public", body: "Vidéos longues, messages privés, application iOS.", state: "next" },
-      { when: "Ensuite", title: "Au-delà de la Côte d'Ivoire", body: "D'autres pays d'Afrique francophone, puis anglophone.", state: "next" },
+      { title: "Créez votre compte", body: "Une adresse e-mail suffit : vous recevez un code, pas de mot de passe à retenir." },
+      { title: "Indiquez où vous votez", body: "Région, département, commune. Cette information reste privée : elle sert seulement à vous relier à vos élus." },
+      { title: "Prenez la parole", body: "Abonnez-vous à vos élus, interpellez-les, votez au baromètre et débattez avec vos concitoyens." },
     ],
   },
   faq: {
     title: "Questions fréquentes",
     items: [
-      { q: "Est-ce gratuit ?", a: "Oui. L'inscription et l'utilisation sont gratuites. Des options payantes pour les organisations viendront plus tard, toujours signalées clairement." },
-      { q: "Qui vérifie les élus ?", a: "Une équipe humaine, sur présentation d'une pièce d'identité et d'un justificatif de fonction. Le badge indique la fonction et la circonscription." },
-      { q: "Dans quelles langues ?", a: "Français d'abord, anglais ensuite. D'autres langues suivront avec l'ouverture à d'autres pays." },
-      { q: "Et mes données ?", a: "Elles sont hébergées en Europe, chiffrées, et ne sont jamais vendues. Vous pouvez supprimer votre compte à tout moment." },
-      { q: "Puis-je m'inscrire si je ne suis pas en Côte d'Ivoire ?", a: "Oui. La diaspora est la bienvenue dès la bêta." },
+      { q: "Est-ce gratuit ?", a: "Oui, l'inscription et l'utilisation sont gratuites." },
+      { q: "Mon lieu de vote est-il visible ?", a: "Non. Il n'apparaît ni sur votre profil ni auprès des élus. Ceux-ci ne voient que des totaux, et seulement au-delà de 50 personnes." },
+      { q: "Comment un élu obtient-il son badge ?", a: "Il transmet une pièce d'identité et un justificatif de fonction. Un membre de l'équipe les vérifie avant d'accorder le badge." },
+      { q: "Qui modère les échanges ?", a: "Une équipe humaine, selon des règles publiques. Chaque publication, profil ou message peut être signalé." },
+      { q: "Puis-je m'inscrire depuis l'étranger ?", a: "Oui. La diaspora est la bienvenue : indiquez simplement l'endroit où vous êtes inscrit sur les listes électorales." },
     ],
   },
   cta: {
-    title: "Entrez dans la bêta en premier",
-    body: "Laissez votre email. Nous écrivons seulement pour les invitations et les grandes étapes, jamais plus d'une fois par mois.",
+    title: "Votre voix compte. Faites-la entendre.",
+    body: "Rejoignez les citoyens et les élus qui débattent déjà sur POLITIQUE.",
+    button: "Créer mon compte",
+    login: "J'ai déjà un compte",
   },
-  form: {
-    email: "Adresse email",
-    emailPlaceholder: "vous@exemple.ci",
-    role: "Vous êtes",
-    roles: [
-      { value: "citoyen", label: "Citoyen·ne" },
-      { value: "elu", label: "Élu·e ou institution" },
-      { value: "media", label: "Média ou journaliste" },
-      { value: "autre", label: "Autre" },
-    ],
-    submit: "M'inscrire",
-    sending: "Envoi…",
-    success: "C'est noté. Nous vous écrirons pour la bêta.",
-    error: "Ça n'a pas marché. Réessayez dans un instant.",
-    consent: "En vous inscrivant, vous acceptez de recevoir des emails sur POLITIQUE. Désinscription en un clic.",
-  },
-  footer: {
-    madeBy: "Un projet de",
-    rights: "Tous droits réservés.",
-    privacy: "Confidentialité",
-    contact: "Contact",
-  },
+  footer: { madeBy: "Un projet", rights: "Tous droits réservés.", rules: "Règles de la communauté", privacy: "Confidentialité", directory: "Annuaire des élus" },
 };
 
 const en: Content = {
@@ -221,26 +174,18 @@ const en: Content = {
   meta: {
     title: "POLITIQUE — Côte d'Ivoire's political social network",
     description:
-      "POLITIQUE puts citizens and their elected officials on the same public square: posts, polls, video debates and verified accounts. Sign up for the beta.",
+      "On POLITIQUE, citizens question their elected officials in public, track their promises and debate openly. The social network for Ivorian political life.",
   },
-  nav: {
-    features: "Features",
-    who: "Who it's for",
-    roadmap: "Timeline",
-    faq: "FAQ",
-    cta: "Join the beta",
-    switchLabel: "Français",
-    switchHref: "/",
-  },
+  nav: { features: "Features", who: "Who it's for", how: "How it works", faq: "FAQ", login: "Log in", signup: "Create account", switchLabel: "Français", switchHref: "/" },
   hero: {
-    eyebrow: "Coming soon in Côte d'Ivoire",
-    title: "Citizens' voices,",
-    titleAccent: "face to face with their representatives.",
+    eyebrow: "The social network for Ivorian political life",
+    title: "Your representatives",
+    titleAccent: "owe you answers.",
     body:
-      "POLITIQUE is a social network built for Ivorian political life. One public feed where citizens, elected officials, institutions and the press talk to each other directly, with verified accounts and clear rules.",
-    primary: "Join the waitlist",
-    secondary: "See the features",
-    note: "Free. French and English. Web and Android first, iOS next.",
+      "On POLITIQUE, citizens, elected officials, institutions and the press talk to each other directly. Find the officials for your commune, ask them questions in public and follow their commitments, from the town council to the National Assembly.",
+    primary: "Create my account",
+    secondary: "Learn more",
+    note: "Free, in French and English. Where you vote stays private.",
   },
   mock: {
     tabs: ["For you", "Following"],
@@ -250,7 +195,7 @@ const en: Content = {
       handle: "@awakone",
       role: "MP · Cocody",
       time: "2h",
-      text: "In committee this morning: the 2027 budget for local roads passed. I'll post the breakdown by neighbourhood this afternoon. Ask your questions here, I'll answer tonight.",
+      text: "The 2027 budget for communal roads passed in committee this morning. I'll publish the breakdown by neighbourhood this afternoon. Reply with your questions and I'll read them tonight.",
       likes: "1,240",
       replies: "312",
       reposts: "208",
@@ -260,118 +205,98 @@ const en: Content = {
       handle: "@yaok",
       role: "Citizen · Yopougon",
       time: "5h",
-      question: "Top priority for the commune in 2027?",
+      question: "What should the commune's top priority be in 2027?",
       options: [
         { label: "Roads and drainage", pct: 46 },
         { label: "Schools", pct: 28 },
         { label: "Health", pct: 18 },
-        { label: "Safety", pct: 8 },
+        { label: "Security", pct: 8 },
       ],
       votes: "4,812 votes · 2 days left",
     },
     video: {
-      name: "Fraternité Matin",
-      handle: "@fratmat",
+      name: "Lagune Infos",
+      handle: "@laguneinfos",
       role: "Media",
       time: "Yesterday",
-      text: "Debate: decentralisation, ten years on. With three mayors and an economist.",
-      duration: "28:14",
-      caption: "FR subtitles",
+      text: "Debate: where does decentralisation stand? Three mayors and an economist take your questions.",
+      duration: "4:58",
+      caption: "Clip",
     },
   },
   who: {
     title: "A public square for everyone",
-    body: "POLITIQUE is designed for three groups that, today, rarely talk to each other, and rarely well.",
+    body: "Political debate already happens online, but it is scattered and has no rules. POLITIQUE brings it to one place, where everyone knows who they are talking to.",
     groups: [
       {
         tag: "Citizens",
-        title: "Follow, ask, vote",
+        title: "Follow, question, weigh in",
         points: [
-          "Find the officials for your commune and follow what they do.",
-          "Ask a public question, get a public answer.",
-          "Vote in open polls and watch the results live.",
+          "Automatically find the officials for the place where you vote.",
+          "Ask a public question: the more support it gets, the more an answer is expected.",
+          "Vote in the monthly barometer and propose ideas for your commune.",
         ],
       },
       {
         tag: "Officials and institutions",
-        title: "Speak directly, unfiltered",
+        title: "Talk directly to constituents",
         points: [
-          "A verified account showing your office and constituency.",
-          "Scheduled Q&A sessions with the people you represent.",
-          "Clear numbers on what gets read, shared and debated.",
+          "A verified account showing your mandate and constituency.",
+          "Live sessions to answer questions in real time, in public.",
+          "How many of your constituents are on POLITIQUE, without ever knowing who they are.",
         ],
       },
       {
         tag: "Media",
         title: "Report where the debate happens",
         points: [
-          "Identified media accounts, with article previews.",
-          "Long videos, up to 30 minutes, with subtitles.",
-          "City-level trends to see what is rising.",
+          "A media account identified by a badge.",
+          "The ability to add context to a misleading post.",
+          "Trends commune by commune, to see what is rising.",
         ],
       },
     ],
   },
   features: {
-    title: "Everything a social network does, built for Côte d'Ivoire",
-    body: "Posts, replies, reposts, direct messages, polls and video. Plus what is missing elsewhere: verification of elected officials and moderation in French.",
+    title: "A real social network, built for Côte d'Ivoire",
+    body: "Posts, replies, reposts, direct messages and polls, like elsewhere. Plus tools made for holding power to account.",
     items: [
-      { icon: "feed", title: "Two feeds, your choice", body: "“For you” ranks by relevance. “Following” stays chronological. You decide." },
-      { icon: "badge", title: "Verified officials", body: "MPs, mayors, ministries and media outlets pass an identity check before they get their badge." },
-      { icon: "poll", title: "Polls", body: "Up to four options, one vote per person, public results." },
-      { icon: "video", title: "Video up to 30 min", body: "Debates, council meetings, interviews. With subtitles and playback tuned for mobile connections." },
-      { icon: "map", title: "Explore by city", body: "Trends and officials filtered by commune: Abidjan, Bouaké, Yamoussoukro, Korhogo, San-Pédro and more." },
-      { icon: "shield", title: "Clear moderation", body: "One-tap reporting, rules published in French, a human review for every sanction." },
-      { icon: "chat", title: "Direct messages", body: "One-to-one or group conversations, with block and mute." },
-      { icon: "chart", title: "Useful stats", body: "Every account sees its reach. Verified accounts see more." },
+      { icon: "map", title: "My officials", body: "Mayor, MP, regional council: POLITIQUE shows who represents you, based on where you vote." },
+      { icon: "chat", title: "Public questions", body: "A question addressed to an official. Citizens back it, and the official answers in front of everyone." },
+      { icon: "badge", title: "Tracked promises", body: "Every commitment is dated and sourced: announced, in progress, kept or not kept." },
+      { icon: "chart", title: "The barometer", body: "One question a month for the whole country, with results per commune from 50 votes." },
+      { icon: "poll", title: "Idea box", body: "Propose a concrete idea for your commune. The most supported are passed on to your officials." },
+      { icon: "video", title: "Live sessions", body: "An official opens a slot and answers constituents' questions live." },
+      { icon: "feed", title: "Two feeds", body: "\"For you\" highlights what matters around you. \"Following\" stays chronological." },
+      { icon: "shield", title: "Human moderation", body: "Published rules, one-tap reporting and decisions made by people, never by a bot alone." },
     ],
   },
-  roadmap: {
-    title: "Where we are",
-    body: "The project started in November 2026. The dates below are targets, not promises.",
+  how: {
+    title: "How it works",
+    body: "Creating your account takes three minutes.",
     steps: [
-      { when: "November 2026", title: "Design and setup", body: "Specification, technical choices, this site and the waitlist.", state: "now" },
-      { when: "Early 2027", title: "Closed beta", body: "Web and Android, by invitation. The first people on this list get in first.", state: "next" },
-      { when: "Q1 2027", title: "Public launch", body: "Long videos, direct messages, iOS app.", state: "next" },
-      { when: "After that", title: "Beyond Côte d'Ivoire", body: "Other French-speaking African countries, then English-speaking ones.", state: "next" },
+      { title: "Create your account", body: "All you need is an email address: you get a code, no password to remember." },
+      { title: "Say where you vote", body: "Region, department, commune. This stays private: it only links you to your officials." },
+      { title: "Speak up", body: "Follow your officials, question them, vote in the barometer and debate with fellow citizens." },
     ],
   },
   faq: {
     title: "Frequently asked questions",
     items: [
-      { q: "Is it free?", a: "Yes. Signing up and using POLITIQUE is free. Paid options for organisations will come later, always clearly labelled." },
-      { q: "Who verifies officials?", a: "A human team, on presentation of an ID and proof of office. The badge shows the office and the constituency." },
-      { q: "Which languages?", a: "French first, English next. Other languages will follow as we open to other countries." },
-      { q: "What about my data?", a: "It is hosted in Europe, encrypted, and never sold. You can delete your account at any time." },
-      { q: "Can I sign up if I'm not in Côte d'Ivoire?", a: "Yes. The diaspora is welcome from the beta onwards." },
+      { q: "Is it free?", a: "Yes, signing up and using POLITIQUE are free." },
+      { q: "Is my voting place visible?", a: "No. It never appears on your profile or to officials. They only see totals, and only above 50 people." },
+      { q: "How does an official get a badge?", a: "They send an ID and proof of office. A team member checks them before granting the badge." },
+      { q: "Who moderates?", a: "A human team, following public rules. Any post, profile or message can be reported." },
+      { q: "Can I sign up from abroad?", a: "Yes. The diaspora is welcome: just give the place where you are on the electoral roll." },
     ],
   },
   cta: {
-    title: "Get into the beta first",
-    body: "Leave your email. We only write for invitations and major milestones, never more than once a month.",
+    title: "Your voice counts. Make it heard.",
+    body: "Join the citizens and officials already debating on POLITIQUE.",
+    button: "Create my account",
+    login: "I already have an account",
   },
-  form: {
-    email: "Email address",
-    emailPlaceholder: "you@example.com",
-    role: "You are",
-    roles: [
-      { value: "citoyen", label: "A citizen" },
-      { value: "elu", label: "An official or institution" },
-      { value: "media", label: "Media or journalist" },
-      { value: "autre", label: "Other" },
-    ],
-    submit: "Sign me up",
-    sending: "Sending…",
-    success: "Noted. We'll write to you about the beta.",
-    error: "That didn't work. Try again in a moment.",
-    consent: "By signing up you agree to receive emails about POLITIQUE. Unsubscribe in one click.",
-  },
-  footer: {
-    madeBy: "A project by",
-    rights: "All rights reserved.",
-    privacy: "Privacy",
-    contact: "Contact",
-  },
+  footer: { madeBy: "A project by", rights: "All rights reserved.", rules: "Community rules", privacy: "Privacy", directory: "Officials directory" },
 };
 
 export const content: Record<Lang, Content> = { fr, en };

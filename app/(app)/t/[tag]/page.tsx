@@ -23,7 +23,7 @@ export default async function HashtagPage({ params }: { params: Promise<{ tag: s
   return (
     <>
       <PageHeader title={`#${tag}`} subtitle={meta.data ? `${meta.data.posts_count} posts` : undefined} back="/explorer" />
-      <Feed initial={posts} viewerId={viewer?.id ?? null} lang={lang} lowData={viewer?.low_data} loadMore={loadHashtag.bind(null, tag)} empty={lang === "fr" ? "Aucun post avec ce mot-clé." : "No posts with this hashtag."} />
+      <Feed initial={posts} viewerId={viewer?.id ?? null} lang={lang} lowData={viewer?.low_data} loadMore={loadHashtag.bind(null, tag)} empty={lang === "fr" ? "Aucune publication avec ce mot-clé." : "No posts with this hashtag."} />
     </>
   );
 }

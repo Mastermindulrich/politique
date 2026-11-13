@@ -117,7 +117,7 @@ export default async function ExplorePage({ searchParams }: { searchParams: Prom
       <section className="border-b border-line">
         <h2 className="px-4 pt-3 font-display text-[19px] font-bold">{cityName ? `${t.explore.trendsIn} ${cityName}` : t.explore.trends}</h2>
         {trends.length === 0 ? (
-          <p className="px-4 py-4 text-[14px] text-muted">{lang === "fr" ? "Pas encore de tendance ici. Publiez avec un #MotClé pour lancer la première." : "No trends here yet. Post with a #Hashtag to start the first one."}</p>
+          <p className="px-4 py-4 text-[14px] text-muted">{lang === "fr" ? "Aucune tendance pour l'instant. Ajoutez un #mot-clé à votre publication pour lancer la première." : "No trends here yet. Post with a #Hashtag to start the first one."}</p>
         ) : (
           <ol>
             {trends.map((tr, i) => (

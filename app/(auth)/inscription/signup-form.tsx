@@ -13,7 +13,7 @@ import { CodeStep } from "../code-step";
 
 const TYPES: AccountType[] = ["citoyen", "elu", "institution", "media"];
 const TYPE_LABELS: Record<"fr" | "en", Record<AccountType, string>> = {
-  fr: { citoyen: "Citoyen·ne", elu: "Élu·e", institution: "Institution", media: "Média" },
+  fr: { citoyen: "Citoyen", elu: "Élu", institution: "Institution", media: "Média" },
   en: { citoyen: "Citizen", elu: "Elected official", institution: "Institution", media: "Media" },
 };
 
@@ -68,7 +68,7 @@ export function SignupForm({ lang }: { lang: "fr" | "en" }) {
     if (!r.ok) {
       setError(
         r.error === "handle_taken" ? t.auth.handleTaken
-          : r.error === "rate" ? (lang === "fr" ? "Trop de tentatives. Patientez une minute." : "Too many attempts. Wait a minute.")
+          : r.error === "rate" ? (lang === "fr" ? "Trop de tentatives. Patientez une minute avant de réessayer." : "Too many attempts. Wait a minute.")
           : t.auth.error,
       );
       if (r.error === "handle_taken") setStep(1);
@@ -120,7 +120,7 @@ export function SignupForm({ lang }: { lang: "fr" | "en" }) {
                 onChange={(e) => { setHandleTouched(true); setHandle(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, "")); }}
               />
             </span>
-            {handle.length > 0 && !handleValid && <span className="mt-1 block text-[13px] text-muted">{lang === "fr" ? "3 à 20 caractères : lettres, chiffres, _" : "3 to 20 characters: letters, digits, _"}</span>}
+            {handle.length > 0 && !handleValid && <span className="mt-1 block text-[13px] text-muted">{lang === "fr" ? "De 3 à 20 caractères : lettres, chiffres ou _" : "3 to 20 characters: letters, digits, _"}</span>}
             {handleValid && handleFree === false && <span role="alert" className="mt-1 block text-[13px] font-medium text-orange">{t.auth.handleTaken}</span>}
             {handleValid && handleFree === true && <span className="mt-1 block text-[13px] font-medium text-green-deep">{lang === "fr" ? "Disponible" : "Available"}</span>}
           </label>

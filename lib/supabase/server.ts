@@ -29,7 +29,7 @@ export async function createClient() {
   });
 }
 
-/** Service-role client for trusted server work (waitlist, admin jobs). Never ship to the browser. */
+/** Service-role client for trusted server work (account deletion, signed document links). Never ship to the browser. */
 export function createServiceClient() {
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!key) return null;

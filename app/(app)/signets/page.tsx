@@ -17,7 +17,7 @@ export default async function BookmarksPage() {
   return (
     <>
       <PageHeader title={t.nav.bookmarks} subtitle={t.common.private} />
-      <Feed initial={posts} viewerId={viewer.id} lang={viewer.lang} lowData={viewer.low_data} loadMore={loadBookmarks} empty={viewer.lang === "fr" ? "Enregistrez un post depuis son menu pour le retrouver ici." : "Bookmark a post from its menu to find it here."} />
+      <Feed initial={posts} viewerId={viewer.id} lang={viewer.lang} lowData={viewer.low_data} loadMore={loadBookmarks} empty={viewer.lang === "fr" ? "Enregistrez une publication depuis son menu pour la retrouver ici." : "Bookmark a post from its menu to find it here."} />
     </>
   );
 }

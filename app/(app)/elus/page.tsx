@@ -59,7 +59,7 @@ export default async function OfficialsPage({ searchParams }: { searchParams: Pr
         </nav>
       </div>
       {officials.length === 0 ? (
-        <Empty>{q || mandate ? t.explore.noResults : lang === "fr" ? "L'annuaire est en cours de constitution. Les premiers mandats arrivent avec la bêta." : "The directory is being built. The first mandates arrive with the beta."}</Empty>
+        <Empty>{q || mandate ? t.explore.noResults : lang === "fr" ? "Aucun élu n'est encore référencé ici. L'annuaire s'enrichit au fil des vérifications." : "No officials are listed here yet. The directory grows as accounts are verified."}</Empty>
       ) : (
         <ul>{officials.map((o) => <li key={o.id}><OfficialCard o={o} lang={lang} /></li>)}</ul>
       )}

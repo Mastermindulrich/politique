@@ -85,7 +85,7 @@ export async function Shell({ viewer, children, hideRight = false }: { viewer: P
           <section className="rounded-2xl border border-line">
             <h2 className="px-4 pt-3 font-display text-[19px] font-bold">{city ? `${t.explore.trendsIn} ${city}` : t.explore.trends}</h2>
             {trends.length === 0 ? (
-              <p className="px-4 py-3 text-[14px] text-muted">{lang === "fr" ? "Les tendances apparaîtront avec les premiers posts." : "Trends will appear with the first posts."}</p>
+              <p className="px-4 py-3 text-[14px] text-muted">{lang === "fr" ? "Les tendances apparaîtront dès les premières publications." : "Trends will appear with the first posts."}</p>
             ) : (
               <ul className="py-1">
                 {trends.map((tr) => (

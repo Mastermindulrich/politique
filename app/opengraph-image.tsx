@@ -31,13 +31,13 @@ export default function Image() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <div style={{ fontSize: 68, fontWeight: 700, lineHeight: 1.05, letterSpacing: -2 }}>
-            La parole des citoyens,
+            Vos élus vous doivent
           </div>
           <div style={{ fontSize: 68, fontWeight: 700, lineHeight: 1.05, letterSpacing: -2, color: "#0A6B43" }}>
-            en face de leurs élus.
+            des réponses.
           </div>
           <div style={{ fontSize: 28, color: "#5B6168", marginTop: 10 }}>
-            Le réseau social politique de la Côte d&apos;Ivoire · Bientôt
+            Le réseau social politique de la Côte d&apos;Ivoire
           </div>
         </div>
       </div>

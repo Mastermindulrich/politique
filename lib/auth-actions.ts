@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { z } from "zod";
 import { departmentById, communeById, regionById } from "@/lib/ci-geo";
 import { createClient, supabaseConfigured } from "@/lib/supabase/server";
+import { ownMailer, sendCode } from "@/lib/auth-email";
 
 type Result = { ok: true } | { ok: false; error: "invalid" | "handle_taken" | "no_account" | "rate" | "code" | "config" | "failed" };
 
@@ -43,6 +44,22 @@ export async function requestSignupCode(input: z.infer<typeof signupSchema>): Pr
   const { data: free } = await supabase.rpc("handle_available", { h: d.handle });
   if (free === false) return { ok: false, error: "handle_taken" };
 
+  const meta = {
+    app: "politique",
+    handle: d.handle,
+    display_name: d.display_name,
+    lang: d.lang,
+    vote_region_id: String(d.vote_region_id),
+    vote_department_id: String(d.vote_department_id),
+    vote_commune_id: d.vote_commune_id ? String(d.vote_commune_id) : "",
+    vote_locality: d.vote_locality.trim(),
+    is_registered_voter: d.is_registered_voter,
+  };
+  if (ownMailer()) {
+    const sent = await sendCode(d.email.toLowerCase(), "signup", d.lang, meta);
+    return sent === "sent" ? { ok: true } : { ok: false, error: sent === "rate" ? "rate" : "failed" };
+  }
+
   const { error } = await supabase.auth.signInWithOtp({
     email: d.email.toLowerCase(),
     options: {
@@ -51,17 +68,7 @@ export async function requestSignupCode(input: z.infer<typeof signupSchema>): Pr
       // Read once by the handle_new_user trigger. The voting place lands in private_profiles only.
       // Only used when the email is new to the project; join_politique() in verifyCode covers
       // people who already have an account on the other site sharing this auth project.
-      data: {
-        app: "politique",
-        handle: d.handle,
-        display_name: d.display_name,
-        lang: d.lang,
-        vote_region_id: String(d.vote_region_id),
-        vote_department_id: String(d.vote_department_id),
-        vote_commune_id: d.vote_commune_id ? String(d.vote_commune_id) : "",
-        vote_locality: d.vote_locality.trim(),
-        is_registered_voter: d.is_registered_voter,
-      },
+      data: meta,
     },
   });
   if (error) return { ok: false, error: error.status === 429 ? "rate" : "failed" };
@@ -69,10 +76,14 @@ export async function requestSignupCode(input: z.infer<typeof signupSchema>): Pr
 }
 
 /** Log-in: email a code to an existing account. */
-export async function requestLoginCode(email: string): Promise<Result> {
+export async function requestLoginCode(email: string, lang: "fr" | "en" = "fr"): Promise<Result> {
   if (!supabaseConfigured) return { ok: false, error: "config" };
   const p = z.string().email().max(200).safeParse(email);
   if (!p.success) return { ok: false, error: "invalid" };
+  if (ownMailer()) {
+    const sent = await sendCode(p.data.toLowerCase(), "login", lang === "en" ? "en" : "fr");
+    return sent === "sent" ? { ok: true } : { ok: false, error: sent };
+  }
   const supabase = await createClient();
   const { error } = await supabase.auth.signInWithOtp({ email: p.data.toLowerCase(), options: { shouldCreateUser: false, emailRedirectTo: await confirmUrl() } });
   if (error) {

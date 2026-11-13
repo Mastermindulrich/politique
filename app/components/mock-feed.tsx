@@ -89,7 +89,7 @@ export default function MockFeed({ m }: { m: Mock }) {
       </article>
 
       <article className="flex gap-3 p-4">
-        <Avatar initials="FM" tone="orange" />
+        <Avatar initials="LI" tone="orange" />
         <div className="min-w-0 flex-1">
           <Head name={m.video.name} handle={m.video.handle} role={m.video.role} time={m.video.time} badge="#F07C00" verified={m.verified} />
           <p className="mt-2 text-[15px] leading-snug text-ink">{m.video.text}</p>

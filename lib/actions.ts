@@ -347,7 +347,7 @@ export async function createPermanence(input: { officialId: string; title: strin
   if (!s.success) return { ok: false, error: "invalid" };
   const supabase = await createClient();
   const when = new Date(s.data.starts_at).toLocaleString(viewer.lang === "fr" ? "fr-FR" : "en-GB", { dateStyle: "long", timeStyle: "short" });
-  const { data: post } = await supabase.from("posts").insert({ author_id: viewer.id, kind: "post", text: `${viewer.lang === "fr" ? "Permanence numérique" : "Live session"} — ${s.data.title}\n${when}\n${viewer.lang === "fr" ? "Posez vos questions en réponse à ce post." : "Ask your questions as replies to this post."} #Permanence`, lang: viewer.lang }).select("id").single();
+  const { data: post } = await supabase.from("posts").insert({ author_id: viewer.id, kind: "post", text: `${viewer.lang === "fr" ? "Permanence en ligne" : "Live session"} — ${s.data.title}\n${when}\n${viewer.lang === "fr" ? "Posez vos questions en répondant à cette publication." : "Ask your questions as replies to this post."} #Permanence`, lang: viewer.lang }).select("id").single();
   const { error } = await supabase.from("permanences").insert({ official_id: s.data.officialId, host_id: viewer.id, title: s.data.title, description: s.data.description ?? null, starts_at: s.data.starts_at, ends_at: s.data.ends_at, post_id: post?.id ?? null });
   if (error) return { ok: false, error: error.message };
   revalidatePath(`/elus/${s.data.officialId}`);
