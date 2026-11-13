@@ -49,7 +49,10 @@ export async function requestSignupCode(input: z.infer<typeof signupSchema>): Pr
       shouldCreateUser: true,
       emailRedirectTo: await confirmUrl(),
       // Read once by the handle_new_user trigger. The voting place lands in private_profiles only.
+      // Only used when the email is new to the project; join_politique() in verifyCode covers
+      // people who already have an account on the other site sharing this auth project.
       data: {
+        app: "politique",
         handle: d.handle,
         display_name: d.display_name,
         lang: d.lang,
@@ -80,13 +83,28 @@ export async function requestLoginCode(email: string): Promise<Result> {
   return { ok: true };
 }
 
-/** Exchange the emailed code for a session cookie. */
-export async function verifyCode(email: string, token: string): Promise<Result> {
+/** Exchange the emailed code for a session cookie, then join POLITIQUE if needed. */
+export async function verifyCode(email: string, token: string, signup?: z.infer<typeof signupSchema>): Promise<Result> {
   if (!supabaseConfigured) return { ok: false, error: "config" };
   const code = token.replace(/\s+/g, "");
   if (!/^\d{6,8}$/.test(code)) return { ok: false, error: "code" };
   const supabase = await createClient();
   const { error } = await supabase.auth.verifyOtp({ email: email.toLowerCase(), token: code, type: "email" });
   if (error) return { ok: false, error: "code" };
+  const s = signup ? signupSchema.safeParse(signup) : null;
+  const meta = s?.success
+    ? {
+        handle: s.data.handle,
+        display_name: s.data.display_name,
+        lang: s.data.lang,
+        vote_region_id: String(s.data.vote_region_id),
+        vote_department_id: String(s.data.vote_department_id),
+        vote_commune_id: s.data.vote_commune_id ? String(s.data.vote_commune_id) : "",
+        vote_locality: s.data.vote_locality.trim(),
+        is_registered_voter: s.data.is_registered_voter,
+      }
+    : null;
+  // No-op for existing members. Without meta, the function reads the sign-up metadata itself.
+  await supabase.rpc("join_politique", { meta });
   return { ok: true };
 }

@@ -5,7 +5,7 @@ import { verifyCode } from "@/lib/auth-actions";
 import { t as dict } from "@/lib/i18n";
 
 /** Second half of both log-in and sign-up: type the code received by email. */
-export function CodeStep({ email, lang, onDone, onResend, onBack }: { email: string; lang: "fr" | "en"; onDone: () => void; onResend: () => Promise<boolean>; onBack: () => void }) {
+export function CodeStep({ email, lang, onDone, onResend, onBack, signup }: { email: string; lang: "fr" | "en"; onDone: () => void; onResend: () => Promise<boolean>; onBack: () => void; signup?: Parameters<typeof verifyCode>[2] }) {
   const t = dict(lang);
   const [code, setCode] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -16,7 +16,7 @@ export function CodeStep({ email, lang, onDone, onResend, onBack }: { email: str
     e.preventDefault();
     start(async () => {
       setError(null);
-      const r = await verifyCode(email, code);
+      const r = await verifyCode(email, code, signup);
       if (!r.ok) return setError(t.auth.invalidCode);
       onDone();
     });

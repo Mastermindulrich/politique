@@ -247,7 +247,9 @@ export async function deleteAccount(confirmHandle: string): Promise<Result> {
   if (confirmHandle.replace(/^@/, "").toLowerCase() !== viewer.handle.toLowerCase()) return { ok: false, error: "confirm" };
   const admin = createServiceClient();
   if (!admin) return { ok: false, error: "unavailable" };
-  const { error } = await admin.auth.admin.deleteUser(viewer.id);
+  // The login is shared with the other site in this Supabase project, so only the
+  // POLITIQUE data is removed (everything cascades from the profile).
+  const { error } = await admin.from("profiles").delete().eq("id", viewer.id);
   if (error) return { ok: false, error: error.message };
   const supabase = await createClient();
   await supabase.auth.signOut();

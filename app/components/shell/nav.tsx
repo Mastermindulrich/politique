@@ -46,7 +46,7 @@ function useLiveUnread(initial: Unread, signedIn: boolean) {
       if (!uid || cancelled) return;
       channel = supabase
         .channel(`notif-${uid}-${instance}`)
-        .on("postgres_changes", { event: "INSERT", schema: "public", table: "notifications", filter: `user_id=eq.${uid}` }, (payload: { new: { type: string } }) => {
+        .on("postgres_changes", { event: "INSERT", schema: "politique", table: "notifications", filter: `user_id=eq.${uid}` }, (payload: { new: { type: string } }) => {
           setUnread((u) => (payload.new.type === "message" ? { ...u, messages: u.messages + 1 } : { ...u, notifications: u.notifications + 1 }));
         })
         .subscribe();

@@ -48,9 +48,9 @@ async function uploadImage(userId: string, file: File, kind: "avatar" | "banner"
   const supabase = supabaseBrowser();
   const ext = file.type === "image/png" ? "png" : file.type === "image/webp" ? "webp" : "jpg";
   const path = `${userId}/${kind}-${Date.now()}.${ext}`;
-  const { error } = await supabase.storage.from("media").upload(path, file, { contentType: file.type, cacheControl: "31536000" });
+  const { error } = await supabase.storage.from("politique-media").upload(path, file, { contentType: file.type, cacheControl: "31536000" });
   if (error) return null;
-  return supabase.storage.from("media").getPublicUrl(path).data.publicUrl as string;
+  return supabase.storage.from("politique-media").getPublicUrl(path).data.publicUrl as string;
 }
 
 // ---------------------------------------------------------------------------
@@ -223,7 +223,7 @@ export function VerificationForm({ lang, userId, defaultType, defaultName, offic
     if (!DOC_TYPES.includes(file.type) || file.size > 10 * 1024 * 1024) return null;
     const ext = file.type === "application/pdf" ? "pdf" : file.type === "image/png" ? "png" : "jpg";
     const path = `${userId}/${kind}-${Date.now()}.${ext}`;
-    const { error } = await supabaseBrowser().storage.from("documents").upload(path, file, { contentType: file.type });
+    const { error } = await supabaseBrowser().storage.from("politique-documents").upload(path, file, { contentType: file.type });
     return error ? null : path;
   };
 
