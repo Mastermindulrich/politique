@@ -69,6 +69,7 @@ export function SignupForm({ lang }: { lang: "fr" | "en" }) {
       setError(
         r.error === "handle_taken" ? t.auth.handleTaken
           : r.error === "rate" ? (lang === "fr" ? "Trop de tentatives. Patientez une minute avant de réessayer." : "Too many attempts. Wait a minute.")
+          : r.error === "closed" ? (lang === "fr" ? "Les inscriptions sont momentanément fermées. Revenez un peu plus tard." : "Sign-ups are closed for the moment. Please come back a little later.")
           : t.auth.error,
       );
       if (r.error === "handle_taken") setStep(1);

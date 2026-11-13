@@ -39,15 +39,17 @@ Without Supabase variables the landing page, rules and privacy pages work and th
 ## Connect a Supabase project
 
 1. Create a project (Paris, `eu-west-3`, is the closest region to Abidjan).
-2. In the SQL editor, run `supabase/migrations/0001_schema.sql`, then `supabase/seed/ci_geo.sql`. Everything goes into a `politique` schema (storage buckets `politique-media` and `politique-documents`), so the project can be shared with another app.
+2. In the SQL editor, run the files in `supabase/migrations` in order, then `supabase/seed/ci_geo.sql`. Everything goes into a `politique` schema (storage buckets `politique-media` and `politique-documents`), so the project can be shared with another app.
    Then Settings → API → Exposed schemas: add `politique`.
    Sharing a project means sharing its auth users and email templates. Nothing is attached to `auth.users`: people become members through `politique.join_politique()`, which the app calls after sign-in, and deleting a POLITIQUE account removes only the POLITIQUE data. To move out later: `pg_dump --schema=politique`, restore into the new project, and copy the members' auth users.
 3. Authentication → Emails: in the "Magic Link" and "Confirm signup" templates, show the code with `{{ .Token }}`. The app asks people to type that code. Links in the email also work and land on `/auth/confirm`.
 4. Authentication → URL configuration: set the site URL and add `<site>/auth/confirm` to the redirect URLs. Set up custom SMTP (for example Resend) before opening sign-ups: the built-in sender is limited to a few emails an hour.
 5. Set `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SERVICE_ROLE_KEY` in the host's environment.
-6. Sign up, then make yourself admin once in the SQL editor:
-   `update politique.profiles set is_admin = true, is_moderator = true where handle = 'your_handle';`
-7. Open `/admin` to add officials to the directory, review badge requests and reports, and publish the monthly barometer.
+6. Name the owner once in the SQL editor, before that person signs up:
+   `insert into politique.owner_claims (email) values ('owner@example.com');`
+   Whoever joins with that e-mail becomes the owner. The owner cannot be demoted, suspended or removed from the app.
+7. As owner, open `/controle` (the control center): site-wide switches (sign-ups, posting, messages, each civic tool, uploads, maintenance mode), the announcement banner, members with their roles, badges, suspensions and removal, and the log of every such action. The switches are enforced by row level security, not only hidden in the interface. Admins see the control center but only the owner changes settings and roles.
+8. Open `/admin` to add officials to the directory, review badge requests and reports, and publish the monthly barometer.
 
 ## Where things are
 
@@ -57,7 +59,8 @@ Without Supabase variables the landing page, rules and privacy pages work and th
 - `app/(legal)`: community rules and privacy policy. Have a lawyer review both before launch.
 - `lib/actions.ts`, `lib/auth-actions.ts`, `lib/feed-actions.ts`: server actions. `lib/data`: read queries. `lib/i18n.ts`: interface copy in French and English.
 - `lib/ci-geo.ts`: regions, departments and communes. After editing it, run `node scripts/gen-geo-sql.mjs` to regenerate the seed.
-- `supabase/migrations/0001_schema.sql`: tables, triggers, functions, row level security, storage buckets.
+- `supabase/migrations/0001_schema.sql`: tables, triggers, functions, row level security, storage buckets. `0002`: rate limit for login e-mails. `0003`: owner role, site settings, control center functions.
+- `app/(app)/controle`, `lib/owner-actions.ts`, `lib/settings.ts`: the owner's control center.
 
 ## Hosting
 

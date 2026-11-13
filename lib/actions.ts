@@ -249,6 +249,11 @@ export async function deleteAccount(confirmHandle: string): Promise<Result> {
   if (!admin) return { ok: false, error: "unavailable" };
   // The login is shared with the other site in this Supabase project, so only the
   // POLITIQUE data is removed (everything cascades from the profile).
+  if (viewer.is_owner) return { ok: false, error: "owner" };
+  // Records this person created for others (directory entries, moderation decisions) stay,
+  // handed to the owner, so they do not block the deletion.
+  const { data: owner } = await admin.from("profiles").select("id").eq("is_owner", true).limit(1).maybeSingle();
+  if (owner) await admin.rpc("detach_member", { uid: viewer.id, heir: owner.id });
   const { error } = await admin.from("profiles").delete().eq("id", viewer.id);
   if (error) return { ok: false, error: error.message };
   const supabase = await createClient();

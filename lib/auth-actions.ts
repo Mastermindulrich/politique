@@ -5,8 +5,9 @@ import { z } from "zod";
 import { departmentById, communeById, regionById } from "@/lib/ci-geo";
 import { createClient, supabaseConfigured } from "@/lib/supabase/server";
 import { ownMailer, sendCode } from "@/lib/auth-email";
+import { getSettings } from "@/lib/settings";
 
-type Result = { ok: true } | { ok: false; error: "invalid" | "handle_taken" | "no_account" | "rate" | "code" | "config" | "failed" };
+type Result = { ok: true } | { ok: false; error: "invalid" | "closed" | "handle_taken" | "no_account" | "rate" | "code" | "config" | "failed" };
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -39,6 +40,10 @@ export async function requestSignupCode(input: z.infer<typeof signupSchema>): Pr
   const com = d.vote_commune_id ? communeById.get(d.vote_commune_id) : null;
   if (!regionById.has(d.vote_region_id) || !dep || dep.regionId !== d.vote_region_id) return { ok: false, error: "invalid" };
   if (d.vote_commune_id && (!com || com.departmentId !== d.vote_department_id)) return { ok: false, error: "invalid" };
+
+  // The owner can close sign-ups from the control center; join_politique() enforces it too.
+  const settings = await getSettings();
+  if (!settings.signups_open || settings.maintenance) return { ok: false, error: "closed" };
 
   const supabase = await createClient();
   const { data: free } = await supabase.rpc("handle_available", { h: d.handle });
