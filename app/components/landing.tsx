@@ -2,7 +2,6 @@ import Link from "next/link";
 import { content, site, type Lang } from "@/lib/content";
 import { Check, Icon } from "./icons";
 import MockFeed from "./mock-feed";
-import WaitlistForm from "./waitlist-form";
 
 function Wordmark() {
   return (
@@ -17,17 +16,14 @@ function Wordmark() {
   );
 }
 
-export default function Landing({ lang, open = false }: { lang: Lang; open?: boolean }) {
+export default function Landing({ lang }: { lang: Lang }) {
   const t = content[lang];
-  // When the beta is open the page leads to the app instead of the waitlist.
-  const login = lang === "fr" ? "Se connecter" : "Log in";
-  const signup = lang === "fr" ? "Créer un compte" : "Create account";
   const home = lang === "fr" ? "/" : "/en";
 
   return (
     <div data-theme="light" className="bg-bg text-ink">
-      <a href="#waitlist" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-white">
-        {t.nav.cta}
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-white">
+        {lang === "fr" ? "Aller au contenu" : "Skip to content"}
       </a>
 
       <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur">
@@ -38,28 +34,20 @@ export default function Landing({ lang, open = false }: { lang: Lang; open?: boo
           <nav aria-label={lang === "fr" ? "Navigation" : "Navigation"} className="hidden items-center gap-7 text-[15px] font-medium text-ink md:flex">
             <a href="#features" className="hover:text-green-deep">{t.nav.features}</a>
             <a href="#who" className="hover:text-green-deep">{t.nav.who}</a>
-            <a href="#roadmap" className="hover:text-green-deep">{t.nav.roadmap}</a>
+            <a href="#how" className="hover:text-green-deep">{t.nav.how}</a>
             <a href="#faq" className="hover:text-green-deep">{t.nav.faq}</a>
           </nav>
           <div className="flex items-center gap-2">
             <Link href={t.nav.switchHref} hrefLang={lang === "fr" ? "en" : "fr"} className="btn-ghost h-10 px-4 text-[14px]">
               {t.nav.switchLabel}
             </Link>
-            {open ? (
-              <>
-                <Link href="/connexion" className="btn-ghost hidden h-10 px-4 text-[14px] sm:inline-flex">{login}</Link>
-                <Link href="/inscription" className="btn-primary h-10 px-4 text-[14px]">{signup}</Link>
-              </>
-            ) : (
-              <a href="#waitlist" className="btn-primary hidden h-10 px-4 text-[14px] sm:inline-flex">
-                {t.nav.cta}
-              </a>
-            )}
+            <Link href="/connexion" className="btn-ghost hidden h-10 px-4 text-[14px] sm:inline-flex">{t.nav.login}</Link>
+            <Link href="/inscription" className="btn-primary h-10 px-4 text-[14px]">{t.nav.signup}</Link>
           </div>
         </div>
       </header>
 
-      <main>
+      <main id="main">
         {/* Hero */}
         <section className="container-x grid items-center gap-12 py-14 md:grid-cols-[1.1fr_0.9fr] md:py-24">
           <div>
@@ -74,7 +62,7 @@ export default function Landing({ lang, open = false }: { lang: Lang; open?: boo
             </h1>
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted sm:text-lg">{t.hero.body}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              {open ? <Link href="/inscription" className="btn-primary">{signup}</Link> : <a href="#waitlist" className="btn-primary">{t.hero.primary}</a>}
+              <Link href="/inscription" className="btn-primary">{t.hero.primary}</Link>
               <a href="#features" className="btn-ghost">{t.hero.secondary}</a>
             </div>
             <p className="mt-4 text-[14px] text-muted">{t.hero.note}</p>
@@ -130,22 +118,16 @@ export default function Landing({ lang, open = false }: { lang: Lang; open?: boo
           </ul>
         </section>
 
-        {/* Roadmap */}
-        <section id="roadmap" className="border-y border-line bg-ink py-16 text-white md:py-24">
+        {/* How it works */}
+        <section id="how" className="border-y border-line bg-ink py-16 text-white md:py-24">
           <div className="container-x">
-            <h2 className="font-display text-[30px] font-bold leading-tight tracking-tight sm:text-[38px]">{t.roadmap.title}</h2>
-            <p className="mt-3 max-w-2xl text-[17px] text-white/70">{t.roadmap.body}</p>
-            <ol className="mt-10 grid gap-6 md:grid-cols-4">
-              {t.roadmap.steps.map((s, i) => (
-                <li key={s.title} className="relative border-t border-white/20 pt-5">
-                  <span
-                    aria-hidden="true"
-                    className={`absolute -top-[5px] left-0 h-[9px] w-[9px] rounded-full ${s.state === "now" ? "bg-orange" : "bg-white/40"}`}
-                  />
-                  <div className={`text-[13px] font-semibold uppercase tracking-wide ${s.state === "now" ? "text-orange" : "text-white/60"}`}>
-                    {s.when}
-                  </div>
-                  <h3 className="mt-2 text-[19px] font-bold">
+            <h2 className="font-display text-[30px] font-bold leading-tight tracking-tight sm:text-[38px]">{t.how.title}</h2>
+            <p className="mt-3 max-w-2xl text-[17px] text-white/70">{t.how.body}</p>
+            <ol className="mt-10 grid gap-8 md:grid-cols-3">
+              {t.how.steps.map((s, i) => (
+                <li key={s.title} className="border-t border-white/20 pt-5">
+                  <span aria-hidden="true" className="font-display text-[40px] font-bold leading-none text-orange">{i + 1}</span>
+                  <h3 className="mt-3 text-[19px] font-bold">
                     <span className="sr-only">{i + 1}. </span>
                     {s.title}
                   </h3>
@@ -153,17 +135,6 @@ export default function Landing({ lang, open = false }: { lang: Lang; open?: boo
                 </li>
               ))}
             </ol>
-          </div>
-        </section>
-
-        {/* Waitlist */}
-        <section id="waitlist" className="container-x py-16 md:py-24">
-          <div className="mx-auto max-w-2xl rounded-[32px] border border-line bg-paper p-6 sm:p-10">
-            <h2 className="font-display text-[28px] font-bold leading-tight tracking-tight sm:text-[34px]">{t.cta.title}</h2>
-            <p className="mt-3 text-[16px] text-muted">{t.cta.body}</p>
-            <div className="mt-6">
-              <WaitlistForm t={t.form} lang={lang} id="wl" />
-            </div>
           </div>
         </section>
 
@@ -181,6 +152,18 @@ export default function Landing({ lang, open = false }: { lang: Lang; open?: boo
             </dl>
           </div>
         </section>
+
+        {/* Final call to action */}
+        <section className="container-x pb-16 md:pb-24">
+          <div className="mx-auto max-w-3xl rounded-[32px] border border-line bg-paper p-8 text-center sm:p-12">
+            <h2 className="font-display text-[28px] font-bold leading-tight tracking-tight sm:text-[36px]">{t.cta.title}</h2>
+            <p className="mx-auto mt-3 max-w-xl text-[16px] text-muted">{t.cta.body}</p>
+            <div className="mt-7 flex flex-wrap justify-center gap-3">
+              <Link href="/inscription" className="btn-primary">{t.cta.button}</Link>
+              <Link href="/connexion" className="btn-ghost">{t.cta.login}</Link>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer className="border-t border-line bg-paper py-10">
@@ -195,10 +178,12 @@ export default function Landing({ lang, open = false }: { lang: Lang; open?: boo
               . © {new Date().getFullYear()} {t.footer.rights}
             </p>
           </div>
-          <div className="flex gap-6">
+          <nav aria-label={lang === "fr" ? "Liens du pied de page" : "Footer links"} className="flex flex-wrap gap-x-6 gap-y-2">
+            <Link href="/elus" className="hover:text-ink">{t.footer.directory}</Link>
+            <Link href="/regles" className="hover:text-ink">{t.footer.rules}</Link>
+            <Link href="/confidentialite" className="hover:text-ink">{t.footer.privacy}</Link>
             <Link href={t.nav.switchHref} className="hover:text-ink">{t.nav.switchLabel}</Link>
-            <a href={`${site.parent.url}/privacy`} className="hover:text-ink">{t.footer.privacy}</a>
-          </div>
+          </nav>
         </div>
       </footer>
     </div>

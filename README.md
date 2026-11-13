@@ -44,7 +44,7 @@ Without Supabase variables the landing page, rules and privacy pages work and th
    Sharing a project means sharing its auth users and email templates. Nothing is attached to `auth.users`: people become members through `politique.join_politique()`, which the app calls after sign-in, and deleting a POLITIQUE account removes only the POLITIQUE data. To move out later: `pg_dump --schema=politique`, restore into the new project, and copy the members' auth users.
 3. Authentication → Emails: in the "Magic Link" and "Confirm signup" templates, show the code with `{{ .Token }}`. The app asks people to type that code. Links in the email also work and land on `/auth/confirm`.
 4. Authentication → URL configuration: set the site URL and add `<site>/auth/confirm` to the redirect URLs. Set up custom SMTP (for example Resend) before opening sign-ups: the built-in sender is limited to a few emails an hour.
-5. Set `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SERVICE_ROLE_KEY` and `NEXT_PUBLIC_BETA_OPEN=1` in the host's environment.
+5. Set `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SERVICE_ROLE_KEY` in the host's environment.
 6. Sign up, then make yourself admin once in the SQL editor:
    `update politique.profiles set is_admin = true, is_moderator = true where handle = 'your_handle';`
 7. Open `/admin` to add officials to the directory, review badge requests and reports, and publish the monthly barometer.
@@ -58,10 +58,6 @@ Without Supabase variables the landing page, rules and privacy pages work and th
 - `lib/actions.ts`, `lib/auth-actions.ts`, `lib/feed-actions.ts`: server actions. `lib/data`: read queries. `lib/i18n.ts`: interface copy in French and English.
 - `lib/ci-geo.ts`: regions, departments and communes. After editing it, run `node scripts/gen-geo-sql.mjs` to regenerate the seed.
 - `supabase/migrations/0001_schema.sql`: tables, triggers, functions, row level security, storage buckets.
-
-## Waitlist
-
-`POST /api/waitlist` takes `{ email, role, lang }`. With `RESEND_API_KEY` and `RESEND_AUDIENCE_ID` set, each sign-up becomes a contact in that Resend audience. Without them, sign-ups are only logged, so set both before sharing the site.
 
 ## Hosting
 

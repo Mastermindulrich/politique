@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Landing from "../components/landing";
 import { content } from "@/lib/content";
-import { betaOpen } from "@/lib/lang";
-import { getViewer, supabaseConfigured } from "@/lib/supabase/server";
+import { getViewer } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
@@ -15,5 +14,5 @@ export const metadata: Metadata = {
 export default async function Page() {
   // Signed-in people go straight to their feed.
   if (await getViewer()) redirect("/accueil");
-  return <Landing lang="en" open={supabaseConfigured && betaOpen} />;
+  return <Landing lang="en" />;
 }

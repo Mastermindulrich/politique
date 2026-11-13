@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { t as dict } from "@/lib/i18n";
-import { betaOpen, getLang } from "@/lib/lang";
+import { getLang } from "@/lib/lang";
 import { supabaseConfigured } from "@/lib/supabase/server";
 import { SignupForm } from "./signup-form";
 
@@ -15,15 +15,6 @@ export default async function SignupPage() {
       <h1 className="font-display text-[26px] font-bold leading-tight">{t.auth.signupTitle}</h1>
       {!supabaseConfigured ? (
         <p className="mt-4 text-[15px] text-muted">{t.auth.notConfigured}</p>
-      ) : !betaOpen ? (
-        <div className="mt-4 flex flex-col gap-4">
-          <p className="text-[15px] leading-relaxed text-muted">
-            {lang === "fr"
-              ? "Les inscriptions ouvrent avec la bêta. Laissez votre email sur la liste d'attente pour être parmi les premiers."
-              : "Sign-ups open with the beta. Leave your email on the waitlist to be among the first."}
-          </p>
-          <Link href={lang === "fr" ? "/#waitlist" : "/en#waitlist"} className="btn-primary">{lang === "fr" ? "Rejoindre la liste d'attente" : "Join the waitlist"}</Link>
-        </div>
       ) : (
         <div className="mt-5"><SignupForm lang={lang} /></div>
       )}

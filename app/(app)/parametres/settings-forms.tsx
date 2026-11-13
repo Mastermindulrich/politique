@@ -217,7 +217,7 @@ export function VerificationForm({ lang, userId, defaultType, defaultName, offic
   const [officialId, setOfficialId] = useState("");
   const [idDoc, setIdDoc] = useState<File | null>(null);
   const [proof, setProof] = useState<File | null>(null);
-  const labels: Record<string, string> = lang === "fr" ? { elu: "Élu·e", institution: "Institution", media: "Média" } : { elu: "Elected official", institution: "Institution", media: "Media" };
+  const labels: Record<string, string> = lang === "fr" ? { elu: "Élu", institution: "Institution", media: "Média" } : { elu: "Elected official", institution: "Institution", media: "Media" };
 
   const upload = async (file: File, kind: string) => {
     if (!DOC_TYPES.includes(file.type) || file.size > 10 * 1024 * 1024) return null;

@@ -16,9 +16,9 @@ export function LoginForm({ lang, next }: { lang: "fr" | "en"; next: string }) {
 
   const message = (code: string) =>
     code === "no_account"
-      ? lang === "fr" ? "Aucun compte avec cette adresse. Créez un compte." : "No account with this address. Create one."
+      ? lang === "fr" ? "Aucun compte n'est associé à cette adresse. Créez-en un." : "No account with this address. Create one."
       : code === "rate"
-        ? lang === "fr" ? "Trop de tentatives. Patientez une minute." : "Too many attempts. Wait a minute."
+        ? lang === "fr" ? "Trop de tentatives. Patientez une minute avant de réessayer." : "Too many attempts. Wait a minute."
         : t.auth.error;
 
   if (sent) {

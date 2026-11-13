@@ -8,6 +8,3 @@ export async function getLang(): Promise<"fr" | "en"> {
   const store = await cookies();
   return store.get("lang")?.value === "en" ? "en" : "fr";
 }
-
-/** Sign-ups are open only when the database is connected and the beta flag is on. */
-export const betaOpen = process.env.NEXT_PUBLIC_BETA_OPEN === "1";

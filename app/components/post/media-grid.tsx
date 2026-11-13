@@ -11,7 +11,7 @@ export function MediaGrid({ media, lowData = false, compact = false }: { media: 
   if (!loaded) {
     return (
       <button type="button" onClick={(e) => { e.stopPropagation(); setLoaded(true); }} className="mt-3 flex h-24 w-full items-center justify-center rounded-2xl border border-dashed border-line bg-paper text-[14px] font-semibold text-muted">
-        {media.length} média{media.length > 1 ? "s" : ""} · toucher pour charger
+        {media.length} média{media.length > 1 ? "s" : ""} · touchez pour afficher
       </button>
     );
   }

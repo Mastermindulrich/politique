@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | POLITIQUE",
   },
   description:
-    "POLITIQUE met les citoyens et leurs élus sur la même place publique : posts, sondages, débats vidéo et comptes vérifiés.",
+    "POLITIQUE met les citoyens et leurs élus sur le même espace public : publications, sondages, interpellations et comptes vérifiés.",
   openGraph: {
     type: "website",
     siteName: site.name,

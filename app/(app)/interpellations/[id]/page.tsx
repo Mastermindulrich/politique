@@ -90,7 +90,7 @@ export default async function InterpellationPage({ params }: { params: Promise<{
             <Link href={`/p/${question.id}`} className="text-[13px] font-semibold text-green-deep hover:underline">{t.feed.showThread}</Link>
           </h2>
           {replies.length === 0 ? (
-            <p className="px-4 py-6 text-[14px] text-muted">{lang === "fr" ? "Pas encore de réponse des citoyens. Ouvrez la conversation pour participer." : "No citizen replies yet. Open the thread to take part."}</p>
+            <p className="px-4 py-6 text-[14px] text-muted">{lang === "fr" ? "Aucun citoyen n'a encore réagi. Ouvrez la discussion pour participer." : "No citizen replies yet. Open the thread to take part."}</p>
           ) : (
             replies.map((r) => <PostCard key={r.id} post={r} viewerId={viewer?.id ?? null} lang={lang} lowData={viewer?.low_data} isModerator={isMod} />)
           )}
