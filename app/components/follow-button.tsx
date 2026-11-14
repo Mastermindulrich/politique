@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { joinHref } from "@/lib/join";
 import { useState, useTransition } from "react";
 import { toggleFollow } from "@/lib/actions";
 import { t as dict } from "@/lib/i18n";
@@ -20,7 +21,7 @@ export function FollowButton({ userId, initial, lang, signedIn, size = "sm" }: {
       onClick={(e) => {
         e.stopPropagation();
         e.preventDefault();
-        if (!signedIn) return router.push("/connexion");
+        if (!signedIn) return router.push(joinHref());
         const next = !on;
         setOn(next);
         start(async () => {

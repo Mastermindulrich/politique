@@ -31,7 +31,7 @@ export function WelcomeForm({ lang }: { lang: "fr" | "en" }) {
     >
       <VotingPlaceFields value={place} onChange={setPlace} lang={lang} />
       {error && <p role="alert" className="text-[14px] font-medium text-orange">{t.auth.error}</p>}
-      <button type="submit" className="btn-primary" disabled={pending || !votingPlaceComplete(place)}>{pending && <Spinner />}{t.auth.next}</button>
+      <button type="submit" className="btn-primary" disabled={pending || !votingPlaceComplete(place)}>{pending && <Spinner />}<span>{t.auth.next}</span></button>
     </form>
   );
 }

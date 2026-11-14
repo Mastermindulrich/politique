@@ -3,6 +3,7 @@ import Link from "next/link";
 import { t as dict } from "@/lib/i18n";
 import { getLang } from "@/lib/lang";
 import { supabaseConfigured } from "@/lib/supabase/server";
+import { safePath } from "@/lib/join";
 import { LoginForm } from "./login-form";
 
 export const metadata: Metadata = { title: "Se connecter", robots: { index: false } };
@@ -11,7 +12,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
   const { next, erreur } = await searchParams;
   const lang = await getLang();
   const t = dict(lang);
-  const safeNext = next && next.startsWith("/") && !next.startsWith("//") ? next : "/accueil";
+  const safeNext = safePath(next);
   return (
     <>
       <h1 className="font-display text-[26px] font-bold leading-tight">{t.auth.loginTitle}</h1>

@@ -44,11 +44,19 @@ export const metadata: Metadata = {
 const prefs =
   "(function(){try{var c=document.cookie,d=document.documentElement,t=c.match(/(?:^|; )theme=(light|dark|system)/),l=c.match(/(?:^|; )lang=(fr|en)/);if(t)d.setAttribute('data-theme',t[1]);if(l)d.lang=l[1]}catch(e){}})()";
 
+// Page translation (Safari, Chrome, Google Translate) swaps the text React wrote for its own
+// nodes. When React later adds or removes a node next to that text, the browser throws and
+// the whole page turns into "Application error". This guard lets those operations through
+// quietly instead (the approach suggested by the React team in facebook/react#11538).
+const domGuard =
+  "(function(){if(typeof Node!=='function'||!Node.prototype)return;var r=Node.prototype.removeChild;Node.prototype.removeChild=function(c){if(c.parentNode!==this)return c;return r.apply(this,arguments)};var i=Node.prototype.insertBefore;Node.prototype.insertBefore=function(n,ref){if(ref&&ref.parentNode!==this)return n;return i.apply(this,arguments)}})()";
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" data-theme="system" className={`${sans.variable} ${display.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: prefs }} />
+        <script dangerouslySetInnerHTML={{ __html: domGuard }} />
       </head>
       <body>
         <Suspense fallback={null}>
