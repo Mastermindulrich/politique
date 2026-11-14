@@ -6,7 +6,7 @@ import { InterpellationForm, InterpellationVote, PermanenceControls, PermanenceF
 import { FollowButton } from "@/app/components/follow-button";
 import { StatusChip } from "@/app/components/official-card";
 import { PostCard } from "@/app/components/post/post-card";
-import { Empty, PageHeader } from "@/app/components/shell/shell";
+import { Empty, PageHeader, Tabs } from "@/app/components/shell/shell";
 import { Avatar } from "@/app/components/ui/avatar";
 import { NameBadge } from "@/app/components/ui/badge";
 import { I } from "@/app/components/ui/icons";
@@ -85,8 +85,8 @@ export default async function OfficialPage({ params, searchParams }: { params: P
       <>
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-4 py-3">
           <div className="flex gap-2 text-[13px] font-semibold">
-            <Link href={`/elus/${o.id}`} className={`chip h-8 px-3 ${!sortNew ? "bg-ink text-bg" : "bg-paper text-ink"}`}>{t.interpellation.sortTop}</Link>
-            <Link href={`/elus/${o.id}?tri=recentes`} className={`chip h-8 px-3 ${sortNew ? "bg-ink text-bg" : "bg-paper text-ink"}`}>{t.interpellation.sortNew}</Link>
+            <Link href={`/elus/${o.id}`} className={!sortNew ? "pill-on" : "pill"}>{t.interpellation.sortTop}</Link>
+            <Link href={`/elus/${o.id}?tri=recentes`} className={sortNew ? "pill-on" : "pill"}>{t.interpellation.sortNew}</Link>
           </div>
           {!isOfficial && <InterpellationForm officialId={o.id} lang={lang} signedIn={Boolean(viewer)} />}
         </div>
@@ -227,17 +227,17 @@ export default async function OfficialPage({ params, searchParams }: { params: P
         {o.bio && <p className="mt-3 text-[15px] leading-snug">{o.bio}</p>}
 
         <dl className="mt-4 grid grid-cols-3 gap-2 text-center">
-          <div className="rounded-2xl bg-paper px-2 py-3">
-            <dt className="text-[12px] text-muted">{t.interpellation.open}</dt>
-            <dd className="font-display text-[22px] font-bold">{open}</dd>
+          <div className="flex min-h-[78px] flex-col-reverse items-center justify-center rounded-2xl bg-paper px-2 py-3">
+            <dt className="mt-1 text-[12px] leading-tight text-muted">{t.interpellation.open}</dt>
+            <dd className="font-display text-[22px] font-bold leading-none tabular-nums">{open}</dd>
           </div>
-          <div className="rounded-2xl bg-paper px-2 py-3">
-            <dt className="text-[12px] text-muted">{lang === "fr" ? "Taux de réponse" : "Answer rate"}</dt>
-            <dd className="font-display text-[22px] font-bold">{rate === null ? "—" : `${rate} %`}</dd>
+          <div className="flex min-h-[78px] flex-col-reverse items-center justify-center rounded-2xl bg-paper px-2 py-3">
+            <dt className="mt-1 text-[12px] leading-tight text-muted">{lang === "fr" ? "Taux de réponse" : "Answer rate"}</dt>
+            <dd className="font-display text-[22px] font-bold leading-none tabular-nums">{rate === null ? "—" : `${rate} %`}</dd>
           </div>
-          <div className="rounded-2xl bg-paper px-2 py-3">
-            <dt className="text-[12px] text-muted">{lang === "fr" ? "Électeurs inscrits ici" : "Voters registered here"}</dt>
-            <dd className="font-display text-[22px] font-bold">{constituents ?? "< 50"}</dd>
+          <div className="flex min-h-[78px] flex-col-reverse items-center justify-center rounded-2xl bg-paper px-2 py-3">
+            <dt className="mt-1 text-[12px] leading-tight text-muted">{lang === "fr" ? "Électeurs inscrits ici" : "Voters registered here"}</dt>
+            <dd className="font-display text-[22px] font-bold leading-none tabular-nums">{constituents ?? "< 50"}</dd>
           </div>
         </dl>
 
@@ -256,14 +256,7 @@ export default async function OfficialPage({ params, searchParams }: { params: P
         </div>
       </div>
 
-      <nav aria-label={o.full_name} className="flex border-b border-line">
-        {tabs.map((x) => (
-          <Link key={x.key} href={x.key === "interpellations" ? `/elus/${o.id}` : `/elus/${o.id}?tab=${x.key}`} aria-current={tab === x.key ? "page" : undefined} className="flex flex-1 flex-col items-center gap-3 px-1 pt-3 text-center text-[14px] hover:bg-paper">
-            <span className={tab === x.key ? "font-bold" : "font-medium text-muted"}>{x.label}</span>
-            <span className={`h-1 w-12 rounded-full ${tab === x.key ? "bg-green" : "bg-transparent"}`} />
-          </Link>
-        ))}
-      </nav>
+      <Tabs label={o.full_name} className="border-b border-line" items={tabs.map((x) => ({ href: x.key === "interpellations" ? `/elus/${o.id}` : `/elus/${o.id}?tab=${x.key}`, label: x.label, on: tab === x.key }))} />
       {body}
     </>
   );

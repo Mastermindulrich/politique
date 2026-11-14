@@ -129,16 +129,17 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
         </div>
         <div className="min-w-0 flex-1">
           <div className="flex items-start justify-between gap-2">
-            <div className={`min-w-0 ${detail ? "flex flex-col" : "flex flex-wrap items-center gap-x-1.5"} text-[15px] leading-tight`}>
-              <Link href={`/u/${post.author.handle}`} className="inline-flex max-w-full items-center gap-1 truncate font-bold hover:underline">
+            {/* One line, like X: the name and handle shrink with an ellipsis, the time always shows. */}
+            <div className={`min-w-0 ${detail ? "flex flex-col gap-0.5" : "flex items-center gap-1"} text-[15px] leading-5`}>
+              <Link href={`/u/${post.author.handle}`} className={`inline-flex min-w-0 items-center gap-1 font-bold hover:underline ${detail ? "max-w-full" : "max-w-[72%] flex-none"}`}>
                 <span className="truncate">{post.author.display_name}</span>
                 <NameBadge p={post.author} lang={lang} verifiedTitle={t.profile.verified} />
               </Link>
-              <span className="truncate text-muted">@{post.author.handle}</span>
+              <span className="min-w-0 shrink truncate text-muted">@{post.author.handle}</span>
               {!detail && (
                 <>
-                  <span className="text-muted">·</span>
-                  <Link href={href} className="text-muted hover:underline" title={new Date(post.created_at).toLocaleString()}>
+                  <span aria-hidden="true" className="flex-none text-muted">·</span>
+                  <Link href={href} className="flex-none text-muted hover:underline" title={new Date(post.created_at).toLocaleString()}>
                     <time dateTime={post.created_at}>{timeAgo(post.created_at, lang)}</time>
                   </Link>
                 </>
@@ -151,26 +152,26 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
               {menu && (
                 <>
                   <div className="fixed inset-0 z-10" onClick={() => setMenu(false)} />
-                  <div role="menu" className="fade-in absolute right-0 z-20 mt-1 w-56 overflow-hidden rounded-2xl border border-line bg-card py-1 shadow-xl">
+                  <div role="menu" className="fade-in absolute right-0 z-20 mt-1 w-60 overflow-hidden rounded-2xl border border-line/70 bg-card py-1.5 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.18),0_2px_6px_rgba(0,0,0,0.06)]">
                     {canAct && (
-                      <button role="menuitem" type="button" onClick={bookmark} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] transition-colors hover:bg-paper active:bg-line/60">
-                        <I.bookmark className="h-4 w-4" filled={bookmarked} /> {bookmarked ? t.post.unbookmark : t.post.bookmark}
+                      <button role="menuitem" type="button" onClick={bookmark} className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] font-semibold transition-colors hover:bg-paper active:bg-line/60">
+                        <I.bookmark className="h-[18px] w-[18px]" filled={bookmarked} /> {bookmarked ? t.post.unbookmark : t.post.bookmark}
                       </button>
                     )}
-                    <button role="menuitem" type="button" onClick={() => { setMenu(false); share(); }} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] transition-colors hover:bg-paper active:bg-line/60">
-                      <I.share className="h-4 w-4" /> {t.post.share}
+                    <button role="menuitem" type="button" onClick={() => { setMenu(false); share(); }} className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] font-semibold transition-colors hover:bg-paper active:bg-line/60">
+                      <I.share className="h-[18px] w-[18px]" /> {t.post.share}
                     </button>
-                    <a role="menuitem" href={`https://wa.me/?text=${encodeURIComponent(post.text.slice(0, 200) + " " + (typeof window !== "undefined" ? window.location.origin : "") + href)}`} target="_blank" rel="noopener noreferrer" className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] transition-colors hover:bg-paper active:bg-line/60">
-                      <I.whatsapp className="h-4 w-4" /> {t.post.whatsapp}
+                    <a role="menuitem" href={`https://wa.me/?text=${encodeURIComponent(post.text.slice(0, 200) + " " + (typeof window !== "undefined" ? window.location.origin : "") + href)}`} target="_blank" rel="noopener noreferrer" className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] font-semibold transition-colors hover:bg-paper active:bg-line/60">
+                      <I.whatsapp className="h-[18px] w-[18px]" /> {t.post.whatsapp}
                     </a>
                     {canAct && viewerId !== post.author_id && (
-                      <button role="menuitem" type="button" onClick={() => { setMenu(false); setReport(true); }} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] transition-colors hover:bg-paper active:bg-line/60">
-                        <I.flag className="h-4 w-4" /> {t.post.report}
+                      <button role="menuitem" type="button" onClick={() => { setMenu(false); setReport(true); }} className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] font-semibold transition-colors hover:bg-paper active:bg-line/60">
+                        <I.flag className="h-[18px] w-[18px]" /> {t.post.report}
                       </button>
                     )}
                     {(viewerId === post.author_id || isModerator) && (
-                      <button role="menuitem" type="button" onClick={remove} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] text-orange transition-colors hover:bg-paper active:bg-line/60">
-                        <I.trash className="h-4 w-4" /> {t.post.delete}
+                      <button role="menuitem" type="button" onClick={remove} className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] font-semibold text-orange transition-colors hover:bg-paper active:bg-line/60">
+                        <I.trash className="h-[18px] w-[18px]" /> {t.post.delete}
                       </button>
                     )}
                   </div>
@@ -188,7 +189,7 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
           {post.is_hidden ? (
             <p className="mt-2 rounded-xl border border-line bg-paper px-3 py-2 text-[14px] text-muted">{t.post.hidden}</p>
           ) : (
-            <TranslatableText postId={post.id} text={post.text} lang={lang} className={detail ? "mt-3 text-[19px] leading-snug" : "mt-1"} />
+            <TranslatableText postId={post.id} text={post.text} lang={lang} className={detail ? "mt-3 text-[18px] leading-[1.4]" : "mt-0.5"} />
           )}
 
           {post.labels.map((l) => (
@@ -223,7 +224,7 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
           {post.commune_id && <CommuneTag id={post.commune_id} />}
 
           {detail && (
-            <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-line pb-3 text-[14px] text-muted">
+            <div className="mt-4 flex flex-wrap items-center gap-x-1.5 gap-y-1 border-b border-line pb-3.5 text-[15px] text-muted">
               <time dateTime={post.created_at}>{new Date(post.created_at).toLocaleString(lang === "fr" ? "fr-FR" : "en-GB", { dateStyle: "long", timeStyle: "short" })}</time>
               <span>·</span>
               <span><b className="text-ink">{formatCount(post.view_count, lang)}</b> {t.post.views}</span>

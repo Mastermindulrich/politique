@@ -30,16 +30,16 @@ export default async function ExplorePage({ searchParams }: { searchParams: Prom
   const supabase = await createClient();
 
   const header = (
-    <div className="sticky top-0 z-30 border-b border-line bg-bg/90 px-4 py-2 backdrop-blur">
+    <div className="bar sticky top-0 z-30 border-b px-4 py-2">
       <h1 className="sr-only">{t.explore.title}</h1>
       <SearchBox placeholder={t.explore.search} initial={q} />
-      <nav aria-label={t.explore.byCity} className="-mx-4 mt-2 flex gap-2 overflow-x-auto px-4 pb-1">
-        <Link href="/explorer" className={`chip h-8 flex-none px-3 ${!cityId && !q ? "bg-ink text-bg" : "bg-paper text-ink"}`}>{t.explore.everywhere}</Link>
+      <nav aria-label={t.explore.byCity} className="no-scrollbar -mx-4 mt-2.5 flex gap-2 overflow-x-auto px-4 pb-0.5">
+        <Link href="/explorer" className={!cityId && !q ? "pill-on" : "pill"}>{t.explore.everywhere}</Link>
         {CITIES.map((name) => {
           const c = communes.find((x) => x.name === name);
           if (!c) return null;
           return (
-            <Link key={c.id} href={`/explorer?ville=${c.id}`} className={`chip h-8 flex-none px-3 ${cityId === c.id ? "bg-ink text-bg" : "bg-paper text-ink"}`}>
+            <Link key={c.id} href={`/explorer?ville=${c.id}`} className={cityId === c.id ? "pill-on" : "pill"}>
               {name}
             </Link>
           );

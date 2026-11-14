@@ -9,7 +9,7 @@ import { NameBadge } from "./ui/badge";
 export function OfficialCard({ o, lang, highlight = false }: { o: Official; lang: "fr" | "en"; highlight?: boolean }) {
   const t = dict(lang);
   return (
-    <Link href={`/elus/${o.id}`} className={`flex items-center gap-3 border-b border-line px-4 py-3 hover:bg-paper/60 ${highlight ? "bg-green-soft/40" : ""}`}>
+    <Link href={`/elus/${o.id}`} className={`flex items-center gap-3 border-b border-line px-4 py-3.5 transition-colors duration-150 hover:bg-paper/60 active:bg-paper ${highlight ? "bg-green-soft/40" : ""}`}>
       <Avatar src={o.profile?.avatar_url ?? o.photo_url} name={o.full_name} size={48} />
       <span className="min-w-0 flex-1">
         <span className="flex items-center gap-1 text-[16px] font-bold">
@@ -20,9 +20,9 @@ export function OfficialCard({ o, lang, highlight = false }: { o: Official; lang
           {o.title ?? `${t.officials.mandates[o.mandate]} · ${officialPlace(o, geo)}`}
           {o.party ? ` · ${o.party}` : ""}
         </span>
-        <span className={`mt-0.5 inline-block text-[12px] font-semibold ${o.profile_id ? "text-green-deep" : "text-muted"}`}>{o.profile_id ? t.myOfficials.claimed : t.myOfficials.unclaimed}</span>
+        <span className={`mt-1 inline-flex items-center gap-1.5 text-[12px] font-semibold ${o.profile_id ? "text-green-deep" : "text-muted"}`}><span aria-hidden="true" className={`h-1.5 w-1.5 rounded-full ${o.profile_id ? "bg-green" : "bg-line"}`} />{o.profile_id ? t.myOfficials.claimed : t.myOfficials.unclaimed}</span>
       </span>
-      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 flex-none text-muted" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="m9 5 7 7-7 7" /></svg>
+      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-[18px] w-[18px] flex-none text-muted/70" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round"><path d="m9 5 7 7-7 7" /></svg>
     </Link>
   );
 }
