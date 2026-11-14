@@ -1,4 +1,4 @@
-// Shared helpers for photos, videos and files in direct messages.
+// Shared helpers for photos and files in direct messages (no videos, by choice: 2026-11-14).
 // Safe to import from server and client code.
 import type { DmAttachment } from "./types";
 
@@ -11,7 +11,6 @@ export const DM_URL_TTL = 6 * 60 * 60;
 /** Types the private bucket accepts as is (see migration 0006). Anything else goes up as octet-stream. */
 const KNOWN_TYPES = new Set([
   "image/jpeg", "image/png", "image/webp", "image/gif", "image/heic", "image/heif",
-  "video/mp4", "video/webm", "video/quicktime", "video/3gpp",
   "audio/mpeg", "audio/mp4", "audio/aac", "audio/ogg", "audio/wav", "audio/webm", "audio/x-m4a",
   "application/pdf", "text/plain", "text/csv", "application/rtf", "application/zip",
   "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -26,13 +25,17 @@ export function storageType(mime: string) {
 
 /** Browsers can show these inline; HEIC and the rest are sent as a file card. */
 export function kindOf(mime: string): DmAttachment["type"] {
-  if (/^image\/(jpeg|png|webp|gif)$/.test(mime)) return "image";
-  if (/^video\/(mp4|webm|quicktime)$/.test(mime)) return "video";
-  return "file";
+  return /^image\/(jpeg|png|webp|gif)$/.test(mime) ? "image" : "file";
+}
+
+const VIDEO_EXT = /\.(mp4|m4v|mov|webm|3gp|3g2|avi|mkv|wmv|flv|mpe?g|ts)$/i;
+/** Videos are not accepted in direct messages, not even as a file. */
+export function isVideo(mime: string, name: string) {
+  return mime.startsWith("video/") || VIDEO_EXT.test(name);
 }
 
 export function isDmAttachment(x: unknown): x is DmAttachment {
-  return Boolean(x && typeof x === "object" && typeof (x as DmAttachment).path === "string" && ["image", "video", "file"].includes((x as DmAttachment).type));
+  return Boolean(x && typeof x === "object" && typeof (x as DmAttachment).path === "string" && ["image", "file"].includes((x as DmAttachment).type));
 }
 
 export function attachmentsOf(media: unknown): DmAttachment[] {
@@ -48,21 +51,18 @@ export function formatSize(bytes: number | undefined, lang: "fr" | "en") {
   return `${v} ${unit[i]}`;
 }
 
-/** "📷 Photo", "🎥 2 vidéos", "📎 Programme.pdf": used in pushes, toasts and the conversation list. */
+/** "📷 Photo", "📷 3 photos", "📎 Programme.pdf": used in pushes, toasts and the conversation list. */
 export function attachmentLabel(media: unknown, lang: "fr" | "en"): string {
   const list = attachmentsOf(media);
   if (!list.length) return "";
   const fr = lang === "fr";
   const images = list.filter((m) => m.type === "image").length;
-  const videos = list.filter((m) => m.type === "video").length;
-  const files = list.length - images - videos;
-  if (images && !videos && !files) return images === 1 ? "📷 Photo" : `📷 ${images} photos`;
-  if (videos && !images && !files) return videos === 1 ? (fr ? "🎥 Vidéo" : "🎥 Video") : `🎥 ${videos} ${fr ? "vidéos" : "videos"}`;
-  if (files && !images && !videos) {
+  const files = list.length - images;
+  if (!files) return images === 1 ? "📷 Photo" : `📷 ${images} photos`;
+  if (!images) {
     if (files === 1) return `📎 ${list[0].name || (fr ? "Fichier" : "File")}`;
     return `📎 ${files} ${fr ? "fichiers" : "files"}`;
   }
-  if (!files) return `📷 ${images + videos} ${fr ? "photos et vidéos" : "photos and videos"}`;
   return `📎 ${list.length} ${fr ? "pièces jointes" : "attachments"}`;
 }
 

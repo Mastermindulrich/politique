@@ -197,9 +197,9 @@ export type Conversation = {
   last_message?: Pick<Message, "text" | "sender_id" | "created_at" | "media"> | null;
 };
 
-/** One photo, video or file sent in a direct message (private bucket "politique-dm"). */
+/** One photo or file sent in a direct message (private bucket "politique-dm"). */
 export type DmAttachment = {
-  type: "image" | "video" | "file";
+  type: "image" | "file";
   /** <conversation_id>/<sender_id>/<file> inside the private bucket. */
   path: string;
   name?: string;

@@ -1,10 +1,10 @@
--- Photos, videos and files in direct messages.
+-- Photos and files in direct messages (no videos: Ulrich, 2026-11-14).
 --
 -- Files live in a PRIVATE bucket, "politique-dm", under <conversation_id>/<sender_id>/<file>.
 -- Only members of that conversation can read them (the app shows them through short-lived
 -- signed URLs), and only the sender can upload into their own folder of a conversation
 -- they belong to. messages.media (jsonb, already in 0001) holds one object per attachment:
---   { "type": "image" | "video" | "file", "path": "<conv>/<sender>/<file>",
+--   { "type": "image" | "file", "path": "<conv>/<sender>/<file>",
 --     "name": "...", "size": 123, "mime": "...", "width": 0, "height": 0 }
 -- and every path must point inside the sender's own folder of that same conversation.
 set search_path = politique, extensions, public;
@@ -12,7 +12,6 @@ set search_path = politique, extensions, public;
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
 values ('politique-dm', 'politique-dm', false, 52428800, array[
   'image/jpeg','image/png','image/webp','image/gif','image/heic','image/heif',
-  'video/mp4','video/webm','video/quicktime','video/3gpp',
   'audio/mpeg','audio/mp4','audio/aac','audio/ogg','audio/wav','audio/webm','audio/x-m4a',
   'application/pdf','text/plain','text/csv','application/rtf','application/zip',
   'application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -57,7 +56,7 @@ language sql immutable set search_path = politique, extensions, public as $$
     and not exists (
       select 1 from jsonb_array_elements(media) m
       where jsonb_typeof(m) <> 'object'
-         or coalesce(m->>'type', '') not in ('image', 'video', 'file')
+         or coalesce(m->>'type', '') not in ('image', 'file')
          or coalesce(m->>'path', '') !~ ('^' || cid::text || '/' || sender::text || '/[A-Za-z0-9._-]{1,120}$')
          or m ? 'url'
          or length(coalesce(m->>'name', '')) > 200)

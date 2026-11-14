@@ -37,10 +37,6 @@ export async function prepare(file: File): Promise<Prepared> {
     }
   }
   const kind = kindOf(mime);
-  if (kind === "video") {
-    const size = await videoSize(file);
-    return { blob: file, name, mime, kind, ...size };
-  }
   if (kind === "image") {
     const size = await imageSize(file);
     return { blob: file, name, mime, kind, ...size };
@@ -55,20 +51,6 @@ function imageSize(file: Blob): Promise<{ width?: number; height?: number }> {
     img.onload = () => { ok({ width: img.naturalWidth || undefined, height: img.naturalHeight || undefined }); URL.revokeObjectURL(url); };
     img.onerror = () => { ok({}); URL.revokeObjectURL(url); };
     img.src = url;
-  });
-}
-
-function videoSize(file: Blob): Promise<{ width?: number; height?: number }> {
-  return new Promise((ok) => {
-    const url = URL.createObjectURL(file);
-    const v = document.createElement("video");
-    const done = (r: { width?: number; height?: number }) => { ok(r); URL.revokeObjectURL(url); };
-    const timer = window.setTimeout(() => done({}), 3000);
-    v.preload = "metadata";
-    v.muted = true;
-    v.onloadedmetadata = () => { window.clearTimeout(timer); done({ width: v.videoWidth || undefined, height: v.videoHeight || undefined }); };
-    v.onerror = () => { window.clearTimeout(timer); done({}); };
-    v.src = url;
   });
 }
 

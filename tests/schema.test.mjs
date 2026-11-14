@@ -323,7 +323,9 @@ assert(fk.is_owner === false && fk.display_name === "fakeboss", "a second claime
 assert((await sql(`select count(*)::int n from profiles where is_owner`)).rows[0].n === 1, "exactly one owner");
 
 // --- Attachments in direct messages ----------------------------------------------
-assert((await sql(`select public from storage.buckets where id = 'politique-dm'`)).rows[0].public === false, "DM bucket is private");
+const dmBucket = (await sql(`select public, allowed_mime_types from storage.buckets where id = 'politique-dm'`)).rows[0];
+assert(dmBucket.public === false, "DM bucket is private");
+assert(!dmBucket.allowed_mime_types.some((m) => m.startsWith("video/")), "no videos in the DM bucket");
 const dmPath = (who, f = "a1.jpg") => `${cid}/${who}/${f}`;
 await asRole(kof, async () => {
   assert((await sql(`select dm_object_allowed($1, 'write') ok`, [dmPath(kof)])).rows[0].ok === true, "member uploads into own folder");
@@ -336,6 +338,7 @@ await asRole(kof, async () => {
   await fails(() => sql(`insert into messages (conversation_id, sender_id, media) values ($1, $2, $3)`, [cid, kof, JSON.stringify([{ type: "image", path: dmPath(awa) }])]), "attachment from someone else's folder");
   await fails(() => sql(`insert into messages (conversation_id, sender_id, media) values ($1, $2, $3)`, [cid, kof, JSON.stringify([{ type: "image", path: dmPath(kof), url: "https://evil.example/x.jpg" }])]), "attachment with an outside URL");
   await fails(() => sql(`insert into messages (conversation_id, sender_id, media) values ($1, $2, $3)`, [cid, kof, JSON.stringify([{ type: "script", path: dmPath(kof) }])]), "unknown attachment type");
+  await fails(() => sql(`insert into messages (conversation_id, sender_id, media) values ($1, $2, $3)`, [cid, kof, JSON.stringify([{ type: "video", path: dmPath(kof, "v.mp4") }])]), "video attachment");
   await fails(() => sql(`insert into messages (conversation_id, sender_id, media) values ($1, $2, $3)`, [cid, kof, JSON.stringify([{ type: "image", path: `${cid}/${kof}/../x.jpg` }])]), "path escaping the folder");
 });
 await asRole(yao, async () => {

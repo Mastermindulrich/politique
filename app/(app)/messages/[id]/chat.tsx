@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState, useTransition } from "react";
 import { NameBadge } from "@/app/components/ui/badge";
 import { I } from "@/app/components/ui/icons";
 import { markConversationRead, sendMessage } from "@/lib/actions";
-import { DM_MAX_FILES, DM_URL_TTL, attachmentsOf } from "@/lib/dm-media";
+import { DM_MAX_FILES, DM_URL_TTL, attachmentsOf, isVideo } from "@/lib/dm-media";
 import { prepare, removeUploaded, signPaths, tooBig, upload } from "@/lib/dm-upload";
 import { t as dict } from "@/lib/i18n";
 import { supabaseBrowser } from "@/lib/supabase/client";
@@ -83,6 +83,10 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
     const files = Array.from(list);
     if (files.length > room) setError(t.messages.tooMany);
     for (const file of files.slice(0, Math.max(0, room))) {
+      if (isVideo(file.type, file.name)) {
+        setError(t.messages.noVideo);
+        continue;
+      }
       const key = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
       const p = await prepare(file);
       if (tooBig(p)) {
@@ -187,15 +191,12 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
             <li key={d.key} className="relative h-20 w-20 flex-none overflow-hidden rounded-2xl border border-line bg-paper">
               {d.kind === "image" ? (
                 <img src={d.preview} alt="" className="h-full w-full object-cover" />
-              ) : d.kind === "video" ? (
-                <video src={d.preview} muted playsInline preload="metadata" className="h-full w-full bg-black object-cover" />
               ) : (
                 <div className="flex h-full w-full flex-col items-center justify-center gap-1 px-1 text-center text-muted">
                   <I.file className="h-6 w-6" />
                   <span className="line-clamp-2 break-all text-[10px] leading-tight">{d.name}</span>
                 </div>
               )}
-              {d.kind === "video" && <span className="absolute bottom-1 left-1 rounded-full bg-black/70 p-1 text-white"><I.video className="h-3 w-3" /></span>}
               {d.status === "uploading" && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40" aria-label={t.messages.uploading}>
                   <span className="h-6 w-6 animate-spin rounded-full border-2 border-white/40 border-t-white" />
@@ -230,8 +231,8 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
         </div>
       )}
 
-      <input ref={libraryRef} type="file" accept="image/*,video/*" multiple hidden onChange={(e) => { void addFiles(e.target.files); e.target.value = ""; }} />
-      <input ref={cameraRef} type="file" accept="image/*,video/*" capture="environment" hidden onChange={(e) => { void addFiles(e.target.files); e.target.value = ""; }} />
+      <input ref={libraryRef} type="file" accept="image/*" multiple hidden onChange={(e) => { void addFiles(e.target.files); e.target.value = ""; }} />
+      <input ref={cameraRef} type="file" accept="image/*" capture="environment" hidden onChange={(e) => { void addFiles(e.target.files); e.target.value = ""; }} />
       <input ref={fileRef} type="file" multiple hidden onChange={(e) => { void addFiles(e.target.files); e.target.value = ""; }} />
 
       <form

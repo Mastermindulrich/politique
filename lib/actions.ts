@@ -434,7 +434,7 @@ export async function startConversation(userId: string): Promise<Result<{ id: st
   return { ok: true, data: { id: data as string } };
 }
 const dmAttachment = z.object({
-  type: z.enum(["image", "video", "file"]),
+  type: z.enum(["image", "file"]),
   path: z.string().max(300),
   name: z.string().max(200).optional(),
   size: z.number().int().nonnegative().optional(),

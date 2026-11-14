@@ -14,9 +14,9 @@ function extOf(name?: string) {
   return e && e !== name ? e.slice(0, 4).toUpperCase() : "";
 }
 
-/** Photos and videos of one message, then its files, as they appear in the conversation. */
+/** Photos of one message, then its files, as they appear in the conversation. */
 export function MessageAttachments({ items, urls, mine, lang, onOpen, onLoaded }: { items: DmAttachment[]; urls: Record<string, string>; mine: boolean; lang: Lang; onOpen: (a: DmAttachment) => void; onLoaded: () => void }) {
-  const visual = items.filter((a) => a.type !== "file");
+  const visual = items.filter((a) => a.type === "image");
   const files = items.filter((a) => a.type === "file");
   const one = visual.length === 1;
   return (
@@ -32,13 +32,10 @@ export function MessageAttachments({ items, urls, mine, lang, onOpen, onLoaded }
               <div key={a.path} className={`relative min-h-0 overflow-hidden bg-paper ${wide ? "col-span-2" : ""}`} style={{ aspectRatio: wide ? "2 / 1" : ratio, maxHeight: one ? 360 : undefined }}>
                 {!url ? (
                   <div className="flex h-full w-full items-center justify-center text-muted"><I.image className="h-6 w-6" /></div>
-                ) : a.type === "image" ? (
+                ) : (
                   <button type="button" onClick={() => onOpen(a)} className="absolute inset-0 block" aria-label={a.name || "Photo"}>
                     <img src={url} alt={a.name || ""} loading="lazy" onLoad={onLoaded} className="h-full w-full object-cover" />
                   </button>
-                ) : (
-                  // #t=0.1 makes iPhone Safari paint the first frame instead of a black box.
-                  <video src={url.startsWith("blob:") ? url : `${url}#t=0.1`} controls playsInline preload="metadata" onLoadedMetadata={onLoaded} className="absolute inset-0 h-full w-full bg-black object-contain" />
                 )}
               </div>
             );
