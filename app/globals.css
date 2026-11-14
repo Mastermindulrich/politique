@@ -291,3 +291,10 @@ html.chat-open body {
 @keyframes typing-dot { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-4px); opacity: 1; } }
 @keyframes typing-in { from { opacity: 0; transform: translateY(4px) scale(.96); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .typing-dot, .typing-bubble { animation: none; opacity: .8; } }
+
+/* Direct messages: attach sheet slides up, send button pops in when there is something to send. */
+.dock-sheet { animation: dock-sheet 180ms cubic-bezier(.2,.9,.3,1.2); }
+@keyframes dock-sheet { from { opacity: 0; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: none; } }
+.send-pop { animation: send-pop 160ms cubic-bezier(.2,.9,.3,1.4); }
+@keyframes send-pop { from { transform: scale(.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .dock-sheet, .send-pop { animation: none; } }
