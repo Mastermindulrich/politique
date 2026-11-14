@@ -1,6 +1,8 @@
 "use client";
 
-/** Browser side of Web Push: service worker, permission, subscription. */
+/** Browser side of Web Push: service worker, permission, subscription. Inside the Android/iOS app, native push (lib/native.ts) takes over. */
+
+import { disableNativePush, enableNativePush, forgetNativeDevice, isNativeApp, nativePushState, syncNativePush } from "./native";
 
 const VAPID = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY || "";
 
@@ -25,7 +27,8 @@ function keyBytes(base64: string) {
 }
 
 export async function registerWorker() {
-  if (!("serviceWorker" in navigator)) return null;
+  // The apps get notifications natively; a service worker there would only cache pages.
+  if (isNativeApp() || !("serviceWorker" in navigator)) return null;
   try {
     return await navigator.serviceWorker.register("/sw.js", { scope: "/" });
   } catch {
@@ -39,6 +42,7 @@ async function currentSubscription() {
 }
 
 export async function pushState(): Promise<PushState> {
+  if (isNativeApp()) return nativePushState();
   // iPhone Safari only offers Web Push once the site is added to the Home Screen.
   if (isIOS() && !isStandalone()) return "ios-needs-install";
   if (!pushSupported()) return "unsupported";
@@ -56,6 +60,7 @@ async function save(sub: PushSubscription) {
 
 /** Asks for permission (must run from a tap or click), subscribes and saves this device. */
 export async function enablePush(): Promise<PushState> {
+  if (isNativeApp()) return enableNativePush();
   if (!pushSupported() || !VAPID) return pushState();
   const perm = await Notification.requestPermission();
   if (perm !== "granted") return perm === "denied" ? "denied" : "default";
@@ -67,6 +72,7 @@ export async function enablePush(): Promise<PushState> {
 }
 
 export async function disablePush(): Promise<PushState> {
+  if (isNativeApp()) return disableNativePush();
   const cur = pushSupported() ? await currentSubscription() : null;
   if (cur?.sub) {
     await fetch("/api/push/subscribe", { method: "DELETE", credentials: "include", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ endpoint: cur.sub.endpoint }) }).catch(() => {});
@@ -77,6 +83,7 @@ export async function disablePush(): Promise<PushState> {
 
 /** On sign-out: this browser stops receiving the account's notifications at once. */
 export async function forgetDevice() {
+  if (isNativeApp()) return forgetNativeDevice();
   if (!pushSupported()) return;
   const reg = await navigator.serviceWorker.getRegistration("/");
   const sub = await reg?.pushManager.getSubscription();
@@ -85,6 +92,7 @@ export async function forgetDevice() {
 
 /** Re-saves an existing subscription for whoever is signed in now (once per tab session). */
 export async function syncPush() {
+  if (isNativeApp()) return syncNativePush();
   if (!pushSupported() || !VAPID || Notification.permission !== "granted") return;
   try {
     if (sessionStorage.getItem("push-synced")) return;

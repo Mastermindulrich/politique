@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { describe, hrefFor, type Lang, type NotifType } from "@/lib/notify";
+import { initNative } from "@/lib/native";
 import { forgetDevice, registerWorker, syncPush } from "@/lib/push-client";
 import { supabaseBrowser } from "@/lib/supabase/client";
 import { unreadStore, useUnread } from "@/lib/unread-store";
@@ -185,6 +186,10 @@ export function NotificationCenter({ lang, viewerId, initial }: { lang: Lang; vi
   // Service worker: register, keep the subscription with this account, follow taps on notifications.
   useEffect(() => {
     void registerWorker().then(() => syncPush());
+    // Inside the Android/iOS app: notification channels and taps on native notifications.
+    let stopNative: (() => void) | undefined;
+    let gone = false;
+    void initNative((path) => router.push(path)).then((stop) => (gone ? stop() : (stopNative = stop)));
     const onMsg = (e: MessageEvent) => {
       if (e.data?.kind === "navigate" && typeof e.data.url === "string") router.push(new URL(e.data.url).pathname);
     };
@@ -203,6 +208,8 @@ export function NotificationCenter({ lang, viewerId, initial }: { lang: Lang; vi
     window.addEventListener("pointerdown", unlock, { passive: true });
     window.addEventListener("keydown", unlock);
     return () => {
+      gone = true;
+      stopNative?.();
       navigator.serviceWorker?.removeEventListener("message", onMsg);
       document.removeEventListener("submit", onSubmit, true);
       window.removeEventListener("pointerdown", unlock);

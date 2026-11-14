@@ -1,0 +1,10 @@
+node_modules/
+# Firebase client config: CI writes it from a GitHub secret.
+android/app/google-services.json
+ios/App/App/GoogleService-Info.plist
+# Signing material never goes in the repo.
+*.jks
+*.keystore
+*.p8
+*.p12
+*.mobileprovision

@@ -1,5 +1,6 @@
 import webpush from "web-push";
 import { createServiceClient } from "@/lib/supabase/server";
+import { apnsConfigured, fcmConfigured, NATIVE_PREFIX, sendNative } from "@/lib/native-push";
 import { DEFAULT_PREFS, describe, hrefFor, type Lang, type NotifType } from "@/lib/notify";
 
 /**
@@ -7,7 +8,9 @@ import { DEFAULT_PREFS, describe, hrefFor, type Lang, type NotifType } from "@/l
  *   NEXT_PUBLIC_VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY, VAPID_SUBJECT (mailto: or https: URL).
  */
 let ready: boolean | null = null;
-export function pushConfigured() {
+/** Web Push or native (app) push: at least one way to reach a device. */
+export const pushConfigured = () => webPushConfigured() || fcmConfigured() || apnsConfigured();
+function webPushConfigured() {
   if (ready !== null) return ready;
   const pub = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
   const priv = process.env.VAPID_PRIVATE_KEY;
@@ -29,6 +32,23 @@ async function sendTo(subs: Sub[], payload: PushPayload) {
   const used: string[] = [];
   await Promise.all(
     subs.map(async (s) => {
+      // Android and iOS apps: native push (FCM / APNs).
+      if (s.endpoint.startsWith(NATIVE_PREFIX)) {
+        const r = await sendNative(s.endpoint, {
+          title: payload.title,
+          body: payload.body,
+          url: payload.url,
+          tag: payload.tag,
+          type: payload.type,
+          urgent: URGENT.includes(payload.type),
+          ttlSeconds: payload.type === "message" ? 60 * 60 * 24 : 60 * 60 * 12,
+          badge: payload.unread,
+        });
+        if (r === "ok") used.push(s.id);
+        else if (r === "gone") gone.push(s.id);
+        return;
+      }
+      if (!webPushConfigured()) return;
       try {
         await webpush.sendNotification({ endpoint: s.endpoint, keys: { p256dh: s.p256dh, auth: s.auth } }, JSON.stringify(payload), {
           TTL: payload.type === "message" ? 60 * 60 * 24 : 60 * 60 * 12,
