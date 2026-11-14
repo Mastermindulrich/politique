@@ -1,10 +1,23 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import { cookies } from "next/headers";
+import localFont from "next/font/local";
+import { Suspense } from "react";
+import { NavProgress } from "./components/shell/nav-progress";
 import { site } from "@/lib/content";
-import { getViewer } from "@/lib/supabase/server";
 
-export const viewport: Viewport = { themeColor: "#0A7A4A", width: "device-width", initialScale: 1 };
+// Fonts ship with the site (no request to another server, no flash of fallback text).
+const sans = localFont({ src: "./fonts/inter-latin.woff2", variable: "--font-sans", weight: "100 900", display: "swap" });
+const display = localFont({ src: "./fonts/space-grotesk-latin.woff2", variable: "--font-display", weight: "300 700", display: "swap" });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0e0f11" },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.origin),
@@ -26,21 +39,23 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const store = await cookies();
-  const viewer = await getViewer();
-  const theme = viewer?.theme ?? (store.get("theme")?.value as "system" | "light" | "dark" | undefined) ?? "system";
-  const lang = viewer?.lang ?? store.get("lang")?.value ?? "fr";
+// The root layout reads no cookie on the server, so public pages can be served from the
+// edge cache. Theme and language come from the visitor's cookies, applied before paint.
+const prefs =
+  "(function(){try{var c=document.cookie,d=document.documentElement,t=c.match(/(?:^|; )theme=(light|dark|system)/),l=c.match(/(?:^|; )lang=(fr|en)/);if(t)d.setAttribute('data-theme',t[1]);if(l)d.lang=l[1]}catch(e){}})()";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={lang} data-theme={theme}>
+    <html lang="fr" data-theme="system" className={`${sans.variable} ${display.variable}`} suppressHydrationWarning>
       <head>
-        {/* Fonts load from Google at runtime, so the build never depends on fetching them. */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" />
+        <script dangerouslySetInnerHTML={{ __html: prefs }} />
       </head>
-      <body>{children}</body>
+      <body>
+        <Suspense fallback={null}>
+          <NavProgress />
+        </Suspense>
+        {children}
+      </body>
     </html>
   );
 }

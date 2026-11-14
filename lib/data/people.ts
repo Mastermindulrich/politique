@@ -1,6 +1,5 @@
 import type { Db as SupabaseClient } from "@/lib/supabase/schema";
-import { cache } from "react";
-import { createClient, getViewer } from "@/lib/supabase/server";
+import { getViewerPrivate } from "@/lib/supabase/server";
 import type { FeedPost, Official, PrivateProfile } from "@/lib/types";
 import { AUTHOR_COLS } from "./posts";
 
@@ -13,14 +12,8 @@ export async function fetchAuthors(supabase: SupabaseClient, ids: (string | null
   return new Map(((data ?? []) as Author[]).map((a) => [a.id, a]));
 }
 
-/** The viewer's private row (voting place). Only ever the caller's own. */
-export const getMyPrivate = cache(async (): Promise<PrivateProfile | null> => {
-  const viewer = await getViewer();
-  if (!viewer) return null;
-  const supabase = await createClient();
-  const { data } = await supabase.from("private_profiles").select("*").eq("user_id", viewer.id).maybeSingle();
-  return (data as PrivateProfile | null) ?? null;
-});
+/** The viewer's private row (voting place). Only ever the caller's own. Read together with the profile. */
+export const getMyPrivate = getViewerPrivate;
 
 /** Officials with their claimed profile attached. */
 export async function attachProfiles(supabase: SupabaseClient, officials: Official[]): Promise<Official[]> {

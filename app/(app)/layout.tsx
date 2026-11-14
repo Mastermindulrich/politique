@@ -1,19 +1,17 @@
 import { redirect } from "next/navigation";
 import { Shell } from "../components/shell/shell";
-import { getMyPrivate } from "@/lib/data/people";
-import { getViewer, supabaseConfigured } from "@/lib/supabase/server";
+import { PrefsSync } from "../components/shell/prefs-sync";
+import { getViewer, getViewerPrivate, supabaseConfigured } from "@/lib/supabase/server";
 import { t as dict } from "@/lib/i18n";
 import { getSettings } from "@/lib/settings";
 
 export const dynamic = "force-dynamic";
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
-  const viewer = await getViewer();
-  if (viewer) {
-    // Every account must say where it votes before using the app.
-    const priv = await getMyPrivate();
-    if (!priv?.vote_region_id) redirect("/bienvenue");
-  }
+  // One database trip for the member and their voting place; the switches come from the server cache.
+  const [viewer, priv, settings] = await Promise.all([getViewer(), getViewerPrivate(), getSettings()]);
+  // Every account must say where it votes before using the app.
+  if (viewer && !priv?.vote_region_id) redirect("/bienvenue");
   if (!supabaseConfigured) {
     const t = dict("fr");
     return (
@@ -23,7 +21,6 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       </div>
     );
   }
-  const settings = await getSettings();
   const lang = viewer?.lang ?? "fr";
   const staff = Boolean(viewer?.is_admin || viewer?.is_owner);
   if (settings.maintenance && !staff) {
@@ -62,6 +59,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
           {lang === "fr" ? "Momentanément suspendu : " : "Temporarily paused: "}{paused.join(", ")}.
         </p>
       )}
+      {viewer && <PrefsSync theme={viewer.theme} lang={viewer.lang} />}
       <Shell viewer={viewer}>{children}</Shell>
     </>
   );
