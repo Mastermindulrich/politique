@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { Feed } from "@/app/components/feed";
 import { Empty, PageHeader } from "@/app/components/shell/shell";
 import { Avatar } from "@/app/components/ui/avatar";
-import { TypeChip, VerifiedBadge } from "@/app/components/ui/badge";
+import { NameBadge, OwnerChip, TypeChip } from "@/app/components/ui/badge";
 import { I } from "@/app/components/ui/icons";
 import { communeById } from "@/lib/ci-geo";
 import { fetchProfilePosts } from "@/lib/data/posts";
@@ -99,10 +99,11 @@ export default async function ProfilePage({ params, searchParams }: { params: Pr
           <div className="mt-3">
             <h2 className="flex items-center gap-1.5 font-display text-[22px] font-bold leading-tight">
               {profile.display_name}
-              {profile.verified && <VerifiedBadge type={profile.account_type} size={22} title={t.profile.verified} />}
+              <NameBadge p={profile} size={22} lang={lang} verifiedTitle={t.profile.verified} />
             </h2>
             <div className="flex flex-wrap items-center gap-2 text-[15px] text-muted">
               <span>@{profile.handle}</span>
+              {profile.is_owner && <OwnerChip lang={lang} />}
               {profile.account_type !== "citoyen" && <TypeChip type={profile.account_type} label={t.profile.types[profile.account_type]} />}
               {Boolean(followsMeRes.data) && <span className="chip bg-paper text-muted">{t.profile.followsYou}</span>}
             </div>

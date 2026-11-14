@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useTransition } from "react";
+import { NameBadge } from "@/app/components/ui/badge";
 import { I } from "@/app/components/ui/icons";
 import { markConversationRead, sendMessage } from "@/lib/actions";
 import { t as dict } from "@/lib/i18n";
@@ -16,7 +17,7 @@ export function Chat({ conversationId, viewerId, lang, initial, members }: Props
   const [error, setError] = useState(false);
   const [, start] = useTransition();
   const bottom = useRef<HTMLDivElement>(null);
-  const names = new Map(members.map((m) => [m.id, m.display_name]));
+  const byId = new Map(members.map((m) => [m.id, m]));
   const isGroup = members.length > 2;
 
   // Live delivery: new rows in this conversation arrive over Supabase Realtime.
@@ -70,7 +71,7 @@ export function Chat({ conversationId, viewerId, lang, initial, members }: Props
               <li key={m.id} className="flex flex-col">
                 {showDay && <span className="my-3 self-center text-[12px] font-semibold text-muted">{day}</span>}
                 <div className={`max-w-[80%] ${mine ? "self-end" : "self-start"}`}>
-                  {isGroup && !mine && <span className="ml-3 text-[12px] text-muted">{names.get(m.sender_id)}</span>}
+                  {isGroup && !mine && byId.get(m.sender_id) && <span className="ml-3 inline-flex items-center gap-1 text-[12px] text-muted">{byId.get(m.sender_id)!.display_name}<NameBadge p={byId.get(m.sender_id)!} size={12} lang={lang} /></span>}
                   <p className={`whitespace-pre-wrap break-words rounded-3xl px-4 py-2 text-[15px] leading-snug ${mine ? "rounded-br-md bg-green text-white" : "rounded-bl-md bg-paper text-ink"} ${m.id.startsWith("tmp-") ? "opacity-70" : ""}`}>{m.text}</p>
                   <span className={`mt-0.5 block text-[11px] text-muted ${mine ? "text-right" : ""}`}>{new Date(m.created_at).toLocaleTimeString(lang === "fr" ? "fr-FR" : "en-GB", { hour: "2-digit", minute: "2-digit" })}</span>
                 </div>

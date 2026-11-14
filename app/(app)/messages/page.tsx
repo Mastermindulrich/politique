@@ -3,7 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Empty, PageHeader } from "@/app/components/shell/shell";
 import { Avatar } from "@/app/components/ui/avatar";
-import { VerifiedBadge } from "@/app/components/ui/badge";
+import { NameBadge } from "@/app/components/ui/badge";
 import { fetchConversations } from "@/lib/data/messages";
 import { t as dict, timeAgo } from "@/lib/i18n";
 import { createClient, getViewer } from "@/lib/supabase/server";
@@ -36,7 +36,7 @@ export default async function MessagesPage() {
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-1.5 text-[15px]">
                       <span className={`truncate ${unread ? "font-bold" : "font-semibold"}`}>{title}</span>
-                      {other?.verified && <VerifiedBadge type={other.account_type} size={16} />}
+                      {other && <NameBadge p={other} size={16} lang={lang} />}
                       {c.last_message_at && <span className="flex-none text-[13px] text-muted">· {timeAgo(c.last_message_at, lang)}</span>}
                     </div>
                     <p className={`truncate text-[14px] ${unread ? "font-semibold text-ink" : "text-muted"}`}>

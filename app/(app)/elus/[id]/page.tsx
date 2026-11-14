@@ -8,7 +8,7 @@ import { StatusChip } from "@/app/components/official-card";
 import { PostCard } from "@/app/components/post/post-card";
 import { Empty, PageHeader } from "@/app/components/shell/shell";
 import { Avatar } from "@/app/components/ui/avatar";
-import { VerifiedBadge } from "@/app/components/ui/badge";
+import { NameBadge } from "@/app/components/ui/badge";
 import { I } from "@/app/components/ui/icons";
 import * as geo from "@/lib/ci-geo";
 import { attachProfiles, fetchAuthors, officialPlace } from "@/lib/data/people";
@@ -214,7 +214,7 @@ export default async function OfficialPage({ params, searchParams }: { params: P
           <div className="min-w-0 flex-1">
             <h2 className="flex items-center gap-1.5 font-display text-[22px] font-bold leading-tight">
               {o.full_name}
-              {o.profile?.verified && <VerifiedBadge type="elu" size={22} />}
+              {o.profile && <NameBadge p={{ ...o.profile, account_type: "elu" }} size={22} lang={lang} />}
             </h2>
             <p className="text-[15px] text-muted">{o.title ?? `${t.officials.mandates[o.mandate]} · ${officialPlace(o, geo)}`}</p>
             <p className="mt-1 flex flex-wrap gap-x-3 text-[13px] text-muted">

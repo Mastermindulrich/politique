@@ -6,7 +6,7 @@ import { createClient, createPublicClient, supabaseConfigured } from "@/lib/supa
 import type { Profile } from "@/lib/types";
 import { communeById } from "@/lib/ci-geo";
 import { Avatar } from "../ui/avatar";
-import { VerifiedBadge } from "../ui/badge";
+import { NameBadge } from "../ui/badge";
 import { FollowButton } from "../follow-button";
 import { NavLinks, MobileNav, ComposeFab } from "./nav";
 import { SearchBox } from "./search-box";
@@ -72,7 +72,7 @@ export function Shell({ viewer, lang, children, hideRight = false }: { viewer: P
             <span className="hidden min-w-0 xl:block">
               <span className="flex items-center gap-1 truncate text-[15px] font-bold">
                 <span className="truncate">{viewer.display_name}</span>
-                {viewer.verified && <VerifiedBadge type={viewer.account_type} size={16} />}
+                <NameBadge p={viewer} size={16} lang={lang} />
               </span>
               <span className="block truncate text-[14px] text-muted">@{viewer.handle}</span>
             </span>
@@ -204,7 +204,7 @@ async function RightRail({ viewer, lang }: { viewer: Profile | null; lang: "fr" 
                   <span className="min-w-0">
                     <span className="flex items-center gap-1 text-[15px] font-bold">
                       <span className="truncate">{p.display_name}</span>
-                      {p.verified && <VerifiedBadge type={p.account_type} size={16} />}
+                      <NameBadge p={p} size={16} lang={lang} />
                     </span>
                     <span className="block truncate text-[13px] text-muted">@{p.handle}</span>
                   </span>

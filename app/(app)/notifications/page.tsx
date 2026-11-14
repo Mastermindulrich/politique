@@ -3,7 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Empty, PageHeader } from "@/app/components/shell/shell";
 import { Avatar } from "@/app/components/ui/avatar";
-import { VerifiedBadge } from "@/app/components/ui/badge";
+import { NameBadge } from "@/app/components/ui/badge";
 import { I } from "@/app/components/ui/icons";
 import { fetchAuthors } from "@/lib/data/people";
 import { t as dict, timeAgo } from "@/lib/i18n";
@@ -79,7 +79,7 @@ export default async function NotificationsPage() {
                       {actor && (
                         <span className="inline-flex items-center gap-1 font-bold">
                           {actor.display_name}
-                          {actor.verified && <VerifiedBadge type={actor.account_type} size={16} />}
+                          <NameBadge p={actor} size={16} lang={lang} />
                         </span>
                       )}{" "}
                       {t.notifications[n.type]}
