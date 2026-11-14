@@ -25,8 +25,8 @@ GitHub Actions (`.github/workflows/mobile.yml`) builds on every change to `mobil
 - **Android test app**: download `politique-android-test-apk` from the run's Artifacts,
   copy it to an Android phone and open it (allow "install unknown apps").
 - **Play Store bundle** (`.aab`): built when the keystore secrets exist.
-- **iOS**: compiled for the simulator to catch errors. Real iPhone builds need the Apple
-  account (below).
+- **iPhone**: compiled for the simulator on every change; signed and uploaded to
+  TestFlight once the Apple secrets exist (below).
 
 Locally: `npm ci && npx cap sync`, then `npx cap open android` (Android Studio) or
 `npx cap open ios` (Xcode, Mac only). Regenerate icons and splash from `assets/` with
@@ -52,8 +52,13 @@ Locally: `npm ci && npx cap sync`, then `npx cap open android` (Android Studio) 
    (only once). Vercel env vars: `APNS_KEY` (file content), `APNS_KEY_ID`, `APNS_TEAM_ID`
    (`APNS_BUNDLE_ID` defaults to `org.prototypex.politique`).
 4. App Store Connect → create the app "POLITIQUE" with that bundle id, then an
-   **App Store Connect API key** (Users and Access → Integrations) so CI can upload to
-   TestFlight.
+   **App Store Connect API key** with the **Admin** role (Users and Access → Integrations →
+   App Store Connect API). Add GitHub secrets `APPSTORE_API_KEY_ID`, `APPSTORE_API_ISSUER_ID`,
+   `APPSTORE_API_KEY_P8` (the downloaded `.p8` content) and `APPLE_TEAM_ID`. From then on,
+   every change to `mobile/` merged to main (or a manual run of "Mobile apps") signs the
+   iPhone app and uploads it to TestFlight.
+5. TestFlight → create an external testing group with a **public link** and share it with
+   the first users (they install Apple's TestFlight app, then POLITIQUE).
 
 ### 3. Google Play, 25 USD once
 
