@@ -152,7 +152,7 @@ export function Composer({ lang, parentId, replyTo, quotedId, quotedPreview, aut
                   onChange={(e) => setMedia((x) => x.map((y, j) => (j === i ? { ...y, alt: e.target.value } : y)))}
                   placeholder={t.composer.alt}
                   aria-label={t.composer.alt}
-                  className="w-full border-t border-line bg-card px-3 py-2 text-[13px] focus:outline-none"
+                  className="w-full border-t border-line bg-card px-3 py-2 text-[16px] focus:outline-none sm:text-[13px]"
                 />
               )}
             </li>
@@ -189,7 +189,7 @@ export function Composer({ lang, parentId, replyTo, quotedId, quotedPreview, aut
             ) : <span />}
             <label className="flex items-center gap-2 text-[13px] text-muted">
               {t.composer.pollDays}
-              <select className="rounded-lg border border-line bg-card px-2 py-1 text-ink" value={poll.days} onChange={(e) => setPoll((p) => p && { ...p, days: Number(e.target.value) })}>
+              <select className="rounded-lg border border-line bg-card px-2 py-1 text-[16px] text-ink sm:text-[14px]" value={poll.days} onChange={(e) => setPoll((p) => p && { ...p, days: Number(e.target.value) })}>
                 {[1, 2, 3, 5, 7].map((d) => (
                   <option key={d} value={d}>{d} {d > 1 ? t.composer.days : t.composer.day}</option>
                 ))}

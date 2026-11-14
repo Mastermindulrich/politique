@@ -15,7 +15,7 @@ export const metadata: Metadata = { title: "Paramètres", robots: { index: false
 function Section({ id, title, help, children }: { id: string; title: string; help?: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-16 border-b border-line px-4 py-6">
-      <h2 className="font-display text-[19px] font-bold">{title}</h2>
+      <h2 className="section-title">{title}</h2>
       {help && <p className="mt-1 text-[14px] leading-relaxed text-muted">{help}</p>}
       <div className="mt-4">{children}</div>
     </section>

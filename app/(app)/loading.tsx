@@ -3,7 +3,7 @@ export default function Loading() {
   return (
     <div aria-busy="true" aria-live="polite" className="fade-in">
       <span className="sr-only">Chargement…</span>
-      <div className="sticky top-0 z-30 flex min-h-[56px] items-center border-b border-line bg-bg/90 px-4 backdrop-blur">
+      <div className="bar sticky top-0 z-30 flex min-h-[54px] items-center border-b px-4">
         <div className="skeleton h-5 w-36" />
       </div>
       {[0, 1, 2, 3, 4, 5].map((i) => (

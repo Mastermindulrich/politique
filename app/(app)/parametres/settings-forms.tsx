@@ -91,7 +91,7 @@ export function ProfileForm({ viewer, lang }: { viewer: Profile; lang: Lang }) {
       }}
     >
       <div>
-        <button type="button" onClick={() => bannerRef.current?.click()} aria-label={t.settings.banner} className="relative block h-28 w-full overflow-hidden rounded-2xl border border-line bg-paper sm:h-36">
+        <button type="button" onClick={() => bannerRef.current?.click()} aria-label={t.settings.banner} className="relative block h-28 w-full overflow-hidden rounded-2xl border border-line bg-[linear-gradient(135deg,rgb(var(--green-soft))_0%,rgb(var(--paper))_55%,rgb(var(--orange-soft))_100%)] sm:h-36">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           {banner && <img src={banner} alt="" className="h-full w-full object-cover" />}
           <span className="absolute bottom-2 right-2 rounded-full bg-ink/80 px-3 py-1 text-[12px] font-semibold text-bg">{t.settings.banner}</span>

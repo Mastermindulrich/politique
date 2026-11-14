@@ -44,7 +44,7 @@ export default async function BarometerPage() {
     return (
       <>
         <PageHeader title={t.barometer.title} back="/mes-elus" />
-        <p className="border-b border-line bg-paper px-4 py-4 text-[14px] leading-relaxed text-muted">{t.barometer.intro}</p>
+        <p className="border-b border-line px-4 py-3.5 text-[14px] leading-relaxed text-muted">{t.barometer.intro}</p>
         <Empty>{t.barometer.none}</Empty>
       </>
     );
@@ -65,7 +65,7 @@ export default async function BarometerPage() {
   return (
     <>
       <PageHeader title={t.barometer.title} subtitle={month} back="/mes-elus" />
-      <p className="border-b border-line bg-paper px-4 py-4 text-[14px] leading-relaxed text-muted">{t.barometer.intro}</p>
+      <p className="border-b border-line px-4 py-3.5 text-[14px] leading-relaxed text-muted">{t.barometer.intro}</p>
       <section className="border-b border-line px-4 py-5">
         <h2 className="font-display text-[22px] font-bold leading-tight">{b.question}</h2>
         <p className="mt-1 text-[13px] text-muted">{t.barometer.closes} : {formatDate(b.closes_at, lang)}</p>

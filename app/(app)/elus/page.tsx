@@ -44,16 +44,16 @@ export default async function OfficialsPage({ searchParams }: { searchParams: Pr
     <>
       <PageHeader title={t.officials.title} back={viewer ? "/mes-elus" : undefined} />
       <div className="border-b border-line px-4 py-3">
-        <p className="text-[14px] text-muted">{t.officials.intro}</p>
+        <p className="text-[14px] leading-relaxed text-muted">{t.officials.intro}</p>
         <form action="/elus" role="search" className="relative mt-3">
           {mandate && <input type="hidden" name="mandat" value={mandate} />}
           <I.search className="pointer-events-none absolute left-4 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-muted" />
-          <input type="search" name="q" defaultValue={q} placeholder={t.officials.search} aria-label={t.officials.search} className="h-11 w-full rounded-full border border-transparent bg-paper pl-11 pr-4 text-[15px] placeholder:text-muted focus:border-green focus:bg-card focus:outline-none" />
+          <input type="search" name="q" defaultValue={q} placeholder={t.officials.search} aria-label={t.officials.search} className="search-field" />
         </form>
-        <nav aria-label={t.officials.filterMandate} className="-mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1">
-          <Link href={q ? `/elus?q=${encodeURIComponent(q)}` : "/elus"} className={`chip h-8 flex-none px-3 ${!mandate ? "bg-ink text-bg" : "bg-paper text-ink"}`}>{t.officials.all}</Link>
+        <nav aria-label={t.officials.filterMandate} className="no-scrollbar -mx-4 mt-3 flex gap-2 overflow-x-auto px-4">
+          <Link href={q ? `/elus?q=${encodeURIComponent(q)}` : "/elus"} className={!mandate ? "pill-on" : "pill"}>{t.officials.all}</Link>
           {MANDATES.map((m) => (
-            <Link key={m} href={`/elus?mandat=${m}${q ? `&q=${encodeURIComponent(q)}` : ""}`} className={`chip h-8 flex-none px-3 ${mandate === m ? "bg-ink text-bg" : "bg-paper text-ink"}`}>
+            <Link key={m} href={`/elus?mandat=${m}${q ? `&q=${encodeURIComponent(q)}` : ""}`} className={mandate === m ? "pill-on" : "pill"}>
               {t.officials.mandates[m]}
             </Link>
           ))}

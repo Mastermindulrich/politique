@@ -32,15 +32,15 @@ export default async function MessagesPage() {
             const title = c.title ?? others.map((o) => o.profile.display_name).join(", ");
             return (
               <li key={c.id}>
-                <Link href={`/messages/${c.id}`} className="flex items-center gap-3 border-b border-line px-4 py-3 hover:bg-paper/60">
-                  <Avatar src={other?.avatar_url} name={other?.display_name ?? "?"} size={48} />
+                <Link href={`/messages/${c.id}`} className="flex items-center gap-3 px-4 py-3 transition-colors duration-150 hover:bg-paper/60 active:bg-paper">
+                  <Avatar src={other?.avatar_url} name={other?.display_name ?? "?"} size={52} />
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-1.5 text-[15px]">
                       <span className={`truncate ${unread ? "font-bold" : "font-semibold"}`}>{title}</span>
                       {other && <NameBadge p={other} size={16} lang={lang} />}
                       {c.last_message_at && <span className="flex-none text-[13px] text-muted">· {timeAgo(c.last_message_at, lang)}</span>}
                     </div>
-                    <p className={`truncate text-[14px] ${unread ? "font-semibold text-ink" : "text-muted"}`}>
+                    <p className={`mt-0.5 truncate text-[15px] ${unread ? "font-semibold text-ink" : "text-muted"}`}>
                       {c.last_message?.sender_id === viewer.id ? `${t.messages.you} : ` : ""}
                       {c.last_message ? messagePreview(c.last_message.text, c.last_message.media, lang) : ""}
                     </p>

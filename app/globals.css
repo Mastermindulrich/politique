@@ -9,7 +9,7 @@
   --card: 255 255 255;
   --fg: 22 24 28;
   --muted: 91 97 104;
-  --line: 230 227 221;
+  --line: 235 233 228;
   --paper: 244 242 238;
   --orange-soft: 255 243 230;
   --green-soft: 231 243 236;
@@ -22,7 +22,7 @@
   --card: 22 24 28;
   --fg: 240 238 234;
   --muted: 160 166 173;
-  --line: 44 47 52;
+  --line: 47 51 56;
   --paper: 24 26 30;
   --orange-soft: 58 35 10;
   --green-soft: 12 44 30;
@@ -36,11 +36,11 @@
     --card: 22 24 28;
     --fg: 240 238 234;
     --muted: 160 166 173;
-    --line: 44 47 52;
+    --line: 47 51 56;
     --paper: 24 26 30;
     --orange-soft: 58 35 10;
     --green-soft: 12 44 30;
-  --green-deep: 111 207 158;
+    --green-deep: 111 207 158;
   }
 }
 
@@ -97,19 +97,23 @@ select,
 
   /* Every button answers a press: it sinks a little and darkens, then springs back. */
   .btn {
-    @apply inline-flex h-12 select-none items-center justify-center gap-2 rounded-full px-6 text-[15px] font-semibold transition-[transform,background-color,border-color,box-shadow,opacity,color] duration-150 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2 focus-visible:ring-offset-bg active:scale-[0.96] disabled:cursor-not-allowed disabled:opacity-60 disabled:active:scale-100;
+    @apply inline-flex h-12 select-none items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 text-[15px] font-bold tracking-[-0.005em] transition-[transform,background-color,border-color,box-shadow,opacity,color] duration-150 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2 focus-visible:ring-offset-bg active:scale-[0.96] disabled:cursor-not-allowed disabled:opacity-60 disabled:active:scale-100;
   }
   .btn-primary {
-    @apply btn bg-green text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_8px_18px_-10px_rgba(10,122,74,0.75)] hover:bg-[#0A6B43] active:bg-[#085C39] active:shadow-none;
+    @apply btn bg-green text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_1px_2px_rgba(10,122,74,0.25)] hover:bg-[#0A6B43] active:bg-[#085C39] active:shadow-none disabled:opacity-45;
   }
   .btn-ghost {
-    @apply btn border border-line bg-card text-ink hover:bg-paper active:bg-line/60;
+    @apply btn border border-line bg-transparent text-ink hover:bg-paper active:bg-line/60;
   }
   .btn-dark {
-    @apply btn bg-ink text-bg hover:opacity-90 active:opacity-75;
+    @apply btn bg-ink text-bg hover:opacity-90 active:opacity-75 disabled:opacity-45;
   }
   .btn-sm {
     @apply h-9 px-4 text-[14px];
+  }
+  /* Quiet button for secondary actions (filters, inline tools). */
+  .btn-soft {
+    @apply btn bg-paper text-ink hover:bg-line/60 active:bg-line;
   }
 
   /* Press feedback for anything that is not a .btn: rows, tabs, icons, cards. */
@@ -137,8 +141,10 @@ select,
     animation: shimmer 1.3s ease-in-out infinite;
   }
 
+  /* Fields: soft filled box that turns white with a green edge when focused, like the DM composer.
+     16px text on phones, or iOS Safari zooms into the field on focus. */
   .input {
-    @apply h-12 w-full rounded-2xl border border-line bg-card px-4 text-[15px] text-ink placeholder:text-muted focus:border-green focus:outline-none focus:ring-2 focus:ring-green/30 disabled:opacity-60;
+    @apply h-12 w-full rounded-2xl border border-line bg-paper/60 px-4 text-[16px] text-ink transition-[border-color,background-color,box-shadow] duration-150 placeholder:text-muted focus:border-green focus:bg-bg focus:outline-none focus:ring-4 focus:ring-green/15 disabled:opacity-60 sm:text-[15px];
   }
   .textarea {
     @apply input h-auto min-h-[96px] resize-y py-3;
@@ -149,11 +155,38 @@ select,
     background-position: right 14px center;
   }
   .label {
-    @apply mb-1.5 block text-[13px] font-semibold text-muted;
+    @apply mb-1.5 block text-[13px] font-semibold text-ink/80;
+  }
+
+  /* Surfaces: one radius, one hairline, everywhere. */
+  .card {
+    @apply rounded-2xl border border-line bg-card;
+  }
+  /* Section heading inside a page (Tendances, Élus, Interpellations en cours...). */
+  .section-title {
+    @apply font-display text-[19px] font-bold leading-tight tracking-[-0.01em];
+  }
+
+  /* Frosted sticky bar: page headers and the bottom navigation. */
+  .bar {
+    @apply border-line/80 bg-bg/85 backdrop-blur-xl backdrop-saturate-150;
   }
 
   .chip {
     @apply inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 text-[12px] font-semibold;
+  }
+
+  /* Filter pills (cities, mandates, sort order): quiet until chosen, then solid ink. */
+  .pill {
+    @apply tap inline-flex h-9 flex-none items-center whitespace-nowrap rounded-full border border-line bg-bg px-4 text-[14px] font-semibold text-ink hover:bg-paper active:bg-line/60;
+  }
+  .pill-on {
+    @apply pill border-ink bg-ink text-bg hover:bg-ink;
+  }
+
+  /* Rounded search field (explore, officials). 16px on phones so iOS doesn't zoom. */
+  .search-field {
+    @apply h-11 w-full rounded-full border border-transparent bg-paper pl-11 pr-4 text-[16px] text-ink transition-[border-color,background-color,box-shadow] duration-150 placeholder:text-muted focus:border-green focus:bg-bg focus:outline-none focus:ring-4 focus:ring-green/15 sm:text-[15px];
   }
 
   /* The POLITIQUE mark (Hémicycle), same file as the favicon. The three child spans are kept

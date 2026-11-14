@@ -31,7 +31,7 @@ export function SearchBox({ placeholder, initial = "", autoFocus = false, hideOn
         onChange={(e) => setQ(e.target.value)}
         placeholder={placeholder}
         aria-label={placeholder}
-        className="h-11 w-full rounded-full border border-transparent bg-paper pl-11 pr-4 text-[15px] placeholder:text-muted focus:border-green focus:bg-card focus:outline-none"
+        className="search-field"
       />
     </form>
   );

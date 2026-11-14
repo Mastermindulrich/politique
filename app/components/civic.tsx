@@ -25,7 +25,7 @@ function Reveal({ label, children, signedIn, icon }: { label: string; children: 
       </button>
     );
   }
-  return <div className="w-full rounded-2xl border border-line bg-paper p-4">{children(() => setOpen(false))}</div>;
+  return <div className="sheet-up w-full rounded-2xl border border-line bg-card p-4 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.15)]">{children(() => setOpen(false))}</div>;
 }
 
 function useSubmit() {
@@ -102,7 +102,7 @@ export function InterpellationVote({ id, initial, count, lang, signedIn, disable
           if (!r.ok) { setOn(!next); setN((x) => x + (next ? -1 : 1)); }
         });
       }}
-      className={`flex h-14 w-14 flex-none flex-col items-center justify-center rounded-2xl border text-[13px] font-bold transition-colors disabled:opacity-60 ${on ? "border-green bg-green text-white" : "border-line bg-card text-ink hover:border-green"}`}
+      className={`tap flex h-14 w-14 flex-none flex-col items-center justify-center gap-0.5 rounded-2xl border text-[14px] font-bold tabular-nums transition-colors active:scale-95 disabled:opacity-60 ${on ? "border-green bg-green text-white" : "border-line bg-card text-ink hover:border-green/60 hover:bg-green-soft/40"}`}
     >
       <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round"><path d="m6 14 6-6 6 6" /></svg>
       {n}
@@ -236,14 +236,17 @@ export function BarometerVote({ id, options, lang }: { id: string; options: stri
       <fieldset className="flex flex-col gap-2">
         <legend className="sr-only">{t.barometer.vote}</legend>
         {options.map((o, i) => (
-          <label key={i} className={`flex cursor-pointer items-center gap-3 rounded-2xl border px-4 py-3 text-[15px] font-medium ${choice === i ? "border-green bg-green-soft" : "border-line bg-card hover:border-green"}`}>
-            <input type="radio" name="baro" className="h-4 w-4 accent-green" checked={choice === i} onChange={() => setChoice(i)} />
+          <label key={i} className={`tap flex min-h-[52px] cursor-pointer items-center gap-3 rounded-2xl border px-4 py-3 text-[15px] font-semibold transition-colors active:scale-[0.98] ${choice === i ? "border-green bg-green-soft text-green-deep ring-1 ring-green" : "border-line bg-card hover:bg-paper"}`}>
+            <input type="radio" name="baro" className="sr-only" checked={choice === i} onChange={() => setChoice(i)} />
+            <span aria-hidden="true" className={`flex h-5 w-5 flex-none items-center justify-center rounded-full border-2 transition-colors ${choice === i ? "border-green bg-green" : "border-line"}`}>
+              {choice === i && <span className="h-2 w-2 rounded-full bg-white" />}
+            </span>
             {o}
           </label>
         ))}
       </fieldset>
       {error && <p role="alert" className="text-[13px] font-medium text-orange">{t.common.error}</p>}
-      <button type="submit" className="btn-primary mt-1" disabled={pending || choice === null}>{t.barometer.vote}</button>
+      <button type="submit" className="btn-primary mt-2" disabled={pending || choice === null}>{t.barometer.vote}</button>
     </form>
   );
 }
@@ -268,7 +271,7 @@ export function PropositionForm({ communeId, lang, signedIn }: { communeId: numb
               <option value="" disabled>—</option>
               {[...communes].sort((a, b) => a.name.localeCompare(b.name, "fr")).map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
             </select>
-            <span className="mt-1 block text-[12px] text-muted">{lang === "fr" ? "L'idée et sa commune sont publiques. Elles ne disent pas où vous votez : vous pouvez proposer pour n'importe quelle commune." : "The idea and its commune are public. They don't say where you vote: you can propose for any commune."}</span>
+            <span className="mt-1.5 block text-[12px] leading-snug text-muted">{lang === "fr" ? "L'idée et sa commune sont publiques. Elles ne disent pas où vous votez : vous pouvez proposer pour n'importe quelle commune." : "The idea and its commune are public. They don't say where you vote: you can propose for any commune."}</span>
           </label>
           <label><span className="label">{t.ideas.titleField}</span><input className="input" required minLength={5} maxLength={140} value={title} onChange={(e) => setTitle(e.target.value)} /></label>
           <label><span className="label">{t.ideas.bodyField}</span><textarea className="textarea" required maxLength={2000} value={body} onChange={(e) => setBody(e.target.value)} /></label>
@@ -300,7 +303,7 @@ export function PropositionVote({ id, initial, count, lang, signedIn }: { id: st
           if (!r.ok) { setOn(!next); setN((x) => x + (next ? -1 : 1)); }
         });
       }}
-      className={`flex h-14 w-14 flex-none flex-col items-center justify-center rounded-2xl border text-[13px] font-bold transition-colors ${on ? "border-green bg-green text-white" : "border-line bg-card text-ink hover:border-green"}`}
+      className={`tap flex h-14 w-14 flex-none flex-col items-center justify-center gap-0.5 rounded-2xl border text-[14px] font-bold tabular-nums transition-colors active:scale-95 ${on ? "border-green bg-green text-white" : "border-line bg-card text-ink hover:border-green/60 hover:bg-green-soft/40"}`}
     >
       <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round"><path d="m6 14 6-6 6 6" /></svg>
       {n}

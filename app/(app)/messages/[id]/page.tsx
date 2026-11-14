@@ -27,8 +27,8 @@ export default async function ConversationPage({ params }: { params: Promise<{ i
   return (
     <ChatViewport>
       <div className="z-10 flex min-h-[56px] flex-none items-center gap-3 border-b border-line/70 bg-bg/85 px-3 py-2 backdrop-blur-xl sm:px-4" style={{ paddingTop: "max(env(safe-area-inset-top), 8px)" }}>
-        <Link href="/messages" aria-label="Retour" className="-ml-2 rounded-full p-2 hover:bg-paper">
-          <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="m15 5-7 7 7 7" /></svg>
+        <Link href="/messages" aria-label="Retour" className="tap -ml-1 flex h-9 w-9 flex-none items-center justify-center rounded-full hover:bg-paper active:bg-line/70">
+          <svg aria-hidden="true" viewBox="0 0 24 24" className="h-[22px] w-[22px]" fill="none" stroke="currentColor" strokeWidth={2.1} strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5" /><path d="m11 18-6-6 6-6" /></svg>
         </Link>
         {other && (
           <Link href={`/u/${other.handle}`} className="flex min-w-0 items-center gap-3">

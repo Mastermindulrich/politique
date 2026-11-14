@@ -4,7 +4,7 @@ import { getLang } from "@/lib/lang";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Feed } from "@/app/components/feed";
-import { Empty, PageHeader } from "@/app/components/shell/shell";
+import { Empty, PageHeader, Tabs } from "@/app/components/shell/shell";
 import { Avatar } from "@/app/components/ui/avatar";
 import { NameBadge, OwnerChip, TypeChip } from "@/app/components/ui/badge";
 import { I } from "@/app/components/ui/icons";
@@ -73,7 +73,7 @@ export default async function ProfilePage({ params, searchParams }: { params: Pr
     <>
       <PageHeader title={profile.display_name} subtitle={`${formatCount(profile.posts_count, lang)} ${t.profile.posts.toLowerCase()}`} back={viewer ? "/accueil" : "/explorer"} />
       <div className="relative">
-        <div className="h-32 bg-paper sm:h-44">
+        <div className="h-32 bg-[linear-gradient(135deg,rgb(var(--green-soft))_0%,rgb(var(--paper))_55%,rgb(var(--orange-soft))_100%)] sm:h-44">
           {profile.banner_url && <img src={profile.banner_url} alt="" className="h-full w-full object-cover" />}
         </div>
         <div className="px-4">
@@ -137,14 +137,7 @@ export default async function ProfilePage({ params, searchParams }: { params: Pr
           </div>
         </div>
 
-        <nav aria-label="Profil" className="mt-3 flex border-b border-line">
-          {tabs.map((x) => (
-            <Link key={x.key} href={x.key === "posts" ? `/u/${profile.handle}` : `/u/${profile.handle}?tab=${x.key}`} aria-current={tab === x.key ? "page" : undefined} className="tab pt-3 text-[14px] sm:text-[15px]">
-              <span className={tab === x.key ? "font-bold" : "font-medium text-muted"}>{x.label}</span>
-              <span className={`h-1 w-12 rounded-full ${tab === x.key ? "bg-green" : "bg-transparent"}`} />
-            </Link>
-          ))}
-        </nav>
+        <Tabs label="Profil" className="mt-3 border-b border-line" items={tabs.map((x) => ({ href: x.key === "posts" ? `/u/${profile.handle}` : `/u/${profile.handle}?tab=${x.key}`, label: x.label, on: tab === x.key }))} />
       </div>
 
       <Feed
