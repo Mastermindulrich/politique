@@ -282,3 +282,12 @@ html.chat-open body {
     padding-bottom: 8px;
   }
 }
+
+/* Direct messages: the other person's "…" while they type. */
+.typing-bubble { animation: typing-in 160ms ease-out; }
+.typing-dot { width: 7px; height: 7px; border-radius: 9999px; background: currentColor; color: rgb(120 120 120); opacity: .45; animation: typing-dot 1.2s infinite ease-in-out; }
+.typing-dot:nth-of-type(2) { animation-delay: .15s; }
+.typing-dot:nth-of-type(3) { animation-delay: .3s; }
+@keyframes typing-dot { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-4px); opacity: 1; } }
+@keyframes typing-in { from { opacity: 0; transform: translateY(4px) scale(.96); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .typing-dot, .typing-bubble { animation: none; opacity: .8; } }

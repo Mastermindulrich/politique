@@ -441,6 +441,9 @@ const dmAttachment = z.object({
   mime: z.string().max(120).optional(),
   width: z.number().int().positive().max(20000).optional(),
   height: z.number().int().positive().max(20000).optional(),
+  voice: z.boolean().optional(),
+  duration: z.number().nonnegative().max(3600).optional(),
+  peaks: z.array(z.number().int().min(0).max(100)).max(64).optional(),
 });
 
 export async function sendMessage(conversationId: string, text: string, media: DmAttachment[] = []): Promise<Result<{ id: string }>> {

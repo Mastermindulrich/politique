@@ -1,9 +1,9 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { I } from "@/app/components/ui/icons";
-import { formatSize, withDownload } from "@/lib/dm-media";
+import { formatDuration, formatSize, withDownload } from "@/lib/dm-media";
 import { t as dict } from "@/lib/i18n";
 import type { DmAttachment } from "@/lib/types";
 
@@ -42,9 +42,9 @@ export function MessageAttachments({ items, urls, mine, lang, onOpen, onLoaded }
           })}
         </div>
       )}
-      {files.map((a) => (
-        <FileCard key={a.path} a={a} url={urls[a.path]} mine={mine} lang={lang} />
-      ))}
+      {files.map((a) =>
+        a.voice ? <VoiceNotePlayer key={a.path} a={a} url={urls[a.path]} mine={mine} lang={lang} /> : <FileCard key={a.path} a={a} url={urls[a.path]} mine={mine} lang={lang} />,
+      )}
     </div>
   );
 }
@@ -109,5 +109,79 @@ export function Lightbox({ a, url, lang, onClose }: { a: DmAttachment; url: stri
       </div>
     </div>,
     document.body,
+  );
+}
+
+/** Only one voice note plays at a time across the conversation. */
+let playing: HTMLAudioElement | null = null;
+
+/** Voice note bubble: play/pause, a waveform you can tap to seek, and the time. */
+function VoiceNotePlayer({ a, url, mine, lang }: { a: DmAttachment; url?: string; mine: boolean; lang: Lang }) {
+  const t = dict(lang);
+  const audio = useRef<HTMLAudioElement>(null);
+  const [on, setOn] = useState(false);
+  const [pos, setPos] = useState(0);
+  const [total, setTotal] = useState(a.duration ?? 0);
+  const peaks = a.peaks?.length ? a.peaks : Array.from({ length: 48 }, (_, i) => 20 + ((i * 37) % 60));
+  const progress = total ? Math.min(1, pos / total) : 0;
+
+  function toggle() {
+    const el = audio.current;
+    if (!el) return;
+    if (el.paused) {
+      if (playing && playing !== el) playing.pause();
+      playing = el;
+      void el.play().catch(() => setOn(false));
+    } else el.pause();
+  }
+
+  function seek(e: React.MouseEvent<HTMLDivElement>) {
+    const el = audio.current;
+    if (!el || !total) return;
+    const r = e.currentTarget.getBoundingClientRect();
+    el.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * total;
+    setPos(el.currentTime);
+  }
+
+  return (
+    <div className={`flex w-[260px] max-w-full items-center gap-2.5 rounded-3xl py-2 pl-2 pr-4 ${mine ? "rounded-br-md bg-green text-white" : "rounded-bl-md bg-paper text-ink"} ${url ? "" : "opacity-70"}`}>
+      {url && (
+        <audio
+          ref={audio}
+          src={url}
+          preload="metadata"
+          onPlay={() => setOn(true)}
+          onPause={() => setOn(false)}
+          onEnded={() => { setOn(false); setPos(0); }}
+          onTimeUpdate={(e) => setPos(e.currentTarget.currentTime)}
+          onLoadedMetadata={(e) => Number.isFinite(e.currentTarget.duration) && e.currentTarget.duration > 0 && setTotal(e.currentTarget.duration)}
+        />
+      )}
+      <button
+        type="button"
+        onClick={toggle}
+        disabled={!url}
+        aria-label={on ? t.messages.pause : t.messages.play}
+        className={`flex h-10 w-10 flex-none items-center justify-center rounded-full ${mine ? "bg-white text-green-deep" : "bg-green text-white"}`}
+      >
+        {on ? (
+          <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>
+        ) : (
+          <svg aria-hidden="true" viewBox="0 0 24 24" className="ml-0.5 h-5 w-5" fill="currentColor"><path d="M7 4.5v15a1 1 0 0 0 1.5.9l12-7.5a1 1 0 0 0 0-1.8l-12-7.5A1 1 0 0 0 7 4.5z" /></svg>
+        )}
+      </button>
+      <div className="min-w-0 flex-1">
+        <div role="slider" aria-label={t.messages.voiceNote} aria-valuemin={0} aria-valuemax={Math.round(total)} aria-valuenow={Math.round(pos)} tabIndex={-1} onClick={seek} className="flex h-8 cursor-pointer items-center gap-[2px]">
+          {peaks.map((p, i) => (
+            <span
+              key={i}
+              className={`w-[3px] flex-1 rounded-full transition-colors ${(i + 0.5) / peaks.length <= progress ? (mine ? "bg-white" : "bg-green") : mine ? "bg-white/45" : "bg-ink/25"}`}
+              style={{ height: `${Math.max(12, p)}%` }}
+            />
+          ))}
+        </div>
+        <span className={`block text-[11px] tabular-nums ${mine ? "text-white/85" : "text-muted"}`}>{formatDuration(on || pos ? pos : total)}</span>
+      </div>
+    </div>
   );
 }

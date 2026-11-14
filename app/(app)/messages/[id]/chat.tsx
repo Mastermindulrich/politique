@@ -4,17 +4,24 @@ import { useCallback, useEffect, useRef, useState, useTransition } from "react";
 import { NameBadge } from "@/app/components/ui/badge";
 import { I } from "@/app/components/ui/icons";
 import { markConversationRead, sendMessage } from "@/lib/actions";
-import { DM_MAX_FILES, DM_URL_TTL, attachmentsOf, isVideo } from "@/lib/dm-media";
+import { DM_MAX_FILES, DM_URL_TTL, attachmentsOf, formatDuration, isVideo } from "@/lib/dm-media";
 import { prepare, removeUploaded, signPaths, tooBig, upload } from "@/lib/dm-upload";
 import { t as dict } from "@/lib/i18n";
 import { supabaseBrowser } from "@/lib/supabase/client";
+import { type VoiceNote, useVoiceRecorder, voiceSupported } from "@/lib/voice-recorder";
 import type { DmAttachment, FeedPost, Message } from "@/lib/types";
 import { Lightbox, MessageAttachments } from "./attachments";
+import { TypingBubble } from "./typing";
 
 type Props = { conversationId: string; viewerId: string; lang: "fr" | "en"; initial: Message[]; initialUrls: Record<string, string>; members: FeedPost["author"][] };
 
 /** An attachment waiting in the tray above the message box. */
 type Draft = { key: string; preview: string; name: string; kind: DmAttachment["type"]; status: "uploading" | "done" | "error"; att?: DmAttachment; file: File };
+
+/** How long a "typing" signal stays on screen without a new one. */
+const TYPING_TTL = 4500;
+const TYPING_EVERY = 2500;
+type Typing = { kind: "text" | "voice"; until: number };
 
 const samePaths = (a: unknown, b: unknown) => attachmentsOf(a).map((x) => x.path).join("|") === attachmentsOf(b).map((x) => x.path).join("|");
 
@@ -33,17 +40,36 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
   const libraryRef = useRef<HTMLInputElement>(null);
   const cameraRef = useRef<HTMLInputElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const [typing, setTyping] = useState<Record<string, Typing>>({});
+  const [canVoice, setCanVoice] = useState(false);
+  const [sendingVoice, setSendingVoice] = useState(false);
+  const channelRef = useRef<ReturnType<ReturnType<typeof supabaseBrowser>["channel"]> | null>(null);
+  const lastTyping = useRef(0);
   const byId = new Map(members.map((m) => [m.id, m]));
   const isGroup = members.length > 2;
 
   // The camera choice only makes sense on phones and tablets; a desktop shows the file picker anyway.
-  useEffect(() => setTouch(window.matchMedia("(pointer: coarse)").matches), []);
+  useEffect(() => {
+    setTouch(window.matchMedia("(pointer: coarse)").matches);
+    setCanVoice(voiceSupported());
+  }, []);
 
   // Live delivery: new rows in this conversation arrive over Supabase Realtime.
   useEffect(() => {
     const supabase = supabaseBrowser();
     const channel = supabase
-      .channel(`conv-${conversationId}`)
+      .channel(`conv-${conversationId}`, { config: { broadcast: { self: false } } })
+      // "Typing" and "recording a voice note" signals: ephemeral, never stored.
+      .on("broadcast", { event: "typing" }, ({ payload }: { payload: { user_id?: string; kind?: string } }) => {
+        const uid = payload?.user_id;
+        if (!uid || uid === viewerId) return;
+        setTyping((t) => {
+          const next = { ...t };
+          if (payload.kind === "stop") delete next[uid];
+          else next[uid] = { kind: payload.kind === "voice" ? "voice" : "text", until: Date.now() + TYPING_TTL };
+          return next;
+        });
+      })
       .on("postgres_changes", { event: "INSERT", schema: "politique", table: "messages", filter: `conversation_id=eq.${conversationId}` }, (payload: { new: Message }) => {
         const row = payload.new;
         setMessages((m) => {
@@ -55,19 +81,56 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
         if (missing.length) {
           void signPaths(missing, DM_URL_TTL).then((signed) => setUrls((u) => ({ ...signed, ...u })));
         }
-        if (row.sender_id !== viewerId) void markConversationRead(conversationId);
+        if (row.sender_id !== viewerId) {
+          void markConversationRead(conversationId);
+          setTyping((t) => {
+            if (!t[row.sender_id]) return t;
+            const next = { ...t };
+            delete next[row.sender_id];
+            return next;
+          });
+        }
       })
       .subscribe();
+    channelRef.current = channel;
     return () => {
+      channelRef.current = null;
       supabase.removeChannel(channel);
     };
   }, [conversationId, viewerId]);
+
+  // Signals expire on their own if the other person stops without sending.
+  const typingNow = Object.entries(typing).filter(([, v]) => v.until > Date.now());
+  useEffect(() => {
+    if (!Object.keys(typing).length) return;
+    const id = window.setInterval(() => setTyping((t) => {
+      const now = Date.now();
+      const live = Object.entries(t).filter(([, v]) => v.until > now);
+      return live.length === Object.keys(t).length ? t : Object.fromEntries(live);
+    }), 1000);
+    return () => window.clearInterval(id);
+  }, [typing]);
+
+  const signal = useCallback((kind: "text" | "voice" | "stop", force = false) => {
+    const ch = channelRef.current;
+    if (!ch) return;
+    const now = Date.now();
+    if (kind !== "stop" && !force && now - lastTyping.current < TYPING_EVERY) return;
+    lastTyping.current = kind === "stop" ? 0 : now;
+    void ch.send({ type: "broadcast", event: "typing", payload: { user_id: viewerId, kind } });
+  }, [viewerId]);
 
   const toBottom = useCallback(() => {
     // Scroll the message list itself, never the page (scrollIntoView also moved the whole page on iPhone).
     if (log.current) log.current.scrollTop = log.current.scrollHeight;
   }, []);
   useEffect(toBottom, [messages.length, toBottom]);
+  // The "…" bubble appearing keeps the bottom in view when the reader is already there.
+  const typingCount = typingNow.length;
+  useEffect(() => {
+    const el = log.current;
+    if (typingCount && el && el.scrollHeight - el.scrollTop - el.clientHeight < 160) el.scrollTop = el.scrollHeight;
+  }, [typingCount]);
 
   // A photo that finishes loading near the bottom keeps the newest message in view.
   const onMediaLoaded = useCallback(() => {
@@ -126,12 +189,61 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
   const ready = drafts.filter((d) => d.status === "done" && d.att);
   const canSend = !uploading && (text.trim().length > 0 || ready.length > 0);
 
+  async function sendVoice(note: VoiceNote | null) {
+    signal("stop");
+    if (!note || note.duration < 0.8) return;
+    setSendingVoice(true);
+    setError(null);
+    try {
+      const ext = note.mime.includes("mp4") || note.mime.includes("aac") ? "m4a" : note.mime.includes("ogg") ? "ogg" : "webm";
+      const base = await upload(conversationId, viewerId, { blob: note.blob, name: `vocal-${new Date().toISOString().slice(0, 16).replace(/[-:T]/g, "")}.${ext}`, mime: note.mime, kind: "file" });
+      const att: DmAttachment = { ...base, voice: true, duration: Math.round(note.duration * 10) / 10, peaks: note.peaks };
+      setUrls((u) => ({ ...u, [att.path]: URL.createObjectURL(note.blob) }));
+      const tmp: Message = { id: `tmp-${Date.now()}`, conversation_id: conversationId, sender_id: viewerId, text: "", media: [att], created_at: new Date().toISOString(), deleted_at: null };
+      setMessages((m) => [...m, tmp]);
+      const r = await sendMessage(conversationId, "", [att]);
+      if (!r.ok) {
+        setMessages((m) => m.filter((x) => x.id !== tmp.id));
+        void removeUploaded(att.path);
+        setError(t.common.error);
+        return;
+      }
+      const id = r.data!.id;
+      setMessages((m) => (m.some((x) => x.id === id) ? m.filter((x) => x.id !== tmp.id) : m.map((x) => (x.id === tmp.id ? { ...x, id } : x))));
+    } catch {
+      setError(t.messages.uploadFailed);
+    } finally {
+      setSendingVoice(false);
+    }
+  }
+
+  const voice = useVoiceRecorder((note) => void sendVoice(note));
+  const recording = voice.state !== "idle";
+  // Tell the other side every few seconds that a voice note is being recorded.
+  useEffect(() => {
+    if (voice.state !== "recording") return;
+    signal("voice", true);
+    const id = window.setInterval(() => signal("voice", true), TYPING_EVERY);
+    return () => window.clearInterval(id);
+  }, [voice.state, signal]);
+
+  async function startVoice() {
+    setMenu(false);
+    setError(null);
+    try {
+      await voice.start();
+    } catch (e) {
+      setError((e as Error).message === "denied" ? t.messages.micDenied : t.messages.noVoice);
+    }
+  }
+
   function send() {
     if (!canSend) return;
     const body = text.trim();
     const media = ready.map((d) => d.att!);
     const sent = drafts;
     setError(null);
+    signal("stop");
     // The sender sees their own photos at once from the local copies.
     setUrls((u) => {
       const next = { ...u };
@@ -182,6 +294,13 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
             );
           })}
         </ul>
+        {typingNow.length > 0 && (
+          <TypingBubble
+            names={isGroup ? typingNow.map(([id]) => byId.get(id)?.display_name ?? "").filter(Boolean) : []}
+            voice={typingNow.every(([, v]) => v.kind === "voice")}
+            lang={lang}
+          />
+        )}
       </div>
       {error && <p role="alert" className="px-4 pb-1 text-[13px] font-medium text-orange">{error}</p>}
 
@@ -236,7 +355,7 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
       <input ref={fileRef} type="file" multiple hidden onChange={(e) => { void addFiles(e.target.files); e.target.value = ""; }} />
 
       <form
-        className={`chat-composer flex flex-none items-end gap-2 bg-bg px-3 pt-2 ${drafts.length || menu ? "" : "border-t border-line"}`}
+        className={`chat-composer relative flex flex-none items-end gap-2 bg-bg px-3 pt-2 ${drafts.length || menu ? "" : "border-t border-line"}`}
         onSubmit={(e) => {
           e.preventDefault();
           send();
@@ -258,8 +377,13 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
           rows={1}
           value={text}
           maxLength={4000}
-          onChange={(e) => setText(e.target.value)}
+          onChange={(e) => {
+            setText(e.target.value);
+            if (e.target.value.trim()) signal("text");
+            else signal("stop");
+          }}
           onFocus={() => setMenu(false)}
+          onBlur={() => !text.trim() && signal("stop")}
           onKeyDown={(e) => {
             if (e.key === "Enter" && !e.shiftKey) {
               e.preventDefault();
@@ -269,9 +393,38 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
           placeholder={t.messages.placeholder}
           className="max-h-32 min-h-[44px] min-w-0 flex-1 resize-none rounded-3xl border border-line bg-paper px-4 py-2.5 text-[16px] focus:border-green focus:outline-none"
         />
-        <button type="submit" aria-label={t.messages.send} disabled={!canSend} className="btn-primary h-11 w-11 flex-none !px-0">
-          {uploading ? <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-t-white" /> : <I.send className="h-5 w-5" />}
-        </button>
+        {canVoice && !text.trim() && !drafts.length ? (
+          <button type="button" aria-label={t.messages.record} onClick={startVoice} disabled={sendingVoice} className="btn-primary h-11 w-11 flex-none !px-0">
+            {sendingVoice ? <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-t-white" /> : <I.mic className="h-5 w-5" />}
+          </button>
+        ) : (
+          <button type="submit" aria-label={t.messages.send} disabled={!canSend} className="btn-primary h-11 w-11 flex-none !px-0">
+            {uploading ? <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-t-white" /> : <I.send className="h-5 w-5" />}
+          </button>
+        )}
+        {recording && (
+          // Recording covers the whole composer row, so nothing underneath can be tapped by mistake.
+          <div className="absolute inset-0 z-10 flex items-start gap-2 bg-bg px-3 pt-2" role="group" aria-label={t.messages.recording}>
+            <button type="button" aria-label={t.messages.cancelVoice} onClick={() => { voice.cancel(); signal("stop"); }} className="flex h-11 w-11 flex-none items-center justify-center rounded-full text-orange hover:bg-paper">
+              <I.trash className="h-6 w-6" />
+            </button>
+            <div className="flex h-11 min-w-0 flex-1 items-center gap-3 rounded-3xl border border-line bg-paper px-4">
+              <span className="relative flex h-3 w-3 flex-none">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-60" />
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-red-500" />
+              </span>
+              <span className="text-[16px] font-semibold tabular-nums" aria-live="off">{formatDuration(voice.seconds)}</span>
+              <span className="flex h-6 min-w-0 flex-1 items-center gap-[3px] overflow-hidden" aria-hidden="true">
+                {Array.from({ length: 18 }, (_, i) => (
+                  <span key={i} className="w-[3px] flex-none rounded-full bg-green transition-[height] duration-100" style={{ height: `${Math.max(12, Math.min(100, voice.level * 100 * (0.55 + 0.45 * Math.abs(Math.sin(i * 1.7 + voice.seconds * 6)))))}%` }} />
+                ))}
+              </span>
+            </div>
+            <button type="button" aria-label={t.messages.stopSend} disabled={voice.state !== "recording"} onClick={async () => void sendVoice(await voice.stop())} className="btn-primary h-11 w-11 flex-none !px-0">
+              <I.send className="h-5 w-5" />
+            </button>
+          </div>
+        )}
       </form>
 
       {viewing && urls[viewing.path] && <Lightbox a={viewing} url={urls[viewing.path]} lang={lang} onClose={() => setViewing(null)} />}
