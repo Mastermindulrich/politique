@@ -53,8 +53,8 @@ function loop(play: () => void, every: number, vibrate?: number[]) {
 export function startRingtone() {
   return loop(() => {
     const notes = [659.25, 783.99, 987.77];
-    notes.forEach((f, i) => tone([f], i * 0.16, 0.15, 0.14));
-    notes.forEach((f, i) => tone([f], 0.7 + i * 0.16, 0.15, 0.14));
+    notes.forEach((f, i) => tone([f], i * 0.16, 0.15, 0.3));
+    notes.forEach((f, i) => tone([f], 0.7 + i * 0.16, 0.15, 0.3));
   }, 3000, [400, 200, 400]);
 }
 
@@ -69,7 +69,34 @@ export function playHangupTone() {
   tone([380], 0.22, 0.25, 0.08);
 }
 
-/** Call it from a tap so later sounds are allowed (iPhone). */
+/** Call it from a tap so later sounds are allowed (iPhone): resumes the context and plays a silent sample. */
 export function unlockAudio() {
-  audio();
+  const c = audio();
+  if (!c) return;
+  try {
+    const b = c.createBuffer(1, 1, 22050);
+    const src = c.createBufferSource();
+    src.buffer = b;
+    src.connect(c.destination);
+    src.start(0);
+  } catch {
+    // nothing to unlock
+  }
+}
+
+type AudioSessionType = "auto" | "playback" | "play-and-record" | "ambient" | "transient" | "transient-solo";
+
+/**
+ * Safari's Audio Session API (iOS 16.4+). "playback" lets the ringtone sound even with the
+ * silent switch on, like a real incoming call; "play-and-record" is the in-call mode.
+ * Other browsers ignore this.
+ */
+export function setAudioMode(mode: "ring" | "call" | "auto") {
+  const nav = navigator as unknown as { audioSession?: { type: AudioSessionType } };
+  if (!nav.audioSession) return;
+  try {
+    nav.audioSession.type = mode === "ring" ? "playback" : mode === "call" ? "play-and-record" : "auto";
+  } catch {
+    // read-only on some versions
+  }
 }

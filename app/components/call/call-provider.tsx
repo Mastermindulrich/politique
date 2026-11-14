@@ -6,7 +6,7 @@ import { callText } from "@/lib/call-i18n";
 import { AUDIO_CONSTRAINTS, CallSession, VIDEO_CONSTRAINTS, callsSupported, newDeviceId, type Sig } from "@/lib/call-session";
 import { supabaseBrowser } from "@/lib/supabase/client";
 import { CallScreen } from "./call-screen";
-import { playHangupTone, startRingback, startRingtone, unlockAudio } from "./tones";
+import { playHangupTone, setAudioMode, startRingback, startRingtone, unlockAudio } from "./tones";
 
 /**
  * Voice and video calls for the whole app. Mounted once in the app layout, so a call keeps going
@@ -78,7 +78,25 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
   useEffect(() => {
     deviceId.current = newDeviceId();
     setSupported(callsSupported());
+    // Phones only allow sound after a tap. Unlock it on the first tap anywhere in the app,
+    // so a call that arrives later can actually ring.
+    const unlock = () => {
+      unlockAudio();
+      window.removeEventListener("pointerdown", unlock);
+      window.removeEventListener("keydown", unlock);
+    };
+    window.addEventListener("pointerdown", unlock, { passive: true });
+    window.addEventListener("keydown", unlock);
+    return () => {
+      window.removeEventListener("pointerdown", unlock);
+      window.removeEventListener("keydown", unlock);
+    };
   }, []);
+
+  // iPhone: ring even with the silent switch on (like a phone call), then switch to call audio.
+  useEffect(() => {
+    setAudioMode(view.phase === "incoming" ? "ring" : view.phase === "idle" ? "auto" : "call");
+  }, [view.phase]);
 
   const patch = useCallback((p: Partial<CallView>) => apply((v) => ({ ...v, ...p })), [apply]);
 
@@ -268,8 +286,10 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
     if (session.current !== s) return;
     s.send("media", { mic: true, cam: video });
     stopSound.current = startRingback();
+    // Ring again every 4 s; every 8 s the notification is sent again too, so a locked phone keeps buzzing.
+    let rings = 0;
     every(() => {
-      if (!s.peerDevice && session.current === s) void ringAgain(r.callId, conversationId, video);
+      if (!s.peerDevice && session.current === s) void ringAgain(r.callId, conversationId, video, ++rings % 2 === 0);
     }, RING_EVERY);
     later(() => {
       if (session.current === s && !s.peerDevice) {
