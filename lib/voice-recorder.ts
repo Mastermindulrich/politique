@@ -33,21 +33,30 @@ function bars(samples: number[], n = PEAKS) {
   return out.map((v) => Math.max(8, Math.min(100, Math.round((v / top) * 100))));
 }
 
+/** How many bars the live waveform shows while recording (newest on the right). */
+export const LIVE_BARS = 64;
+
 /** `onLimit` gets the note when recording stops by itself at the time limit. */
 export function useVoiceRecorder(onLimit?: (note: VoiceNote) => void) {
-  const [state, setState] = useState<"idle" | "starting" | "recording">("idle");
+  const [state, setState] = useState<"idle" | "starting" | "recording" | "paused">("idle");
   const [seconds, setSeconds] = useState(0);
-  const [level, setLevel] = useState(0);
+  /** Recent loudness, 0-1, one value per 80 ms: drawn as the scrolling live waveform. */
+  const [live, setLive] = useState<number[]>([]);
   const rec = useRef<MediaRecorder | null>(null);
   const stream = useRef<MediaStream | null>(null);
   const chunks = useRef<Blob[]>([]);
   const samples = useRef<number[]>([]);
-  const started = useRef(0);
+  /** Recorded time before the current run (pauses excluded), and when the current run began. */
+  const banked = useRef(0);
+  const runStart = useRef(0);
+  const paused = useRef(false);
   const timer = useRef<number | null>(null);
   const ctx = useRef<AudioContext | null>(null);
   const finish = useRef<((v: VoiceNote | null) => void) | null>(null);
   const limitCb = useRef(onLimit);
   limitCb.current = onLimit;
+
+  const elapsed = useCallback(() => banked.current + (paused.current || !runStart.current ? 0 : (Date.now() - runStart.current) / 1000), []);
 
   const cleanup = useCallback(() => {
     if (timer.current) window.clearInterval(timer.current);
@@ -57,9 +66,12 @@ export function useVoiceRecorder(onLimit?: (note: VoiceNote) => void) {
     void ctx.current?.close().catch(() => {});
     ctx.current = null;
     rec.current = null;
+    banked.current = 0;
+    runStart.current = 0;
+    paused.current = false;
     setState("idle");
     setSeconds(0);
-    setLevel(0);
+    setLive([]);
   }, []);
 
   useEffect(() => cleanup, [cleanup]);
@@ -83,7 +95,7 @@ export function useVoiceRecorder(onLimit?: (note: VoiceNote) => void) {
     r.ondataavailable = (e) => e.data.size && chunks.current.push(e.data);
     r.onstop = () => {
       const type = (r.mimeType || mime || "audio/webm").split(";")[0];
-      const duration = (Date.now() - started.current) / 1000;
+      const duration = elapsed();
       const blob = new Blob(chunks.current, { type });
       const done = finish.current;
       finish.current = null;
@@ -93,39 +105,68 @@ export function useVoiceRecorder(onLimit?: (note: VoiceNote) => void) {
       if (done) done(note);
       else if (note) limitCb.current?.(note);
     };
-    // Loudness for the live meter and the waveform.
+    // Loudness, ~12 times a second: the live waveform and the one stored with the note.
     try {
       const AC = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
       const ac = new AC();
       ctx.current = ac;
       const an = ac.createAnalyser();
-      an.fftSize = 512;
+      an.fftSize = 1024;
       ac.createMediaStreamSource(s).connect(an);
       const buf = new Uint8Array(an.fftSize);
       const tick = () => {
         if (!ctx.current) return;
-        an.getByteTimeDomainData(buf);
-        let sum = 0;
-        for (const v of buf) sum += ((v - 128) / 128) ** 2;
-        const rms = Math.sqrt(sum / buf.length);
-        samples.current.push(rms);
-        setLevel(Math.min(1, rms * 4));
-        window.setTimeout(tick, 100);
+        if (!paused.current) {
+          an.getByteTimeDomainData(buf);
+          // Peak of the window, so syllables show as sharp highs and silences as lows.
+          let sum = 0, peak = 0;
+          for (const v of buf) {
+            const x = Math.abs(v - 128) / 128;
+            sum += x * x;
+            if (x > peak) peak = x;
+          }
+          const rms = Math.sqrt(sum / buf.length);
+          const loud = Math.min(1, Math.pow(rms * 0.6 + peak * 0.4, 0.6) * 1.6);
+          samples.current.push(rms);
+          setLive((l) => (l.length >= LIVE_BARS ? [...l.slice(l.length - LIVE_BARS + 1), loud] : [...l, loud]));
+        }
+        window.setTimeout(tick, 80);
       };
       tick();
     } catch {
-      /* the meter is a nicety */
+      /* the waveform is a nicety */
     }
     r.start(1000);
     rec.current = r;
-    started.current = Date.now();
+    banked.current = 0;
+    runStart.current = Date.now();
+    paused.current = false;
     setState("recording");
     timer.current = window.setInterval(() => {
-      const sec = (Date.now() - started.current) / 1000;
+      const sec = elapsed();
       setSeconds(sec);
-      if (sec >= VOICE_MAX_SECONDS) rec.current?.state === "recording" && rec.current.stop();
-    }, 250);
-  }, [cleanup]);
+      if (sec >= VOICE_MAX_SECONDS && rec.current && rec.current.state !== "inactive") rec.current.stop();
+    }, 200);
+  }, [cleanup, elapsed]);
+
+  const pause = useCallback(() => {
+    const r = rec.current;
+    if (!r || r.state !== "recording") return;
+    r.pause();
+    banked.current = elapsed();
+    paused.current = true;
+    setSeconds(banked.current);
+    setState("paused");
+  }, [elapsed]);
+
+  const resume = useCallback(() => {
+    const r = rec.current;
+    if (!r || r.state !== "paused") return;
+    r.resume();
+    runStart.current = Date.now();
+    paused.current = false;
+    setState("recording");
+  }, []);
 
   /** Stop and get the note (null when nothing was recorded). */
   const stop = useCallback(
@@ -151,5 +192,18 @@ export function useVoiceRecorder(onLimit?: (note: VoiceNote) => void) {
     } else cleanup();
   }, [cleanup]);
 
-  return { state, seconds, level, start, stop, cancel };
+  /** Throw away what was recorded and start again from 0:00. */
+  const restart = useCallback(async () => {
+    finish.current = null;
+    const r = rec.current;
+    if (r && r.state !== "inactive") {
+      await new Promise<void>((ok) => {
+        r.onstop = () => { cleanup(); ok(); };
+        r.stop();
+      });
+    } else cleanup();
+    await start();
+  }, [cleanup, start]);
+
+  return { state, seconds, live, start, stop, cancel, pause, resume, restart };
 }

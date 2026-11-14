@@ -4,11 +4,12 @@ import { useCallback, useEffect, useRef, useState, useTransition } from "react";
 import { NameBadge } from "@/app/components/ui/badge";
 import { I } from "@/app/components/ui/icons";
 import { markConversationRead, sendMessage } from "@/lib/actions";
-import { DM_MAX_FILES, DM_URL_TTL, attachmentsOf, formatDuration, isVideo } from "@/lib/dm-media";
+import { DM_MAX_FILES, DM_URL_TTL, attachmentsOf, isVideo } from "@/lib/dm-media";
 import { prepare, removeUploaded, signPaths, tooBig, upload } from "@/lib/dm-upload";
 import { t as dict } from "@/lib/i18n";
 import { supabaseBrowser } from "@/lib/supabase/client";
 import { type VoiceNote, useVoiceRecorder, voiceSupported } from "@/lib/voice-recorder";
+import { VoicePanel } from "./voice-panel";
 import type { DmAttachment, FeedPost, Message } from "@/lib/types";
 import { Lightbox, MessageAttachments } from "./attachments";
 import { TypingBubble } from "./typing";
@@ -219,7 +220,7 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
 
   const voice = useVoiceRecorder((note) => void sendVoice(note));
   const recording = voice.state !== "idle";
-  // Tell the other side every few seconds that a voice note is being recorded.
+  // Tell the other side every few seconds that a voice note is being recorded (not while paused).
   useEffect(() => {
     if (voice.state !== "recording") return;
     signal("voice", true);
@@ -361,6 +362,10 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
           send();
         }}
       >
+        {recording ? (
+          <VoicePanel voice={voice} lang={lang} onCancel={() => { voice.cancel(); signal("stop"); }} onSend={async () => void sendVoice(await voice.stop())} />
+        ) : (
+          <>
         <button
           type="button"
           aria-label={menu ? t.messages.attachClose : t.messages.attach}
@@ -402,28 +407,7 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
             {uploading ? <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-t-white" /> : <I.send className="h-5 w-5" />}
           </button>
         )}
-        {recording && (
-          // Recording covers the whole composer row, so nothing underneath can be tapped by mistake.
-          <div className="absolute inset-0 z-10 flex items-start gap-2 bg-bg px-3 pt-2" role="group" aria-label={t.messages.recording}>
-            <button type="button" aria-label={t.messages.cancelVoice} onClick={() => { voice.cancel(); signal("stop"); }} className="flex h-11 w-11 flex-none items-center justify-center rounded-full text-orange hover:bg-paper">
-              <I.trash className="h-6 w-6" />
-            </button>
-            <div className="flex h-11 min-w-0 flex-1 items-center gap-3 rounded-3xl border border-line bg-paper px-4">
-              <span className="relative flex h-3 w-3 flex-none">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-60" />
-                <span className="relative inline-flex h-3 w-3 rounded-full bg-red-500" />
-              </span>
-              <span className="text-[16px] font-semibold tabular-nums" aria-live="off">{formatDuration(voice.seconds)}</span>
-              <span className="flex h-6 min-w-0 flex-1 items-center gap-[3px] overflow-hidden" aria-hidden="true">
-                {Array.from({ length: 18 }, (_, i) => (
-                  <span key={i} className="w-[3px] flex-none rounded-full bg-green transition-[height] duration-100" style={{ height: `${Math.max(12, Math.min(100, voice.level * 100 * (0.55 + 0.45 * Math.abs(Math.sin(i * 1.7 + voice.seconds * 6)))))}%` }} />
-                ))}
-              </span>
-            </div>
-            <button type="button" aria-label={t.messages.stopSend} disabled={voice.state !== "recording"} onClick={async () => void sendVoice(await voice.stop())} className="btn-primary h-11 w-11 flex-none !px-0">
-              <I.send className="h-5 w-5" />
-            </button>
-          </div>
+          </>
         )}
       </form>
 
