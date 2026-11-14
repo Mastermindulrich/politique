@@ -19,7 +19,7 @@ export function pushConfigured() {
 
 type Row = { id: string; user_id: string; actor_id: string | null; type: NotifType; post_id: string | null; ref_id: string | null; created_at: string };
 type Sub = { id: string; user_id: string; endpoint: string; p256dh: string; auth: string };
-export type PushPayload = { title: string; body: string; url: string; tag: string; icon?: string; badge?: string; ts: number; type: NotifType; unread?: number };
+export type PushPayload = { title: string; body: string; url: string; tag: string; icon?: string; badge?: string; ts: number; type: NotifType | "call"; unread?: number };
 
 const URGENT: NotifType[] = ["message", "reply", "mention", "quote", "official_post", "interpellation_answer", "moderation", "verification"];
 
@@ -32,8 +32,9 @@ async function sendTo(subs: Sub[], payload: PushPayload) {
     subs.map(async (s) => {
       try {
         await webpush.sendNotification({ endpoint: s.endpoint, keys: { p256dh: s.p256dh, auth: s.auth } }, JSON.stringify(payload), {
-          TTL: payload.type === "message" ? 60 * 60 * 24 : 60 * 60 * 12,
-          urgency: URGENT.includes(payload.type) ? "high" : "normal",
+          // A ringing call is worthless a minute later; messages keep for a day.
+          TTL: payload.type === "call" ? 60 : payload.type === "message" ? 60 * 60 * 24 : 60 * 60 * 12,
+          urgency: payload.type === "call" || URGENT.includes(payload.type) ? "high" : "normal",
           topic: payload.tag.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 32) || undefined,
         });
         used.push(s.id);
@@ -130,4 +131,19 @@ export async function sendTestPush(userId: string, lang: Lang) {
     type: "verification",
   });
   return { ...res, configured: true };
+}
+
+/**
+ * Incoming call (or missed call) on a member's phones. Same tag for both, so "missed" replaces "ringing".
+ * Respects the member's "messages on my devices" switch.
+ */
+export async function pushCall(userId: string, p: { title: string; body: string; url: string; tag: string; icon?: string | null; ringing: boolean }) {
+  const svc = createServiceClient();
+  if (!svc || !pushConfigured()) return { sent: 0, removed: 0 };
+  const [{ data: subs }, { data: pref }] = await Promise.all([
+    svc.from("push_subscriptions").select("id, user_id, endpoint, p256dh, auth").eq("user_id", userId),
+    svc.from("notification_prefs").select("push").eq("user_id", userId).maybeSingle(),
+  ]);
+  if ((pref as { push?: Record<string, boolean> } | null)?.push?.messages === false) return { sent: 0, removed: 0 };
+  return sendTo((subs ?? []) as Sub[], { title: p.title, body: p.body, url: p.url, tag: p.tag, icon: p.icon || "/icons/icon-192.png", badge: "/icons/badge-96.png", ts: Date.now(), type: p.ringing ? "call" : "message" });
 }

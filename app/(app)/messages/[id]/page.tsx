@@ -5,6 +5,7 @@ import { Avatar } from "@/app/components/ui/avatar";
 import { NameBadge } from "@/app/components/ui/badge";
 import { fetchConversation, signAttachments } from "@/lib/data/messages";
 import { createClient, getViewer } from "@/lib/supabase/server";
+import { CallButtons } from "@/app/components/call/call-buttons";
 import { Chat } from "./chat";
 import { ChatViewport } from "./chat-viewport";
 
@@ -38,6 +39,7 @@ export default async function ConversationPage({ params }: { params: Promise<{ i
             </span>
           </Link>
         )}
+        {others.length === 1 && other && <CallButtons conversationId={id} peer={{ id: other.id, display_name: other.display_name, handle: other.handle, avatar_url: other.avatar_url }} lang={viewer.lang} />}
       </div>
       <Chat conversationId={id} viewerId={viewer.id} lang={viewer.lang} initial={data.messages} initialUrls={urls} members={data.conversation.members.map((m) => m.profile)} />
     </ChatViewport>
