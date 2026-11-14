@@ -169,7 +169,7 @@ export async function updateProfile(input: z.infer<typeof profileSchema>): Promi
   if (!parsed.success) return { ok: false, error: "invalid" };
   const supabase = await createClient();
   const { error } = await supabase.from("profiles").update(parsed.data).eq("id", viewer.id);
-  if (error) return { ok: false, error: error.message.includes("profiles_handle_key") ? "handle_taken" : error.message };
+  if (error) return { ok: false, error: error.message.includes("profiles_handle_key") ? "handle_taken" : error.message.includes("reserved_name") ? "reserved_name" : error.message };
   revalidatePath("/parametres");
   revalidatePath(`/u/${parsed.data.handle}`);
   return { ok: true };

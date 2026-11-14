@@ -5,7 +5,7 @@ import { FollowButton } from "@/app/components/follow-button";
 import { SearchBox } from "@/app/components/shell/search-box";
 import { Empty } from "@/app/components/shell/shell";
 import { Avatar } from "@/app/components/ui/avatar";
-import { VerifiedBadge } from "@/app/components/ui/badge";
+import { NameBadge } from "@/app/components/ui/badge";
 import { I } from "@/app/components/ui/icons";
 import { communeById, communes } from "@/lib/ci-geo";
 import { fetchByCommune, searchPosts } from "@/lib/data/posts";
@@ -86,7 +86,7 @@ export default async function ExplorePage({ searchParams }: { searchParams: Prom
                   <Link href={`/u/${p.handle}`} className="flex min-w-0 flex-1 items-center gap-3">
                     <Avatar src={p.avatar_url} name={p.display_name} size={40} />
                     <span className="min-w-0">
-                      <span className="flex items-center gap-1 text-[15px] font-bold"><span className="truncate">{p.display_name}</span>{p.verified && <VerifiedBadge type={p.account_type} size={16} />}</span>
+                      <span className="flex items-center gap-1 text-[15px] font-bold"><span className="truncate">{p.display_name}</span><NameBadge p={p} size={16} lang={lang} /></span>
                       <span className="block truncate text-[13px] text-muted">@{p.handle}{p.bio ? ` · ${p.bio}` : ""}</span>
                     </span>
                   </Link>

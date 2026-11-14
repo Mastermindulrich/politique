@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { Avatar } from "@/app/components/ui/avatar";
-import { VerifiedBadge } from "@/app/components/ui/badge";
+import { NameBadge } from "@/app/components/ui/badge";
 import { fetchConversation } from "@/lib/data/messages";
 import { createClient, getViewer } from "@/lib/supabase/server";
 import { Chat } from "./chat";
@@ -31,7 +31,7 @@ export default async function ConversationPage({ params }: { params: Promise<{ i
           <Link href={`/u/${other.handle}`} className="flex min-w-0 items-center gap-3">
             <Avatar src={other.avatar_url} name={other.display_name} size={36} />
             <span className="min-w-0">
-              <span className="flex items-center gap-1 text-[15px] font-bold"><span className="truncate">{data.conversation.title ?? others.map((o) => o.profile.display_name).join(", ")}</span>{other.verified && <VerifiedBadge type={other.account_type} size={16} />}</span>
+              <span className="flex items-center gap-1 text-[15px] font-bold"><span className="truncate">{data.conversation.title ?? others.map((o) => o.profile.display_name).join(", ")}</span><NameBadge p={other} size={16} lang={viewer.lang} /></span>
               <span className="block truncate text-[13px] text-muted">@{other.handle}</span>
             </span>
           </Link>

@@ -1,7 +1,7 @@
 import type { Db as SupabaseClient } from "@/lib/supabase/schema";
 import type { FeedPost, Poll, Post, PostLabel, Profile } from "@/lib/types";
 
-export const AUTHOR_COLS = "id, handle, display_name, avatar_url, verified, account_type";
+export const AUTHOR_COLS = "id, handle, display_name, avatar_url, verified, account_type, is_owner";
 export const PAGE = 25;
 
 type Author = FeedPost["author"];

@@ -97,7 +97,7 @@ export type PostLabel = {
 
 /** A post as rendered: joined with author, poll, quoted post and the viewer's state. */
 export type FeedPost = Post & {
-  author: Pick<Profile, "id" | "handle" | "display_name" | "avatar_url" | "verified" | "account_type">;
+  author: Pick<Profile, "id" | "handle" | "display_name" | "avatar_url" | "verified" | "account_type" | "is_owner">;
   poll: Poll | null;
   quoted: (Post & { author: FeedPost["author"] }) | null;
   labels: PostLabel[];
@@ -125,7 +125,7 @@ export type Official = {
   photo_url: string | null;
   bio: string | null;
   claimed_at: string | null;
-  profile?: Pick<Profile, "id" | "handle" | "display_name" | "avatar_url" | "verified"> | null;
+  profile?: Pick<Profile, "id" | "handle" | "display_name" | "avatar_url" | "verified" | "is_owner"> | null;
 };
 
 export type Interpellation = {

@@ -27,6 +27,7 @@ await db.exec(schema);
 await db.exec(readFileSync(new URL("../supabase/migrations/0002_auth_email_log.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/migrations/0003_control_center.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/migrations/0004_notifications.sql", import.meta.url), "utf8"));
+await db.exec(readFileSync(new URL("../supabase/migrations/0005_owner_badge.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/seed/ci_geo.sql", import.meta.url), "utf8"));
 await db.exec(`set search_path = politique, public`);
 
@@ -297,6 +298,28 @@ await asRole(null, async () => {
   await fails(() => sql(`select * from push_subscriptions`), "visitor reading subscriptions");
   await fails(() => sql(`select save_push_subscription('https://push.example/z', 'k', 'a')`), "visitor subscribing");
 }, "anon");
+
+// --- Founder badge: one owner, nobody can grant, fake or imitate it ----------------
+await asRole(na, async () => {
+  await fails(() => sql(`update profiles set is_owner = true where id = $1`, [na]), "member making themself owner");
+  await fails(() => sql(`update profiles set display_name = 'Fondateur' where id = $1`, [na]), "member using 'Fondateur'");
+  await fails(() => sql(`update profiles set display_name = 'The Owner' where id = $1`, [na]), "member using 'Owner'");
+  await fails(() => sql(`update profiles set display_name = 'Roi 👑' where id = $1`, [na]), "member using a crown");
+  await fails(() => sql(`update profiles set handle = 'founder_ci' where id = $1`, [na]), "member using a founder handle");
+  await sql(`update profiles set display_name = 'Notif A' where id = $1`, [na]);
+  assert((await sql(`select handle_available('vrai_fondateur') a`)).rows[0].a === false, "reserved handle reads as taken");
+});
+await asRole(boss, async () => {
+  await fails(() => sql(`update profiles set is_owner = true where id = $1`, [nb]), "owner granting the badge to someone");
+  await fails(() => sql(`update profiles set is_owner = false where id = $1`, [boss]), "owner dropping their own badge through the app");
+  await sql(`update profiles set display_name = 'Boss · Fondateur 👑' where id = $1`, [boss]);
+});
+await fails(() => sql(`update profiles set is_owner = true where id = $1`, [nb]), "a second owner, even from the SQL editor");
+await sql(`insert into owner_claims (email) values ('fakeboss@x.ci')`);
+const fake = await u("fakeboss", { display_name: "Le Fondateur" });
+const fk = (await sql(`select is_owner, display_name from profiles where id = $1`, [fake])).rows[0];
+assert(fk.is_owner === false && fk.display_name === "fakeboss", "a second claimed e-mail cannot become owner, reserved name replaced: " + JSON.stringify(fk));
+assert((await sql(`select count(*)::int n from profiles where is_owner`)).rows[0].n === 1, "exactly one owner");
 
 console.log("schema OK: all smoke and RLS checks passed");
 await db.close();

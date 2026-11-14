@@ -9,7 +9,7 @@ import { formatCount, t as dict, timeAgo } from "@/lib/i18n";
 import type { FeedPost } from "@/lib/types";
 import { communeLabel } from "@/lib/ci-geo";
 import { Avatar } from "../ui/avatar";
-import { VerifiedBadge } from "../ui/badge";
+import { NameBadge } from "../ui/badge";
 import { I } from "../ui/icons";
 import { MediaGrid } from "./media-grid";
 import { PollCard } from "./poll-card";
@@ -132,7 +132,7 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
             <div className={`min-w-0 ${detail ? "flex flex-col" : "flex flex-wrap items-center gap-x-1.5"} text-[15px] leading-tight`}>
               <Link href={`/u/${post.author.handle}`} className="inline-flex max-w-full items-center gap-1 truncate font-bold hover:underline">
                 <span className="truncate">{post.author.display_name}</span>
-                {post.author.verified && <VerifiedBadge type={post.author.account_type} title={t.profile.verified} />}
+                <NameBadge p={post.author} lang={lang} verifiedTitle={t.profile.verified} />
               </Link>
               <span className="truncate text-muted">@{post.author.handle}</span>
               {!detail && (
@@ -212,7 +212,7 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
               <div className="flex items-center gap-1.5 text-[14px]">
                 <Avatar src={post.quoted.author.avatar_url} name={post.quoted.author.display_name} size={20} />
                 <span className="font-bold">{post.quoted.author.display_name}</span>
-                {post.quoted.author.verified && <VerifiedBadge type={post.quoted.author.account_type} size={16} />}
+                <NameBadge p={post.quoted.author} size={16} lang={lang} />
                 <span className="text-muted">@{post.quoted.author.handle} · {timeAgo(post.quoted.created_at, lang)}</span>
               </div>
               <p className="mt-1 line-clamp-4 whitespace-pre-wrap text-[14px] leading-snug">{post.quoted.text}</p>

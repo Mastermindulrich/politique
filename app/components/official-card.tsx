@@ -4,7 +4,7 @@ import { officialPlace } from "@/lib/data/people";
 import { t as dict } from "@/lib/i18n";
 import type { Official } from "@/lib/types";
 import { Avatar } from "./ui/avatar";
-import { VerifiedBadge } from "./ui/badge";
+import { NameBadge } from "./ui/badge";
 
 export function OfficialCard({ o, lang, highlight = false }: { o: Official; lang: "fr" | "en"; highlight?: boolean }) {
   const t = dict(lang);
@@ -14,7 +14,7 @@ export function OfficialCard({ o, lang, highlight = false }: { o: Official; lang
       <span className="min-w-0 flex-1">
         <span className="flex items-center gap-1 text-[16px] font-bold">
           <span className="truncate">{o.full_name}</span>
-          {o.profile?.verified && <VerifiedBadge type="elu" size={17} />}
+          {o.profile && <NameBadge p={{ ...o.profile, account_type: "elu" }} size={17} lang={lang} />}
         </span>
         <span className="block truncate text-[14px] text-muted">
           {o.title ?? `${t.officials.mandates[o.mandate]} · ${officialPlace(o, geo)}`}

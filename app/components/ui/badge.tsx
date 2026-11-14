@@ -21,3 +21,48 @@ export function TypeChip({ type, label }: { type: AccountType; label: string }) 
   const cls = type === "elu" ? "bg-green-soft text-green-deep" : type === "media" ? "bg-orange-soft text-orange" : type === "institution" ? "bg-paper text-muted" : "bg-paper text-muted";
   return <span className={`chip ${cls}`}>{label}</span>;
 }
+
+export const OWNER_LABEL = { fr: "Fondateur de POLITIQUE", en: "Founder of POLITIQUE" } as const;
+type BadgeLang = keyof typeof OWNER_LABEL;
+
+function Crown({ color = "#F5B800" }: { color?: string }) {
+  return <path fill={color} d="M6.2 15.6 5 8.6l3.6 2.8L12 6l3.4 5.4L19 8.6l-1.2 7z M6.6 16.9h10.8v1.6H6.6z" />;
+}
+
+/**
+ * The founder's badge: a gold crown on an ink seal with a gold ring. Only one account can
+ * ever show it: it reads profiles.is_owner, which the database lets no one set or change
+ * (see migration 0005_owner_badge.sql).
+ */
+export function OwnerBadge({ size = 18, lang = "fr" }: { size?: number; lang?: BadgeLang }) {
+  return (
+    <svg role="img" aria-label={OWNER_LABEL[lang]} viewBox="0 0 24 24" width={size} height={size} className="inline-block flex-none align-text-bottom">
+      <title>{OWNER_LABEL[lang]}</title>
+      <circle cx="12" cy="12" r="10.6" fill="#16181C" stroke="#F5B800" strokeWidth="1.8" />
+      <Crown />
+    </svg>
+  );
+}
+
+/** Larger labelled chip for the founder's profile header. */
+export function OwnerChip({ lang = "fr" }: { lang?: BadgeLang }) {
+  return (
+    <span className="chip inline-flex items-center gap-1 border border-[#F5B800] bg-[#16181C] font-semibold text-[#F5B800]">
+      <svg aria-hidden="true" viewBox="4 5 16 14" width={14} height={12} className="flex-none"><Crown /></svg>
+      <span>{OWNER_LABEL[lang]}</span>
+    </span>
+  );
+}
+
+type Badged = { verified?: boolean | null; is_owner?: boolean | null; account_type: AccountType };
+
+/**
+ * The badge shown after a name. The founder gets the crown instead of the verified tick;
+ * everyone else gets the verified tick when verified.
+ */
+export function NameBadge({ p, size = 18, lang = "fr", verifiedTitle }: { p: Badged; size?: number; lang?: BadgeLang | string; verifiedTitle?: string }) {
+  const l: BadgeLang = lang === "en" ? "en" : "fr";
+  if (p.is_owner) return <OwnerBadge size={size} lang={l} />;
+  if (p.verified) return <VerifiedBadge type={p.account_type} size={size} title={verifiedTitle ?? (l === "en" ? "Verified account" : "Compte vérifié")} />;
+  return null;
+}
