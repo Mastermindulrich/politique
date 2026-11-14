@@ -41,7 +41,11 @@ async function callModel(text: string, to: Lang, token: string): Promise<string>
     }),
     signal: AbortSignal.timeout(15000),
   });
-  if (!res.ok) throw new Error(`gateway ${res.status}`);
+  if (!res.ok) {
+    // Keep the gateway's own reason (e.g. no credits, model not allowed) in the logs.
+    const why = (await res.text().catch(() => "")).replace(/\s+/g, " ").slice(0, 300);
+    throw new Error(`gateway ${res.status} ${why}`);
+  }
   const data = (await res.json()) as { choices?: { message?: { content?: string } }[] };
   const out = data.choices?.[0]?.message?.content?.trim();
   if (!out) throw new Error("empty translation");
