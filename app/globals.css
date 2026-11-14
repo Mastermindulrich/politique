@@ -156,26 +156,18 @@ select,
     @apply inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 text-[12px] font-semibold;
   }
 
+  /* The POLITIQUE mark (Hémicycle), same file as the favicon. The three child spans are kept
+     for older markup but no longer drawn. */
   .flag {
     display: inline-flex;
     width: 28px;
     height: 28px;
     border-radius: 7px;
-    overflow: hidden;
-    border: 1px solid rgb(var(--line));
     flex: none;
+    background: url("/icon.svg") center / cover no-repeat;
   }
   .flag > span {
-    flex: 1;
-  }
-  .flag > span:nth-child(1) {
-    background: #f07c00;
-  }
-  .flag > span:nth-child(2) {
-    background: #ffffff;
-  }
-  .flag > span:nth-child(3) {
-    background: #0a7a4a;
+    display: none;
   }
 
   .post-text a {
