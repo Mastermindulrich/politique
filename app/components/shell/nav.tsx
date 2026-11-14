@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useState } from "react";
 import { signOut } from "@/lib/actions";
 import { t as dict } from "@/lib/i18n";
-import { supabaseBrowser } from "@/lib/supabase/client";
+import { useUnread } from "@/lib/unread-store";
 import { Composer } from "../composer";
 import { LangSwitch } from "../lang-switch";
 import { Avatar } from "../ui/avatar";
@@ -38,50 +38,12 @@ function items(lang: Lang, handle: string | null, unread: Unread, isModerator: b
 }
 
 /**
- * Unread counts: the server starts counting when the page is requested and hands the
- * answer over as a promise, so the menus show at once and the badges fill in a moment
- * later. New notifications then arrive live.
+ * Unread counts live in one shared store: the notification center (mounted once by the
+ * shell) fills it from the server and keeps it current over Realtime.
  */
-function useLiveUnread(initial: Promise<Unread> | null, signedIn: boolean) {
-  const [unread, setUnread] = useState<Unread>(NONE);
-  const pathname = usePathname();
-  // The desktop and mobile navs each mount this hook: a channel name can only be subscribed once.
-  const instance = useId();
-  useEffect(() => {
-    let live = true;
-    // React hands over a thenable, not a full Promise: wrap it before chaining.
-    if (initial) Promise.resolve(initial).then((u) => live && setUnread(u), () => {});
-    return () => {
-      live = false;
-    };
-  }, [initial]);
-  useEffect(() => {
-    if (!signedIn) return;
-    const supabase = supabaseBrowser();
-    let cancelled = false;
-    let channel: ReturnType<typeof supabase.channel> | null = null;
-    // The cookie is enough to name the channel; the database decides what this session may hear.
-    supabase.auth.getSession().then(({ data }: { data: { session: { user: { id: string } } | null } }) => {
-      const uid = data.session?.user?.id;
-      if (!uid || cancelled) return;
-      channel = supabase
-        .channel(`notif-${uid}-${instance}`)
-        .on("postgres_changes", { event: "INSERT", schema: "politique", table: "notifications", filter: `user_id=eq.${uid}` }, (payload: { new: { type: string } }) => {
-          setUnread((u) => (payload.new.type === "message" ? { ...u, messages: u.messages + 1 } : { ...u, notifications: u.notifications + 1 }));
-        })
-        .subscribe();
-    });
-    return () => {
-      cancelled = true;
-      if (channel) supabase.removeChannel(channel);
-    };
-  }, [signedIn, instance]);
-  // Opening the page clears its badge locally; the server marks rows read.
-  useEffect(() => {
-    if (pathname === "/notifications") setUnread((u) => ({ ...u, notifications: 0 }));
-    if (pathname.startsWith("/messages")) setUnread((u) => ({ ...u, messages: 0 }));
-  }, [pathname]);
-  return unread;
+function useLiveUnread(_initial: Promise<Unread> | null, signedIn: boolean): Unread {
+  const unread = useUnread();
+  return signedIn ? unread : NONE;
 }
 
 function active(pathname: string, it: Item) {
@@ -268,7 +230,7 @@ export function MobileNav({ lang, handle, name, avatar, unread: initial, signedI
                 <Link href="/regles" className="hover:underline">{lang === "fr" ? "Règles" : "Rules"}</Link>
                 <Link href="/confidentialite" className="hover:underline">{lang === "fr" ? "Confidentialité" : "Privacy"}</Link>
               </span>
-              <form action={signOut}>
+              <form action={signOut} data-signout>
                 <button type="submit" className="tap flex items-center gap-2 rounded-full px-3 py-2 text-[14px] font-semibold text-muted hover:bg-paper active:bg-line/60">
                   <I.logout className="h-[18px] w-[18px]" />
                   {t.logout}

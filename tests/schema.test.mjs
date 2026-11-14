@@ -26,6 +26,7 @@ let schema = readFileSync(new URL("../supabase/migrations/0001_schema.sql", impo
 await db.exec(schema);
 await db.exec(readFileSync(new URL("../supabase/migrations/0002_auth_email_log.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/migrations/0003_control_center.sql", import.meta.url), "utf8"));
+await db.exec(readFileSync(new URL("../supabase/migrations/0004_notifications.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/seed/ci_geo.sql", import.meta.url), "utf8"));
 await db.exec(`set search_path = politique, public`);
 
@@ -251,6 +252,51 @@ await asRole(boss, async () => {
   assert((await sql(`select count(*)::int n from admin_log`)).rows[0].n >= 5, "actions are logged");
 });
 assert((await sql(`select count(*)::int n from profiles where id = $1`, [yao])).rows[0].n === 0, "owner removed a member");
+
+// --- Notifications: preferences, follows, mutes, push subscriptions -----------------
+const na = await u("notifa"), nb = await u("notifb"), nc = await u("notifc");
+await sql(`insert into follows (follower_id, followee_id) values ($1, $2)`, [nb, na]);
+const pa = (await sql(`insert into posts (author_id, text) values ($1, 'Bonjour Abidjan') returning id`, [na])).rows[0].id;
+assert((await sql(`select count(*)::int n from notifications where user_id=$1 and type='following_post' and post_id=$2`, [nb, pa])).rows[0].n === 1, "followers hear about a new post");
+await sql(`insert into posts (author_id, text, parent_id, kind) values ($1, 'une réponse', $2, 'reply')`, [na, pa]);
+assert((await sql(`select count(*)::int n from notifications where user_id=$1 and type='following_post'`, [nb])).rows[0].n === 1, "replies do not notify followers");
+// nb turns likes off in the app: no row at all
+await sql(`insert into notification_prefs (user_id, inapp) values ($1, '{"likes": false}')`, [nb]);
+const pb = (await sql(`insert into posts (author_id, text) values ($1, 'post de b') returning id`, [nb])).rows[0].id;
+await sql(`insert into likes (user_id, post_id) values ($1, $2)`, [na, pb]);
+assert((await sql(`select count(*)::int n from notifications where user_id=$1 and type='like'`, [nb])).rows[0].n === 0, "likes switched off");
+await sql(`insert into reposts (user_id, post_id) values ($1, $2)`, [na, pb]);
+assert((await sql(`select count(*)::int n from notifications where user_id=$1 and type='repost'`, [nb])).rows[0].n === 1, "reposts still on");
+// muted accounts do not notify; blocks neither
+await sql(`insert into mutes (muter_id, muted_id) values ($1, $2)`, [nb, nc]);
+await sql(`insert into posts (author_id, text) values ($1, 'salut @notifb')`, [nc]);
+assert((await sql(`select count(*)::int n from notifications where user_id=$1 and type='mention'`, [nb])).rows[0].n === 0, "muted account's mention is dropped");
+// push defaults: replies yes, likes no; quiet hours all day silence push but not the app
+assert((await sql(`select notif_wanted($1, 'reply', true) w`, [na])).rows[0].w === true, "replies pushed by default");
+assert((await sql(`select notif_wanted($1, 'like', true) w`, [na])).rows[0].w === false, "likes not pushed by default");
+const hr = new Date().getUTCHours();
+await sql(`insert into notification_prefs (user_id, quiet_start, quiet_end) values ($1, $2, $3)`, [na, hr, (hr + 1) % 24]);
+assert((await sql(`select notif_wanted($1, 'reply', true) w`, [na])).rows[0].w === false, "quiet hours hold push");
+assert((await sql(`select notif_wanted($1, 'reply', false) w`, [na])).rows[0].w === true, "quiet hours keep the app");
+assert((await sql(`select notif_wanted($1, 'moderation', false) w`, [nb])).rows[0].w === true, "account notices always on");
+// push subscriptions: saved through the function, visible to the owner only
+await asRole(nb, async () => {
+  await sql(`select save_push_subscription('https://push.example/abc', 'key', 'auth', 'test')`);
+  assert((await sql(`select count(*)::int n from push_subscriptions`)).rows[0].n === 1, "owner sees own subscription");
+  await fails(() => sql(`insert into push_subscriptions (user_id, endpoint, p256dh, auth) values ($1, 'https://x', 'k', 'a')`, [nb]), "direct insert");
+  await fails(() => sql(`select save_push_subscription('http://insecure', 'k', 'a')`), "non-https endpoint");
+  await fails(() => sql(`select notif_wanted($1, 'like', true)`, [na]), "reading someone's preferences");
+});
+await asRole(na, async () => {
+  assert((await sql(`select count(*)::int n from push_subscriptions`)).rows[0].n === 0, "others' subscriptions hidden");
+  assert((await sql(`select count(*)::int n from notification_prefs`)).rows[0].n === 1, "own preferences only");
+  await sql(`select save_push_subscription('https://push.example/abc', 'key2', 'auth2')`);
+});
+assert((await sql(`select user_id from push_subscriptions where endpoint='https://push.example/abc'`)).rows[0].user_id === na, "a browser follows the last account that subscribed");
+await asRole(null, async () => {
+  await fails(() => sql(`select * from push_subscriptions`), "visitor reading subscriptions");
+  await fails(() => sql(`select save_push_subscription('https://push.example/z', 'k', 'a')`), "visitor subscribing");
+}, "anon");
 
 console.log("schema OK: all smoke and RLS checks passed");
 await db.close();

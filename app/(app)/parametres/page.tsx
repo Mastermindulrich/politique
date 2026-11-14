@@ -6,6 +6,8 @@ import { t as dict } from "@/lib/i18n";
 import { createClient, getViewer } from "@/lib/supabase/server";
 import type { AccountType, Official, VerificationRequest } from "@/lib/types";
 import { LangSwitch } from "@/app/components/lang-switch";
+import { DEFAULT_PREFS, type Prefs } from "@/lib/notify";
+import { NotificationSettings } from "./notification-settings";
 import { AccountSection, PeopleList, PrefsForm, ProfileForm, VerificationForm, VoteForm } from "./settings-forms";
 
 export const metadata: Metadata = { title: "Paramètres", robots: { index: false } };
@@ -28,14 +30,16 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
   const t = dict(lang);
   const supabase = await createClient();
 
-  const [priv, userRes, verifRes, officialsRes, blocksRes, mutesRes] = await Promise.all([
+  const [priv, userRes, verifRes, officialsRes, blocksRes, mutesRes, notifRes] = await Promise.all([
     getMyPrivate(),
     supabase.auth.getUser(),
     supabase.from("verification_requests").select("*").eq("user_id", viewer.id).order("created_at", { ascending: false }).limit(1).maybeSingle(),
     supabase.from("officials").select("id, full_name, mandate, title").is("profile_id", null).order("full_name").limit(1000),
     supabase.from("blocks").select("blocked_id").eq("blocker_id", viewer.id).limit(200),
     supabase.from("mutes").select("muted_id").eq("muter_id", viewer.id).limit(200),
+    supabase.from("notification_prefs").select("inapp, push, sound, previews, quiet_start, quiet_end").eq("user_id", viewer.id).maybeSingle(),
   ]);
+  const notifPrefs: Prefs = { ...DEFAULT_PREFS, ...((notifRes.data as Prefs | null) ?? {}) };
   const blockedIds = ((blocksRes.data ?? []) as { blocked_id: string }[]).map((r) => r.blocked_id);
   const mutedIds = ((mutesRes.data ?? []) as { muted_id: string }[]).map((r) => r.muted_id);
   const people = await fetchAuthors(supabase, [...blockedIds, ...mutedIds]);
@@ -66,6 +70,9 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
       </Section>
       <Section id="preferences" title={t.settings.prefs}>
         <PrefsForm lang={lang} theme={viewer.theme} lowData={viewer.low_data} />
+      </Section>
+      <Section id="notifications" title="Notifications" help={lang === "fr" ? "Choisissez ce qui vous est signalé, dans l'app et sur vos appareils." : "Choose what you hear about, in the app and on your devices."}>
+        <NotificationSettings lang={lang} initial={notifPrefs} />
       </Section>
       <Section id="verification" title={t.settings.verification} help={viewer.verified ? undefined : t.settings.verificationIntro}>
         {viewer.verified ? (
