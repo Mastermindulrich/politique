@@ -69,13 +69,26 @@ export async function startCall(conversationId: string, video: boolean): Promise
 
 /**
  * Rings again while the call is unanswered, so a phone that opens the app from the notification
- * still sees the incoming call. No push this time.
+ * still sees the incoming call. With `push`, the phone's notification is sent again too: each one
+ * replaces the last and plays the notification sound, which is the closest a website gets to
+ * "ringing" on a locked phone.
  */
-export async function ringAgain(callId: string, conversationId: string, video: boolean) {
+export async function ringAgain(callId: string, conversationId: string, video: boolean, push = false) {
   if (!UUID.test(callId)) return { ok: false };
   const c = await check(conversationId);
   if (!c.ok) return { ok: false };
   await broadcast(inboxTopic(c.other.id), "ring", ringPayload(callId, conversationId, Boolean(video), c.viewer));
+  if (push) {
+    const t = callText(c.other.lang);
+    await pushCall(c.other.id, {
+      title: video ? t.pushVideo(c.viewer.display_name) : t.pushVoice(c.viewer.display_name),
+      body: t.pushTap,
+      url: `/messages/${conversationId}`,
+      tag: `call-${callId}`,
+      icon: c.viewer.avatar_url,
+      ringing: true,
+    }).catch(() => {});
+  }
   return { ok: true };
 }
 
