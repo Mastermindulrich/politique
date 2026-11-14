@@ -4,6 +4,8 @@ module.exports = {
   reactStrictMode: true,
   basePath,
   images: { formats: ["image/avif", "image/webp"] },
+  // Share images read their fonts from disk; make sure the files ship with those functions.
+  outputFileTracingIncludes: { "/**/*": ["./lib/og/fonts/*.ttf"] },
   // The service worker must always be fresh so fixes to notifications reach every device.
   async headers() {
     return [{ source: "/sw.js", headers: [{ key: "Cache-Control", value: "no-cache, no-store, must-revalidate" }, { key: "Content-Type", value: "application/javascript; charset=utf-8" }] }];
