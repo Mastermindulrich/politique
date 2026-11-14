@@ -13,7 +13,7 @@ import { VerifiedBadge } from "../ui/badge";
 import { I } from "../ui/icons";
 import { MediaGrid } from "./media-grid";
 import { PollCard } from "./poll-card";
-import { PostText } from "./post-text";
+import { TranslatableText } from "./translatable-text";
 import { ReportDialog } from "./report-dialog";
 import { Composer } from "../composer";
 
@@ -188,7 +188,7 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
           {post.is_hidden ? (
             <p className="mt-2 rounded-xl border border-line bg-paper px-3 py-2 text-[14px] text-muted">{t.post.hidden}</p>
           ) : (
-            <PostText text={post.text} className={detail ? "mt-3 text-[19px] leading-snug" : "mt-1"} />
+            <TranslatableText postId={post.id} text={post.text} lang={lang} className={detail ? "mt-3 text-[19px] leading-snug" : "mt-1"} />
           )}
 
           {post.labels.map((l) => (

@@ -542,3 +542,21 @@ export async function createBarometer(input: { month: string; question: string; 
   revalidatePath("/barometre");
   return { ok: true };
 }
+
+/**
+ * Switch the interface between French and English. Works for visitors (a cookie) and
+ * members (saved on the profile as well, so it follows them to every device).
+ */
+export async function setLanguage(lang: "fr" | "en"): Promise<Result> {
+  if (lang !== "fr" && lang !== "en") return { ok: false, error: "invalid" };
+  const store = await cookies();
+  store.set("lang", lang, { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
+  const viewer = await getViewer();
+  if (viewer && viewer.lang !== lang) {
+    const supabase = await createClient();
+    const { error } = await supabase.from("profiles").update({ lang }).eq("id", viewer.id);
+    if (error) return { ok: false, error: error.message };
+  }
+  revalidatePath("/", "layout");
+  return { ok: true };
+}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LangSwitch } from "./lang-switch";
 import { content, site, type Lang } from "@/lib/content";
 import { Check, Icon } from "./icons";
 import { LandingCtaBar } from "./landing-cta-bar";
@@ -12,7 +13,7 @@ function Wordmark({ compact = false }: { compact?: boolean }) {
         <span />
         <span />
       </span>
-      <span className={`font-display font-bold tracking-[0.14em] text-ink ${compact ? "text-[18px] sm:text-[22px]" : "text-[22px]"}`}>POLITIQUE</span>
+      <span className={`font-display font-bold tracking-[0.14em] text-ink ${compact ? "text-[16px] tracking-[0.1em] min-[380px]:text-[18px] min-[380px]:tracking-[0.14em] sm:text-[22px]" : "text-[22px]"}`}>POLITIQUE</span>
     </span>
   );
 }
@@ -28,7 +29,7 @@ export default function Landing({ lang }: { lang: Lang }) {
       </a>
 
       <header className="sticky top-0 z-40 border-b border-line/80 bg-white/85 backdrop-blur-lg" style={{ paddingTop: "env(safe-area-inset-top)" }}>
-        <div className="container-x flex h-14 items-center justify-between gap-3 sm:h-16">
+        <div className="container-x flex h-14 items-center justify-between gap-2 sm:h-16 sm:gap-3">
           <Link href={home} className="tap rounded-lg" aria-label={`${site.name} — ${lang === "fr" ? "accueil" : "home"}`}>
             <Wordmark compact />
           </Link>
@@ -39,16 +40,8 @@ export default function Landing({ lang }: { lang: Lang }) {
             <a href="#faq" className="transition-colors hover:text-green-deep">{t.nav.faq}</a>
           </nav>
           <div className="flex items-center gap-1.5 sm:gap-2">
-            <Link
-              href={t.nav.switchHref}
-              hrefLang={lang === "fr" ? "en" : "fr"}
-              aria-label={t.nav.switchLabel}
-              className="tap flex h-9 items-center rounded-full px-3 text-[13px] font-bold tracking-wide text-muted hover:bg-paper hover:text-ink active:bg-line/60 sm:text-[14px]"
-            >
-              <span className="sm:hidden">{lang === "fr" ? "EN" : "FR"}</span>
-              <span className="hidden sm:inline">{t.nav.switchLabel}</span>
-            </Link>
-            <Link href="/connexion" className="btn-ghost h-9 px-4 text-[14px] sm:h-10">{t.nav.login}</Link>
+            <LangSwitch lang={lang} hrefs={{ fr: "/", en: "/en" }} />
+            <Link href="/connexion" className="btn-ghost h-9 whitespace-nowrap px-3 text-[14px] sm:h-10 sm:px-4"><span className="sm:hidden">{lang === "fr" ? "Connexion" : "Log in"}</span><span className="hidden sm:inline">{t.nav.login}</span></Link>
             <Link href="/inscription" className="btn-primary hidden h-10 px-4 text-[14px] sm:inline-flex">{t.nav.signup}</Link>
           </div>
         </div>
@@ -230,8 +223,8 @@ export default function Landing({ lang }: { lang: Lang }) {
             <Link href="/elus" className="hover:text-ink">{t.footer.directory}</Link>
             <Link href="/regles" className="hover:text-ink">{t.footer.rules}</Link>
             <Link href="/confidentialite" className="hover:text-ink">{t.footer.privacy}</Link>
-            <Link href={t.nav.switchHref} className="hover:text-ink">{t.nav.switchLabel}</Link>
           </nav>
+          <LangSwitch lang={lang} hrefs={{ fr: "/", en: "/en" }} className="self-start" />
         </div>
       </footer>
 

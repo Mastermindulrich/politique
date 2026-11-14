@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getLang } from "@/lib/lang";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { InterpellationForm, InterpellationVote, PermanenceControls, PermanenceForm, PromiseForm, PromiseUpdateForm } from "@/app/components/civic";
@@ -42,7 +43,7 @@ export default async function OfficialPage({ params, searchParams }: { params: P
   const o = await getOfficial(id);
   if (!o) notFound();
   const viewer = await getViewer();
-  const lang = viewer?.lang ?? "fr";
+  const lang = viewer?.lang ?? (await getLang());
   const t = dict(lang);
   const supabase = await createClient();
   const isOfficial = Boolean(viewer && o.profile_id === viewer.id);

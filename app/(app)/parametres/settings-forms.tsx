@@ -169,19 +169,11 @@ export function VoteForm({ initial, lang }: { initial: VotingPlace; lang: Lang }
 export function PrefsForm({ lang, theme, lowData }: { lang: Lang; theme: Profile["theme"]; lowData: boolean }) {
   const t = dict(lang);
   const { pending, state, run } = useSave();
-  const [l, setL] = useState<Lang>(lang);
   const [th, setTh] = useState(theme);
   const [low, setLow] = useState(lowData);
   return (
-    <form className="flex flex-col gap-4" onSubmit={(e) => { e.preventDefault(); run(() => updatePrefs({ lang: l, theme: th, low_data: low })); }}>
+    <form className="flex flex-col gap-4" onSubmit={(e) => { e.preventDefault(); run(() => updatePrefs({ lang, theme: th, low_data: low })); }}>
       <div className="grid gap-4 sm:grid-cols-2">
-        <label>
-          <span className="label">{t.settings.language}</span>
-          <select className="select" value={l} onChange={(e) => setL(e.target.value as Lang)}>
-            <option value="fr">Français</option>
-            <option value="en">English</option>
-          </select>
-        </label>
         <label>
           <span className="label">{t.settings.theme}</span>
           <select className="select" value={th} onChange={(e) => setTh(e.target.value as Profile["theme"])}>

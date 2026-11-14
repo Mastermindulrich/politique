@@ -7,6 +7,7 @@ import { signOut } from "@/lib/actions";
 import { t as dict } from "@/lib/i18n";
 import { useUnread } from "@/lib/unread-store";
 import { Composer } from "../composer";
+import { LangSwitch } from "../lang-switch";
 import { Avatar } from "../ui/avatar";
 import { I } from "../ui/icons";
 
@@ -218,6 +219,11 @@ export function MobileNav({ lang, handle, name, avatar, unread: initial, signedI
                 );
               })}
             </ul>
+            <div className="mx-3 my-1 border-t border-line" />
+            <div className="flex items-center justify-between px-3 py-2">
+              <span className="text-[15px] font-medium">{lang === "fr" ? "Langue" : "Language"}</span>
+              <LangSwitch lang={lang} />
+            </div>
             <div className="mx-3 my-1 border-t border-line" />
             <div className="flex items-center justify-between px-3 py-2">
               <span className="flex gap-4 text-[13px] text-muted">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getLang } from "@/lib/lang";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AnswerForm, InterpellationVote } from "@/app/components/civic";
@@ -19,7 +20,7 @@ export default async function InterpellationPage({ params }: { params: Promise<{
   const { id } = await params;
   if (!/^[0-9a-f-]{36}$/.test(id)) notFound();
   const viewer = await getViewer();
-  const lang = viewer?.lang ?? "fr";
+  const lang = viewer?.lang ?? (await getLang());
   const t = dict(lang);
   const supabase = await createClient();
   const { data } = await supabase.from("interpellations").select("*").eq("id", id).maybeSingle();

@@ -5,6 +5,7 @@ import { fetchAuthors, getMyPrivate } from "@/lib/data/people";
 import { t as dict } from "@/lib/i18n";
 import { createClient, getViewer } from "@/lib/supabase/server";
 import type { AccountType, Official, VerificationRequest } from "@/lib/types";
+import { LangSwitch } from "@/app/components/lang-switch";
 import { DEFAULT_PREFS, type Prefs } from "@/lib/notify";
 import { NotificationSettings } from "./notification-settings";
 import { AccountSection, PeopleList, PrefsForm, ProfileForm, VerificationForm, VoteForm } from "./settings-forms";
@@ -49,6 +50,9 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
   return (
     <>
       <PageHeader title={t.settings.title} back="/accueil" />
+      <Section id="langue" title={lang === "fr" ? "Langue · Language" : "Language · Langue"} help={lang === "fr" ? "La langue de l'application. Le changement s'applique tout de suite, sur tous vos appareils." : "The app's language. The change applies at once, on all your devices."}>
+        <LangSwitch lang={lang} size="md" />
+      </Section>
       <Section id="profil" title={t.settings.profile}>
         <ProfileForm viewer={viewer} lang={lang} />
       </Section>

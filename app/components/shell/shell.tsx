@@ -12,6 +12,7 @@ import { NavLinks, MobileNav, ComposeFab } from "./nav";
 import { SearchBox } from "./search-box";
 import { NotificationCenter } from "../notify/notification-center";
 import { I } from "../ui/icons";
+import { LangSwitch } from "../lang-switch";
 
 function Wordmark() {
   return (
@@ -47,8 +48,7 @@ const trendsFor = unstable_cache(
 );
 
 /** Three-column app shell: nav rail, main column, right rail. Bottom nav on phones. */
-export function Shell({ viewer, children, hideRight = false }: { viewer: Profile | null; children: React.ReactNode; hideRight?: boolean }) {
-  const lang = viewer?.lang ?? "fr";
+export function Shell({ viewer, lang, children, hideRight = false }: { viewer: Profile | null; lang: "fr" | "en"; children: React.ReactNode; hideRight?: boolean }) {
   const t = dict(lang);
   // Started here, read by the menus when it arrives: the page never waits for it.
   const unread = viewer && supabaseConfigured ? unreadCounts().catch(() => ({ notifications: 0, messages: 0 })) : null;
@@ -63,6 +63,8 @@ export function Shell({ viewer, children, hideRight = false }: { viewer: Profile
             <Wordmark />
           </Link>
           <NavLinks lang={lang} handle={viewer?.handle ?? null} unread={unread} isModerator={Boolean(viewer?.is_moderator || staff)} isStaff={staff} signedIn={Boolean(viewer)} />
+          {/* No right rail below this width: the language switch lives here instead. */}
+          <LangSwitch lang={lang} className="mt-3 self-center lg:hidden xl:self-start" />
         </div>
         {viewer ? (
           <Link href={`/u/${viewer.handle}`} className="tap flex items-center gap-3 rounded-full p-2 hover:bg-paper">
@@ -99,8 +101,9 @@ export function Shell({ viewer, children, hideRight = false }: { viewer: Profile
           <SearchBox placeholder={t.explore.search} hideOn="/explorer" />
           {!viewer && <JoinCard lang={lang} />}
           <Suspense fallback={<RailSkeleton />}>
-            <RightRail viewer={viewer} />
+            <RightRail viewer={viewer} lang={lang} />
           </Suspense>
+          <LangSwitch lang={lang} className="self-start" />
           <p className="px-1 text-[12px] leading-relaxed text-muted">
             © {new Date().getFullYear()} POLITIQUE · <Link href="/regles" className="hover:underline">{lang === "fr" ? "Règles" : "Rules"}</Link> · <Link href="/confidentialite" className="hover:underline">{lang === "fr" ? "Confidentialité" : "Privacy"}</Link>
           </p>
@@ -139,6 +142,7 @@ function JoinBar({ lang }: { lang: "fr" | "en" }) {
           <span className="block font-semibold text-ink">{fr ? "Rejoignez la conversation" : "Join the conversation"}</span>
           {fr ? "Suivez et interpellez vos élus." : "Follow and question your officials."}
         </p>
+        <LangSwitch lang={lang} />
         <Link href="/inscription" className="btn-primary h-10 flex-none px-4 text-[14px]">{fr ? "S'inscrire" : "Sign up"}</Link>
       </div>
     </div>
@@ -159,8 +163,7 @@ function RailSkeleton() {
   );
 }
 
-async function RightRail({ viewer }: { viewer: Profile | null }) {
-  const lang = viewer?.lang ?? "fr";
+async function RightRail({ viewer, lang }: { viewer: Profile | null; lang: "fr" | "en" }) {
   const t = dict(lang);
   if (!supabaseConfigured) return null;
   const supabase = await createClient();

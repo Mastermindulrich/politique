@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getLang } from "@/lib/lang";
 import Link from "next/link";
 import { OfficialCard } from "@/app/components/official-card";
 import { Empty, PageHeader } from "@/app/components/shell/shell";
@@ -18,7 +19,7 @@ export default async function OfficialsPage({ searchParams }: { searchParams: Pr
   const q = (rawQ ?? "").trim().slice(0, 80).replace(/[%,()]/g, "");
   const mandate = MANDATES.includes(mandat as Mandate) ? (mandat as Mandate) : null;
   const viewer = await getViewer();
-  const lang = viewer?.lang ?? "fr";
+  const lang = viewer?.lang ?? (await getLang());
   const t = dict(lang);
   const supabase = await createClient();
 

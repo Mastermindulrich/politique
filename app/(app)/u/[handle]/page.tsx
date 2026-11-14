@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
+import { getLang } from "@/lib/lang";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Feed } from "@/app/components/feed";
@@ -35,7 +36,7 @@ export default async function ProfilePage({ params, searchParams }: { params: Pr
   const { tab: rawTab } = await searchParams;
   const tab: Tab = rawTab === "replies" || rawTab === "media" || rawTab === "likes" ? rawTab : "posts";
   const viewer = await getViewer();
-  const lang = viewer?.lang ?? "fr";
+  const lang = viewer?.lang ?? (await getLang());
   const t = dict(lang);
   const profile = await getProfile(decodeURIComponent(handle));
   if (!profile) {
