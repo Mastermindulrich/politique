@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getLang } from "@/lib/lang";
 import Link from "next/link";
 import { PropositionForm, PropositionStatus, PropositionVote } from "@/app/components/civic";
 import { StatusChip } from "@/app/components/official-card";
@@ -14,7 +15,7 @@ export const metadata: Metadata = { title: "Boîte à idées" };
 export default async function IdeasPage({ searchParams }: { searchParams: Promise<{ commune?: string }> }) {
   const { commune } = await searchParams;
   const viewer = await getViewer();
-  const lang = viewer?.lang ?? "fr";
+  const lang = viewer?.lang ?? (await getLang());
   const t = dict(lang);
   const supabase = await createClient();
   const communeId = commune && communeById.has(Number(commune)) ? Number(commune) : viewer?.shown_commune_id ?? null;

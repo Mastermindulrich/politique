@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getLang } from "@/lib/lang";
 import { Feed } from "@/app/components/feed";
 import { PageHeader } from "@/app/components/shell/shell";
 import { fetchHashtag } from "@/lib/data/posts";
@@ -14,7 +15,7 @@ export default async function HashtagPage({ params }: { params: Promise<{ tag: s
   const { tag: raw } = await params;
   const tag = decodeURIComponent(raw).toLowerCase().slice(0, 50);
   const viewer = await getViewer();
-  const lang = viewer?.lang ?? "fr";
+  const lang = viewer?.lang ?? (await getLang());
   const supabase = await createClient();
   const [posts, meta] = await Promise.all([
     fetchHashtag(supabase, tag, viewer?.id ?? null),

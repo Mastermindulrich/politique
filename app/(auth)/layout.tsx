@@ -1,18 +1,22 @@
 import Link from "next/link";
 import { Wordmark } from "../components/wordmark";
+import { LangSwitch } from "../components/lang-switch";
+import { getLang } from "@/lib/lang";
 
 export const dynamic = "force-dynamic";
 
-export default function AuthLayout({ children }: { children: React.ReactNode }) {
+export default async function AuthLayout({ children }: { children: React.ReactNode }) {
+  const lang = await getLang();
   return (
     <div className="relative isolate flex min-h-[100dvh] flex-col bg-card sm:bg-paper">
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 overflow-hidden">
         <div className="absolute -left-24 -top-32 h-72 w-72 rounded-full bg-[#0A7A4A]/[0.09] blur-3xl" />
         <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#F07C00]/[0.08] blur-3xl" />
       </div>
-      <header className="flex h-14 items-center justify-between px-4 sm:h-16 sm:justify-center sm:border-b sm:border-line sm:bg-card" style={{ paddingTop: "env(safe-area-inset-top)" }}>
+      <header className="relative flex h-14 items-center justify-between px-4 sm:h-16 sm:justify-center sm:border-b sm:border-line sm:bg-card" style={{ paddingTop: "env(safe-area-inset-top)" }}>
         <Link href="/" aria-label="POLITIQUE" className="tap rounded-lg"><Wordmark small /></Link>
-        <Link href="/" aria-label="Retour à l'accueil" className="icon-btn sm:hidden">
+        <LangSwitch lang={lang} className="ml-auto mr-1 sm:absolute sm:right-4 sm:mr-0" />
+        <Link href="/" aria-label={lang === "fr" ? "Retour à l'accueil" : "Back to home"} className="icon-btn sm:hidden">
           <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18" /></svg>
         </Link>
       </header>

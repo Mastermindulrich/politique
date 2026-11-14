@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getLang } from "@/lib/lang";
 import Link from "next/link";
 import { Feed } from "@/app/components/feed";
 import { FollowButton } from "@/app/components/follow-button";
@@ -24,7 +25,7 @@ export default async function ExplorePage({ searchParams }: { searchParams: Prom
   const q = (rawQ ?? "").trim().slice(0, 100);
   const cityId = ville && communeById.has(Number(ville)) ? Number(ville) : null;
   const viewer = await getViewer();
-  const lang = viewer?.lang ?? "fr";
+  const lang = viewer?.lang ?? (await getLang());
   const t = dict(lang);
   const supabase = await createClient();
 

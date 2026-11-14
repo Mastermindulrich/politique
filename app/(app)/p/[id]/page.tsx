@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getLang } from "@/lib/lang";
 import { notFound } from "next/navigation";
 import { ReplyBox } from "./reply-box";
 import { LabelForm } from "./label-form";
@@ -23,7 +24,7 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   if (!/^[0-9a-f-]{36}$/.test(id)) notFound();
   const viewer = await getViewer();
-  const lang = viewer?.lang ?? "fr";
+  const lang = viewer?.lang ?? (await getLang());
   const t = dict(lang);
   const supabase = await createClient();
   const post = await fetchPost(supabase, id, viewer?.id ?? null);

@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import { getLang } from "@/lib/lang";
 import { Shell } from "../components/shell/shell";
 import { PrefsSync } from "../components/shell/prefs-sync";
 import { getViewer, getViewerPrivate, supabaseConfigured } from "@/lib/supabase/server";
@@ -21,7 +22,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       </div>
     );
   }
-  const lang = viewer?.lang ?? "fr";
+  const lang = viewer?.lang ?? (await getLang());
   const staff = Boolean(viewer?.is_admin || viewer?.is_owner);
   if (settings.maintenance && !staff) {
     return (
@@ -60,7 +61,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         </p>
       )}
       {viewer && <PrefsSync theme={viewer.theme} lang={viewer.lang} />}
-      <Shell viewer={viewer}>{children}</Shell>
+      <Shell viewer={viewer} lang={lang}>{children}</Shell>
     </>
   );
 }

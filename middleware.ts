@@ -37,7 +37,15 @@ export async function middleware(req: NextRequest) {
 
   // Visitors carry no session cookie: nothing to check or refresh, so no network call.
   const hasSession = req.cookies.getAll().some((c) => c.name.startsWith("sb-") && c.name.includes("-auth-token"));
-  if (!hasSession) return within(path, PROTECTED) ? toJoin() : res;
+  if (!hasSession) {
+    // A visitor who chose English gets the English landing page.
+    if (path === "/" && req.cookies.get("lang")?.value === "en") {
+      const to = req.nextUrl.clone();
+      to.pathname = "/en";
+      return NextResponse.redirect(to);
+    }
+    return within(path, PROTECTED) ? toJoin() : res;
+  }
 
   const supabase = createServerClient(url, key, {
     cookies: {
