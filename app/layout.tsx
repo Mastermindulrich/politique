@@ -22,6 +22,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(site.origin),
   applicationName: site.name,
+  // Installed on a phone's home screen, the site opens like an app (and iPhones then allow Web Push).
+  appleWebApp: { capable: true, title: "POLITIQUE", statusBarStyle: "default" },
   title: {
     default: "POLITIQUE — Le réseau social politique de la Côte d'Ivoire",
     template: "%s | POLITIQUE",

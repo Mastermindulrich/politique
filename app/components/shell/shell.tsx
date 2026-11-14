@@ -10,6 +10,7 @@ import { VerifiedBadge } from "../ui/badge";
 import { FollowButton } from "../follow-button";
 import { NavLinks, MobileNav, ComposeFab } from "./nav";
 import { SearchBox } from "./search-box";
+import { NotificationCenter } from "../notify/notification-center";
 
 function Wordmark() {
   return (
@@ -99,6 +100,7 @@ export function Shell({ viewer, children, hideRight = false }: { viewer: Profile
 
       <MobileNav lang={lang} handle={viewer?.handle ?? null} name={viewer?.display_name} avatar={viewer?.avatar_url} unread={unread} signedIn={Boolean(viewer)} isModerator={Boolean(viewer?.is_moderator || staff)} isStaff={staff} />
       {viewer && <ComposeFab lang={lang} />}
+      {viewer && supabaseConfigured && <NotificationCenter lang={lang} viewerId={viewer.id} initial={unread} />}
     </div>
   );
 }

@@ -259,3 +259,15 @@ select,
     transform: none !important;
   }
 }
+
+/* Notification banner slides down from the top. */
+@keyframes toast-in {
+  from { transform: translateY(-16px) scale(0.98); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+.toast-in {
+  animation: toast-in 0.28s cubic-bezier(0.2, 0.9, 0.2, 1.1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .toast-in { animation: fade-in 0.18s ease-out both; }
+}

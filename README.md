@@ -51,6 +51,17 @@ Without Supabase variables the landing page, rules and privacy pages work and th
 7. As owner, open `/controle` (the control center): site-wide switches (sign-ups, posting, messages, each civic tool, uploads, maintenance mode), the announcement banner, members with their roles, badges, suspensions and removal, and the log of every such action. The switches are enforced by row level security, not only hidden in the interface. Admins see the control center but only the owner changes settings and roles.
 8. Open `/admin` to add officials to the directory, review badge requests and reports, and publish the monthly barometer.
 
+## Notifications
+
+- **In the app:** new notifications and messages arrive live over Supabase Realtime: a banner at the top of the screen, a short sound, unread badges in the menus, the count in the tab title and on the installed app's icon.
+- **On phones and computers (Web Push):** `public/sw.js` is the service worker. Members turn push on from a prompt or from Settings → Notifications (with a test button). iPhones only allow it once POLITIQUE is added to the Home Screen (iOS 16.4+); the prompt explains how.
+- **Preferences:** per category, "in the app" and "push", plus sound, message previews and quiet hours (`notification_prefs`). Every notification passes one database filter that applies them, together with blocks and mutes.
+- **Delivery:** after notifications are inserted, the database posts their ids (pg_net) to `/api/push/dispatch`, which sends the pushes with `web-push` and drops dead subscriptions.
+
+Setup: environment variables `NEXT_PUBLIC_VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT`, `PUSH_DISPATCH_SECRET` (generate keys with `npx web-push generate-vapid-keys`). In Supabase: enable the `pg_net` extension, run `supabase/migrations/0004_notifications.sql`, then store two Vault secrets:
+`select vault.create_secret('https://<site>/api/push/dispatch', 'politique_push_url');`
+`select vault.create_secret('<same value as PUSH_DISPATCH_SECRET>', 'politique_push_secret');`
+
 ## Where things are
 
 - `app/page.tsx`, `app/en`, `lib/content.ts`: landing page and its copy. The feed mock-up on the hero uses made-up names and numbers.
