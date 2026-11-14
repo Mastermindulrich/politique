@@ -41,6 +41,7 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
   const libraryRef = useRef<HTMLInputElement>(null);
   const cameraRef = useRef<HTMLInputElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const areaRef = useRef<HTMLTextAreaElement>(null);
   const [typing, setTyping] = useState<Record<string, Typing>>({});
   const [canVoice, setCanVoice] = useState(false);
   const [sendingVoice, setSendingVoice] = useState(false);
@@ -254,6 +255,7 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
     const tmp: Message = { id: `tmp-${Date.now()}`, conversation_id: conversationId, sender_id: viewerId, text: body, media, created_at: new Date().toISOString(), deleted_at: null };
     setMessages((m) => [...m, tmp]);
     setText("");
+    if (areaRef.current) areaRef.current.style.height = "";
     setDrafts((d) => d.filter((x) => x.status === "error"));
     start(async () => {
       const r = await sendMessage(conversationId, body, media);
@@ -269,27 +271,45 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
     });
   }
 
-  let lastDay = "";
+  const fmtDay = (iso: string) => new Date(iso).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-GB", { day: "numeric", month: "long" });
+  const fmtTime = (iso: string) => new Date(iso).toLocaleTimeString(lang === "fr" ? "fr-FR" : "en-GB", { hour: "2-digit", minute: "2-digit" });
+  // Messages from the same person within 5 minutes form one group: tight spacing,
+  // joined corners, one timestamp under the last one, like iMessage and X.
+  const sameGroup = (a?: Message, b?: Message) =>
+    Boolean(a && b && a.sender_id === b.sender_id && fmtDay(a.created_at) === fmtDay(b.created_at) && Math.abs(Date.parse(b.created_at) - Date.parse(a.created_at)) < 5 * 60_000);
   return (
     <>
-      <div ref={log} data-chat-log className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4" role="log" aria-live="polite">
+      <div ref={log} data-chat-log className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-3 pb-3 pt-2 sm:px-4" role="log" aria-live="polite">
         {messages.length === 0 && <p className="py-10 text-center text-[15px] text-muted">{t.messages.noMessages}</p>}
-        <ul className="flex flex-col gap-1.5">
-          {messages.map((m) => {
+        <ul className="flex flex-col">
+          {messages.map((m, i) => {
             const mine = m.sender_id === viewerId;
-            const day = new Date(m.created_at).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-GB", { day: "numeric", month: "long" });
-            const showDay = day !== lastDay;
-            lastDay = day;
+            const prev = messages[i - 1], next = messages[i + 1];
+            const showDay = !prev || fmtDay(prev.created_at) !== fmtDay(m.created_at);
+            const first = !sameGroup(prev, m);
+            const last = !sameGroup(m, next);
             const atts = attachmentsOf(m.media);
             const pending = m.id.startsWith("tmp-");
+            // Corner on the sender's side: round at the top of a group, flat in the middle, tail at the end.
+            const corner = mine
+              ? `${first ? "" : "rounded-tr-lg"} ${last ? "rounded-br-md" : "rounded-br-lg"}`
+              : `${first ? "" : "rounded-tl-lg"} ${last ? "rounded-bl-md" : "rounded-bl-lg"}`;
             return (
-              <li key={m.id} className="flex flex-col">
-                {showDay && <span className="my-3 self-center text-[12px] font-semibold text-muted">{day}</span>}
-                <div className={`flex max-w-[80%] flex-col gap-1 ${mine ? "items-end self-end" : "items-start self-start"} ${pending ? "opacity-70" : ""}`}>
-                  {isGroup && !mine && byId.get(m.sender_id) && <span className="ml-3 inline-flex items-center gap-1 text-[12px] text-muted">{byId.get(m.sender_id)!.display_name}<NameBadge p={byId.get(m.sender_id)!} size={12} lang={lang} /></span>}
+              <li key={m.id} className={`flex flex-col ${showDay ? "" : first ? "mt-3" : "mt-0.5"}`}>
+                {showDay && (
+                  <span className="my-4 self-center rounded-full bg-paper px-3 py-1 text-[12px] font-semibold text-muted">{fmtDay(m.created_at)}</span>
+                )}
+                <div className={`flex max-w-[78%] flex-col gap-0.5 ${mine ? "items-end self-end" : "items-start self-start"} ${pending ? "opacity-60" : ""}`}>
+                  {isGroup && !mine && first && byId.get(m.sender_id) && <span className="mb-0.5 ml-3 inline-flex items-center gap-1 text-[12px] font-medium text-muted">{byId.get(m.sender_id)!.display_name}<NameBadge p={byId.get(m.sender_id)!} size={12} lang={lang} /></span>}
                   {atts.length > 0 && <MessageAttachments items={atts} urls={urls} mine={mine} lang={lang} onOpen={setViewing} onLoaded={onMediaLoaded} />}
-                  {m.text && <p className={`whitespace-pre-wrap break-words rounded-3xl px-4 py-2 text-[15px] leading-snug ${mine ? "rounded-br-md bg-green text-white" : "rounded-bl-md bg-paper text-ink"}`}>{m.text}</p>}
-                  <span className={`block text-[11px] text-muted ${mine ? "text-right" : ""}`}>{new Date(m.created_at).toLocaleTimeString(lang === "fr" ? "fr-FR" : "en-GB", { hour: "2-digit", minute: "2-digit" })}</span>
+                  {m.text && (
+                    <p className={`whitespace-pre-wrap break-words rounded-[22px] px-4 py-2 text-[15.5px] leading-[1.35] ${corner} ${mine ? "bg-green text-white shadow-[0_1px_1px_rgba(0,0,0,0.06)]" : "bg-paper text-ink"}`}>{m.text}</p>
+                  )}
+                  {last && (
+                    <span className={`mt-0.5 px-1 text-[11px] text-muted ${mine ? "text-right" : ""}`}>
+                      {pending ? t.messages.sending : fmtTime(m.created_at)}
+                    </span>
+                  )}
                 </div>
               </li>
             );
@@ -303,113 +323,120 @@ export function Chat({ conversationId, viewerId, lang, initial, initialUrls, mem
           />
         )}
       </div>
-      {error && <p role="alert" className="px-4 pb-1 text-[13px] font-medium text-orange">{error}</p>}
+      {/* The dock: attachments tray, attach sheet and the message pill, frosted above the list. */}
+      <div className="chat-composer flex-none border-t border-line/70 bg-bg/90 px-3 pt-2 backdrop-blur-xl supports-[backdrop-filter]:bg-bg/75">
+        {error && <p role="alert" className="mb-2 px-1 text-[13px] font-medium text-orange">{error}</p>}
 
-      {drafts.length > 0 && (
-        <ul className="flex flex-none gap-2 overflow-x-auto border-t border-line bg-bg px-3 pt-2" aria-label={t.messages.attach}>
-          {drafts.map((d) => (
-            <li key={d.key} className="relative h-20 w-20 flex-none overflow-hidden rounded-2xl border border-line bg-paper">
-              {d.kind === "image" ? (
-                <img src={d.preview} alt="" className="h-full w-full object-cover" />
+        {drafts.length > 0 && !recording && (
+          <ul className="-mx-3 mb-2 flex gap-2 overflow-x-auto px-3 pb-1" aria-label={t.messages.attach}>
+            {drafts.map((d) => (
+              <li key={d.key} className="relative h-[72px] w-[72px] flex-none overflow-hidden rounded-2xl bg-paper ring-1 ring-line">
+                {d.kind === "image" ? (
+                  <img src={d.preview} alt="" className="h-full w-full object-cover" />
+                ) : (
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-1 px-1 text-center text-muted">
+                    <I.file className="h-6 w-6" />
+                    <span className="line-clamp-2 break-all text-[10px] leading-tight">{d.name}</span>
+                  </div>
+                )}
+                {d.status === "uploading" && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/35" aria-label={t.messages.uploading}>
+                    <span className="h-6 w-6 animate-spin rounded-full border-2 border-white/40 border-t-white" />
+                  </div>
+                )}
+                {d.status === "error" && (
+                  <button type="button" onClick={() => retry(d.key)} className="absolute inset-0 flex items-center justify-center bg-black/60 text-[11px] font-semibold text-white">
+                    {t.messages.retry}
+                  </button>
+                )}
+                <button type="button" aria-label={`${t.messages.remove} ${d.name}`} onClick={() => removeDraft(d.key)} className="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-black/65 text-white backdrop-blur">
+                  <I.x className="h-3.5 w-3.5" />
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {menu && !recording && (
+          <div className="dock-sheet mb-2 grid grid-cols-3 gap-2" role="menu">
+            {[
+              { icon: <I.image className="h-6 w-6" />, label: t.messages.library, on: () => libraryRef.current?.click(), show: true },
+              { icon: <I.camera className="h-6 w-6" />, label: t.messages.camera, on: () => cameraRef.current?.click(), show: touch },
+              { icon: <I.file className="h-6 w-6" />, label: t.messages.file, on: () => fileRef.current?.click(), show: true },
+            ].filter((x) => x.show).map((x) => (
+              <button key={x.label} type="button" role="menuitem" onClick={x.on} className="flex flex-col items-center gap-1.5 rounded-2xl bg-paper px-2 py-3 text-[13px] font-semibold text-ink ring-1 ring-line/60 transition active:scale-95">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-soft text-green-deep">{x.icon}</span>
+                {x.label}
+              </button>
+            ))}
+          </div>
+        )}
+
+        <input ref={libraryRef} type="file" accept="image/*" multiple hidden onChange={(e) => { void addFiles(e.target.files); e.target.value = ""; }} />
+        <input ref={cameraRef} type="file" accept="image/*" capture="environment" hidden onChange={(e) => { void addFiles(e.target.files); e.target.value = ""; }} />
+        <input ref={fileRef} type="file" multiple hidden onChange={(e) => { void addFiles(e.target.files); e.target.value = ""; }} />
+
+        <form
+          className="flex items-end gap-2"
+          onSubmit={(e) => {
+            e.preventDefault();
+            send();
+          }}
+        >
+          {recording ? (
+            <VoicePanel voice={voice} lang={lang} onCancel={() => { voice.cancel(); signal("stop"); }} onSend={async () => void sendVoice(await voice.stop())} />
+          ) : (
+            // One pill, like X: attach on the left, the text, then the mic, or send once there is something to send.
+            <div className="flex min-h-[46px] min-w-0 flex-1 items-end rounded-[24px] border border-line bg-paper pl-1 pr-1 transition-colors focus-within:border-green/60 focus-within:bg-bg">
+              <button
+                type="button"
+                aria-label={menu ? t.messages.attachClose : t.messages.attach}
+                aria-expanded={menu}
+                disabled={drafts.length >= DM_MAX_FILES}
+                onClick={() => setMenu((x) => !x)}
+                className={`mb-[5px] flex h-9 w-9 flex-none items-center justify-center rounded-full transition ${menu ? "bg-green text-white" : "text-green-deep hover:bg-green-soft"} disabled:opacity-40`}
+              >
+                <I.plus className={`h-[22px] w-[22px] transition-transform duration-200 ${menu ? "rotate-45" : ""}`} />
+              </button>
+              <label className="sr-only" htmlFor="msg">{t.messages.placeholder}</label>
+              <textarea
+                id="msg"
+                ref={areaRef}
+                rows={1}
+                value={text}
+                maxLength={4000}
+                onChange={(e) => {
+                  setText(e.target.value);
+                  // Grow with the text up to six lines, then scroll inside.
+                  e.target.style.height = "auto";
+                  e.target.style.height = Math.min(e.target.scrollHeight, 148) + "px";
+                  if (e.target.value.trim()) signal("text");
+                  else signal("stop");
+                }}
+                onFocus={() => setMenu(false)}
+                onBlur={() => !text.trim() && signal("stop")}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.shiftKey && !window.matchMedia("(pointer: coarse)").matches) {
+                    e.preventDefault();
+                    send();
+                  }
+                }}
+                placeholder={t.messages.placeholder}
+                className="max-h-[148px] min-h-[44px] min-w-0 flex-1 resize-none bg-transparent px-2 py-[11px] text-[16px] leading-[22px] text-ink placeholder:text-muted focus:outline-none"
+              />
+              {canVoice && !text.trim() && !drafts.length ? (
+                <button type="button" aria-label={t.messages.record} onClick={startVoice} disabled={sendingVoice} className="mb-[5px] flex h-9 w-9 flex-none items-center justify-center rounded-full text-green-deep transition hover:bg-green-soft active:scale-90">
+                  {sendingVoice ? <span className="h-5 w-5 animate-spin rounded-full border-2 border-green/30 border-t-green" /> : <I.mic className="h-[22px] w-[22px]" />}
+                </button>
               ) : (
-                <div className="flex h-full w-full flex-col items-center justify-center gap-1 px-1 text-center text-muted">
-                  <I.file className="h-6 w-6" />
-                  <span className="line-clamp-2 break-all text-[10px] leading-tight">{d.name}</span>
-                </div>
-              )}
-              {d.status === "uploading" && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/40" aria-label={t.messages.uploading}>
-                  <span className="h-6 w-6 animate-spin rounded-full border-2 border-white/40 border-t-white" />
-                </div>
-              )}
-              {d.status === "error" && (
-                <button type="button" onClick={() => retry(d.key)} className="absolute inset-0 flex items-center justify-center bg-black/60 text-[11px] font-semibold text-white">
-                  {t.messages.retry}
+                <button type="submit" aria-label={t.messages.send} disabled={!canSend} className="send-pop mb-[5px] flex h-9 w-9 flex-none items-center justify-center rounded-full bg-green text-white shadow-sm transition active:scale-90 disabled:bg-green/40">
+                  {uploading ? <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" /> : <I.send className="h-[18px] w-[18px] -translate-x-px translate-y-px" />}
                 </button>
               )}
-              <button type="button" aria-label={`${t.messages.remove} ${d.name}`} onClick={() => removeDraft(d.key)} className="absolute right-1 top-1 rounded-full bg-black/70 p-1 text-white">
-                <I.x className="h-3.5 w-3.5" />
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {menu && (
-        <div className={`flex flex-none gap-2 overflow-x-auto bg-bg px-3 pt-2 ${drafts.length ? "" : "border-t border-line"}`}>
-          <button type="button" onClick={() => libraryRef.current?.click()} className="flex flex-none items-center gap-2 rounded-full border border-line bg-paper px-3.5 py-2 text-[14px] font-semibold text-ink">
-            <I.image className="h-5 w-5 text-green-deep" />{t.messages.library}
-          </button>
-          {touch && (
-            <button type="button" onClick={() => cameraRef.current?.click()} className="flex flex-none items-center gap-2 rounded-full border border-line bg-paper px-3.5 py-2 text-[14px] font-semibold text-ink">
-              <I.camera className="h-5 w-5 text-green-deep" />{t.messages.camera}
-            </button>
+            </div>
           )}
-          <button type="button" onClick={() => fileRef.current?.click()} className="flex flex-none items-center gap-2 rounded-full border border-line bg-paper px-3.5 py-2 text-[14px] font-semibold text-ink">
-            <I.file className="h-5 w-5 text-green-deep" />{t.messages.file}
-          </button>
-        </div>
-      )}
-
-      <input ref={libraryRef} type="file" accept="image/*" multiple hidden onChange={(e) => { void addFiles(e.target.files); e.target.value = ""; }} />
-      <input ref={cameraRef} type="file" accept="image/*" capture="environment" hidden onChange={(e) => { void addFiles(e.target.files); e.target.value = ""; }} />
-      <input ref={fileRef} type="file" multiple hidden onChange={(e) => { void addFiles(e.target.files); e.target.value = ""; }} />
-
-      <form
-        className={`chat-composer relative flex flex-none items-end gap-2 bg-bg px-3 pt-2 ${drafts.length || menu ? "" : "border-t border-line"}`}
-        onSubmit={(e) => {
-          e.preventDefault();
-          send();
-        }}
-      >
-        {recording ? (
-          <VoicePanel voice={voice} lang={lang} onCancel={() => { voice.cancel(); signal("stop"); }} onSend={async () => void sendVoice(await voice.stop())} />
-        ) : (
-          <>
-        <button
-          type="button"
-          aria-label={menu ? t.messages.attachClose : t.messages.attach}
-          aria-expanded={menu}
-          disabled={drafts.length >= DM_MAX_FILES}
-          onClick={() => setMenu((x) => !x)}
-          className="flex h-11 w-11 flex-none items-center justify-center rounded-full text-green-deep hover:bg-green-soft disabled:opacity-40"
-        >
-          <I.plus className={`h-6 w-6 transition-transform ${menu ? "rotate-45" : ""}`} />
-        </button>
-        <label className="sr-only" htmlFor="msg">{t.messages.placeholder}</label>
-        <textarea
-          id="msg"
-          rows={1}
-          value={text}
-          maxLength={4000}
-          onChange={(e) => {
-            setText(e.target.value);
-            if (e.target.value.trim()) signal("text");
-            else signal("stop");
-          }}
-          onFocus={() => setMenu(false)}
-          onBlur={() => !text.trim() && signal("stop")}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && !e.shiftKey) {
-              e.preventDefault();
-              send();
-            }
-          }}
-          placeholder={t.messages.placeholder}
-          className="max-h-32 min-h-[44px] min-w-0 flex-1 resize-none rounded-3xl border border-line bg-paper px-4 py-2.5 text-[16px] focus:border-green focus:outline-none"
-        />
-        {canVoice && !text.trim() && !drafts.length ? (
-          <button type="button" aria-label={t.messages.record} onClick={startVoice} disabled={sendingVoice} className="btn-primary h-11 w-11 flex-none !px-0">
-            {sendingVoice ? <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-t-white" /> : <I.mic className="h-5 w-5" />}
-          </button>
-        ) : (
-          <button type="submit" aria-label={t.messages.send} disabled={!canSend} className="btn-primary h-11 w-11 flex-none !px-0">
-            {uploading ? <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-t-white" /> : <I.send className="h-5 w-5" />}
-          </button>
-        )}
-          </>
-        )}
-      </form>
+        </form>
+      </div>
 
       {viewing && urls[viewing.path] && <Lightbox a={viewing} url={urls[viewing.path]} lang={lang} onClose={() => setViewing(null)} />}
     </>

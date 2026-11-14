@@ -25,13 +25,13 @@ export default async function ConversationPage({ params }: { params: Promise<{ i
 
   return (
     <ChatViewport>
-      <div className="flex min-h-[56px] flex-none items-center gap-3 border-b border-line px-4 py-2" style={{ paddingTop: "max(env(safe-area-inset-top), 8px)" }}>
+      <div className="z-10 flex min-h-[56px] flex-none items-center gap-3 border-b border-line/70 bg-bg/85 px-3 py-2 backdrop-blur-xl sm:px-4" style={{ paddingTop: "max(env(safe-area-inset-top), 8px)" }}>
         <Link href="/messages" aria-label="Retour" className="-ml-2 rounded-full p-2 hover:bg-paper">
           <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="m15 5-7 7 7 7" /></svg>
         </Link>
         {other && (
           <Link href={`/u/${other.handle}`} className="flex min-w-0 items-center gap-3">
-            <Avatar src={other.avatar_url} name={other.display_name} size={36} />
+            <Avatar src={other.avatar_url} name={other.display_name} size={38} />
             <span className="min-w-0">
               <span className="flex items-center gap-1 text-[15px] font-bold"><span className="truncate">{data.conversation.title ?? others.map((o) => o.profile.display_name).join(", ")}</span><NameBadge p={other} size={16} lang={viewer.lang} /></span>
               <span className="block truncate text-[13px] text-muted">@{other.handle}</span>
