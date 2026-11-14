@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { joinHref } from "@/lib/join";
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { deletePost, toggleBookmark, toggleLike, toggleRepost } from "@/lib/actions";
@@ -49,21 +50,21 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
   const href = `/p/${post.id}`;
 
   function like() {
-    if (!canAct) return router.push("/connexion");
+    if (!canAct) return router.push(joinHref());
     const on = !liked;
     setLiked(on);
     setLikes((n) => n + (on ? 1 : -1));
     start(() => void toggleLike(post.id, on));
   }
   function repost() {
-    if (!canAct) return router.push("/connexion");
+    if (!canAct) return router.push(joinHref());
     const on = !reposted;
     setReposted(on);
     setReposts((n) => n + (on ? 1 : -1));
     start(() => void toggleRepost(post.id, on));
   }
   function bookmark() {
-    if (!canAct) return router.push("/connexion");
+    if (!canAct) return router.push(joinHref());
     const on = !bookmarked;
     setBookmarked(on);
     start(() => void toggleBookmark(post.id, on));
@@ -232,7 +233,7 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
           )}
 
           <div className={`-ml-2 flex items-center justify-between ${detail ? "mt-1 max-w-md" : "mt-2 max-w-sm"} text-muted`}>
-            <button type="button" onClick={() => (canAct ? setReplying((r) => !r) : router.push("/connexion"))} className="tap flex items-center gap-1.5 rounded-full p-2 text-[13px] hover:bg-green-soft hover:text-green-deep active:scale-90 active:bg-green-soft" aria-label={t.post.reply}>
+            <button type="button" onClick={() => (canAct ? setReplying((r) => !r) : router.push(joinHref()))} className="tap flex items-center gap-1.5 rounded-full p-2 text-[13px] hover:bg-green-soft hover:text-green-deep active:scale-90 active:bg-green-soft" aria-label={t.post.reply}>
               <I.reply className="h-[18px] w-[18px]" />
               {post.reply_count > 0 && <span>{formatCount(post.reply_count, lang)}</span>}
             </button>

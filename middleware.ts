@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from "next/server";
 
 // Explore, the officials directory, profiles, posts and the idea box stay readable signed out.
 const PROTECTED = ["/accueil", "/notifications", "/messages", "/mes-elus", "/parametres", "/admin", "/signets", "/barometre", "/bienvenue"];
-const AUTH_PAGES = ["/connexion", "/inscription"];
+const AUTH_PAGES = ["/connexion", "/inscription", "/rejoindre"];
 // The landing pages are static: members are sent to their feed from here instead.
 const LANDING = ["/", "/en"];
 
@@ -24,9 +24,20 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(to);
   };
 
+  // A visitor reaching a members' page is invited to join (sign-up first, log-in second)
+  // rather than dropped on a bare login form.
+  const toJoin = () => {
+    if (path === "/bienvenue") return toLogin();
+    const to = req.nextUrl.clone();
+    to.pathname = "/rejoindre";
+    to.search = "";
+    to.searchParams.set("next", path + req.nextUrl.search);
+    return NextResponse.redirect(to);
+  };
+
   // Visitors carry no session cookie: nothing to check or refresh, so no network call.
   const hasSession = req.cookies.getAll().some((c) => c.name.startsWith("sb-") && c.name.includes("-auth-token"));
-  if (!hasSession) return within(path, PROTECTED) ? toLogin() : res;
+  if (!hasSession) return within(path, PROTECTED) ? toJoin() : res;
 
   const supabase = createServerClient(url, key, {
     cookies: {

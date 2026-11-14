@@ -175,7 +175,7 @@ export function SignupForm({ lang }: { lang: "fr" | "en" }) {
           </p>
           <div className="flex gap-2">
             <button type="button" className="btn-ghost" onClick={() => setStep(1)}>{t.auth.back}</button>
-            <button type="submit" className="btn-primary flex-1" disabled={pending || !votingPlaceComplete(place)}>{pending && <Spinner />}{t.auth.create}</button>
+            <button type="submit" className="btn-primary flex-1" disabled={pending || !votingPlaceComplete(place)}>{pending && <Spinner />}<span>{t.auth.create}</span></button>
           </div>
         </form>
       )}
