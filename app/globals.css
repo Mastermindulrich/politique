@@ -271,3 +271,22 @@ select,
 @media (prefers-reduced-motion: reduce) {
   .toast-in { animation: fade-in 0.18s ease-out both; }
 }
+
+/* Conversation on a phone: the chat covers the screen (see chat-viewport.tsx), so the page behind it must not scroll. */
+html.chat-open,
+html.chat-open body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+/* Message box: clear of the iPhone home indicator, unless the keyboard is covering that strip anyway. */
+.chat-composer {
+  padding-bottom: calc(env(safe-area-inset-bottom) + 8px);
+}
+.chat-viewport[data-keyboard="open"] .chat-composer {
+  padding-bottom: 8px;
+}
+@media (min-width: 640px) {
+  .chat-composer {
+    padding-bottom: 8px;
+  }
+}

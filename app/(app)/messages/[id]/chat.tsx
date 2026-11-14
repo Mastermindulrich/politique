@@ -16,7 +16,7 @@ export function Chat({ conversationId, viewerId, lang, initial, members }: Props
   const [text, setText] = useState("");
   const [error, setError] = useState(false);
   const [, start] = useTransition();
-  const bottom = useRef<HTMLDivElement>(null);
+  const log = useRef<HTMLDivElement>(null);
   const byId = new Map(members.map((m) => [m.id, m]));
   const isGroup = members.length > 2;
 
@@ -36,7 +36,8 @@ export function Chat({ conversationId, viewerId, lang, initial, members }: Props
   }, [conversationId, viewerId]);
 
   useEffect(() => {
-    bottom.current?.scrollIntoView({ block: "end" });
+    // Scroll the message list itself, never the page (scrollIntoView also moved the whole page on iPhone).
+    if (log.current) log.current.scrollTop = log.current.scrollHeight;
   }, [messages.length]);
 
   function send() {
@@ -59,7 +60,7 @@ export function Chat({ conversationId, viewerId, lang, initial, members }: Props
   let lastDay = "";
   return (
     <>
-      <div className="flex-1 overflow-y-auto px-4 py-4" role="log" aria-live="polite">
+      <div ref={log} data-chat-log className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4" role="log" aria-live="polite">
         {messages.length === 0 && <p className="py-10 text-center text-[15px] text-muted">{t.messages.noMessages}</p>}
         <ul className="flex flex-col gap-1.5">
           {messages.map((m) => {
@@ -79,11 +80,10 @@ export function Chat({ conversationId, viewerId, lang, initial, members }: Props
             );
           })}
         </ul>
-        <div ref={bottom} />
       </div>
       {error && <p role="alert" className="px-4 pb-1 text-[13px] font-medium text-orange">{t.common.error}</p>}
       <form
-        className="flex items-end gap-2 border-t border-line px-3 py-2"
+        className="chat-composer flex flex-none items-end gap-2 border-t border-line bg-bg px-3 pt-2"
         onSubmit={(e) => {
           e.preventDefault();
           send();
@@ -103,7 +103,7 @@ export function Chat({ conversationId, viewerId, lang, initial, members }: Props
             }
           }}
           placeholder={t.messages.placeholder}
-          className="max-h-32 min-h-[44px] flex-1 resize-none rounded-3xl border border-line bg-paper px-4 py-2.5 text-[15px] focus:border-green focus:outline-none"
+          className="max-h-32 min-h-[44px] flex-1 resize-none rounded-3xl border border-line bg-paper px-4 py-2.5 text-[16px] focus:border-green focus:outline-none"
         />
         <button type="submit" aria-label={t.messages.send} disabled={!text.trim()} className="btn-primary h-11 w-11 flex-none !px-0">
           <I.send className="h-5 w-5" />
