@@ -1,0 +1,26 @@
+{
+  "name": "politique-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "POLITIQUE for Android and iOS: a Capacitor shell around https://politique.prototypex.org with native push.",
+  "scripts": {
+    "sync": "cap sync",
+    "assets": "capacitor-assets generate --iconBackgroundColor '#16181C' --iconBackgroundColorDark '#16181C' --splashBackgroundColor '#16181C' --splashBackgroundColorDark '#0e0f11'",
+    "android:debug": "cap sync android && cd android && ./gradlew assembleDebug",
+    "android:release": "cap sync android && cd android && ./gradlew bundleRelease"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.6.2",
+    "@capacitor/app": "8.1.2",
+    "@capacitor/core": "8.6.2",
+    "@capacitor/ios": "8.6.2",
+    "@capacitor/push-notifications": "8.1.3",
+    "@capacitor/splash-screen": "8.0.2",
+    "@capacitor/status-bar": "8.0.4"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "4.0.0",
+    "@capacitor/cli": "8.6.2",
+    "typescript": "^5"
+  }
+}

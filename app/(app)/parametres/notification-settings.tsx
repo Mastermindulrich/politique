@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useTransition } from "react";
 import { chime } from "@/app/components/notify/notification-center";
 import { CATEGORIES, CATEGORY_LABELS, defaultPref, type Category, type Lang, type Prefs } from "@/lib/notify";
 import { sendTestNotification, updateNotificationPrefs } from "@/lib/notify-actions";
+import { isNativeApp } from "@/lib/native";
 import { disablePush, enablePush, pushState, type PushState } from "@/lib/push-client";
 
 const copy = {
@@ -11,6 +12,7 @@ const copy = {
     device: "Cet appareil",
     on: "Les notifications push sont activées sur cet appareil.",
     off: "Recevez les notifications sur cet appareil, même quand POLITIQUE est fermé.",
+    deniedApp: "Les notifications de POLITIQUE sont désactivées sur ce téléphone. Activez-les dans Réglages > Notifications > POLITIQUE, puis revenez ici.",
     denied: "Les notifications sont bloquées par votre navigateur. Autorisez-les dans les réglages du site (icône à gauche de l'adresse), puis rechargez la page.",
     unsupported: "Ce navigateur ne permet pas les notifications push. Essayez Chrome, Edge, Firefox ou Safari récent.",
     unconfigured: "Les notifications push ne sont pas encore disponibles sur le site.",
@@ -38,6 +40,7 @@ const copy = {
     device: "This device",
     on: "Push notifications are on for this device.",
     off: "Get notifications on this device, even when POLITIQUE is closed.",
+    deniedApp: "POLITIQUE notifications are turned off on this phone. Turn them on in Settings > Notifications > POLITIQUE, then come back here.",
     denied: "Your browser blocks notifications for this site. Allow them in the site settings (icon left of the address), then reload.",
     unsupported: "This browser does not support push notifications. Try a recent Chrome, Edge, Firefox or Safari.",
     unconfigured: "Push notifications are not available on the site yet.",
@@ -122,7 +125,7 @@ export function NotificationSettings({ lang, initial }: { lang: Lang; initial: P
       <div className="rounded-2xl border border-line p-4">
         <p className="text-[15px] font-bold">{t.device}</p>
         <p className="mt-1 text-[14px] leading-relaxed text-muted">
-          {device === "on" ? t.on : device === "denied" ? t.denied : device === "unsupported" ? t.unsupported : device === "unconfigured" ? t.unconfigured : device === "ios-needs-install" ? t.ios : t.off}
+          {device === "on" ? t.on : device === "denied" ? (isNativeApp() ? t.deniedApp : t.denied) : device === "unsupported" ? t.unsupported : device === "unconfigured" ? t.unconfigured : device === "ios-needs-install" ? t.ios : t.off}
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
           {(device === "default" || device === "off") && (
