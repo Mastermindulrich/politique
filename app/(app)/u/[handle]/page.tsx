@@ -137,7 +137,7 @@ export default async function ProfilePage({ params, searchParams }: { params: Pr
 
         <nav aria-label="Profil" className="mt-3 flex border-b border-line">
           {tabs.map((x) => (
-            <Link key={x.key} href={x.key === "posts" ? `/u/${profile.handle}` : `/u/${profile.handle}?tab=${x.key}`} aria-current={tab === x.key ? "page" : undefined} className="flex flex-1 flex-col items-center gap-3 pt-3 text-[15px] hover:bg-paper">
+            <Link key={x.key} href={x.key === "posts" ? `/u/${profile.handle}` : `/u/${profile.handle}?tab=${x.key}`} aria-current={tab === x.key ? "page" : undefined} className="tab pt-3 text-[14px] sm:text-[15px]">
               <span className={tab === x.key ? "font-bold" : "font-medium text-muted"}>{x.label}</span>
               <span className={`h-1 w-12 rounded-full ${tab === x.key ? "bg-green" : "bg-transparent"}`} />
             </Link>

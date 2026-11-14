@@ -1,8 +1,8 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { z } from "zod";
-import { FEATURES } from "@/lib/settings";
+import { FEATURES, SETTINGS_TAG } from "@/lib/settings";
 import { createClient, getViewer } from "@/lib/supabase/server";
 
 // Control center actions. The database re-checks every permission (owner_set_setting,
@@ -18,6 +18,7 @@ async function staff(owner = false) {
 
 const done = (error: { message: string } | null): Result => {
   if (error) return { ok: false, error: /forbidden/.test(error.message) ? "forbidden" : "failed" };
+  revalidateTag(SETTINGS_TAG);
   revalidatePath("/", "layout");
   return { ok: true };
 };
