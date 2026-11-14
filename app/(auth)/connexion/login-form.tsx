@@ -52,7 +52,7 @@ export function LoginForm({ lang, next }: { lang: "fr" | "en"; next: string }) {
         <input className="input" type="email" required autoFocus autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} />
       </label>
       {error && <p role="alert" className="text-[14px] font-medium text-orange">{error}</p>}
-      <button type="submit" className="btn-primary" disabled={pending}>{pending && <Spinner />}{t.auth.sendCode}</button>
+      <button type="submit" className="btn-primary" disabled={pending}>{pending && <Spinner />}<span>{t.auth.sendCode}</span></button>
     </form>
   );
 }

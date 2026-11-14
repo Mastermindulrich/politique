@@ -11,6 +11,7 @@ import { FollowButton } from "../follow-button";
 import { NavLinks, MobileNav, ComposeFab } from "./nav";
 import { SearchBox } from "./search-box";
 import { NotificationCenter } from "../notify/notification-center";
+import { I } from "../ui/icons";
 
 function Wordmark() {
   return (
@@ -75,20 +76,28 @@ export function Shell({ viewer, children, hideRight = false }: { viewer: Profile
             </span>
           </Link>
         ) : (
-          <div className="hidden flex-col gap-2 xl:flex">
-            <Link href="/inscription" className="btn-primary">{t.nav.signup}</Link>
-            <Link href="/connexion" className="btn-ghost">{t.nav.login}</Link>
-          </div>
+          <>
+            <div className="hidden flex-col gap-2 xl:flex">
+              <Link href="/inscription" className="btn-primary">{t.nav.signup}</Link>
+              <Link href="/connexion" className="btn-ghost">{t.nav.login}</Link>
+            </div>
+            {/* Narrow rail (tablets): the same two doors, as icons. */}
+            <div className="flex flex-col items-center gap-2 xl:hidden">
+              <Link href="/inscription" aria-label={t.nav.signup} title={t.nav.signup} className="btn-primary h-12 w-12 !px-0"><I.plus className="h-6 w-6" /></Link>
+              <Link href="/connexion" aria-label={t.nav.login} title={t.nav.login} className="btn-ghost h-12 w-12 !px-0"><I.user className="h-6 w-6" /></Link>
+            </div>
+          </>
         )}
       </header>
 
       {/* Main column */}
-      <main className="min-h-screen w-full min-w-0 max-w-[620px] border-line pb-[calc(4.5rem+env(safe-area-inset-bottom))] sm:border-r sm:pb-0">{children}</main>
+      <main className={`min-h-screen w-full min-w-0 max-w-[620px] border-line sm:border-r sm:pb-0 ${viewer ? "pb-[calc(4.5rem+env(safe-area-inset-bottom))]" : "pb-[calc(8.5rem+env(safe-area-inset-bottom))]"}`}>{children}</main>
 
       {/* Right rail: streamed in after the page, so a slow list never holds the page back. */}
       {!hideRight && (
         <aside className="sticky top-0 hidden h-screen w-[340px] flex-none flex-col gap-4 overflow-y-auto px-5 py-3 lg:flex">
           <SearchBox placeholder={t.explore.search} hideOn="/explorer" />
+          {!viewer && <JoinCard lang={lang} />}
           <Suspense fallback={<RailSkeleton />}>
             <RightRail viewer={viewer} />
           </Suspense>
@@ -99,8 +108,39 @@ export function Shell({ viewer, children, hideRight = false }: { viewer: Profile
       )}
 
       <MobileNav lang={lang} handle={viewer?.handle ?? null} name={viewer?.display_name} avatar={viewer?.avatar_url} unread={unread} signedIn={Boolean(viewer)} isModerator={Boolean(viewer?.is_moderator || staff)} isStaff={staff} />
-      {viewer && <ComposeFab lang={lang} />}
+      {viewer ? <ComposeFab lang={lang} /> : <JoinBar lang={lang} />}
       {viewer && supabaseConfigured && <NotificationCenter lang={lang} viewerId={viewer.id} initial={unread} />}
+    </div>
+  );
+}
+
+/** Visitors on a wide screen: an invitation at the top of the right rail. */
+function JoinCard({ lang }: { lang: "fr" | "en" }) {
+  const fr = lang === "fr";
+  return (
+    <section className="rounded-2xl border border-line p-4">
+      <h2 className="font-display text-[19px] font-bold leading-tight">{fr ? "Nouveau sur POLITIQUE ?" : "New to POLITIQUE?"}</h2>
+      <p className="mt-1.5 text-[14px] leading-relaxed text-muted">
+        {fr ? "Créez votre compte pour suivre vos élus, les interpeller et réagir aux publications." : "Create your account to follow your officials, question them and react to posts."}
+      </p>
+      <Link href="/inscription" className="btn-primary mt-3 h-11 w-full">{fr ? "Créer mon compte" : "Create my account"}</Link>
+      <Link href="/connexion" className="btn-ghost mt-2 h-11 w-full">{fr ? "Se connecter" : "Log in"}</Link>
+    </section>
+  );
+}
+
+/** Visitors on a phone: a slim invitation just above the bottom bar. */
+function JoinBar({ lang }: { lang: "fr" | "en" }) {
+  const fr = lang === "fr";
+  return (
+    <div className="fixed inset-x-0 z-40 border-t border-line bg-card/95 px-4 py-2.5 backdrop-blur-lg sm:hidden" style={{ bottom: "calc(env(safe-area-inset-bottom) + 58px)" }}>
+      <div className="mx-auto flex max-w-[620px] items-center gap-3">
+        <p className="min-w-0 flex-1 text-[13px] leading-snug text-muted">
+          <span className="block font-semibold text-ink">{fr ? "Rejoignez la conversation" : "Join the conversation"}</span>
+          {fr ? "Suivez et interpellez vos élus." : "Follow and question your officials."}
+        </p>
+        <Link href="/inscription" className="btn-primary h-10 flex-none px-4 text-[14px]">{fr ? "S'inscrire" : "Sign up"}</Link>
+      </div>
     </div>
   );
 }

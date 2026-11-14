@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { joinHref } from "@/lib/join";
 import { useState, useTransition } from "react";
 import {
   addPromiseUpdate, answerInterpellation, closeInterpellation, createInterpellation, createPermanence, createPromise,
@@ -18,7 +19,7 @@ function Reveal({ label, children, signedIn, icon }: { label: string; children: 
   const router = useRouter();
   if (!open) {
     return (
-      <button type="button" className="btn-primary btn-sm" onClick={() => (signedIn ? setOpen(true) : router.push("/connexion"))}>
+      <button type="button" className="btn-primary btn-sm" onClick={() => (signedIn ? setOpen(true) : router.push(joinHref()))}>
         {icon}
         {label}
       </button>
@@ -92,7 +93,7 @@ export function InterpellationVote({ id, initial, count, lang, signedIn, disable
       onClick={(e) => {
         e.preventDefault();
         e.stopPropagation();
-        if (!signedIn) return router.push("/connexion");
+        if (!signedIn) return router.push(joinHref());
         const next = !on;
         setOn(next);
         setN((x) => x + (next ? 1 : -1));
@@ -163,7 +164,7 @@ export function PromiseUpdateForm({ promiseId, lang, signedIn, canSetStatus }: {
   const [source, setSource] = useState("");
   const [status, setStatus] = useState<string>("");
   if (!open) {
-    return <button type="button" className="text-[13px] font-semibold text-green-deep" onClick={() => (signedIn ? setOpen(true) : router.push("/connexion"))}>+ {t.promises.update}</button>;
+    return <button type="button" className="text-[13px] font-semibold text-green-deep" onClick={() => (signedIn ? setOpen(true) : router.push(joinHref()))}>+ {t.promises.update}</button>;
   }
   return (
     <form className="mt-2 flex flex-col gap-2" onSubmit={(e) => { e.preventDefault(); run(() => addPromiseUpdate({ promiseId, text, source_url: source || null, new_status: status || null }), () => { setOpen(false); setText(""); setSource(""); }); }}>
@@ -290,7 +291,7 @@ export function PropositionVote({ id, initial, count, lang, signedIn }: { id: st
       aria-pressed={on}
       title={on ? t.ideas.supported : t.ideas.support}
       onClick={() => {
-        if (!signedIn) return router.push("/connexion");
+        if (!signedIn) return router.push(joinHref());
         const next = !on;
         setOn(next);
         setN((x) => x + (next ? 1 : -1));
