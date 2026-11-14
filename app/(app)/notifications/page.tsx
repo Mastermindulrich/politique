@@ -25,6 +25,7 @@ const ICON: Record<Notification["type"], { icon: keyof typeof I; tone: string }>
   verification: { icon: "shield", tone: "text-green-deep" },
   moderation: { icon: "flag", tone: "text-orange" },
   message: { icon: "mail", tone: "text-muted" },
+  following_post: { icon: "user", tone: "text-green-deep" },
 };
 
 export default async function NotificationsPage() {
@@ -54,14 +55,18 @@ export default async function NotificationsPage() {
 
   return (
     <>
-      <PageHeader title={t.notifications.title} />
+      <PageHeader title={t.notifications.title}>
+        <Link href="/parametres#notifications" aria-label={t.notifications.settings} title={t.notifications.settings} className="icon-btn">
+          <I.settings className="h-5 w-5" />
+        </Link>
+      </PageHeader>
       {rows.length === 0 ? (
         <Empty>{t.notifications.empty}</Empty>
       ) : (
         <ul>
           {rows.map((n) => {
             const actor = n.actor_id ? authors.get(n.actor_id) : null;
-            const meta = ICON[n.type];
+            const meta = ICON[n.type] ?? { icon: "bell" as const, tone: "text-muted" };
             const Icon = I[meta.icon];
             const post = n.post_id ? posts.get(n.post_id) : null;
             return (

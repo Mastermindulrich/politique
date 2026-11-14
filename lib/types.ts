@@ -179,7 +179,7 @@ export type Notification = {
   actor_id: string | null;
   type:
     | "like" | "reply" | "repost" | "quote" | "follow" | "mention" | "poll_end"
-    | "interpellation_answer" | "official_post" | "verification" | "moderation" | "message";
+    | "interpellation_answer" | "official_post" | "verification" | "moderation" | "message" | "following_post";
   post_id: string | null;
   ref_id: string | null;
   read_at: string | null;

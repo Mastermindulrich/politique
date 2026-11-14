@@ -348,7 +348,7 @@ export function AccountSection({ lang, email, handle, canDelete }: { lang: Lang;
   return (
     <div className="flex flex-col gap-4">
       <p className="text-[14px]"><span className="text-muted">{t.settings.email} : </span><b className="break-all">{email}</b></p>
-      <form action={signOut}><button type="submit" className="btn-ghost btn-sm">{t.settings.logout}</button></form>
+      <form action={signOut} data-signout><button type="submit" className="btn-ghost btn-sm">{t.settings.logout}</button></form>
       {canDelete && (
         <div className="rounded-2xl border border-line p-4">
           <h3 className="text-[15px] font-bold">{t.settings.delete}</h3>
