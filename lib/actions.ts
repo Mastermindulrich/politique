@@ -5,7 +5,8 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { z } from "zod";
 import { createClient, createServiceClient, getViewer } from "@/lib/supabase/server";
-import type { Media } from "@/lib/types";
+import { DM_MAX_FILES } from "@/lib/dm-media";
+import type { DmAttachment, Media } from "@/lib/types";
 
 type Result<T = undefined> = { ok: true; data?: T } | { ok: false; error: string };
 
@@ -432,13 +433,32 @@ export async function startConversation(userId: string): Promise<Result<{ id: st
   if (error) return { ok: false, error: error.message };
   return { ok: true, data: { id: data as string } };
 }
-export async function sendMessage(conversationId: string, text: string, media: Media[] = []): Promise<Result> {
+const dmAttachment = z.object({
+  type: z.enum(["image", "video", "file"]),
+  path: z.string().max(300),
+  name: z.string().max(200).optional(),
+  size: z.number().int().nonnegative().optional(),
+  mime: z.string().max(120).optional(),
+  width: z.number().int().positive().max(20000).optional(),
+  height: z.number().int().positive().max(20000).optional(),
+});
+
+export async function sendMessage(conversationId: string, text: string, media: DmAttachment[] = []): Promise<Result<{ id: string }>> {
   const viewer = await viewerOrFail();
-  if (!text.trim() && !media.length) return { ok: false, error: "empty" };
+  const parsed = z.array(dmAttachment).max(DM_MAX_FILES).safeParse(media);
+  if (!parsed.success) return { ok: false, error: "invalid" };
+  // Attachments must sit in the sender's own folder of this conversation (the database checks it too).
+  const prefix = `${conversationId}/${viewer.id}/`;
+  if (parsed.data.some((m) => !m.path.startsWith(prefix) || m.path.slice(prefix.length).includes("/"))) return { ok: false, error: "invalid" };
+  if (!text.trim() && !parsed.data.length) return { ok: false, error: "empty" };
   const supabase = await createClient();
-  const { error } = await supabase.from("messages").insert({ conversation_id: conversationId, sender_id: viewer.id, text: text.trim().slice(0, 4000), media });
+  const { data, error } = await supabase
+    .from("messages")
+    .insert({ conversation_id: conversationId, sender_id: viewer.id, text: text.trim().slice(0, 4000), media: parsed.data })
+    .select("id")
+    .single();
   if (error) return { ok: false, error: error.message };
-  return { ok: true };
+  return { ok: true, data: { id: (data as { id: string }).id } };
 }
 export async function markConversationRead(conversationId: string) {
   const viewer = await viewerOrFail();

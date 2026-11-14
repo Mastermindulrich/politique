@@ -28,6 +28,7 @@ await db.exec(readFileSync(new URL("../supabase/migrations/0002_auth_email_log.s
 await db.exec(readFileSync(new URL("../supabase/migrations/0003_control_center.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/migrations/0004_notifications.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/migrations/0005_owner_badge.sql", import.meta.url), "utf8"));
+await db.exec(readFileSync(new URL("../supabase/migrations/0006_dm_attachments.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/seed/ci_geo.sql", import.meta.url), "utf8"));
 await db.exec(`set search_path = politique, public`);
 
@@ -320,6 +321,30 @@ const fake = await u("fakeboss", { display_name: "Le Fondateur" });
 const fk = (await sql(`select is_owner, display_name from profiles where id = $1`, [fake])).rows[0];
 assert(fk.is_owner === false && fk.display_name === "fakeboss", "a second claimed e-mail cannot become owner, reserved name replaced: " + JSON.stringify(fk));
 assert((await sql(`select count(*)::int n from profiles where is_owner`)).rows[0].n === 1, "exactly one owner");
+
+// --- Attachments in direct messages ----------------------------------------------
+assert((await sql(`select public from storage.buckets where id = 'politique-dm'`)).rows[0].public === false, "DM bucket is private");
+const dmPath = (who, f = "a1.jpg") => `${cid}/${who}/${f}`;
+await asRole(kof, async () => {
+  assert((await sql(`select dm_object_allowed($1, 'write') ok`, [dmPath(kof)])).rows[0].ok === true, "member uploads into own folder");
+  assert((await sql(`select dm_object_allowed($1, 'write') ok`, [dmPath(awa)])).rows[0].ok === false, "not into the other member's folder");
+  assert((await sql(`select dm_object_allowed($1, 'read') ok`, [dmPath(awa)])).rows[0].ok === true, "member reads the other member's file");
+  assert((await sql(`select dm_object_allowed('not-a-uuid/x/y.jpg', 'read') ok`)).rows[0].ok === false, "malformed path refused without error");
+  assert((await sql(`select dm_object_allowed($1, 'read') ok`, [`${cid}/${kof}`])).rows[0].ok === false, "folder only refused");
+  await sql(`insert into messages (conversation_id, sender_id, text, media) values ($1, $2, '', $3)`,
+    [cid, kof, JSON.stringify([{ type: "image", path: dmPath(kof), name: "photo.jpg", size: 1200, mime: "image/jpeg" }, { type: "file", path: dmPath(kof, "b2.pdf"), name: "Programme.pdf" }])]);
+  await fails(() => sql(`insert into messages (conversation_id, sender_id, media) values ($1, $2, $3)`, [cid, kof, JSON.stringify([{ type: "image", path: dmPath(awa) }])]), "attachment from someone else's folder");
+  await fails(() => sql(`insert into messages (conversation_id, sender_id, media) values ($1, $2, $3)`, [cid, kof, JSON.stringify([{ type: "image", path: dmPath(kof), url: "https://evil.example/x.jpg" }])]), "attachment with an outside URL");
+  await fails(() => sql(`insert into messages (conversation_id, sender_id, media) values ($1, $2, $3)`, [cid, kof, JSON.stringify([{ type: "script", path: dmPath(kof) }])]), "unknown attachment type");
+  await fails(() => sql(`insert into messages (conversation_id, sender_id, media) values ($1, $2, $3)`, [cid, kof, JSON.stringify([{ type: "image", path: `${cid}/${kof}/../x.jpg` }])]), "path escaping the folder");
+});
+await asRole(yao, async () => {
+  assert((await sql(`select dm_object_allowed($1, 'read') ok`, [dmPath(kof)])).rows[0].ok === false, "outsider cannot read DM files");
+  assert((await sql(`select dm_object_allowed($1, 'write') ok`, [`${cid}/${yao}/x.jpg`])).rows[0].ok === false, "outsider cannot upload into the conversation");
+});
+await asRole(null, async () => {
+  await fails(() => sql(`select dm_object_allowed($1, 'read')`, [dmPath(kof)]), "visitor calling the storage check");
+}, "anon");
 
 console.log("schema OK: all smoke and RLS checks passed");
 await db.close();

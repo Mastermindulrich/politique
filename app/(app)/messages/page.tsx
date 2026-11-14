@@ -1,3 +1,4 @@
+import { messagePreview } from "@/lib/dm-media";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -41,7 +42,7 @@ export default async function MessagesPage() {
                     </div>
                     <p className={`truncate text-[14px] ${unread ? "font-semibold text-ink" : "text-muted"}`}>
                       {c.last_message?.sender_id === viewer.id ? `${t.messages.you} : ` : ""}
-                      {c.last_message?.text ?? ""}
+                      {c.last_message ? messagePreview(c.last_message.text, c.last_message.media, lang) : ""}
                     </p>
                   </div>
                   {unread && <span aria-label="non lu" className="h-2.5 w-2.5 flex-none rounded-full bg-green" />}
