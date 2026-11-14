@@ -4,7 +4,9 @@ import { Shell } from "../components/shell/shell";
 import { PrefsSync } from "../components/shell/prefs-sync";
 import { getViewer, getViewerPrivate, supabaseConfigured } from "@/lib/supabase/server";
 import { t as dict } from "@/lib/i18n";
-import { getSettings } from "@/lib/settings";
+import { allowed, getSettings } from "@/lib/settings";
+import { callsConfigured, inboxTopic } from "@/lib/calls";
+import { CallProvider } from "../components/call/call-provider";
 
 export const dynamic = "force-dynamic";
 
@@ -61,7 +63,13 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         </p>
       )}
       {viewer && <PrefsSync theme={viewer.theme} lang={viewer.lang} />}
-      <Shell viewer={viewer} lang={lang}>{children}</Shell>
+      {viewer ? (
+        <CallProvider viewerId={viewer.id} inbox={inboxTopic(viewer.id)} enabled={callsConfigured() && allowed(settings, "messages", staff)} lang={lang}>
+          <Shell viewer={viewer} lang={lang}>{children}</Shell>
+        </CallProvider>
+      ) : (
+        <Shell viewer={viewer} lang={lang}>{children}</Shell>
+      )}
     </>
   );
 }
