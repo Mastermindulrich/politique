@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useRef, useState, useTransition } from "react";
 import { Avatar } from "@/app/components/ui/avatar";
 import { VotingPlaceFields, votingPlaceComplete, type VotingPlace } from "@/app/components/voting-place";
-import { deleteAccount, requestVerification, signOut, toggleBlock, toggleMute, updatePrefs, updatePrivateProfile, updateProfile } from "@/lib/actions";
+import { deleteAccount, requestVerification, signOut, toggleBlock, toggleMute, updatePrefs, updatePrivateProfile, updateProfile, updateProfileImage } from "@/lib/actions";
 import { communes } from "@/lib/ci-geo";
 import { t as dict } from "@/lib/i18n";
 import { supabaseBrowser } from "@/lib/supabase/client";
@@ -78,6 +78,7 @@ export function ProfileForm({ viewer, lang }: { viewer: Profile; lang: Lang }) {
     if (!url) return setState("upload");
     if (kind === "avatar") setAvatar(url);
     else setBanner(url);
+    run(() => updateProfileImage(kind, url));
   };
 
   return (

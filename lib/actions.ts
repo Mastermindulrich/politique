@@ -175,6 +175,23 @@ export async function updateProfile(input: z.infer<typeof profileSchema>): Promi
   return { ok: true };
 }
 
+// Saves a new profile photo or banner as soon as it is uploaded, so people
+// do not lose it by leaving the page without pressing "Enregistrer".
+export async function updateProfileImage(kind: "avatar" | "banner", url: string): Promise<Result> {
+  const viewer = await viewerOrFail();
+  const base = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/politique-media/${viewer.id}/`;
+  if (!url.startsWith(base)) return { ok: false, error: "invalid" };
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from("profiles")
+    .update(kind === "avatar" ? { avatar_url: url } : { banner_url: url })
+    .eq("id", viewer.id);
+  if (error) return { ok: false, error: error.message };
+  revalidatePath("/parametres");
+  revalidatePath(`/u/${viewer.handle}`);
+  return { ok: true };
+}
+
 const prefsSchema = z.object({ lang: z.enum(["fr", "en"]), theme: z.enum(["system", "light", "dark"]), low_data: z.boolean() });
 export async function updatePrefs(input: z.infer<typeof prefsSchema>): Promise<Result> {
   const viewer = await viewerOrFail();
