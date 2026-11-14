@@ -5,6 +5,7 @@ import { useState, useTransition } from "react";
 import { requestLoginCode } from "@/lib/auth-actions";
 import { t as dict } from "@/lib/i18n";
 import { CodeStep } from "../code-step";
+import { Spinner } from "@/app/components/ui/spinner";
 
 export function LoginForm({ lang, next }: { lang: "fr" | "en"; next: string }) {
   const t = dict(lang);
@@ -51,7 +52,7 @@ export function LoginForm({ lang, next }: { lang: "fr" | "en"; next: string }) {
         <input className="input" type="email" required autoFocus autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} />
       </label>
       {error && <p role="alert" className="text-[14px] font-medium text-orange">{error}</p>}
-      <button type="submit" className="btn-primary" disabled={pending}>{t.auth.sendCode}</button>
+      <button type="submit" className="btn-primary" disabled={pending}>{pending && <Spinner />}{t.auth.sendCode}</button>
     </form>
   );
 }

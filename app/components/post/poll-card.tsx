@@ -55,7 +55,7 @@ export function PollCard({ poll, voted, canVote, t, lang }: { poll: Poll; voted:
                   </span>
                 </div>
               ) : (
-                <button type="button" onClick={() => vote(i)} disabled={pending} className="h-10 w-full rounded-xl border border-green px-3 text-left text-[14px] font-semibold text-green-deep hover:bg-green-soft">
+                <button type="button" onClick={() => vote(i)} disabled={pending} className="h-10 w-full rounded-xl border border-green px-3 text-left text-[14px] font-semibold text-green-deep transition-colors hover:bg-green-soft active:scale-[0.98] active:bg-green-soft">
                   {label}
                 </button>
               )}

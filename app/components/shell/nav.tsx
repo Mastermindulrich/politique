@@ -48,7 +48,8 @@ function useLiveUnread(initial: Promise<Unread> | null, signedIn: boolean) {
   const instance = useId();
   useEffect(() => {
     let live = true;
-    initial?.then((u) => live && setUnread(u)).catch(() => {});
+    // React hands over a thenable, not a full Promise: wrap it before chaining.
+    if (initial) Promise.resolve(initial).then((u) => live && setUnread(u), () => {});
     return () => {
       live = false;
     };

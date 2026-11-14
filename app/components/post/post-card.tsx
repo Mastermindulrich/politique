@@ -91,7 +91,7 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
       <article className="px-4 pt-3">{children}</article>
     ) : (
       <article
-        className={`relative cursor-pointer px-4 py-3 transition-colors hover:bg-paper/60 ${variant === "thread" ? "" : "border-b border-line"}`}
+        className={`relative cursor-pointer px-4 py-3 transition-colors duration-150 hover:bg-paper/60 active:bg-paper ${variant === "thread" ? "" : "border-b border-line"}`}
         onClick={(e) => {
           const target = e.target as HTMLElement;
           if (target.closest("a, button, video, input, textarea, [role=dialog]")) return;
@@ -144,31 +144,31 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
               )}
             </div>
             <div className="relative flex-none">
-              <button type="button" aria-label={t.nav.more} aria-haspopup="menu" aria-expanded={menu} onClick={() => setMenu((m) => !m)} className="-mr-2 -mt-1 rounded-full p-2 text-muted hover:bg-paper hover:text-ink">
+              <button type="button" aria-label={t.nav.more} aria-haspopup="menu" aria-expanded={menu} onClick={() => setMenu((m) => !m)} className="tap -mr-2 -mt-1 rounded-full p-2 text-muted hover:bg-paper hover:text-ink active:bg-line/60">
                 <I.more className="h-5 w-5" />
               </button>
               {menu && (
                 <>
                   <div className="fixed inset-0 z-10" onClick={() => setMenu(false)} />
-                  <div role="menu" className="absolute right-0 z-20 mt-1 w-56 overflow-hidden rounded-2xl border border-line bg-card py-1 shadow-xl">
+                  <div role="menu" className="fade-in absolute right-0 z-20 mt-1 w-56 overflow-hidden rounded-2xl border border-line bg-card py-1 shadow-xl">
                     {canAct && (
-                      <button role="menuitem" type="button" onClick={bookmark} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] hover:bg-paper">
+                      <button role="menuitem" type="button" onClick={bookmark} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] transition-colors hover:bg-paper active:bg-line/60">
                         <I.bookmark className="h-4 w-4" filled={bookmarked} /> {bookmarked ? t.post.unbookmark : t.post.bookmark}
                       </button>
                     )}
-                    <button role="menuitem" type="button" onClick={() => { setMenu(false); share(); }} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] hover:bg-paper">
+                    <button role="menuitem" type="button" onClick={() => { setMenu(false); share(); }} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] transition-colors hover:bg-paper active:bg-line/60">
                       <I.share className="h-4 w-4" /> {t.post.share}
                     </button>
-                    <a role="menuitem" href={`https://wa.me/?text=${encodeURIComponent(post.text.slice(0, 200) + " " + (typeof window !== "undefined" ? window.location.origin : "") + href)}`} target="_blank" rel="noopener noreferrer" className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] hover:bg-paper">
+                    <a role="menuitem" href={`https://wa.me/?text=${encodeURIComponent(post.text.slice(0, 200) + " " + (typeof window !== "undefined" ? window.location.origin : "") + href)}`} target="_blank" rel="noopener noreferrer" className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] transition-colors hover:bg-paper active:bg-line/60">
                       <I.whatsapp className="h-4 w-4" /> {t.post.whatsapp}
                     </a>
                     {canAct && viewerId !== post.author_id && (
-                      <button role="menuitem" type="button" onClick={() => { setMenu(false); setReport(true); }} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] hover:bg-paper">
+                      <button role="menuitem" type="button" onClick={() => { setMenu(false); setReport(true); }} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] transition-colors hover:bg-paper active:bg-line/60">
                         <I.flag className="h-4 w-4" /> {t.post.report}
                       </button>
                     )}
                     {(viewerId === post.author_id || isModerator) && (
-                      <button role="menuitem" type="button" onClick={remove} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] text-orange hover:bg-paper">
+                      <button role="menuitem" type="button" onClick={remove} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] text-orange transition-colors hover:bg-paper active:bg-line/60">
                         <I.trash className="h-4 w-4" /> {t.post.delete}
                       </button>
                     )}
@@ -232,21 +232,21 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
           )}
 
           <div className={`-ml-2 flex items-center justify-between ${detail ? "mt-1 max-w-md" : "mt-2 max-w-sm"} text-muted`}>
-            <button type="button" onClick={() => (canAct ? setReplying((r) => !r) : router.push("/connexion"))} className="group flex items-center gap-1.5 rounded-full p-2 text-[13px] hover:text-green-deep" aria-label={t.post.reply}>
-              <I.reply className="h-[18px] w-[18px] group-hover:bg-green-soft rounded-full" />
+            <button type="button" onClick={() => (canAct ? setReplying((r) => !r) : router.push("/connexion"))} className="tap flex items-center gap-1.5 rounded-full p-2 text-[13px] hover:bg-green-soft hover:text-green-deep active:scale-90 active:bg-green-soft" aria-label={t.post.reply}>
+              <I.reply className="h-[18px] w-[18px]" />
               {post.reply_count > 0 && <span>{formatCount(post.reply_count, lang)}</span>}
             </button>
-            <button type="button" onClick={repost} aria-pressed={reposted} className={`flex items-center gap-1.5 rounded-full p-2 text-[13px] hover:text-green-deep ${reposted ? "text-green-deep" : ""}`} aria-label={reposted ? t.post.unrepost : t.post.repost}>
-              <I.repost className="h-[18px] w-[18px]" />
+            <button type="button" onClick={repost} aria-pressed={reposted} className={`tap flex items-center gap-1.5 rounded-full p-2 text-[13px] hover:bg-green-soft hover:text-green-deep active:scale-90 active:bg-green-soft ${reposted ? "text-green-deep" : ""}`} aria-label={reposted ? t.post.unrepost : t.post.repost}>
+              <span key={reposted ? "on" : "off"} className={reposted ? "pop" : ""}><I.repost className="h-[18px] w-[18px]" /></span>
               {reposts > 0 && <span>{formatCount(reposts, lang)}</span>}
             </button>
             {canAct && (
-              <button type="button" onClick={() => setQuote(true)} className="flex items-center gap-1.5 rounded-full p-2 text-[13px] hover:text-green-deep" aria-label={t.post.quote}>
+              <button type="button" onClick={() => setQuote(true)} className="tap flex items-center gap-1.5 rounded-full p-2 text-[13px] hover:bg-green-soft hover:text-green-deep active:scale-90 active:bg-green-soft" aria-label={t.post.quote}>
                 <svg aria-hidden="true" viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth={1.9} strokeLinecap="round"><path d="M7 7h10M7 11h6" /><path d="M4 4h16v12H9l-5 4z" /></svg>
               </button>
             )}
-            <button type="button" onClick={like} aria-pressed={liked} className={`flex items-center gap-1.5 rounded-full p-2 text-[13px] hover:text-orange ${liked ? "text-orange" : ""}`} aria-label={t.post.like}>
-              <I.heart className="h-[18px] w-[18px]" filled={liked} />
+            <button type="button" onClick={like} aria-pressed={liked} className={`tap flex items-center gap-1.5 rounded-full p-2 text-[13px] hover:bg-orange-soft hover:text-orange active:scale-90 active:bg-orange-soft ${liked ? "text-orange" : ""}`} aria-label={t.post.like}>
+              <span key={liked ? "on" : "off"} className={liked ? "pop" : ""}><I.heart className="h-[18px] w-[18px]" filled={liked} /></span>
               {likes > 0 && <span>{formatCount(likes, lang)}</span>}
             </button>
             {!detail && (
@@ -255,7 +255,7 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
                 {post.view_count > 0 && <span>{formatCount(post.view_count, lang)}</span>}
               </span>
             )}
-            <button type="button" onClick={share} className="flex items-center gap-1.5 rounded-full p-2 text-[13px] hover:text-green-deep" aria-label={t.post.share}>
+            <button type="button" onClick={share} className="tap flex items-center gap-1.5 rounded-full p-2 text-[13px] hover:bg-green-soft hover:text-green-deep active:scale-90 active:bg-green-soft" aria-label={t.post.share}>
               <I.share className="h-[18px] w-[18px]" />
               {copied && <span className="text-green-deep">{t.post.copied}</span>}
             </button>

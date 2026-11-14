@@ -23,7 +23,7 @@ export type Content = {
   htmlLang: string;
   meta: { title: string; description: string };
   nav: { features: string; who: string; how: string; faq: string; login: string; signup: string; switchLabel: string; switchHref: string };
-  hero: { eyebrow: string; title: string; titleAccent: string; body: string; primary: string; secondary: string; note: string };
+  hero: { eyebrow: string; title: string; titleAccent: string; body: string; primary: string; secondary: string; note: string; points: string[] };
   mock: {
     tabs: [string, string];
     mp: { name: string; handle: string; role: string; time: string; text: string; likes: string; replies: string; reposts: string };
@@ -56,6 +56,7 @@ const fr: Content = {
     primary: "Créer mon compte",
     secondary: "Découvrir",
     note: "Gratuit, en français et en anglais. Votre lieu de vote reste privé.",
+    points: ["Gratuit", "Sans mot de passe", "Lieu de vote privé"],
   },
   mock: {
     tabs: ["Pour vous", "Abonnements"],
@@ -186,6 +187,7 @@ const en: Content = {
     primary: "Create my account",
     secondary: "Learn more",
     note: "Free, in French and English. Where you vote stays private.",
+    points: ["Free", "No password", "Your polling place stays private"],
   },
   mock: {
     tabs: ["For you", "Following"],

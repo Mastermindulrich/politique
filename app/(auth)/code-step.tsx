@@ -3,6 +3,7 @@
 import { useState, useTransition } from "react";
 import { verifyCode } from "@/lib/auth-actions";
 import { t as dict } from "@/lib/i18n";
+import { Spinner } from "@/app/components/ui/spinner";
 
 /** Second half of both log-in and sign-up: type the code received by email. */
 export function CodeStep({ email, lang, onDone, onResend, onBack, signup }: { email: string; lang: "fr" | "en"; onDone: () => void; onResend: () => Promise<boolean>; onBack: () => void; signup?: Parameters<typeof verifyCode>[2] }) {
@@ -42,7 +43,7 @@ export function CodeStep({ email, lang, onDone, onResend, onBack, signup }: { em
         />
       </label>
       {error && <p role="alert" className="text-[14px] font-medium text-orange">{error}</p>}
-      <button type="submit" className="btn-primary" disabled={pending || code.replace(/\s/g, "").length < 6}>{t.auth.verify}</button>
+      <button type="submit" className="btn-primary" disabled={pending || code.replace(/\s/g, "").length < 6}>{pending && <Spinner />}{t.auth.verify}</button>
       <div className="flex items-center justify-between text-[14px]">
         <button type="button" className="font-semibold text-muted hover:text-ink" onClick={onBack}>{t.auth.back}</button>
         <button

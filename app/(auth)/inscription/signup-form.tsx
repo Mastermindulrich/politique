@@ -10,6 +10,7 @@ import { slugify } from "@/lib/ci-geo";
 import { t as dict } from "@/lib/i18n";
 import type { AccountType } from "@/lib/types";
 import { CodeStep } from "../code-step";
+import { Spinner } from "@/app/components/ui/spinner";
 
 const TYPES: AccountType[] = ["citoyen", "elu", "institution", "media"];
 const TYPE_LABELS: Record<"fr" | "en", Record<AccountType, string>> = {
@@ -174,7 +175,7 @@ export function SignupForm({ lang }: { lang: "fr" | "en" }) {
           </p>
           <div className="flex gap-2">
             <button type="button" className="btn-ghost" onClick={() => setStep(1)}>{t.auth.back}</button>
-            <button type="submit" className="btn-primary flex-1" disabled={pending || !votingPlaceComplete(place)}>{t.auth.create}</button>
+            <button type="submit" className="btn-primary flex-1" disabled={pending || !votingPlaceComplete(place)}>{pending && <Spinner />}{t.auth.create}</button>
           </div>
         </form>
       )}

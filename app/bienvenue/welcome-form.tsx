@@ -5,6 +5,7 @@ import { useState, useTransition } from "react";
 import { emptyVotingPlace, VotingPlaceFields, votingPlaceComplete, type VotingPlace } from "@/app/components/voting-place";
 import { completeOnboarding, updatePrivateProfile } from "@/lib/actions";
 import { t as dict } from "@/lib/i18n";
+import { Spinner } from "@/app/components/ui/spinner";
 
 export function WelcomeForm({ lang }: { lang: "fr" | "en" }) {
   const t = dict(lang);
@@ -30,7 +31,7 @@ export function WelcomeForm({ lang }: { lang: "fr" | "en" }) {
     >
       <VotingPlaceFields value={place} onChange={setPlace} lang={lang} />
       {error && <p role="alert" className="text-[14px] font-medium text-orange">{t.auth.error}</p>}
-      <button type="submit" className="btn-primary" disabled={pending || !votingPlaceComplete(place)}>{t.auth.next}</button>
+      <button type="submit" className="btn-primary" disabled={pending || !votingPlaceComplete(place)}>{pending && <Spinner />}{t.auth.next}</button>
     </form>
   );
 }
