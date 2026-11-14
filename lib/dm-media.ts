@@ -51,11 +51,19 @@ export function formatSize(bytes: number | undefined, lang: "fr" | "en") {
   return `${v} ${unit[i]}`;
 }
 
-/** "📷 Photo", "📷 3 photos", "📎 Programme.pdf": used in pushes, toasts and the conversation list. */
+/** 75 -> "1:15" */
+export function formatDuration(seconds: number) {
+  const s = Math.max(0, Math.round(seconds));
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+}
+
+/** "🎤 Message vocal (0:12)", "📷 Photo", "📷 3 photos", "📎 Programme.pdf": used in pushes, toasts and the conversation list. */
 export function attachmentLabel(media: unknown, lang: "fr" | "en"): string {
   const list = attachmentsOf(media);
   if (!list.length) return "";
   const fr = lang === "fr";
+  const voice = list.find((m) => m.voice);
+  if (voice && list.length === 1) return `🎤 ${fr ? "Message vocal" : "Voice message"}${voice.duration ? ` (${formatDuration(voice.duration)})` : ""}`;
   const images = list.filter((m) => m.type === "image").length;
   const files = list.length - images;
   if (!files) return images === 1 ? "📷 Photo" : `📷 ${images} photos`;

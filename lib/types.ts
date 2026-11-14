@@ -207,6 +207,12 @@ export type DmAttachment = {
   mime?: string;
   width?: number;
   height?: number;
+  /** Voice note recorded in the app (type "file", audio mime). */
+  voice?: boolean;
+  /** Seconds, for voice notes. */
+  duration?: number;
+  /** 0-100 loudness samples drawn as the voice note's waveform. */
+  peaks?: number[];
 };
 
 export type Message = {
