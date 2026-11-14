@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { messagePreview } from "@/lib/dm-media";
 import { describe, hrefFor, type Lang, type NotifType } from "@/lib/notify";
 import { forgetDevice, registerWorker, syncPush } from "@/lib/push-client";
 import { supabaseBrowser } from "@/lib/supabase/client";
@@ -106,7 +107,7 @@ export function NotificationCenter({ lang, viewerId, initial }: { lang: Lang; vi
         row.actor_id ? supabase.from("profiles").select("display_name, handle, avatar_url").eq("id", row.actor_id).maybeSingle() : Promise.resolve({ data: null }),
         row.post_id ? supabase.from("posts").select("text").eq("id", row.post_id).maybeSingle() : Promise.resolve({ data: null }),
         row.type === "message" && row.ref_id
-          ? supabase.from("messages").select("text").eq("conversation_id", row.ref_id).order("created_at", { ascending: false }).limit(1).maybeSingle()
+          ? supabase.from("messages").select("text, media").eq("conversation_id", row.ref_id).order("created_at", { ascending: false }).limit(1).maybeSingle()
           : Promise.resolve({ data: null }),
       ]);
       const a = actor.data as { display_name: string; handle: string; avatar_url: string | null } | null;
@@ -114,7 +115,7 @@ export function NotificationCenter({ lang, viewerId, initial }: { lang: Lang; vi
         type: row.type,
         actorName: a?.display_name ?? null,
         postText: (post.data as { text: string } | null)?.text ?? null,
-        messageText: (msg.data as { text: string } | null)?.text ?? null,
+        messageText: msg.data ? messagePreview((msg.data as { text: string; media: unknown }).text, (msg.data as { media: unknown }).media, lang) || null : null,
         lang,
       });
       const toast: Toast = { id: row.id, title, body, href: hrefFor({ ...row, actorHandle: a?.handle }), avatar: a?.avatar_url ?? null, name: a?.display_name ?? "POLITIQUE", type: row.type };

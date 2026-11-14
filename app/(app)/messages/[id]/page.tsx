@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { Avatar } from "@/app/components/ui/avatar";
 import { NameBadge } from "@/app/components/ui/badge";
-import { fetchConversation } from "@/lib/data/messages";
+import { fetchConversation, signAttachments } from "@/lib/data/messages";
 import { createClient, getViewer } from "@/lib/supabase/server";
 import { Chat } from "./chat";
 import { ChatViewport } from "./chat-viewport";
@@ -18,6 +18,7 @@ export default async function ConversationPage({ params }: { params: Promise<{ i
   const supabase = await createClient();
   const data = await fetchConversation(supabase, id, viewer.id);
   if (!data) notFound();
+  const urls = await signAttachments(supabase, data.messages);
   await supabase.from("conversation_members").update({ last_read_at: new Date().toISOString() }).eq("conversation_id", id).eq("user_id", viewer.id);
   const others = data.conversation.members.filter((m) => m.user_id !== viewer.id);
   const other = others[0]?.profile;
@@ -38,7 +39,7 @@ export default async function ConversationPage({ params }: { params: Promise<{ i
           </Link>
         )}
       </div>
-      <Chat conversationId={id} viewerId={viewer.id} lang={viewer.lang} initial={data.messages} members={data.conversation.members.map((m) => m.profile)} />
+      <Chat conversationId={id} viewerId={viewer.id} lang={viewer.lang} initial={data.messages} initialUrls={urls} members={data.conversation.members.map((m) => m.profile)} />
     </ChatViewport>
   );
 }

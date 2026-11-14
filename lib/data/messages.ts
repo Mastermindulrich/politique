@@ -1,5 +1,6 @@
 import type { Db as SupabaseClient } from "@/lib/supabase/schema";
 import type { Conversation, Message } from "@/lib/types";
+import { DM_BUCKET, DM_URL_TTL, attachmentsOf } from "@/lib/dm-media";
 import { fetchAuthors } from "./people";
 
 export async function fetchConversations(supabase: SupabaseClient, viewerId: string): Promise<Conversation[]> {
@@ -15,7 +16,7 @@ export async function fetchConversations(supabase: SupabaseClient, viewerId: str
   const authors = await fetchAuthors(supabase, members.map((m) => m.user_id));
   // last message of each conversation (one small query each; the list is capped at 50)
   const lasts = await Promise.all(
-    convs.map((c) => supabase.from("messages").select("text, sender_id, created_at").eq("conversation_id", c.id).is("deleted_at", null).order("created_at", { ascending: false }).limit(1).maybeSingle()),
+    convs.map((c) => supabase.from("messages").select("text, sender_id, created_at, media").eq("conversation_id", c.id).is("deleted_at", null).order("created_at", { ascending: false }).limit(1).maybeSingle()),
   );
   return convs.map((c, i) => ({
     ...c,
@@ -43,4 +44,16 @@ export async function fetchConversation(supabase: SupabaseClient, id: string, vi
     } as Conversation,
     messages: ((msgRes.data ?? []) as Message[]).reverse(),
   };
+}
+
+/** Short-lived links to the photos, videos and files of these messages (RLS: members only). */
+export async function signAttachments(supabase: SupabaseClient, messages: Message[]): Promise<Record<string, string>> {
+  const paths = Array.from(new Set(messages.flatMap((m) => attachmentsOf(m.media).map((a) => a.path))));
+  if (!paths.length) return {};
+  const { data } = await supabase.storage.from(DM_BUCKET).createSignedUrls(paths, DM_URL_TTL);
+  const out: Record<string, string> = {};
+  for (const row of (data ?? []) as { path: string | null; signedUrl: string | null; error: string | null }[]) {
+    if (row.path && row.signedUrl && !row.error) out[row.path] = row.signedUrl;
+  }
+  return out;
 }

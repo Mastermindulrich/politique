@@ -194,7 +194,19 @@ export type Conversation = {
   title: string | null;
   last_message_at: string | null;
   members: { user_id: string; last_read_at: string | null; profile: FeedPost["author"] }[];
-  last_message?: Pick<Message, "text" | "sender_id" | "created_at"> | null;
+  last_message?: Pick<Message, "text" | "sender_id" | "created_at" | "media"> | null;
+};
+
+/** One photo or file sent in a direct message (private bucket "politique-dm"). */
+export type DmAttachment = {
+  type: "image" | "file";
+  /** <conversation_id>/<sender_id>/<file> inside the private bucket. */
+  path: string;
+  name?: string;
+  size?: number;
+  mime?: string;
+  width?: number;
+  height?: number;
 };
 
 export type Message = {
@@ -202,7 +214,7 @@ export type Message = {
   conversation_id: string;
   sender_id: string;
   text: string;
-  media: Media[];
+  media: DmAttachment[];
   created_at: string;
   deleted_at: string | null;
 };

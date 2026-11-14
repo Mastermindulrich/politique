@@ -1,5 +1,6 @@
 import webpush from "web-push";
 import { createServiceClient } from "@/lib/supabase/server";
+import { messagePreview } from "@/lib/dm-media";
 import { DEFAULT_PREFS, describe, hrefFor, type Lang, type NotifType } from "@/lib/notify";
 
 /**
@@ -68,7 +69,7 @@ export async function dispatchNotifications(ids: string[]) {
     postIds.length ? svc.from("posts").select("id, text").in("id", postIds) : Promise.resolve({ data: [] }),
     svc.from("notification_prefs").select("user_id, previews").in("user_id", users),
     // The newest message per conversation is the one that just arrived.
-    convIds.length ? svc.from("messages").select("conversation_id, sender_id, text, created_at").in("conversation_id", convIds).is("deleted_at", null).order("created_at", { ascending: false }).limit(convIds.length * 5) : Promise.resolve({ data: [] }),
+    convIds.length ? svc.from("messages").select("conversation_id, sender_id, text, media, created_at").in("conversation_id", convIds).is("deleted_at", null).order("created_at", { ascending: false }).limit(convIds.length * 5) : Promise.resolve({ data: [] }),
     svc.from("notifications").select("user_id").in("user_id", users).is("read_at", null).neq("type", "message").limit(5000),
   ]);
 
@@ -77,7 +78,7 @@ export async function dispatchNotifications(ids: string[]) {
   const actor = new Map(((actorRes.data ?? []) as { id: string; display_name: string; handle: string; avatar_url: string | null }[]).map((p) => [p.id, p]));
   const post = new Map(((postRes.data ?? []) as { id: string; text: string }[]).map((p) => [p.id, p.text]));
   const previews = new Map(((prefRes.data ?? []) as { user_id: string; previews: boolean }[]).map((p) => [p.user_id, p.previews]));
-  const msgs = (msgRes.data ?? []) as { conversation_id: string; sender_id: string; text: string }[];
+  const msgs = (msgRes.data ?? []) as { conversation_id: string; sender_id: string; text: string; media: unknown }[];
   const unread = new Map<string, number>();
   for (const r of (unreadRes.data ?? []) as { user_id: string }[]) unread.set(r.user_id, (unread.get(r.user_id) ?? 0) + 1);
 
@@ -91,7 +92,7 @@ export async function dispatchNotifications(ids: string[]) {
       type: r.type,
       actorName: a?.display_name ?? null,
       postText: r.post_id ? post.get(r.post_id) : null,
-      messageText: msg?.text ?? null,
+      messageText: msg ? messagePreview(msg.text, msg.media, lang.get(r.user_id) ?? "fr") || null : null,
       lang: lang.get(r.user_id) ?? "fr",
       previews: previews.get(r.user_id) ?? DEFAULT_PREFS.previews,
     });
