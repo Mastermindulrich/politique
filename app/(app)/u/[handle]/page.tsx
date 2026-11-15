@@ -147,6 +147,7 @@ export default async function ProfilePage({ params, searchParams }: { params: Pr
         lang={lang}
         lowData={viewer?.low_data}
         isModerator={Boolean(viewer?.is_moderator || viewer?.is_admin)}
+        showPinned={tab === "posts"}
         loadMore={loadProfile.bind(null, profile.id, tab)}
         empty={lang === "fr" ? "Rien à afficher ici pour l'instant." : "Nothing to show here yet."}
       />

@@ -6,6 +6,7 @@ import { cookies } from "next/headers";
 import { z } from "zod";
 import { createClient, createServiceClient, getViewer } from "@/lib/supabase/server";
 import { DM_MAX_FILES } from "@/lib/dm-media";
+import { attachLink } from "@/lib/social-actions";
 import type { DmAttachment, Media } from "@/lib/types";
 
 type Result<T = undefined> = { ok: true; data?: T } | { ok: false; error: string };
@@ -31,13 +32,16 @@ const postSchema = z.object({
   communeId: z.number().int().nullable().optional(),
   poll: z.object({ options: z.array(z.string().min(1).max(40)).min(2).max(4), days: z.number().int().min(1).max(7) }).nullable().optional(),
   visibility: z.enum(["public", "followers"]).optional(),
+  /** The link card the composer already fetched (signed by the server), or noLink when the author removed it. */
+  link: z.object({ preview: z.object({ url: z.string(), title: z.string(), description: z.string().optional(), image: z.string().optional(), site: z.string() }), sig: z.string() }).nullable().optional(),
+  noLink: z.boolean().optional(),
 });
 
 export async function createPost(input: z.infer<typeof postSchema>): Promise<Result<{ id: string }>> {
   const viewer = await viewerOrFail();
   const parsed = postSchema.safeParse(input);
   if (!parsed.success) return { ok: false, error: "invalid" };
-  const { text, parentId, quotedId, media, communeId, poll, visibility } = parsed.data;
+  const { text, parentId, quotedId, media, communeId, poll, visibility, link, noLink } = parsed.data;
   if (!text.trim() && !(media && media.length)) return { ok: false, error: "empty" };
   const supabase = await createClient();
   const kind = parentId ? "reply" : quotedId ? "quote" : "post";
@@ -51,6 +55,7 @@ export async function createPost(input: z.infer<typeof postSchema>): Promise<Res
     const ends = new Date(Date.now() + poll.days * 86400_000).toISOString();
     await supabase.from("polls").insert({ post_id: data.id, options: poll.options, ends_at: ends });
   }
+  if (!noLink && !(media && media.length) && !poll && !quotedId) await attachLink(data.id, text, link).catch(() => undefined);
   revalidatePath("/accueil");
   if (parentId) revalidatePath(`/p/${parentId}`);
   return { ok: true, data: { id: data.id } };

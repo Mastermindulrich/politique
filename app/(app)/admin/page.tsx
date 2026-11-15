@@ -7,11 +7,13 @@ import { attachProfiles, fetchAuthors } from "@/lib/data/people";
 import { formatDate, t as dict, timeAgo } from "@/lib/i18n";
 import { createClient, getViewer } from "@/lib/supabase/server";
 import type { Barometer, Official, Post, Report, VerificationRequest } from "@/lib/types";
+import { social } from "@/lib/i18n-social";
 import { BarometerForm, OfficialForm, ReportActions, VerificationActions } from "./admin-forms";
+import { BlockedTerms } from "./blocked-terms";
 
 export const metadata: Metadata = { title: "Modération", robots: { index: false } };
 
-const TABS = ["signalements", "verifications", "elus", "barometres"] as const;
+const TABS = ["signalements", "verifications", "elus", "mots", "barometres"] as const;
 type Tab = (typeof TABS)[number];
 
 export default async function AdminPage({ searchParams }: { searchParams: Promise<{ onglet?: string }> }) {
@@ -23,7 +25,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
   const t = dict(lang);
   const tab: Tab = TABS.includes(onglet as Tab) ? (onglet as Tab) : "signalements";
   const supabase = await createClient();
-  const labels: Record<Tab, string> = { signalements: t.admin.reports, verifications: t.admin.verifications, elus: t.admin.officials, barometres: t.admin.barometers };
+  const labels: Record<Tab, string> = { signalements: t.admin.reports, verifications: t.admin.verifications, elus: t.admin.officials, mots: social(lang).filter.tab, barometres: t.admin.barometers };
 
   return (
     <>
@@ -38,12 +40,18 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
       {tab === "signalements" && <Reports supabase={supabase} lang={lang} />}
       {tab === "verifications" && <Verifications supabase={supabase} lang={lang} />}
       {tab === "elus" && <Officials supabase={supabase} lang={lang} />}
+      {tab === "mots" && <Words supabase={supabase} lang={lang} />}
       {tab === "barometres" && viewer.is_admin && <Barometers supabase={supabase} lang={lang} />}
     </>
   );
 }
 
 type Client = Awaited<ReturnType<typeof createClient>>;
+
+async function Words({ supabase, lang }: { supabase: Client; lang: "fr" | "en" }) {
+  const { data } = await supabase.from("blocked_terms").select("term").order("term").limit(500);
+  return <BlockedTerms terms={((data ?? []) as { term: string }[]).map((r) => r.term)} lang={lang} />;
+}
 
 async function Reports({ supabase, lang }: { supabase: Client; lang: "fr" | "en" }) {
   const t = dict(lang);

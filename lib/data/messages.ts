@@ -8,7 +8,8 @@ export async function fetchConversations(supabase: SupabaseClient, viewerId: str
   const ids = ((mine ?? []) as { conversation_id: string }[]).map((m) => m.conversation_id);
   if (!ids.length) return [];
   const [convRes, memRes] = await Promise.all([
-    supabase.from("conversations").select("*").in("id", ids).not("last_message_at", "is", null).order("last_message_at", { ascending: false }).limit(50),
+    // A one-to-one conversation shows up with its first message; a group as soon as it exists.
+    supabase.from("conversations").select("*").in("id", ids).or("last_message_at.not.is.null,is_group.eq.true").order("last_message_at", { ascending: false, nullsFirst: true }).limit(50),
     supabase.from("conversation_members").select("conversation_id, user_id, last_read_at").in("conversation_id", ids),
   ]);
   const convs = (convRes.data ?? []) as Omit<Conversation, "members">[];
