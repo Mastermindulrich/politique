@@ -3,9 +3,9 @@
 // Source of truth for both the sign-up form and supabase/seed/ci_geo.sql
 // (regenerate with `node scripts/gen-geo-sql.mjs`).
 //
-// Departments follow the 2021 administrative map. Communes listed here are the
-// chef-lieu of each department plus the communes of the District of Abidjan;
-// smaller communes can be added later without changing ids (append only).
+// Departments follow the 2021 administrative map. Communes: the District of
+// Abidjan, each department's chef-lieu, then every other commune with an
+// elected council. Ids never change: add new entries at the end only.
 
 export type Region = { id: number; district: string; name: string; autonomous?: true };
 export type Department = { id: number; regionId: number; name: string };
@@ -77,7 +77,7 @@ const deps: [number, string[]][] = [
   [25, ["Korhogo", "Dikodougou", "M'Bengué", "Sinématiali"]],
   [26, ["Ferkessédougou", "Kong", "Ouangolodougou"]],
   [27, ["Bouaké", "Béoumi", "Botro", "Sakassou"]],
-  [28, ["Katiola", "Dabakala", "Niakaramandougou"]],
+  [28, ["Katiola", "Dabakala", "Niakaramadougou"]],
   [29, ["Touba", "Koro", "Ouaninou"]],
   [30, ["Mankono", "Dianra", "Kounahiri"]],
   [31, ["Séguéla", "Kani"]],
@@ -86,21 +86,89 @@ const deps: [number, string[]][] = [
   [34, ["Diaspora — Afrique", "Diaspora — Europe", "Diaspora — Amériques", "Diaspora — Asie et Océanie"]],
 ];
 
+// Departments created after the first seed. Append only: ids follow on from `deps`.
+const laterDeps: [number, string][] = [
+  [13, "Ouellé"],
+  [23, "Bonon"],
+  [23, "Gohitafla"],
+];
+
 export const departments: Department[] = [];
 {
   let id = 1;
   for (const [regionId, names] of deps) for (const name of names) departments.push({ id: id++, regionId, name });
+  for (const [regionId, name] of laterDeps) departments.push({ id: id++, regionId, name });
 }
 
 // Communes: Abidjan's 13 (10 urban + Anyama, Bingerville, Songon), then one
 // commune per department chef-lieu (same name as the department).
 const abidjan = ["Abobo", "Adjamé", "Attécoubé", "Cocody", "Koumassi", "Marcory", "Plateau", "Port-Bouët", "Treichville", "Yopougon", "Anyama", "Bingerville", "Songon"];
 
+
+// Every other commune with an elected council (Ministère de l'Intérieur, E-CONSEIL,
+// mandature 2023-2028), grouped by department. Append only: ids follow on.
+const laterCommunes: [string, string[]][] = [
+  ["Agboville", ["Azaguié", "Rubino"]],
+  ["Tiassalé", ["N'Douci"]],
+  ["Koro", ["Booko", "Borotou"]],
+  ["Touba", ["Guintéguéla"]],
+  ["Ouaninou", ["Koonan"]],
+  ["Kouto", ["Gbon", "Kolia"]],
+  ["Tengréla", ["Kanakono"]],
+  ["Boundiali", ["Kasséré"]],
+  ["Toumodi", ["Kokoumbo"]],
+  ["Didiévi", ["Tié-N'Diékro"]],
+  ["Kounahiri", ["Kongasso"]],
+  ["Mankono", ["Sarhala", "Tiéningboué"]],
+  ["Kaniasso", ["Goulia"]],
+  ["Minignan", ["Tienko"]],
+  ["Béoumi", ["Bodokro"]],
+  ["Bouaké", ["Brobo", "Djébonoua"]],
+  ["Botro", ["Diabo"]],
+  ["Oumé", ["Diégonéfla"]],
+  ["Gagnoa", ["Guibéroua", "Ouragahio"]],
+  ["Transua", ["Assuéfry"]],
+  ["Koun-Fao", ["Kouassi-Datékro"]],
+  ["Dabakala", ["Bassawa", "Boniérédougou", "Foumbolo", "Satama-Sokoro", "Satama-Sokoura"]],
+  ["Katiola", ["Fronan"]],
+  ["Niakaramadougou", ["Tafiré", "Tortiya"]],
+  ["Daloa", ["Bédiala", "Gboguhé"]],
+  ["Issia", ["Saïoua"]],
+  ["Daoukro", ["Ettrokro"]],
+  ["Abengourou", ["Niablé"]],
+  ["Odienné", ["Bako", "Dioulatièdougou", "Tiémé"]],
+  ["Gbéléban", ["Seydougou"]],
+  ["Akoupé", ["Afféry"]],
+  ["Adzopé", ["Agou"]],
+  ["Lakota", ["Zikisso"]],
+  ["M'Batto", ["Anoumaba", "Tiémélékro"]],
+  ["Soubré", ["Grand-Zattry", "Mayo"]],
+  ["Dikodougou", ["Guiembé"]],
+  ["Korhogo", ["Karakoro", "Komborodougou", "Napié", "Niofoin", "Sirasso", "Tioroniaradougou"]],
+  ["Tabou", ["Grabo"]],
+  ["San-Pédro", ["Grand-Béréby"]],
+  ["Adiaké", ["Assinie-Mafia"]],
+  ["Aboisso", ["Ayamé", "Maféré"]],
+  ["Grand-Bassam", ["Bonoua"]],
+  ["Ouangolodougou", ["Diawala", "Niellé"]],
+  ["Ferkessédougou", ["Koumbala"]],
+  ["Zouan-Hounien", ["Bin-Houyé"]],
+  ["Biankouma", ["Gbonné"]],
+  ["Man", ["Logoualé", "Sangouiné"]],
+  ["Kani", ["Djibrosso", "Morondo"]],
+  ["Séguéla", ["Dualla", "Sifié", "Worofla"]],
+];
+
 export const communes: Commune[] = [];
 {
   let id = 1;
   for (const name of abidjan) communes.push({ id: id++, departmentId: 1, name });
   for (const d of departments) if (d.id !== 1) communes.push({ id: id++, departmentId: d.id, name: d.name });
+  for (const [dep, names] of laterCommunes) {
+    const d = departments.find((x) => x.name === dep);
+    if (!d) throw new Error(`ci-geo: unknown department ${dep}`);
+    for (const name of names) communes.push({ id: id++, departmentId: d.id, name });
+  }
 }
 
 export function slugify(s: string) {

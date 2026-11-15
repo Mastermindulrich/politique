@@ -1,0 +1,1506 @@
+{
+ "institution": "prefectoral",
+ "source": "https://news.abidjan.net/articles/747068",
+ "source_label": "Décrets de nomination du corps préfectoral (préfets de région, préfets de département, sous-préfets), mouvement publié le 10 mars 2026. Seuls les postes pourvus par ce mouvement figurent ici.",
+ "checked": "2026-11-15",
+ "offices": [
+  {
+   "key": "prefet-region-belier",
+   "mandate": "prefet",
+   "title": "Préfète de région du Bélier, préfète du département de Toumodi",
+   "name": "Okoma Adjo Jeannette",
+   "gender": "F",
+   "role": "Préfet de région",
+   "rank": 10,
+   "region": "Bélier",
+   "department": "Toumodi"
+  },
+  {
+   "key": "prefet-region-bere",
+   "mandate": "prefet",
+   "title": "Préfet de région du Béré, préfet du département de Mankono",
+   "name": "Boni Kouakou Adolphe",
+   "gender": "M",
+   "role": "Préfet de région",
+   "rank": 10,
+   "region": "Béré",
+   "department": "Mankono"
+  },
+  {
+   "key": "prefet-region-bounkani",
+   "mandate": "prefet",
+   "title": "Préfet de région du Bounkani, préfet du département de Bouna",
+   "name": "Cherif Brahima",
+   "gender": "M",
+   "role": "Préfet de région",
+   "rank": 10,
+   "region": "Bounkani",
+   "department": "Bouna"
+  },
+  {
+   "key": "prefet-region-cavally",
+   "mandate": "prefet",
+   "title": "Préfet de région du Cavally, préfet du département de Guiglo",
+   "name": "Boka Kouassi Vincent",
+   "gender": "M",
+   "role": "Préfet de région",
+   "rank": 10,
+   "region": "Cavally",
+   "department": "Guiglo"
+  },
+  {
+   "key": "prefet-region-folon",
+   "mandate": "prefet",
+   "title": "Préfet de région du Folon, préfet du département de Minignan",
+   "name": "Anoh Angoratchi Noel",
+   "gender": "M",
+   "role": "Préfet de région",
+   "rank": 10,
+   "region": "Folon",
+   "department": "Minignan"
+  },
+  {
+   "key": "prefet-region-goh",
+   "mandate": "prefet",
+   "title": "Préfet de région du Gôh, préfet du département de Gagnoa",
+   "name": "Djedj Mel",
+   "gender": "M",
+   "role": "Préfet de région",
+   "rank": 10,
+   "region": "Gôh",
+   "department": "Gagnoa"
+  },
+  {
+   "key": "prefet-region-grands-ponts",
+   "mandate": "prefet",
+   "title": "Préfète de région des Grands-Ponts, préfète du département de Dabou",
+   "name": "Loboue née Amani Michele Hortense",
+   "gender": "F",
+   "role": "Préfet de région",
+   "rank": 10,
+   "region": "Grands-Ponts",
+   "department": "Dabou"
+  },
+  {
+   "key": "prefet-region-guemon",
+   "mandate": "prefet",
+   "title": "Préfet de région du Guémon, préfet du département de Duékoué",
+   "name": "Addoh Tano",
+   "gender": "M",
+   "role": "Préfet de région",
+   "rank": 10,
+   "region": "Guémon",
+   "department": "Duékoué"
+  },
+  {
+   "key": "prefet-region-haut-sassandra",
+   "mandate": "prefet",
+   "title": "Préfet de région du Haut-Sassandra, préfet du département de Daloa",
+   "name": "Yacouba Doumbia",
+   "gender": "M",
+   "role": "Préfet de région",
+   "rank": 10,
+   "region": "Haut-Sassandra",
+   "department": "Daloa"
+  },
+  {
+   "key": "prefet-region-moronou",
+   "mandate": "prefet",
+   "title": "Préfet de région du Moronou, préfet du département de Bongouanou",
+   "name": "Dongo Kobenan",
+   "gender": "M",
+   "role": "Préfet de région",
+   "rank": 10,
+   "region": "Moronou",
+   "department": "Bongouanou"
+  },
+  {
+   "key": "prefet-region-poro",
+   "mandate": "prefet",
+   "title": "Préfet de région du Poro, préfet du département de Korhogo",
+   "name": "Diarrassouba Karim",
+   "gender": "M",
+   "role": "Préfet de région",
+   "rank": 10,
+   "region": "Poro",
+   "department": "Korhogo"
+  },
+  {
+   "key": "prefet-region-sud-comoe",
+   "mandate": "prefet",
+   "title": "Préfet de région du Sud-Comoé, préfet du département d'Aboisso",
+   "name": "Ibrahima Cisse",
+   "gender": "M",
+   "role": "Préfet de région",
+   "rank": 10,
+   "region": "Sud-Comoé",
+   "department": "Aboisso"
+  },
+  {
+   "key": "prefet-region-tonkpi",
+   "mandate": "prefet",
+   "title": "Préfet de région du Tonkpi, préfet du département de Man",
+   "name": "Lancina Fofana",
+   "gender": "M",
+   "role": "Préfet de région",
+   "rank": 10,
+   "region": "Tonkpi",
+   "department": "Man"
+  },
+  {
+   "key": "prefet-region-worodougou",
+   "mandate": "prefet",
+   "title": "Préfet de région du Worodougou, préfet du département de Séguéla",
+   "name": "Godezth Kokora Patrice Antoine",
+   "gender": "M",
+   "role": "Préfet de région",
+   "rank": 10,
+   "region": "Worodougou",
+   "department": "Séguéla"
+  },
+  {
+   "key": "prefet-tiassale",
+   "mandate": "prefet",
+   "title": "Préfet du département de Tiassalé",
+   "name": "Sidibe Nassou",
+   "gender": "M",
+   "rank": 20,
+   "department": "Tiassalé"
+  },
+  {
+   "key": "prefet-kounahiri",
+   "mandate": "prefet",
+   "title": "Préfet du département de Kounahiri",
+   "name": "Baffrou Kamano François",
+   "gender": "M",
+   "rank": 20,
+   "department": "Kounahiri"
+  },
+  {
+   "key": "prefet-tai",
+   "mandate": "prefet",
+   "title": "Préfet du département de Taï",
+   "name": "Akoa N'Guessan Jean",
+   "gender": "M",
+   "rank": 20,
+   "department": "Taï"
+  },
+  {
+   "key": "prefet-beoumi",
+   "mandate": "prefet",
+   "title": "Préfet du département de Béoumi",
+   "name": "Asseman Koffi Patrick",
+   "gender": "M",
+   "rank": 20,
+   "department": "Béoumi"
+  },
+  {
+   "key": "prefet-grand-lahou",
+   "mandate": "prefet",
+   "title": "Préfète du département de Grand-Lahou",
+   "name": "Kouakou Aya Beatrice épouse Kouadio",
+   "gender": "F",
+   "rank": 20,
+   "department": "Grand-Lahou"
+  },
+  {
+   "key": "prefet-jacqueville",
+   "mandate": "prefet",
+   "title": "Préfet du département de Jacqueville",
+   "name": "Lago Digbeu Mathieu",
+   "gender": "M",
+   "rank": 20,
+   "department": "Jacqueville"
+  },
+  {
+   "key": "prefet-bangolo",
+   "mandate": "prefet",
+   "title": "Préfet du département de Bangolo",
+   "name": "Diarrassouba Lacina",
+   "gender": "M",
+   "rank": 20,
+   "department": "Bangolo"
+  },
+  {
+   "key": "prefet-niakaramadougou",
+   "mandate": "prefet",
+   "title": "Préfet du département de Niakaramadougou",
+   "name": "Kouadio Brou Benoit",
+   "gender": "M",
+   "rank": 20,
+   "department": "Niakaramadougou"
+  },
+  {
+   "key": "prefet-issia",
+   "mandate": "prefet",
+   "title": "Préfet du département d'Issia",
+   "name": "Seka Fidele",
+   "gender": "M",
+   "rank": 20,
+   "department": "Issia"
+  },
+  {
+   "key": "prefet-ouelle",
+   "mandate": "prefet",
+   "title": "Préfète du département d'Ouellé",
+   "name": "Jacquet veuve Maman Jeanne",
+   "gender": "F",
+   "rank": 20,
+   "department": "Ouellé"
+  },
+  {
+   "key": "prefet-prikro",
+   "mandate": "prefet",
+   "title": "Préfet du département de Prikro",
+   "name": "Irie Bi Zika Guillaume",
+   "gender": "M",
+   "rank": 20,
+   "department": "Prikro"
+  },
+  {
+   "key": "prefet-akoupe",
+   "mandate": "prefet",
+   "title": "Préfet du département d'Akoupé",
+   "name": "Ouattara Matenin",
+   "gender": "M",
+   "rank": 20,
+   "department": "Akoupé"
+  },
+  {
+   "key": "prefet-alepe",
+   "mandate": "prefet",
+   "title": "Préfète du département d'Alépé",
+   "name": "Kra Takia Felicite épouse Oulla",
+   "gender": "F",
+   "rank": 20,
+   "department": "Alépé"
+  },
+  {
+   "key": "prefet-arrah",
+   "mandate": "prefet",
+   "title": "Préfet du département d'Arrah",
+   "name": "Yapi Yapi Guillaume",
+   "gender": "M",
+   "rank": 20,
+   "department": "Arrah"
+  },
+  {
+   "key": "prefet-m-batto",
+   "mandate": "prefet",
+   "title": "Préfet du département de M'Batto",
+   "name": "Bakayoko Mamadou",
+   "gender": "M",
+   "rank": 20,
+   "department": "M'Batto"
+  },
+  {
+   "key": "prefet-dikodougou",
+   "mandate": "prefet",
+   "title": "Préfet du département de Dikodougou",
+   "name": "Mamadou Coulibaly",
+   "gender": "M",
+   "rank": 20,
+   "department": "Dikodougou"
+  },
+  {
+   "key": "prefet-tabou",
+   "mandate": "prefet",
+   "title": "Préfet du département de Tabou",
+   "name": "Yao Kouakou Firmin",
+   "gender": "M",
+   "rank": 20,
+   "department": "Tabou"
+  },
+  {
+   "key": "prefet-grand-bassam",
+   "mandate": "prefet",
+   "title": "Préfète du département de Grand-Bassam",
+   "name": "Traore née Moïse-Henri Imelda Marguerite Marie Doussou",
+   "gender": "F",
+   "rank": 20,
+   "department": "Grand-Bassam"
+  },
+  {
+   "key": "prefet-biankouma",
+   "mandate": "prefet",
+   "title": "Préfet du département de Biankouma",
+   "name": "Soro Sana",
+   "gender": "M",
+   "rank": 20,
+   "department": "Biankouma"
+  },
+  {
+   "key": "prefet-kani",
+   "mandate": "prefet",
+   "title": "Préfet du département de Kani",
+   "name": "Brou N'Guessan Paul",
+   "gender": "M",
+   "rank": 20,
+   "department": "Kani"
+  },
+  {
+   "key": "sous-prefet-bingerville",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Bingerville",
+   "name": "Zebly Lago Mauclaire",
+   "rank": 30,
+   "department": "Abidjan",
+   "sous_prefecture": "Bingerville",
+   "commune": "Bingerville"
+  },
+  {
+   "key": "sous-prefet-brofodoume",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Brofodoumé",
+   "name": "Goulea Goussebeo Siry Gabin",
+   "rank": 30,
+   "department": "Abidjan",
+   "sous_prefecture": "Brofodoumé"
+  },
+  {
+   "key": "sous-prefet-attiegouakro",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Attiégouakro",
+   "name": "Malan Magne Sandrine Larissa",
+   "rank": 30,
+   "department": "Attiégouakro",
+   "sous_prefecture": "Attiégouakro",
+   "commune": "Attiégouakro"
+  },
+  {
+   "key": "sous-prefet-lolobo",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Lolobo",
+   "name": "Sidibe née Oulai Audrey",
+   "rank": 30,
+   "department": "Attiégouakro",
+   "sous_prefecture": "Lolobo"
+  },
+  {
+   "key": "sous-prefet-azaguie",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Azaguié",
+   "name": "Gouly Bi Gohon Antoine Franck",
+   "rank": 30,
+   "department": "Agboville",
+   "sous_prefecture": "Azaguié",
+   "commune": "Azaguié"
+  },
+  {
+   "key": "sous-prefet-cechi",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Céchi",
+   "name": "Ahouzi née N'Drin Allou Bernadette Opportune",
+   "rank": 30,
+   "department": "Agboville",
+   "sous_prefecture": "Céchi"
+  },
+  {
+   "key": "sous-prefet-grand-morie",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Grand-Morié",
+   "name": "Togoue Anne épouse N'Guessan",
+   "rank": 30,
+   "department": "Agboville",
+   "sous_prefecture": "Grand-Morié"
+  },
+  {
+   "key": "sous-prefet-guessiguie",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Guessiguié",
+   "name": "Diby Kouadio Jean",
+   "rank": 30,
+   "department": "Agboville",
+   "sous_prefecture": "Guessiguié"
+  },
+  {
+   "key": "sous-prefet-sikensi",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Sikensi",
+   "name": "Diaby née Kone Salimata",
+   "rank": 30,
+   "department": "Sikensi",
+   "sous_prefecture": "Sikensi",
+   "commune": "Sikensi"
+  },
+  {
+   "key": "sous-prefet-taabo",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Taabo",
+   "name": "Kouame Djahan Norbert",
+   "rank": 30,
+   "department": "Taabo",
+   "sous_prefecture": "Taabo",
+   "commune": "Taabo"
+  },
+  {
+   "key": "sous-prefet-morokro",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Morokro",
+   "name": "Kpan née Fouet Yolande",
+   "rank": 30,
+   "department": "Tiassalé",
+   "sous_prefecture": "Morokro"
+  },
+  {
+   "key": "sous-prefet-n-douci",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de N'Douci",
+   "name": "Coulibaly Toumono Theophile",
+   "rank": 30,
+   "department": "Tiassalé",
+   "sous_prefecture": "N'Douci",
+   "commune": "N'Douci"
+  },
+  {
+   "key": "sous-prefet-koro",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Koro",
+   "name": "Kouame Kouassi Roger",
+   "rank": 30,
+   "department": "Koro",
+   "sous_prefecture": "Koro",
+   "commune": "Koro"
+  },
+  {
+   "key": "sous-prefet-dioman",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Dioman",
+   "name": "Konan Konan Herve",
+   "rank": 30,
+   "department": "Touba",
+   "sous_prefecture": "Dioman"
+  },
+  {
+   "key": "sous-prefet-gbon",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Gbon",
+   "name": "Lodoua Kamy Plaisant",
+   "rank": 30,
+   "department": "Kouto",
+   "sous_prefecture": "Gbon",
+   "commune": "Gbon"
+  },
+  {
+   "key": "sous-prefet-kolia",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Kolia",
+   "name": "Houphouet Kouame Guy Aymard",
+   "rank": 30,
+   "department": "Kouto",
+   "sous_prefecture": "Kolia",
+   "commune": "Kolia"
+  },
+  {
+   "key": "sous-prefet-boli",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Boli",
+   "name": "Yepie Paule Aude",
+   "rank": 30,
+   "department": "Didiévi",
+   "sous_prefecture": "Boli"
+  },
+  {
+   "key": "sous-prefet-raviart",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Raviart",
+   "name": "Bedia née Gaye Tchiensenon Alice Tatiana",
+   "rank": 30,
+   "department": "Didiévi",
+   "sous_prefecture": "Raviart"
+  },
+  {
+   "key": "sous-prefet-tie-n-diekro",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Tié-N'Diékro",
+   "name": "Kouame Eric Guillaume Kouassi",
+   "rank": 30,
+   "department": "Didiévi",
+   "sous_prefecture": "Tié-N'Diékro",
+   "commune": "Tié-N'Diékro"
+  },
+  {
+   "key": "sous-prefet-bonikro",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Bonikro",
+   "name": "Camara Dayiri Penatchinli Marie Clemence",
+   "rank": 30,
+   "department": "Djékanou",
+   "sous_prefecture": "Bonikro"
+  },
+  {
+   "key": "sous-prefet-molonou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Molonou",
+   "name": "Gueu Ven Jean Noel",
+   "rank": 30,
+   "department": "Tiébissou",
+   "sous_prefecture": "Molonou"
+  },
+  {
+   "key": "sous-prefet-tiebissou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Tiébissou",
+   "name": "Attoungbre Koffi Eugene",
+   "rank": 30,
+   "department": "Tiébissou",
+   "sous_prefecture": "Tiébissou",
+   "commune": "Tiébissou"
+  },
+  {
+   "key": "sous-prefet-angoda",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Angoda",
+   "name": "Sahi née Gogon Ange Clemence",
+   "rank": 30,
+   "department": "Toumodi",
+   "sous_prefecture": "Angoda"
+  },
+  {
+   "key": "sous-prefet-bouandougou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Bouandougou",
+   "name": "Yeo Siontandjama",
+   "rank": 30,
+   "department": "Mankono",
+   "sous_prefecture": "Bouandougou"
+  },
+  {
+   "key": "sous-prefet-bouko",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Bouko",
+   "name": "Diarra Yacouba",
+   "rank": 30,
+   "department": "Bouna",
+   "sous_prefecture": "Bouko"
+  },
+  {
+   "key": "sous-prefet-doropo",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Doropo",
+   "name": "Keipo Dogbo Aime",
+   "rank": 30,
+   "department": "Doropo",
+   "sous_prefecture": "Doropo",
+   "commune": "Doropo"
+  },
+  {
+   "key": "sous-prefet-kotouba",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Kotouba",
+   "name": "Ahossi Koffi Benoit",
+   "rank": 30,
+   "department": "Nassian",
+   "sous_prefecture": "Kotouba"
+  },
+  {
+   "key": "sous-prefet-blolequin",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Bloléquin",
+   "name": "Chogbo Djonman Joseph",
+   "rank": 30,
+   "department": "Bloléquin",
+   "sous_prefecture": "Bloléquin",
+   "commune": "Bloléquin"
+  },
+  {
+   "key": "sous-prefet-nezobly",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Nézobly",
+   "name": "Zigue Tayoro Pierre-Claver",
+   "rank": 30,
+   "department": "Toulépleu",
+   "sous_prefecture": "Nézobly"
+  },
+  {
+   "key": "sous-prefet-ando-kekrenou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Ando-Kékrenou",
+   "name": "Coulibaly née Dosso Namizata",
+   "rank": 30,
+   "department": "Béoumi",
+   "sous_prefecture": "Ando-Kékrenou"
+  },
+  {
+   "key": "sous-prefet-n-guessankro",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de N'Guessankro",
+   "name": "Gouesse Aude Julie",
+   "rank": 30,
+   "department": "Béoumi",
+   "sous_prefecture": "N'Guessankro"
+  },
+  {
+   "key": "sous-prefet-krofoinsou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Krofoinsou",
+   "name": "Diane Ahossi Charles Max",
+   "rank": 30,
+   "department": "Botro",
+   "sous_prefecture": "Krofoinsou"
+  },
+  {
+   "key": "sous-prefet-bouake",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Bouaké",
+   "name": "Kouassi Detto Marcelin",
+   "rank": 30,
+   "department": "Bouaké",
+   "sous_prefecture": "Bouaké",
+   "commune": "Bouaké"
+  },
+  {
+   "key": "sous-prefet-dibri-asrikro",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Dibri-Asrikro",
+   "name": "Djahi née Colette Zrankeu Gba",
+   "rank": 30,
+   "department": "Sakassou",
+   "sous_prefecture": "Dibri-Asrikro"
+  },
+  {
+   "key": "sous-prefet-sakassou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Sakassou",
+   "name": "Abibou Bakayoko",
+   "rank": 30,
+   "department": "Sakassou",
+   "sous_prefecture": "Sakassou",
+   "commune": "Sakassou"
+  },
+  {
+   "key": "sous-prefet-fresco",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Fresco",
+   "name": "Yao Akissi Renee Marie Chantal épouse Attoumgbre",
+   "rank": 30,
+   "department": "Fresco",
+   "sous_prefecture": "Fresco",
+   "commune": "Fresco"
+  },
+  {
+   "key": "sous-prefet-grihiri",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Grihiri",
+   "name": "Sekongo Lacina",
+   "rank": 30,
+   "department": "Sassandra",
+   "sous_prefecture": "Grihiri"
+  },
+  {
+   "key": "sous-prefet-sago",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Sago",
+   "name": "Agba Jean Michel Stephane",
+   "rank": 30,
+   "department": "Sassandra",
+   "sous_prefecture": "Sago"
+  },
+  {
+   "key": "sous-prefet-bayota",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Bayota",
+   "name": "N'Guessan Alain Bernard",
+   "rank": 30,
+   "department": "Gagnoa",
+   "sous_prefecture": "Bayota"
+  },
+  {
+   "key": "sous-prefet-dignago",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Dignago",
+   "name": "Diamaho Hubert",
+   "rank": 30,
+   "department": "Gagnoa",
+   "sous_prefecture": "Dignago"
+  },
+  {
+   "key": "sous-prefet-gagnoa",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Gagnoa",
+   "name": "Soro Tiekpele Minata",
+   "rank": 30,
+   "department": "Gagnoa",
+   "sous_prefecture": "Gagnoa",
+   "commune": "Gagnoa"
+  },
+  {
+   "key": "sous-prefet-galebre",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Galébré",
+   "name": "Goh Lou Naye Felicite",
+   "rank": 30,
+   "department": "Gagnoa",
+   "sous_prefecture": "Galébré"
+  },
+  {
+   "key": "sous-prefet-gnangbodougnoa",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Gnangbodougnoa",
+   "name": "Kone Siriki",
+   "rank": 30,
+   "department": "Gagnoa",
+   "sous_prefecture": "Gnangbodougnoa"
+  },
+  {
+   "key": "sous-prefet-ouragahio",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Ouragahio",
+   "name": "Tie Bi née Assi Yapo Josiane",
+   "rank": 30,
+   "department": "Gagnoa",
+   "sous_prefecture": "Ouragahio",
+   "commune": "Ouragahio"
+  },
+  {
+   "key": "sous-prefet-yopohue",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Yopohué",
+   "name": "Yao Kouakou Valery",
+   "rank": 30,
+   "department": "Gagnoa",
+   "sous_prefecture": "Yopohué"
+  },
+  {
+   "key": "sous-prefet-bondo",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Bondo",
+   "name": "Gbodougoue Gauzet Armand Noel",
+   "rank": 30,
+   "department": "Bondoukou",
+   "sous_prefecture": "Bondo"
+  },
+  {
+   "key": "sous-prefet-laoudi-ba",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Laoudi-Ba",
+   "name": "Kouya Gon Thierry",
+   "rank": 30,
+   "department": "Bondoukou",
+   "sous_prefecture": "Laoudi-Ba"
+  },
+  {
+   "key": "sous-prefet-pinda-boroko",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Pinda-Boroko",
+   "name": "Ganon née Gnahore Ange Lydie",
+   "rank": 30,
+   "department": "Bondoukou",
+   "sous_prefecture": "Pinda-Boroko"
+  },
+  {
+   "key": "sous-prefet-taoudi",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Taoudi",
+   "name": "Kone Mingoro Françoise",
+   "rank": 30,
+   "department": "Bondoukou",
+   "sous_prefecture": "Taoudi"
+  },
+  {
+   "key": "sous-prefet-dimandougou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Dimandougou",
+   "name": "Gouanda Kpometo Helene",
+   "rank": 30,
+   "department": "Sandégué",
+   "sous_prefecture": "Dimandougou"
+  },
+  {
+   "key": "sous-prefet-sandegue",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Sandégué",
+   "name": "Kohou Monkouin Emma",
+   "rank": 30,
+   "department": "Sandégué",
+   "sous_prefecture": "Sandégué",
+   "commune": "Sandégué"
+  },
+  {
+   "key": "sous-prefet-amanvi",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Amanvi",
+   "name": "Koffi Koffi Modeste",
+   "rank": 30,
+   "department": "Tanda",
+   "sous_prefecture": "Amanvi"
+  },
+  {
+   "key": "sous-prefet-dabou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Dabou",
+   "name": "Kone née Bamba Djeneba",
+   "rank": 30,
+   "department": "Dabou",
+   "sous_prefecture": "Dabou",
+   "commune": "Dabou"
+  },
+  {
+   "key": "sous-prefet-attoutou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Attoutou",
+   "name": "Tue-Bi Gohi Marcel Zephirin Juste",
+   "rank": 30,
+   "department": "Jacqueville",
+   "sous_prefecture": "Attoutou"
+  },
+  {
+   "key": "sous-prefet-jacqueville",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Jacqueville",
+   "name": "Traore Mariame épouse Traore",
+   "rank": 30,
+   "department": "Jacqueville",
+   "sous_prefecture": "Jacqueville",
+   "commune": "Jacqueville"
+  },
+  {
+   "key": "sous-prefet-blenimeouin",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Bléniméouin",
+   "name": "Grah Serge Pacome",
+   "rank": 30,
+   "department": "Bangolo",
+   "sous_prefecture": "Bléniméouin"
+  },
+  {
+   "key": "sous-prefet-zou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Zou",
+   "name": "Konate Dogneri",
+   "rank": 30,
+   "department": "Bangolo",
+   "sous_prefecture": "Zou"
+  },
+  {
+   "key": "sous-prefet-tieny-siably",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Tiény-Siably",
+   "name": "Dibahi Matoma Anne Heloise",
+   "rank": 30,
+   "department": "Facobly",
+   "sous_prefecture": "Tiény-Siably"
+  },
+  {
+   "key": "sous-prefet-bassawa",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Bassawa",
+   "name": "Akaffou Seka Rodrigue",
+   "rank": 30,
+   "department": "Dabakala",
+   "sous_prefecture": "Bassawa",
+   "commune": "Bassawa"
+  },
+  {
+   "key": "sous-prefet-bonieredougou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Boniérédougou",
+   "name": "Atsin Florian Evariste",
+   "rank": 30,
+   "department": "Dabakala",
+   "sous_prefecture": "Boniérédougou",
+   "commune": "Boniérédougou"
+  },
+  {
+   "key": "sous-prefet-niemene",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Niéméné",
+   "name": "N'Guessan N'Dri Hugues Hermann",
+   "rank": 30,
+   "department": "Dabakala",
+   "sous_prefecture": "Niéméné"
+  },
+  {
+   "key": "sous-prefet-tendene-bambarasso",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Tendéné-Bambarasso",
+   "name": "Sia Lou Nan Anne-Patricia",
+   "rank": 30,
+   "department": "Dabakala",
+   "sous_prefecture": "Tendéné-Bambarasso"
+  },
+  {
+   "key": "sous-prefet-yaossedougou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Yaossédougou",
+   "name": "Toure Binta",
+   "rank": 30,
+   "department": "Dabakala",
+   "sous_prefecture": "Yaossédougou"
+  },
+  {
+   "key": "sous-prefet-timbe",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Timbé",
+   "name": "Yao Adjoua Albertine",
+   "rank": 30,
+   "department": "Katiola",
+   "sous_prefecture": "Timbé"
+  },
+  {
+   "key": "sous-prefet-badikaha",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Badikaha",
+   "name": "N'Gotta Konan Euloge",
+   "rank": 30,
+   "department": "Niakaramadougou",
+   "sous_prefecture": "Badikaha"
+  },
+  {
+   "key": "sous-prefet-niakaramadougou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Niakaramadougou",
+   "name": "Behira Marius",
+   "rank": 30,
+   "department": "Niakaramadougou",
+   "sous_prefecture": "Niakaramadougou",
+   "commune": "Niakaramadougou"
+  },
+  {
+   "key": "sous-prefet-niediekaha",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Niédiékaha",
+   "name": "Ouattara Kouassi Kouman",
+   "rank": 30,
+   "department": "Niakaramadougou",
+   "sous_prefecture": "Niédiékaha"
+  },
+  {
+   "key": "sous-prefet-gonate",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Gonaté",
+   "name": "Assi Eric Sylvain",
+   "rank": 30,
+   "department": "Daloa",
+   "sous_prefecture": "Gonaté"
+  },
+  {
+   "key": "sous-prefet-zaibo",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Zaïbo",
+   "name": "Irie Bi Ya Charles Marius",
+   "rank": 30,
+   "department": "Daloa",
+   "sous_prefecture": "Zaïbo"
+  },
+  {
+   "key": "sous-prefet-saioua",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Saïoua",
+   "name": "Dosso Losseny",
+   "rank": 30,
+   "department": "Issia",
+   "sous_prefecture": "Saïoua",
+   "commune": "Saïoua"
+  },
+  {
+   "key": "sous-prefet-bonguera",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Bonguéra",
+   "name": "Gnazale Franck Theodore",
+   "rank": 30,
+   "department": "M'Bahiakro",
+   "sous_prefecture": "Bonguéra"
+  },
+  {
+   "key": "sous-prefet-famienkro",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Famienkro",
+   "name": "Yao N'Goran Amoin Dekamhelle",
+   "rank": 30,
+   "department": "Prikro",
+   "sous_prefecture": "Famienkro"
+  },
+  {
+   "key": "sous-prefet-ebilassokro",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Ebilassokro",
+   "name": "Tiemele née Achoua Elodie Rachel",
+   "rank": 30,
+   "department": "Abengourou",
+   "sous_prefecture": "Ebilassokro"
+  },
+  {
+   "key": "sous-prefet-akoboissue",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Akoboissué",
+   "name": "Gnahoua Djegre Ines Marie-France",
+   "rank": 30,
+   "department": "Agnibilékrou",
+   "sous_prefecture": "Akoboissué"
+  },
+  {
+   "key": "sous-prefet-duffrebo",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Duffrébo",
+   "name": "Essoi Lambert Henock",
+   "rank": 30,
+   "department": "Agnibilékrou",
+   "sous_prefecture": "Duffrébo"
+  },
+  {
+   "key": "sous-prefet-diamarakro",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Diamarakro",
+   "name": "Djanhore Lou Zobou Chantal",
+   "rank": 30,
+   "department": "Bettié",
+   "sous_prefecture": "Diamarakro"
+  },
+  {
+   "key": "sous-prefet-gbeleban",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Gbéléban",
+   "name": "Tape Yves",
+   "rank": 30,
+   "department": "Gbéléban",
+   "sous_prefecture": "Gbéléban",
+   "commune": "Gbéléban"
+  },
+  {
+   "key": "sous-prefet-seydougou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Seydougou",
+   "name": "Coulibaly Yedjoukpahan Adam",
+   "rank": 30,
+   "department": "Gbéléban",
+   "sous_prefecture": "Seydougou",
+   "commune": "Seydougou"
+  },
+  {
+   "key": "sous-prefet-madinani",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Madinani",
+   "name": "Silue Douyeri",
+   "rank": 30,
+   "department": "Madinani",
+   "sous_prefecture": "Madinani",
+   "commune": "Madinani"
+  },
+  {
+   "key": "sous-prefet-n-goloblasso",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de N'Goloblasso",
+   "name": "Koffi M'Bia Damas Arnaud",
+   "rank": 30,
+   "department": "Madinani",
+   "sous_prefecture": "N'Goloblasso"
+  },
+  {
+   "key": "sous-prefet-odienne",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Odienné",
+   "name": "N'Guessan Berenger Cyprien Koffi",
+   "rank": 30,
+   "department": "Odienné",
+   "sous_prefecture": "Odienné",
+   "commune": "Odienné"
+  },
+  {
+   "key": "sous-prefet-tieme",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Tiémé",
+   "name": "Aboa Asseu Leonnel Xavier",
+   "rank": 30,
+   "department": "Odienné",
+   "sous_prefecture": "Tiémé",
+   "commune": "Tiémé"
+  },
+  {
+   "key": "sous-prefet-divo",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Divo",
+   "name": "Ouedji Danielle Solange",
+   "rank": 30,
+   "department": "Divo",
+   "sous_prefecture": "Divo",
+   "commune": "Divo"
+  },
+  {
+   "key": "sous-prefet-zego",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Zégo",
+   "name": "Kouassi Adjoua Alexandra",
+   "rank": 30,
+   "department": "Divo",
+   "sous_prefecture": "Zégo"
+  },
+  {
+   "key": "sous-prefet-gagore",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Gagoré",
+   "name": "Toure Bangaly",
+   "rank": 30,
+   "department": "Lakota",
+   "sous_prefecture": "Gagoré"
+  },
+  {
+   "key": "sous-prefet-niambezaria",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Niambézaria",
+   "name": "Konan Aya Lucie",
+   "rank": 30,
+   "department": "Lakota",
+   "sous_prefecture": "Niambézaria"
+  },
+  {
+   "key": "sous-prefet-tibeita",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Tibeita",
+   "name": "Seyo Adolphe",
+   "rank": 30,
+   "department": "Bouaflé",
+   "sous_prefecture": "Tibeita"
+  },
+  {
+   "key": "sous-prefet-bazre",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Bazré",
+   "name": "Dosso Lassana",
+   "rank": 30,
+   "department": "Sinfra",
+   "sous_prefecture": "Bazré"
+  },
+  {
+   "key": "sous-prefet-kononfla",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Kononfla",
+   "name": "Beugre née Djedje Aimee Noelle",
+   "rank": 30,
+   "department": "Sinfra",
+   "sous_prefecture": "Kononfla"
+  },
+  {
+   "key": "sous-prefet-sinfra",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Sinfra",
+   "name": "Hili née Coulibaly Nadiebien Sylvie",
+   "rank": 30,
+   "department": "Sinfra",
+   "sous_prefecture": "Sinfra",
+   "commune": "Sinfra"
+  },
+  {
+   "key": "sous-prefet-voueboufla",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Vouéboufla",
+   "name": "Fofana Lekolio Moussa",
+   "rank": 30,
+   "department": "Zuénoula",
+   "sous_prefecture": "Vouéboufla"
+  },
+  {
+   "key": "sous-prefet-zanzra",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Zanzra",
+   "name": "Diakite Arsene Ismael Youssouf",
+   "rank": 30,
+   "department": "Zuénoula",
+   "sous_prefecture": "Zanzra"
+  },
+  {
+   "key": "sous-prefet-affery",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Afféry",
+   "name": "Tiapani Nome Victorine",
+   "rank": 30,
+   "department": "Akoupé",
+   "sous_prefecture": "Afféry",
+   "commune": "Afféry"
+  },
+  {
+   "key": "sous-prefet-oghlwapo",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Oghlwapo",
+   "name": "Dosso Mohamed Lamine",
+   "rank": 30,
+   "department": "Alépé",
+   "sous_prefecture": "Oghlwapo"
+  },
+  {
+   "key": "sous-prefet-bongouanou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Bongouanou",
+   "name": "Fofana Lancine Kader",
+   "rank": 30,
+   "department": "Bongouanou",
+   "sous_prefecture": "Bongouanou",
+   "commune": "Bongouanou"
+  },
+  {
+   "key": "sous-prefet-anoumaba",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Anoumaba",
+   "name": "Dago Dakouri Alexandre",
+   "rank": 30,
+   "department": "M'Batto",
+   "sous_prefecture": "Anoumaba",
+   "commune": "Anoumaba"
+  },
+  {
+   "key": "sous-prefet-buyo",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Buyo",
+   "name": "Barro Habib Mohamed",
+   "rank": 30,
+   "department": "Buyo",
+   "sous_prefecture": "Buyo",
+   "commune": "Buyo"
+  },
+  {
+   "key": "sous-prefet-dapeoua",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Dapéoua",
+   "name": "Cisse Mariam Juniore épouse Coulibaly",
+   "rank": 30,
+   "department": "Buyo",
+   "sous_prefecture": "Dapéoua"
+  },
+  {
+   "key": "sous-prefet-gueyo",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Guéyo",
+   "name": "Nemlin Abel Jose",
+   "rank": 30,
+   "department": "Guéyo",
+   "sous_prefecture": "Guéyo",
+   "commune": "Guéyo"
+  },
+  {
+   "key": "sous-prefet-kouadioblekro",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Kouadioblékro",
+   "name": "Ake Able Simeon",
+   "rank": 30,
+   "department": "Bocanda",
+   "sous_prefecture": "Kouadioblékro"
+  },
+  {
+   "key": "sous-prefet-kouassi-kouassikro",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Kouassi-Kouassikro",
+   "name": "Konate Kadidiatou",
+   "rank": 30,
+   "department": "Kouassi-Kouassikro",
+   "sous_prefecture": "Kouassi-Kouassikro",
+   "commune": "Kouassi-Kouassikro"
+  },
+  {
+   "key": "sous-prefet-mekro",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Mékro",
+   "name": "Boli Lou Tikene Patricia",
+   "rank": 30,
+   "department": "Kouassi-Kouassikro",
+   "sous_prefecture": "Mékro"
+  },
+  {
+   "key": "sous-prefet-komborodougou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Komborodougou",
+   "name": "Yao Kouakou Joseph",
+   "rank": 30,
+   "department": "Korhogo",
+   "sous_prefecture": "Komborodougou",
+   "commune": "Komborodougou"
+  },
+  {
+   "key": "sous-prefet-korhogo",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Korhogo",
+   "name": "Soumahoro Moussa",
+   "rank": 30,
+   "department": "Korhogo",
+   "sous_prefecture": "Korhogo",
+   "commune": "Korhogo"
+  },
+  {
+   "key": "sous-prefet-sirasso",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Sirasso",
+   "name": "Bamba Kassoum",
+   "rank": 30,
+   "department": "Korhogo",
+   "sous_prefecture": "Sirasso",
+   "commune": "Sirasso"
+  },
+  {
+   "key": "sous-prefet-bougou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Bougou",
+   "name": "Soumahoro Yssouf",
+   "rank": 30,
+   "department": "M'Bengué",
+   "sous_prefecture": "Bougou"
+  },
+  {
+   "key": "sous-prefet-katiali",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Katiali",
+   "name": "Gbalou Mahi Edgard",
+   "rank": 30,
+   "department": "M'Bengué",
+   "sous_prefecture": "Katiali"
+  },
+  {
+   "key": "sous-prefet-katogo",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Katogo",
+   "name": "Kouakou Yao Jean Luc",
+   "rank": 30,
+   "department": "M'Bengué",
+   "sous_prefecture": "Katogo"
+  },
+  {
+   "key": "sous-prefet-dogbo",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Dogbo",
+   "name": "Somene Didier",
+   "rank": 30,
+   "department": "San-Pédro",
+   "sous_prefecture": "Dogbo"
+  },
+  {
+   "key": "sous-prefet-djouroutou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Djouroutou",
+   "name": "Tano Kouame Sebastien",
+   "rank": 30,
+   "department": "Tabou",
+   "sous_prefecture": "Djouroutou"
+  },
+  {
+   "key": "sous-prefet-grabo",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Grabo",
+   "name": "Soro Wodjon Gerard Dorian",
+   "rank": 30,
+   "department": "Tabou",
+   "sous_prefecture": "Grabo",
+   "commune": "Grabo"
+  },
+  {
+   "key": "sous-prefet-aboisso",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Aboisso",
+   "name": "Gnahoua Dogo Alain Serge",
+   "rank": 30,
+   "department": "Aboisso",
+   "sous_prefecture": "Aboisso",
+   "commune": "Aboisso"
+  },
+  {
+   "key": "sous-prefet-adiake",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Adiaké",
+   "name": "Bayoro née Meledje Yeble Nathalie",
+   "rank": 30,
+   "department": "Adiaké",
+   "sous_prefecture": "Adiaké",
+   "commune": "Adiaké"
+  },
+  {
+   "key": "sous-prefet-noe",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Noé",
+   "name": "Bayo Baba",
+   "rank": 30,
+   "department": "Tiapoum",
+   "sous_prefecture": "Noé"
+  },
+  {
+   "key": "sous-prefet-tiapoum",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Tiapoum",
+   "name": "Kouame Kouadio David Vincent",
+   "rank": 30,
+   "department": "Tiapoum",
+   "sous_prefecture": "Tiapoum",
+   "commune": "Tiapoum"
+  },
+  {
+   "key": "sous-prefet-ouangolodougou",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet d'Ouangolodougou",
+   "name": "Sahi Bi Goze Williams",
+   "rank": 30,
+   "department": "Ouangolodougou",
+   "sous_prefecture": "Ouangolodougou",
+   "commune": "Ouangolodougou"
+  },
+  {
+   "key": "sous-prefet-toumoukoro",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Toumoukoro",
+   "name": "Koffi Kouadio Florent",
+   "rank": 30,
+   "department": "Ouangolodougou",
+   "sous_prefecture": "Toumoukoro"
+  },
+  {
+   "key": "sous-prefet-gouine",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Gouiné",
+   "name": "Kouadio Kouakou",
+   "rank": 30,
+   "department": "Biankouma",
+   "sous_prefecture": "Gouiné"
+  },
+  {
+   "key": "sous-prefet-kpata",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Kpata",
+   "name": "Benie Adingra Michael Rock",
+   "rank": 30,
+   "department": "Biankouma",
+   "sous_prefecture": "Kpata"
+  },
+  {
+   "key": "sous-prefet-zonneu",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Zonneu",
+   "name": "Ouattara Koufongoba",
+   "rank": 30,
+   "department": "Danané",
+   "sous_prefecture": "Zonneu"
+  },
+  {
+   "key": "sous-prefet-gbangbegouine-yati",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Gbangbégouiné-Yati",
+   "name": "N'Guessan Kouassi Julien",
+   "rank": 30,
+   "department": "Man",
+   "sous_prefecture": "Gbangbégouiné-Yati"
+  },
+  {
+   "key": "sous-prefet-zagoue",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Zagoué",
+   "name": "Tihe Keassemon Lassine",
+   "rank": 30,
+   "department": "Man",
+   "sous_prefecture": "Zagoué"
+  },
+  {
+   "key": "sous-prefet-djibrosso",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Djibrosso",
+   "name": "Oulai Clement",
+   "rank": 30,
+   "department": "Kani",
+   "sous_prefecture": "Djibrosso",
+   "commune": "Djibrosso"
+  },
+  {
+   "key": "sous-prefet-seguela",
+   "mandate": "sous_prefet",
+   "title": "Sous-préfet de Séguéla",
+   "name": "Kone Aboubakar Siriki",
+   "rank": 30,
+   "department": "Séguéla",
+   "sous_prefecture": "Séguéla",
+   "commune": "Séguéla"
+  }
+ ]
+}

@@ -1,0 +1,3795 @@
+{
+ "institution": "assemblee",
+ "source": "https://www.assnat.ci",
+ "source_label": "Assemblée nationale (liste des députés et bureau, mandature 2025-2030), données publiées par le Ministère de l'Intérieur via viepublique.ci, mise à jour du 05/04/2026",
+ "checked": "2026-11-15",
+ "offices": [
+  {
+   "key": "president-assemblee-nationale",
+   "mandate": "president_institution",
+   "title": "Président de l'Assemblée nationale",
+   "name": "Achi Patrick Jérôme",
+   "gender": "M",
+   "party": "RHDP",
+   "rank": 0
+  },
+  {
+   "key": "depute-001",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 1",
+   "name": "Koffi Aka Charles",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1001,
+   "region": "Agnéby-Tiassa",
+   "communes": [],
+   "circonscription": "Aboude, Attobrou, Guessiguie, Grand-Morié, Loviguie, Oress-Krobou, communes et sous-préfectures, Agboville sous-préfecture"
+  },
+  {
+   "key": "depute-002",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 2",
+   "name": "Dimba N'Gou Pierre",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1002,
+   "region": "Agnéby-Tiassa",
+   "communes": [
+    "Agboville"
+   ],
+   "circonscription": "Agboville commune"
+  },
+  {
+   "key": "depute-003",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 3",
+   "name": "Alain Ekissi",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Vice-Président de l'Assemblée nationale",
+   "rank": 10,
+   "region": "Agnéby-Tiassa",
+   "communes": [
+    "Azaguié"
+   ],
+   "circonscription": "Azaguie commune et sous-préfecture"
+  },
+  {
+   "key": "depute-004",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 4",
+   "name": "Kouassi Marie Virginie",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1004,
+   "region": "Agnéby-Tiassa",
+   "communes": [
+    "Rubino"
+   ],
+   "circonscription": "Ananguie, Cechi et Rubino, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-005",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 5",
+   "name": "N'Gata Brie Joseph",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1005,
+   "region": "Agnéby-Tiassa",
+   "communes": [
+    "Sikensi"
+   ],
+   "circonscription": "Gomon et Sikensi, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-006",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 6",
+   "name": "Kangbe Yayoro Charles Lopez",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1006,
+   "region": "Agnéby-Tiassa",
+   "communes": [
+    "N'Douci"
+   ],
+   "circonscription": "Gbolouville et N'Douci, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-007",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 7",
+   "name": "Sanogo Dramane Alpha",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1007,
+   "region": "Agnéby-Tiassa",
+   "communes": [
+    "Tiassalé"
+   ],
+   "circonscription": "Morokro et Tiassale, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-008",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 8",
+   "name": "Kouadio Beugre Bernard",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1008,
+   "region": "Agnéby-Tiassa",
+   "communes": [
+    "Taabo"
+   ],
+   "circonscription": "Pacobo et Taabo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-009",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 9",
+   "name": "Diomande Lassina",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1009,
+   "region": "Bafing",
+   "communes": [
+    "Booko",
+    "Borotou"
+   ],
+   "circonscription": "Booko, Borotou, Mahandougou et Niokosso, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-010",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 10",
+   "name": "Soumahoro Youssouf",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1010,
+   "region": "Bafing",
+   "communes": [
+    "Koro"
+   ],
+   "circonscription": "Koro, commune et sous-préfecture"
+  },
+  {
+   "key": "depute-012",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 12",
+   "name": "Diomande Vassadia",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1012,
+   "region": "Bafing",
+   "communes": [
+    "Guintéguéla"
+   ],
+   "circonscription": "Dioman, Foungbesso et Guinteguela, communes et sous-préfectures, Touba, Sous Prefecture"
+  },
+  {
+   "key": "depute-013",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 13",
+   "name": "Sanogo Moussa",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1013,
+   "region": "Bafing",
+   "communes": [
+    "Touba"
+   ],
+   "circonscription": "Touba, commune"
+  },
+  {
+   "key": "depute-014",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 14",
+   "name": "Coulibaly Fononna Cheick Ahmed",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Secrétaire de l'Assemblée nationale",
+   "rank": 40,
+   "region": "Bagoué",
+   "communes": [
+    "Kasséré"
+   ],
+   "circonscription": "Baya, Kassere et Siempurgo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-015",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 15",
+   "name": "Kone Mariatou",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1015,
+   "region": "Bagoué",
+   "communes": [
+    "Boundiali"
+   ],
+   "circonscription": "Boundiali et Ganaoni, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-016",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 16",
+   "name": "Kone Nabagne Bruno",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1016,
+   "region": "Bagoué",
+   "communes": [
+    "Kouto"
+   ],
+   "circonscription": "Blessegue et Kouto, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-017",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 17",
+   "name": "Ballo Nouho",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1017,
+   "region": "Bagoué",
+   "communes": [
+    "Gbon",
+    "Kolia"
+   ],
+   "circonscription": "Gbon, Kolia et Sianhala, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-018",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 18",
+   "name": "Diarrassouba Soumaila",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1018,
+   "region": "Bagoué",
+   "communes": [
+    "Kanakono",
+    "Tengréla"
+   ],
+   "circonscription": "Debete, Kanakono, Papara et Tengrela, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-019",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 19",
+   "name": "N'Guessan Kouassi Edouard",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1019,
+   "region": "Bélier",
+   "communes": [
+    "Didiévi",
+    "Tié-N'Diékro"
+   ],
+   "circonscription": "Boli, Didievi, Molonou-Ble et Tie-N'Diekro, Raviart, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-020-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 20",
+   "name": "N'Guessan Koffi Eugene",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1020,
+   "region": "Bélier",
+   "communes": [
+    "Tiébissou"
+   ],
+   "circonscription": "Lomokankro, Molonou, Tiebissou et Yakpabo-Sakassou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-020-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 20",
+   "name": "Yao Konan Albert",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1020,
+   "region": "Bélier",
+   "communes": [
+    "Tiébissou"
+   ],
+   "circonscription": "Lomokankro, Molonou, Tiebissou et Yakpabo-Sakassou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-021",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 21",
+   "name": "Alliali Herve Dominique Die",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1021,
+   "region": "Bélier",
+   "communes": [
+    "Toumodi"
+   ],
+   "circonscription": "Toumodi, commune"
+  },
+  {
+   "key": "depute-022",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 22",
+   "name": "N'Dakpri Djaha Ange Felix",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1022,
+   "region": "Bélier",
+   "communes": [
+    "Djékanou"
+   ],
+   "circonscription": "Angoda, Djekanou, Kpouebo, Kokumbo, communes et sous-préfectures, Toumodi, sous-préfecture"
+  },
+  {
+   "key": "depute-023",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 23",
+   "name": "Adama Bakayoko",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1023,
+   "region": "Béré",
+   "communes": [
+    "Tiéningboué"
+   ],
+   "circonscription": "Bouandougou et Tieningboue, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-024",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 24",
+   "name": "Gnangadjomon Kone",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1024,
+   "region": "Béré",
+   "communes": [
+    "Dianra"
+   ],
+   "circonscription": "Dianra et Diarra-Village, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-025",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 25",
+   "name": "Fofana épouse Meite Salimata",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1025,
+   "region": "Béré",
+   "communes": [
+    "Mankono"
+   ],
+   "circonscription": "Mankono, commune et sous-préfecture"
+  },
+  {
+   "key": "depute-026",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 26",
+   "name": "Bamba Ladji",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1026,
+   "region": "Béré",
+   "communes": [
+    "Sarhala"
+   ],
+   "circonscription": "Marandallah et Sarhala, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-027",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 27",
+   "name": "Bamba Cheick Lancina",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1027,
+   "region": "Béré",
+   "communes": [
+    "Kongasso",
+    "Kounahiri"
+   ],
+   "circonscription": "Kongasso et Kounahiri, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-028-1",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 28",
+   "name": "Kaba Niale",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1028,
+   "region": "Bounkani",
+   "communes": [
+    "Bouna"
+   ],
+   "circonscription": "Bouko et Bouna, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-028-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 28",
+   "name": "Hien Philippe",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1028,
+   "region": "Bounkani",
+   "communes": [
+    "Bouna"
+   ],
+   "circonscription": "Bouko et Bouna, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-029",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 29",
+   "name": "Sib Sie Jean",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1029,
+   "region": "Bounkani",
+   "communes": [],
+   "circonscription": "Ondefidouo et Youndouo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-030",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 30",
+   "name": "Noufe Sansan Koulanfirte",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1030,
+   "region": "Bounkani",
+   "communes": [
+    "Doropo"
+   ],
+   "circonscription": "Danoa, Doropo, Kalamon et Niamoue, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-031",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 31",
+   "name": "Ouattara Amara",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1031,
+   "region": "Bounkani",
+   "communes": [
+    "Nassian"
+   ],
+   "circonscription": "Bogofa, Kakpin, Koutouba, Nassian et Sominasse, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-032",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 32",
+   "name": "Ouattara Oumar",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1032,
+   "region": "Bounkani",
+   "communes": [
+    "Téhini"
+   ],
+   "circonscription": "Gogo,tehini et Tougbo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-033-1",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 33",
+   "name": "Sio Oulotto Marie Pierre Felicia",
+   "gender": "F",
+   "party": "RHDP",
+   "role": "Secrétaire de l'Assemblée nationale",
+   "rank": 40,
+   "region": "Cavally",
+   "communes": [
+    "Bloléquin"
+   ],
+   "circonscription": "Blolequin, Diboke, Doke, Tinhou et Zeaglo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-033-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 33",
+   "name": "Kahi Dezon Leopold",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1033,
+   "region": "Cavally",
+   "communes": [
+    "Bloléquin"
+   ],
+   "circonscription": "Blolequin, Diboke, Doke, Tinhou et Zeaglo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-034",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 34",
+   "name": "Tio Louis Serge",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1034,
+   "region": "Cavally",
+   "communes": [],
+   "circonscription": "Bedy-Goazon, Kaade et Nizahon, communes et sous-préfectures, Guiglo, sous-préfecture"
+  },
+  {
+   "key": "depute-035",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 35",
+   "name": "Serode Gui Herve Marc Gatien",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1035,
+   "region": "Cavally",
+   "communes": [
+    "Guiglo"
+   ],
+   "circonscription": "Guiglo, commune"
+  },
+  {
+   "key": "depute-036",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 36",
+   "name": "Bayalla Kouye Maya Hippolyte",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1036,
+   "region": "Cavally",
+   "communes": [
+    "Taï"
+   ],
+   "circonscription": "Tai et Zagne, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-037",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 37",
+   "name": "Ouloto Anne Desiree",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1037,
+   "region": "Cavally",
+   "communes": [
+    "Toulépleu"
+   ],
+   "circonscription": "Bakoubli, Meo, Nezobly, Pehe, Tiobly et Toulepleu, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-038-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 38",
+   "name": "Ouattara Tene Birahima",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1038,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Abobo"
+   ],
+   "circonscription": "Abobo"
+  },
+  {
+   "key": "depute-038-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 38",
+   "name": "Yeo Klotioloma",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Questeur de l'Assemblée nationale",
+   "rank": 30,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Abobo"
+   ],
+   "circonscription": "Abobo"
+  },
+  {
+   "key": "depute-038-3",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 38",
+   "name": "Ouattara Brahima",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Vice-Président de l'Assemblée nationale",
+   "rank": 10,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Abobo"
+   ],
+   "circonscription": "Abobo"
+  },
+  {
+   "key": "depute-038-4",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 38",
+   "name": "Traore Maimouna épouse Toure",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1038,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Abobo"
+   ],
+   "circonscription": "Abobo"
+  },
+  {
+   "key": "depute-038-5",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 38",
+   "name": "Yao Gnamien épouse Beugre",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1038,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Abobo"
+   ],
+   "circonscription": "Abobo"
+  },
+  {
+   "key": "depute-038-6",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 38",
+   "name": "Sidibe Daouda",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1038,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Abobo"
+   ],
+   "circonscription": "Abobo"
+  },
+  {
+   "key": "depute-039-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 39",
+   "name": "Soumahoro Farikou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1039,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Adjamé"
+   ],
+   "circonscription": "Adjame, commune"
+  },
+  {
+   "key": "depute-039-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 39",
+   "name": "Diawara Mamadou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1039,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Adjamé"
+   ],
+   "circonscription": "Adjame, commune"
+  },
+  {
+   "key": "depute-040-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 40",
+   "name": "Danho Paulin Claude",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1040,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Attécoubé"
+   ],
+   "circonscription": "Attecoube, commune"
+  },
+  {
+   "key": "depute-040-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 40",
+   "name": "Coulibaly Navoungossoro dit Papa",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1040,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Attécoubé"
+   ],
+   "circonscription": "Attecoube, commune"
+  },
+  {
+   "key": "depute-041-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 41",
+   "name": "Yace Jean-Marc",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1041,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Cocody"
+   ],
+   "circonscription": "Cocody, commune"
+  },
+  {
+   "key": "depute-041-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 41",
+   "name": "Bombet Herve Pierre-Yves",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1041,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Cocody"
+   ],
+   "circonscription": "Cocody, commune"
+  },
+  {
+   "key": "depute-042-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 42",
+   "name": "Ibrahima Cisse",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1042,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Koumassi"
+   ],
+   "circonscription": "Koumassi, commune"
+  },
+  {
+   "key": "depute-042-2",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 42",
+   "name": "Traore Adjaratou épouse Coulibaly",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1042,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Koumassi"
+   ],
+   "circonscription": "Koumassi, commune"
+  },
+  {
+   "key": "depute-042-3",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 42",
+   "name": "Sangare Yacouba",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Secrétaire de l'Assemblée nationale",
+   "rank": 40,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Koumassi"
+   ],
+   "circonscription": "Koumassi, commune"
+  },
+  {
+   "key": "depute-043-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 43",
+   "name": "Tchagba Bougui Laurent",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1043,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Marcory"
+   ],
+   "circonscription": "Marcory, commune"
+  },
+  {
+   "key": "depute-043-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 43",
+   "name": "Monney Georges Yves",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1043,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Marcory"
+   ],
+   "circonscription": "Marcory, commune"
+  },
+  {
+   "key": "depute-044",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 44",
+   "name": "Ehouo Jacques Gabriel",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1044,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Plateau"
+   ],
+   "circonscription": "Plateau"
+  },
+  {
+   "key": "depute-045-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 45",
+   "name": "Emmou Ackah Georges Sylvestre",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1045,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Port-Bouët"
+   ],
+   "circonscription": "Port-Bouet, commune"
+  },
+  {
+   "key": "depute-045-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 45",
+   "name": "Adja Alain Francois",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1045,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Port-Bouët"
+   ],
+   "circonscription": "Port-Bouet, commune"
+  },
+  {
+   "key": "depute-046",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 46",
+   "name": "Kamara Aminata épouse Toungara",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1046,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Treichville"
+   ],
+   "circonscription": "Treichville"
+  },
+  {
+   "key": "depute-047-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 47",
+   "name": "Adama Bictogo",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1047,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Yopougon"
+   ],
+   "circonscription": "Yopougon,commune"
+  },
+  {
+   "key": "depute-047-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 47",
+   "name": "Diawara Adama",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1047,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Yopougon"
+   ],
+   "circonscription": "Yopougon,commune"
+  },
+  {
+   "key": "depute-047-3",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 47",
+   "name": "Coulibaly Issifou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1047,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Yopougon"
+   ],
+   "circonscription": "Yopougon,commune"
+  },
+  {
+   "key": "depute-047-4",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 47",
+   "name": "Yaya Doumbia",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1047,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Yopougon"
+   ],
+   "circonscription": "Yopougon,commune"
+  },
+  {
+   "key": "depute-047-5",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 47",
+   "name": "Nassalatou Diaby",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1047,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Yopougon"
+   ],
+   "circonscription": "Yopougon,commune"
+  },
+  {
+   "key": "depute-047-6",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 47",
+   "name": "Gourmanon Moya Sabine Andrea",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1047,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Yopougon"
+   ],
+   "circonscription": "Yopougon,commune"
+  },
+  {
+   "key": "depute-048-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 48",
+   "name": "Amidou Sylla",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1048,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Anyama"
+   ],
+   "circonscription": "Anyama et Brofodoume, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-048-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 48",
+   "name": "Diakite Ibrahima",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1048,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Anyama"
+   ],
+   "circonscription": "Anyama et Brofodoume, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-049",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 49",
+   "name": "Doumbia Issouf",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1049,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Bingerville"
+   ],
+   "circonscription": "Bingerville, commune et sous-préfecture"
+  },
+  {
+   "key": "depute-050",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 50",
+   "name": "Mambe Beugre Robert",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1050,
+   "region": "District autonome d'Abidjan",
+   "communes": [
+    "Songon"
+   ],
+   "circonscription": "Songon, commune et sous-préfecture"
+  },
+  {
+   "key": "depute-051",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 51",
+   "name": "Koffi Ngoran Justin",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1051,
+   "region": "District autonome de Yamoussoukro",
+   "communes": [
+    "Attiégouakro"
+   ],
+   "circonscription": "Attiegouakro et Lolobo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-052",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 52",
+   "name": "Koffi Kouakou Kouhoure Leandre",
+   "gender": "M",
+   "party": "Le Buffle",
+   "role": null,
+   "rank": 1052,
+   "region": "District autonome de Yamoussoukro",
+   "communes": [],
+   "circonscription": "Kossou, commune et sous-préfecture, Yamoussoukro, sous-préfecture"
+  },
+  {
+   "key": "depute-053-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 53",
+   "name": "Souleymane Diarrassouba",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1053,
+   "region": "District autonome de Yamoussoukro",
+   "communes": [
+    "Yamoussoukro"
+   ],
+   "circonscription": "Yamoussoukro,commune"
+  },
+  {
+   "key": "depute-053-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 53",
+   "name": "Thiam Augustin Houphouet Abdoulaye",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1053,
+   "region": "District autonome de Yamoussoukro",
+   "communes": [
+    "Yamoussoukro"
+   ],
+   "circonscription": "Yamoussoukro,commune"
+  },
+  {
+   "key": "depute-054",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 54",
+   "name": "Sidibe Berry",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1054,
+   "region": "Folon",
+   "communes": [
+    "Goulia",
+    "Tienko"
+   ],
+   "circonscription": "Goulia, Tienko, Mahandiana-Sokourani et Kimbirila-Nord, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-055",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 55",
+   "name": "Sidibe Noumory",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1055,
+   "region": "Folon",
+   "communes": [
+    "Kaniasso",
+    "Minignan"
+   ],
+   "circonscription": "Kaniasso, Minignan et Sokoro, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-056-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 56",
+   "name": "Blessy Jean Chrysostome",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": "Président du groupe parlementaire PDCI-RDA",
+   "rank": 60,
+   "region": "Gbêkê",
+   "communes": [
+    "Béoumi"
+   ],
+   "circonscription": "Ando-Kekrenou, Beoumi et Kondrobo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-056-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 56",
+   "name": "Koffi Kouadio Bertin",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1056,
+   "region": "Gbêkê",
+   "communes": [
+    "Béoumi"
+   ],
+   "circonscription": "Ando-Kekrenou, Beoumi et Kondrobo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-057",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 57",
+   "name": "Kouakou Kouame Maxime",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1057,
+   "region": "Gbêkê",
+   "communes": [
+    "Bodokro"
+   ],
+   "circonscription": "Bodokro, Lolobo et N'Guessankro, communes et sous-préfectures, Marabadjassa sous-préfecture"
+  },
+  {
+   "key": "depute-058",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 58",
+   "name": "Yao Kouassi Maurice",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1058,
+   "region": "Gbêkê",
+   "communes": [
+    "Botro"
+   ],
+   "circonscription": "Botro et Krofoinsou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-059",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 59",
+   "name": "Assahore Konan Jacques",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1059,
+   "region": "Gbêkê",
+   "communes": [
+    "Diabo"
+   ],
+   "circonscription": "Diabo et Languibonou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-060-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 60",
+   "name": "Kone Amadou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1060,
+   "region": "Gbêkê",
+   "communes": [
+    "Bouaké"
+   ],
+   "circonscription": "Bouake, Ville"
+  },
+  {
+   "key": "depute-060-2",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 60",
+   "name": "N'Guessan Affoue Jacqueline",
+   "gender": "F",
+   "party": "RHDP",
+   "role": "Secrétaire de l'Assemblée nationale",
+   "rank": 40,
+   "region": "Gbêkê",
+   "communes": [
+    "Bouaké"
+   ],
+   "circonscription": "Bouake, Ville"
+  },
+  {
+   "key": "depute-060-3",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 60",
+   "name": "Fofana Bema",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1060,
+   "region": "Gbêkê",
+   "communes": [
+    "Bouaké"
+   ],
+   "circonscription": "Bouake, Ville"
+  },
+  {
+   "key": "depute-060-4",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 60",
+   "name": "Dakuyo Paul",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1060,
+   "region": "Gbêkê",
+   "communes": [
+    "Bouaké"
+   ],
+   "circonscription": "Bouake, Ville"
+  },
+  {
+   "key": "depute-061-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 61",
+   "name": "Kouakou-Habonouan Louis",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1061,
+   "region": "Gbêkê",
+   "communes": [
+    "Brobo"
+   ],
+   "circonscription": "Bounda, Brobo et Mamini, communes et sous-préfectures, Bouake, sous-préfecture"
+  },
+  {
+   "key": "depute-061-2",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 61",
+   "name": "Traore Fatoumata",
+   "gender": "F",
+   "party": "RHDP",
+   "role": "Vice-Présidente de l'Assemblée nationale",
+   "rank": 10,
+   "region": "Gbêkê",
+   "communes": [
+    "Brobo"
+   ],
+   "circonscription": "Bounda, Brobo et Mamini, communes et sous-préfectures, Bouake, sous-préfecture"
+  },
+  {
+   "key": "depute-062",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 62",
+   "name": "Yao Kouadio Roland",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1062,
+   "region": "Gbêkê",
+   "communes": [
+    "Djébonoua"
+   ],
+   "circonscription": "Djebonoua, commune et sous-préfecture"
+  },
+  {
+   "key": "depute-063",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 63",
+   "name": "Kouadio Kouame Eugene",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1063,
+   "region": "Gbêkê",
+   "communes": [
+    "Sakassou"
+   ],
+   "circonscription": "Ayaou-Sran, Dibri-Asrikro, Sakassou et Toumodi-Sakassou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-064",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 64",
+   "name": "Kebe Mahamadou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Secrétaire de l'Assemblée nationale",
+   "rank": 40,
+   "region": "Gbôklé",
+   "communes": [],
+   "circonscription": "Dakpadou et Sago, communes et Sous·prefectures"
+  },
+  {
+   "key": "depute-065",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 65",
+   "name": "Kacou Mea D'Assie Justin Kevin",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1065,
+   "region": "Gbôklé",
+   "communes": [
+    "Sassandra"
+   ],
+   "circonscription": "Grihiri, Lobakuya, Medon et Sassandra, communes et Sous-Prefect"
+  },
+  {
+   "key": "depute-066",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 66",
+   "name": "Legre Dakpa Philipe",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1066,
+   "region": "Gbôklé",
+   "communes": [
+    "Fresco"
+   ],
+   "circonscription": "Dahiri, Fresco et Gbagbam, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-067",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 67",
+   "name": "Kone Issa",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1067,
+   "region": "Gôh",
+   "communes": [
+    "Ouragahio"
+   ],
+   "circonscription": "Bayota, Dahiepa·kehi, Ouragahio et Yopohue, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-068",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 68",
+   "name": "Dogo Logbo Myss Belmonde",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1068,
+   "region": "Gôh",
+   "communes": [
+    "Guibéroua"
+   ],
+   "circonscription": "Dignago, Galebouo et Guiberoua, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-069",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 69",
+   "name": "Moussa Konate",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1069,
+   "region": "Gôh",
+   "communes": [],
+   "circonscription": "Dougroupalegnoa, Doukouyo, Gnagbodougnoa et Serihio, communes et sous-préfectures, Gagnoa, sous-préfecture"
+  },
+  {
+   "key": "depute-070-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 70",
+   "name": "Yssouf Diabate",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1070,
+   "region": "Gôh",
+   "communes": [
+    "Gagnoa"
+   ],
+   "circonscription": "Gagnoa, commune"
+  },
+  {
+   "key": "depute-070-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 70",
+   "name": "Camara Zon",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1070,
+   "region": "Gôh",
+   "communes": [
+    "Gagnoa"
+   ],
+   "circonscription": "Gagnoa, commune"
+  },
+  {
+   "key": "depute-071",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 71",
+   "name": "Bagrou Goli",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1071,
+   "region": "Gôh",
+   "communes": [
+    "Diégonéfla"
+   ],
+   "circonscription": "Diegonefla et Tonla, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-072",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 72",
+   "name": "Kouassi Dja Flore",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1072,
+   "region": "Gôh",
+   "communes": [
+    "Oumé"
+   ],
+   "circonscription": "Guepahouo et Oume, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-073-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 73",
+   "name": "Maizan Koffi Noel",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1073,
+   "region": "Gontougo",
+   "communes": [
+    "Bondoukou"
+   ],
+   "circonscription": "Appimandoum, Bondoukou et Pinda-Boroko, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-073-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 73",
+   "name": "Diabagate Mamah",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1073,
+   "region": "Gontougo",
+   "communes": [
+    "Bondoukou"
+   ],
+   "circonscription": "Appimandoum, Bondoukou et Pinda-Boroko, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-074-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 74",
+   "name": "Kra Kouame Kouman",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1074,
+   "region": "Gontougo",
+   "communes": [],
+   "circonscription": "Bondo, Laoudi-Ba, Sapli-Sepingo, Taoudi et Yezimala, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-074-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 74",
+   "name": "Kouman Ouattara Abou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1074,
+   "region": "Gontougo",
+   "communes": [],
+   "circonscription": "Bondo, Laoudi-Ba, Sapli-Sepingo, Taoudi et Yezimala, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-075",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 75",
+   "name": "Diabagate Moussa",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1075,
+   "region": "Gontougo",
+   "communes": [],
+   "circonscription": "Goumere et Tabagne, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-076",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 76",
+   "name": "Kouassi Koffi Kra Paulin",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1076,
+   "region": "Gontougo",
+   "communes": [],
+   "circonscription": "Sorobango et Tagadi, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-077",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 77",
+   "name": "Moutaye Azoumana",
+   "gender": "M",
+   "party": "UNPR",
+   "role": null,
+   "rank": 1077,
+   "region": "Gontougo",
+   "communes": [
+    "Kouassi-Datékro"
+   ],
+   "circonscription": "Boahia et Kouassi-Datekro, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-078",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 78",
+   "name": "Kouassi Bredoumy Soumaila Traore",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": "Vice-Président de l'Assemblée nationale",
+   "rank": 10,
+   "region": "Gontougo",
+   "communes": [],
+   "circonscription": "Kokomian, Tankesse et Tienkoikro, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-079",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 79",
+   "name": "Oulayes Yao Kpoulale Francois",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1079,
+   "region": "Gontougo",
+   "communes": [
+    "Koun-Fao"
+   ],
+   "circonscription": "Koun-Fao, commune et sous-préfecture"
+  },
+  {
+   "key": "depute-080",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 80",
+   "name": "Ouattara Aboubakar",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Vice-Président de l'Assemblée nationale",
+   "rank": 10,
+   "region": "Gontougo",
+   "communes": [
+    "Sandégué"
+   ],
+   "circonscription": "Bandakagni-Tomora, Dimandougou, Sandegue et Yorobodi, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-081",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 81",
+   "name": "Kobenan Kouassi Adjoumani",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1081,
+   "region": "Gontougo",
+   "communes": [
+    "Tanda"
+   ],
+   "circonscription": "Amanvi, Diamba, Tanda et Tchedio, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-082",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 82",
+   "name": "Yoboua Kouabenan Ceverin",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1082,
+   "region": "Gontougo",
+   "communes": [
+    "Assuéfry",
+    "Transua"
+   ],
+   "circonscription": "Assuefry, Kouassia-Niaguini et Transua, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-083-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 83",
+   "name": "Metch Adje Silas",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1083,
+   "region": "Grands-Ponts",
+   "communes": [
+    "Dabou"
+   ],
+   "circonscription": "Dabou, Lopou et Toupah, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-083-2",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 83",
+   "name": "Honorine Assoi",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1083,
+   "region": "Grands-Ponts",
+   "communes": [
+    "Dabou"
+   ],
+   "circonscription": "Dabou, Lopou et Toupah, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-084",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 84",
+   "name": "Yao N'Guessan Alfred",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1084,
+   "region": "Grands-Ponts",
+   "communes": [
+    "Grand-Lahou"
+   ],
+   "circonscription": "Ahouanou, Bacanda, Ebonou, Grand-Lahou et Toukouzou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-086",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 86",
+   "name": "Serey Doh Celestin",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1086,
+   "region": "Guémon",
+   "communes": [
+    "Bangolo"
+   ],
+   "circonscription": "Bangolo, Gohouo-Zagna, Kahin-Zarabaon et Zou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-087",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 87",
+   "name": "Bohouo Dehourou Mathurin",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1087,
+   "region": "Guémon",
+   "communes": [],
+   "circonscription": "Beoue-Zibiao, Blenimeouin, Dieouzon, Guinglo-Tahouake et Zeo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-088",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 88",
+   "name": "Doumbia Ibrahima",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1088,
+   "region": "Guémon",
+   "communes": [],
+   "circonscription": "Bagohouo, Gbapleu et Guezon, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-089",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 89",
+   "name": "Toure Flanizara",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1089,
+   "region": "Guémon",
+   "communes": [
+    "Duékoué"
+   ],
+   "circonscription": "Duekoue, commune"
+  },
+  {
+   "key": "depute-090",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 90",
+   "name": "Gnonka Anges",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1090,
+   "region": "Guémon",
+   "communes": [],
+   "circonscription": "Duekoue, sous-préfecture et Guehiebly, communes et sous-préfecture"
+  },
+  {
+   "key": "depute-091",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 91",
+   "name": "Sea Jean Honore",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1091,
+   "region": "Guémon",
+   "communes": [
+    "Facobly"
+   ],
+   "circonscription": "Facobly, Guezon, Koua, Semien et Tieny-Seably, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-092",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 92",
+   "name": "Tahou Thierry",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1092,
+   "region": "Guémon",
+   "communes": [
+    "Kouibly"
+   ],
+   "circonscription": "Kouibly, Nidrou, Ouyably-Gnondrou et Totrodrou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-093",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 93",
+   "name": "Fofana Bassatigui",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1093,
+   "region": "Hambol",
+   "communes": [
+    "Bassawa",
+    "Satama-Sokoro",
+    "Satama-Sokoura"
+   ],
+   "circonscription": "Bassawa, Satama-Sokoro et Satama-Sokoura, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-094",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 94",
+   "name": "Konate Ibrahim Kalil",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1094,
+   "region": "Hambol",
+   "communes": [
+    "Dabakala"
+   ],
+   "circonscription": "Dabakala, Sokala-Sobara, Tendene-Bambarasso et Yaossedougou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-095",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 95",
+   "name": "Coulibaly Amadou Tidiane",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1095,
+   "region": "Hambol",
+   "communes": [
+    "Boniérédougou",
+    "Foumbolo"
+   ],
+   "circonscription": "Bonieredougou et Foumbolo, communes et sous-préfectures, Niemene sous-préfecture"
+  },
+  {
+   "key": "depute-096",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 96",
+   "name": "Camara Pogabaha Thomas",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1096,
+   "region": "Hambol",
+   "communes": [
+    "Fronan",
+    "Katiola"
+   ],
+   "circonscription": "Fronan, Katiola et Timbe, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-098",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 98",
+   "name": "Kone Tiemoko Meyliet",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1098,
+   "region": "Hambol",
+   "communes": [
+    "Tafiré"
+   ],
+   "circonscription": "Badikaha, Niedekaha et Tafire, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-099-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 99",
+   "name": "Tiboue Tchin Michel",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1099,
+   "region": "Haut-Sassandra",
+   "communes": [
+    "Bédiala"
+   ],
+   "circonscription": "Bediala, Gadouan et Gonate, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-099-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 99",
+   "name": "Kone Zana Moussa",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1099,
+   "region": "Haut-Sassandra",
+   "communes": [
+    "Bédiala"
+   ],
+   "circonscription": "Bediala, Gadouan et Gonate, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-100-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 100",
+   "name": "Toure Mamadou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1100,
+   "region": "Haut-Sassandra",
+   "communes": [
+    "Daloa"
+   ],
+   "circonscription": "Daloa, Ville et sous-préfecture"
+  },
+  {
+   "key": "depute-100-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 100",
+   "name": "Darret Babaud Mathieu",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1100,
+   "region": "Haut-Sassandra",
+   "communes": [
+    "Daloa"
+   ],
+   "circonscription": "Daloa, Ville et sous-préfecture"
+  },
+  {
+   "key": "depute-100-3",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 100",
+   "name": "Diarra Karidja",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1100,
+   "region": "Haut-Sassandra",
+   "communes": [
+    "Daloa"
+   ],
+   "circonscription": "Daloa, Ville et sous-préfecture"
+  },
+  {
+   "key": "depute-101",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 101",
+   "name": "Kipre Stephane Aymar Augustin",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1101,
+   "region": "Haut-Sassandra",
+   "communes": [
+    "Gboguhé"
+   ],
+   "circonscription": "Gboguhe et Zahibo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-102-1",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 102",
+   "name": "Trazere Olibe Celestine",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1102,
+   "region": "Haut-Sassandra",
+   "communes": [
+    "Issia"
+   ],
+   "circonscription": "Boguedia, Issia et Tapeguia, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-102-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 102",
+   "name": "Fanny Mamadou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1102,
+   "region": "Haut-Sassandra",
+   "communes": [
+    "Issia"
+   ],
+   "circonscription": "Boguedia, Issia et Tapeguia, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-103",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 103",
+   "name": "Traore Doteme",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1103,
+   "region": "Haut-Sassandra",
+   "communes": [],
+   "circonscription": "Iboguhe et Namane, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-104",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 104",
+   "name": "Lokpo Brahima",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1104,
+   "region": "Haut-Sassandra",
+   "communes": [
+    "Saïoua"
+   ],
+   "circonscription": "Nahio et Saioua, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-105-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 105",
+   "name": "Sanogo Oumar",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1105,
+   "region": "Haut-Sassandra",
+   "communes": [
+    "Vavoua"
+   ],
+   "circonscription": "Bazra Natils, Dananon, Ketro·bassam et Vavoua, communes et Sous·prefectures"
+  },
+  {
+   "key": "depute-105-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 105",
+   "name": "Gohi-Drigone Bi Tchian Faustin",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1105,
+   "region": "Haut-Sassandra",
+   "communes": [
+    "Vavoua"
+   ],
+   "circonscription": "Bazra Natils, Dananon, Ketro·bassam et Vavoua, communes et Sous·prefectures"
+  },
+  {
+   "key": "depute-106",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 106",
+   "name": "Vedea Blikan Elisabeth",
+   "gender": "F",
+   "party": "RHDP",
+   "role": "Vice-Présidente de l'Assemblée nationale",
+   "rank": 10,
+   "region": "Haut-Sassandra",
+   "communes": [],
+   "circonscription": "Dania, commune et sous-préfecture"
+  },
+  {
+   "key": "depute-107",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 107",
+   "name": "Tra Bi Sui Guillaume",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1107,
+   "region": "Haut-Sassandra",
+   "communes": [],
+   "circonscription": "Seitifla, commune et sous-préfecture"
+  },
+  {
+   "key": "depute-108",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 108",
+   "name": "Doh Dibahi Marcellin",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1108,
+   "region": "Haut-Sassandra",
+   "communes": [
+    "Zoukougbeu"
+   ],
+   "circonscription": "Domangbeu, Gregbeu, Guessabo et Zoukougbeu, communes et Sous·prefectures"
+  },
+  {
+   "key": "depute-109",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 109",
+   "name": "Yao N'Guessan Justin Innocent",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1109,
+   "region": "Iffou",
+   "communes": [
+    "Ouellé"
+   ],
+   "circonscription": "Akpassanou, Ananda et Ouelle, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-110",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 110",
+   "name": "Kouassi Teophile",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1110,
+   "region": "Iffou",
+   "communes": [
+    "Daoukro"
+   ],
+   "circonscription": "Daoukro et N'Gattakro, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-111",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 111",
+   "name": "N'Doufou Kouassi Richard",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1111,
+   "region": "Iffou",
+   "communes": [
+    "Ettrokro"
+   ],
+   "circonscription": "Ettrokro et Samanza, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-112",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 112",
+   "name": "Traore Ahmed Parfait",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1112,
+   "region": "Iffou",
+   "communes": [
+    "M'Bahiakro"
+   ],
+   "circonscription": "Bonguera, Kondossou et M'Bahiakro, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-113",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 113",
+   "name": "Kouassi Kouassi Jean Claude",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1113,
+   "region": "Iffou",
+   "communes": [
+    "Prikro"
+   ],
+   "circonscription": "Anianou, Famienkro, Koffi-Amonkro, Nafana et Prikro, communes et Sous Prefectures"
+  },
+  {
+   "key": "depute-114",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 114",
+   "name": "Bah Abdoulaye",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1114,
+   "region": "Indénié-Djuablin",
+   "communes": [
+    "Abengourou"
+   ],
+   "circonscription": "Abengourou, commune"
+  },
+  {
+   "key": "depute-115-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 115",
+   "name": "Adom Kacou Houadja Leon",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1115,
+   "region": "Indénié-Djuablin",
+   "communes": [
+    "Niablé"
+   ],
+   "circonscription": "Abengourou, sous-préfecture, Amelekia, Anianssue, Ebilassokro, Niable, Yakasse-Feyasse et Zaranou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-115-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 115",
+   "name": "Adou N'Gouan Bernard",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1115,
+   "region": "Indénié-Djuablin",
+   "communes": [
+    "Niablé"
+   ],
+   "circonscription": "Abengourou, sous-préfecture, Amelekia, Anianssue, Ebilassokro, Niable, Yakasse-Feyasse et Zaranou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-116",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 116",
+   "name": "Fofana Siandou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1116,
+   "region": "Indénié-Djuablin",
+   "communes": [
+    "Agnibilékrou"
+   ],
+   "circonscription": "Agnibilekrou, commune et sous-préfectures"
+  },
+  {
+   "key": "depute-117",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 117",
+   "name": "Aboulaye Nango",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1117,
+   "region": "Indénié-Djuablin",
+   "communes": [],
+   "circonscription": "Akoboissue et Dame, Douffrebo et Tanguelan, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-118",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 118",
+   "name": "Tano Manizan Etienne",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1118,
+   "region": "Indénié-Djuablin",
+   "communes": [
+    "Bettié"
+   ],
+   "circonscription": "Bettie et Diamarakro, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-119",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 119",
+   "name": "Kone Ibrahima",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1119,
+   "region": "Kabadougou",
+   "communes": [
+    "Séguélon"
+   ],
+   "circonscription": "Gbongaha et Seguelon, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-120",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 120",
+   "name": "Konate Ladji",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1120,
+   "region": "Kabadougou",
+   "communes": [
+    "Madinani"
+   ],
+   "circonscription": "Fengolo, Madinani et N'Goloblasso, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-121",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 121",
+   "name": "Diarra Cedric Tidiane",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Vice-Président de l'Assemblée nationale",
+   "rank": 10,
+   "region": "Kabadougou",
+   "communes": [
+    "Bako",
+    "Dioulatièdougou"
+   ],
+   "circonscription": "Bako, Bougousso et Dioulatiedougou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-122",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 122",
+   "name": "Doumbia Alassane",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1122,
+   "region": "Kabadougou",
+   "communes": [
+    "Gbéléban",
+    "Seydougou"
+   ],
+   "circonscription": "Gbeleban et Seydougou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-123-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 123",
+   "name": "Kamara Adama",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1123,
+   "region": "Kabadougou",
+   "communes": [
+    "Odienné"
+   ],
+   "circonscription": "Odienne , commune"
+  },
+  {
+   "key": "depute-123-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 123",
+   "name": "Toure Yacouba",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1123,
+   "region": "Kabadougou",
+   "communes": [
+    "Odienné"
+   ],
+   "circonscription": "Odienne , commune"
+  },
+  {
+   "key": "depute-124",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 124",
+   "name": "Diaby Lancine",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1124,
+   "region": "Kabadougou",
+   "communes": [
+    "Tiémé",
+    "Samatiguila"
+   ],
+   "circonscription": "Kimbirila-Sud, Tieme, Samatiguila, et Samango, communes et sous-préfectures, Odienne, Sous Prefecture"
+  },
+  {
+   "key": "depute-125-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 125",
+   "name": "Kouakou Koffi Amede",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1125,
+   "region": "Lôh-Djiboua",
+   "communes": [],
+   "circonscription": "Chiepo, Didoko, Nebo et Ogoudou, communes et sous-préfectures, Divo, sous-préfecture"
+  },
+  {
+   "key": "depute-125-2",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 125",
+   "name": "Dagri Adolphine",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1125,
+   "region": "Lôh-Djiboua",
+   "communes": [],
+   "circonscription": "Chiepo, Didoko, Nebo et Ogoudou, communes et sous-préfectures, Divo, sous-préfecture"
+  },
+  {
+   "key": "depute-126",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 126",
+   "name": "Diakite Alahassane",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1126,
+   "region": "Lôh-Djiboua",
+   "communes": [
+    "Divo"
+   ],
+   "circonscription": "Divo, commune"
+  },
+  {
+   "key": "depute-127",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 127",
+   "name": "Dja-Ble Joseph",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1127,
+   "region": "Lôh-Djiboua",
+   "communes": [],
+   "circonscription": "Hire et Zego, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-128",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 128",
+   "name": "Koko Patricia Sylvie",
+   "gender": "F",
+   "party": "RHDP",
+   "role": "Vice-Présidente de l'Assemblée nationale",
+   "rank": 10,
+   "region": "Lôh-Djiboua",
+   "communes": [
+    "Guitry"
+   ],
+   "circonscription": "Dairo-Didizo et Guitry, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-129",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 129",
+   "name": "Gneba Nadine Melanie",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1129,
+   "region": "Lôh-Djiboua",
+   "communes": [],
+   "circonscription": "Lauzoua et Yocoboue, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-130",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 130",
+   "name": "Abadi Miezan Charles",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1130,
+   "region": "Lôh-Djiboua",
+   "communes": [
+    "Zikisso"
+   ],
+   "circonscription": "Djidji, Gagore et Zikisso, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-131",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 131",
+   "name": "Merhy Samy",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Secrétaire de l'Assemblée nationale",
+   "rank": 40,
+   "region": "Lôh-Djiboua",
+   "communes": [],
+   "circonscription": "Goudouko et Niambezaria, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-132",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 132",
+   "name": "Kouyate Abdoulaye",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1132,
+   "region": "Lôh-Djiboua",
+   "communes": [
+    "Lakota"
+   ],
+   "circonscription": "Lakota, commune et sous-préfecture"
+  },
+  {
+   "key": "depute-133",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 133",
+   "name": "Houra Kouassi Marc",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": "Président du groupe parlementaire Agir",
+   "rank": 60,
+   "region": "Marahoué",
+   "communes": [],
+   "circonscription": "Begbessou, N'Douffoukankro et Tibeita, communes et sous-préfectures, Bouafle, sous-préfecture, Pakouabo sous-préfecture"
+  },
+  {
+   "key": "depute-134",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 134",
+   "name": "Kone Adama",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Président du groupe parlementaire RHDP",
+   "rank": 60,
+   "region": "Marahoué",
+   "communes": [
+    "Bouaflé"
+   ],
+   "circonscription": "Bouafle, commune"
+  },
+  {
+   "key": "depute-135",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 135",
+   "name": "Yacouba Kone",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1135,
+   "region": "Marahoué",
+   "communes": [
+    "Bonon"
+   ],
+   "circonscription": "Bonon et Zaguieta, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-136",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 136",
+   "name": "Bema Coulibaly",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Secrétaire de l'Assemblée nationale",
+   "rank": 40,
+   "region": "Marahoué",
+   "communes": [],
+   "circonscription": "Bazre et Kononfla, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-137",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 137",
+   "name": "Sati Lou Golenan Madeleine épouse Touvoli",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1137,
+   "region": "Marahoué",
+   "communes": [
+    "Sinfra"
+   ],
+   "circonscription": "Kouetinfla et Sinfra, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-138",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 138",
+   "name": "Zamble Naya Naomi Jarvis",
+   "gender": "F",
+   "party": "RHDP",
+   "role": "Secrétaire de l'Assemblée nationale",
+   "rank": 40,
+   "region": "Marahoué",
+   "communes": [
+    "Gohitafla"
+   ],
+   "circonscription": "Gohitafla, Iriefla et Maminigui, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-139",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 139",
+   "name": "Sehi Bi Koue Alphonse",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1139,
+   "region": "Marahoué",
+   "communes": [],
+   "circonscription": "Kanzra, Voueboufla, Zanzra, communes et sous-préfectures, Zuenoula, sous-préfecture"
+  },
+  {
+   "key": "depute-140",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 140",
+   "name": "Souleymane Kone",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1140,
+   "region": "Marahoué",
+   "communes": [
+    "Zuénoula"
+   ],
+   "circonscription": "Zuenoula, commune"
+  },
+  {
+   "key": "depute-141",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 141",
+   "name": "Achi Patrick Jérôme",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Président de l'Assemblée nationale",
+   "rank": 1,
+   "region": "La Mé",
+   "communes": [
+    "Adzopé"
+   ],
+   "circonscription": "Adzope, commune"
+  },
+  {
+   "key": "depute-142",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 142",
+   "name": "Yapi N'Cho Florent",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1142,
+   "region": "La Mé",
+   "communes": [
+    "Agou"
+   ],
+   "circonscription": "Agou, Becedi-Brignan et Yakasse-Me, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-143",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 143",
+   "name": "Botchi Assi Abel",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1143,
+   "region": "La Mé",
+   "communes": [],
+   "circonscription": "Adzope, sous-préfecture, Annepe et Assikoi, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-144",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 144",
+   "name": "Assoi Assi Appolinaire",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1144,
+   "region": "La Mé",
+   "communes": [
+    "Afféry"
+   ],
+   "circonscription": "Affery, commune et sous-préfecture"
+  },
+  {
+   "key": "depute-145",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 145",
+   "name": "Assi Jean-Luc",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1145,
+   "region": "La Mé",
+   "communes": [
+    "Akoupé"
+   ],
+   "circonscription": "Akoupe et Becouefin, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-146",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 146",
+   "name": "N'Cho N'Cho Christophe",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1146,
+   "region": "La Mé",
+   "communes": [
+    "Alépé"
+   ],
+   "circonscription": "Aboisso-Comoe, Alepe, Allosso, Danguira et Oghlwapo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-147",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 147",
+   "name": "Adepo Yapo Francois",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1147,
+   "region": "La Mé",
+   "communes": [
+    "Yakassé-Attobrou"
+   ],
+   "circonscription": "Abongoua, Bieby et Yakasse-Attobrou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-148",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 148",
+   "name": "Zekre Zadi Christ-Yvan",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1148,
+   "region": "Nawa",
+   "communes": [
+    "Guéyo"
+   ],
+   "circonscription": "Dabouyo et Gueyo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-149-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 149",
+   "name": "Yao Yao Lazare",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1149,
+   "region": "Nawa",
+   "communes": [
+    "Buyo"
+   ],
+   "circonscription": "Buyo et Dapeoua, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-149-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 149",
+   "name": "Nouhane Michel",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1149,
+   "region": "Nawa",
+   "communes": [
+    "Buyo"
+   ],
+   "circonscription": "Buyo et Dapeoua, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-150-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 150",
+   "name": "Netro Tagbo Rene",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1150,
+   "region": "Nawa",
+   "communes": [
+    "Méagui"
+   ],
+   "circonscription": "Gnamangui, Meagui et Oupoyo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-150-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 150",
+   "name": "N'Dri Yao",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1150,
+   "region": "Nawa",
+   "communes": [
+    "Méagui"
+   ],
+   "circonscription": "Gnamangui, Meagui et Oupoyo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-151",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 151",
+   "name": "Gobo Yokore Bernard",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": "Questeur de l'Assemblée nationale",
+   "rank": 30,
+   "region": "Nawa",
+   "communes": [],
+   "circonscription": "Grand-Zatiry, communes et sous-préfecture"
+  },
+  {
+   "key": "depute-152",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 152",
+   "name": "Kone Dossogui",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1152,
+   "region": "Nawa",
+   "communes": [
+    "Mayo"
+   ],
+   "circonscription": "Liliyo et Okrouyo, communes et sous-préfectures, Mayo commune"
+  },
+  {
+   "key": "depute-153",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 153",
+   "name": "Sangare Moussa",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1153,
+   "region": "Nawa",
+   "communes": [
+    "Soubré"
+   ],
+   "circonscription": "Soubre, communes et sous-préfecture"
+  },
+  {
+   "key": "depute-154",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 154",
+   "name": "N'Guessan Ahondjon",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1154,
+   "region": "Moronou",
+   "communes": [
+    "Arrah"
+   ],
+   "circonscription": "Arrah, Kotobi et Kregbe, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-155-1",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 155",
+   "name": "N'Zi N'Da Affoue Eliane",
+   "gender": "F",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1155,
+   "region": "N'Zi",
+   "communes": [
+    "Bocanda"
+   ],
+   "circonscription": "Bengassou, Bocanda, Kouadioblekro et N'Zecrezessou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-155-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 155",
+   "name": "Kouame Koffi Athanase",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1155,
+   "region": "N'Zi",
+   "communes": [
+    "Bocanda"
+   ],
+   "circonscription": "Bengassou, Bocanda, Kouadioblekro et N'Zecrezessou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-156",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 156",
+   "name": "Kouassi Kouakou Narcisse",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1156,
+   "region": "N'Zi",
+   "communes": [
+    "Kouassi-Kouassikro"
+   ],
+   "circonscription": "Kouassi-Kouassikro, communes et sous-préfecture, Mekro sous-préfecture"
+  },
+  {
+   "key": "depute-157",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 157",
+   "name": "Assougba Jacob Amoin",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1157,
+   "region": "Moronou",
+   "communes": [
+    "Bongouanou"
+   ],
+   "circonscription": "Bongouanou commune"
+  },
+  {
+   "key": "depute-158",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 158",
+   "name": "Diby Kokora Boady Bernard",
+   "gender": "M",
+   "party": "FPI",
+   "role": null,
+   "rank": 1158,
+   "region": "Moronou",
+   "communes": [],
+   "circonscription": "Ande, Assie-Koumassi et N'Guessankro, communes et sous-préfectures et Bongouanou sous-préfecture"
+  },
+  {
+   "key": "depute-159",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 159",
+   "name": "Langui Kouadio Marc",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1159,
+   "region": "N'Zi",
+   "communes": [],
+   "circonscription": "Abigui, Diangokro et Nofou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-160",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 160",
+   "name": "Coulibaly Adama",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1160,
+   "region": "N'Zi",
+   "communes": [
+    "Dimbokro"
+   ],
+   "circonscription": "Dimbokro, commune et sous-préfecture"
+  },
+  {
+   "key": "depute-161",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 161",
+   "name": "Aka Desquith Ambroise",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1161,
+   "region": "Moronou",
+   "communes": [
+    "Anoumaba",
+    "Tiémélékro"
+   ],
+   "circonscription": "Anoumaba et Tiemelekro, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-162",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 162",
+   "name": "Kanga Kacou Antoine",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1162,
+   "region": "Moronou",
+   "communes": [
+    "M'Batto"
+   ],
+   "circonscription": "Assahara et M'Batto, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-163",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 163",
+   "name": "Coulibaly Issa",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1163,
+   "region": "Poro",
+   "communes": [
+    "Dikodougou",
+    "Guiembé"
+   ],
+   "circonscription": "Boron, Dikodougou et Guiembe, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-164",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 164",
+   "name": "Coulibaly Ali Kader",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1164,
+   "region": "Poro",
+   "communes": [
+    "M'Bengué"
+   ],
+   "circonscription": "Bougou, Katogo et M'Bengue, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-165",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 165",
+   "name": "Soro Zana",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1165,
+   "region": "Poro",
+   "communes": [
+    "Niofoin"
+   ],
+   "circonscription": "Katiali et Niofoin, communes et sous-préfectures, N'Ganon sous-préfecture"
+  },
+  {
+   "key": "depute-166",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 166",
+   "name": "Bamba Kassoum",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1166,
+   "region": "Poro",
+   "communes": [
+    "Tioroniaradougou"
+   ],
+   "circonscription": "Dassoungboho et Tioroniaradougou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-167",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 167",
+   "name": "Ouattara Adama Bemitian",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1167,
+   "region": "Poro",
+   "communes": [
+    "Karakoro",
+    "Komborodougou"
+   ],
+   "circonscription": "Karakoro et Komborodougou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-168",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 168",
+   "name": "Soro Kanigui Mamadou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1168,
+   "region": "Poro",
+   "communes": [
+    "Sirasso"
+   ],
+   "circonscription": "Kanoroba, Nafoun et Sirasso, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-169",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 169",
+   "name": "Souleymane Silue",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1169,
+   "region": "Poro",
+   "communes": [
+    "Napié"
+   ],
+   "circonscription": "Kiemou et Napie, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-170",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 170",
+   "name": "Amadou Coulibaly",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1170,
+   "region": "Poro",
+   "communes": [],
+   "circonscription": "Kombolokoura, Koni et Lataha, communes et sous-préfectures, Korhogo, Sohouo sous-préfectures"
+  },
+  {
+   "key": "depute-171-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 171",
+   "name": "Coulibaly Mamadou Sangafowa",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1171,
+   "region": "Poro",
+   "communes": [
+    "Korhogo"
+   ],
+   "circonscription": "Korhogo, Ville"
+  },
+  {
+   "key": "depute-171-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 171",
+   "name": "Ouattara Lacina",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1171,
+   "region": "Poro",
+   "communes": [
+    "Korhogo"
+   ],
+   "circonscription": "Korhogo, Ville"
+  },
+  {
+   "key": "depute-171-3",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 171",
+   "name": "Tiegbana dit Madjara Coulibaly épouse Diarra",
+   "gender": "F",
+   "party": "RHDP",
+   "role": "Vice-Présidente de l'Assemblée nationale",
+   "rank": 10,
+   "region": "Poro",
+   "communes": [
+    "Korhogo"
+   ],
+   "circonscription": "Korhogo, Ville"
+  },
+  {
+   "key": "depute-172",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 172",
+   "name": "Sarassoro Gboroton Fidele",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1172,
+   "region": "Poro",
+   "communes": [
+    "Sinématiali"
+   ],
+   "circonscription": "Kagbolodougou, Sediogo et Sinematiali, communes et sous-préfectures, Bahouakaha sous-préfecture"
+  },
+  {
+   "key": "depute-173-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 173",
+   "name": "Kouassi Kouame Bernard",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1173,
+   "region": "San-Pédro",
+   "communes": [],
+   "circonscription": "Doba et Gabiadji, communes et sous-préfectures, San Pedro, sous-préfecture"
+  },
+  {
+   "key": "depute-173-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 173",
+   "name": "Kone Moussa",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1173,
+   "region": "San-Pédro",
+   "communes": [],
+   "circonscription": "Doba et Gabiadji, communes et sous-préfectures, San Pedro, sous-préfecture"
+  },
+  {
+   "key": "depute-174",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 174",
+   "name": "Konan Kouame Armand",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1174,
+   "region": "San-Pédro",
+   "communes": [
+    "Grand-Béréby"
+   ],
+   "circonscription": "Dogbo et Grand-Bereby, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-175-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 175",
+   "name": "Anoble Miezan Felix",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1175,
+   "region": "San-Pédro",
+   "communes": [
+    "San-Pédro"
+   ],
+   "circonscription": "San Pedro, commune"
+  },
+  {
+   "key": "depute-175-2",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 175",
+   "name": "Keita Nakaridja",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1175,
+   "region": "San-Pédro",
+   "communes": [
+    "San-Pédro"
+   ],
+   "circonscription": "San Pedro, commune"
+  },
+  {
+   "key": "depute-176",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 176",
+   "name": "Gnepa Iroko Joseph",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1176,
+   "region": "San-Pédro",
+   "communes": [
+    "Tabou"
+   ],
+   "circonscription": "Dapo-Iboke, Djamandioke, Olodio et Tabou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-177",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 177",
+   "name": "Coulibaly Yaya",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1177,
+   "region": "San-Pédro",
+   "communes": [
+    "Grabo"
+   ],
+   "circonscription": "Djouroutou et Grabo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-178",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 178",
+   "name": "N'Gouan Jeremie Alfred",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "role": null,
+   "rank": 1178,
+   "region": "Sud-Comoé",
+   "communes": [
+    "Aboisso"
+   ],
+   "circonscription": "Aboisso, commune"
+  },
+  {
+   "key": "depute-179",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 179",
+   "name": "Aka Aouele",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1179,
+   "region": "Sud-Comoé",
+   "communes": [
+    "Maféré"
+   ],
+   "circonscription": "Aboisso, sous-préfecture, Adaou, Adjouan, Kouakro et Mafere, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-180",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 180",
+   "name": "Kakou Brou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1180,
+   "region": "Sud-Comoé",
+   "communes": [
+    "Ayamé"
+   ],
+   "circonscription": "Ayame, Bianouan et Yaou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-181",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 181",
+   "name": "Sie Hien",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1181,
+   "region": "Sud-Comoé",
+   "communes": [
+    "Adiaké",
+    "Assinie-Mafia"
+   ],
+   "circonscription": "Adiake, Assinie-Mafia et Etueboue, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-182",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 182",
+   "name": "Koua Maman Cecile épouse Adje",
+   "gender": "F",
+   "party": "PDCI-RDA",
+   "role": "Secrétaire de l'Assemblée nationale",
+   "rank": 40,
+   "region": "Sud-Comoé",
+   "communes": [
+    "Bonoua"
+   ],
+   "circonscription": "Bongo et Bonoua, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-183",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 183",
+   "name": "Coulibaly Seriba",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1183,
+   "region": "Sud-Comoé",
+   "communes": [
+    "Grand-Bassam"
+   ],
+   "circonscription": "Grand-Bassam, commune et sous-préfecture"
+  },
+  {
+   "key": "depute-184",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 184",
+   "name": "Sangare Issa",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1184,
+   "region": "Sud-Comoé",
+   "communes": [
+    "Tiapoum"
+   ],
+   "circonscription": "Noe, Nouamou et Tiapoum, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-185-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 185",
+   "name": "Diomande Abdoulaye Karim",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Vice-Président de l'Assemblée nationale",
+   "rank": 10,
+   "region": "Tchologo",
+   "communes": [
+    "Kong"
+   ],
+   "circonscription": "Bilimono, Kong et Sikolo, communes et sous-préfectures, Nafana sous-préfecture"
+  },
+  {
+   "key": "depute-185-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 185",
+   "name": "Issiaka Ouattara",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1185,
+   "region": "Tchologo",
+   "communes": [
+    "Kong"
+   ],
+   "circonscription": "Bilimono, Kong et Sikolo, communes et sous-préfectures, Nafana sous-préfecture"
+  },
+  {
+   "key": "depute-185-3",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 185",
+   "name": "Barro Mabiba",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1185,
+   "region": "Tchologo",
+   "communes": [
+    "Kong"
+   ],
+   "circonscription": "Bilimono, Kong et Sikolo, communes et sous-préfectures, Nafana sous-préfecture"
+  },
+  {
+   "key": "depute-186",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 186",
+   "name": "Kone Lassina",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1186,
+   "region": "Tchologo",
+   "communes": [
+    "Ferkessédougou"
+   ],
+   "circonscription": "Ferkessedougou,commune"
+  },
+  {
+   "key": "depute-187",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 187",
+   "name": "Silue Gneneyeri Jacques",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1187,
+   "region": "Tchologo",
+   "communes": [
+    "Koumbala"
+   ],
+   "circonscription": "Ferkessedougou, Sous Prefecture, Koumbala et Togoniere, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-188",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 188",
+   "name": "Sanogo Mamadou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1188,
+   "region": "Tchologo",
+   "communes": [
+    "Diawala",
+    "Niellé"
+   ],
+   "circonscription": "Diawala, Nielle, et Toumoukro, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-189",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 189",
+   "name": "Traore Drissa",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1189,
+   "region": "Tchologo",
+   "communes": [
+    "Ouangolodougou"
+   ],
+   "circonscription": "Kaouara et Ouangolodougou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-190",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 190",
+   "name": "Guei Singa Mireille Chantal",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1190,
+   "region": "Tonkpi",
+   "communes": [
+    "Biankouma"
+   ],
+   "circonscription": "Biankouma, Blapleu, Kpata et Santa, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-191",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 191",
+   "name": "Woi Mela Gaston Aime",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Vice-Président de l'Assemblée nationale",
+   "rank": 10,
+   "region": "Tonkpi",
+   "communes": [
+    "Gbonné"
+   ],
+   "circonscription": "Gbangbegouine, Gbonne et Gouine, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-192",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 192",
+   "name": "Diomande Dro Joel",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1192,
+   "region": "Tonkpi",
+   "communes": [
+    "Sipilou"
+   ],
+   "circonscription": "Sipilou et Yorodougou, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-193-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 193",
+   "name": "Gbato Tonga Guillaume",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": "Président du groupe parlementaire Solidarité",
+   "rank": 60,
+   "region": "Tonkpi",
+   "communes": [
+    "Danané"
+   ],
+   "circonscription": "Daleu, Danane, Gbon-Houye, Kouan-Houle et Seileu, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-193-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 193",
+   "name": "Soumahoro Souleymane",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1193,
+   "region": "Tonkpi",
+   "communes": [
+    "Danané"
+   ],
+   "circonscription": "Daleu, Danane, Gbon-Houye, Kouan-Houle et Seileu, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-194",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 194",
+   "name": "Kegban Kegban Bernard",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1194,
+   "region": "Tonkpi",
+   "communes": [],
+   "circonscription": "Mahapleu et Zonneu, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-195",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 195",
+   "name": "Ouehi Feh Biayo Gisele épouse Koffi",
+   "gender": "F",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1195,
+   "region": "Tonkpi",
+   "communes": [
+    "Logoualé"
+   ],
+   "circonscription": "Bogouine, Logouale, Yapleu et Ziogouine, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-196",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 196",
+   "name": "Dion Remi",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1196,
+   "region": "Tonkpi",
+   "communes": [
+    "Sangouiné"
+   ],
+   "circonscription": "Fagnampleu, Gbangbegouine-Yati, Podiagouine, Sandougou-Soba, Sangouine et Zagoue, communes et sous-préfectures, Man, sous-préfecture"
+  },
+  {
+   "key": "depute-197-1",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 197",
+   "name": "Bamba Mamadou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1197,
+   "region": "Tonkpi",
+   "communes": [
+    "Man"
+   ],
+   "circonscription": "Man, commune"
+  },
+  {
+   "key": "depute-197-2",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 197",
+   "name": "Flinde Albert",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1197,
+   "region": "Tonkpi",
+   "communes": [
+    "Man"
+   ],
+   "circonscription": "Man, commune"
+  },
+  {
+   "key": "depute-198",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 198",
+   "name": "Mabri Toikeusse Albert Abdallah",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1198,
+   "region": "Tonkpi",
+   "communes": [
+    "Zouan-Hounien"
+   ],
+   "circonscription": "Banneu, Teapleu, Yelleu et Zouan-Hounien, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-199",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 199",
+   "name": "Kokousseu Tomin Alexis",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1199,
+   "region": "Tonkpi",
+   "communes": [
+    "Bin-Houyé"
+   ],
+   "circonscription": "Bin-Houye et Goulaleu, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-200",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 200",
+   "name": "Kone Aboubacar Sidiki",
+   "gender": "M",
+   "party": "RHDP",
+   "role": "Secrétaire de l'Assemblée nationale",
+   "rank": 40,
+   "region": "Worodougou",
+   "communes": [
+    "Djibrosso",
+    "Morondo"
+   ],
+   "circonscription": "Djibrosso, Fadiadougou et Morondo, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-201",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 201",
+   "name": "Meite Yaya",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1201,
+   "region": "Worodougou",
+   "communes": [
+    "Kani"
+   ],
+   "circonscription": "Kani, commune et sous-préfecture"
+  },
+  {
+   "key": "depute-202",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 202",
+   "name": "Diomande Mamadou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1202,
+   "region": "Worodougou",
+   "communes": [],
+   "circonscription": "Bobi-Diarabana, commune et sous-préfecture, Seguela, sous-préfecture"
+  },
+  {
+   "key": "depute-203",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 203",
+   "name": "Timite Sahindou",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1203,
+   "region": "Worodougou",
+   "communes": [
+    "Séguéla"
+   ],
+   "circonscription": "Seguela, commune"
+  },
+  {
+   "key": "depute-204",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 204",
+   "name": "Dosso Aboubacar Sidiky",
+   "gender": "M",
+   "party": "Indépendant",
+   "role": null,
+   "rank": 1204,
+   "region": "Worodougou",
+   "communes": [
+    "Dualla"
+   ],
+   "circonscription": "Dualla et Massala, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-205",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 205",
+   "name": "Meite Aboulaye",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1205,
+   "region": "Worodougou",
+   "communes": [
+    "Sifié",
+    "Worofla"
+   ],
+   "circonscription": "Kamalo, Sifie et Worofla, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-011",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 11",
+   "name": "Mamadou Sanogo",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1011,
+   "region": "Bafing",
+   "communes": [
+    "Koonan",
+    "Ouaninou"
+   ],
+   "circonscription": "Gbelo, Gouekan, Koonan, Ouaninou, Saboudougou et Santa, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-085",
+   "mandate": "depute",
+   "title": "Député de la circonscription n° 85",
+   "name": "Amon-Tanoh Benoit Marcel",
+   "gender": "M",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1085,
+   "region": "Grands-Ponts",
+   "communes": [
+    "Jacqueville"
+   ],
+   "circonscription": "Atoutou et Jacqueville, communes et sous-préfectures"
+  },
+  {
+   "key": "depute-097",
+   "mandate": "depute",
+   "title": "Députée de la circonscription n° 97",
+   "name": "Kone Catherine",
+   "gender": "F",
+   "party": "RHDP",
+   "role": null,
+   "rank": 1097,
+   "region": "Hambol",
+   "communes": [
+    "Tortiya"
+   ],
+   "circonscription": "Arikokaha, Niakaramandougou et Tortiya, communes et sous-préfectures"
+  }
+ ]
+}
