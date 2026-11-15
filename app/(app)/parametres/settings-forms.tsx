@@ -46,7 +46,7 @@ const IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp"];
 
 async function uploadImage(userId: string, original: File, kind: "avatar" | "banner") {
   if (!IMAGE_TYPES.includes(original.type)) return null;
-  // An avatar shows at 40 px in every feed: a 2 MB phone photo becomes ~30 KB here.
+  // An avatar shows at 40 px in every feed: a 2 MB phone photo becomes ~100 KB here, still sharp.
   const small = await shrinkImage(original, kind === "avatar" ? EDGE.avatar : EDGE.banner);
   const file: Blob = small?.blob ?? original;
   const type = small?.mime ?? original.type;

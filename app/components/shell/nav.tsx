@@ -12,6 +12,13 @@ import { Avatar } from "../ui/avatar";
 import { I } from "../ui/icons";
 
 type Unread = { notifications: number; messages: number };
+/**
+ * Main tabs whose whole page is fetched ahead of time, so a tap shows it at once instead of
+ * waiting on the server (300-700 ms per tap from Canada or Abidjan). Kept at most 30 s old
+ * (next.config staleTimes). Notifications and messages are left out: they must be live.
+ */
+const warm = (href: string) => href === "/accueil" || href === "/explorer" || href === "/mes-elus" || href === "/elus" || href.startsWith("/u/");
+
 type Item = { href: string; label: string; icon: keyof typeof I; badge?: number; match?: string[] };
 type Lang = "fr" | "en";
 
@@ -89,7 +96,7 @@ export function NavLinks({ lang, handle, unread: initial, isModerator, isStaff =
           const Icon = I[it.icon];
           const on = active(pathname, it);
           return (
-            <Link key={it.href + it.label} href={it.href} aria-current={on ? "page" : undefined} className={`tap flex h-12 items-center gap-4 rounded-full px-3 text-[18px] hover:bg-paper active:bg-line/60 ${on ? "font-bold" : "font-medium"}`}>
+            <Link key={it.href + it.label} href={it.href} prefetch={warm(it.href) || undefined} aria-current={on ? "page" : undefined} className={`tap flex h-12 items-center gap-4 rounded-full px-3 text-[18px] hover:bg-paper active:bg-line/60 ${on ? "font-bold" : "font-medium"}`}>
               <span className="relative">
                 <Icon className="h-[26px] w-[26px]" filled={on} />
                 <Badge n={it.badge} />
@@ -175,7 +182,7 @@ export function MobileNav({ lang, handle, name, avatar, unread: initial, signedI
             const Icon = I[it.icon];
             const on = active(pathname, it);
             return (
-              <Link key={it.href} href={it.href} aria-label={it.label} aria-current={on ? "page" : undefined} className={`tap group relative flex flex-1 flex-col items-center justify-center active:scale-90 ${on ? "text-ink" : "text-muted"}`}>
+              <Link key={it.href} href={it.href} prefetch={warm(it.href) || undefined} aria-label={it.label} aria-current={on ? "page" : undefined} className={`tap group relative flex flex-1 flex-col items-center justify-center active:scale-90 ${on ? "text-ink" : "text-muted"}`}>
                 {/* Like X: the current tab is the filled, darker icon; no pill behind it. */}
                 <span className="relative flex h-10 w-12 items-center justify-center rounded-full transition-colors duration-150 group-active:bg-line/60">
                   <Icon className="h-[26px] w-[26px]" filled={on} />

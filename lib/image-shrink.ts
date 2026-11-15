@@ -4,8 +4,11 @@
 
 export type Shrunk = { blob: Blob; mime: string; ext: string; width: number; height: number };
 
-/** Longest side, in pixels, for each use. Avatars show at 40 to 134 px, so 512 covers 3x screens. */
-export const EDGE = { avatar: 512, banner: 1500, post: 1600, message: 1600 } as const;
+/** Longest side, in pixels, for each use. Sharp on 3x phone screens and full-width on laptops. */
+export const EDGE = { avatar: 800, banner: 2000, post: 2048, message: 2048 } as const;
+
+/** High enough that photos look like the original on a phone or laptop screen (Ulrich, 2026-11-15). */
+export const QUALITY = 0.9;
 
 function encode(canvas: HTMLCanvasElement, type: string, quality: number) {
   return new Promise<Blob | null>((ok) => canvas.toBlob(ok, type, quality));
@@ -16,7 +19,7 @@ function encode(canvas: HTMLCanvasElement, type: string, quality: number) {
  * JPEG otherwise). Returns null when the file should go up untouched: GIFs (animation),
  * formats the browser cannot decode, or when re-encoding would not make it smaller.
  */
-export async function shrinkImage(file: Blob, maxEdge: number, quality = 0.82): Promise<Shrunk | null> {
+export async function shrinkImage(file: Blob, maxEdge: number, quality = QUALITY): Promise<Shrunk | null> {
   const type = file.type;
   if (!type.startsWith("image/") || type === "image/gif" || type === "image/svg+xml") return null;
   let bmp: ImageBitmap;
