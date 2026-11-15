@@ -56,7 +56,7 @@ export default async function ProfilePage({ params, searchParams }: { params: Pr
     viewer && !isMe ? supabase.from("follows").select("follower_id").eq("follower_id", profile.id).eq("followee_id", viewer.id).maybeSingle() : Promise.resolve({ data: null }),
     viewer && !isMe ? supabase.from("blocks").select("blocker_id").eq("blocker_id", viewer.id).eq("blocked_id", profile.id).maybeSingle() : Promise.resolve({ data: null }),
     viewer && !isMe ? supabase.from("mutes").select("muter_id").eq("muter_id", viewer.id).eq("muted_id", profile.id).maybeSingle() : Promise.resolve({ data: null }),
-    supabase.from("officials").select("*").eq("profile_id", profile.id),
+    supabase.from("officials").select("*").or(`profile_id.eq.${profile.id},personal_profile_id.eq.${profile.id}`),
     fetchProfilePosts(supabase, profile.id, tab, viewer?.id ?? null),
   ]);
   const officials = (officialsRes.data ?? []) as Official[];
@@ -116,7 +116,7 @@ export default async function ProfilePage({ params, searchParams }: { params: Pr
               <I.landmark className="h-5 w-5 flex-none text-green-deep" />
               <span className="min-w-0 flex-1">
                 <span className="block truncate text-[15px] font-bold text-green-deep">{o.title ?? t.officials.mandates[o.mandate]}</span>
-                <span className="block text-[13px] text-muted">{t.profile.officialPage} · {t.officials.interpellations}, {t.officials.promises.toLowerCase()}, {t.officials.permanences.toLowerCase()}</span>
+                <span className="block text-[13px] text-muted">{o.profile_id === profile.id ? t.profile.officialPage : lang === "fr" ? "Titulaire de la fonction" : "Holder of this office"} · {t.officials.interpellations}, {t.officials.promises.toLowerCase()}, {t.officials.permanences.toLowerCase()}</span>
               </span>
               <span className="text-[13px] font-semibold text-green-deep">{t.profile.interpellate} →</span>
             </Link>

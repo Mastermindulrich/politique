@@ -207,13 +207,21 @@ export function PrefsForm({ lang, theme, lowData }: { lang: Lang; theme: Profile
 const DOC_TYPES = ["image/jpeg", "image/png", "application/pdf"];
 const BADGES: Exclude<AccountType, "citoyen">[] = ["elu", "institution", "media"];
 
-export function VerificationForm({ lang, userId, defaultType, defaultName, officials }: { lang: Lang; userId: string; defaultType: AccountType; defaultName: string; officials: Pick<Official, "id" | "full_name" | "mandate" | "title">[] }) {
+export type OfficeOption = Pick<Official, "id" | "full_name" | "mandate" | "title" | "institution" | "profile_id" | "personal_profile_id" | "vacant">;
+
+const INSTITUTION_LABEL: Record<string, string> = { presidence: "Présidence", gouvernement: "Gouvernement", assemblee: "Assemblée nationale", senat: "Sénat", district: "Districts autonomes", region: "Conseils régionaux", commune: "Mairies", prefectoral: "Corps préfectoral" };
+
+export function VerificationForm({ lang, userId, defaultType, defaultName, officials, defaultOfficial = "", defaultKind = "office" }: { lang: Lang; userId: string; defaultType: AccountType; defaultName: string; officials: OfficeOption[]; defaultOfficial?: string; defaultKind?: "office" | "personal" }) {
   const t = dict(lang);
   const { pending, state, run, setState } = useSave();
   const [type, setType] = useState<Exclude<AccountType, "citoyen">>(defaultType === "citoyen" ? "elu" : defaultType);
   const [fullName, setFullName] = useState(defaultName);
   const [organisation, setOrganisation] = useState("");
-  const [officialId, setOfficialId] = useState("");
+  const [officialId, setOfficialId] = useState(defaultOfficial);
+  const [linkKind, setLinkKind] = useState<"office" | "personal">(defaultKind);
+  // An office account can be claimed once; a personal account can be linked to a claimed or unclaimed office.
+  const choices = officials.filter((o) => (linkKind === "office" ? !o.profile_id : !o.personal_profile_id) || o.id === defaultOfficial);
+  const groups = Array.from(new Set(choices.map((o) => o.institution ?? "autre")));
   const [idDoc, setIdDoc] = useState<File | null>(null);
   const [proof, setProof] = useState<File | null>(null);
   const labels: Record<string, string> = lang === "fr" ? { elu: "Élu", institution: "Institution", media: "Média" } : { elu: "Elected official", institution: "Institution", media: "Media" };
@@ -235,7 +243,7 @@ export function VerificationForm({ lang, userId, defaultType, defaultName, offic
         run(async () => {
           const [documentPath, proofPath] = await Promise.all([upload(idDoc, "piece"), upload(proof, "justificatif")]);
           if (!documentPath || !proofPath) return { ok: false as const, error: "docs" };
-          return requestVerification({ requested_type: type, full_name: fullName.trim(), official_id: type === "elu" && officialId ? officialId : null, organisation: organisation.trim() || null, document_path: documentPath, proof_path: proofPath });
+          return requestVerification({ requested_type: type, full_name: fullName.trim(), official_id: type === "elu" && officialId ? officialId : null, link_kind: linkKind, organisation: organisation.trim() || null, document_path: documentPath, proof_path: proofPath });
         });
       }}
     >
@@ -255,13 +263,34 @@ export function VerificationForm({ lang, userId, defaultType, defaultName, offic
         <input className="input" required minLength={2} maxLength={120} value={fullName} onChange={(e) => setFullName(e.target.value)} />
       </label>
       {type === "elu" ? (
-        <label>
-          <span className="label">{t.settings.official}</span>
-          <select className="select" value={officialId} onChange={(e) => setOfficialId(e.target.value)}>
-            <option value="">{lang === "fr" ? "Mon mandat n'est pas dans la liste" : "My mandate is not listed"}</option>
-            {officials.map((o) => <option key={o.id} value={o.id}>{o.full_name} · {o.title || t.officials.mandates[o.mandate]}</option>)}
-          </select>
-        </label>
+        <>
+          <fieldset>
+            <legend className="label">{lang === "fr" ? "Vous demandez" : "You are asking to"}</legend>
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+              {([
+                ["office", lang === "fr" ? "Le compte de la fonction" : "Run the office account", lang === "fr" ? "Il reste à la fonction et passe à votre successeur." : "It stays with the office and passes to your successor."],
+                ["personal", lang === "fr" ? "Relier mon compte personnel" : "Link my personal account", lang === "fr" ? "Votre compte à vous, affiché sur la page de la fonction." : "Your own account, shown on the office page."],
+              ] as const).map(([k, label, help]) => (
+                <label key={k} className={`cursor-pointer rounded-2xl border px-3.5 py-3 ${linkKind === k ? "border-green bg-green-soft" : "border-line bg-card hover:bg-paper"}`}>
+                  <input type="radio" name="link-kind" className="sr-only" checked={linkKind === k} onChange={() => setLinkKind(k)} />
+                  <span className={`block text-[14px] font-semibold ${linkKind === k ? "text-green-deep" : "text-ink"}`}>{label}</span>
+                  <span className="block text-[13px] text-muted">{help}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+          <label>
+            <span className="label">{t.settings.official}</span>
+            <select className="select" value={officialId} onChange={(e) => setOfficialId(e.target.value)}>
+              <option value="">{lang === "fr" ? "Ma fonction n'est pas dans la liste" : "My office is not listed"}</option>
+              {groups.map((g) => (
+                <optgroup key={g} label={INSTITUTION_LABEL[g] ?? g}>
+                  {choices.filter((o) => (o.institution ?? "autre") === g).map((o) => <option key={o.id} value={o.id}>{o.title || t.officials.mandates[o.mandate]}{o.vacant ? "" : ` · ${o.full_name}`}</option>)}
+                </optgroup>
+              ))}
+            </select>
+          </label>
+        </>
       ) : (
         <label>
           <span className="label">{t.settings.organisation}</span>

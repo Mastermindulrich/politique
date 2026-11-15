@@ -243,6 +243,7 @@ const verifSchema = z.object({
   requested_type: z.enum(["elu", "institution", "media"]),
   full_name: z.string().min(2).max(120),
   official_id: z.string().uuid().nullable(),
+  link_kind: z.enum(["office", "personal"]).default("office"),
   organisation: z.string().max(120).nullable(),
   document_path: z.string().nullable(),
   proof_path: z.string().nullable(),
@@ -531,7 +532,7 @@ export async function checkHandle(handle: string): Promise<boolean> {
 const officialSchema = z.object({
   id: z.string().uuid().optional(),
   full_name: z.string().min(2).max(120),
-  mandate: z.enum(["president", "ministre", "depute", "senateur", "maire", "president_conseil_regional", "gouverneur_district", "conseiller_municipal", "conseiller_regional", "autre"]),
+  mandate: z.enum(["president", "vice_president", "premier_ministre", "president_institution", "prefet", "sous_prefet", "ministre", "depute", "senateur", "maire", "president_conseil_regional", "gouverneur_district", "conseiller_municipal", "conseiller_regional", "autre"]),
   title: z.string().max(140).nullable(),
   party: z.string().max(80).nullable(),
   region_id: z.number().int().nullable(),

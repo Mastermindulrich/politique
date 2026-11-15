@@ -212,11 +212,16 @@ export default async function OfficialPage({ params, searchParams }: { params: P
         <div className="flex items-start gap-4">
           <Avatar src={o.profile?.avatar_url ?? o.photo_url} name={o.full_name} size={72} />
           <div className="min-w-0 flex-1">
+            <p className="mb-1 inline-flex items-center gap-1.5 rounded-full bg-paper px-2.5 py-0.5 text-[12px] font-semibold text-muted">
+              <span aria-hidden="true" className={`h-1.5 w-1.5 rounded-full ${o.profile_id ? "bg-green" : "bg-line"}`} />
+              {lang === "fr" ? "Compte de fonction" : "Office account"} · {o.profile_id ? t.myOfficials.claimed : t.myOfficials.unclaimed}
+            </p>
             <h2 className="flex items-center gap-1.5 font-display text-[22px] font-bold leading-tight">
-              {o.full_name}
+              {o.vacant ? (lang === "fr" ? "Poste vacant" : "Vacant office") : o.full_name}
               {o.profile && <NameBadge p={{ ...o.profile, account_type: "elu" }} size={22} lang={lang} />}
             </h2>
             <p className="text-[15px] text-muted">{o.title ?? `${t.officials.mandates[o.mandate]} · ${officialPlace(o, geo)}`}</p>
+            {o.role && <p className="mt-0.5 text-[14px] font-semibold">{o.role}</p>}
             <p className="mt-1 flex flex-wrap gap-x-3 text-[13px] text-muted">
               {o.party && <span>{o.party}</span>}
               <span className="inline-flex items-center gap-1"><I.pin className="h-3.5 w-3.5" />{officialPlace(o, geo)}</span>
@@ -225,6 +230,16 @@ export default async function OfficialPage({ params, searchParams }: { params: P
           </div>
         </div>
         {o.bio && <p className="mt-3 text-[15px] leading-snug">{o.bio}</p>}
+        {o.vacant && o.note && <p className="mt-3 rounded-xl bg-orange-soft px-3 py-2 text-[14px] text-orange">{o.note}</p>}
+        {o.personal && (
+          <Link href={`/u/${o.personal.handle}`} className="mt-3 flex items-center gap-3 rounded-2xl border border-line px-3 py-2.5 transition-colors hover:bg-paper/60">
+            <Avatar src={o.personal.avatar_url} name={o.personal.display_name} size={36} />
+            <span className="min-w-0 flex-1">
+              <span className="block text-[12px] font-semibold uppercase tracking-wide text-muted">{lang === "fr" ? "Compte personnel du titulaire" : "Holder's personal account"}</span>
+              <span className="flex items-center gap-1 truncate text-[15px] font-bold">{o.personal.display_name}<NameBadge p={{ ...o.personal, account_type: "elu" }} size={16} lang={lang} /> <span className="font-normal text-muted">@{o.personal.handle}</span></span>
+            </span>
+          </Link>
+        )}
 
         <dl className="mt-4 grid grid-cols-3 gap-2 text-center">
           <div className="flex min-h-[78px] flex-col-reverse items-center justify-center rounded-2xl bg-paper px-2 py-3">
@@ -250,10 +265,21 @@ export default async function OfficialPage({ params, searchParams }: { params: P
           ) : (
             <p className="rounded-xl border border-line bg-paper px-3 py-2 text-[13px] text-muted">
               {t.officials.notOnPlatform}{" "}
-              <Link href="/parametres#verification" className="font-semibold text-green-deep hover:underline">{t.officials.claim}</Link>
+              <Link href={`/parametres?fonction=${o.id}#verification`} className="font-semibold text-green-deep hover:underline">{t.officials.claim}</Link>
             </p>
           )}
+          {o.profile && !o.personal && !isOfficial && (
+            <Link href={`/parametres?fonction=${o.id}&lien=personnel#verification`} className="text-[13px] font-semibold text-muted hover:text-ink hover:underline">
+              {lang === "fr" ? "Vous êtes le titulaire ? Reliez votre compte personnel" : "Are you the holder? Link your personal account"}
+            </Link>
+          )}
         </div>
+        {o.source_url && (
+          <p className="mt-4 text-[12px] leading-relaxed text-muted">
+            {lang === "fr" ? "Source" : "Source"} : <a href={o.source_url} target="_blank" rel="noopener noreferrer" className="underline decoration-line underline-offset-2 hover:text-ink">{o.source_label ?? o.source_url}</a>
+            {o.source_checked ? ` · ${lang === "fr" ? "vérifié le" : "checked"} ${formatDate(o.source_checked, lang)}` : ""}.
+          </p>
+        )}
       </div>
 
       <Tabs label={o.full_name} className="border-b border-line" items={tabs.map((x) => ({ href: x.key === "interpellations" ? `/elus/${o.id}` : `/elus/${o.id}?tab=${x.key}`, label: x.label, on: tab === x.key }))} />

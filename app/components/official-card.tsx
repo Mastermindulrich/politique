@@ -13,13 +13,14 @@ export function OfficialCard({ o, lang, highlight = false }: { o: Official; lang
       <Avatar src={o.profile?.avatar_url ?? o.photo_url} name={o.full_name} size={48} />
       <span className="min-w-0 flex-1">
         <span className="flex items-center gap-1 text-[16px] font-bold">
-          <span className="truncate">{o.full_name}</span>
+          <span className={`truncate ${o.vacant ? "text-muted" : ""}`}>{o.vacant ? (lang === "fr" ? "Poste vacant" : "Vacant office") : o.full_name}</span>
           {o.profile && <NameBadge p={{ ...o.profile, account_type: "elu" }} size={17} lang={lang} />}
         </span>
         <span className="block truncate text-[14px] text-muted">
           {o.title ?? `${t.officials.mandates[o.mandate]} · ${officialPlace(o, geo)}`}
           {o.party ? ` · ${o.party}` : ""}
         </span>
+        {o.role && <span className="block truncate text-[13px] font-semibold text-ink/80">{o.role}</span>}
         <span className={`mt-1 inline-flex items-center gap-1.5 text-[12px] font-semibold ${o.profile_id ? "text-green-deep" : "text-muted"}`}><span aria-hidden="true" className={`h-1.5 w-1.5 rounded-full ${o.profile_id ? "bg-green" : "bg-line"}`} />{o.profile_id ? t.myOfficials.claimed : t.myOfficials.unclaimed}</span>
       </span>
       <svg aria-hidden="true" viewBox="0 0 24 24" className="h-[18px] w-[18px] flex-none text-muted/70" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round"><path d="m9 5 7 7-7 7" /></svg>
