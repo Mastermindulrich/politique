@@ -22,11 +22,12 @@ function items(lang: Lang, handle: string | null, unread: Unread, isModerator: b
   const pub: Item[] = [
     { href: signedIn ? "/accueil" : "/explorer", label: signedIn ? t.home : t.explore, icon: signedIn ? "home" : "search" },
   ];
-  if (!signedIn) return [...pub, { href: "/elus", label: t.officials, icon: "landmark" }];
+  if (!signedIn) return [...pub, { href: "/elus", label: t.officials, icon: "landmark" }, { href: "/bibliotheque", label: lang === "fr" ? "Bibliothèque" : "Library", icon: "book" }];
   return [
     ...pub,
     { href: "/explorer", label: t.explore, icon: "search", match: ["/explorer", "/t/"] },
     { href: "/mes-elus", label: t.myOfficials, icon: "landmark", match: ["/mes-elus", "/elus", "/interpellations", "/barometre", "/idees"] },
+    { href: "/bibliotheque", label: lang === "fr" ? "Bibliothèque" : "Library", icon: "book" },
     { href: "/notifications", label: t.notifications, icon: "bell", badge: unread.notifications },
     { href: "/messages", label: t.messages, icon: "mail", badge: unread.messages },
     { href: "/signets", label: t.bookmarks, icon: "bookmark" },
@@ -150,6 +151,7 @@ export function MobileNav({ lang, handle, name, avatar, unread: initial, signedI
     : [
         { href: "/explorer", label: t.explore, icon: "search" },
         { href: "/elus", label: t.officials, icon: "landmark" },
+        { href: "/bibliotheque", label: lang === "fr" ? "Bibliothèque" : "Library", icon: "book" },
         { href: "/connexion", label: t.login, icon: "user" },
       ];
 
@@ -158,6 +160,7 @@ export function MobileNav({ lang, handle, name, avatar, unread: initial, signedI
     ? [
         { href: `/u/${handle}`, label: t.profile, icon: "user" },
         { href: "/signets", label: t.bookmarks, icon: "bookmark" },
+        { href: "/bibliotheque", label: lang === "fr" ? "Bibliothèque" : "Library", icon: "book" },
         { href: "/barometre", label: lang === "fr" ? "Baromètre" : "Barometer", icon: "chart" },
         { href: "/idees", label: lang === "fr" ? "Boîte à idées" : "Idea box", icon: "bulb" },
         { href: "/parametres", label: t.settings, icon: "settings" },
