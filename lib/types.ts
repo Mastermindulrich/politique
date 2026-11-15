@@ -51,6 +51,9 @@ export type Media = {
   poster?: string;
 };
 
+/** The card shown under a post that contains a link. Fetched and written by the server. */
+export type LinkPreview = { url: string; title: string; description?: string; image?: string; site: string };
+
 export type Poll = {
   post_id: string;
   options: string[];
@@ -70,6 +73,7 @@ export type Post = {
   quoted_id: string | null;
   visibility: "public" | "followers";
   media: Media[];
+  link?: LinkPreview | null;
   commune_id: number | null;
   hashtags: string[];
   mentions: string[];

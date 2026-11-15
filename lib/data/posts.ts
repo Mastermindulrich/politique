@@ -144,8 +144,14 @@ export async function fetchProfilePosts(supabase: SupabaseClient, authorId: stri
   if (tab === "posts") q = q.neq("kind", "reply");
   if (tab === "replies") q = q.eq("kind", "reply");
   if (tab === "media") q = q.neq("media", "[]");
-  const { data } = await q;
-  return hydratePosts(supabase, (data ?? []) as Post[], viewerId);
+  // The pinned post opens the first page of the profile's own posts.
+  const [{ data }, pinned] = await Promise.all([
+    q,
+    tab === "posts" && !before ? supabase.from("posts").select("*").eq("author_id", authorId).eq("is_pinned", true).is("deleted_at", null).limit(1) : Promise.resolve({ data: [] }),
+  ]);
+  const top = ((pinned.data ?? []) as Post[])[0];
+  const rows = (data ?? []) as Post[];
+  return hydratePosts(supabase, top ? [top, ...rows.filter((p) => p.id !== top.id)] : rows, viewerId);
 }
 
 export async function fetchHashtag(supabase: SupabaseClient, tag: string, viewerId: string | null, before?: string) {

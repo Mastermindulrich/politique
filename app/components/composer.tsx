@@ -1,16 +1,20 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import { useRef, useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { createPost } from "@/lib/actions";
+import { previewLink } from "@/lib/social-actions";
 import { communes } from "@/lib/ci-geo";
 import { t as dict } from "@/lib/i18n";
+import { errorText } from "@/lib/i18n-social";
 import { supabaseBrowser } from "@/lib/supabase/client";
-import type { FeedPost, Media } from "@/lib/types";
+import type { FeedPost, LinkPreview, Media } from "@/lib/types";
+import { LinkCard } from "./post/link-card";
 import { I } from "./ui/icons";
 
 const MAX = 500;
 const IMAGE_MAX = 8 * 1024 * 1024;
 const VIDEO_MAX = 50 * 1024 * 1024;
+const URL_RE = /https?:\/\/[^\s<]+[^\s<.,;:!?)"']/i;
 
 type Props = {
   lang: "fr" | "en";
@@ -36,6 +40,21 @@ export function Composer({ lang, parentId, replyTo, quotedId, quotedPreview, aut
   const [pending, start] = useTransition();
   const fileRef = useRef<HTMLInputElement>(null);
   const areaRef = useRef<HTMLTextAreaElement>(null);
+
+  // The card for the first link in the text, fetched once the person pauses typing.
+  const [link, setLink] = useState<{ preview: LinkPreview; sig: string } | null>(null);
+  const [noCard, setNoCard] = useState<string | null>(null);
+  const url = !quotedId && !poll && media.length === 0 ? (URL_RE.exec(text)?.[0] ?? null) : null;
+  useEffect(() => {
+    if (!url || url === noCard) return setLink(null);
+    if (link?.preview.url === url) return;
+    setLink(null);
+    let live = true;
+    const timer = setTimeout(() => {
+      previewLink(url).then((r) => { if (live) setLink(r); }).catch(() => {});
+    }, 700);
+    return () => { live = false; clearTimeout(timer); };
+  }, [url, noCard]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const left = MAX - text.length;
   const pollOk = !poll || poll.options.filter((o) => o.trim()).length >= 2;
@@ -88,11 +107,15 @@ export function Composer({ lang, parentId, replyTo, quotedId, quotedPreview, aut
         media,
         communeId,
         poll: poll ? { options: poll.options.map((o) => o.trim()).filter(Boolean), days: poll.days } : null,
+        link: link && link.preview.url === url ? link : null,
+        noLink: Boolean(url && url === noCard),
       });
       if (!r.ok) {
-        setError(t.common.error);
+        setError(errorText(r.error, lang, t.common.error));
         return;
       }
+      setLink(null);
+      setNoCard(null);
       setText("");
       setMedia([]);
       setPoll(null);
@@ -158,6 +181,12 @@ export function Composer({ lang, parentId, replyTo, quotedId, quotedPreview, aut
             </li>
           ))}
         </ul>
+      )}
+
+      {link && url && (
+        <div className="mb-2">
+          <LinkCard link={link.preview} onRemove={() => { setNoCard(url); setLink(null); }} />
+        </div>
       )}
 
       {poll && (

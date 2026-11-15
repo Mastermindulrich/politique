@@ -34,6 +34,8 @@ npm run dev                   # http://localhost:3000
 
 Checks: `npm run lint`, `npm run type-check`, `npm run build`, `node tests/schema.test.mjs` (applies the schema to an in-process Postgres and runs smoke and access checks).
 
+To try the site without a Supabase project, `node scripts/dev-backend.mjs` starts a small stand-in on port 54321: the real migrations in an in-process Postgres, with demo accounts (`aya@demo.ci`, `awa@demo.ci`, `yao@demo.ci`, any 6-digit code). Point `.env.local` at it (`NEXT_PUBLIC_SUPABASE_URL=http://localhost:54321`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=dev-anon`, `SUPABASE_SERVICE_ROLE_KEY=dev-service`) and run `npm run dev`. It has no realtime and cannot fetch outside pages. `node --experimental-strip-types tests/link-preview.test.mts` checks the link card reader.
+
 Without Supabase variables the landing page, rules and privacy pages work and the app pages show a "not connected" notice.
 
 ## Connect a Supabase project
@@ -70,7 +72,7 @@ Setup: environment variables `NEXT_PUBLIC_VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`
 - `app/(legal)`: community rules and privacy policy. Have a lawyer review both before launch.
 - `lib/actions.ts`, `lib/auth-actions.ts`, `lib/feed-actions.ts`: server actions. `lib/data`: read queries. `lib/i18n.ts`: interface copy in French and English.
 - `lib/ci-geo.ts`: regions, departments and communes. After editing it, run `node scripts/gen-geo-sql.mjs` to regenerate the seed.
-- `supabase/migrations/0001_schema.sql`: tables, triggers, functions, row level security, storage buckets. `0002`: rate limit for login e-mails. `0003`: owner role, site settings, control center functions.
+- `supabase/migrations/0001_schema.sql`: tables, triggers, functions, row level security, storage buckets. `0002`: rate limit for login e-mails. `0003`: owner role, site settings, control center functions. `0007`: editing a post for one hour (with public history), pinning, link cards (written by the server only), group conversations, per-person frequency limits and the moderators' word filter.
 - `app/(app)/controle`, `lib/owner-actions.ts`, `lib/settings.ts`: the owner's control center.
 
 ## Hosting
