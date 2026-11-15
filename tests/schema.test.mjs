@@ -29,6 +29,9 @@ await db.exec(readFileSync(new URL("../supabase/migrations/0003_control_center.s
 await db.exec(readFileSync(new URL("../supabase/migrations/0004_notifications.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/migrations/0005_owner_badge.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/migrations/0006_dm_attachments.sql", import.meta.url), "utf8"));
+// 0008 (speed) also runs here so every RLS check below exercises the rewritten rules; it runs
+// again after 0007 further down, like in production where 0007 is already applied.
+await db.exec(readFileSync(new URL("../supabase/migrations/0008_speed.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/seed/ci_geo.sql", import.meta.url), "utf8"));
 await db.exec(`set search_path = politique, public`);
 
@@ -352,6 +355,9 @@ await asRole(null, async () => {
 // --- Editing, pinning, link cards, groups, anti-spam, word filter (0007) ------------
 await db.exec(readFileSync(new URL("../supabase/migrations/0007_social_features.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/migrations/0007_social_features.sql", import.meta.url), "utf8")); // safe to run twice
+await db.exec(readFileSync(new URL("../supabase/migrations/0008_speed.sql", import.meta.url), "utf8"));
+// 0008 twice: it must be safe to re-run.
+await db.exec(readFileSync(new URL("../supabase/migrations/0008_speed.sql", import.meta.url), "utf8"));
 await db.exec(`set search_path = politique, public`);
 const service = async (fn) => {
   await db.exec(`select set_config('request.jwt.claims', '{"role":"service_role"}', false)`);

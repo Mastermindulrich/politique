@@ -6,7 +6,8 @@ import { previewLink } from "@/lib/social-actions";
 import { communes } from "@/lib/ci-geo";
 import { t as dict } from "@/lib/i18n";
 import { errorText } from "@/lib/i18n-social";
-import { supabaseBrowser } from "@/lib/supabase/client";
+import { EDGE, shrinkImage } from "@/lib/image-shrink";
+import { browserClient } from "@/lib/supabase/lazy";
 import type { FeedPost, LinkPreview, Media } from "@/lib/types";
 import { LinkCard } from "./post/link-card";
 import { I } from "./ui/icons";
@@ -65,20 +66,24 @@ export function Composer({ lang, parentId, replyTo, quotedId, quotedPreview, aut
     setError(null);
     setUploading(true);
     try {
-      const supabase = supabaseBrowser();
+      const supabase = await browserClient();
       const { data: auth } = await supabase.auth.getUser();
       const uid = auth.user?.id;
       if (!uid) throw new Error("auth");
       const next: Media[] = [];
-      for (const file of Array.from(files).slice(0, 4 - media.length)) {
-        const isVideo = file.type.startsWith("video/");
+      for (const original of Array.from(files).slice(0, 4 - media.length)) {
+        const isVideo = original.type.startsWith("video/");
+        // Photos are resized before upload (a 4 MB phone photo becomes ~250 KB for every reader).
+        const small = isVideo ? null : await shrinkImage(original, EDGE.post);
+        const file: Blob = small?.blob ?? original;
+        const type = small?.mime ?? original.type;
         if (file.size > (isVideo ? VIDEO_MAX : IMAGE_MAX)) {
           setError(lang === "fr" ? `Fichier trop lourd (max ${isVideo ? "50" : "8"} Mo).` : `File too large (max ${isVideo ? "50" : "8"} MB).`);
           continue;
         }
-        const ext = (file.name.split(".").pop() || "bin").toLowerCase().replace(/[^a-z0-9]/g, "");
+        const ext = small?.ext ?? ((original.name.split(".").pop() || "bin").toLowerCase().replace(/[^a-z0-9]/g, ""));
         const path = `${uid}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
-        const { error: upErr } = await supabase.storage.from("politique-media").upload(path, file, { contentType: file.type, cacheControl: "31536000" });
+        const { error: upErr } = await supabase.storage.from("politique-media").upload(path, file, { contentType: type, cacheControl: "31536000" });
         if (upErr) {
           setError(upErr.message);
           continue;

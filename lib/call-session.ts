@@ -1,7 +1,7 @@
 "use client";
 
 import type { RealtimeChannel } from "@supabase/supabase-js";
-import { supabaseBrowser } from "@/lib/supabase/client";
+import { browserClient } from "@/lib/supabase/lazy";
 
 /**
  * One call between two phones: the WebRTC connection plus its signalling channel.
@@ -66,8 +66,8 @@ export class CallSession {
   }
 
   /** Joins the call's signalling channel; resolves once messages can be sent. */
-  join(): Promise<void> {
-    const supabase = supabaseBrowser();
+  async join(): Promise<void> {
+    const supabase = await browserClient();
     return new Promise((resolve, reject) => {
       const ch = supabase.channel(`call-${this.callId}`, { config: { broadcast: { self: false, ack: false } } });
       ch.on("broadcast", { event: "sig" }, ({ payload }: { payload: Sig }) => {
@@ -263,6 +263,6 @@ export class CallSession {
     const ch = this.channel;
     this.channel = null;
     // Let the hangup leave before the channel goes.
-    if (ch) window.setTimeout(() => void supabaseBrowser().removeChannel(ch), sendHangup ? 400 : 0);
+    if (ch) window.setTimeout(() => void browserClient().then((s) => s.removeChannel(ch)), sendHangup ? 400 : 0);
   }
 }
