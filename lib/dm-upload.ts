@@ -8,15 +8,15 @@ import type { DmAttachment } from "./types";
 export type Prepared = { blob: Blob; name: string; mime: string; kind: DmAttachment["type"]; width?: number; height?: number };
 
 /**
- * Photos are resized to at most 1600 px and re-encoded (WebP, or JPEG on older Safari):
- * a 4 MB iPhone photo becomes ~250 KB, which matters on mobile data. GIFs keep their
+ * Photos are resized to at most 2048 px and re-encoded (WebP, or JPEG on older Safari):
+ * a 4 MB iPhone photo becomes ~500 KB, which matters on mobile data. GIFs keep their
  * animation. A photo the browser cannot decode (HEIC on Chrome, for example) is sent as a file.
  */
 export async function prepare(file: File): Promise<Prepared> {
   const mime = file.type || "application/octet-stream";
   const name = file.name || "fichier";
   if (mime.startsWith("image/") && mime !== "image/gif") {
-    const small = await shrinkImage(file, EDGE.message, 0.82);
+    const small = await shrinkImage(file, EDGE.message);
     if (small) return { blob: small.blob, name: name.replace(/\.[^.]+$/, "") + "." + small.ext, mime: small.mime, kind: "image", width: small.width, height: small.height };
   }
   const kind = kindOf(mime);

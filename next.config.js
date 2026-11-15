@@ -9,7 +9,8 @@ module.exports = {
     // from the browser's memory instead of asking the server again across the ocean.
     // Anything a member changes (post, like, follow...) still refreshes it right away,
     // because the server actions call revalidatePath, which empties this memory.
-    staleTimes: { dynamic: 30, static: 300 },
+    // "static" also covers the main tabs fetched ahead of time (prefetch in shell/nav.tsx).
+    staleTimes: { dynamic: 30, static: 30 },
   },
   // Share images read their fonts from disk; make sure the files ship with those functions.
   outputFileTracingIncludes: { "/**/*": ["./lib/og/fonts/*.ttf"] },

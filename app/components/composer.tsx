@@ -73,7 +73,7 @@ export function Composer({ lang, parentId, replyTo, quotedId, quotedPreview, aut
       const next: Media[] = [];
       for (const original of Array.from(files).slice(0, 4 - media.length)) {
         const isVideo = original.type.startsWith("video/");
-        // Photos are resized before upload (a 4 MB phone photo becomes ~250 KB for every reader).
+        // Photos are resized before upload (a 4 MB phone photo becomes ~500 KB at full sharpness).
         const small = isVideo ? null : await shrinkImage(original, EDGE.post);
         const file: Blob = small?.blob ?? original;
         const type = small?.mime ?? original.type;
