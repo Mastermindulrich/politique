@@ -1,40 +1,23 @@
 "use client";
 // Browser side of attachments in direct messages: shrink photos, read sizes, upload.
+import { EDGE, shrinkImage } from "./image-shrink";
 import { DM_BUCKET, DM_MAX_BYTES, kindOf, storageType } from "./dm-media";
 import { supabaseBrowser } from "./supabase/client";
 import type { DmAttachment } from "./types";
 
-const MAX_EDGE = 2048;
-
 export type Prepared = { blob: Blob; name: string; mime: string; kind: DmAttachment["type"]; width?: number; height?: number };
 
 /**
- * Photos are re-encoded to a JPEG of at most 2048 px (a 4 MB iPhone photo becomes ~400 KB,
- * which matters on mobile data). GIFs keep their animation. A photo the browser cannot
- * decode (HEIC on Chrome, for example) is sent as a file instead of failing.
+ * Photos are resized to at most 1600 px and re-encoded (WebP, or JPEG on older Safari):
+ * a 4 MB iPhone photo becomes ~250 KB, which matters on mobile data. GIFs keep their
+ * animation. A photo the browser cannot decode (HEIC on Chrome, for example) is sent as a file.
  */
 export async function prepare(file: File): Promise<Prepared> {
   const mime = file.type || "application/octet-stream";
   const name = file.name || "fichier";
   if (mime.startsWith("image/") && mime !== "image/gif") {
-    try {
-      const bmp = await createImageBitmap(file);
-      const scale = Math.min(1, MAX_EDGE / Math.max(bmp.width, bmp.height));
-      const width = Math.round(bmp.width * scale), height = Math.round(bmp.height * scale);
-      if (scale === 1 && file.size < 600 * 1024 && kindOf(mime) === "image") {
-        bmp.close();
-        return { blob: file, name, mime, kind: "image", width, height };
-      }
-      const canvas = document.createElement("canvas");
-      canvas.width = width;
-      canvas.height = height;
-      canvas.getContext("2d")!.drawImage(bmp, 0, 0, width, height);
-      bmp.close();
-      const blob = await new Promise<Blob | null>((ok) => canvas.toBlob(ok, "image/jpeg", 0.85));
-      if (blob) return { blob, name: name.replace(/\.[^.]+$/, "") + ".jpg", mime: "image/jpeg", kind: "image", width, height };
-    } catch {
-      /* fall through: send as is */
-    }
+    const small = await shrinkImage(file, EDGE.message, 0.82);
+    if (small) return { blob: small.blob, name: name.replace(/\.[^.]+$/, "") + "." + small.ext, mime: small.mime, kind: "image", width: small.width, height: small.height };
   }
   const kind = kindOf(mime);
   if (kind === "image") {
