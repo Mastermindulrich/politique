@@ -3,22 +3,14 @@ loidici-cpp-2018	crawl	https://loidici.biz/2019/06/08/le-code-de-procedure-penal
 loidici-cp-2019	crawl	https://loidici.biz/?p=15754	le-code-penal-2019
 loidici-cpp-2022	page	https://loidici.biz/?p=24357
 loidici-cp-2021	page	https://loidici.biz/?p=22836
-loidici-cpp-2023	page	https://loidici.biz/2024/01/01/loi-de-2023-modifiant-le-code-de-procedure-penale/
-loidici-codes	links	https://loidici.biz/category/lois-article-par-article/codes/
-loidici-plus	links	https://loidici.biz/category/lois-article-par-article/plus-de-textes-de/
-loidici-s-mariage	links	https://loidici.biz/?s=2019-570
-loidici-s-filiation	links	https://loidici.biz/?s=2019-571
-loidici-s-minorite	links	https://loidici.biz/?s=2019-572
-loidici-s-succession	links	https://loidici.biz/?s=2019-573
-loidici-s-nom	links	https://loidici.biz/?s=2020-490
-loidici-s-etatcivil	links	https://loidici.biz/?s=2018-862
-loidici-s-travail	links	https://loidici.biz/?s=2015-532
-loidici-s-collectivites	links	https://loidici.biz/?s=2014-451
-loidici-s-collectivites2	links	https://loidici.biz/?s=collectivit%C3%A9s+territoriales
-loidici-s-cc	links	https://loidici.biz/?s=conseil+constitutionnel+loi+organique
-loidici-s-cdc	links	https://loidici.biz/?s=2018-979
-loidici-s-senat	links	https://loidici.biz/?s=r%C3%A8glement+du+s%C3%A9nat
-loidici-s-cei	links	https://loidici.biz/?s=2022-886
-loidici-s-electoral	links	https://loidici.biz/?s=2025-290
-loidici-s-cp2022	links	https://loidici.biz/?s=modifiant+le+code+p%C3%A9nal
-loidici-s-parlementaires	links	https://loidici.biz/?s=2020-558
+loidici-cp-2021b	page	https://loidici.biz/?p=22896
+loidici-cpp-2023	page	https://loidici.biz/?p=58654
+loidici-electoral-2025	page	https://loidici.biz/?p=71552
+loidici-cc-2022	crawl	https://loidici.biz/?p=73735	le-conseil-constitutionnel
+loidici-cdc	page	https://loidici.biz/?p=15161
+loidici-etatcivil-2026	page	https://loidici.biz/?p=76346
+loidici-cat-travail	category	https://loidici.biz/category/lois-article-par-article/codes/le-code-du-travail/
+loidici-cat-personnes	category	https://loidici.biz/category/lois-article-par-article/droit-des-personnes/
+loidici-cat-institutions	category	https://loidici.biz/category/lois-article-par-article/les-institutions-de-la-rep/
+loidici-collectivites-ebook	page	https://loidici.biz/?p=79650
+loidici-plus-links	links	https://loidici.biz/category/lois-article-par-article/plus-de-textes-de-lois/
