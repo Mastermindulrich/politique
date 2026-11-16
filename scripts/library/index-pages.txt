@@ -6,3 +6,10 @@ https://senat.ci/
 https://www.conseil-constitutionnel.ci/
 https://www.conseil-constitutionnel.ci/textes-fondamentaux
 https://www.courdescomptes.ci/
+https://www.conseil-constitutionnel.ci/textes-de-reference
+https://www.conseil-constitutionnel.ci/textes
+https://www.senat.ci/
+https://www.famille.gouv.ci/
+https://www.emploi.gouv.ci/
+https://www.justice.gouv.ci/
+https://www.dgat.interieur.gouv.ci/

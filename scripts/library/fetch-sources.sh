@@ -27,6 +27,16 @@ grep -v '^#' scripts/library/sources.tsv | while IFS=$'\t' read -r id url; do
     for p in /tmp/ocr/p*.png; do tesseract "$p" - -l fra 2>/dev/null >> "$OUT/$id.txt"; printf '\f' >> "$OUT/$id.txt"; done
     chars=$(tr -d '[:space:]\f' < "$OUT/$id.txt" | wc -c)
   fi
+  # Two-column pages (Journal officiel): extract the left and right halves in turn.
+  if [ -n "$pages" ] && [ "$ocr" = no ]; then
+    : > "$OUT/$id.cols.txt"
+    for ((pg=1; pg<=pages; pg++)); do
+      read -r w h < <(pdfinfo -f $pg -l $pg "$f" | awk '/^Page.*size:/{print int($4), int($6); exit}')
+      half=$(( w / 2 ))
+      pdftotext -f $pg -l $pg -x 0 -y 0 -W $half -H $h "$f" - >> "$OUT/$id.cols.txt" 2>/dev/null
+      pdftotext -f $pg -l $pg -x $half -y 0 -W $(( w - half )) -H $h "$f" - >> "$OUT/$id.cols.txt" 2>/dev/null
+    done
+  fi
   sha=$(sha256sum "$f" | cut -c1-16)
   printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' "$id" "$code" "$bytes" "${pages:-0}" "$chars" "$ocr" "$sha" "$url" >> "$report"
 done
