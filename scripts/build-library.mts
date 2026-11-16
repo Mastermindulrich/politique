@@ -11,7 +11,7 @@ import { createRequire } from "node:module";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { brand, markSvg } from "../lib/brand.ts";
-import { EDITION_NOTICE, articleLabel, library, type Edition, type EditionBlock } from "../lib/library.ts";
+import { EDITION_NOTICE, articleLabel, library, ordinal, type Edition, type EditionBlock } from "../lib/library.ts";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(root, "public/bibliotheque");
@@ -27,7 +27,9 @@ function body(blocks: EditionBlock[]) {
   let html = "";
   for (const b of blocks) {
     if (b.type === "preambule") html += `<section class="preambule"><h2 class="titre-name">${esc(b.title)}</h2>${b.paras.map((p) => `<p>${esc(p)}</p>`).join("")}</section>`;
-    else if (b.type === "titre") html += `<h2 class="titre" id="titre-${b.num}"><span class="titre-num">Titre ${b.num}</span><span class="titre-name">${esc(b.title)}</span></h2>`;
+    else if (b.type === "livre") html += `<h2 class="livre"><span class="titre-num">Livre ${ordinal(b.num)}</span><span class="titre-name">${esc(b.title)}</span></h2>`;
+    else if (b.type === "titre") html += `<h2 class="titre"><span class="titre-num">Titre ${ordinal(b.num)}</span><span class="titre-name">${esc(b.title)}</span></h2>`;
+    else if (b.type === "section") html += `<h4 class="section">Section ${ordinal(b.num)} · ${esc(b.title)}</h4>`;
     else if (b.type === "chapitre") html += `<h3 class="chapitre"><span>Chapitre ${b.num === "1" ? "premier" : b.num}${b.nouveau ? " (nouveau)" : ""}</span>${esc(b.title)}</h3>`;
     else if (b.type === "article") html += `<article><h4>${articleLabel(b)}</h4>${b.paras.map((p) => `<p${/^[—-] /.test(p) ? ' class="item"' : ""}>${esc(p)}</p>`).join("")}</article>`;
     else html += `<p class="signature">${b.paras.map(esc).join("<br>")}</p>`;
@@ -36,8 +38,10 @@ function body(blocks: EditionBlock[]) {
 }
 
 function contents(blocks: EditionBlock[]) {
-  const titres = blocks.filter((b): b is Extract<EditionBlock, { type: "titre" }> => b.type === "titre");
-  return `<ol class="toc">${titres.map((t) => `<li><span>Titre ${t.num}</span>${esc(t.title)}</li>`).join("")}</ol>`;
+  // Codes list their books and titles; other texts their titles.
+  const levels = blocks.some((b) => b.type === "livre") ? ["livre", "titre"] : ["titre"];
+  const heads = blocks.filter((b): b is Extract<EditionBlock, { type: "titre" | "livre" }> => levels.includes(b.type));
+  return `<ol class="toc">${heads.map((t) => `<li class="${t.type}"><span>${t.type === "livre" ? "Livre" : "Titre"} ${t.num}</span>${esc(t.title)}</li>`).join("")}</ol>`;
 }
 
 function page(e: Edition, version: string, part: "cover" | "book") {
@@ -68,6 +72,12 @@ body{margin:0;font-family:Inter,sans-serif;font-size:9.6pt;line-height:1.55;colo
 .preambule{page-break-after:always}
 .preambule p{text-align:justify;hyphens:auto;margin:0 0 2.2mm}
 h2.titre{page-break-before:always;margin:0 0 7mm;padding-top:22mm}
+h2.livre{page-break-before:always;margin:0;padding:60mm 0 0;min-height:150mm;page-break-after:always}
+h2.livre .titre-name{font-size:21pt}
+h2.livre + h2.titre{page-break-before:avoid}
+.toc li.livre{border-bottom:.3mm solid ${brand.ink};font-weight:700;padding-top:3mm}
+.toc li.titre{padding-left:4mm}
+h4.section{font-size:8pt;letter-spacing:.06em;text-transform:uppercase;color:#4a4e57;margin:5mm 0 2mm;break-after:avoid}
 .titre-num{display:block;font-size:8.5pt;letter-spacing:.16em;text-transform:uppercase;color:${brand.orange};font-weight:600}
 .titre-name{display:block;font-family:Grotesk;font-size:16pt;line-height:1.15;font-weight:700;margin-top:2mm}
 .preambule .titre-name{margin:0 0 6mm;padding-top:22mm}

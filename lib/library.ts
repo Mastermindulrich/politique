@@ -82,8 +82,10 @@ export const libraryById = new Map(library.map((e) => [e.id, e]));
 // Structure of an edition file (data/library/<id>.json).
 export type EditionBlock =
   | { type: "preambule"; title: string; paras: string[] }
+  | { type: "livre"; num: string; title: string }
   | { type: "titre"; num: string; title: string }
   | { type: "chapitre"; num: string; nouveau?: boolean; title: string }
+  | { type: "section"; num: string; title: string }
   | { type: "article"; num: string; nouveau?: boolean; paras: string[] }
   | { type: "signature"; paras: string[] };
 export type Edition = { id: string; title: string; reference: string; source: string; blocks: EditionBlock[] };
@@ -91,6 +93,9 @@ export type Edition = { id: string; title: string; reference: string; source: st
 export function articleLabel(b: { num: string; nouveau?: boolean }) {
   return `Article ${b.num === "1" ? "premier" : b.num}${b.nouveau ? " (nouveau)" : ""}`;
 }
+
+/** "1" reads "premier" in headings (Titre premier, Chapitre premier…). */
+export const ordinal = (num: string) => (num === "1" ? "premier" : num);
 
 export const EDITION_NOTICE =
   "Édition POLITIQUE établie à partir du texte officiel, à titre d'information. Les textes officiels ne sont pas protégés par le droit d'auteur (loi n° 2016-555 du 26 juillet 2016, art. 10). Seule la version publiée au Journal officiel de la République de Côte d'Ivoire fait foi.";
