@@ -35,7 +35,11 @@ OVERRIDES = {
     "Gbon": "Gbon (Côte d'Ivoire)",
     "Diabo": "Diabo (Côte d'Ivoire)",
     "Taï": "Taï (Côte d'Ivoire)",
+    "Kokoumbo": "Kokumbo",
+    "Tié-N'Diékro": "Tié-N'Diékro",
 }
+EXTRA = {"Kokoumbo": ["Kokumbo (Côte d'Ivoire)"], "Tié-N'Diékro": ["Tie-N'Diekro", "Tié N'Diékro", "Tiéndiékro"]}
+COMMONS = "https://commons.wikimedia.org/w/api.php"
 
 
 def get(url, params, tries=4):
@@ -76,6 +80,7 @@ def page(title):
 
 def resolve(name, dep):
     tries = [OVERRIDES[name]] if name in OVERRIDES else []
+    tries += EXTRA.get(name, [])
     tries += [name, f"{name} (Côte d'Ivoire)", f"{name} (ville)", f"{name} (commune)"]
     for t in tries:
         p = page(t)
@@ -90,12 +95,34 @@ def resolve(name, dep):
     return None
 
 
+BAD = r"(flag|drapeau|carte|map|logo|blason|armoiries|locator|location|icon|pictogram|commons-logo|wiki|symbol|\.svg)"
+
+
 def images(p):
     files = [i["title"] for i in p.get("images", []) if re.search(r"\.(jpe?g|png|webp)$", i["title"], re.I)]
-    files = [f for f in files if not re.search(r"(flag|drapeau|carte|map|logo|blason|armoiries|locator|location|icon|pictogram|commons-logo|wiki|symbol)", f, re.I)]
+    files = [f for f in files if not re.search(BAD, f, re.I)]
+    return file_info(API, files)
+
+
+def commons(name, have):
+    """Free photos on Wikimedia Commons whose name or description names the commune."""
+    key = norm(name)
+    s = get(COMMONS, {"action": "query", "list": "search", "srnamespace": 6, "srlimit": 30,
+                      "srsearch": f'"{name}" Côte d\'Ivoire filetype:bitmap'})
+    files = [h["title"] for h in s.get("query", {}).get("search", [])]
+    files = [f for f in files if f not in have and re.search(r"\.(jpe?g|webp)$", f, re.I) and not re.search(BAD, f, re.I)]
+    out = []
+    for im in file_info(COMMONS, files):
+        if f" {key} " in f" {norm(im['file'])} " or f" {key} " in f" {norm(im['description'])} ":
+            im["via"] = "commons-search"
+            out.append(im)
+    return out[:8]
+
+
+def file_info(api, files):
     out = []
     for chunk in [files[i:i + 20] for i in range(0, min(len(files), 40), 20)]:
-        d = get(API, {"action": "query", "titles": "|".join(chunk), "prop": "imageinfo",
+        d = get(api, {"action": "query", "titles": "|".join(chunk), "prop": "imageinfo",
                       "iiprop": "url|extmetadata|size|mime", "iiurlwidth": 1280})
         for f in d.get("query", {}).get("pages", []):
             info = (f.get("imageinfo") or [{}])[0]
@@ -152,6 +179,9 @@ def main():
                 "text": (p.get("extract") or "")[:14000],
                 "images": images(p),
             })
+        imgs = rec.get("images", [])
+        if len(imgs) < 4:
+            rec["images"] = imgs + commons(name, {i["file"] for i in imgs})
         else:
             missing.append(name)
         with open(os.path.join(OUT, f"{cid}.json"), "w", encoding="utf-8") as f:
