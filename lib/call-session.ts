@@ -2,6 +2,7 @@
 
 import type { RealtimeChannel } from "@supabase/supabase-js";
 import { supabaseBrowser } from "@/lib/supabase/client";
+import { trace } from "@/lib/call-trace";
 
 /**
  * One call between two phones: the WebRTC connection plus its signalling channel.
@@ -52,6 +53,7 @@ export class CallSession {
   private sentCandidates: RTCIceCandidateInit[] = [];
   private audioTx: RTCRtpTransceiver | null = null;
   private videoTx: RTCRtpTransceiver | null = null;
+  private gotCand = 0;
   /** Where signalling goes: the device that answered (caller side) or the caller's device (callee side). */
   peerDevice: string | null = null;
   readonly remote = new MediaStream();
@@ -72,6 +74,7 @@ export class CallSession {
       const ch = supabase.channel(`call-${this.callId}`, { config: { broadcast: { self: false, ack: false } } });
       ch.on("broadcast", { event: "sig" }, ({ payload }: { payload: Sig }) => {
         if (!payload || payload.f === this.deviceId) return;
+        if (payload.k !== "cand" || !this.gotCand++) trace(this.callId, `rx:${payload.k}`, payload.k === "desc" ? (payload.d as { type?: string })?.type : payload.t && payload.t !== this.deviceId ? "other-device" : undefined);
         if (payload.t && payload.t !== this.deviceId) {
           // Addressed to another of this member's devices; only "taken" matters to us (stop ringing).
           if (payload.k === "taken") this.h.onSignal(payload);
@@ -81,8 +84,12 @@ export class CallSession {
         else if (payload.k === "cand") void this.onCandidate(payload.d as RTCIceCandidateInit | null);
         this.h.onSignal(payload);
       });
-      const timer = window.setTimeout(() => reject(new Error("join-timeout")), 10_000);
+      const timer = window.setTimeout(() => {
+        trace(this.callId, "join:timeout");
+        reject(new Error("join-timeout"));
+      }, 10_000);
       ch.subscribe((status: string) => {
+        trace(this.callId, `join:${status}`);
         if (status === "SUBSCRIBED") {
           window.clearTimeout(timer);
           resolve();
@@ -109,7 +116,14 @@ export class CallSession {
    */
   connect(ice: RTCIceServer[], local: MediaStream, role: "caller" | "callee") {
     this.polite = role === "callee";
-    const pc = new RTCPeerConnection({ iceServers: ice, iceTransportPolicy: "relay", bundlePolicy: "max-bundle" });
+    trace(this.callId, "connect", { role, servers: ice.length, urls: ice.flatMap((x) => (Array.isArray(x.urls) ? x.urls : [x.urls])).map((u) => u.replace(/^(turns?):[^:?]+/, "$1")) }, role);
+    let pc: RTCPeerConnection;
+    try {
+      pc = new RTCPeerConnection({ iceServers: ice, iceTransportPolicy: "relay", bundlePolicy: "max-bundle" });
+    } catch (e) {
+      trace(this.callId, "pc-create-failed", String((e as Error)?.message || e).slice(0, 120));
+      throw e;
+    }
     this.pc = pc;
     pc.ontrack = (e) => {
       if (!this.remote.getTracks().includes(e.track)) {
@@ -120,18 +134,30 @@ export class CallSession {
     };
     pc.onicecandidate = (e) => {
       if (!e.candidate) return;
+      if (!this.sentCandidates.length) trace(this.callId, "first-cand", e.candidate.type);
       const c = e.candidate.toJSON();
       this.sentCandidates.push(c);
       this.send("cand", c, this.peerDevice);
     };
-    pc.onconnectionstatechange = () => this.h.onConnection(pc.connectionState);
+    pc.onconnectionstatechange = () => {
+      trace(this.callId, `pc:${pc.connectionState}`);
+      this.h.onConnection(pc.connectionState);
+    };
+    pc.oniceconnectionstatechange = () => trace(this.callId, `ice:${pc.iceConnectionState}`);
+    pc.onicegatheringstatechange = () => trace(this.callId, `gather:${pc.iceGatheringState}`, pc.iceGatheringState === "complete" ? this.sentCandidates.length : undefined);
+    pc.onicecandidateerror = (e) => {
+      const x = e as RTCPeerConnectionIceErrorEvent;
+      trace(this.callId, "ice-error", { code: x.errorCode, text: String(x.errorText || "").slice(0, 80), url: String(x.url || "").replace(/\?.*$/, "") + (String(x.url || "").includes("transport=") ? "?" + String(x.url).split("?")[1] : "") });
+    };
     pc.onnegotiationneeded = async () => {
       if (this.polite) return; // only the caller starts offers; the callee answers
       try {
         this.makingOffer = true;
         await pc.setLocalDescription();
+        trace(this.callId, "offer-sent");
         this.send("desc", pc.localDescription?.toJSON(), this.peerDevice);
       } catch (e) {
+        trace(this.callId, "offer-failed", String((e as Error)?.message || e).slice(0, 120));
         console.error("offer failed", e);
       } finally {
         this.makingOffer = false;
@@ -168,17 +194,19 @@ export class CallSession {
     try {
       const collision = desc.type === "offer" && (this.makingOffer || pc.signalingState !== "stable");
       this.ignoreOffer = !this.polite && collision;
-      if (this.ignoreOffer) return;
+      if (this.ignoreOffer) return trace(this.callId, "offer-ignored");
       await pc.setRemoteDescription(desc);
       for (const c of this.pendingCandidates.splice(0)) await pc.addIceCandidate(c).catch(() => {});
       if (desc.type === "offer") {
         if (this.polite && !this.audioTx) this.fillSlots();
         await pc.setLocalDescription();
+        trace(this.callId, "answer-sent");
         this.send("desc", pc.localDescription?.toJSON(), this.peerDevice);
         // A repeated offer means the caller may have missed our earlier messages.
         for (const c of this.sentCandidates) this.send("cand", c, this.peerDevice);
       }
     } catch (e) {
+      trace(this.callId, "desc-failed", String((e as Error)?.message || e).slice(0, 120));
       console.error("description failed", e);
     }
   }
@@ -243,6 +271,7 @@ export class CallSession {
   /** The connection dropped (network change, tunnel...): the caller asks for a fresh path through the relay. */
   restart() {
     if (!this.pc || this.polite) return;
+    trace(this.callId, "ice-restart");
     try {
       this.pc.restartIce();
     } catch {
