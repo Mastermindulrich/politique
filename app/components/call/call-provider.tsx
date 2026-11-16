@@ -161,8 +161,24 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
     }
   }, []);
 
-  async function getMedia(video: boolean) {
-    const s = await navigator.mediaDevices.getUserMedia({ audio: AUDIO_CONSTRAINTS, video: video ? { ...VIDEO_CONSTRAINTS, facingMode: "user" } : false });
+  async function getMedia(video: boolean, callId?: string) {
+    // iPhone: while ringing, the audio session is "playback" (rings through the silent switch),
+    // and Safari refuses the microphone in that mode. Switch to call audio first, synchronously,
+    // instead of waiting for the effect that follows the phase change.
+    setAudioMode("call");
+    const constraints = { audio: AUDIO_CONSTRAINTS, video: video ? { ...VIDEO_CONSTRAINTS, facingMode: "user" } : false };
+    let s: MediaStream;
+    try {
+      s = await navigator.mediaDevices.getUserMedia(constraints);
+    } catch (e) {
+      const name = (e as { name?: string })?.name;
+      trace(callId, "media-error", { name, msg: String((e as Error)?.message || "").slice(0, 120) });
+      if (name === "NotAllowedError" || name === "NotFoundError") throw e;
+      // Some versions still refuse in that mode: let the browser pick the session and try once more.
+      setAudioMode("auto");
+      s = await navigator.mediaDevices.getUserMedia(constraints);
+      setAudioMode("call");
+    }
     local.current = s;
     setStreams((x) => ({ ...x, local: s }));
     return s;
@@ -353,7 +369,7 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
     patch({ phase: "connecting" });
     let stream: MediaStream;
     try {
-      stream = await getMedia(call.video);
+      stream = await getMedia(call.video, call.id);
     } catch (e) {
       s.send("decline");
       return finish(mediaError(e), false);
