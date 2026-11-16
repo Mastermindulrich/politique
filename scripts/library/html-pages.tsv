@@ -9,8 +9,17 @@ loidici-electoral-2025	page	https://loidici.biz/?p=71552
 loidici-cc-2022	crawl	https://loidici.biz/?p=73735	le-conseil-constitutionnel
 loidici-cdc	page	https://loidici.biz/?p=15161
 loidici-etatcivil-2026	page	https://loidici.biz/?p=76346
-loidici-cat-travail	category	https://loidici.biz/category/lois-article-par-article/codes/le-code-du-travail/
-loidici-cat-personnes	category	https://loidici.biz/category/lois-article-par-article/droit-des-personnes/
-loidici-cat-institutions	category	https://loidici.biz/category/lois-article-par-article/les-institutions-de-la-rep/
-loidici-collectivites-ebook	page	https://loidici.biz/?p=79650
-loidici-plus-links	links	https://loidici.biz/category/lois-article-par-article/plus-de-textes-de-lois/
+loidici-cdc-2018	crawl	https://loidici.biz/?p=15161	les-institutions-de-la-rep
+loidici-etatcivil	crawl	https://loidici.biz/?p=645	droit-des-personnes
+loidici-filiation	crawl	https://loidici.biz/?p=553	droit-des-personnes
+loidici-nom	crawl	https://loidici.biz/?p=3068	droit-des-personnes
+loidici-autorite-parentale	crawl	https://loidici.biz/?p=57766	droit-des-personnes
+loidici-tutelle	crawl	https://loidici.biz/?p=57786	droit-des-personnes
+loidici-admin-legale	crawl	https://loidici.biz/?p=57780	droit-des-personnes
+loidici-emancipation	crawl	https://loidici.biz/?p=57792	droit-des-personnes
+loidici-travail	crawl	https://loidici.biz/?name=le-code-du-travail	le-code-du-travail
+loidici-s-travail2015	links	https://loidici.biz/?s=code+du+travail+2015
+loidici-s-mariage2	links	https://loidici.biz/?s=le+mariage
+loidici-s-successions2	links	https://loidici.biz/?s=les+successions
+loidici-s-senat2	links	https://loidici.biz/?s=senat+reglement
+loidici-s-collectivites3	links	https://loidici.biz/?s=organisation+des+collectivites+territoriales
