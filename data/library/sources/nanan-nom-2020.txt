@@ -1,0 +1,7 @@
+##ERROR https://www.nanan.ai/textes/loi-n-2020-490-du-29-mai-2020-relative-au-nom HTTP Error 429: Too Many Requests
+##INDEX
+
+##ERROR https://www.nanan.ai/textes/loi-n-2020-490-du-29-mai-2020-relative-au-nom/articles/article-1 HTTP Error 429: Too Many Requests
+##ERROR https://www.nanan.ai/textes/loi-n-2020-490-du-29-mai-2020-relative-au-nom/articles/article-2 HTTP Error 429: Too Many Requests
+##ERROR https://www.nanan.ai/textes/loi-n-2020-490-du-29-mai-2020-relative-au-nom/articles/article-3 HTTP Error 429: Too Many Requests
+##ERROR https://www.nanan.ai/textes/loi-n-2020-490-du-29-mai-2020-relative-au-nom/articles/article-4 HTTP Error 429: Too Many Requests

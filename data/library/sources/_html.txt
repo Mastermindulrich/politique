@@ -1,8 +1,7 @@
-loidici-cpp-2022 page 61542
-loidici-cp-2021 page 32799
-loidici-cp-2021b page 32631
-loidici-cpp-2023 page 982
-loidici-electoral-2025 page 968
-loidici-cdc page 3722
-loidici-etatcivil-2026 page 46428
-loidici-mariage-2019 crawl 68482
+nanan-nom-2020 nanan 665
+nanan-filiation-2019 nanan 710
+nanan-etatcivil-2018 nanan 730
+nanan-cat-constitution raw 84
+nanan-cat-administratif raw 85
+nanan-cat-famille raw 79
+senat-legislatifs raw 2971
