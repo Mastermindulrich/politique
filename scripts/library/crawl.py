@@ -7,7 +7,11 @@
                                after "##INDEX", with its links)
   crawl.py category URL        every post of a WordPress category (all its listing pages),
                                oldest first, each after "##PAGE url" and "##TITLE heading"
+  crawl.py raw URL             visible text of any page, then its links
+  crawl.py nanan URL N         a nanan.ai text: its page after "##INDEX", then each article page
+                               (links found on the page, else article-1..N) after "##ARTICLE slug"
 """
+import html as htmllib
 import re
 import subprocess
 import sys
@@ -59,12 +63,48 @@ def fix(href):
     return re.sub(r"^(https?://[^/]+?\.biz)(\d)", r"\1/\2", href)
 
 
+def plain(html):
+    """Visible text of any page, one block per line."""
+    html = re.sub(r"<(script|style|noscript|svg|head)\b.*?</\1>", " ", html, flags=re.S | re.I)
+    html = re.sub(r"<(br|/p|/div|/li|/h\d|/section|/article|/tr|/a)\b[^>]*>", "\n", html, flags=re.I)
+    out = htmllib.unescape(re.sub(r"<[^>]+>", " ", html))
+    return "\n".join(" ".join(l.split()) for l in out.splitlines() if l.strip())
+
+
 mode, url = sys.argv[1], sys.argv[2]
 if mode == "links":
     html = get(url)
     for m in re.finditer(r'<a\s[^>]*href="([^"]+)"[^>]*>(.*?)</a>', html, re.S):
         t = " ".join(re.sub(r"<[^>]+>", " ", m.group(2)).split())
         print(f"=> {fix(m.group(1))} | {t}")
+elif mode == "raw":
+    html = get(url)
+    print(plain(html))
+    for m in sorted(set(re.findall(r'href="([^"#]+)"', html))):
+        print(f"=> {m}")
+elif mode == "nanan":
+    html = get(url)
+    print("##INDEX")
+    print(plain(html))
+    base = url.rstrip("/") + "/articles/"
+    slugs = []
+    for m in re.finditer(r'/articles/([a-z0-9-]+)', html):
+        if m.group(1) not in slugs:
+            slugs.append(m.group(1))
+    if len(slugs) < 3:
+        slugs = [f"article-{i}" for i in range(1, int(sys.argv[3]) + 1)]
+    empty = 0
+    for slug in slugs:
+        page = get(base + slug)
+        if not page:
+            empty += 1
+            if empty > 3:
+                break
+            continue
+        empty = 0
+        print(f"##ARTICLE {slug}")
+        print(plain(page))
+        time.sleep(0.5)
 elif mode == "page":
     print(text(get(url)))
 elif mode == "crawl":

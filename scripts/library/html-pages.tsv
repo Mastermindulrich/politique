@@ -1,9 +1,8 @@
 # id	mode	url	[substring]  (web pages saved to data/library/sources/<id>.txt by crawl.py)
-loidici-cpp-2022	page	https://loidici.biz/?p=24357
-loidici-cp-2021	page	https://loidici.biz/?p=22836
-loidici-cp-2021b	page	https://loidici.biz/?p=22896
-loidici-cpp-2023	page	https://loidici.biz/?p=58654
-loidici-electoral-2025	page	https://loidici.biz/?p=71552
-loidici-cdc	page	https://loidici.biz/?p=15161
-loidici-etatcivil-2026	page	https://loidici.biz/?p=76346
-loidici-mariage-2019	crawl	https://loidici.biz/2019/08/15/droit-du-mariage-2019/	*
+nanan-nom-2020	nanan	https://www.nanan.ai/textes/loi-n-2020-490-du-29-mai-2020-relative-au-nom	22
+nanan-filiation-2019	nanan	https://www.nanan.ai/textes/loi-n-2019-571-du-26-juin-2019-relative-a-la-filiation	60
+nanan-etatcivil-2018	nanan	https://www.nanan.ai/textes/loi-n-2018-862-du-19-novembre-2018-relative-a-l-etat-civil	120
+nanan-cat-constitution	raw	https://www.nanan.ai/textes/constitution
+nanan-cat-administratif	raw	https://www.nanan.ai/textes/administratif
+nanan-cat-famille	raw	https://www.nanan.ai/textes/famille
+senat-legislatifs	raw	https://www.senat.ci/tous-les-legislatifs
