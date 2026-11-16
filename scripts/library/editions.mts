@@ -96,4 +96,14 @@ export const configs: TextConfig[] = [
     reference: "Loi organique n° 2018-979 du 27 décembre 2018 déterminant les attributions, la composition, l'organisation et le fonctionnement de la Cour des comptes",
     sourceLabel: "texte saisi par loidici.biz d'après le Journal officiel",
   },
+  {
+    id: "loi-successions",
+    source: "loidici-successions-2019",
+    format: "loidici",
+    skipPage: /ABROG/,
+    skip: [/LOIDICI\.BIZ/i],
+    title: "Loi relative aux successions",
+    reference: "Loi n° 2019-573 du 26 juin 2019 relative aux successions",
+    sourceLabel: "texte saisi par loidici.biz d'après le Journal officiel",
+  },
 ];

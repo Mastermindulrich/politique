@@ -40,7 +40,7 @@ const HEAD: { type: "livre" | "titre" | "chapitre" | "section"; label?: string; 
 // "ARTICLE 2", "Article 5 nouveau (loi n°2019-708 du 05 AOUT 2019):", "Article 3 :", "Art. 12. — Text".
 // The heading must stand alone on its line (or, for "Art.", be followed by a dash), so that a
 // wrapped line starting with "Article 12 de la loi…" is not taken for a heading.
-const ARTICLE = /^(?:ARTICLE|Article)\s+(PREMIER|premier|1er|\d+(?:-\d+)?(?:\s+(?:bis|ter|quater|quinquies))?)(\s*[:–—-]?\s*(?:nouveau|NOUVEAU))?\s*:?\s*(\([^)]*\))?\s*[:.–—-]?$|^Art\.\s+(1er|\d+(?:\s+(?:bis|ter))?)\s*\.?\s*[–—-]+\s*(.*)$/;
+const ARTICLE = /^(?:ARTICLE|Article)\s+(PREMIER|premier|1er|\d+(?:[.-]\d+)?(?:\s+(?:bis|ter|quater|quinquies))?)(\s*[:–—-]?\s*(?:nouveau|NOUVEAU))?\s*:?\s*(\([^)]*\))?\s*[:.–—-]?$|^Art\.\s+(1er|\d+(?:\s+(?:bis|ter))?)\s*\.?\s*[–—-]+\s*(.*)$/;
 const ARTICLE_INLINE = /^(?:ARTICLE|Article)\s+(PREMIER|premier|1er|\d+)\s*[:.–—-]?\s+([A-ZÀ-Ý«].*)$/;
 const LIST = /^(?:[-–•▪]\s|\d+[°)]|\d+\s*[-–.]\s|[a-z]\)|[ivx]+\)|[IVX]+\s*[-–.]\s)/;
 const END = /[.;:!?»…]$/;

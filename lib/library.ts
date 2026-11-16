@@ -8,7 +8,7 @@
 // relative au droit d'auteur et aux droits voisins, art. 10). Only the version
 // published in the Journal officiel is authoritative; every edition says so.
 
-export type LibraryCategory = "fondamental" | "institutions" | "elections" | "codes";
+export type LibraryCategory = "fondamental" | "institutions" | "elections" | "codes" | "famille";
 
 export type LibraryEntry = {
   id: string;
@@ -30,6 +30,7 @@ export const CATEGORY_LABEL: Record<LibraryCategory, { fr: string; en: string }>
   institutions: { fr: "Fonctionnement des institutions", en: "How institutions work" },
   elections: { fr: "Élections", en: "Elections" },
   codes: { fr: "Codes", en: "Codes" },
+  famille: { fr: "Personnes et famille", en: "Persons and family" },
 };
 
 export const library: LibraryEntry[] = [
@@ -123,6 +124,18 @@ export const library: LibraryEntry[] = [
     officialLabel: "loidici.biz",
     transcription: true,
     edition: { version: "Texte de 2018 (saisie loidici.biz)" },
+  },
+  {
+    id: "loi-successions",
+    title: "Loi relative aux successions",
+    short: "Loi sur les successions",
+    category: "famille",
+    reference: "Loi n° 2019-573 du 26 juin 2019 relative aux successions",
+    summary: "Qui hérite et comment : ouverture de la succession, ordre des héritiers (enfants, parents, frères et sœurs, conjoint survivant), acceptation ou renonciation, partage et paiement des dettes.",
+    officialUrl: "https://loidici.biz/2019/08/16/la-loi-relative-aux-successions/lois-article-par-article/droit-de-la-famille/15608/naty/",
+    officialLabel: "loidici.biz",
+    transcription: true,
+    edition: { version: "Texte de 2019 (saisie loidici.biz)" },
   },
 ];
 

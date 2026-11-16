@@ -12,7 +12,7 @@
   },
   "reglement-assemblee-nationale": {
    "pages": 82,
-   "bytes": 566292,
+   "bytes": 566290,
    "articles": 154
   },
   "loi-cei": {
@@ -21,12 +21,27 @@
    "articles": 50
   },
   "code-penal": {
-   "pages": 214,
-   "bytes": 1143187,
-   "articles": 565
+   "pages": 222,
+   "bytes": 1211224,
+   "articles": 576
+  },
+  "code-procedure-penale": {
+   "pages": 328,
+   "bytes": 1670955,
+   "articles": 918
+  },
+  "loi-conseil-constitutionnel": {
+   "pages": 26,
+   "bytes": 287781,
+   "articles": 61
+  },
+  "loi-cour-des-comptes": {
+   "pages": 55,
+   "bytes": 425696,
+   "articles": 159
   }
  },
  "archive": {
-  "bytes": 2360572
+  "bytes": 4371642
  }
 }

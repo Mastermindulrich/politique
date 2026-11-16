@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "La Constitution, les codes et les règlements qui fixent les règles de fonctionnement de la Côte d'Ivoire, en éditions POLITIQUE à lire en ligne et à télécharger.",
 };
 
-const ORDER: LibraryCategory[] = ["fondamental", "institutions", "elections", "codes"];
+const ORDER: LibraryCategory[] = ["fondamental", "institutions", "elections", "codes", "famille"];
 const ko = (b: number) => (b >= 1024 * 1024 ? `${(b / 1024 / 1024).toFixed(1).replace(".", ",")} Mo` : `${Math.max(1, Math.round(b / 1024))} Ko`);
 
 export default async function LibraryPage() {
