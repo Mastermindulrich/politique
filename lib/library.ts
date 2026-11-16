@@ -19,6 +19,8 @@ export type LibraryEntry = {
   summary: string;
   officialUrl: string;
   officialLabel: string;
+  /** officialUrl is a faithful transcription of the Journal officiel (no born-digital official text online). */
+  transcription?: boolean;
   /** A POLITIQUE edition exists: data/library/<id>.json and public/bibliotheque/<id>.pdf. */
   edition?: { version: string };
 };
@@ -80,22 +82,45 @@ export const library: LibraryEntry[] = [
     title: "Code pénal",
     short: "Code pénal",
     category: "codes",
-    reference: "Loi n° 2019-574 du 26 juin 2019 portant Code pénal",
+    reference: "Loi n° 2019-574 du 26 juin 2019 portant Code pénal, modifiée",
     summary: "Les infractions et leurs peines : règles générales de la responsabilité pénale, puis chaque crime, délit et contravention, contre l'État, les personnes et les biens.",
     officialUrl: "https://assnat.ci/IMG/pdf/loi_portant_code_penal.pdf",
-    officialLabel: "Assemblée nationale",
-    edition: { version: "Texte de 2019, sans les lois modificatives de 2021 et suivantes" },
+    officialLabel: "Assemblée nationale (texte de 2019)",
+    edition: { version: "Texte consolidé, à jour des lois n° 2021-893 du 21 décembre 2021 et n° 2024-358 de juin 2024 (saisie loidici.biz)" },
+  },
+  {
+    id: "code-procedure-penale",
+    title: "Code de procédure pénale",
+    short: "Code de procédure pénale",
+    category: "codes",
+    reference: "Loi n° 2018-975 du 27 décembre 2018 portant Code de procédure pénale, modifiée",
+    summary: "Comment la justice pénale enquête, poursuit et juge : police judiciaire, garde à vue, instruction, tribunaux, voies de recours, exécution des peines et droits des personnes poursuivies.",
+    officialUrl: "https://loidici.biz/2019/06/08/le-code-de-procedure-penale-2018/",
+    officialLabel: "loidici.biz",
+    transcription: true,
+    edition: { version: "Texte consolidé, à jour des lois n° 2022-192 du 11 mars 2022, n° 2023-894 de 2023 et n° 2024-359 du 11 juin 2024 (saisie loidici.biz)" },
+  },
+  {
+    id: "loi-conseil-constitutionnel",
+    title: "Loi organique sur le Conseil constitutionnel",
+    short: "Loi sur le Conseil constitutionnel",
+    category: "institutions",
+    reference: "Loi organique n° 2022-222 du 25 mars 2022 déterminant l'organisation et le fonctionnement du Conseil constitutionnel",
+    summary: "Composition du Conseil constitutionnel, statut de ses membres, et procédures devant lui : contrôle des lois, contentieux des élections, référendum, prestation de serment et constat de vacance.",
+    officialUrl: "https://loidici.biz/2025/09/08/le-conseil-constitutionnel-2022/lois-article-par-article/plus-de-textes-de-lois/73735/naty/",
+    officialLabel: "loidici.biz",
+    transcription: true,
+    edition: { version: "Texte de 2022 (saisie loidici.biz)" },
   },
 ];
 
 /** Texts the library will carry next; shown so readers know what is coming. */
 export const upcoming = [
   "Règlement du Sénat",
-  "Code de procédure pénale",
   "Code civil (personnes, famille, successions)",
   "Code du travail",
   "Loi sur les collectivités territoriales",
-  "Lois organiques sur le Conseil constitutionnel et la Cour des comptes",
+  "Loi organique sur la Cour des comptes",
 ];
 
 /** Written by `npm run library`: size of each built edition PDF and of the full archive. */

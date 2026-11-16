@@ -40,16 +40,20 @@ const HEAD: { type: "livre" | "titre" | "chapitre" | "section"; label?: string; 
 // "ARTICLE 2", "Article 5 nouveau (loi n°2019-708 du 05 AOUT 2019):", "Article 3 :", "Art. 12. — Text".
 // The heading must stand alone on its line (or, for "Art.", be followed by a dash), so that a
 // wrapped line starting with "Article 12 de la loi…" is not taken for a heading.
-const ARTICLE = /^(?:ARTICLE|Article)\s+(PREMIER|premier|1er|\d+(?:\s+(?:bis|ter|quater|quinquies))?)(\s*:?\s*nouveau)?\s*:?\s*(\([^)]*\))?\s*[:.–—-]?$|^Art\.\s+(1er|\d+(?:\s+(?:bis|ter))?)\s*\.?\s*[–—-]+\s*(.*)$/;
+const ARTICLE = /^(?:ARTICLE|Article)\s+(PREMIER|premier|1er|\d+(?:-\d+)?(?:\s+(?:bis|ter|quater|quinquies))?)(\s*[:–—-]?\s*(?:nouveau|NOUVEAU))?\s*:?\s*(\([^)]*\))?\s*[:.–—-]?$|^Art\.\s+(1er|\d+(?:\s+(?:bis|ter))?)\s*\.?\s*[–—-]+\s*(.*)$/;
 const ARTICLE_INLINE = /^(?:ARTICLE|Article)\s+(PREMIER|premier|1er|\d+)\s*[:.–—-]?\s+([A-ZÀ-Ý«].*)$/;
 const LIST = /^(?:[-–•▪]\s|\d+[°)]|\d+\s*[-–.]\s|[a-z]\)|[ivx]+\)|[IVX]+\s*[-–.]\s)/;
 const END = /[.;:!?»…]$/;
 const isUpper = (s: string) => /[A-ZÀ-Ý]/.test(s) && !/[a-zà-ÿ]/.test(s);
 
 /** Joins the wrapped lines of one block of text into paragraphs. */
-function paragraphs(lines: string[], opts: { comma?: boolean } = {}) {
+function paragraphs(lines: string[], opts: { comma?: boolean; perLine?: boolean } = {}) {
   const out: string[] = [];
   for (const line of lines) {
+    if (opts.perLine) {
+      out.push(line);
+      continue;
+    }
     const prev = out[out.length - 1];
     const closed = prev !== undefined && (END.test(prev) || /^\(.*\)$/.test(prev) || (opts.comma && /,$/.test(prev) && !/^Vu$/.test(prev)));
     if (prev === undefined || closed || LIST.test(line)) out.push(line);
@@ -59,9 +63,49 @@ function paragraphs(lines: string[], opts: { comma?: boolean } = {}) {
   return out.map((p) => p.replace(/([.;:])\s+\d{1,3}$/, "$1").replace(/(\d°)(?=[a-zà-ÿA-Z])/g, "$1 ").replace(/\s+/g, " ").replace(/\s+([,.;:])(?=\s|$)/g, (m, c) => (c === ":" || c === ";" ? ` ${c}` : c)).trim()).filter(Boolean);
 }
 
+const ENTITY: Record<string, string> = { rsquo: "’", lsquo: "‘", ndash: "–", mdash: "—", amp: "&", laquo: "«", raquo: "»", nbsp: " ", hellip: "…", oelig: "œ", OElig: "Œ" };
+const unescape = (s: string) => s.replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n))).replace(/&([a-zA-Z]+);/g, (m, n) => ENTITY[n] ?? m);
+const headKey = (l: string) => {
+  const h = HEAD.find((x) => x.re.test(l));
+  return h ? `${h.type}:${h.label ?? ""}:${headNum(l.match(h.re)![1])}` : null;
+};
+
+/** Web text crawled from loidici.biz (crawl.py "crawl"): an index page listing the headings
+ * of the text, then one page per division whose title is its heading. Page titles win; the
+ * index supplies the headings that have no page of their own (a livre, a titre made only of
+ * chapitres). Returns one line per heading and one line per paragraph. */
+function loidiciLines(raw: string, cfg: TextConfig) {
+  const heads = (t: string) =>
+    unescape(t)
+      .split(/\s+\/\s+|\s+(?=(?:CHAPITRE|SECTION)\s+\S+\s*:)/)
+      .map((h) => h.replace(/PRELIMINARE/, "PRELIMINAIRE").replace(/\s*\((?:ART\.?|ARTICLES?)\s[^)]*\)\s*$/i, "").replace(/\s*\(\d{4}\)$/, "").replace(/\s+/g, " ").trim())
+      .filter((h) => headKey(h));
+  const parts = raw.split(/^##(?=INDEX|PAGE )/m);
+  const index = parts.find((p) => p.startsWith("INDEX"));
+  const outline = index ? index.split("\n").filter((l) => !l.startsWith("=> ")).flatMap(heads) : [];
+  let cursor = 0;
+  const out: string[] = [];
+  for (const part of parts.filter((p) => p.startsWith("PAGE "))) {
+    const lines = part.split("\n");
+    const title = unescape((lines.find((l) => l.startsWith("##TITLE ")) ?? "").slice(8));
+    if (cfg.skipPage?.test(title)) continue;
+    for (const h of heads(title)) {
+      const k = headKey(h);
+      const j = outline.findIndex((o, i) => i >= cursor && headKey(o) === k);
+      if (j >= 0) {
+        out.push(...outline.slice(cursor, j));
+        cursor = j + 1;
+      }
+      out.push(h);
+    }
+    out.push(...lines.slice(1).filter((l) => !l.startsWith("##")).map(unescape));
+  }
+  return out;
+}
+
 export function parse(cfg: TextConfig): Edition {
   const raw = readFileSync(`data/library/sources/${cfg.source}.txt`, "utf8").replace(/\r/g, "");
-  let lines = raw.split(/\n|\f/).map((l) => l.replace(/­/g, "").replace(/[ \t ]+/g, " ").trim());
+  let lines = (cfg.format === "loidici" ? loidiciLines(raw, cfg) : raw.split(/\n|\f/)).map((l) => l.replace(/­/g, "").replace(/[ \t ]+/g, " ").trim());
   const start = cfg.start ? lines.findIndex((l) => cfg.start!.test(l)) : 0;
   if (start < 0) throw new Error(`${cfg.id}: start not found`);
   lines = lines.slice(start);
@@ -80,7 +124,7 @@ export function parse(cfg: TextConfig): Edition {
   let pendingTitle: Extract<EditionBlock, { title: string }> | null = null;
   const flush = () => {
     if (!current) return;
-    if (current.type === "article") current.paras = paragraphs(body);
+    if (current.type === "article") current.paras = cfg.format === "loidici" ? paragraphs(body, { perLine: true }) : paragraphs(body);
     else if (current.type === "preambule") current.paras = paragraphs(body, { comma: true });
     else if (current.type === "signature") current.paras = [...body];
     body = [];
@@ -150,6 +194,20 @@ export function parse(cfg: TextConfig): Edition {
   flush();
   if (current) blocks.push(current);
 
+  if (cfg.format === "loidici") {
+    // A heading given both by the index and again in a page's text appears once.
+    const last = new Map<string, string>();
+    for (let i = 0; i < blocks.length; i++) {
+      const b = blocks[i];
+      if (b.type === "article") last.clear();
+      else if ("num" in b && "title" in b) {
+        if (last.get(b.type) === b.num) blocks.splice(i--, 1);
+        else last.set(b.type, b.num);
+      }
+    }
+    // An unclosed note in a heading ("… (LOI N° 2024-359 DU 11/06/2024").
+    for (const b of blocks) if ("title" in b && (b.title.match(/\(/g) ?? []).length > (b.title.match(/\)/g) ?? []).length) b.title += ")";
+  }
   for (const b of blocks) if ("title" in b && cfg.retitle?.[b.title]) b.title = cfg.retitle[b.title];
   return { id: cfg.id, title: cfg.title, reference: cfg.reference, source: cfg.sourceLabel, blocks: cfg.post ? cfg.post(blocks) : blocks };
 }

@@ -22,6 +22,10 @@ export type TextConfig = {
   /** Heading titles to correct (broken line order or typos in the source): [as extracted]: title. */
   retitle?: Record<string, string>;
   post?: (blocks: EditionBlock[]) => EditionBlock[];
+  /** "loidici": web text crawled from loidici.biz (one line per paragraph, headings from page titles). */
+  format?: "loidici";
+  /** loidici pages to leave out, by title (an abrogated text linked from the index). */
+  skipPage?: RegExp;
 };
 
 export const configs: TextConfig[] = [
@@ -55,11 +59,31 @@ export const configs: TextConfig[] = [
     start: /^CHAPITRE PREMIER/,
   },
   {
+    id: "code-procedure-penale",
+    source: "loidici-cpp-2018",
+    format: "loidici",
+    skipPage: /ABROG|PARQUET GENERAL/,
+    title: "Code de procédure pénale",
+    reference: "Loi n° 2018-975 du 27 décembre 2018 portant Code de procédure pénale, modifiée",
+    sourceLabel: "texte consolidé saisi par loidici.biz d'après le Journal officiel",
+  },
+  {
+    id: "loi-conseil-constitutionnel",
+    source: "loidici-cc-2022",
+    format: "loidici",
+    skipPage: /ABROG/,
+    title: "Loi organique sur le Conseil constitutionnel",
+    reference: "Loi organique n° 2022-222 du 25 mars 2022 déterminant l'organisation et le fonctionnement du Conseil constitutionnel",
+    sourceLabel: "texte saisi par loidici.biz d'après le Journal officiel",
+  },
+  {
     id: "code-penal",
-    source: "code-penal-assnat",
+    source: "loidici-cp-2019",
+    format: "loidici",
+    skipPage: /ABROG|ETABLISSEMENTS PENITENTIAIRES/,
+    retitle: { "DISPOSITIONS GENERALE": "DISPOSITIONS GENERALES" },
     title: "Code pénal",
-    reference: "Loi n° 2019-574 du 26 juin 2019 portant Code pénal",
-    sourceLabel: "texte de la loi publié par l'Assemblée nationale (assnat.ci)",
-    start: /^LIVRE I\b/,
+    reference: "Loi n° 2019-574 du 26 juin 2019 portant Code pénal, modifiée",
+    sourceLabel: "texte consolidé saisi par loidici.biz d'après le Journal officiel",
   },
 ];

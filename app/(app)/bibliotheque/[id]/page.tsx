@@ -56,7 +56,7 @@ export default async function LibraryBook({ params }: { params: Promise<{ id: st
           ) : (
             <span className="chip bg-paper text-muted">{fr ? "Édition POLITIQUE en préparation" : "POLITIQUE edition in preparation"}</span>
           )}
-          <a href={entry.officialUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm">{fr ? "Texte officiel" : "Official text"} · {entry.officialLabel} ↗</a>
+          <a href={entry.officialUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm">{entry.transcription ? (fr ? "Source du texte" : "Text source") : fr ? "Texte officiel" : "Official text"} · {entry.officialLabel} ↗</a>
         </div>
         {entry.edition && built && <p className="mt-3 text-[12px] text-muted">{fr ? "Édition POLITIQUE" : "POLITIQUE edition"} · {entry.edition.version} · {built.articles} articles · {built.pages} {fr ? "pages" : "pages"}</p>}
       </section>

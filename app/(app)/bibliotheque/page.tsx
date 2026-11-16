@@ -75,7 +75,7 @@ export default async function LibraryPage() {
                           ) : (
                             <span className="chip bg-paper text-muted">{fr ? "Édition POLITIQUE en préparation" : "POLITIQUE edition in preparation"}</span>
                           )}
-                          <a href={e.officialUrl} target="_blank" rel="noopener noreferrer" className="text-[13px] font-semibold text-green-deep hover:underline">{fr ? "Texte officiel" : "Official text"} ↗</a>
+                          <a href={e.officialUrl} target="_blank" rel="noopener noreferrer" className="text-[13px] font-semibold text-green-deep hover:underline">{e.transcription ? (fr ? "Source du texte" : "Text source") : fr ? "Texte officiel" : "Official text"} ↗</a>
                         </div>
                       </div>
                     </div>
