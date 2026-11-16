@@ -1,0 +1,30 @@
+{
+ "id": 178,
+ "name": "Mayo",
+ "department": "Soubré",
+ "region": "Nawa",
+ "title": "Mayo (Côte d'Ivoire)",
+ "url": "https://fr.wikipedia.org/wiki/Mayo_(C%C3%B4te_d%27Ivoire)",
+ "wikidata": "Q3302994",
+ "coordinates": {
+  "lat": 6.086114,
+  "lon": -6.400656,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": null,
+ "text": "Mayo  est une localité située au sud-ouest de la Côte d'Ivoire, dans le département de Soubré, région de la Nawa, district du Bas-Sassandra. Par le décret n° 98-157 du 2 avril 1998, cette localité a été érigée en commune. \nDepuis 2012, Mayo est le seul chef-lieu de commune qui ne soit pas également chef-lieu de sous-préfecture.\nLa maire est Laure Baflan Donwahi depuis 2013.\n\n\n== Villages ==\nLa commune de Mayo est constituée de quatre villages:\n\n\n== Notes et références ==\n(en) Cet article est partiellement ou en totalité issu de l’article de Wikipédia en anglais intitulé « Mayo, Ivory Coast » (voir la liste des auteurs).\n\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": [
+  {
+   "file": "Fichier:Laure Baflan Donwahi.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Laure_Baflan_Donwahi.jpg/1280px-Laure_Baflan_Donwahi.jpg?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Laure_Baflan_Donwahi.jpg",
+   "width": 4480,
+   "height": 6720,
+   "artist": "Mairie de Mayo",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Laure Baflan Donwahi"
+  }
+ ]
+}

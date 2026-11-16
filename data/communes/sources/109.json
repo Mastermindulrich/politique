@@ -1,0 +1,21 @@
+{
+ "id": 109,
+ "name": "Kounahiri",
+ "department": "Kounahiri",
+ "region": "Béré",
+ "title": "Kounahiri",
+ "url": "https://fr.wikipedia.org/wiki/Kounahiri",
+ "wikidata": "Q3199300",
+ "coordinates": {
+  "lat": 7.7887,
+  "lon": -5.8353,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 63830,
+  "year": "2021"
+ },
+ "text": "Kounahiri est une localité située au centre-ouest de la Côte d'Ivoire dans la région du Béré. La localité de Kounahiri est un chef-lieu de commune, de sous-préfecture et de département.\n\n Portail de la Côte d’Ivoire",
+ "images": []
+}

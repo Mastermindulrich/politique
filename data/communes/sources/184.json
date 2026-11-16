@@ -1,0 +1,21 @@
+{
+ "id": 184,
+ "name": "Sirasso",
+ "department": "Korhogo",
+ "region": "Poro",
+ "title": "Sirasso",
+ "url": "https://fr.wikipedia.org/wiki/Sirasso",
+ "wikidata": "Q3485235",
+ "coordinates": {
+  "lat": 9.283333,
+  "lon": -6.1,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 29633,
+  "year": "2021"
+ },
+ "text": "Sirasso est une ville de la Région des savanes située au nord de la Côte d'Ivoire, dans le département de Korhogo dont elle est l'une des sous-préfectures.\nÉconomiquement, Sirasso est une localité essentiellement agricole. On y cultive en grande quantité le coton et l'anacarde. Les cultures vivrières de cette localité sont l'igname, le riz, le maïs et l'arachide.\nLes atouts agricoles et industriels de Sirasso sont l'abondance d'eau, une végétation généreuse et des installations existantes de la Soderiz.\n\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": []
+}

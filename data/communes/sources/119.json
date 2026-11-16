@@ -1,0 +1,21 @@
+{
+ "id": 119,
+ "name": "Tanda",
+ "department": "Tanda",
+ "region": "Gontougo",
+ "title": "Tanda (Côte d'Ivoire)",
+ "url": "https://fr.wikipedia.org/wiki/Tanda_(C%C3%B4te_d%27Ivoire)",
+ "wikidata": "Q25247807",
+ "coordinates": {
+  "lat": 7.8,
+  "lon": -3.16666667,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 69597,
+  "year": "2021"
+ },
+ "text": "Tanda est une ville située au nord-est de la Côte d'Ivoire, dans la région de Gontougo, district de Zanzan. Elle est une sous-préfecture et le chef-lieu du département homonyme, le département de Tanda.\n\n\n== Références ==\n\n Portail de la Côte d’Ivoire",
+ "images": []
+}

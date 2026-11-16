@@ -1,0 +1,21 @@
+{
+ "id": 186,
+ "name": "Grabo",
+ "department": "Tabou",
+ "region": "San-Pédro",
+ "title": "Grabo (Côte d'Ivoire)",
+ "url": "https://fr.wikipedia.org/wiki/Grabo_(C%C3%B4te_d%27Ivoire)",
+ "wikidata": "Q3112953",
+ "coordinates": {
+  "lat": 4.91666667,
+  "lon": -7.5,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 53824,
+  "year": "2021"
+ },
+ "text": "Grabo est une ville située dans l'ouest de la Côte d'Ivoire. C'est une des sous-préfectures de la région de San-Pédro dans le district du Bas-Sassandra.\n\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": []
+}

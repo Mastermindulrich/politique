@@ -1,0 +1,21 @@
+{
+ "id": 180,
+ "name": "Karakoro",
+ "department": "Korhogo",
+ "region": "Poro",
+ "title": "Karakoro (Côte d'Ivoire)",
+ "url": "https://fr.wikipedia.org/wiki/Karakoro_(C%C3%B4te_d%27Ivoire)",
+ "wikidata": "Q6368143",
+ "coordinates": {
+  "lat": 9.38985278,
+  "lon": -5.52062778,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 13442,
+  "year": "2021"
+ },
+ "text": "Karakoro est une localité de Côte d'Ivoire, située à l'est de Korhogo, dans le district des Savanes.\nSa population est estimée à plus 24 000 habitants en 2014.\nLa localité est limitée au nord par le département de Sinématiali, à l'est par la sous-préfecture de Komborodougou, à l'ouest par la sous-préfecture de Korhogo et au sud par celle de Napié.\n\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": []
+}

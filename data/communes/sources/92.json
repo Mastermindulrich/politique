@@ -1,0 +1,44 @@
+{
+ "id": 92,
+ "name": "M'Bengué",
+ "department": "M'Bengué",
+ "region": "Poro",
+ "title": "Mbengué",
+ "url": "https://fr.wikipedia.org/wiki/Mbengu%C3%A9",
+ "wikidata": "Q3303518",
+ "coordinates": {
+  "lat": 10.004167,
+  "lon": -5.901389,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 65779,
+  "year": "2021"
+ },
+ "text": "M'bengué est une ville située au nord de la Côte d'Ivoire, dans le district des Savanes, à 75 km de Korhogo et frontalière du Mali. Mbengué renferme deux usines de coton dont la Zone et la grande usine de coton dénommée Ivoire Coton. Par ailleurs, M'bengué est située à quelques kilomètres de la mine d'or de Tongon. Mbengué est le chef-lieu du département de M'Bengué.\n\n\n== Démographie ==\n\nL'essentiel de la population de la ville est constituée de Sénoufos. La région comporte aussi quelques campements peuls, peuple nomade.\n\n\n== Économie ==\nLa région est essentiellement consacrée à la culture du coton, principale richesse du nord de la Côte d'Ivoire, au point d'y avoir été qualifié d'« or blanc ». À ces cultures s'ajoutent certaines cultures vivrières et maréchaires ainsi que la culture de l'anacarde.\nLe sous-sol est également riche en or, avec la découverte et l'exploitation de la mine d'or de Tongon.\n\n\n== Villes voisines ==\nOuangolodougou vers l'est.\nKadiolo, au Mali, au nord.\nKorhogo au sud.\nTingréla vers l'ouest.\n\n\n== Notes et références ==\n\n\n== Bibliographie ==\nB. Holas, Les Sénoufos (y compris les Miniankas), Presses universitaires de France, 1957.\nRaymond Borremans, Le grand dictionnaire encyclopédique de la Côte d'Ivoire, Nouvelles éditions africaines, 1987.\nErik Orsenna, Voyage aux pays du coton - Petit précis de mondialisation, Presses universitaires de France, 2006.\n\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": [
+  {
+   "file": "Fichier:Un champ d'anacarde à M'bengué.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Un_champ_d%27anacarde_%C3%A0_M%27bengu%C3%A9.jpg/1280px-Un_champ_d%27anacarde_%C3%A0_M%27bengu%C3%A9.jpg?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Un_champ_d%27anacarde_%C3%A0_M%27bengu%C3%A9.jpg",
+   "width": 4080,
+   "height": 2296,
+   "artist": "MamadouKO-Mam",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Ceci est une image en rapport avec le thème Du champ à l'assiette en/au :"
+  },
+  {
+   "file": "Fichier:La cour du Collège moderne Fanta Kader de M'bengué.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/La_cour_du_Coll%C3%A8ge_moderne_Fanta_Kader_de_M%27bengu%C3%A9.jpg/1280px-La_cour_du_Coll%C3%A8ge_moderne_Fanta_Kader_de_M%27bengu%C3%A9.jpg?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:La_cour_du_Coll%C3%A8ge_moderne_Fanta_Kader_de_M%27bengu%C3%A9.jpg",
+   "width": 4080,
+   "height": 2296,
+   "artist": "MamadouKO-Mam",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Ceci est une image en rapport avec le thème Du champ à l'assiette en/au :"
+  }
+ ]
+}

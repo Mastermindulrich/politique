@@ -1,0 +1,21 @@
+{
+ "id": 32,
+ "name": "Kaniasso",
+ "department": "Kaniasso",
+ "region": "Folon",
+ "title": "Kaniasso",
+ "url": "https://fr.wikipedia.org/wiki/Kaniasso",
+ "wikidata": "Q3192670",
+ "coordinates": {
+  "lat": 9.81667,
+  "lon": -7.5125,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 18639,
+  "year": "2021"
+ },
+ "text": "Kaniasso est une ville du nord de la Côte d'Ivoire, en Afrique de l'ouest. C'est le chef-lieu du département de Kaniasso, dans la région du Folon, district de Denguélé.\nLa population y est essentiellement constituée de Malinkés.\n\n Portail de la Côte d’Ivoire",
+ "images": []
+}

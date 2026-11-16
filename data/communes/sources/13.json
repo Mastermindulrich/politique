@@ -1,0 +1,33 @@
+{
+ "id": 13,
+ "name": "Songon",
+ "department": "Abidjan",
+ "region": "District autonome d'Abidjan",
+ "title": "Songon",
+ "url": "https://fr.wikipedia.org/wiki/Songon",
+ "wikidata": "Q3490368",
+ "coordinates": {
+  "lat": 5.31666667,
+  "lon": -4.25,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 89778,
+  "year": "2021"
+ },
+ "text": "Songon  est une collection de plusieurs villages situés à l'ouest de la commune de Yopougon, en Côte d'Ivoire. Administrativement, c'est une sous-préfecture, incluse depuis 2001 dans le district autonome d'Abidjan.\nLa sous-préfecture de Songon est essentiellement composée de plusieurs villages Ébriés tels que : Songon-Kassemblé ou Songon-Adjamé, Songon-Dagbé, Songon-Agban, Abiaté, Nonkouagon, Bago, Guebo, Djepote et bien d'autres. Le village de Kassemblé est le chef-lieu de la sous-préfecture et est hôte de l’hôpital de Songon et de l'agence de Société de distribution d'eau de la Côte d'Ivoire (SODECI). Le village de Songon-Agban est le centre commercial de cette sous-préfecture.\n\n\n== Références ==\n\n\n== Liens externes ==\n\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": [
+  {
+   "file": "Fichier:Bléssoué Agban d'Adiapoté (Songon).JPG",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Bl%C3%A9ssou%C3%A9_Agban_d%27Adiapot%C3%A9_%28Songon%29.JPG/1280px-Bl%C3%A9ssou%C3%A9_Agban_d%27Adiapot%C3%A9_%28Songon%29.JPG?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%A9ssou%C3%A9_Agban_d%27Adiapot%C3%A9_(Songon).JPG",
+   "width": 4608,
+   "height": 3456,
+   "artist": "ChefDuVillage",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Ceci est une image du genre Tenues et parures traditionnelles de :"
+  }
+ ]
+}

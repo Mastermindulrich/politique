@@ -1,0 +1,21 @@
+{
+ "id": 137,
+ "name": "Kanakono",
+ "department": "Tengréla",
+ "region": "Bagoué",
+ "title": "Kanakono",
+ "url": "https://fr.wikipedia.org/wiki/Kanakono",
+ "wikidata": "Q3192562",
+ "coordinates": {
+  "lat": 10.366667,
+  "lon": -6.25,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 30630,
+  "year": "2021"
+ },
+ "text": "Kanokono est une ville du district des Savanes située au nord de la Côte d'Ivoire, dans le département de Tingréla dont elle est l'une des sous-préfectures.\n\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": []
+}

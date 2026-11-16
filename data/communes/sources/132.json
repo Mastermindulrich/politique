@@ -1,0 +1,21 @@
+{
+ "id": 132,
+ "name": "Borotou",
+ "department": "Koro",
+ "region": "Bafing",
+ "title": "Borotou",
+ "url": "https://fr.wikipedia.org/wiki/Borotou",
+ "wikidata": "Q2911258",
+ "coordinates": {
+  "lat": 8.73333333,
+  "lon": -7.5,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 5202,
+  "year": "2021"
+ },
+ "text": "Borotou est une localité située au nord-ouest de la Côte d'Ivoire, et appartenant au Département de Koro, dans la Région du Bafing. La localité de Borotou est un chef-lieu de commune.\n\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": []
+}

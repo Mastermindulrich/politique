@@ -1,0 +1,44 @@
+{
+ "id": 62,
+ "name": "Jacqueville",
+ "department": "Jacqueville",
+ "region": "Grands-Ponts",
+ "title": "Jacqueville (Côte d'Ivoire)",
+ "url": "https://fr.wikipedia.org/wiki/Jacqueville_(C%C3%B4te_d%27Ivoire)",
+ "wikidata": "Q6121011",
+ "coordinates": {
+  "lat": 5.2,
+  "lon": -4.41666667,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 49694,
+  "year": "2021"
+ },
+ "text": "Jacqueville est une ville située dans le Sud de la Côte d'Ivoire, dans le district des Lagunes, de la région des Grands-Ponts et chef-lieu du département de même nom. Sa population est estimée à 49 694 habitants en 2021.\nVille proche de la métropole abidjanaise, est une cité balnéaire très prisée en raison de son désenclavement par la construction du pont Philippe-Yacé.\n\n\n== Histoire ==\nCette ville doit son nom au fait qu'elle est le premier lieu où le drapeau du Royaume-Uni, l'Union Jack, a été la première fois planté, quand les Britanniques ont conquis le pays. Elle s'est développée comme un port négrier puis port colonial français, mais est maintenant principalement un port de pêche et une station balnéaire.\n\n\n== Géographie ==\nJacqueville, enclavée sur une bande de terre, a longtemps été isolée du reste du pays par la lagune Ebrié. Elle est désormais desservie par le pont Philippe-Yacé, inauguré le 25 mars 2015.\n\n\n=== Villages ===\nLes 23 villages de Jacqueville et leur population en 2014 sont les suivants :\n\n\n== Administration ==\nEn 1978, la loi du 9 janvier 1978 institue 27 communes en Côte d'Ivoire, dont Jacqueville.\n\n\n== Personnalités liées à la ville ==\nPlusieurs personnalités publiques, viennent de la ville de Jacqueville dont Didier Bonaventure Deigna, dit « Pépito », batteur du groupe Magic System, y est mort par noyade le 1er mai 2016 à l'âge de 46 ans, Philippe Yacé, Honoré Polneau, ambassadeur aux États-Unis et en Angleterre, Joachim Bony, Henriette Dagri Diabaté, À nous les petits (groupe musical) et Joachim Beugré.\n\n\n== Notes et références ==\n(en) Cet article est partiellement ou en totalité issu de l’article de Wikipédia en anglais intitulé « Jacqueville » (voir la liste des auteurs).\n\n\n== Liens externes ==\n\n Portail de la Côte d’Ivoire",
+ "images": [
+  {
+   "file": "Fichier:Tricycle ou Taxi-moto.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Tricycle_ou_Taxi-moto.jpg/1280px-Tricycle_ou_Taxi-moto.jpg?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Tricycle_ou_Taxi-moto.jpg",
+   "width": 4896,
+   "height": 3672,
+   "artist": "Zariott",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Ceci est une image en rapport avec le thème \" Afrique et Transport \" en/au : Côte d'Ivoire"
+  },
+  {
+   "file": "Fichier:President du Tribunal Abidjan.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/President_du_Tribunal_Abidjan.jpg/1280px-President_du_Tribunal_Abidjan.jpg?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:President_du_Tribunal_Abidjan.jpg",
+   "width": 2560,
+   "height": 1920,
+   "artist": "Cyberlanca",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Cyrille Polneau"
+  }
+ ]
+}

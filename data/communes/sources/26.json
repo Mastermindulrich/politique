@@ -1,0 +1,44 @@
+{
+ "id": 26,
+ "name": "Bettié",
+ "department": "Bettié",
+ "region": "Indénié-Djuablin",
+ "title": "Bettié",
+ "url": "https://fr.wikipedia.org/wiki/Betti%C3%A9",
+ "wikidata": "Q2900210",
+ "coordinates": {
+  "lat": 6.06666667,
+  "lon": -3.4,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 33020,
+  "year": "2021"
+ },
+ "text": "Bettié est une ville de l'est de la Côte d'Ivoire, située dans la région de l'Indénié-Djuablin. La localité de Bettié est chef-lieu de commune, de sous-préfecture et de département.\n\n\n== Éducation ==\n\nBettié accueille l'une des 7 premières écoles de village créées, à partir de 1890, avec celles d'Assinie, Grand-Bassam, Mossou, Tabou, Jacqueville, toutes situées sur le littoral du golfe de Guinée, fonctionnant avec des maîtres d'écoles occasionnels, avec 200 élèves environ recensés en 1895.\n\n\n== Histoire ==\n\nLouis-Gustave Binger et Treich-Laplène entrent à Bettié, le mardi 12 mars 1889. Le roi du village, Bénié Couamié leur réserve alors un grand cérémonial : « Dix minutes ne se sont pas écoulées que le tam-tam résonne, les olifants jettent leurs notes plaintives, des cris partent un peu de tous côtés, et Bénié Couamié paraît au haut de la berge, précédé d'un pavillon tricolore et de sa musique. Il est proprement vêtu et drapé dans un plaid en soie et laine de fabrication européenne ».\nLe roi conduit les explorateurs à son habitation. Binger et Treich découvrent alors une maison de construction européenne. Les deux hommes quittent le village, le vendredi 15 mars 1889.\n\n\n== Sécurité et cohésion sociale ==\nEn février 2025, à la suite d'affrontements entre des jeunes de Bettié et la brigade de gendarmerie locale, le ministre des Affaires étrangères, Léon Kacou Adom, originaire de la région, a mené des négociations ayant abouti à la libération de 98 des 103 jeunes arrêtés. Une enveloppe de 7 millions de francs CFA a été allouée pour apaiser les tensions et favoriser la réconciliation.\n\n\n== Notes et références ==\n\n\n== Voir aussi ==\n\n\n=== Bibliographie ===\n\nClaude Bouet, Bettié et Attiékro : étude comparée de deux terroirs en zone forestière ivoirienne, ORSTOM, Paris ; Mouton, La Haye, 1977, 2 vol.  (ISBN 2-7099-0436-5) (thèse de 3e cycle de Géographie soutenue à l'Université Paris 4 en 1970)\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": [
+  {
+   "file": "Fichier:Pg293 Réception de Bénie Couamié.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Pg293_R%C3%A9ception_de_B%C3%A9nie_Couami%C3%A9.jpg/1280px-Pg293_R%C3%A9ception_de_B%C3%A9nie_Couami%C3%A9.jpg?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Pg293_R%C3%A9ception_de_B%C3%A9nie_Couami%C3%A9.jpg",
+   "width": 2329,
+   "height": 1703,
+   "artist": "",
+   "license": "Public domain",
+   "licenseUrl": "",
+   "description": ""
+  },
+  {
+   "file": "Fichier:Bettié-1892.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/41/Betti%C3%A9-1892.jpg?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Betti%C3%A9-1892.jpg",
+   "width": 760,
+   "height": 706,
+   "artist": "Édouard Riou",
+   "license": "Public domain",
+   "licenseUrl": "",
+   "description": "\"Habitation à l'européenne avec couverture en palmes à Bettié\""
+  }
+ ]
+}

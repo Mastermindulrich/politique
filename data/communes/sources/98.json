@@ -1,0 +1,33 @@
+{
+ "id": 98,
+ "name": "Béoumi",
+ "department": "Béoumi",
+ "region": "Gbêkê",
+ "title": "Béoumi",
+ "url": "https://fr.wikipedia.org/wiki/B%C3%A9oumi",
+ "wikidata": "Q2929948",
+ "coordinates": {
+  "lat": 7.672,
+  "lon": -5.57989,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 85600,
+  "year": "2021"
+ },
+ "text": "Béoumi est une ville du centre de la Côte d'Ivoire, chef-lieu de département dans la région de la Vallée du Bandama près de Bouaké. Sa population qui est essentiellement Baoulé est estimée à plus de 31 000 habitants en 2021 et a une superficie de 2 554,8 km² .\n\n\n== Administration ==\nLa ville de Béoumi est dirigée par un préfet et un maire car une loi de 1978 institue 27 communes de plein exercice sur le territoire du pays.\n\n\n=== Éducation ===\n\n\n== Villes voisines ==\nBouaké vers l'est ;\nZuénoula à l'ouest ;\nSakassou au sud ;\nMankono au Nord\n\n\n== Notes et références ==\n\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": [
+  {
+   "file": "Fichier:Béoumi.JPG",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/B%C3%A9oumi.JPG/1280px-B%C3%A9oumi.JPG?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:B%C3%A9oumi.JPG",
+   "width": 3488,
+   "height": 2616,
+   "artist": "Tlclollipop",
+   "license": "CC BY-SA 3.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "description": "Béoumi est une ville situé dans le centre de la Cote d'Ivoire."
+  }
+ ]
+}

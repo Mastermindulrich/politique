@@ -1,0 +1,44 @@
+{
+ "id": 88,
+ "name": "Kouto",
+ "department": "Kouto",
+ "region": "Bagoué",
+ "title": "Kouto",
+ "url": "https://fr.wikipedia.org/wiki/Kouto",
+ "wikidata": "Q1102790",
+ "coordinates": {
+  "lat": 9.9,
+  "lon": -6.417,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 55893,
+  "year": "2021"
+ },
+ "text": "Kouto est une ville du district des savanes située au nord de la Côte d'Ivoire, reliant les villes de Boundiali et Tingréla, dans le département de Boundiali dont elle était l'une des sous-préfectures, avec Kolia, Ganaoni, Gbon, Kasséré, Sianhala et Siempurgo. En mars 2008, Kouto est devenue un département par scission du département de Boundiali, avec les sous-préfectures de Gbon, Kolia, Shanhala et Blességué\nSa mosquée est de style soudanais. La ville abrite aussi une mission catholique.\n\n\n== Histoire ==\nLa commune et la terre de Kouto ont été établies et structurées selon les traditions et les coutumes sacrées sous l'impulsion originelle de leur fondateur historique, le patriarche Nonnougou Koné, créateur de la dynastie de la chefferie locale. \nLors de la pénétration coloniale, la nomination administrative de Touré Bakomba en tant que premier « chef de canton » officiel a représenté une parenthèse administrative éphémère, demeurant distincte de l'alignement coutumier et de la légitimité spirituelle de la terre. La gouvernance traditionnelle sacrée s'est poursuivie sans rupture au sein des descendants directs du fondateur originel.\nL'histoire moderne du canton est fortement marquée par le long règne du grand chef de canton Koné Nanourou (connu sous le nom traditionnel de Tôbouan Nanourou), investi en 1959. Surnommé « l'architecte de la paix », il œuvra activement à la cohésion sociale, à l'instauration de l'état civil dans la région avec l'appui de son frère cadet Tôbouan Dofan, et au développement des infrastructures locales. La gestion coutumière s'est ensuite transmise à ses frères et successeurs, Koné Dofanga et Koné Metogoma Boua, jusqu'à l'actuel chef de canton, Sa Majesté Ity Koné. \nCette dynastie (communément appelée la famille Tobingué) a formé de nombreux cadres et intellectuels, dont son petit-fils le ministre Bruno Nabagné Koné, ainsi que des figures de la diaspora scientifique internationale à l'instar de l'agent de recherche canadien Tenon Charly Kone.\n\n\n== Administration ==\n\n\n== Représentation politique ==\n\n\n== Éducation ==\nKouto compte un lycée moderne public, 2 lycées privés et un centre de formation professionnelle préparant au CAP dans les filières construction métallique et mécanique auto.\n\n\n== Économie ==\nLes cultures du coton, principale richesse du nord de la Côte d'Ivoire, de l'arachide, du maïs, de l'igname, des mangues et des anacardiers y sont pratiquées.\n\n\n== Culture ==\n\n\n== Personnalités liées à la région ==\nLassina Koné, natif de la localité de Mahalé, fut le premier cadre de la région de Boundiali à rentrer dans un gouvernement de la Côte d’Ivoire sous la présidence de feu Houphouët Boigny. Il était chargé du portefeuille du Travail ;\nKoné Dossongui, ministre ;\nBruno Nabagné Koné, Ministre de la Poste et des Technologies de l'Information et de la Communication entre juin 2011 et juillet 2018 et Ministre de la Construction, du Logement et de l'Urbanisme depuis cette date ;\nAboulaye Koné, cadre du PDCI et fils de feu Yanourga Koné (décédé en avril 1975). Très actif dans le secteur socio-culturel et politique de Gbon, Aboulaye Koné fut un catalyseur de jeunes[Quoi ?] et un fervent leader dans la région. Il a construit le collège de Gbon. Il est décédé en 2000.\n\n\n== Liens externes ==\nSituation sur Visiomap\n\n\n== Notes et références ==\n\n Portail de la Côte d’Ivoire",
+ "images": [
+  {
+   "file": "Fichier:Un danseurs de la danse des forgerons.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/20/Un_danseurs_de_la_danse_des_forgerons.jpg?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Un_danseurs_de_la_danse_des_forgerons.jpg",
+   "width": 1080,
+   "height": 1556,
+   "artist": "KONE IF",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Ceci est une image en rapport avec le thème Rites et rituels en/au :"
+  },
+  {
+   "file": "Fichier:La danse N'Goron 04.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/46/La_danse_N%27Goron_04.jpg?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:La_danse_N%27Goron_04.jpg",
+   "width": 1062,
+   "height": 1227,
+   "artist": "KONE IF",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Ceci est une image en rapport avec le thème Rites et rituels en/au :"
+  }
+ ]
+}
