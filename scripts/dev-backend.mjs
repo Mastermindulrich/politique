@@ -39,6 +39,7 @@ export async function createDb() {
     await db.exec(readFileSync(new URL(f, dir), "utf8"));
   }
   await db.exec(readFileSync(new URL("supabase/seed/ci_geo.sql", root), "utf8"));
+  await db.exec(readFileSync(new URL("supabase/seed/officials.sql", root), "utf8"));
   await db.exec(`
     reset search_path;
     grant usage on schema auth, storage to anon, authenticated, service_role;

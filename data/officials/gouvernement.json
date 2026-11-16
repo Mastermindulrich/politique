@@ -1,0 +1,271 @@
+{
+ "institution": "gouvernement",
+ "source": "https://www.gouv.ci/gouvernement",
+ "source_label": "Portail officiel du Gouvernement, Gouvernement Robert Beugré Mambé du 23 janvier 2026",
+ "checked": "2026-11-15",
+ "offices": [
+  {
+   "key": "president-republique",
+   "mandate": "president",
+   "title": "Président de la République",
+   "name": "Alassane Ouattara",
+   "source": "https://www.presidence.ci",
+   "rank": 0,
+   "institution": "presidence"
+  },
+  {
+   "key": "vice-president-republique",
+   "mandate": "vice_president",
+   "title": "Vice-Président de la République",
+   "name": "Tiémoko Meyliet Koné",
+   "source": "https://www.presidence.ci",
+   "rank": 1,
+   "institution": "presidence"
+  },
+  {
+   "key": "premier-ministre",
+   "mandate": "premier_ministre",
+   "title": "Premier Ministre, Chef du Gouvernement",
+   "name": "Robert Beugré Mambé",
+   "rank": 2
+  },
+  {
+   "key": "vice-premier-ministre-defense",
+   "mandate": "ministre",
+   "title": "Vice-Premier Ministre, Ministre de la Défense",
+   "name": "Téné Birahima Ouattara",
+   "rank": 3
+  },
+  {
+   "key": "ministre-fonction-publique",
+   "mandate": "ministre",
+   "title": "Ministre d'État, Ministre de la Fonction publique et de la Modernisation de l'Administration",
+   "name": "Anne Désirée Ouloto-Lamizana",
+   "rank": 4
+  },
+  {
+   "key": "ministre-affaires-etrangeres",
+   "mandate": "ministre",
+   "title": "Ministre d'État, Ministre des Affaires étrangères et de la Coopération internationale",
+   "name": "Nialé Kaba",
+   "rank": 5
+  },
+  {
+   "key": "ministre-justice",
+   "mandate": "ministre",
+   "title": "Garde des Sceaux, Ministre de la Justice et des Droits de l'Homme",
+   "name": "Jean Sansan Kambilé",
+   "rank": 6
+  },
+  {
+   "key": "ministre-interieur",
+   "mandate": "ministre",
+   "title": "Ministre de l'Intérieur et de la Sécurité",
+   "name": "Vagondo Diomandé",
+   "rank": 7
+  },
+  {
+   "key": "ministre-economie-finances",
+   "mandate": "ministre",
+   "title": "Ministre de l'Économie, des Finances et du Budget",
+   "name": "Adama Coulibaly",
+   "rank": 8
+  },
+  {
+   "key": "ministre-mines-energie",
+   "mandate": "ministre",
+   "title": "Ministre des Mines, du Pétrole et de l'Énergie",
+   "name": "Mamadou Sangafowa Coulibaly",
+   "rank": 9
+  },
+  {
+   "key": "ministre-agriculture",
+   "mandate": "ministre",
+   "title": "Ministre de l'Agriculture, du Développement rural et des Productions vivrières",
+   "name": "Bruno Nabagné Koné",
+   "rank": 10
+  },
+  {
+   "key": "ministre-transports",
+   "mandate": "ministre",
+   "title": "Ministre des Transports et des Affaires maritimes",
+   "name": "Amadou Koné",
+   "rank": 11
+  },
+  {
+   "key": "ministre-hydraulique",
+   "mandate": "ministre",
+   "title": "Ministre de l'Hydraulique, de l'Assainissement et de la Salubrité",
+   "name": "Amédé Koffi Kouakou",
+   "rank": 12
+  },
+  {
+   "key": "ministre-jeunesse",
+   "mandate": "ministre",
+   "title": "Ministre de la Promotion de la Jeunesse, de l'Insertion professionnelle et du Service civique, Porte-parole adjoint du Gouvernement",
+   "name": "Mamadou Touré",
+   "rank": 13
+  },
+  {
+   "key": "ministre-sante",
+   "mandate": "ministre",
+   "title": "Ministre de la Santé, de l'Hygiène publique et de la Couverture maladie universelle",
+   "name": "Pierre Dimba",
+   "rank": 14
+  },
+  {
+   "key": "ministre-urbanisme",
+   "mandate": "ministre",
+   "title": "Ministre de l'Urbanisme, du Logement et du Cadre de vie",
+   "name": "Moussa Sanogo",
+   "rank": 15
+  },
+  {
+   "key": "ministre-ressources-animales",
+   "mandate": "ministre",
+   "title": "Ministre des Ressources animales et halieutiques",
+   "name": "Sidi Tiémoko Touré",
+   "rank": 16
+  },
+  {
+   "key": "ministre-portefeuille-etat",
+   "mandate": "ministre",
+   "title": "Ministre du Portefeuille de l'État et des Entreprises publiques",
+   "name": "Mariatou Koné",
+   "rank": 17
+  },
+  {
+   "key": "ministre-communication",
+   "mandate": "ministre",
+   "title": "Ministre de la Communication, Porte-parole du Gouvernement",
+   "name": "Amadou Coulibaly",
+   "rank": 18
+  },
+  {
+   "key": "ministre-eaux-forets",
+   "mandate": "ministre",
+   "title": "Ministre des Eaux et Forêts",
+   "name": "Jacques Assahoré Konan",
+   "rank": 19
+  },
+  {
+   "key": "ministre-commerce",
+   "mandate": "ministre",
+   "title": "Ministre du Commerce, de l'Industrie et de l'Artisanat",
+   "name": "Ibrahim Kalil Konaté",
+   "rank": 20
+  },
+  {
+   "key": "ministre-tourisme",
+   "mandate": "ministre",
+   "title": "Ministre du Tourisme et des Loisirs",
+   "name": "Siandou Fofana",
+   "rank": 21
+  },
+  {
+   "key": "ministre-plan",
+   "mandate": "ministre",
+   "title": "Ministre du Plan et du Développement",
+   "name": "Souleymane Diarrassouba",
+   "rank": 22
+  },
+  {
+   "key": "ministre-enseignement-superieur",
+   "mandate": "ministre",
+   "title": "Ministre de l'Enseignement supérieur et de la Recherche scientifique",
+   "name": "Adama Diawara",
+   "rank": 23
+  },
+  {
+   "key": "ministre-emploi",
+   "mandate": "ministre",
+   "title": "Ministre de l'Emploi, de la Protection sociale et de la Formation professionnelle",
+   "name": "Adama Kamara",
+   "rank": 24
+  },
+  {
+   "key": "ministre-education",
+   "mandate": "ministre",
+   "title": "Ministre de l'Éducation nationale, de l'Alphabétisation et de l'Enseignement technique",
+   "name": "N'Guessan Koffi",
+   "rank": 25
+  },
+  {
+   "key": "ministre-infrastructures",
+   "mandate": "ministre",
+   "title": "Ministre des Infrastructures et de l'Entretien routier",
+   "name": "Yacouba Hien Sié",
+   "rank": 26
+  },
+  {
+   "key": "ministre-cohesion-nationale",
+   "mandate": "ministre",
+   "title": "Ministre de la Cohésion nationale, de la Solidarité et de la Lutte contre la pauvreté",
+   "name": "Myss Belmonde Dogo",
+   "rank": 27
+  },
+  {
+   "key": "ministre-transition-numerique",
+   "mandate": "ministre",
+   "title": "Ministre de la Transition numérique et de l'Innovation technologique",
+   "name": "Djibril Ouattara",
+   "rank": 28
+  },
+  {
+   "key": "ministre-femme-famille",
+   "mandate": "ministre",
+   "title": "Ministre de la Femme, de la Famille et de l'Enfant",
+   "name": "Nassénéba Touré",
+   "rank": 29
+  },
+  {
+   "key": "ministre-culture",
+   "mandate": "ministre",
+   "title": "Ministre de la Culture et de la Francophonie",
+   "name": "Françoise Remarck",
+   "rank": 30
+  },
+  {
+   "key": "ministre-sports",
+   "mandate": "ministre",
+   "title": "Ministre des Sports",
+   "name": "Adjé Silas Metch",
+   "rank": 31
+  },
+  {
+   "key": "ministre-environnement",
+   "mandate": "ministre",
+   "title": "Ministre de l'Environnement et de la Transition écologique",
+   "name": "Abou Bamba",
+   "rank": 32
+  },
+  {
+   "key": "ministre-delegue-affaires-maritimes",
+   "mandate": "ministre",
+   "title": "Ministre délégué auprès du Ministre des Transports et des Affaires maritimes, chargé des Affaires maritimes",
+   "name": "Célestin Sérey Doh",
+   "rank": 33
+  },
+  {
+   "key": "ministre-delegue-integration-africaine",
+   "mandate": "ministre",
+   "title": "Ministre délégué auprès du Ministre d'État, Ministre des Affaires étrangères, chargé de l'Intégration africaine et des Ivoiriens de l'extérieur",
+   "name": "Adama Dosso",
+   "rank": 34
+  },
+  {
+   "key": "ministre-delegue-enseignement-technique",
+   "mandate": "ministre",
+   "title": "Ministre délégué auprès du Ministre de l'Éducation nationale, chargé de l'Enseignement technique",
+   "name": "Jean-Louis Moulot",
+   "rank": 35
+  },
+  {
+   "key": "ministre-delegue-productions-vivrieres",
+   "mandate": "ministre",
+   "title": "Ministre délégué auprès du Ministre de l'Agriculture, chargé des Productions vivrières",
+   "name": "Bernard Kini Comoé",
+   "rank": 36
+  }
+ ]
+}

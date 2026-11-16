@@ -1,0 +1,822 @@
+{
+ "institution": "senat",
+ "source": "https://senat.ci/les-senateurs",
+ "source_label": "Site officiel du Sénat de Côte d'Ivoire, législature 2023-2028",
+ "checked": "2026-11-15",
+ "offices": [
+  {
+   "key": "president-senat",
+   "mandate": "president_institution",
+   "title": "Présidente du Sénat",
+   "name": "Kandia Kamissoko Camara",
+   "gender": "F",
+   "rank": 0
+  },
+  {
+   "key": "senateur-kandia-kamissoko-camara",
+   "mandate": "senateur",
+   "title": "Sénatrice",
+   "name": "Kandia Kamissoko Camara",
+   "gender": "F",
+   "rank": 1,
+   "role": "Présidente du Sénat"
+  },
+  {
+   "key": "senateur-abdoulaye-tano",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Abdoulaye Tano",
+   "role": null,
+   "rank": 1001
+  },
+  {
+   "key": "senateur-abo-kouame-faustin",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Abo Kouame Faustin",
+   "role": "Secrétaire du Sénat",
+   "rank": 40
+  },
+  {
+   "key": "senateur-ahiba-boguie",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Ahiba Boguie",
+   "role": null,
+   "rank": 1003
+  },
+  {
+   "key": "senateur-ahouassa-alexandre",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Ahouassa Alexandre",
+   "role": null,
+   "rank": 1004
+  },
+  {
+   "key": "senateur-allah-kouadio-remi",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Allah-Kouadio Remi",
+   "role": null,
+   "rank": 1005
+  },
+  {
+   "key": "senateur-amblard-marie-elisabeth-epouse-zunon-kipre",
+   "mandate": "senateur",
+   "title": "Sénatrice",
+   "name": "Amblard Marie Elisabeth épouse Zunon-Kipre",
+   "role": "Présidente de la Commission de la recherche, de la science, de la technologie et de l'environnement",
+   "rank": 50,
+   "gender": "F"
+  },
+  {
+   "key": "senateur-asseke-yaba-adele",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Asseke Yaba Adele",
+   "role": null,
+   "rank": 1007
+  },
+  {
+   "key": "senateur-atse-n-de-zepp",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Atse N'De Zepp",
+   "role": null,
+   "rank": 1008
+  },
+  {
+   "key": "senateur-baba-traore",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Baba Traore",
+   "role": "Secrétaire du Sénat",
+   "rank": 40
+  },
+  {
+   "key": "senateur-badoh-moussa",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Badoh Moussa",
+   "role": null,
+   "rank": 1010
+  },
+  {
+   "key": "senateur-baflan-laure-epouse-donwahi",
+   "mandate": "senateur",
+   "title": "Sénatrice",
+   "name": "Baflan Laure épouse Donwahi",
+   "role": "Secrétaire du Sénat",
+   "rank": 40,
+   "gender": "F"
+  },
+  {
+   "key": "senateur-bakary-ouattara",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Bakary Ouattara",
+   "role": "Président de la Commission d'évaluation des politiques publiques",
+   "rank": 50
+  },
+  {
+   "key": "senateur-bamba-maimouna-epouse-dosso",
+   "mandate": "senateur",
+   "title": "Sénatrice",
+   "name": "Bamba Maimouna épouse Dosso",
+   "role": null,
+   "rank": 1013,
+   "gender": "F"
+  },
+  {
+   "key": "senateur-bamba-mamadou",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Bamba Mamadou",
+   "role": null,
+   "rank": 1014
+  },
+  {
+   "key": "senateur-bamba-sogona-epouse-arnault",
+   "mandate": "senateur",
+   "title": "Sénatrice",
+   "name": "Bamba Sogona épouse Arnault",
+   "role": null,
+   "rank": 1015,
+   "gender": "F"
+  },
+  {
+   "key": "senateur-bezeme-kouame-christophe",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Bezeme Kouame Christophe",
+   "role": null,
+   "rank": 1016
+  },
+  {
+   "key": "senateur-bombro-lezou-francis",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Bombro Lezou Francis",
+   "role": null,
+   "rank": 1017
+  },
+  {
+   "key": "senateur-boueka-nabo-clement",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Boueka Nabo Clement",
+   "role": null,
+   "rank": 1018
+  },
+  {
+   "key": "senateur-cisse-mamadou",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Cisse Mamadou",
+   "role": "Président de la Commission des affaires économiques et financières",
+   "rank": 50
+  },
+  {
+   "key": "senateur-coffi-michel-benoit",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Coffi Michel Benoit",
+   "role": "Président de la Commission des affaires sociales et culturelles",
+   "rank": 50
+  },
+  {
+   "key": "senateur-coulibaly-boikary-kader",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Coulibaly Boikary Kader",
+   "role": null,
+   "rank": 1021
+  },
+  {
+   "key": "senateur-coulibaly-djeneba",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Coulibaly Djeneba",
+   "role": null,
+   "rank": 1022
+  },
+  {
+   "key": "senateur-coulibaly-lacina",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Coulibaly Lacina",
+   "role": null,
+   "rank": 1023
+  },
+  {
+   "key": "senateur-coulibaly-maman-epouse-ouattara",
+   "mandate": "senateur",
+   "title": "Sénatrice",
+   "name": "Coulibaly Maman épouse Ouattara",
+   "role": "Vice-présidente du Sénat",
+   "rank": 10,
+   "gender": "F"
+  },
+  {
+   "key": "senateur-coulibaly-yao-madiara-epouse-coulibaly",
+   "mandate": "senateur",
+   "title": "Sénatrice",
+   "name": "Coulibaly Yao Madiara épouse Coulibaly",
+   "role": null,
+   "rank": 1025,
+   "gender": "F"
+  },
+  {
+   "key": "senateur-da-silva-sylvia-epouse-anoma",
+   "mandate": "senateur",
+   "title": "Sénatrice",
+   "name": "Da Silva Sylvia épouse Anoma",
+   "role": null,
+   "rank": 1026,
+   "gender": "F"
+  },
+  {
+   "key": "senateur-dao-losseni",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Dao Losseni",
+   "role": null,
+   "rank": 1027
+  },
+  {
+   "key": "senateur-dehe-paul",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Dehe Paul",
+   "role": null,
+   "rank": 1028
+  },
+  {
+   "key": "senateur-delma-mouhamad-salice",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Delma Mouhamad Salice",
+   "role": null,
+   "rank": 1029
+  },
+  {
+   "key": "senateur-delon-epouse-longuet-catherine-suzanne",
+   "mandate": "senateur",
+   "title": "Sénatrice",
+   "name": "Delon épouse Longuet Catherine Suzanne",
+   "role": "Questeure du Sénat",
+   "rank": 30,
+   "gender": "F"
+  },
+  {
+   "key": "senateur-diaby-makani",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Diaby Makani",
+   "role": "Vice-président du Sénat",
+   "rank": 10
+  },
+  {
+   "key": "senateur-diaby-vassiriki",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Diaby Vassiriki",
+   "role": null,
+   "rank": 1032
+  },
+  {
+   "key": "senateur-diallo-amoin-nicole",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Diallo Amoin Nicole",
+   "role": null,
+   "rank": 1033
+  },
+  {
+   "key": "senateur-diarrassouba-nanourou",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Diarrassouba Nanourou",
+   "role": null,
+   "rank": 1034
+  },
+  {
+   "key": "senateur-diby-n-goran-beatrice",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Diby N'Goran Beatrice",
+   "role": null,
+   "rank": 1035
+  },
+  {
+   "key": "senateur-diomande-lassina",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Diomande Lassina",
+   "role": null,
+   "rank": 1036
+  },
+  {
+   "key": "senateur-diomande-mamadou",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Diomande Mamadou",
+   "role": null,
+   "rank": 1037
+  },
+  {
+   "key": "senateur-djedje-ilahiri-alcide",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Djedje Ilahiri Alcide",
+   "role": "Président de la Commission des relations extérieures et des Ivoiriens établis hors de Côte d'Ivoire",
+   "rank": 50
+  },
+  {
+   "key": "senateur-djibo-youssouf-nicolas",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Djibo Youssouf Nicolas",
+   "role": null,
+   "rank": 1039
+  },
+  {
+   "key": "senateur-djouha-kehi-edouard",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Djouha Kehi Edouard",
+   "role": "Président de la Commission de la sécurité et de la défense",
+   "rank": 50
+  },
+  {
+   "key": "senateur-ehui-koutoua-bernard",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Ehui Koutoua Bernard",
+   "role": null,
+   "rank": 1041
+  },
+  {
+   "key": "senateur-ekissi-behou",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Ekissi Behou",
+   "role": null,
+   "rank": 1042
+  },
+  {
+   "key": "senateur-ekra-kouakou-antoine",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Ekra Kouakou Antoine",
+   "role": "Secrétaire du Sénat",
+   "rank": 40
+  },
+  {
+   "key": "senateur-famie-akattia-edoukou-felix",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Famie Akattia Edoukou Felix",
+   "role": null,
+   "rank": 1044
+  },
+  {
+   "key": "senateur-fanny-moussokoura-chantal",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Fanny Moussokoura Chantal",
+   "role": null,
+   "rank": 1045
+  },
+  {
+   "key": "senateur-fatouma-sangare",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Fatouma Sangare",
+   "role": null,
+   "rank": 1046
+  },
+  {
+   "key": "senateur-gabala-mariam-epouse-dao",
+   "mandate": "senateur",
+   "title": "Sénatrice",
+   "name": "Gabala Mariam épouse Dao",
+   "role": null,
+   "rank": 1047,
+   "gender": "F"
+  },
+  {
+   "key": "senateur-goueti-bi-soho-charles",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Goueti Bi Soho Charles",
+   "role": null,
+   "rank": 1048
+  },
+  {
+   "key": "senateur-gourene-germain",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Gourene Germain",
+   "role": null,
+   "rank": 1049
+  },
+  {
+   "key": "senateur-gueye-boniface",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Gueye Boniface",
+   "role": null,
+   "rank": 1050
+  },
+  {
+   "key": "senateur-kacou-kouassi-christophe",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Kacou Kouassi Christophe",
+   "role": null,
+   "rank": 1051
+  },
+  {
+   "key": "senateur-kambire-sie",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Kambire Sie",
+   "role": null,
+   "rank": 1052
+  },
+  {
+   "key": "senateur-konate-abou-dramane",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Konate Abou Dramane",
+   "role": null,
+   "rank": 1053
+  },
+  {
+   "key": "senateur-konate-bindou",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Konate Bindou",
+   "role": null,
+   "rank": 1054
+  },
+  {
+   "key": "senateur-konate-lamine",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Konate Lamine",
+   "role": null,
+   "rank": 1055
+  },
+  {
+   "key": "senateur-kone-boubacar",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Kone Boubacar",
+   "role": null,
+   "rank": 1056
+  },
+  {
+   "key": "senateur-kone-siaka",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Kone Siaka",
+   "role": null,
+   "rank": 1057
+  },
+  {
+   "key": "senateur-konin-aka",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Konin Aka",
+   "role": null,
+   "rank": 1058
+  },
+  {
+   "key": "senateur-kossonou-kouassi-ignace",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Kossonou Kouassi Ignace",
+   "role": null,
+   "rank": 1059
+  },
+  {
+   "key": "senateur-kouacou-gnrangbe-kouadio-jean",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Kouacou Gnrangbe Kouadio Jean",
+   "role": null,
+   "rank": 1060
+  },
+  {
+   "key": "senateur-kouadio-alyke-titeh-gnapka-nobert",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Kouadio Alyke Titeh Gnapka Nobert",
+   "role": null,
+   "rank": 1061
+  },
+  {
+   "key": "senateur-kouadio-kouakou-bertin",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Kouadio Kouakou Bertin",
+   "role": null,
+   "rank": 1062
+  },
+  {
+   "key": "senateur-kouadio-kpli-kouassi-delphin",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Kouadio Kpli Kouassi Delphin",
+   "role": null,
+   "rank": 1063
+  },
+  {
+   "key": "senateur-kouame-koffi-norbert",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Kouame Koffi Norbert",
+   "role": "Questeur du Sénat",
+   "rank": 30
+  },
+  {
+   "key": "senateur-kouame-oi-kouame-bernard",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Kouame Oi Kouame Bernard",
+   "role": null,
+   "rank": 1065
+  },
+  {
+   "key": "senateur-kouassi-abonouan-jean",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Kouassi Abonouan Jean",
+   "role": null,
+   "rank": 1066
+  },
+  {
+   "key": "senateur-kouassi-allomo-ouffoue",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Kouassi Allomo Ouffoue",
+   "role": null,
+   "rank": 1067
+  },
+  {
+   "key": "senateur-koulibaly-mariam",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Koulibaly Mariam",
+   "role": "Secrétaire du Sénat",
+   "rank": 40
+  },
+  {
+   "key": "senateur-meite-yaya",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Meite Yaya",
+   "role": null,
+   "rank": 1069
+  },
+  {
+   "key": "senateur-meledje-aboud-hilaire",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Meledje Aboud Hilaire",
+   "role": null,
+   "rank": 1070
+  },
+  {
+   "key": "senateur-n-dohi-yapi-raymond",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "N'Dohi Yapi Raymond",
+   "role": "Vice-président du Sénat",
+   "rank": 10
+  },
+  {
+   "key": "senateur-odje-tiakore-joseph",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Odje Tiakore Joseph",
+   "role": null,
+   "rank": 1072
+  },
+  {
+   "key": "senateur-operi-kokora-alexis",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Operi Kokora Alexis",
+   "role": null,
+   "rank": 1073
+  },
+  {
+   "key": "senateur-ouattara-anzoumanan",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Ouattara Anzoumanan",
+   "role": null,
+   "rank": 1074
+  },
+  {
+   "key": "senateur-ouattara-kouakou",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Ouattara Kouakou",
+   "role": null,
+   "rank": 1075
+  },
+  {
+   "key": "senateur-ouattara-lamine-simon",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Ouattara Lamine Simon",
+   "role": null,
+   "rank": 1076
+  },
+  {
+   "key": "senateur-poaty-gnima-jeanne-chantal",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Poaty Gnima Jeanne Chantal",
+   "role": null,
+   "rank": 1077
+  },
+  {
+   "key": "senateur-richmond-ahoua-kominlin-eba-marie-irene",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Richmond Ahoua Kominlin Eba Marie-Irene",
+   "role": null,
+   "rank": 1078
+  },
+  {
+   "key": "senateur-sah-tietemomon-evariste",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Sah Tietemomon Evariste",
+   "role": null,
+   "rank": 1079
+  },
+  {
+   "key": "senateur-sarra-fadika-sako",
+   "mandate": "senateur",
+   "title": "Sénatrice",
+   "name": "Sarra Fadika Sako",
+   "role": "Vice-présidente du Sénat",
+   "rank": 10,
+   "gender": "F"
+  },
+  {
+   "key": "senateur-seu-tia",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Seu Tia",
+   "role": null,
+   "rank": 1081
+  },
+  {
+   "key": "senateur-sidibe-valy",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Sidibe Valy",
+   "role": "Président de la Commission des affaires générales, institutionnelles et des collectivités territoriales",
+   "rank": 50
+  },
+  {
+   "key": "senateur-silue-kagnon-augustin",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Silue Kagnon Augustin",
+   "role": "Vice-président du Sénat",
+   "rank": 10
+  },
+  {
+   "key": "senateur-soukoule-karidia-epouse-kone",
+   "mandate": "senateur",
+   "title": "Sénatrice",
+   "name": "Soukoule Karidia épouse Kone",
+   "role": null,
+   "rank": 1084,
+   "gender": "F"
+  },
+  {
+   "key": "senateur-taukla-kouassi-victor",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Taukla Kouassi Victor",
+   "role": null,
+   "rank": 1085
+  },
+  {
+   "key": "senateur-theodule-diro-lahuet",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Theodule Diro Lahuet",
+   "role": null,
+   "rank": 1086
+  },
+  {
+   "key": "senateur-tidou-abiba-sanogo-epouse-kone",
+   "mandate": "senateur",
+   "title": "Sénatrice",
+   "name": "Tidou Abiba Sanogo épouse Koné",
+   "role": null,
+   "rank": 1087,
+   "gender": "F"
+  },
+  {
+   "key": "senateur-toure-bourama",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Toure Bourama",
+   "role": null,
+   "rank": 1088
+  },
+  {
+   "key": "senateur-toure-manindja-epouse-diabate",
+   "mandate": "senateur",
+   "title": "Sénatrice",
+   "name": "Toure Manindja épouse Diabate",
+   "role": "Secrétaire du Sénat",
+   "rank": 40,
+   "gender": "F"
+  },
+  {
+   "key": "senateur-toure-souleymane",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Toure Souleymane",
+   "role": "Vice-président du Sénat",
+   "rank": 10
+  },
+  {
+   "key": "senateur-traore-bamoudien",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Traore Bamoudien",
+   "role": "Président du groupe parlementaire RHDP au Sénat",
+   "rank": 50
+  },
+  {
+   "key": "senateur-traore-lassina",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Traore Lassina",
+   "role": null,
+   "rank": 1092
+  },
+  {
+   "key": "senateur-yace-gabriel-joseph",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Yace Gabriel Joseph",
+   "role": null,
+   "rank": 1093
+  },
+  {
+   "key": "senateur-yao-kouadio-seraphin",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Yao Kouadio Seraphin",
+   "role": null,
+   "rank": 1094
+  },
+  {
+   "key": "senateur-yao-kouman-moise",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Yao-Kouman Moïse",
+   "role": null,
+   "rank": 1095
+  },
+  {
+   "key": "senateur-yapobi-jean-desire-lucien",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Yapobi Jean Desire Lucien",
+   "role": null,
+   "rank": 1096
+  },
+  {
+   "key": "senateur-yeboue-kouame-kouassi-pascal",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Yeboue Kouame Kouassi Pascal",
+   "role": null,
+   "rank": 1097
+  },
+  {
+   "key": "senateur-zoumana-makadji",
+   "mandate": "senateur",
+   "title": "Sénateur",
+   "name": "Zoumana Makadji",
+   "role": null,
+   "rank": 1098
+  }
+ ]
+}

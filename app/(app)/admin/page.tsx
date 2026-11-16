@@ -119,6 +119,7 @@ async function Verifications({ supabase, lang }: { supabase: Client; lang: "fr" 
           <li key={r.id} className="border-b border-line px-4 py-4">
             <p className="flex flex-wrap items-center gap-2 text-[13px] text-muted">
               <span className="chip bg-green-soft text-green-deep">{r.requested_type}</span>
+              {r.official_id && <span className="chip bg-paper text-ink">{(r as { link_kind?: string }).link_kind === "personal" ? (lang === "fr" ? "Compte personnel" : "Personal account") : (lang === "fr" ? "Compte de fonction" : "Office account")}</span>}
               <span>{formatDate(r.created_at, lang)}</span>
             </p>
             <p className="mt-2 text-[15px] font-semibold">{r.full_name}</p>
