@@ -47,10 +47,11 @@ export const library: LibraryEntry[] = [
     title: "Code électoral",
     short: "Code électoral",
     category: "elections",
-    reference: "Loi n° 2000-514 du 1er août 2000 portant Code électoral, modifiée notamment par l'ordonnance n° 2020-356 du 8 avril 2020",
+    reference: "Ordonnance n° 2020-356 du 8 avril 2020 portant révision du Code électoral",
     summary: "Qui peut voter et être élu, les listes électorales, la campagne, le vote, le dépouillement et le contentieux, pour chaque élection.",
-    officialUrl: "https://www.assnat.ci/Code-Electoral.pdf",
-    officialLabel: "Assemblée nationale",
+    officialUrl: "https://www.cei.ci/textes-de-loi/",
+    officialLabel: "Commission électorale indépendante",
+    edition: { version: "Texte de 2020, sans la modification de l'article 51 (ordonnance n° 2025-290 du 7 mai 2025)" },
   },
   {
     id: "reglement-assemblee-nationale",
@@ -61,17 +62,40 @@ export const library: LibraryEntry[] = [
     summary: "Comment l'Assemblée s'organise et travaille : bureau, groupes, commissions, séances, procédure législative et contrôle du Gouvernement.",
     officialUrl: "https://www.assnat.ci/reglement-assembleenationaledecotedivoire.pdf",
     officialLabel: "Assemblée nationale",
+    edition: { version: "Texte publié par l'Assemblée nationale" },
+  },
+  {
+    id: "loi-cei",
+    title: "Loi relative à la Commission électorale indépendante",
+    short: "Loi sur la CEI",
+    category: "elections",
+    reference: "Loi n° 2001-634 du 9 octobre 2001 portant composition, organisation, attributions et fonctionnement de la CEI, modifiée",
+    summary: "Ce qu'est la CEI, ses missions, qui la compose au niveau central et local, comment elle fonctionne et se finance.",
+    officialUrl: "https://www.cei.ci/textes-de-loi/",
+    officialLabel: "Commission électorale indépendante",
+    edition: { version: "Compilation de la CEI à jour en 2020, sans la loi modificative n° 2022-886 du 23 novembre 2022" },
+  },
+  {
+    id: "code-penal",
+    title: "Code pénal",
+    short: "Code pénal",
+    category: "codes",
+    reference: "Loi n° 2019-574 du 26 juin 2019 portant Code pénal",
+    summary: "Les infractions et leurs peines : règles générales de la responsabilité pénale, puis chaque crime, délit et contravention, contre l'État, les personnes et les biens.",
+    officialUrl: "https://assnat.ci/IMG/pdf/loi_portant_code_penal.pdf",
+    officialLabel: "Assemblée nationale",
+    edition: { version: "Texte de 2019, sans les lois modificatives de 2021 et suivantes" },
   },
 ];
 
 /** Texts the library will carry next; shown so readers know what is coming. */
 export const upcoming = [
   "Règlement du Sénat",
-  "Code pénal et Code de procédure pénale",
+  "Code de procédure pénale",
   "Code civil (personnes, famille, successions)",
   "Code du travail",
   "Loi sur les collectivités territoriales",
-  "Lois organiques sur le Conseil constitutionnel, la CEI et la Cour des comptes",
+  "Lois organiques sur le Conseil constitutionnel et la Cour des comptes",
 ];
 
 /** Written by `npm run library`: size of each built edition PDF and of the full archive. */
@@ -85,7 +109,7 @@ export type EditionBlock =
   | { type: "livre"; num: string; title: string }
   | { type: "titre"; num: string; title: string }
   | { type: "chapitre"; num: string; nouveau?: boolean; title: string }
-  | { type: "section"; num: string; title: string }
+  | { type: "section"; num: string; title: string; /** "Paragraphe"; "" for lettered sub-headings (A-, b)…). Default "Section". */ label?: string }
   | { type: "article"; num: string; nouveau?: boolean; paras: string[] }
   | { type: "signature"; paras: string[] };
 export type Edition = { id: string; title: string; reference: string; source: string; blocks: EditionBlock[] };
@@ -93,6 +117,10 @@ export type Edition = { id: string; title: string; reference: string; source: st
 export function articleLabel(b: { num: string; nouveau?: boolean }) {
   return `Article ${b.num === "1" ? "premier" : b.num}${b.nouveau ? " (nouveau)" : ""}`;
 }
+
+/** "Section 2", "Paragraphe 1", or the letter of a lettered sub-heading ("A", "b)"). */
+export const sectionLabel = (b: { num: string; label?: string }) =>
+  b.label === "" ? (/^[a-z]$/.test(b.num) ? `${b.num})` : b.num) : `${b.label ?? "Section"} ${ordinal(b.num)}`;
 
 /** "1" reads "premier" in headings (Titre premier, Chapitre premier…). */
 export const ordinal = (num: string) => (num === "1" ? "premier" : num);

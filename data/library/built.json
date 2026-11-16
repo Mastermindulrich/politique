@@ -2,11 +2,31 @@
  "editions": {
   "constitution": {
    "pages": 71,
-   "bytes": 461381,
+   "bytes": 461301,
    "articles": 180
+  },
+  "code-electoral": {
+   "pages": 79,
+   "bytes": 531816,
+   "articles": 206
+  },
+  "reglement-assemblee-nationale": {
+   "pages": 82,
+   "bytes": 566292,
+   "articles": 154
+  },
+  "loi-cei": {
+   "pages": 20,
+   "bytes": 250607,
+   "articles": 50
+  },
+  "code-penal": {
+   "pages": 214,
+   "bytes": 1143187,
+   "articles": 565
   }
  },
  "archive": {
-  "bytes": 356784
+  "bytes": 2360572
  }
 }

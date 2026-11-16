@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { PageHeader } from "@/app/components/shell/shell";
 import { I } from "@/app/components/ui/icons";
 import { getLang } from "@/lib/lang";
-import { CATEGORY_LABEL, EDITION_NOTICE, articleLabel, builtEditions, library, libraryById, ordinal, type Edition } from "@/lib/library";
+import { CATEGORY_LABEL, EDITION_NOTICE, articleLabel, builtEditions, library, libraryById, ordinal, sectionLabel, type Edition } from "@/lib/library";
 import { getViewer } from "@/lib/supabase/server";
 import { GoToArticle } from "./goto";
 
@@ -97,7 +97,7 @@ export default async function LibraryBook({ params }: { params: Promise<{ id: st
               if (b.type === "section")
                 return (
                   <h4 key={i} className="mt-5 text-[13px] font-bold uppercase tracking-[0.08em] text-muted">
-                    Section {ordinal(b.num)} · <span className="normal-case tracking-normal">{b.title}</span>
+                    {sectionLabel(b)} · <span className="normal-case tracking-normal">{b.title}</span>
                   </h4>
                 );
               if (b.type === "titre")
