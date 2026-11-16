@@ -40,10 +40,17 @@ grep -v '^#' scripts/library/sources.tsv | while IFS=$'\t' read -r id url; do
   sha=$(sha256sum "$f" | cut -c1-16)
   printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' "$id" "$code" "$bytes" "${pages:-0}" "$chars" "$ocr" "$sha" "$url" >> "$report"
 done
-: > "$OUT/_links.txt"
+: > "$OUT/_links.txt"; : > "$OUT/_html.txt"
 while read -r page; do
   [ -z "$page" ] && continue
   echo "## $page" >> "$OUT/_links.txt"
   curl -sSL -m 60 -A "$UA" "$page" | grep -oiE 'href="[^"]*\.pdf"' | sed 's/^href="//;s/"$//' | sort -u >> "$OUT/_links.txt" || true
 done < scripts/library/index-pages.txt
+if [ -f scripts/library/html-pages.tsv ]; then
+  grep -v '^#' scripts/library/html-pages.tsv | while IFS=$'\t' read -r id url; do
+    [ -z "$id" ] && continue
+    curl -sSL -m 60 -A "$UA" "$url" | python3 scripts/library/html-text.py > "$OUT/$id.txt" || true
+    echo "$id html $(wc -c < "$OUT/$id.txt")" >> "$OUT/_html.txt"
+  done
+fi
 cat "$report"

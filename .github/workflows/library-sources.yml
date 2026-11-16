@@ -8,6 +8,8 @@ on:
       - scripts/library/sources.tsv
       - scripts/library/index-pages.txt
       - scripts/library/fetch-sources.sh
+      - scripts/library/html-pages.tsv
+      - scripts/library/html-text.py
       - .github/workflows/library-sources.yml
 permissions:
   contents: write
