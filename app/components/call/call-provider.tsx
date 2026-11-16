@@ -5,6 +5,7 @@ import { answerIce, endRing, ringAgain, startCall, type Peer } from "@/lib/call-
 import { callText } from "@/lib/call-i18n";
 import { AUDIO_CONSTRAINTS, CallSession, VIDEO_CONSTRAINTS, callsSupported, newDeviceId, type Sig } from "@/lib/call-session";
 import { supabaseBrowser } from "@/lib/supabase/client";
+import { flushTrace, trace } from "@/lib/call-trace";
 import { CallScreen } from "./call-screen";
 import { playHangupTone, setAudioMode, startRingback, startRingtone, unlockAudio } from "./tones";
 
@@ -126,7 +127,10 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
   }, []);
 
   /** Tears everything down and shows why for a moment (or closes at once with no reason). */
-  const finish = useCallback((reason: EndReason | null, sendHangup = true) => {
+  const finish = useCallback((reason: EndReason | null, sendHangup = true, site = "") => {
+    const cid = callRef.current?.id ?? session.current?.callId;
+    trace(cid, "finish", { reason, site, phase: viewRef.current.phase });
+    flushTrace(cid);
     silence();
     clearTimers();
     session.current?.close(sendHangup);
@@ -172,6 +176,7 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
       // Tell the other side our mic/camera state now that they surely hear us.
       session.current?.send("media", { mic: viewRef.current.micOn, cam: viewRef.current.camOn }, session.current.peerDevice);
       void keepAwake();
+      flushTrace(callRef.current?.id, false);
     } else if (state === "disconnected" || state === "failed") {
       patch({ reconnecting: true });
       if (state === "failed") session.current?.restart();
@@ -180,7 +185,7 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
         const s = session.current;
         failTimer.current = window.setTimeout(() => s?.restart(), 4000);
         later(() => {
-          if (session.current === s && viewRef.current.reconnecting) finish("failed");
+          if (session.current === s && viewRef.current.reconnecting) finish("failed", true, "reconnect-timeout");
         }, 25_000);
       }
     }
@@ -199,6 +204,7 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
       if (call.role === "caller") {
         // Only the device that answered may talk to us after "accept".
         if (sig.k === "accept") {
+          if (!me.peerDevice) trace(call.id, "accepted");
           if (me.peerDevice) {
             // Our "taken" got lost: say it again to the device we are talking to.
             if (sig.f === me.peerDevice) me.send("taken", undefined, sig.f);
@@ -214,7 +220,7 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
           let n = 0;
           const nudge = () => {
             if (session.current !== me || viewRef.current.phase !== "connecting") return;
-            if (n++ >= 8) return finish("failed");
+            if (n++ >= 8) return finish("failed", true, "caller-no-connect");
             me.resend();
             later(nudge, 3000);
           };
@@ -264,6 +270,7 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
       return;
     }
     const r = await startCall(conversationId, video).catch(() => null);
+    if (r?.ok) trace(r.callId, "started", { video }, "caller");
     if (!r || !r.ok) {
       const err = r && !r.ok ? r.error : "failed";
       return finish(err === "blocked" ? "blocked" : err === "unavailable" ? "unavailable" : "failed", false);
@@ -281,7 +288,7 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
     try {
       await s.join();
     } catch {
-      return finish("failed", false);
+      return finish("failed", false, "caller-join");
     }
     if (session.current !== s) return;
     s.send("media", { mic: true, cam: video });
@@ -318,6 +325,7 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
         }
         callRef.current = { id: payload.call_id, conversationId: payload.conversation_id, video: Boolean(payload.video), role: "callee" };
         apply({ ...IDLE, phase: "incoming", peer: payload.from, video: Boolean(payload.video), role: "callee", camOn: Boolean(payload.video), remoteCam: Boolean(payload.video), conversationId: payload.conversation_id });
+        trace(payload.call_id, "ring-received", { video: Boolean(payload.video) }, "callee");
         const s: CallSession = new CallSession(payload.call_id, viewerId, deviceId.current, handlers(() => s));
         session.current = s;
         void s.join().catch(() => {});
@@ -350,6 +358,7 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
       s.send("decline");
       return finish(mediaError(e), false);
     }
+    trace(call.id, "answer-tapped");
     const r = await answerIce(call.conversationId).catch(() => null);
     if (!r || !r.ok) {
       s.send("decline");
@@ -365,7 +374,8 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
     let tries = 0;
     const sendAccept = () => {
       if (session.current !== s || viewRef.current.phase !== "connecting" || s.peerDevice) return;
-      if (tries++ > 6) return finish("failed");
+      if (tries++ > 6) return finish("failed", true, "callee-no-offer");
+      trace(s.callId, `accept-sent:${tries}`);
       s.send("accept");
       later(sendAccept, 1500);
     };
