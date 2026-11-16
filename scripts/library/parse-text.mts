@@ -78,7 +78,7 @@ function loidiciLines(raw: string, cfg: TextConfig) {
   const heads = (t: string) =>
     unescape(t)
       .split(/\s+\/\s+|\s+(?=(?:CHAPITRE|SECTION)\s+\S+\s*:)/)
-      .map((h) => h.replace(/PRELIMINARE/, "PRELIMINAIRE").replace(/\s*\((?:ART\.?|ARTICLES?)\s[^)]*\)\s*$/i, "").replace(/\s*\(\s*\d{4}\s*\)$/, "").replace(/\s+/g, " ").trim())
+      .map((h) => h.replace(/PRELIMINARE/, "PRELIMINAIRE").replace(/\s*\((?:ART\.?|ARTICLES?)\s[^)]*\)\s*$/i, "").replace(/(?:\s*\(\s*\d{4}\s*\))+$/, "").replace(/\s+/g, " ").trim())
       .filter((h) => headKey(h));
   const parts = raw.split(/^##(?=INDEX|PAGE )/m);
   const index = parts.find((p) => p.startsWith("INDEX"));

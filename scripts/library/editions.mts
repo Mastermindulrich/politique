@@ -133,4 +133,15 @@ export const configs: TextConfig[] = [
     reference: "Loi n° 2019-572 du 26 juin 2019 relative à la minorité",
     sourceLabel: "texte saisi par loidici.biz d'après le Journal officiel",
   },
+  {
+    id: "loi-mariage",
+    source: "loidici-mariage-2019",
+    format: "loidici",
+    endPage: /ABROG|^(LIVRET|LA COMMISSION)/,
+    skipPage: /ABROG/,
+    skip: [/LOIDICI\.BIZ/i],
+    title: "Loi relative au mariage",
+    reference: "Loi n° 2019-570 du 26 juin 2019 relative au mariage",
+    sourceLabel: "texte saisi par loidici.biz d'après le Journal officiel",
+  },
 ];

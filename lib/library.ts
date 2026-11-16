@@ -150,6 +150,18 @@ export const library: LibraryEntry[] = [
     edition: { version: "Texte de 2019 (saisie loidici.biz)" },
   },
   {
+    id: "loi-mariage",
+    title: "Loi relative au mariage",
+    short: "Loi sur le mariage",
+    category: "famille",
+    reference: "Loi n° 2019-570 du 26 juin 2019 relative au mariage",
+    summary: "Conditions pour se marier, oppositions, célébration et preuve du mariage, droits et devoirs des époux, régimes des biens, nullités et dissolution.",
+    officialUrl: "https://loidici.biz/2019/08/15/droit-du-mariage-2019/",
+    officialLabel: "loidici.biz",
+    transcription: true,
+    edition: { version: "Texte de 2019 (saisie loidici.biz)" },
+  },
+  {
     id: "code-travail",
     title: "Code du travail",
     short: "Code du travail",
@@ -166,7 +178,7 @@ export const library: LibraryEntry[] = [
 /** Texts the library will carry next; shown so readers know what is coming. */
 export const upcoming = [
   "Règlement du Sénat",
-  "Lois sur le mariage, le nom, l'état civil et la filiation",
+  "Lois sur le nom, l'état civil et la filiation",
   "Loi sur les collectivités territoriales",
 ];
 
