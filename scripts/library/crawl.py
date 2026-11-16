@@ -3,7 +3,7 @@
   crawl.py page URL            readable text of a page's main content, then its links
   crawl.py crawl URL SUBSTR    text of every page linked from URL's main content whose
                                address contains SUBSTR, in order, each after "##PAGE url"
-                               and "##TITLE heading" (the index page itself comes first,
+                               ("*": any post of the site) and "##TITLE heading" (the index page itself comes first,
                                after "##INDEX", with its links)
   crawl.py category URL        every post of a WordPress category (all its listing pages),
                                oldest first, each after "##PAGE url" and "##TITLE heading"
@@ -76,7 +76,9 @@ elif mode == "crawl":
     for line in index.splitlines():
         if line.startswith("=> "):
             href = fix(line[3:].split(" | ")[0].strip())
-            if sub in href and href not in seen:
+            # "*": every post of the site linked from the index (short /YYYY/MM/DD/slug/ links).
+            ok = re.match(r"https?://(www\.)?loidici\.biz/\d{4}/\d\d/\d\d/", href) and "#" not in href if sub == "*" else sub in href
+            if ok and href not in seen:
                 seen.append(href)
     for href in seen:
         post(href)

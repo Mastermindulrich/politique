@@ -10,13 +10,10 @@ loidici-cc-2022	crawl	https://loidici.biz/?p=73735	le-conseil-constitutionnel
 loidici-cdc	page	https://loidici.biz/?p=15161
 loidici-etatcivil-2026	page	https://loidici.biz/?p=76346
 loidici-cdc-2018	crawl	https://loidici.biz/?p=15161	les-institutions-de-la-rep
-loidici-travail-2015	crawl	https://loidici.biz/?p=1695	le-code-du-travail
 loidici-successions-2019	crawl	https://loidici.biz/?p=15608	droit-de-la-famille
-loidici-cat-famille	links	https://loidici.biz/category/lois-article-par-article/droit-de-la-famille/
-loidici-cat-famille2	links	https://loidici.biz/category/lois-article-par-article/droit-de-la-famille/page/2/
-loidici-cat-famille3	links	https://loidici.biz/category/lois-article-par-article/droit-de-la-famille/page/3/
-loidici-s-mariage3	links	https://loidici.biz/?s=la+loi+relative+au+mariage
-loidici-s-minorite3	links	https://loidici.biz/?s=la+loi+relative+a+la+minorite
-loidici-s-filiation3	links	https://loidici.biz/?s=la+loi+relative+a+la+filiation
-loidici-s-nom3	links	https://loidici.biz/?s=la+loi+relative+au+nom
-loidici-s-etatcivil3	links	https://loidici.biz/?s=loi+relative+a+l%27etat+civil+2018
+loidici-travail-2015	crawl	https://loidici.biz/?p=1695	*
+loidici-minorite-2019	crawl	https://loidici.biz/?p=15577	*
+loidici-idx-mariage	page	https://loidici.biz/?p=607
+loidici-idx-nom	page	https://loidici.biz/?p=646
+loidici-idx-filiation	page	https://loidici.biz/?p=553
+loidici-idx-etatcivil	page	https://loidici.biz/?p=645
