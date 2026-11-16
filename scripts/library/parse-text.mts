@@ -40,7 +40,7 @@ const HEAD: { type: "livre" | "titre" | "chapitre" | "section"; label?: string; 
 // "ARTICLE 2", "Article 5 nouveau (loi n°2019-708 du 05 AOUT 2019):", "Article 3 :", "Art. 12. — Text".
 // The heading must stand alone on its line (or, for "Art.", be followed by a dash), so that a
 // wrapped line starting with "Article 12 de la loi…" is not taken for a heading.
-const ARTICLE = /^(?:ARTICLE|Article)\s+(PREMIER|premier|1er|\d+(?:[.-]\d+)?(?:\s+(?:bis|ter|quater|quinquies))?)(\s*[:–—-]?\s*(?:nouveau|NOUVEAU))?\s*:?\s*(\([^)]*\))?\s*[:.–—-]?$|^Art\.\s+(1er|\d+(?:\s+(?:bis|ter))?)\s*\.?\s*[–—-]+\s*(.*)$/;
+const ARTICLE = /^(?:ARTICLES?|Article)\s+(PREMIER|premier|1er|\d+(?:[.-]\d+)?(?:\s+(?:bis|ter|quater|quinquies))?)(\s*[:–—-]?\s*(?:nouveau|NOUVEAU))?\s*:?\s*(\([^)]*\))?\s*[:.–—-]?$|^Art\.\s+(1er|\d+(?:\s+(?:bis|ter))?)\s*\.?\s*[–—-]+\s*(.*)$/;
 const ARTICLE_INLINE = /^(?:ARTICLE|Article)\s+(PREMIER|premier|1er|\d+)\s*[:.–—-]?\s+([A-ZÀ-Ý«].*)$/;
 const LIST = /^(?:[-–•▪]\s|\d+[°)]|\d+\s*[-–.]\s|[a-z]\)|[ivx]+\)|[IVX]+\s*[-–.]\s)/;
 const END = /[.;:!?»…]$/;
@@ -78,7 +78,7 @@ function loidiciLines(raw: string, cfg: TextConfig) {
   const heads = (t: string) =>
     unescape(t)
       .split(/\s+\/\s+|\s+(?=(?:CHAPITRE|SECTION)\s+\S+\s*:)/)
-      .map((h) => h.replace(/PRELIMINARE/, "PRELIMINAIRE").replace(/\s*\((?:ART\.?|ARTICLES?)\s[^)]*\)\s*$/i, "").replace(/\s*\(\d{4}\)$/, "").replace(/\s+/g, " ").trim())
+      .map((h) => h.replace(/PRELIMINARE/, "PRELIMINAIRE").replace(/\s*\((?:ART\.?|ARTICLES?)\s[^)]*\)\s*$/i, "").replace(/\s*\(\s*\d{4}\s*\)$/, "").replace(/\s+/g, " ").trim())
       .filter((h) => headKey(h));
   const parts = raw.split(/^##(?=INDEX|PAGE )/m);
   const index = parts.find((p) => p.startsWith("INDEX"));
@@ -88,6 +88,7 @@ function loidiciLines(raw: string, cfg: TextConfig) {
   for (const part of parts.filter((p) => p.startsWith("PAGE "))) {
     const lines = part.split("\n");
     const title = unescape((lines.find((l) => l.startsWith("##TITLE ")) ?? "").slice(8));
+    if (cfg.endPage?.test(title) && out.some((l) => /^ARTICLE/i.test(l))) break;
     if (cfg.skipPage?.test(title)) continue;
     for (const h of heads(title)) {
       const k = headKey(h);

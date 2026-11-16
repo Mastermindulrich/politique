@@ -26,6 +26,8 @@ export type TextConfig = {
   format?: "loidici";
   /** loidici pages to leave out, by title (an abrogated text linked from the index). */
   skipPage?: RegExp;
+  /** loidici page where the text stops (decrees and amending texts linked after it). */
+  endPage?: RegExp;
 };
 
 export const configs: TextConfig[] = [
@@ -104,6 +106,31 @@ export const configs: TextConfig[] = [
     skip: [/LOIDICI\.BIZ/i],
     title: "Loi relative aux successions",
     reference: "Loi n° 2019-573 du 26 juin 2019 relative aux successions",
+    sourceLabel: "texte saisi par loidici.biz d'après le Journal officiel",
+  },
+  {
+    id: "code-travail",
+    source: "loidici-travail-2015",
+    format: "loidici",
+    retitle: { "DISPOSITIONS TRANSITOIRES ET FINALES (Les articles 103, 104, 105, 106, 107, 108 et 109 n’existent pas dans le Code du Travail)": "DISPOSITIONS TRANSITOIRES ET FINALES" },
+    endPage: /ABROG|^(ORDONNANCE|DECRET|ARRETE|LOI N|LA CONVENTION)/,
+    skipPage: /ABROG/,
+    skip: [/LOIDICI\.BIZ/i],
+    title: "Code du travail",
+    reference: "Loi n° 2015-532 du 20 juillet 2015 portant Code du travail, modifiée",
+    sourceLabel: "texte saisi par loidici.biz d'après le Journal officiel",
+  },
+  {
+    id: "loi-minorite",
+    source: "loidici-minorite-2019",
+    format: "loidici",
+    endPage: /ABROG|^(COMITE|LES NORMES|LOI)/,
+    // The site numbers the last chapter 10 and notes that it is the ninth.
+    post: (blocks) => blocks.map((b) => (b.type === "chapitre" && b.num === "10" ? { ...b, num: "9", title: "DISPOSITIONS FINALES" } : b)),
+    skipPage: /ABROG/,
+    skip: [/LOIDICI\.BIZ/i],
+    title: "Loi relative à la minorité",
+    reference: "Loi n° 2019-572 du 26 juin 2019 relative à la minorité",
     sourceLabel: "texte saisi par loidici.biz d'après le Journal officiel",
   },
 ];

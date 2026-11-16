@@ -137,13 +137,36 @@ export const library: LibraryEntry[] = [
     transcription: true,
     edition: { version: "Texte de 2019 (saisie loidici.biz)" },
   },
+  {
+    id: "loi-minorite",
+    title: "Loi relative à la minorité",
+    short: "Loi sur la minorité",
+    category: "famille",
+    reference: "Loi n° 2019-572 du 26 juin 2019 relative à la minorité",
+    summary: "Les droits de l'enfant mineur et qui les exerce : autorité parentale des deux parents, administration de ses biens, tutelle, émancipation et rôle du juge des tutelles.",
+    officialUrl: "https://loidici.biz/2019/08/16/la-loi-relative-a-la-minorite/lois-article-par-article/droit-de-la-famille/15577/naty/",
+    officialLabel: "loidici.biz",
+    transcription: true,
+    edition: { version: "Texte de 2019 (saisie loidici.biz)" },
+  },
+  {
+    id: "code-travail",
+    title: "Code du travail",
+    short: "Code du travail",
+    category: "codes",
+    reference: "Loi n° 2015-532 du 20 juillet 2015 portant Code du travail, modifiée",
+    summary: "Les règles du travail salarié dans le secteur privé : embauche et contrat, durée du travail et congés, salaire, santé et sécurité, syndicats, délégués du personnel, conventions collectives, conflits et sanctions.",
+    officialUrl: "https://loidici.biz/2018/08/26/le-code-du-travail-2016/lois-article-par-article/codes/1695/naty/",
+    officialLabel: "loidici.biz",
+    transcription: true,
+    edition: { version: "Texte de 2015, à jour de l'ordonnance n° 2021-902 du 22 décembre 2021 (saisie loidici.biz)" },
+  },
 ];
 
 /** Texts the library will carry next; shown so readers know what is coming. */
 export const upcoming = [
   "Règlement du Sénat",
-  "Code civil (personnes, famille, successions)",
-  "Code du travail",
+  "Lois sur le mariage, le nom, l'état civil et la filiation",
   "Loi sur les collectivités territoriales",
 ];
 
