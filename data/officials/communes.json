@@ -838,7 +838,7 @@
    "key": "maire-grand-bereby",
    "mandate": "maire",
    "title": "Maire de Grand-Béréby",
-   "name": "????? Kouame Armand",
+   "name": "Konan Kouame Armand",
    "gender": "M",
    "party": "Indépendant",
    "department": "San-Pédro",
@@ -1437,7 +1437,7 @@
   {
    "key": "maire-plateau",
    "mandate": "maire",
-   "title": "Maire de Plateau",
+   "title": "Maire du Plateau",
    "name": "Ehouo Jacques Gabriel",
    "gender": "M",
    "party": "PDCI-RDA",
@@ -1929,7 +1929,7 @@
   {
    "key": "maire-yakasse-attobrou",
    "mandate": "maire",
-   "title": "Maire d'Yakassé-Attobrou",
+   "title": "Maire de Yakassé-Attobrou",
    "name": "Assi N'Din Theodore",
    "gender": "M",
    "party": "PDCI-RDA / PPA-CI",
@@ -1939,7 +1939,7 @@
   {
    "key": "maire-yamoussoukro",
    "mandate": "maire",
-   "title": "Maire d'Yamoussoukro",
+   "title": "Maire de Yamoussoukro",
    "name": "Kouassi Kouame Patrice",
    "gender": "M",
    "party": "PDCI-RDA",
@@ -1949,7 +1949,7 @@
   {
    "key": "maire-yopougon",
    "mandate": "maire",
-   "title": "Maire d'Yopougon",
+   "title": "Maire de Yopougon",
    "name": "Adama Bictogo",
    "gender": "M",
    "party": "RHDP",

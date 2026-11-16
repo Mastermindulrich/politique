@@ -64,10 +64,11 @@
   {
    "key": "senateur-amblard-marie-elisabeth-epouse-zunon-kipre",
    "mandate": "senateur",
-   "title": "Sénateur",
-   "name": "Amblard Marie Elisabeth Épouse Zunon-Kipre",
+   "title": "Sénatrice",
+   "name": "Amblard Marie Elisabeth épouse Zunon-Kipre",
    "role": "Présidente de la Commission de la recherche, de la science, de la technologie et de l'environnement",
-   "rank": 50
+   "rank": 50,
+   "gender": "F"
   },
   {
    "key": "senateur-asseke-yaba-adele",
@@ -104,10 +105,11 @@
   {
    "key": "senateur-baflan-laure-epouse-donwahi",
    "mandate": "senateur",
-   "title": "Sénateur",
-   "name": "Baflan Laure Épouse Donwahi",
+   "title": "Sénatrice",
+   "name": "Baflan Laure épouse Donwahi",
    "role": "Secrétaire du Sénat",
-   "rank": 40
+   "rank": 40,
+   "gender": "F"
   },
   {
    "key": "senateur-bakary-ouattara",
@@ -120,10 +122,11 @@
   {
    "key": "senateur-bamba-maimouna-epouse-dosso",
    "mandate": "senateur",
-   "title": "Sénateur",
-   "name": "Bamba Maimouna Épouse Dosso",
+   "title": "Sénatrice",
+   "name": "Bamba Maimouna épouse Dosso",
    "role": null,
-   "rank": 1013
+   "rank": 1013,
+   "gender": "F"
   },
   {
    "key": "senateur-bamba-mamadou",
@@ -136,10 +139,11 @@
   {
    "key": "senateur-bamba-sogona-epouse-arnault",
    "mandate": "senateur",
-   "title": "Sénateur",
-   "name": "Bamba Sogona Épouse Arnault",
+   "title": "Sénatrice",
+   "name": "Bamba Sogona épouse Arnault",
    "role": null,
-   "rank": 1015
+   "rank": 1015,
+   "gender": "F"
   },
   {
    "key": "senateur-bezeme-kouame-christophe",
@@ -208,26 +212,29 @@
   {
    "key": "senateur-coulibaly-maman-epouse-ouattara",
    "mandate": "senateur",
-   "title": "Sénateur",
-   "name": "Coulibaly Maman Épouse Ouattara",
+   "title": "Sénatrice",
+   "name": "Coulibaly Maman épouse Ouattara",
    "role": "Vice-présidente du Sénat",
-   "rank": 10
+   "rank": 10,
+   "gender": "F"
   },
   {
    "key": "senateur-coulibaly-yao-madiara-epouse-coulibaly",
    "mandate": "senateur",
-   "title": "Sénateur",
-   "name": "Coulibaly Yao Madiara Épouse Coulibaly",
+   "title": "Sénatrice",
+   "name": "Coulibaly Yao Madiara épouse Coulibaly",
    "role": null,
-   "rank": 1025
+   "rank": 1025,
+   "gender": "F"
   },
   {
    "key": "senateur-da-silva-sylvia-epouse-anoma",
    "mandate": "senateur",
-   "title": "Sénateur",
-   "name": "Da Silva Sylvia Épouse Anoma",
+   "title": "Sénatrice",
+   "name": "Da Silva Sylvia épouse Anoma",
    "role": null,
-   "rank": 1026
+   "rank": 1026,
+   "gender": "F"
   },
   {
    "key": "senateur-dao-losseni",
@@ -256,10 +263,11 @@
   {
    "key": "senateur-delon-epouse-longuet-catherine-suzanne",
    "mandate": "senateur",
-   "title": "Sénateur",
-   "name": "Delon Épouse Longuet Catherine Suzanne",
+   "title": "Sénatrice",
+   "name": "Delon épouse Longuet Catherine Suzanne",
    "role": "Questeure du Sénat",
-   "rank": 30
+   "rank": 30,
+   "gender": "F"
   },
   {
    "key": "senateur-diaby-makani",
@@ -392,10 +400,11 @@
   {
    "key": "senateur-gabala-mariam-epouse-dao",
    "mandate": "senateur",
-   "title": "Sénateur",
-   "name": "Gabala Mariam Épouse Dao",
+   "title": "Sénatrice",
+   "name": "Gabala Mariam épouse Dao",
    "role": null,
-   "rank": 1047
+   "rank": 1047,
+   "gender": "F"
   },
   {
    "key": "senateur-goueti-bi-soho-charles",
@@ -656,10 +665,11 @@
   {
    "key": "senateur-sarra-fadika-sako",
    "mandate": "senateur",
-   "title": "Sénateur",
+   "title": "Sénatrice",
    "name": "Sarra Fadika Sako",
    "role": "Vice-présidente du Sénat",
-   "rank": 10
+   "rank": 10,
+   "gender": "F"
   },
   {
    "key": "senateur-seu-tia",
@@ -688,10 +698,11 @@
   {
    "key": "senateur-soukoule-karidia-epouse-kone",
    "mandate": "senateur",
-   "title": "Sénateur",
-   "name": "Soukoule Karidia Épouse Kone",
+   "title": "Sénatrice",
+   "name": "Soukoule Karidia épouse Kone",
    "role": null,
-   "rank": 1084
+   "rank": 1084,
+   "gender": "F"
   },
   {
    "key": "senateur-taukla-kouassi-victor",
@@ -712,10 +723,11 @@
   {
    "key": "senateur-tidou-abiba-sanogo-epouse-kone",
    "mandate": "senateur",
-   "title": "Sénateur",
-   "name": "Tidou Abiba Sanogo Épouse Koné",
+   "title": "Sénatrice",
+   "name": "Tidou Abiba Sanogo épouse Koné",
    "role": null,
-   "rank": 1087
+   "rank": 1087,
+   "gender": "F"
   },
   {
    "key": "senateur-toure-bourama",
@@ -728,10 +740,11 @@
   {
    "key": "senateur-toure-manindja-epouse-diabate",
    "mandate": "senateur",
-   "title": "Sénateur",
-   "name": "Toure Manindja Épouse Diabate",
+   "title": "Sénatrice",
+   "name": "Toure Manindja épouse Diabate",
    "role": "Secrétaire du Sénat",
-   "rank": 40
+   "rank": 40,
+   "gender": "F"
   },
   {
    "key": "senateur-toure-souleymane",
