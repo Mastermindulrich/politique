@@ -1,8 +1,1 @@
 # id	mode	url	[substring]  (web pages saved to data/library/sources/<id>.txt by crawl.py)
-nanan-nom-2020	nanan	https://www.nanan.ai/textes/loi-n-2020-490-du-29-mai-2020-relative-au-nom	22
-nanan-filiation-2019	nanan	https://www.nanan.ai/textes/loi-n-2019-571-du-26-juin-2019-relative-a-la-filiation	60
-nanan-etatcivil-2018	nanan	https://www.nanan.ai/textes/loi-n-2018-862-du-19-novembre-2018-relative-a-l-etat-civil	120
-nanan-cat-constitution	raw	https://www.nanan.ai/textes/constitution
-nanan-cat-administratif	raw	https://www.nanan.ai/textes/administratif
-nanan-cat-famille	raw	https://www.nanan.ai/textes/famille
-senat-legislatifs	raw	https://www.senat.ci/tous-les-legislatifs

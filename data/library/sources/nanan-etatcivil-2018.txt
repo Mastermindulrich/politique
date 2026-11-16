@@ -1,7 +1,0 @@
-##ERROR https://www.nanan.ai/textes/loi-n-2018-862-du-19-novembre-2018-relative-a-l-etat-civil HTTP Error 429: Too Many Requests
-##INDEX
-
-##ERROR https://www.nanan.ai/textes/loi-n-2018-862-du-19-novembre-2018-relative-a-l-etat-civil/articles/article-1 HTTP Error 429: Too Many Requests
-##ERROR https://www.nanan.ai/textes/loi-n-2018-862-du-19-novembre-2018-relative-a-l-etat-civil/articles/article-2 HTTP Error 429: Too Many Requests
-##ERROR https://www.nanan.ai/textes/loi-n-2018-862-du-19-novembre-2018-relative-a-l-etat-civil/articles/article-3 HTTP Error 429: Too Many Requests
-##ERROR https://www.nanan.ai/textes/loi-n-2018-862-du-19-novembre-2018-relative-a-l-etat-civil/articles/article-4 HTTP Error 429: Too Many Requests

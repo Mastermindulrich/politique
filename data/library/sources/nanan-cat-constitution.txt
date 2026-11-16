@@ -1,2 +1,0 @@
-##ERROR https://www.nanan.ai/textes/constitution HTTP Error 429: Too Many Requests
-
