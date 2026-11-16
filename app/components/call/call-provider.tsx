@@ -4,7 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import { answerIce, endRing, ringAgain, startCall, type Peer } from "@/lib/call-actions";
 import { callText } from "@/lib/call-i18n";
 import { AUDIO_CONSTRAINTS, CallSession, VIDEO_CONSTRAINTS, callsSupported, newDeviceId, type Sig } from "@/lib/call-session";
-import { browserClient } from "@/lib/supabase/lazy";
+import { supabaseBrowser } from "@/lib/supabase/client";
 import { CallScreen } from "./call-screen";
 import { playHangupTone, setAudioMode, startRingback, startRingtone, unlockAudio } from "./tones";
 
@@ -303,42 +303,36 @@ export function CallProvider({ viewerId, inbox, enabled, lang, children }: { vie
   // ---- incoming ----
   useEffect(() => {
     if (!enabled || !inbox) return;
-    let gone = false;
-    let stop: (() => void) | null = null;
-    void browserClient().then((supabase) => {
-      if (gone) return;
-      const ch = supabase
-        .channel(inbox, { config: { broadcast: { self: false } } })
-        .on("broadcast", { event: "ring" }, ({ payload }: { payload: Ring }) => {
-          if (!payload?.call_id || payload.from?.id === viewerId) return;
-          if (seen.current.has(payload.call_id)) return;
-          seen.current.add(payload.call_id);
-          // Already on a call: say so, without disturbing the current one.
-          if (viewRef.current.phase !== "idle" || !callsSupported()) {
-            const busy = new CallSession(payload.call_id, viewerId, deviceId.current, { onSignal: () => {}, onRemoteTrack: () => {}, onConnection: () => {} });
-            void busy.join().then(() => busy.send("busy")).catch(() => {}).finally(() => window.setTimeout(() => busy.close(false), 600));
-            return;
-          }
-          callRef.current = { id: payload.call_id, conversationId: payload.conversation_id, video: Boolean(payload.video), role: "callee" };
-          apply({ ...IDLE, phase: "incoming", peer: payload.from, video: Boolean(payload.video), role: "callee", camOn: Boolean(payload.video), remoteCam: Boolean(payload.video), conversationId: payload.conversation_id });
-          const s: CallSession = new CallSession(payload.call_id, viewerId, deviceId.current, handlers(() => s));
-          session.current = s;
-          void s.join().catch(() => {});
-          stopSound.current = startRingtone();
-          later(() => {
-            if (session.current === s && viewRef.current.phase === "incoming") finish(null, false);
-          }, RING_TIMEOUT + 5000);
-        })
-        .on("broadcast", { event: "cancel" }, ({ payload }: { payload: { call_id?: string } }) => {
-          if (payload?.call_id && callRef.current?.id === payload.call_id && viewRef.current.phase === "incoming") finish(null, false);
-          if (payload?.call_id) seen.current.add(payload.call_id);
-        })
-        .subscribe();
-      stop = () => void supabase.removeChannel(ch);
-    });
+    const supabase = supabaseBrowser();
+    const ch = supabase
+      .channel(inbox, { config: { broadcast: { self: false } } })
+      .on("broadcast", { event: "ring" }, ({ payload }: { payload: Ring }) => {
+        if (!payload?.call_id || payload.from?.id === viewerId) return;
+        if (seen.current.has(payload.call_id)) return;
+        seen.current.add(payload.call_id);
+        // Already on a call: say so, without disturbing the current one.
+        if (viewRef.current.phase !== "idle" || !callsSupported()) {
+          const busy = new CallSession(payload.call_id, viewerId, deviceId.current, { onSignal: () => {}, onRemoteTrack: () => {}, onConnection: () => {} });
+          void busy.join().then(() => busy.send("busy")).catch(() => {}).finally(() => window.setTimeout(() => busy.close(false), 600));
+          return;
+        }
+        callRef.current = { id: payload.call_id, conversationId: payload.conversation_id, video: Boolean(payload.video), role: "callee" };
+        apply({ ...IDLE, phase: "incoming", peer: payload.from, video: Boolean(payload.video), role: "callee", camOn: Boolean(payload.video), remoteCam: Boolean(payload.video), conversationId: payload.conversation_id });
+        const s: CallSession = new CallSession(payload.call_id, viewerId, deviceId.current, handlers(() => s));
+        session.current = s;
+        void s.join().catch(() => {});
+        stopSound.current = startRingtone();
+        later(() => {
+          if (session.current === s && viewRef.current.phase === "incoming") finish(null, false);
+        }, RING_TIMEOUT + 5000);
+      })
+      .on("broadcast", { event: "cancel" }, ({ payload }: { payload: { call_id?: string } }) => {
+        if (payload?.call_id && callRef.current?.id === payload.call_id && viewRef.current.phase === "incoming") finish(null, false);
+        if (payload?.call_id) seen.current.add(payload.call_id);
+      })
+      .subscribe();
     return () => {
-      gone = true;
-      stop?.();
+      void supabase.removeChannel(ch);
     };
   }, [apply, enabled, finish, handlers, inbox, later, viewerId]);
 
