@@ -112,6 +112,18 @@ export const library: LibraryEntry[] = [
     transcription: true,
     edition: { version: "Texte de 2022 (saisie loidici.biz)" },
   },
+  {
+    id: "loi-cour-des-comptes",
+    title: "Loi organique sur la Cour des comptes",
+    short: "Loi sur la Cour des comptes",
+    category: "institutions",
+    reference: "Loi organique n° 2018-979 du 27 décembre 2018 déterminant les attributions, la composition, l'organisation et le fonctionnement de la Cour des comptes",
+    summary: "La juridiction qui contrôle l'argent public : ses attributions, ses magistrats, le jugement des comptes publics, les fautes de gestion et l'assistance qu'elle doit au Gouvernement et au Parlement.",
+    officialUrl: "https://loidici.biz/2019/06/23/la-cour-des-comptes/lois-article-par-article/les-institutions-de-la-rep/15161/naty/",
+    officialLabel: "loidici.biz",
+    transcription: true,
+    edition: { version: "Texte de 2018 (saisie loidici.biz)" },
+  },
 ];
 
 /** Texts the library will carry next; shown so readers know what is coming. */
@@ -120,7 +132,6 @@ export const upcoming = [
   "Code civil (personnes, famille, successions)",
   "Code du travail",
   "Loi sur les collectivités territoriales",
-  "Loi organique sur la Cour des comptes",
 ];
 
 /** Written by `npm run library`: size of each built edition PDF and of the full archive. */

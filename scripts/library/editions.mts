@@ -86,4 +86,14 @@ export const configs: TextConfig[] = [
     reference: "Loi n° 2019-574 du 26 juin 2019 portant Code pénal, modifiée",
     sourceLabel: "texte consolidé saisi par loidici.biz d'après le Journal officiel",
   },
+  {
+    id: "loi-cour-des-comptes",
+    source: "loidici-cdc-2018",
+    format: "loidici",
+    fixes: [["SECTION :", "SECTION PRELIMINAIRE :"]],
+    skipPage: /ABROG/,
+    title: "Loi organique sur la Cour des comptes",
+    reference: "Loi organique n° 2018-979 du 27 décembre 2018 déterminant les attributions, la composition, l'organisation et le fonctionnement de la Cour des comptes",
+    sourceLabel: "texte saisi par loidici.biz d'après le Journal officiel",
+  },
 ];

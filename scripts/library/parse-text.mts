@@ -27,7 +27,7 @@ function headNum(raw: string) {
 }
 
 const NUM = String.raw`(PREMIER|PRELIMINAIRE|PRÉLIMINAIRE|UNIQUE|premier|préliminaire|unique|1er|[IVXLC]+|\d+)`;
-const SEP = String.raw`\s*(?:[:.–—-]+\s*)?`;
+const SEP = String.raw`\s*(?:[:.–—-][\s:.–—-]*)?`;
 const HEAD: { type: "livre" | "titre" | "chapitre" | "section"; label?: string; re: RegExp }[] = [
   { type: "livre", re: new RegExp(`^LIVRE\\s+${NUM}\\b${SEP}(.*)$`) },
   { type: "titre", re: new RegExp(`^TITRE\\s+${NUM}\\b${SEP}(.*)$`) },
@@ -98,7 +98,12 @@ function loidiciLines(raw: string, cfg: TextConfig) {
       }
       out.push(h);
     }
-    out.push(...lines.slice(1).filter((l) => !l.startsWith("##")).map(unescape));
+    for (const l of lines.slice(1).filter((x) => !x.startsWith("##")).map(unescape)) {
+      // A heading of the index that the page gives in its text.
+      const k = headKey(l);
+      if (k && outline[cursor] && headKey(outline[cursor]) === k) cursor++;
+      out.push(l);
+    }
   }
   return out;
 }
