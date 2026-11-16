@@ -1,19 +1,9 @@
 # id	mode	url	[substring]  (web pages saved to data/library/sources/<id>.txt by crawl.py)
-loidici-cpp-2018	crawl	https://loidici.biz/2019/06/08/le-code-de-procedure-penale-2018/	le-code-de-procedure-penale-2018
-loidici-cp-2019	crawl	https://loidici.biz/?p=15754	le-code-penal-2019
 loidici-cpp-2022	page	https://loidici.biz/?p=24357
 loidici-cp-2021	page	https://loidici.biz/?p=22836
 loidici-cp-2021b	page	https://loidici.biz/?p=22896
 loidici-cpp-2023	page	https://loidici.biz/?p=58654
 loidici-electoral-2025	page	https://loidici.biz/?p=71552
-loidici-cc-2022	crawl	https://loidici.biz/?p=73735	le-conseil-constitutionnel
 loidici-cdc	page	https://loidici.biz/?p=15161
 loidici-etatcivil-2026	page	https://loidici.biz/?p=76346
-loidici-cdc-2018	crawl	https://loidici.biz/?p=15161	les-institutions-de-la-rep
-loidici-successions-2019	crawl	https://loidici.biz/?p=15608	droit-de-la-famille
-loidici-travail-2015	crawl	https://loidici.biz/?p=1695	*
-loidici-minorite-2019	crawl	https://loidici.biz/?p=15577	*
-loidici-idx-mariage	page	https://loidici.biz/?p=607
-loidici-idx-nom	page	https://loidici.biz/?p=646
-loidici-idx-filiation	page	https://loidici.biz/?p=553
-loidici-idx-etatcivil	page	https://loidici.biz/?p=645
+loidici-mariage-2019	crawl	https://loidici.biz/2019/08/15/droit-du-mariage-2019/	*
