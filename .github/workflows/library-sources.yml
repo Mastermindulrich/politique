@@ -10,6 +10,7 @@ on:
       - scripts/library/fetch-sources.sh
       - scripts/library/html-pages.tsv
       - scripts/library/html-text.py
+      - scripts/library/crawl.py
       - .github/workflows/library-sources.yml
 permissions:
   contents: write
@@ -21,6 +22,9 @@ jobs:
       - uses: actions/checkout@v4
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils tesseract-ocr tesseract-ocr-fra
       - run: bash scripts/library/fetch-sources.sh
+        env:
+          # PDFs only when their list changed; web pages every time.
+          SKIP_PDF: ${{ contains(join(github.event.commits.*.modified, ' '), 'sources.tsv') && '0' || '1' }}
       - name: Commit extracted texts
         run: |
           git config user.name "github-actions[bot]"

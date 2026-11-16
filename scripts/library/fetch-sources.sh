@@ -9,8 +9,8 @@ OUT=data/library/sources
 mkdir -p "$OUT" /tmp/src
 UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36'
 report="$OUT/_report.tsv"
-printf 'id\thttp\tbytes\tpages\ttext_chars\tocr\tsha256\turl\n' > "$report"
-grep -v '^#' scripts/library/sources.tsv | while IFS=$'\t' read -r id url; do
+[ "${SKIP_PDF:-}" = 1 ] || printf 'id\thttp\tbytes\tpages\ttext_chars\tocr\tsha256\turl\n' > "$report"
+[ "${SKIP_PDF:-}" = 1 ] || grep -v '^#' scripts/library/sources.tsv | while IFS=$'\t' read -r id url; do
   [ -z "$id" ] && continue
   f="/tmp/src/$id.pdf"
   code=$(curl -sSL -m 120 -A "$UA" -o "$f" -w '%{http_code}' "$url" || echo 000)
@@ -47,10 +47,10 @@ while read -r page; do
   curl -sSL -m 60 -A "$UA" "$page" | grep -oiE 'href="[^"]*\.pdf"' | sed 's/^href="//;s/"$//' | sort -u >> "$OUT/_links.txt" || true
 done < scripts/library/index-pages.txt
 if [ -f scripts/library/html-pages.tsv ]; then
-  grep -v '^#' scripts/library/html-pages.tsv | while IFS=$'\t' read -r id url; do
+  grep -v '^#' scripts/library/html-pages.tsv | while IFS=$'\t' read -r id mode url sub; do
     [ -z "$id" ] && continue
-    curl -sSL -m 60 -A "$UA" "$url" | python3 scripts/library/html-text.py > "$OUT/$id.txt" || true
-    echo "$id html $(wc -c < "$OUT/$id.txt")" >> "$OUT/_html.txt"
+    python3 scripts/library/crawl.py "$mode" "$url" ${sub:+"$sub"} > "$OUT/$id.txt" || true
+    echo "$id $mode $(wc -c < "$OUT/$id.txt")" >> "$OUT/_html.txt"
   done
 fi
 cat "$report"
