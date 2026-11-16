@@ -1,0 +1,14 @@
+id	http	bytes	pages	text_chars	ocr	sha256	url
+reglement-assemblee-nationale	200	719484	63	93498	no	4dfdbc9d9201bac4	https://www.assnat.ci/reglement-assembleenationaledecotedivoire.pdf
+code-electoral	200	475124	64	93780	no	b8ec37b205f929d3	https://www.cei.ci/wp-content/uploads/2020/07/Ordonnance-N°-2020-356-portant-Nouveau-Code-électoral-du-08-Avr.2020.pdf
+loi-cei	200	389153	17	19411	no	cac4b3f5ab0049cc	https://www.cei.ci/wp-content/uploads/2020/03/LOI_CEI_mise_a_jour_2.pdf
+collectivites-2012	200	1724750	24	119702	yes	ec7890648430004f	https://www.cei.ci/wp-content/uploads/2023/06/Loi-de-2012-portant-organisation-des-collectivites-territoriales.pdf
+code-penal-assnat	200	1237504	139	257564	no	07974743162465e2	https://assnat.ci/IMG/pdf/loi_portant_code_penal.pdf
+code-penal-famille	404	139311	0	0	no	28a2951a31a05988	https://famille.gouv.ci/public/documents/doc_drcc/loi_2019-574_portant_code_p%C3%A9nal.pdf
+code-procedure-penale	200	2938610	64	692018	no	cd3bc6b85fff6612	https://www.policinglaw.info/assets/downloads/Code_de_Proc%C3%A9dure_Penale_C%C3%B4te_d_Ivoire_(2019).pdf
+code-travail-fao	404	1245	0	0	no	dc1d54dab6ec8c00	https://faolex.fao.org/docs/pdf/ivc207091.pdf
+code-travail-uvci	200	2147893	563	561405	no	db00d96f60bd707f	https://www.uvci.online/portail/externes/documents/textes_officiels/Le_code_du_travail_ivoirien_-_20251.pdf
+etat-civil-oneci	200	905069	13	58265	no	04a2b0ee3e73c42e	https://www.oneci.ci/uploads/files/articles/1638789741-loi-n2019-572-573-575-du-26-juin-2019.pdf
+mariage-fao	200	572678	7	39623	no	ce4a39e45321bb30	https://faolex.fao.org/docs/pdf/ivc208186.pdf
+successions-bice	200	725170	10	44705	no	0d7d1595d4c15a3b	https://documentation.bice.org/app/uploads/2024/05/loi_2019-573_sur_la_succession.pdf
+gouv-178058458635	200	261553	2	3808	no	7d9e31ecc162c377	https://www.gouv.ci/uploads/publications/178058458635.pdf
