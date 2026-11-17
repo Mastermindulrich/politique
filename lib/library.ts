@@ -8,7 +8,7 @@
 // relative au droit d'auteur et aux droits voisins, art. 10). Only the version
 // published in the Journal officiel is authoritative; every edition says so.
 
-export type LibraryCategory = "fondamental" | "institutions" | "elections" | "codes" | "famille";
+export type LibraryCategory = "fondamental" | "institutions" | "collectivites" | "elections" | "codes" | "famille";
 
 export type LibraryEntry = {
   id: string;
@@ -28,6 +28,7 @@ export type LibraryEntry = {
 export const CATEGORY_LABEL: Record<LibraryCategory, { fr: string; en: string }> = {
   fondamental: { fr: "Loi fondamentale", en: "Fundamental law" },
   institutions: { fr: "Fonctionnement des institutions", en: "How institutions work" },
+  collectivites: { fr: "Régions, districts et communes", en: "Regions, districts and communes" },
   elections: { fr: "Élections", en: "Elections" },
   codes: { fr: "Codes", en: "Codes" },
   famille: { fr: "Personnes et famille", en: "Persons and family" },
@@ -173,14 +174,20 @@ export const library: LibraryEntry[] = [
     transcription: true,
     edition: { version: "Texte de 2015, à jour de l'ordonnance n° 2021-902 du 22 décembre 2021 (saisie loidici.biz)" },
   },
+  {
+    id: "loi-collectivites",
+    title: "Loi portant organisation des collectivités territoriales",
+    short: "Collectivités territoriales",
+    category: "collectivites",
+    reference: "Loi n° 2012-1128 du 13 décembre 2012 portant organisation des collectivités territoriales",
+    summary: "Comment fonctionnent les régions et les communes : conseils, maires et présidents de région, compétences, budget, biens, personnel, coopération entre collectivités et tutelle de l'État.",
+    officialUrl: "https://www.cei.ci/wp-content/uploads/2023/06/Loi-de-2012-portant-organisation-des-collectivites-territoriales.pdf",
+    officialLabel: "Journal officiel (publié par la CEI)",
+  },
 ];
 
 /** Texts the library will carry next; shown so readers know what is coming. */
-export const upcoming = [
-  "Règlement du Sénat",
-  "Lois sur le nom, l'état civil et la filiation",
-  "Loi sur les collectivités territoriales",
-];
+export const upcoming = ["Règlement du Sénat", "Lois sur le nom, l'état civil et la filiation"];
 
 /** Written by `npm run library`: size of each built edition PDF and of the full archive. */
 export { default as builtEditions } from "../data/library/built.json" with { type: "json" };
