@@ -1,0 +1,775 @@
+{
+ "about": "Défis documentés et projets annoncés des communes, d'après des sources publiques. Chaque élément cite sa source.",
+ "checked": "2026-11-16",
+ "items": [
+  {
+   "office": "maire-bouake",
+   "kind": "projet",
+   "title": "Construire trois commissariats et dix postes de police",
+   "body": "Projet validé par le premier conseil municipal de 2025 (15 mars 2025) pour renforcer la sécurité de proximité à Bouaké.",
+   "status": "annonce",
+   "source": {
+    "name": "Ivoireinfos",
+    "date": "2025-03-16",
+    "url": "https://ivoireinfos.com/2025/03/16/bouake-le-premier-conseil-municipal-de-2025-adopte-plusieurs-projets-structurants/"
+   }
+  },
+  {
+   "office": "maire-bouake",
+   "kind": "projet",
+   "title": "Un abattoir moderne et une ferme agro-pastorale sur 200 hectares",
+   "body": "Partenariat avec la société General Group, validé par le conseil municipal du 15 mars 2025.",
+   "status": "annonce",
+   "source": {
+    "name": "Ivoireinfos",
+    "date": "2025-03-16",
+    "url": "https://ivoireinfos.com/2025/03/16/bouake-le-premier-conseil-municipal-de-2025-adopte-plusieurs-projets-structurants/"
+   }
+  },
+  {
+   "office": "maire-bouake",
+   "kind": "projet",
+   "title": "Plan complémentaire de mobilité urbaine de Bouaké",
+   "body": "Financé par un don de 351 millions de FCFA d'un fonds suédois annoncé au forum Invest in Bouaké, en complément de l'étude « ville durable » de l'Agence française de développement.",
+   "status": "en_cours",
+   "source": {
+    "name": "Ivoireinfos",
+    "date": "2025-03-16",
+    "url": "https://ivoireinfos.com/2025/03/16/bouake-le-premier-conseil-municipal-de-2025-adopte-plusieurs-projets-structurants/"
+   }
+  },
+  {
+   "office": "maire-bouake",
+   "kind": "defi",
+   "title": "Budget 2024 : seulement 17 % des investissements exécutés. Comment faire mieux ?",
+   "body": "Le budget 2024 de Bouaké (8,42 milliards de FCFA) a été exécuté à 59,59 % : 82,46 % pour le fonctionnement, mais 17 % seulement pour l'investissement. Le conseil municipal a lui-même demandé de mieux mobiliser les ressources pour éviter les sous-exécutions. Quelles mesures pour que les projets votés se réalisent ?",
+   "tags": [
+    "Bouaké"
+   ],
+   "source": {
+    "name": "Ivoireinfos",
+    "date": "2025-03-16",
+    "url": "https://ivoireinfos.com/2025/03/16/bouake-le-premier-conseil-municipal-de-2025-adopte-plusieurs-projets-structurants/"
+   }
+  },
+  {
+   "office": "maire-abobo",
+   "kind": "defi",
+   "title": "Logement : comment loger décemment une population qui ne cesse de croître ?",
+   "body": "Le besoin de logements décents à Abobo est jugé assez important pour justifier un programme de 5 000 logements sociaux, économiques et de standing, en location-vente sur 25 ans. Quels critères d'attribution, et quel calendrier pour les premiers ménages ?",
+   "tags": [
+    "Abobo"
+   ],
+   "source": {
+    "name": "Fraternité Matin",
+    "date": "2026-01-27",
+    "url": "https://www.fratmat.info/article/2639616/economie/construction-5000-logements-sociaux-economiques-sortiront-de-terre-a-abobo-dici-5-ans"
+   }
+  },
+  {
+   "office": "maire-abobo",
+   "kind": "projet",
+   "title": "Bitumer la voie Pharmacie Saint-Antoine de Sagbé – Collège Bocabo",
+   "body": "Voie longtemps réclamée par les habitants de Sagbé et de Bocabo. Coût annoncé d'environ 2 milliards de FCFA, entièrement financé par la mairie ; chantier prévu sur neuf mois.",
+   "status": "en_cours",
+   "source": {
+    "name": "Fraternité Matin",
+    "date": "2025-10-24",
+    "url": "https://www.fratmat.info/article/2637792/economie/abobo-kandia-camara-lance-les-travaux-de-bitumage-de-la-voie-reliant-la-pharmacie-saint-antoine-de-sagbe-au-college-bocabo"
+   },
+   "due_at": "2026-07"
+  },
+  {
+   "office": "maire-abobo",
+   "kind": "projet",
+   "title": "5 000 logements sociaux, économiques et de standing en cinq ans",
+   "body": "Convention signée par la maire avec Sablux Côte d'Ivoire : 1 000 logements livrables par an à partir de 2026, en location-vente sur 25 ans, attribués selon des critères sociaux validés en conseil municipal.",
+   "status": "annonce",
+   "source": {
+    "name": "Fraternité Matin",
+    "date": "2026-01-27",
+    "url": "https://www.fratmat.info/article/2639616/economie/construction-5000-logements-sociaux-economiques-sortiront-de-terre-a-abobo-dici-5-ans"
+   },
+   "due_at": "2031"
+  },
+  {
+   "office": "maire-adjame",
+   "kind": "defi",
+   "title": "Carrefour Liberté, gare Nord : comment tenir durablement la salubrité ?",
+   "body": "Une opération de nettoyage du 1er novembre 2024 a démantelé des étals et retiré des gravats au carrefour Liberté et à la gare Nord. Ces opérations reviennent régulièrement : quel dispositif pour que l'espace public reste dégagé et propre ?",
+   "tags": [
+    "Adjamé"
+   ],
+   "source": {
+    "name": "Le Patriote",
+    "date": "2024-11-05",
+    "url": "https://lepatriote.ci/adjame-lutte-contre-linsalubrite-liberte-et-la-gare-nord-nettoyes/"
+   }
+  },
+  {
+   "office": "maire-adjame",
+   "kind": "projet",
+   "title": "Un marché Gouro ultra-moderne à Adjamé-Roxy",
+   "body": "Grands travaux lancés après le déplacement du réseau de la SODECI ; les commerçantes devaient disposer de l'équipement d'ici décembre 2024.",
+   "status": "en_cours",
+   "source": {
+    "name": "Abidjan.net",
+    "date": null,
+    "url": "https://news.abidjan.net/articles/716747/construction-du-marche-gouro-ultra-moderne-a-adjame-roxy-debut-des-grands-travaux-apres-le-deplacement-du-reseau-sodeci"
+   },
+   "due_at": "2024-12"
+  },
+  {
+   "office": "maire-adjame",
+   "kind": "projet",
+   "title": "Réhabiliter et réaménager la cour de la mairie",
+   "body": "Travaux de réaménagement portés par le député-maire, avec l'appui technique et logistique du District autonome d'Abidjan.",
+   "status": "en_cours",
+   "source": {
+    "name": "Connection Ivoirienne",
+    "date": "2025-05-26",
+    "url": "https://connectionivoirienne.net/2025/05/26/adjame-la-cour-de-la-mairie-en-pleine-rehabilitation/"
+   }
+  },
+  {
+   "office": "maire-attecoube",
+   "kind": "defi",
+   "title": "Gbebouto et Espoir : talus instables et assainissement, qui sera indemnisé et quand ?",
+   "body": "Les quartiers Gbebouto et Espoir sont directement touchés par le Projet d'assainissement et de résilience urbaine (PARU) : assainissement, stabilisation des talus, libération des emprises. La mairie a annoncé des comités de plaintes, d'écoute et d'indemnisation. Comment les familles concernées seront-elles accompagnées ?",
+   "tags": [
+    "Attécoubé"
+   ],
+   "source": {
+    "name": "Mairie d'Attécoubé",
+    "date": "2026-04-14",
+    "url": "https://mairieattecoube.ci/actualite_details/106"
+   }
+  },
+  {
+   "office": "maire-attecoube",
+   "kind": "projet",
+   "title": "Valoriser les déchets plastiques (projet pilote d'économie circulaire)",
+   "body": "Projet lancé par le maire avec ONU-Habitat et l'ONG AVSI : restructuration de l'unité de valorisation des déchets plastiques, formation et sensibilisation, au bénéfice notamment des jeunes, des femmes et des migrants vulnérables. Durée annoncée : février à novembre 2025.",
+   "status": "en_cours",
+   "source": {
+    "name": "Mairie d'Attécoubé",
+    "date": "2025-02-01",
+    "url": "https://mairieattecoube.ci/actualite_details/54"
+   },
+   "due_at": "2025-11"
+  },
+  {
+   "office": "maire-attecoube",
+   "kind": "projet",
+   "title": "Construire les marchés de Locodjro Santé et d'Abobo-Doumé",
+   "body": "Projet examiné par le conseil municipal lors de sa première session ordinaire de 2024.",
+   "status": "annonce",
+   "source": {
+    "name": "Mairie d'Attécoubé",
+    "date": "2024-05-07",
+    "url": "http://mairieattecoube.ci/test/actualite_details/18"
+   }
+  },
+  {
+   "office": "maire-cocody",
+   "kind": "defi",
+   "title": "Inondations : quels travaux sur les points critiques avant la prochaine saison des pluies ?",
+   "body": "Les pluies de juin 2025 ont coupé des voies, inondé des bâtiments et piégé des véhicules. Cocody connaît ce type de crise chaque année et des travaux d'envergure sont nécessaires sur les points critiques. Quel calendrier ?",
+   "tags": [
+    "Cocody",
+    "Inondations"
+   ],
+   "source": {
+    "name": "Abidjan.net",
+    "date": "2025-06-16",
+    "url": "https://news.abidjan.net/articles/742426/inondations-a-cocody-le-conseil-municipal-aux-cotes-des-populations-sinistrees"
+   }
+  },
+  {
+   "office": "maire-cocody",
+   "kind": "defi",
+   "title": "Mobilité : comment fluidifier la circulation dans la commune ?",
+   "body": "La mairie identifie elle-même la mobilité urbaine comme un défi et cherche des partenariats pour améliorer les déplacements et les livraisons. Quelles mesures concrètes sont prévues ?",
+   "tags": [
+    "Cocody"
+   ],
+   "source": {
+    "name": "AIP, via Abidjan.net",
+    "date": "2024-03-19",
+    "url": "https://news.abidjan.net/articles/729718/le-maire-de-cocody-veut-relever-les-defis-de-la-mobilite-dans-sa-commune"
+   }
+  },
+  {
+   "office": "maire-cocody",
+   "kind": "projet",
+   "title": "Plan quinquennal d'insertion professionnelle des jeunes",
+   "body": "Lancé avec le premier Salon des métiers (16 et 17 août 2024, à la mairie) avec Alliance for Youth et l'UNESCO : emploi, formation et réseautage pour les 18-35 ans.",
+   "status": "en_cours",
+   "source": {
+    "name": "Fraternité Matin",
+    "date": "2024-08-20",
+    "url": "https://www.fratmat.info/article/419502/societe/cocody-jean-marc-yace-lance-un-plan-dinsertion-professionnelle-pour-la-jeunesse"
+   },
+   "due_at": "2029"
+  },
+  {
+   "office": "maire-koumassi",
+   "kind": "defi",
+   "title": "Camp commando, gare Sito, quartier Divo : quel plan contre les inondations ?",
+   "body": "L'ONPC a inspecté le 17 juillet 2024 plusieurs points de Koumassi sensibles aux pluies diluviennes : abords du camp commando, arrière de la gare Sito, rue des Sciences et plusieurs sites du quartier Divo. Quels aménagements pour protéger les riverains ?",
+   "tags": [
+    "Koumassi",
+    "Inondations"
+   ],
+   "source": {
+    "name": "Office national de la protection civile",
+    "date": "2024-07-17",
+    "url": "https://onpc-ci.org/actualite/sites-sensibles-aux-inondations-les-points-critiques-de-la-commune-de-koumassi-visites"
+   }
+  },
+  {
+   "office": "maire-koumassi",
+   "kind": "projet",
+   "title": "Programme triennal 2025-2027 : 41 opérations",
+   "body": "Adopté à l'unanimité le 3 septembre 2024 : électrification des voies, réhabilitation d'écoles, assainissement et drainage, équipement des centres de santé, acquisition d'engins de travaux publics.",
+   "status": "en_cours",
+   "source": {
+    "name": "Fraternité Matin",
+    "date": "2024-09-07",
+    "url": "https://www.fratmat.info/article/693413/regions/koumassi/mairie-de-koumassi-le-programme-triennal-2025-2027-adopte"
+   },
+   "made_at": "2024-09-03",
+   "due_at": "2027-12"
+  },
+  {
+   "office": "maire-marcory",
+   "kind": "defi",
+   "title": "Trottoirs occupés, salubrité : qu'attendre des États généraux annoncés ?",
+   "body": "Le maire a fixé comme priorités la libération des trottoirs, l'assainissement et une meilleure organisation de l'espace public, et annoncé des États généraux de la qualité et de la salubrité. Quand auront-ils lieu, et avec quels engagements ?",
+   "tags": [
+    "Marcory"
+   ],
+   "source": {
+    "name": "CI News",
+    "date": "2026-02-14",
+    "url": "https://cinews.ci/marcory-le-maire-raoul-aby-annonce-lorganisation-des-etats-generaux-de-la-qualite-et-de-la-salubrite/"
+   }
+  },
+  {
+   "office": "maire-marcory",
+   "kind": "projet",
+   "title": "Organiser les États généraux de la qualité et de la salubrité",
+   "body": "Annoncés par le maire pour renforcer la proximité avec les habitants, distinguer les quartiers propres et améliorer durablement le cadre de vie.",
+   "status": "annonce",
+   "source": {
+    "name": "CI News",
+    "date": "2026-02-14",
+    "url": "https://cinews.ci/marcory-le-maire-raoul-aby-annonce-lorganisation-des-etats-generaux-de-la-qualite-et-de-la-salubrite/"
+   }
+  },
+  {
+   "office": "maire-marcory",
+   "kind": "projet",
+   "title": "100 millions de FCFA de prise en charge scolaire chaque année",
+   "body": "Aides remises à des élèves et étudiants de 134 établissements ; le maire a indiqué que cette aide est prévue chaque année.",
+   "status": "en_cours",
+   "source": {
+    "name": "Fraternité Matin",
+    "date": "2024-12-11",
+    "url": "https://www.fratmat.info/article/2401246/societe/marcory-la-maire-offre-100-millions-de-f-cfa-de-prise-en-charge-scolaire"
+   }
+  },
+  {
+   "office": "maire-plateau",
+   "kind": "defi",
+   "title": "Promenade lagunaire démolie : comment sortir du conflit avec le District ?",
+   "body": "Dans la nuit du 11 au 12 septembre 2026, des aménagements municipaux de la promenade lagunaire (projet Smart Plateau, dont Oxy Park II) ont été démolis entre les ponts FHB et Général-de-Gaulle. La mairie dit ne pas avoir été consultée. Quelle suite pour ces aménagements ?",
+   "tags": [
+    "Plateau"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-09-15",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-district-dabidjan-et-la-mairie-du-plateau-sopposent-sur-la-demolition-damenagements-de-la-promenade-lagunaire/"
+   }
+  },
+  {
+   "office": "maire-plateau",
+   "kind": "defi",
+   "title": "2 600 arbres seulement : comment rafraîchir le Plateau ?",
+   "body": "Le Plateau ne compte qu'environ 2 600 arbres ; les secteurs très bétonnés subissent des îlots de chaleur. La mairie veut planter 10 000 arbres d'ici 2028. Où, et à quel rythme ?",
+   "tags": [
+    "Plateau"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-05-22",
+    "url": "https://www.aip.ci/cote-divoire-aip-la-biodiversite-a-lepreuve-de-la-modernisation-urbaine-le-plateau-cherche-lequilibre-vert-reportage/"
+   }
+  },
+  {
+   "office": "maire-plateau",
+   "kind": "projet",
+   "title": "Éclairage public intelligent et télégéré (Smart Plateau)",
+   "body": "Premier éclairage public ajustable et télégéré point par point du pays, issu de la convention signée avec ECLATEC le 25 janvier 2023 ; contribution de la mairie d'environ 100 millions de FCFA. Remise officielle le 24 février 2026.",
+   "status": "tenue",
+   "source": {
+    "name": "AIP",
+    "date": "2026-02-24",
+    "url": "https://www.aip.ci/electionpresidentielle2025/article.php?id=324721"
+   },
+   "made_at": "2023-01-25"
+  },
+  {
+   "office": "maire-plateau",
+   "kind": "projet",
+   "title": "Planter 10 000 arbres d'ici 2028",
+   "body": "Programme de reboisement commencé en 2025 : îlots de fraîcheur et corridors écologiques.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2026-05-22",
+    "url": "https://www.aip.ci/cote-divoire-aip-la-biodiversite-a-lepreuve-de-la-modernisation-urbaine-le-plateau-cherche-lequilibre-vert-reportage/"
+   },
+   "made_at": "2025",
+   "due_at": "2028-12"
+  },
+  {
+   "office": "maire-plateau",
+   "kind": "projet",
+   "title": "Installer des parcmètres pour organiser le stationnement",
+   "body": "Lancement annoncé par le maire au conseil municipal du 16 avril 2024.",
+   "status": "annonce",
+   "source": {
+    "name": "Fraternité Matin",
+    "date": "2024-04-29",
+    "url": "https://www.fratmat.info/article/239221/politique/affaire-suppression-de-la-commune-du-plateau-le-communique-du-conseil-municipal-qui-eclaire-sur-la-situation"
+   },
+   "made_at": "2024-04-16"
+  },
+  {
+   "office": "maire-port-bouet",
+   "kind": "defi",
+   "title": "Inondations : quels secteurs protéger en priorité ?",
+   "body": "Port-Bouët figure parmi les zones touchées par les pluies diluviennes de juin 2024, et l'ONPC a inspecté ses sites à risque le 18 juillet 2024. Quels aménagements sont prévus pour les quartiers exposés ?",
+   "tags": [
+    "PortBouët",
+    "Inondations"
+   ],
+   "source": {
+    "name": "Office national de la protection civile",
+    "date": "2024-07-18",
+    "url": "https://www.onpc-ci.org/actualite/les-sites-a-risque-dinondation-de-port-bouet-et-de-songon-inspectes"
+   }
+  },
+  {
+   "office": "maire-port-bouet",
+   "kind": "defi",
+   "title": "La Promenade de Port-Bouët à l'abandon : quel rôle pour la commune ?",
+   "body": "En janvier 2026, la Promenade était très dégradée : installations détériorées, herbes, éclairage défaillant, ordures. Le District en a annoncé la réhabilitation. Comment la commune en assurera-t-elle l'entretien ensuite ?",
+   "tags": [
+    "PortBouët"
+   ],
+   "source": {
+    "name": "Presse Côte d'Ivoire",
+    "date": "2026-01-19",
+    "url": "https://pressecotedivoire.fr/24103-promenade-de-port-bouet-un-projet-de-plusieurs-milliards-laisse-a-labandon-que-bacongo-veut-rehabiliter"
+   }
+  },
+  {
+   "office": "maire-treichville",
+   "kind": "defi",
+   "title": "Avaloirs bouchés, rue des Brasseurs, Belleville : quand finiront les montées d'eau ?",
+   "body": "L'ONPC a identifié plusieurs sites à risque à Treichville (Restaurant Aboussouan, rue des Brasseurs, avenue 21 rue 7, Belleville, derrière le Lycée moderne) : avaloirs bouchés et conduits trop étroits, montées d'eau fréquentes qui rendent la circulation difficile. Quel programme de curage et d'élargissement ?",
+   "tags": [
+    "Treichville",
+    "Inondations"
+   ],
+   "source": {
+    "name": "Office national de la protection civile",
+    "date": "2025-05-28",
+    "url": "https://www.onpc-ci.org/actualite/lutte-contre-les-inondations-a-treichville-lonpc-poursuit-ses-visites"
+   }
+  },
+  {
+   "office": "maire-yopougon",
+   "kind": "defi",
+   "title": "Sainte Rita, Lubafrik, Abobodoumé : quand les routes seront-elles réparées ?",
+   "body": "Les pluies ont aggravé l'état de plusieurs voies (nids-de-poule, eau stagnante, axes impraticables). À Abobodoumé, la route vers Koweït a été coupée par les eaux usées et les bus n'atteignaient plus la gare depuis près de cinq mois. Quel calendrier de réfection ?",
+   "tags": [
+    "Yopougon"
+   ],
+   "source": {
+    "name": "Presse Côte d'Ivoire",
+    "date": "2024-04-20",
+    "url": "https://www.pressecotedivoire.fr/19647-yopougon-la-pluie-aggrave-letat-des-routes-provoquant-des-coupures-et-des-embouteillages"
+   }
+  },
+  {
+   "office": "maire-yopougon",
+   "kind": "projet",
+   "title": "120 logements gratuits et des équipements sociaux à Andokoi",
+   "body": "Première pierre posée par le maire d'un ensemble de 120 logements pour des familles démunies, avec une école primaire de six classes, un centre de santé, un forage et une mosquée. Réalisation annoncée en six mois.",
+   "status": "annonce",
+   "source": {
+    "name": "AIP",
+    "date": "2025-05-07",
+    "url": "https://www.aip.ci/cote-divoire-aip-adama-bictogo-pose-la-premiere-pierre-dun-quartier-residentiel-et-dinfrastructures-sociales-a-yopougon/"
+   },
+   "due_at": "2025-11"
+  },
+  {
+   "office": "maire-yopougon",
+   "kind": "projet",
+   "title": "Réaménager les ronds-points et les trois entrées de la commune",
+   "body": "Projets validés par le conseil municipal : sécurité, espaces pour les familles et les enfants, sport, salubrité, restauration.",
+   "status": "annonce",
+   "source": {
+    "name": "Koaci",
+    "date": "2026-05-13",
+    "url": "https://www.koaci.com/article/2026/05/13/cote-divoire/societe/cote-divoire-yopougon-des-travaux-de-rehabilitation-damenagement-et-dembellissement-annonces-dans-la-commune_196625.html"
+   }
+  },
+  {
+   "office": "maire-bingerville",
+   "kind": "defi",
+   "title": "Après les inondations meurtrières de mai 2026, quelles protections pour les habitants ?",
+   "body": "Les pluies exceptionnelles de fin mai 2026 ont causé des pertes en vies humaines et d'importants dégâts à Bingerville. Le Gouvernement a annoncé des travaux pour mieux canaliser les eaux, avec une solution complète sur plusieurs années. Quel rôle pour la commune d'ici là ?",
+   "tags": [
+    "Bingerville",
+    "Inondations"
+   ],
+   "source": {
+    "name": "Gouvernement de Côte d'Ivoire",
+    "date": "2026-06-04",
+    "url": "https://www.gouv.ci/actualite/inondations-a-bingerville-le-gouvernement-annonce-dimportants-travaux-pour-trouver-une-solution-definitive-a-la-situation-4282"
+   }
+  },
+  {
+   "office": "maire-bingerville",
+   "kind": "projet",
+   "title": "Budget 2026 : 2,17 milliards de FCFA pour l'investissement",
+   "body": "Le budget primitif 2026, adopté à l'unanimité, réserve 2 168 334 000 FCFA à l'investissement, soit 53,59 % du budget communal.",
+   "status": "annonce",
+   "source": {
+    "name": "AIP",
+    "date": "2026-01-28",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-budget-primitif-2026-de-la-commune-de-bingerville-arrete-a-plus-de-4-milliards-fcfa/"
+   }
+  },
+  {
+   "office": "maire-songon",
+   "kind": "defi",
+   "title": "Classes surchargées : combien d'écoles manquent encore à Songon ?",
+   "body": "La croissance de la population scolaire a obligé à agrandir l'EPP d'Abadjin Doumé pour réduire le nombre d'élèves par classe. Quel est le besoin restant dans la commune ?",
+   "tags": [
+    "Songon"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2025-11-05",
+    "url": "https://www.aip.ci/cote-divoire-aip-songon-trois-nouvelles-salles-de-classe-construites-a-lepp-abadjin-doume-pour-renforcer-la-capacite-daccueil/"
+   }
+  },
+  {
+   "office": "maire-songon",
+   "kind": "projet",
+   "title": "Trois salles de classe à l'EPP Abadjin Doumé",
+   "body": "Bâtiment de trois salles pour 32 millions de FCFA, réalisé à près de 90 % lors de la visite du député-maire le 3 novembre 2025 ; une clôture est annoncée ensuite.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2025-11-05",
+    "url": "https://www.aip.ci/cote-divoire-aip-songon-trois-nouvelles-salles-de-classe-construites-a-lepp-abadjin-doume-pour-renforcer-la-capacite-daccueil/"
+   }
+  },
+  {
+   "office": "maire-songon",
+   "kind": "projet",
+   "title": "Deux écoles primaires publiques à Songon Adiopoto",
+   "body": "Construction entreprise par le conseil municipal pour rapprocher l'école des familles.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2025-11-12",
+    "url": "https://www.aip.ci/cote-divoire-aip-deux-ecoles-primaires-en-construction-a-songon-adiopoto-pour-rapprocher-lenseignement-des-familles/"
+   }
+  },
+  {
+   "office": "maire-songon",
+   "kind": "projet",
+   "title": "Feux tricolores aux carrefours de Songon",
+   "body": "Installés puis rendus opérationnels pour la sécurité routière, après une attente de longue date des habitants.",
+   "status": "tenue",
+   "source": {
+    "name": "AIP",
+    "date": "2025-09-03",
+    "url": "https://www.aip.ci/cote-divoire-aip-des-feux-tricolores-desormais-operationnel-a-songon-pour-renforcer-la-securite-routiere/"
+   }
+  },
+  {
+   "office": "maire-anyama",
+   "kind": "defi",
+   "title": "De 300 000 à 450 000 habitants en trois ans : comment suivre ?",
+   "body": "Selon la maire, l'arrivée de familles déguerpies d'autres communes d'Abidjan a fait passer la population d'environ 300 000 à plus de 450 000 habitants en trois ans. Anyama ne compte que deux lycées publics. Quel plan pour les écoles, la santé et le logement ?",
+   "tags": [
+    "Anyama"
+   ],
+   "source": {
+    "name": "RFI",
+    "date": "2025-10-23",
+    "url": "https://www.rfi.fr/fr/afrique/20251023-comment-la-commune-d-anyama-illustre-le-d%C3%A9veloppement-contrast%C3%A9-de-la-c%C3%B4te-d-ivoire"
+   }
+  },
+  {
+   "office": "maire-anyama",
+   "kind": "projet",
+   "title": "Étendre le réseau d'eau potable",
+   "body": "Travaux démarrés en juillet 2024 pour une durée annoncée de 18 mois ; la maire présente l'eau comme un problème important de la commune.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2024-07-21",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-annonce-le-demarrage-des-travaux-dextension-de-leau-potable-et-leffectivite-du-projet-de-labattoir-moderne/"
+   },
+   "made_at": "2024-07",
+   "due_at": "2026-01"
+  },
+  {
+   "office": "maire-anyama",
+   "kind": "projet",
+   "title": "Un abattoir moderne sur 228 hectares",
+   "body": "Projet attendu depuis des décennies : financement global annoncé de 30 milliards de FCFA ; première phase de 50 hectares pour le parc à bétail.",
+   "status": "annonce",
+   "source": {
+    "name": "AIP",
+    "date": "2024-07-21",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-annonce-le-demarrage-des-travaux-dextension-de-leau-potable-et-leffectivite-du-projet-de-labattoir-moderne/"
+   }
+  },
+  {
+   "office": "maire-korhogo",
+   "kind": "defi",
+   "title": "4,41 % des recettes 2026 collectées fin mars : comment financer les projets ?",
+   "body": "Au 31 mars 2026, Korhogo avait recouvré 185,9 millions de FCFA sur un budget de 4,208 milliards (4,41 %). En 2025, 40,40 % seulement des dépenses prévues ont été exécutées, laissant un excédent de plus de 3 milliards lié en partie à des investissements non réalisés. Comment accélérer l'exécution ?",
+   "tags": [
+    "Korhogo"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-04-27",
+    "url": "https://www.aip.ci/cote-divoire-aip-korhogo-35-projets-acheves-et-17-en-cours-presentes-pendant-la-session-du-conseil-municipal/"
+   }
+  },
+  {
+   "office": "maire-korhogo",
+   "kind": "projet",
+   "title": "Programme d'investissement : 77 projets",
+   "body": "Bilan présenté au conseil municipal du 25 avril 2026 : 35 projets achevés, 17 en cours d'exécution ; la plupart des autres, prévus pour 2026, sont en passation des marchés.",
+   "status": "partiellement_realise",
+   "made_at": "2026-04-25",
+   "source": {
+    "name": "AIP",
+    "date": "2026-04-27",
+    "url": "https://www.aip.ci/cote-divoire-aip-korhogo-35-projets-acheves-et-17-en-cours-presentes-pendant-la-session-du-conseil-municipal/"
+   }
+  },
+  {
+   "office": "maire-korhogo",
+   "kind": "projet",
+   "title": "Des mairies annexes dans les quartiers pour rapprocher l'état civil",
+   "body": "Travaux lancés les 18 et 19 juillet 2025 pour deux mairies annexes (quartiers Cocody et Marcory) et une aire de jeux à Mongaha. Le maire a annoncé d'autres annexes à Waraniéné, Natio, Kassirimé et Aoussabougou.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2025-07-20",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-de-korhogo-lance-les-travaux-de-construction-de-deux-mairies-annexes/"
+   }
+  },
+  {
+   "office": "maire-korhogo",
+   "kind": "projet",
+   "title": "Centre de santé intégré de Dokaha",
+   "body": "Infirmerie et maternité inaugurées le 29 novembre 2025, entièrement financées par la mairie sur le budget d'investissement 2024 : 40,93 millions de FCFA de construction et 28 millions d'équipements.",
+   "status": "realise",
+   "made_at": "2024",
+   "source": {
+    "name": "AIP",
+    "date": "2025-12-02",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-de-korhogo-dote-le-village-de-dokaha-dun-centre-de-sante-integre/"
+   }
+  },
+  {
+   "office": "maire-yamoussoukro",
+   "kind": "projet",
+   "title": "Construire dix nouveaux marchés de proximité",
+   "body": "Annoncé au conseil municipal d'août 2026 (onze points adoptés à l'unanimité), avec une plateforme de collecte des taxes municipales et la formation de 60 jeunes en maçonnerie, plomberie et électricité. Les projets BOT de N'Zuessy et Kokrénou sont annulés.",
+   "status": "annonce",
+   "made_at": "2026-08",
+   "source": {
+    "name": "Koaci",
+    "date": "2026-09-03",
+    "url": "https://www.koaci.com/article/2026/09/03/cote-divoire/politique/cote-divoire-yamoussoukro-10-nouveaux-marches-de-proximite-annonces-pour-accelerer-le-developpement-local_200140.html"
+   }
+  },
+  {
+   "office": "maire-yamoussoukro",
+   "kind": "defi",
+   "title": "Dix marchés annoncés : où, quand et avec quel budget ?",
+   "body": "Le conseil municipal d'août 2026 envisage dix nouveaux marchés de proximité, mais ni les sites, ni le budget, ni le calendrier n'ont été rendus publics, et les projets BOT de N'Zuessy et Kokrénou ont été annulés. Les commerçants attendent des précisions.",
+   "tags": [
+    "Yamoussoukro"
+   ],
+   "source": {
+    "name": "Koaci",
+    "date": "2026-09-03",
+    "url": "https://www.koaci.com/article/2026/09/03/cote-divoire/politique/cote-divoire-yamoussoukro-10-nouveaux-marches-de-proximite-annonces-pour-accelerer-le-developpement-local_200140.html"
+   }
+  },
+  {
+   "office": "maire-man",
+   "kind": "projet",
+   "title": "Un palais de la culture de 3 000 places",
+   "body": "Annoncé au conseil municipal du 3 juillet 2025 parmi les chantiers des six mois suivants : salle de spectacle et cinéma, « un espace convivial qui fait défaut » selon le maire.",
+   "status": "annonce",
+   "made_at": "2025-07-03",
+   "source": {
+    "name": "AIP",
+    "date": "2025-07-06",
+    "url": "https://www.aip.ci/cote-divoire-aip-man-le-conseil-municipal-annonce-des-chantiers-structurants-pour-les-six-prochains-mois/"
+   }
+  },
+  {
+   "office": "maire-man",
+   "kind": "projet",
+   "title": "Un fonds de 100 millions de FCFA pour l'emploi des jeunes",
+   "body": "Annoncé au conseil municipal du 3 juillet 2025, avec la formation de 50 jeunes enseignants recrutés ensuite par les écoles privées partenaires et des formations numériques gratuites à la bibliothèque municipale.",
+   "status": "annonce",
+   "made_at": "2025-07-03",
+   "source": {
+    "name": "AIP",
+    "date": "2025-07-06",
+    "url": "https://www.aip.ci/cote-divoire-aip-man-le-conseil-municipal-annonce-des-chantiers-structurants-pour-les-six-prochains-mois/"
+   }
+  },
+  {
+   "office": "maire-man",
+   "kind": "defi",
+   "title": "Relier les quartiers de Man : quels ouvrages de franchissement, et quand ?",
+   "body": "Le conseil municipal du 3 juillet 2025 a annoncé des ouvrages de franchissement entre quartiers et un programme de reprofilage des voies pour faciliter la mobilité, sans calendrier ni coût publiés. Quels quartiers seront desservis en premier ?",
+   "tags": [
+    "Man"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2025-07-06",
+    "url": "https://www.aip.ci/cote-divoire-aip-man-le-conseil-municipal-annonce-des-chantiers-structurants-pour-les-six-prochains-mois/"
+   }
+  },
+  {
+   "office": "maire-gagnoa",
+   "kind": "projet",
+   "title": "Construire le grand marché couvert de Gagnoa",
+   "body": "Premier grand projet annoncé par le maire à sa réélection. Le 24 février 2026, le conseil municipal a voté à l'unanimité les plans, les devis et la signature d'un contrat BOT avec LAH Properties et Natha SARL.",
+   "status": "annonce",
+   "made_at": "2023-10",
+   "source": {
+    "name": "Koaci",
+    "date": "2026-02-26",
+    "url": "https://www.koaci.com/article/2026/02/26/cote-divoire/societe/cote-divoire-gagnoa-les-grands-projets-de-developpement-pour-2026-valides-par-le-conseil-municipal_194696.html"
+   },
+   "sources": [
+    {
+     "name": "Koaci",
+     "date": "2026-02-26",
+     "url": "https://www.koaci.com/article/2026/02/26/cote-divoire/societe/cote-divoire-gagnoa-les-grands-projets-de-developpement-pour-2026-valides-par-le-conseil-municipal_194696.html"
+    },
+    {
+     "name": "Koaci",
+     "date": "2023-10-16",
+     "url": "https://www.koaci.com/article/2023/10/16/cote-divoire/politique/cote-divoire-reelu-maire-de-gagnoa-yssouf-diabate-mon-premier-grand-projet-est-la-construction-du-grand-marche_173020.html"
+    }
+   ]
+  },
+  {
+   "office": "maire-gagnoa",
+   "kind": "defi",
+   "title": "Grand marché : un an perdu faute de dossier transmis. Quelles garanties ?",
+   "body": "Le contrat du grand marché, approuvé en conseil le 11 mars 2025, a dû être revoté le 24 février 2026 : la mairie n'avait pas transmis à temps les pièces à la Direction générale de la décentralisation. Comment éviter de nouveaux retards ?",
+   "tags": [
+    "Gagnoa"
+   ],
+   "source": {
+    "name": "Koaci",
+    "date": "2026-02-26",
+    "url": "https://www.koaci.com/article/2026/02/26/cote-divoire/societe/cote-divoire-gagnoa-les-grands-projets-de-developpement-pour-2026-valides-par-le-conseil-municipal_194696.html"
+   }
+  },
+  {
+   "office": "maire-abengourou",
+   "kind": "defi",
+   "title": "Caniveaux et routes en retard : quand la voirie sera-t-elle livrée ?",
+   "body": "Au conseil municipal du 31 octobre 2025, le maire a indiqué qu'environ 82 % des actions prévues en 2025 étaient réalisées, mais que « le gros des sujets qui restent en suspense, c'est la voirie » : le projet de caniveaux et de routes a pris du retard. Quelle nouvelle échéance ?",
+   "tags": [
+    "Abengourou"
+   ],
+   "source": {
+    "name": "AllAfrica",
+    "date": "2025-11-03",
+    "url": "https://fr.allafrica.com/stories/202511030472.html"
+   }
+  },
+  {
+   "office": "maire-abengourou",
+   "kind": "projet",
+   "title": "Programme d'investissement 2025 : écoles de proximité, centres de santé, voirie",
+   "body": "Environ 82 % des actions prévues réalisées au 31 octobre 2025 selon le maire ; réhabilitation de la voirie attendue avant la fin de l'année.",
+   "status": "partiellement_realise",
+   "source": {
+    "name": "AllAfrica",
+    "date": "2025-11-03",
+    "url": "https://fr.allafrica.com/stories/202511030472.html"
+   }
+  },
+  {
+   "office": "maire-boundiali",
+   "kind": "defi",
+   "title": "Un excédent d'environ un milliard de FCFA : pour quels projets ?",
+   "body": "Le compte administratif présenté au conseil municipal du 2 mai 2026 fait apparaître un excédent budgétaire d'environ un milliard de FCFA. Les habitants aimeraient savoir quels projets il financera, et quand.",
+   "tags": [
+    "Boundiali"
+   ],
+   "source": {
+    "name": "Fraternité Matin, via AllAfrica",
+    "date": "2026-05-03",
+    "url": "https://fr.allafrica.com/stories/202605040419.html"
+   }
+  },
+  {
+   "office": "maire-adzope",
+   "kind": "projet",
+   "title": "Budget 2026 de 2,42 milliards de FCFA",
+   "body": "Le conseil municipal a adopté le 27 novembre 2025 un budget primitif 2026 arrêté à 2 422 705 000 FCFA, contre 1 860 800 000 FCFA en 2025.",
+   "status": "annonce",
+   "made_at": "2025-11-27",
+   "source": {
+    "name": "AIP",
+    "date": "2025-11-28",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-budget-primitif-2026-mairie-dadzope-en-hausse-de-3399-par-rapport-a-lannee-precedente/"
+   }
+  },
+  {
+   "office": "maire-agnibilekrou",
+   "kind": "projet",
+   "title": "Moderniser le marché, réhabiliter l'abattoir, bâtir un centre commercial",
+   "body": "Annoncés par le maire au conseil municipal du 2 mai 2026 : modernisation du marché municipal, réhabilitation de l'abattoir, logements et bureaux du préfet et du sous-préfet, centre commercial sur trois niveaux. Financement en BOT par des consortiums brésiliens, pour une concession de 25 à 30 ans ; contrats encore à signer.",
+   "status": "annonce",
+   "made_at": "2026-05-02",
+   "source": {
+    "name": "AIP",
+    "date": "2026-05-04",
+    "url": "https://www.aip.ci/cote-divoire-aip-agnibilekrou-le-maire-siandou-fofana-annonce-de-grands-projets-urbains-structurants/"
+   }
+  }
+ ]
+}

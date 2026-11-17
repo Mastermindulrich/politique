@@ -10,7 +10,8 @@
     "type-check": "tsc --noEmit",
     "brand": "node --experimental-strip-types scripts/brand.mts",
     "library": "node --experimental-strip-types scripts/build-library.mts",
-    "officials": "node scripts/gen-officials-sql.mjs"
+    "officials": "node scripts/gen-officials-sql.mjs",
+    "civic": "node scripts/gen-civic-sql.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.8.0",
