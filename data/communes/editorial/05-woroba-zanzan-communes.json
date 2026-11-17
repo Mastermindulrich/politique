@@ -1,0 +1,343 @@
+[
+{"id":106,"tagline":"Hauts plateaux et vallées aux portes de la Guinée","intro":"Dans le Bafing, Ouaninou s'étend sur les derniers contreforts de la dorsale guinéenne : massifs de granit, hauts plateaux et vallées. C'est une terre mahou, bordée au nord et à l'ouest par la Guinée.",
+ "highlights":[
+  {"k":"nature","t":"Un panorama de montagnes","d":"Savane arborée au nord, forêt au sud et à l'ouest : le relief offre de grands paysages."},
+  {"k":"culture","t":"Le masque Sagbé","d":"Un masque du pays mahou, photographié près de Koonan.","photo":"Le masque Sagbé en pays Mahouka en Cote-d'Ivoire.jpg"},
+  {"k":"economie","t":"Cultures et élevage","d":"La pluviométrie permet des cultures variées. Le sous-sol est riche en minerais."}],
+ "products":["Riz","Anacarde","Bétail"],
+ "photos":[{"f":"Le masque Sagbé en pays Mahouka en Cote-d'Ivoire.jpg","c":"Le masque Sagbé en pays mahou"}]},
+
+{"id":107,"tagline":"La capitale du Béré et sa « montagne de la glissade »","intro":"À 455 km d'Abidjan, Mankono est le chef-lieu du Béré, poste administratif depuis 1898. Koyaka, Monan et Ouan y vivent.",
+ "highlights":[
+  {"k":"nature","t":"La montagne de la glissade","d":"Un site naturel de la commune.","photo":"La montagne de la glissade.jpg"},
+  {"k":"culture","t":"Monan et Ouan","d":"Deux petits peuples aux coutumes communes, installés autour de Kongasso et de Kounahiri."},
+  {"k":"economie","t":"Anacarde et coton","d":"Le Béré est une grande région d'anacarde."}],
+ "products":["Anacarde","Coton","Igname","Riz"],
+ "photos":[{"f":"La montagne de la glissade.jpg","c":"La montagne de la glissade"}]},
+
+{"id":108,"tagline":"Une commune sénoufo du Béré, terre de coton et d'anacarde","intro":"Au nord du Béré, Dianra est un chef-lieu de département tourné vers l'agriculture de savane.",
+ "highlights":[
+  {"k":"economie","t":"Coton et anacarde","d":"Les deux grandes cultures de la commune."},
+  {"k":"culture","t":"Le pays sénoufo","d":"Dianra partage les traditions du Nord."}],
+ "products":["Coton","Anacarde","Igname"],"photos":[]},
+
+{"id":109,"tagline":"Le pays ouan, au cœur du Béré","intro":"Chef-lieu de département, Kounahiri est la terre du peuple ouan, voisin et parent des Monan de Kongasso.",
+ "highlights":[
+  {"k":"culture","t":"Le peuple ouan","d":"Un petit peuple aux coutumes proches de celles des Monan."},
+  {"k":"economie","t":"Anacarde, coton, vivriers","d":"L'agriculture du Béré."}],
+ "products":["Anacarde","Coton","Igname"],"photos":[]},
+
+{"id":110,"featured":true,"tagline":"La capitale du pays koyaka, fondée par les descendants de Soundiata","intro":"À 482 km d'Abidjan, Séguéla est la capitale du district du Woroba. La tradition la dit fondée par les Keita, descendants de Mansa Oulé, fils de Soundiata Keïta.",
+ "highlights":[
+  {"k":"culture","t":"Le pays koyaka","d":"La vie de la ville est ponctuée de cérémonies traditionnelles. Ses quartiers portent les noms des grandes familles."},
+  {"k":"economie","t":"Le diamant et l'or","d":"La région est connue pour ses diamants et accueille aujourd'hui une mine d'or."},
+  {"k":"nature","t":"La forêt de Séguéla","d":"Une forêt borde la ville.","photo":"Forêt de Seguela.jpg"},
+  {"k":"economie","t":"Anacarde et coton","d":"Les cultures du Worodougou."}],
+ "products":["Anacarde","Coton","Diamant","Or"],
+ "photos":[{"f":"Forêt de Seguela.jpg","c":"La forêt de Séguéla"}]},
+
+{"id":111,"noWiki":false,"tagline":"Une commune koyaka du Worodougou","intro":"Au nord de Séguéla, Kani est un chef-lieu de département du Worodougou.",
+ "highlights":[
+  {"k":"culture","t":"Le pays koyaka","d":"Kani partage la langue et les traditions mandingues de Séguéla."},
+  {"k":"economie","t":"Anacarde et coton","d":"L'agriculture de savane."}],
+ "products":["Anacarde","Coton","Igname"],"photos":[]},
+
+{"id":112,"featured":true,"tagline":"La porte du parc de la Comoé, entre pays koulango et pays lobi","intro":"À 603 km d'Abidjan, près du Ghana, Bouna est le chef-lieu du Bounkani et l'ancienne capitale d'un royaume koulango. C'est une des entrées du parc national de la Comoé, inscrit au patrimoine mondial.",
+ "highlights":[
+  {"k":"nature","t":"Le parc national de la Comoé","d":"Un des plus vastes parcs d'Afrique de l'Ouest, classé par l'UNESCO."},
+  {"k":"fete","t":"Le FESTIBO","d":"Le festival des instruments, des costumes et des danses traditionnelles est le grand rendez-vous culturel de la ville."},
+  {"k":"saveurs","t":"Sauce pistache et foutou igname","d":"Avec la pâte de maïs à la sauce gombo, ce sont les spécialités de Bouna.","photo":"Cooking Attieke poisson in Bouna Côte d'Ivoire.JPG"},
+  {"k":"culture","t":"Le royaume de Bouna","d":"Koulango, Lobi et influences akan se mêlent dans l'histoire de la cité."}],
+ "products":["Igname","Anacarde","Bétail","Karité"],
+ "events":[{"t":"FESTIBO","when":"Chaque année","d":"Instruments, costumes et danses traditionnelles."}],
+ "sources":[{"l":"UNESCO : Parc national de la Comoé","u":"https://whc.unesco.org/fr/list/227/"}],
+ "photos":[{"f":"Carrefour de la Préfecture de Bouna en 2026.jpg","c":"Le carrefour de la préfecture"},{"f":"Cooking Attieke poisson in Bouna Côte d'Ivoire.JPG","c":"Attiéké-poisson à Bouna"},{"f":"Préfecture de Bouna en 2026 01.jpg","c":"La préfecture"}]},
+
+{"id":113,"tagline":"Le pays lobi, à la frontière du Burkina Faso","intro":"Dans le Bounkani, Doropo est une commune du Nord-Est, sur la route du Burkina Faso.",
+ "highlights":[
+  {"k":"culture","t":"Le pays lobi","d":"Habitat en terre, statuaire et balafons font la réputation de la culture lobi."},
+  {"k":"economie","t":"Un marché frontalier","d":"Igname, anacarde et bétail s'échangent avec le pays voisin."}],
+ "products":["Igname","Anacarde","Bétail"],"photos":[]},
+
+{"id":114,"tagline":"Douze villages unis, où Binger fit étape","intro":"Au nord-ouest de Bondoukou, Nassian est née de quatre villages : Nassian, Parhadi, Landé et Poum. Elle en réunit aujourd'hui douze. Binger y passa en mars puis en décembre 1888.",
+ "highlights":[
+  {"k":"culture","t":"Sept langues","d":"Koulango, lobi, birifor, malinké, dioula, peul et lorhon."},
+  {"k":"economie","t":"Igname, manioc, anacarde","d":"Une agriculture variée, avec un élevage familial de volailles et de chèvres."},
+  {"k":"nature","t":"Au bord du parc de la Comoé","d":"Le département touche le sud du parc national."}],
+ "products":["Igname","Anacarde","Manioc"],"photos":[]},
+
+{"id":115,"tagline":"Aux confins du Nord-Est, entre savane et parc de la Comoé","intro":"Chef-lieu de département du Bounkani, Téhini réunit des villages comme Bolé, Tougbo, Môro-Môro et Tingbawéry.",
+ "highlights":[
+  {"k":"nature","t":"Le parc national de la Comoé","d":"Le parc s'étend au sud de la commune."},
+  {"k":"culture","t":"Pays lobi et koulango","d":"Les deux peuples du Bounkani."},
+  {"k":"economie","t":"Igname et élevage","d":"L'agriculture et le bétail font vivre les villages."}],
+ "products":["Igname","Bétail","Anacarde"],"photos":[]},
+
+{"id":116,"featured":true,"tagline":"La ville aux mille mosquées, plus ancienne que Djenné","intro":"Capitale du Zanzan, près du Ghana, Bondoukou est une des plus vieilles cités du pays : sa fondation serait antérieure à 1043. On dit que c'est ici que la lune apparaît en premier pour annoncer la fin du ramadan.",
+ "highlights":[
+  {"k":"site","t":"Les mosquées","d":"Leur nombre vaut à la ville son surnom. Tout près, la mosquée de Sorobango est inscrite au patrimoine mondial.","photo":"Bondoukou Moske ap 001.jpg"},
+  {"k":"culture","t":"Une cité de savants et de marchands","d":"Binger lui a consacré un chapitre entier de son récit de voyage, en 1888."},
+  {"k":"saveurs","t":"Attiéké et garba","d":"Préparés et vendus au bord des rues.","photo":"Preparing Attieke in Bondoukou in Côte d'Ivoire (2).JPG"},
+  {"k":"economie","t":"L'université","d":"Ouverte le 15 juin 2023 avec 3 000 étudiants."},
+  {"k":"culture","t":"Abron, Koulango, Dioula","d":"La ville est connue pour sa grande diversité."}],
+ "products":["Anacarde","Igname","Pagnes tissés"],
+ "sources":[{"l":"UNESCO : Mosquées de style soudanais du nord ivoirien","u":"https://whc.unesco.org/fr/list/1648/"}],
+ "photos":[{"f":"Bondoukou Moske ap 001.jpg","c":"La mosquée centrale de Bondoukou"},{"f":"Preparing Attieke in Bondoukou in Côte d'Ivoire (2).JPG","c":"La préparation de l'attiéké"},{"f":"Garba food stalld in Bondoukou in Côte d'Ivoire (1).JPG","c":"Un étal de garba"}]},
+
+{"id":117,"tagline":"Une commune du Gontougo, entre pays agni et pays abron","intro":"Koun-Fao est un chef-lieu de département du Gontougo, sur la route qui relie Abengourou à Bondoukou.",
+ "highlights":[
+  {"k":"culture","t":"Agni Bona et Abron","d":"Deux peuples akan se partagent le département."},
+  {"k":"economie","t":"Anacarde, cacao, igname","d":"Une zone de transition entre forêt et savane."}],
+ "products":["Anacarde","Cacao","Igname"],"photos":[]},
+
+{"id":118,"tagline":"Trente-six villages en pays koulango","intro":"À 100 km de Bondoukou et 50 km de Tanda, Sandégué est la capitale d'un département de trente-six villages, majoritairement koulango.",
+ "highlights":[
+  {"k":"culture","t":"Le pays koulango","d":"La population d'origine est koulango, en majorité musulmane."},
+  {"k":"economie","t":"Anacarde et igname","d":"Les cultures de la savane du Zanzan."}],
+ "products":["Anacarde","Igname"],"photos":[]},
+
+{"id":119,"tagline":"Une ville du pays abron, capitale de l'anacarde","intro":"Dans le Gontougo, Tanda est un chef-lieu de département du Nord-Est, entre Bondoukou et Koun-Fao.",
+ "highlights":[
+  {"k":"nature","t":"La rivière aux silures","d":"Dans la rivière de Tanda nagent des silures que l'on vient voir.","photo":"Clarias in the river in Tanda (2).JPG"},
+  {"k":"economie","t":"L'anacarde","d":"Le Gontougo est l'une des premières régions productrices de noix de cajou."},
+  {"k":"culture","t":"Le pays abron","d":"Royauté et fête des ignames rythment l'année."}],
+ "products":["Anacarde","Igname","Cacao"],
+ "photos":[{"f":"Clarias in the river in Tanda (2).JPG","c":"Les silures de la rivière"},{"f":"Woman drawing water from the river in Tanda.JPG","c":"Au bord de la rivière"}]},
+
+{"id":120,"tagline":"Une commune abron aux portes du Ghana","intro":"Transua est un chef-lieu de département du Gontougo, dans le district du Zanzan.",
+ "highlights":[
+  {"k":"culture","t":"Le pays abron","d":"La commune partage la langue et la royauté abron."},
+  {"k":"economie","t":"Anacarde, cacao, igname","d":"Avec les échanges frontaliers."}],
+ "products":["Anacarde","Cacao","Igname"],"photos":[]},
+
+{"id":125,"tagline":"Sous-préfecture depuis 1966, département depuis 2020","intro":"Dans l'Iffou, Ouellé est une commune baoulé du centre-est. Elle est devenue chef-lieu de département le 23 septembre 2020.",
+ "highlights":[
+  {"k":"culture","t":"Le pays baoulé","d":"Pagnes, danses et fête de l'igname."},
+  {"k":"economie","t":"Cacao, café, igname","d":"L'agriculture de l'Iffou."}],
+ "products":["Igname","Cacao","Café"],"photos":[]},
+
+{"id":126,"tagline":"Une grande ville du cacao en pays gouro","intro":"Entre Bouaflé et Daloa, Bonon est un chef-lieu de département de la Marahoué de plus de cent mille habitants.",
+ "highlights":[
+  {"k":"economie","t":"Le cacao","d":"Bonon est un grand marché du cacao de la Marahoué."},
+  {"k":"nature","t":"Le parc national de la Marahoué","d":"Il s'étend au nord de la ville."},
+  {"k":"culture","t":"Le pays gouro","d":"Masques et danses gouro."}],
+ "products":["Cacao","Café","Banane plantain","Riz"],"photos":[]},
+
+{"id":127,"tagline":"Le pays gouro et son festival, le FESTIGO","intro":"Chef-lieu de département de la Marahoué, Gohitafla est une ville gouro où sortent les grands masques.",
+ "highlights":[
+  {"k":"fete","t":"Le FESTIGO","d":"Le festival de Gohitafla fait sortir des masques comme le Gou de Bongofla.","photo":"FESTIGO 2026 - Masque Gou de Bongofla 03.jpg"},
+  {"k":"culture","t":"Les masques gouro","d":"Zaouli, Gou, Zamblé : la famille des masques gouro est l'une des plus célèbres du pays."},
+  {"k":"economie","t":"Cacao, café, coton","d":"L'agriculture du nord de la Marahoué."}],
+ "products":["Cacao","Café","Riz","Coton"],
+ "events":[{"t":"FESTIGO","when":"Chaque année","d":"Sortie des masques gouro."}],
+ "photos":[{"f":"FESTIGO 2026 - Masque Gou de Bongofla 03.jpg","c":"Le masque Gou de Bongofla, FESTIGO 2026"},{"f":"FESTIGO 2026 - Masque Gou de Bongofla 01.jpg","c":"Sortie du masque"},{"f":"FESTIGO 2026 - Masque Gou de Bongofla 05.jpg","c":"FESTIGO 2026"},{"f":"MAIRIE DE GOHITAFLA.jpg","c":"La mairie"}]},
+
+{"id":128,"tagline":"La cité des fruits, à 40 km d'Abidjan","intro":"Entre Abidjan et Agboville, sur la ligne de chemin de fer, Azaguié est une commune abbey connue pour ses vergers.",
+ "highlights":[
+  {"k":"saveurs","t":"Les fruits d'Azaguié","d":"Bananes, papayes et fruits tropicaux se vendent au bord de la route."},
+  {"k":"culture","t":"Le pays abbey","d":"Azaguié est une des communes du peuple abbey."},
+  {"k":"site","t":"Une gare du rail","d":"La ville s'est développée le long de la voie ferrée."}],
+ "products":["Banane","Papaye","Cacao","Hévéa"],"photos":[]},
+
+{"id":129,"tagline":"Une gare du rail et la mémoire de la révolte des Abbey","intro":"À 22 minutes de train au nord d'Agboville, Rubino porte le nom d'un agent de la CFAO tué ici en 1910, pendant la révolte des Abbey contre le tracé du chemin de fer.",
+ "highlights":[
+  {"k":"culture","t":"La révolte de 1910","d":"De 1905 à 1918, la résistance des Abbey fut l'une des plus farouches du pays."},
+  {"k":"site","t":"La tombe de Rubino","d":"Elle est devenue un lieu de visite."},
+  {"k":"site","t":"La gare","d":"Rubino est sur la ligne Abidjan-Ouagadougou."}],
+ "products":["Cacao","Café","Banane"],"photos":[]},
+
+{"id":130,"tagline":"Le carrefour des commerçants","intro":"Village abbey créé vers le XVIIIe siècle, d'abord appelé Moutoussi, N'Douci est commune depuis 2018. Son grand marché attire des commerçants de toutes origines.",
+ "highlights":[
+  {"k":"economie","t":"Le grand marché","d":"N'Douci est un carrefour, au croisement de l'autoroute du Nord et de la route de Divo."},
+  {"k":"culture","t":"Un village abbey","d":"Les Abbey en sont les fondateurs."},
+  {"k":"saveurs","t":"Une halte gourmande","d":"Les voyageurs s'y arrêtent pour les fruits et les vivriers."}],
+ "products":["Banane","Vivriers","Cacao"],"photos":[]},
+
+{"id":131,"tagline":"Le pays de l'igname, où l'on parle baralaka","intro":"Dans le Bafing, Booko est une commune du département de Koro. On y parle le baralaka.",
+ "highlights":[
+  {"k":"economie","t":"L'igname","d":"C'est la première culture de la commune."},
+  {"k":"culture","t":"Le baralaka","d":"Le parler local, de la famille mandingue."}],
+ "products":["Igname","Anacarde","Riz"],"photos":[]},
+
+{"id":132,"tagline":"La cité du sucre du Bafing","intro":"Dans le département de Koro, Borotou est connue pour son complexe sucrier et ses plantations de canne.",
+ "highlights":[
+  {"k":"economie","t":"Le complexe sucrier de Borotou-Koro","d":"Les champs de canne à sucre entourent l'usine.","photo":"Koro-complexe-sucrier-plantations-21.jpg"},
+  {"k":"culture","t":"Le pays mahou","d":"Borotou partage les traditions du Bafing."}],
+ "products":["Sucre","Riz","Anacarde"],
+ "photos":[{"f":"Koro-complexe-sucrier-plantations-21.jpg","c":"Plantation de canne à sucre, Borotou-Koro"}]},
+
+{"id":133,"tagline":"Une commune mahou du département de Touba","intro":"Dans le Bafing, Guintéguéla est un chef-lieu de commune et de sous-préfecture.",
+ "highlights":[
+  {"k":"culture","t":"Le pays mahou","d":"Langue et traditions malinké de l'Ouest."},
+  {"k":"economie","t":"Riz, anacarde, élevage","d":"L'agriculture du Bafing."}],
+ "products":["Riz","Anacarde","Bétail"],"photos":[]},
+
+{"id":134,"tagline":"Un village mahou fondé après Soula","intro":"Dans le Bafing, Koonan a été fondée par les ancêtres des Mahou, venus de l'empire du Mali entre le XVIe et le XVIIe siècle. Chef-lieu de canton à l'époque coloniale, sous-préfecture depuis 1975.",
+ "highlights":[
+  {"k":"culture","t":"Une histoire venue du Mali","d":"Les Mahou fondèrent d'abord Soula, puis Koonan."},
+  {"k":"culture","t":"Le masque Sagbé","d":"Un masque du pays mahou, vu à Tinin-Massa, près de Koonan."},
+  {"k":"economie","t":"Riz et anacarde","d":"L'agriculture de montagne et de savane."}],
+ "products":["Riz","Anacarde","Bétail"],"photos":[]},
+
+{"id":135,"tagline":"Fondée par un chasseur dozo il y a deux siècles","intro":"Sur la route du Mali, entre Boundiali et Tengréla, Gbon a été fondée il y a environ deux cents ans par le chasseur dozo Nadribé Koné, attiré par l'abondance du gibier.",
+ "highlights":[
+  {"k":"culture","t":"L'héritage des dozo","d":"Le fondateur fut rejoint par son neveu Tchôbouê Bamba : c'est l'origine du village."},
+  {"k":"economie","t":"Coton, mangue, anacarde","d":"Les cultures de la Bagoué."}],
+ "products":["Coton","Mangue","Anacarde"],"photos":[]},
+
+{"id":136,"tagline":"L'or blanc, sur la route du Mali","intro":"Entre Boundiali et Kouto, Kolia est une commune de la Bagoué où vivent Dioula, Sénoufo et Peuls. Elle possède un centre culturel.",
+ "highlights":[
+  {"k":"economie","t":"Le coton","d":"Surnommé ici « l'or blanc », avec l'arachide, le maïs, l'igname, la mangue et l'anacarde."},
+  {"k":"culture","t":"Le centre culturel","d":"Un lieu de rencontre pour la commune."}],
+ "products":["Coton","Mangue","Anacarde","Arachide"],"photos":[]},
+
+{"id":137,"tagline":"Une commune sénoufo de l'extrême nord","intro":"Dans le département de Tengréla, Kanakono est une commune de la Bagoué, proche du Mali.",
+ "highlights":[
+  {"k":"culture","t":"Le pays sénoufo","d":"Poro, balafons et masques."},
+  {"k":"economie","t":"Coton et anacarde","d":"Avec l'élevage."}],
+ "products":["Coton","Anacarde","Bétail"],"photos":[]},
+
+{"id":138,"tagline":"Grande terre de coton et d'élevage","intro":"Dans le département de Boundiali, Kasséré réunit Sénoufo, Malinké et Peuls sédentarisés.",
+ "highlights":[
+  {"k":"economie","t":"Le coton","d":"Une zone de grande production, avec l'arachide, le maïs, l'igname, la mangue et l'anacarde en plein essor."},
+  {"k":"economie","t":"L'élevage","d":"La zone est très propice aux bovins et aux ovins."}],
+ "products":["Coton","Bétail","Mangue","Anacarde"],"photos":[]},
+
+{"id":139,"tagline":"La cité de l'or du pays baoulé","intro":"Dans le canton Faafouè, près de Toumodi, Kokoumbo a été peuplée par des Baoulé venus de la région de Bouaké chercher de l'or. La commune compte cinq villages.",
+ "highlights":[
+  {"k":"economie","t":"Une histoire d'or","d":"L'orpaillage a fait naître la ville et attiré Gouro, Dioula et voisins."},
+  {"k":"culture","t":"Ville carrefour","d":"Elle allie modernisme et tradition baoulé."}],
+ "products":["Or","Igname","Cacao"],"photos":[]},
+
+{"id":140,"tagline":"Une commune baoulé du Bélier","intro":"Dans le département de Didiévi, Tié-N'Diékro est une commune rurale du pays baoulé.",
+ "highlights":[
+  {"k":"culture","t":"Le pays baoulé","d":"Pagnes, danses et fête de l'igname."},
+  {"k":"economie","t":"Igname et anacarde","d":"L'agriculture du centre."}],
+ "products":["Igname","Anacarde","Manioc"],"photos":[]},
+
+{"id":141,"tagline":"Kongopla : la terre des Monan","intro":"Dans le Béré, Kongasso, « Kongopla » en langue monan, est le pays d'un petit peuple proche des Yacouba.",
+ "highlights":[
+  {"k":"culture","t":"Le peuple monan","d":"Les Monan partagent leurs coutumes avec les Ouan de Kounahiri."},
+  {"k":"economie","t":"Anacarde et vivriers","d":"L'agriculture du Béré."}],
+ "products":["Anacarde","Igname","Riz"],"photos":[]},
+
+{"id":142,"tagline":"Une commune du département de Mankono","intro":"Dans le Béré, Sarhala est un chef-lieu de commune de la savane du centre-nord.",
+ "highlights":[
+  {"k":"economie","t":"Anacarde et coton","d":"Les cultures de rente de la région."},
+  {"k":"culture","t":"Le pays koyaka","d":"Langue et traditions mandingues."}],
+ "products":["Anacarde","Coton","Igname"],"photos":[]},
+
+{"id":143,"tagline":"Une grande mosquée qui daterait de 1622","intro":"Dans le département de Mankono, Tiéningboué est une commune du Béré au riche passé islamique.",
+ "highlights":[
+  {"k":"site","t":"La grande mosquée","d":"Elle daterait de 1622, avec une architecture très ancienne."},
+  {"k":"economie","t":"Anacarde et coton","d":"L'agriculture du Béré."}],
+ "products":["Anacarde","Coton","Igname"],"photos":[]},
+
+{"id":144,"tagline":"Dix-huit villages à la frontière du Mali","intro":"À 950 km d'Abidjan, Goulia est une commune du Folon, sous-préfecture depuis 1961.",
+ "highlights":[
+  {"k":"culture","t":"Dix-huit villages","d":"De Goulia à Sokouraba, en passant par Kamélézo, Niarala et Samakona."},
+  {"k":"economie","t":"Anacarde, coton, élevage","d":"L'économie de la savane du Nord-Ouest."}],
+ "products":["Anacarde","Coton","Bétail"],"photos":[]},
+
+{"id":145,"tagline":"Forgerons, chasseurs et éleveurs du canton Bôdougou","intro":"Entre Odienné et la frontière malienne, Tienko réunit les dix-neuf villages du canton Bôdougou. Les Sidibé en sont les chefs de terre.",
+ "highlights":[
+  {"k":"artisanat","t":"Les forgerons","d":"Forgerons, agriculteurs, chasseurs et Peuls sédentarisés forment la population."},
+  {"k":"culture","t":"L'hospitalité des Sidibé","d":"Les chefs de terre ont accueilli les éleveurs peuls."}],
+ "products":["Bétail","Anacarde","Coton"],"photos":[]},
+
+{"id":146,"tagline":"Une commune baoulé du département de Béoumi","intro":"Dans le Gbêkê, Bodokro est une commune rurale du pays baoulé, près du lac de Kossou.",
+ "highlights":[
+  {"k":"culture","t":"Le pays baoulé","d":"Villages, pagnes et fête de l'igname."},
+  {"k":"economie","t":"Igname et anacarde","d":"L'agriculture du centre."}],
+ "products":["Igname","Anacarde","Manioc"],
+ "photos":[{"f":"Eglise CMA Ahounze BODOKRO 3.jpg","c":"L'église d'Ahounzè"}]},
+
+{"id":147,"tagline":"Aux portes de Bouaké, sur la route de l'Est","intro":"Dans le Gbêkê, Brobo est une commune baoulé du département de Bouaké.",
+ "highlights":[
+  {"k":"culture","t":"Le pays baoulé","d":"Brobo partage les traditions du Gbêkê."},
+  {"k":"economie","t":"Igname, anacarde, maraîchage","d":"La commune nourrit le marché de Bouaké."}],
+ "products":["Igname","Anacarde","Légumes"],"photos":[]},
+
+{"id":148,"tagline":"À 15 km au sud de Bouaké","intro":"Djébonoua, ou N'Djébonoua, est une commune baoulé du département de Bouaké, sur la route de Yamoussoukro.",
+ "highlights":[
+  {"k":"culture","t":"Le pays baoulé","d":"Villages et chefferies du Gbêkê."},
+  {"k":"economie","t":"Vivriers et anacarde","d":"La proximité de Bouaké offre un débouché."}],
+ "products":["Igname","Anacarde","Manioc"],"photos":[]},
+
+{"id":149,"tagline":"« La forêt des éléphants rouquins », capitale de l'attiéké du Centre","intro":"À 15 km de Bouaké, Diabo est la terre des Baoulé Gbloh. Son nom vient de « Djaha Bo » : un chasseur y aurait découvert des éléphants roux.",
+ "highlights":[
+  {"k":"saveurs","t":"L'attiéké de Diabo","d":"Sa production fait vivre la grande majorité des foyers et emploie plusieurs centaines de personnes."},
+  {"k":"economie","t":"L'anacarde","d":"C'est la culture principale de la région."},
+  {"k":"culture","t":"Les Baoulé Gbloh","d":"Le groupe d'origine de la commune."}],
+ "products":["Attiéké","Anacarde","Manioc"],"photos":[]},
+
+{"id":150,"tagline":"« Ce village deviendra plus grand que les vôtres »","intro":"Au cœur de la boucle du cacao, Diégonéfla s'appelle Guiézala en langue gban : « ce village prendra des proportions plus grandes que les vôtres ». Elle compte aujourd'hui plus de 75 000 habitants.",
+ "highlights":[
+  {"k":"culture","t":"Deux noms, une revanche","d":"Les villages voisins la jugeaient trop petite. Le nom gouro signifie « le village du tuteur de garçon »."},
+  {"k":"economie","t":"Cacao, manioc, riz","d":"Une zone essentiellement agricole."},
+  {"k":"site","t":"La grande mosquée","d":"Elle se repère dans les vues aériennes de la ville.","photo":"Vue aérienne de la ville de Diégonéfla du coté de la grande mosquée.jpg"}],
+ "products":["Cacao","Café","Manioc","Banane plantain"],
+ "photos":[{"f":"Vue aérienne de la ville de Diégonéfla du coté de la grande mosquée.jpg","c":"Diégonéfla, côté grande mosquée"},{"f":"Vue aérienne de la ville de Diégonéfla.jpg","c":"Vue aérienne de la ville"}]},
+
+{"id":151,"tagline":"« Les enfants de Guibéhi », sur la route de Gagnoa à Issia","intro":"À 27 km de Gagnoa et 311 km d'Abidjan, Guibéroua est une ville bété posée sur une pénéplaine de bas-fonds et de petites collines.",
+ "highlights":[
+  {"k":"economie","t":"Le cacao","d":"C'est la production principale, portée par des coopératives."},
+  {"k":"artisanat","t":"Le centre rural et artisanal","d":"Il a été rénové récemment."},
+  {"k":"culture","t":"Le pays bété","d":"Le nom vient de « Guibéhi-youa », les enfants de Guibéhi."}],
+ "products":["Cacao","Café","Riz"],"photos":[]},
+
+{"id":152,"tagline":"Une ville bété au nord de Gagnoa","intro":"Dans le Gôh, Ouragahio est l'une des trois communes du département de Gagnoa.",
+ "highlights":[
+  {"k":"culture","t":"Le pays bété","d":"Ouragahio est une ville bété, de langue et de traditions."},
+  {"k":"economie","t":"Cacao et café","d":"La boucle du cacao."}],
+ "products":["Cacao","Café","Riz"],"photos":[]},
+
+{"id":153,"tagline":"Le grand marché du vendredi, à 12 km du Ghana","intro":"À 50 km de Bondoukou et 388 km d'Abidjan, Assuéfry est une commune du Gontougo à forte vocation commerciale.",
+ "highlights":[
+  {"k":"economie","t":"Le marché du vendredi","d":"Il attire chaque semaine commerçants et acheteurs venus du Ghana."},
+  {"k":"economie","t":"Une terre agricole","d":"La vraie richesse de la commune est son agriculture."},
+  {"k":"culture","t":"Le pays abron","d":"La commune partage la culture akan du Gontougo."}],
+ "products":["Anacarde","Igname","Cacao"],"photos":[]},
+
+{"id":154,"tagline":"Une commune du département de Koun-Fao","intro":"Dans le Gontougo, Kouassi-Datékro est un chef-lieu de commune de l'Est.",
+ "highlights":[
+  {"k":"culture","t":"Le pays agni et abron","d":"Les deux cultures akan de la région."},
+  {"k":"economie","t":"Anacarde, cacao, igname","d":"Entre forêt et savane."}],
+ "products":["Anacarde","Cacao","Igname"],"photos":[]},
+
+{"id":155,"tagline":"Commune depuis 1985, en pays djimini","intro":"Dans le département de Dabakala, Bassawa est une commune du Hambol.",
+ "highlights":[
+  {"k":"culture","t":"Le pays djimini","d":"Les Djimini appartiennent au groupe sénoufo."},
+  {"k":"economie","t":"Anacarde et igname","d":"L'agriculture du Hambol."}],
+ "products":["Anacarde","Igname"],"photos":[]},
+
+{"id":156,"tagline":"Une commune djimini du Hambol","intro":"Dans le département de Dabakala, Boniérédougou est un chef-lieu de commune de la savane.",
+ "highlights":[
+  {"k":"culture","t":"Le pays djimini","d":"Langue et traditions du groupe sénoufo."},
+  {"k":"economie","t":"Anacarde et igname","d":"L'agriculture du Hambol."}],
+ "products":["Anacarde","Igname"],"photos":[]},
+
+{"id":157,"tagline":"La terre des Djimini","intro":"Dans le département de Dabakala, Foumbolo est peuplée de Djimini, du groupe sénoufo, dont la langue est proche du tagbana et du niarafolo.",
+ "highlights":[
+  {"k":"culture","t":"Les Djimini","d":"Ils partagent la culture des autres peuples sénoufo."},
+  {"k":"economie","t":"Anacarde et igname","d":"L'agriculture du Hambol."}],
+ "products":["Anacarde","Igname"],"photos":[]},
+
+{"id":158,"tagline":"Une commune de la savane du Hambol","intro":"Dans le département de Dabakala, Satama-Sokoro est un chef-lieu de commune.",
+ "highlights":[
+  {"k":"culture","t":"Le pays djimini et dioula","d":"Les cultures de la région de Dabakala."},
+  {"k":"economie","t":"Anacarde et igname","d":"L'agriculture du Hambol."}],
+ "products":["Anacarde","Igname"],"photos":[]},
+
+{"id":159,"tagline":"Une commune de la savane du Hambol","intro":"Dans le département de Dabakala, Satama-Sokoura est un chef-lieu de commune, voisine de Satama-Sokoro.",
+ "highlights":[
+  {"k":"culture","t":"Le pays djimini et dioula","d":"Les cultures de la région de Dabakala."},
+  {"k":"economie","t":"Anacarde et igname","d":"L'agriculture du Hambol."}],
+ "products":["Anacarde","Igname"],"photos":[]},
+
+{"id":160,"tagline":"Une commune tagbana sur la route du Nord","intro":"Dans le département de Katiola, Fronan est commune depuis 2005.",
+ "highlights":[
+  {"k":"culture","t":"Le pays tagbana","d":"Les Tagbana appartiennent au groupe sénoufo."},
+  {"k":"economie","t":"Anacarde, coton, igname","d":"L'agriculture du Hambol."}],
+ "products":["Anacarde","Coton","Igname"],"photos":[]}
+]
