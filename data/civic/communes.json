@@ -1328,6 +1328,181 @@
     "date": "2026-06-19",
     "url": "https://www.aip.ci/cote-divoire-aip-la-mairie-de-diabo-lance-la-construction-dune-maison-des-chefs-pour-consolider-la-cohesion-sociale/"
    }
+  },
+  {
+   "office": "maire-grand-bassam",
+   "kind": "projet",
+   "title": "Construire l'école primaire Jean-Michel Moulod (six classes)",
+   "body": "Chantier de l'EPP Jean-Michel Moulod, inscrit au budget 2026 de la commune. Avancement de 55 % présenté au conseil municipal du 3 octobre 2026, avec l'école du quartier CAFOP (60 %) et les réhabilitations des EPP Ablé et Petit Paris (50 %).",
+   "status": "en_cours",
+   "source": {
+    "name": "KOACI",
+    "date": "2026-10-05",
+    "url": "https://www.koaci.com/article/2026/10/05/cote-divoire/societe/cote-divoire-bassam-le-conseil-municipal-se-penche-sur-letat-davancement-des-projets-et-la-planification-de-78-projets-dinvestissement-totalisant-6841-milliards-fcfa_201284.html"
+   }
+  },
+  {
+   "office": "maire-grand-bassam",
+   "kind": "projet",
+   "title": "Ouvrir la Maison du Tourisme de Grand-Bassam",
+   "body": "Bâtiment achevé ; embellissement et équipement en cours, inauguration annoncée « dans les tout prochains mois » lors du conseil municipal du 3 octobre 2026.",
+   "status": "en_cours",
+   "source": {
+    "name": "KOACI",
+    "date": "2026-10-05",
+    "url": "https://www.koaci.com/article/2026/10/05/cote-divoire/societe/cote-divoire-bassam-le-conseil-municipal-se-penche-sur-letat-davancement-des-projets-et-la-planification-de-78-projets-dinvestissement-totalisant-6841-milliards-fcfa_201284.html"
+   }
+  },
+  {
+   "office": "maire-grand-bassam",
+   "kind": "defi",
+   "title": "Grand-Bassam attend toujours son Hôpital général",
+   "body": "Le chantier de l'Hôpital général a connu des difficultés avant d'être relancé après la visite du ministre de la Santé le 9 avril 2026. Quel calendrier la commune peut-elle annoncer aux habitants pour son ouverture ?",
+   "tags": [
+    "Santé",
+    "GrandBassam"
+   ],
+   "source": {
+    "name": "KOACI",
+    "date": "2026-10-05",
+    "url": "https://www.koaci.com/article/2026/10/05/cote-divoire/societe/cote-divoire-bassam-le-conseil-municipal-se-penche-sur-letat-davancement-des-projets-et-la-planification-de-78-projets-dinvestissement-totalisant-6841-milliards-fcfa_201284.html"
+   }
+  },
+  {
+   "office": "maire-issia",
+   "kind": "projet",
+   "title": "Construire le nouvel hôtel de ville d'Issia",
+   "body": "Travaux annoncés par le maire pour novembre 2026, pour au moins un an. Les services municipaux ont été déplacés (quartier Mira, radio La Voix du Rocher, salle des fêtes, Plateforme de services) pendant le chantier.",
+   "status": "annoncee",
+   "made_at": "2026-11-03",
+   "due_at": "2027-12",
+   "source": {
+    "name": "AIP",
+    "date": "2026-11-04",
+    "url": "https://www.aip.ci/cote-divoire-aip-les-services-de-la-mairie-dissia-delocalises-en-prelude-a-la-construction-du-nouvel-hotel-de-ville/"
+   }
+  },
+  {
+   "office": "maire-gbeleban",
+   "kind": "projet",
+   "title": "Investir 1,49 milliard FCFA en 2026 dans l'éducation, la santé, l'eau et la voirie",
+   "body": "Budget primitif 2026 de 1 688 914 000 FCFA adopté le 8 novembre 2025, dont 1 491 275 000 FCFA d'investissement. Priorités : éducation, santé, hydraulique villageoise, voirie et autonomisation des femmes et des jeunes.",
+   "status": "en_cours",
+   "made_at": "2025-11-08",
+   "due_at": "2026-12",
+   "source": {
+    "name": "AIP via allAfrica",
+    "date": "2025-11-10",
+    "url": "https://fr.allafrica.com/stories/202511100356.html"
+   }
+  },
+  {
+   "office": "maire-divo",
+   "kind": "projet",
+   "title": "Ouvrir 102 km de rues dans la ville de Divo",
+   "body": "Annonce du maire lors de la présentation du budget 2025 (3,2 milliards FCFA), avec la maternité en construction et l'achat d'une niveleuse. Objectif de recettes fiscales porté de 600 millions à 1 milliard FCFA par an.",
+   "status": "en_cours",
+   "made_at": "2025-02-05",
+   "source": {
+    "name": "AIP",
+    "date": "2025-02-07",
+    "url": "https://www.aip.ci/152948/cote-divoire-aip-le-maire-de-divo-annonce-un-budget-de-3200-milliards-de-f-cfa-pour-2025/"
+   }
+  },
+  {
+   "office": "maire-katiola",
+   "kind": "projet",
+   "title": "Programme triennal 2027-2029 : 80 opérations pour plus de 3,4 milliards FCFA",
+   "body": "Adopté par le conseil municipal le 20 juillet 2026 : 12 actions et 80 opérations, avec environ 800 millions FCFA de financement prévu chaque année de 2027 à 2029.",
+   "status": "annoncee",
+   "made_at": "2026-07-20",
+   "due_at": "2029-12",
+   "source": {
+    "name": "AIP",
+    "date": "2026-07-23",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-municipal-de-katiola-adopte-le-programme-triennal-2027-2029-dun-cout-de-plus-de-35-milliards-fcfa/"
+   }
+  },
+  {
+   "office": "maire-katiola",
+   "kind": "projet",
+   "title": "Équiper le village de N'dana : dispensaire, forage et terrain de football",
+   "body": "Ouvrages remis par le maire le 20 août 2026, avec des forages à Kationon 3, Moderne Extension, Nagnankaha et Kpéfélé et de nouvelles classes. Un magasin de stockage agricole à N'dana et trois classes au groupe scolaire Dimbékaha restent en cours.",
+   "status": "tenue",
+   "made_at": "2026-08-20",
+   "source": {
+    "name": "KOACI",
+    "date": "2026-08-21",
+    "url": "https://www.koaci.com/article/2026/08/21/cote-divoire/politique/cote-divoire-katiola-le-maire-thomas-camara-met-a-disposition-des-populations-un-dispensaire-un-forage-et-un-terrain-de-football-a-ndana_199754.html"
+   }
+  },
+  {
+   "office": "maire-sinfra",
+   "kind": "projet",
+   "title": "Passer l'éclairage public de Sinfra aux lampes LED",
+   "body": "Plus de 200 lampes au sodium remplacées par des LED sur les grands axes. Au conseil municipal du 12 novembre 2026, 12 des 19 projets du budget 2026 étaient proches de 100 % d'exécution ; une nouvelle niveleuse est attendue avant la fin de l'année.",
+   "status": "tenue",
+   "source": {
+    "name": "AIP",
+    "date": "2026-11-16",
+    "url": "https://www.aip.ci/cote-divoire-aip-les-travaux-communaux-de-lexercice-2026-de-la-mairie-de-sinfra-connaissent-un-bon-etat-davancement/"
+   }
+  },
+  {
+   "office": "maire-sinfra",
+   "kind": "projet",
+   "title": "Réhabiliter et équiper la bibliothèque municipale de Sinfra",
+   "body": "Réhabilitation complète annoncée au conseil municipal du 12 novembre 2026, avec la reprise de la radio locale (équipement disponible) et l'illumination du monument du rond-point de Dioulabougou.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2026-11-16",
+    "url": "https://www.aip.ci/cote-divoire-aip-les-travaux-communaux-de-lexercice-2026-de-la-mairie-de-sinfra-connaissent-un-bon-etat-davancement/"
+   }
+  },
+  {
+   "office": "maire-guiglo",
+   "kind": "projet",
+   "title": "Doter Guiglo de deux camions-bennes pour la collecte des ordures",
+   "body": "Annonce du maire au conseil municipal du 29 janvier 2026 : six véhicules pour les services municipaux en 2026, dont deux camions-bennes, une salle de réunion en huit mois et, à terme, un nouvel hôtel de ville.",
+   "status": "annoncee",
+   "made_at": "2026-01-29",
+   "due_at": "2026-12",
+   "source": {
+    "name": "AIP",
+    "date": "2026-01-30",
+    "url": "https://www.aip.ci/electionpresidentielle2025/article.php?id=312827"
+   }
+  },
+  {
+   "office": "maire-guiglo",
+   "kind": "defi",
+   "title": "Venir à bout de l'insalubrité à Guiglo",
+   "body": "Le maire lui-même présente l'insalubrité comme « l'un des principaux problèmes de la commune ». Quels moyens la mairie et l'ANAGED vont-elles engager, quartier par quartier ?",
+   "tags": [
+    "Salubrité",
+    "Guiglo"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-01-30",
+    "url": "https://www.aip.ci/electionpresidentielle2025/article.php?id=312827"
+   }
+  },
+  {
+   "office": "maire-san-pedro",
+   "kind": "defi",
+   "title": "Porter les recettes propres de San-Pédro au-delà de 1,6 milliard FCFA",
+   "body": "La commune a mobilisé 1,2 milliard FCFA de recettes propres en 2024 et visait plus de 1,6 milliard en 2025, pour la deuxième ville portuaire du pays. Où en est la collecte, et à quels équipements ces recettes iront-elles ?",
+   "tags": [
+    "Finances",
+    "SanPedro"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2025-04-23",
+    "url": "https://www.aip.ci/183873/cote-divoire-aip-les-autorites-locales-sensibilisent-pour-latteinte-de-16-milliard-fcfa-de-recettes-propres-a-la-commune-de-san-pedro/"
+   }
   }
  ]
 }
