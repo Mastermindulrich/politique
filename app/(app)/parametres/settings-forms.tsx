@@ -1,5 +1,6 @@
 "use client";
 
+import { nameHelp } from "@/lib/names";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useRef, useState, useTransition } from "react";
@@ -142,7 +143,7 @@ export function ProfileForm({ viewer, lang }: { viewer: Profile; lang: Lang }) {
             : "This commune shows on your profile. It is unrelated to your voting place, which stays private."}
         </span>
       </label>
-      <SaveRow pending={pending || uploading} state={state} label={t.settings.save} lang={lang} errors={{ handle_taken: t.auth.handleTaken, reserved_name: lang === "fr" ? "Ce nom est réservé au fondateur de POLITIQUE." : "This name is reserved for the founder of POLITIQUE.", upload: lang === "fr" ? "Image refusée (JPG, PNG ou WebP, 5 Mo max)." : "Image rejected (JPG, PNG or WebP, 5 MB max)." }} />
+      <SaveRow pending={pending || uploading} state={state} label={t.settings.save} lang={lang} errors={{ handle_taken: t.auth.handleTaken, reserved_name: lang === "fr" ? "Ce nom est réservé à POLITIQUE et à son équipe." : "This name is reserved for POLITIQUE and its team.", invalid_name: nameHelp(lang), upload: lang === "fr" ? "Image refusée (JPG, PNG ou WebP, 5 Mo max)." : "Image rejected (JPG, PNG or WebP, 5 MB max)." }} />
     </form>
   );
 }

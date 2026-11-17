@@ -1,5 +1,6 @@
 "use client";
 
+import { nameHelp, nameOk } from "@/lib/names";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, useTransition } from "react";
@@ -98,13 +99,15 @@ export function SignupForm({ lang }: { lang: "fr" | "en" }) {
           onSubmit={(e) => {
             e.preventDefault();
             setError(null);
+            if (!nameOk(displayName)) return setError(nameHelp(lang));
             if (!handleValid || handleFree === false) return;
             setStep(2);
           }}
         >
           <label>
             <span className="label">{t.auth.displayName}</span>
-            <input className="input" required maxLength={50} autoFocus autoComplete="name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
+            <input className="input" required minLength={2} maxLength={50} autoFocus autoComplete="name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
+            {displayName.trim().length > 0 && !nameOk(displayName) && <span className="mt-1 block text-[13px] text-muted">{nameHelp(lang)}</span>}
           </label>
           <label>
             <span className="label">{t.auth.handle}</span>

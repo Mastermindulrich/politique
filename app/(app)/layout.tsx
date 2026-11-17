@@ -16,6 +16,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   // Every person must say where they vote before using the app. Institution and media
   // accounts (such as the platform's editorial account) don't vote anywhere.
   if (viewer && !priv?.vote_region_id && viewer.account_type !== "institution" && viewer.account_type !== "media") redirect("/bienvenue");
+  // Everyone has a real name: accounts that joined without one are asked for it first.
+  if (viewer?.needs_name) redirect("/bienvenue");
   if (!supabaseConfigured) {
     const t = dict("fr");
     return (

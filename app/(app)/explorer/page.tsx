@@ -52,11 +52,17 @@ export default async function ExplorePage({ searchParams }: { searchParams: Prom
   // --- Search results -----------------------------------------------------------
   if (q) {
     const [people, posts, officials] = await Promise.all([
-      supabase.rpc("search_profiles", { q, lim: 6 }),
+      supabase.rpc("search_profiles", { q, lim: 10 }),
       searchPosts(supabase, q, viewer?.id ?? null),
       supabase.from("officials").select("*").or(`full_name.ilike.%${q.replace(/[%,()]/g, "")}%,title.ilike.%${q.replace(/[%,()]/g, "")}%,party.ilike.%${q.replace(/[%,()]/g, "")}%`).limit(5),
     ]);
     const profiles = (people.data ?? []) as Profile[];
+    // So the button says "Abonné" for the accounts the viewer already follows.
+    const followed = new Set<string>();
+    if (viewer && profiles.length) {
+      const { data: f } = await supabase.from("follows").select("followee_id").eq("follower_id", viewer.id).in("followee_id", profiles.map((p) => p.id));
+      for (const r of (f ?? []) as { followee_id: string }[]) followed.add(r.followee_id);
+    }
     const offs = (officials.data ?? []) as Official[];
     return (
       <>
@@ -92,7 +98,7 @@ export default async function ExplorePage({ searchParams }: { searchParams: Prom
                       <span className="block truncate text-[13px] text-muted">@{p.handle}{p.bio ? ` · ${p.bio}` : ""}</span>
                     </span>
                   </Link>
-                  {viewer?.id !== p.id && <FollowButton userId={p.id} initial={false} lang={lang} signedIn={Boolean(viewer)} />}
+                  {viewer?.id !== p.id && <FollowButton userId={p.id} initial={followed.has(p.id)} lang={lang} signedIn={Boolean(viewer)} />}
                 </li>
               ))}
             </ul>

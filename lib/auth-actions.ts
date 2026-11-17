@@ -6,6 +6,7 @@ import { departmentById, communeById, regionById } from "@/lib/ci-geo";
 import { createClient, supabaseConfigured } from "@/lib/supabase/server";
 import { ownMailer, sendCode } from "@/lib/auth-email";
 import { getSettings } from "@/lib/settings";
+import { cleanName, nameOk } from "@/lib/names";
 
 type Result = { ok: true } | { ok: false; error: "invalid" | "closed" | "handle_taken" | "no_account" | "rate" | "code" | "config" | "failed" };
 
@@ -19,7 +20,7 @@ async function confirmUrl() {
 
 const signupSchema = z.object({
   email: z.string().email().max(200),
-  display_name: z.string().trim().min(1).max(50),
+  display_name: z.string().transform(cleanName).refine(nameOk),
   handle: z.string().regex(/^[a-z0-9_]{3,20}$/),
   lang: z.enum(["fr", "en"]),
   vote_region_id: z.number().int(),
