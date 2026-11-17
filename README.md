@@ -33,7 +33,7 @@ cp .env.example .env.local   # fill in the Supabase values to use the app
 npm run dev                   # http://localhost:3000
 ```
 
-Checks: `npm run lint`, `npm run type-check`, `npm run build`, `node tests/schema.test.mjs` (applies the schema to an in-process Postgres and runs smoke and access checks).
+Checks: `npm run lint`, `npm run type-check`, `npm run build`, `node tests/schema.test.mjs` (applies the schema to an in-process Postgres and runs smoke and access checks), `node tests/security.test.mjs` (every migration, then members trying what they must not: other people's profiles, office accounts, commune pages, conversations, counters).
 
 To try the site without a Supabase project, `node scripts/dev-backend.mjs` starts a small stand-in on port 54321: the real migrations in an in-process Postgres, with demo accounts (`aya@demo.ci`, `awa@demo.ci`, `yao@demo.ci`, any 6-digit code). Point `.env.local` at it (`NEXT_PUBLIC_SUPABASE_URL=http://localhost:54321`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=dev-anon`, `SUPABASE_SERVICE_ROLE_KEY=dev-service`) and run `npm run dev`. It has no realtime and cannot fetch outside pages. `node --experimental-strip-types tests/link-preview.test.mts` checks the link card reader.
 

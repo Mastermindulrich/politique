@@ -17,7 +17,9 @@ export default async function WelcomePage() {
   const viewer = await getViewer();
   if (!viewer) redirect("/connexion");
   const priv = await getMyPrivate();
-  if (priv?.vote_region_id) redirect("/mes-elus");
+  const askPlace = !priv?.vote_region_id && viewer.account_type !== "institution" && viewer.account_type !== "media";
+  const askName = Boolean(viewer.needs_name);
+  if (!askPlace && !askName) redirect("/mes-elus");
   const lang = viewer.lang;
   return (
     <div className="flex min-h-screen flex-col bg-paper">
@@ -26,13 +28,14 @@ export default async function WelcomePage() {
       </header>
       <main className="mx-auto w-full max-w-md flex-1 px-4 py-8 sm:py-12">
         <div className="rounded-3xl border border-line bg-card p-6 sm:p-8">
-          <h1 className="font-display text-[26px] font-bold leading-tight">{lang === "fr" ? "Où votez-vous ?" : "Where do you vote?"}</h1>
-          <p className="mt-2 text-[15px] leading-relaxed text-muted">
+          <h1 className="font-display text-[26px] font-bold leading-tight">{askPlace ? (lang === "fr" ? "Où votez-vous ?" : "Where do you vote?") : lang === "fr" ? "Comment vous appelez-vous ?" : "What is your name?"}</h1>
+          {askPlace && <p className="mt-2 text-[15px] leading-relaxed text-muted">
             {lang === "fr"
               ? "POLITIQUE vous relie aux élus de l'endroit où vous votez : votre maire, votre député, votre conseil régional."
               : "POLITIQUE links you to the officials of the place where you vote: your mayor, your MP, your regional council."}
-          </p>
-          <div className="mt-5"><WelcomeForm lang={lang} /></div>
+          </p>}
+          {!askPlace && <p className="mt-2 text-[15px] leading-relaxed text-muted">{lang === "fr" ? "Votre nom s'affiche sur votre profil et vos publications, pour que vos proches et vos élus vous reconnaissent." : "Your name shows on your profile and posts, so people and officials can recognise you."}</p>}
+          <div className="mt-5"><WelcomeForm lang={lang} askName={askName} askPlace={askPlace} /></div>
         </div>
       </main>
     </div>

@@ -53,7 +53,7 @@ export default async function CommuneShowcasePage({ params }: { params: Promise<
   const hall = (hallRes.data ?? null) as TownHallShowcase | null;
   const officials = await attachProfiles(supabase, (offRes.data ?? []) as Official[]);
   const mayor = officials.find((o) => o.mandate === "maire");
-  const canEdit = hallReady && Boolean(viewer && (viewer.is_moderator || viewer.is_admin || viewer.is_owner || (mayor && (mayor.profile_id === viewer.id || mayor.personal_profile_id === viewer.id))));
+  const canEdit = hallReady && Boolean(viewer && (viewer.is_admin || viewer.is_owner || (mayor && (mayor.profile_id === viewer.id || mayor.personal_profile_id === viewer.id))));
   const hasHall = Boolean(hall && (hall.message || hall.event_title || hall.website));
 
   const cover = s.photos[0];

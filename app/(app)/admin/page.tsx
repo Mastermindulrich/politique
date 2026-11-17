@@ -14,6 +14,8 @@ import { BlockedTerms } from "./blocked-terms";
 export const metadata: Metadata = { title: "Modération", robots: { index: false } };
 
 const TABS = ["signalements", "verifications", "elus", "mots", "barometres"] as const;
+// Badges, office accounts and the directory: the owner and the admins the owner names.
+const ADMIN_ONLY: readonly string[] = ["verifications", "elus", "barometres"];
 type Tab = (typeof TABS)[number];
 
 export default async function AdminPage({ searchParams }: { searchParams: Promise<{ onglet?: string }> }) {
@@ -31,15 +33,15 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
     <>
       <PageHeader title={t.admin.title} back="/accueil" />
       <nav className="flex overflow-x-auto border-b border-line" aria-label={t.admin.title}>
-        {TABS.filter((k) => k !== "barometres" || viewer.is_admin).map((k) => (
+        {TABS.filter((k) => viewer.is_admin || !ADMIN_ONLY.includes(k)).map((k) => (
           <Link key={k} href={`/admin?onglet=${k}`} aria-current={tab === k ? "page" : undefined} className={`flex-none px-4 py-3 text-[14px] font-semibold ${tab === k ? "border-b-2 border-green text-ink" : "text-muted hover:bg-paper"}`}>
             {labels[k]}
           </Link>
         ))}
       </nav>
       {tab === "signalements" && <Reports supabase={supabase} lang={lang} />}
-      {tab === "verifications" && <Verifications supabase={supabase} lang={lang} />}
-      {tab === "elus" && <Officials supabase={supabase} lang={lang} />}
+      {tab === "verifications" && viewer.is_admin && <Verifications supabase={supabase} lang={lang} />}
+      {tab === "elus" && viewer.is_admin && <Officials supabase={supabase} lang={lang} />}
       {tab === "mots" && <Words supabase={supabase} lang={lang} />}
       {tab === "barometres" && viewer.is_admin && <Barometers supabase={supabase} lang={lang} />}
     </>

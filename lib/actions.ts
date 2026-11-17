@@ -7,6 +7,7 @@ import { z } from "zod";
 import { createClient, createServiceClient, getViewer } from "@/lib/supabase/server";
 import { DM_MAX_FILES } from "@/lib/dm-media";
 import { attachLink } from "@/lib/social-actions";
+import { cleanName, nameOk } from "@/lib/names";
 import type { DmAttachment, Media } from "@/lib/types";
 
 type Result<T = undefined> = { ok: true; data?: T } | { ok: false; error: string };
@@ -161,7 +162,7 @@ export async function submitReport(input: z.infer<typeof reportSchema>): Promise
 // Profile & settings
 // ---------------------------------------------------------------------------
 const profileSchema = z.object({
-  display_name: z.string().min(1).max(50),
+  display_name: z.string().transform(cleanName).refine(nameOk),
   handle: z.string().regex(/^[a-z0-9_]{3,20}$/),
   bio: z.string().max(240).nullable(),
   website: z.string().max(200).nullable(),
@@ -172,10 +173,13 @@ const profileSchema = z.object({
 export async function updateProfile(input: z.infer<typeof profileSchema>): Promise<Result> {
   const viewer = await viewerOrFail();
   const parsed = profileSchema.safeParse(input);
-  if (!parsed.success) return { ok: false, error: "invalid" };
+  if (!parsed.success) return { ok: false, error: parsed.error.issues.some((i) => i.path[0] === "display_name") ? "invalid_name" : "invalid" };
+  // Photos only from the member's own folder of the media bucket (as updateProfileImage).
+  const own = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/politique-media/${viewer.id}/`;
+  if ([parsed.data.avatar_url, parsed.data.banner_url].some((u) => u && !u.startsWith(own))) return { ok: false, error: "invalid" };
   const supabase = await createClient();
   const { error } = await supabase.from("profiles").update(parsed.data).eq("id", viewer.id);
-  if (error) return { ok: false, error: error.message.includes("profiles_handle_key") ? "handle_taken" : error.message.includes("reserved_name") ? "reserved_name" : error.message };
+  if (error) return { ok: false, error: error.message.includes("profiles_handle_key") ? "handle_taken" : error.message.includes("reserved_name") ? "reserved_name" : error.message.includes("invalid_name") ? "invalid_name" : error.message };
   revalidatePath("/parametres");
   revalidatePath(`/u/${parsed.data.handle}`);
   return { ok: true };
@@ -229,6 +233,18 @@ export async function updatePrivateProfile(input: z.infer<typeof privateSchema>)
   if (error) return { ok: false, error: error.message };
   revalidatePath("/mes-elus");
   revalidatePath("/parametres");
+  return { ok: true };
+}
+
+/** The name asked of accounts that joined without one (the database clears needs_name). */
+export async function setDisplayName(name: string): Promise<Result> {
+  const viewer = await viewerOrFail();
+  const n = cleanName(String(name ?? ""));
+  if (!nameOk(n)) return { ok: false, error: "invalid_name" };
+  const supabase = await createClient();
+  const { error } = await supabase.from("profiles").update({ display_name: n }).eq("id", viewer.id);
+  if (error) return { ok: false, error: error.message.includes("reserved_name") ? "reserved_name" : error.message.includes("invalid_name") ? "invalid_name" : "failed" };
+  revalidatePath("/", "layout");
   return { ok: true };
 }
 
@@ -506,7 +522,8 @@ export async function moderate(input: { reportId?: string; postId?: string; user
 
 export async function reviewVerification(id: string, approve: boolean, notes?: string): Promise<Result> {
   const viewer = await viewerOrFail();
-  if (!viewer.is_moderator && !viewer.is_admin) return { ok: false, error: "forbidden" };
+  // Badges and office accounts: the owner and the admins the owner names (the database checks it too).
+  if (!viewer.is_admin) return { ok: false, error: "forbidden" };
   const supabase = await createClient();
   const { error } = await supabase.rpc("review_verification", { rid: id, approve, note: notes ?? null });
   if (error) return { ok: false, error: error.message };
@@ -542,7 +559,7 @@ const officialSchema = z.object({
 });
 export async function upsertOfficial(input: z.infer<typeof officialSchema>): Promise<Result> {
   const viewer = await viewerOrFail();
-  if (!viewer.is_moderator && !viewer.is_admin) return { ok: false, error: "forbidden" };
+  if (!viewer.is_admin) return { ok: false, error: "forbidden" };
   const s = officialSchema.safeParse(input);
   if (!s.success) return { ok: false, error: "invalid" };
   const supabase = await createClient();

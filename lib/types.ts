@@ -31,6 +31,8 @@ export type Profile = {
   is_moderator: boolean;
   suspended_until: string | null;
   onboarded_at: string | null;
+  /** Joined without a real name: the app asks for it (0012). */
+  needs_name?: boolean;
   created_at: string;
 };
 
