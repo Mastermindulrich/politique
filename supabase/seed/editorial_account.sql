@@ -20,10 +20,10 @@ from auth.users u
 where u.email = 'redaction@prototypex.org'
   and not exists (select 1 from auth.identities i where i.user_id = u.id and i.provider = 'email');
 
-insert into profiles (id, handle, display_name, bio, website, account_type, verified, verified_at, onboarded_at)
+insert into profiles (id, handle, display_name, bio, website, avatar_url, account_type, verified, verified_at, onboarded_at)
 select u.id, 'politique', 'La rédaction POLITIQUE',
   'Compte officiel de la plateforme. Nous documentons les défis et les projets de chaque territoire, sources à l''appui. Élus : répondez depuis votre compte de fonction.',
-  'https://politique.prototypex.org', 'institution', true, now(), now()
+  'https://politique.prototypex.org', 'https://politique.prototypex.org/icons/icon-512.png', 'institution', true, now(), now()
 from auth.users u
 where u.email = 'redaction@prototypex.org'
 on conflict do nothing;
@@ -32,3 +32,13 @@ on conflict do nothing;
 insert into private_profiles (user_id)
 select p.id from profiles p where p.handle = 'politique'
 on conflict do nothing;
+
+-- The barometer of the month, so the page is open from day one (an admin can still
+-- publish the next ones from the control center).
+insert into barometers (month, question, options, opens_at, closes_at, created_by)
+select date '2026-11-01',
+  'Quelle devrait être la priorité numéro un de votre commune en 2027 ?',
+  '["Routes et voirie", "Eau potable", "Assainissement et inondations", "Santé", "Écoles", "Emploi des jeunes"]'::jsonb,
+  now(), timestamptz '2026-12-01 00:00+00', p.id
+from profiles p where p.handle = 'politique'
+on conflict (month) do nothing;

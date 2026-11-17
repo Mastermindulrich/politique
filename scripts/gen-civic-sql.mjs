@@ -27,9 +27,11 @@ export const EDITOR_HANDLE = "politique";
 const offices = new Set();
 const deputies = []; // { key, communes: [name] }
 const mayorOf = new Map(); // commune name -> mayor office key
+const officeTitle = new Map(); // office key -> "Maire d'Abobo"
 for (const f of readdirSync(officialsDir).filter((f) => f.endsWith(".json"))) {
   for (const o of JSON.parse(readFileSync(path.join(officialsDir, f), "utf8")).offices) {
     offices.add(o.key);
+    officeTitle.set(o.key, o.title);
     if (o.mandate === "depute" && o.communes?.length) deputies.push({ key: o.key, communes: o.communes });
     if (o.mandate === "maire") mayorOf.set(o.commune, o.key);
   }
@@ -74,10 +76,12 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
       const body = `${it.body.trim()}\n\n${src}`;
       if (body.length > 2000) { errors.push(`${where}: body too long (${body.length})`); continue; }
       const tags = ["#Interpellation", ...(it.tags ?? []).map((t) => "#" + tag(t))].join(" ");
-      let text = `${it.title}\n\n${it.body.trim()}\n\n${sourceLine(sources[0])}\n${tags}`;
+      // Office accounts aren't claimed yet, so the post names the office it questions.
+      const to = `Destinataire : ${officeTitle.get(it.office)}\n\n`;
+      let text = `${to}${it.title}\n\n${it.body.trim()}\n\n${sourceLine(sources[0])}\n${tags}`;
       if (text.length > 1000) {
         const room = 1000 - (text.length - it.body.trim().length) - 1;
-        text = `${it.title}\n\n${it.body.trim().slice(0, room).replace(/\s+\S*$/, "")}…\n\n${sourceLine(sources[0])}\n${tags}`;
+        text = `${to}${it.title}\n\n${it.body.trim().slice(0, room).replace(/\s+\S*$/, "")}…\n\n${sourceLine(sources[0])}\n${tags}`;
       }
       if (text.length > 1000) { errors.push(`${where}: post too long`); continue; }
       interps.push({ id: uuid("i:" + key), post: uuid("p:" + key), office: it.office, title: it.title, body, text });

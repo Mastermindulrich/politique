@@ -1,0 +1,349 @@
+{
+ "about": "Défis et engagements des ministères, d'après des sources publiques. Ils sont rattachés au compte de fonction, qui passe au titulaire suivant.",
+ "checked": "2026-11-17",
+ "items": [
+  {
+   "office": "vice-premier-ministre-defense",
+   "kind": "defi",
+   "title": "Terrorisme, orpaillage illégal, piraterie : quelles priorités dans la loi de programmation militaire ?",
+   "body": "Le ministère cite comme menaces persistantes le terrorisme sous-régional, la grande criminalité, l'orpaillage illégal et la piraterie maritime. Une loi de programmation militaire 2026-2030 a été annoncée : quand sera-t-elle présentée au Parlement ?",
+   "tags": [
+    "Défense"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2025-12-12",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-ministre-de-la-defense-annonce-une-loi-de-programmation-militaire-2026-2030-face-aux-defis-terroristes/"
+   }
+  },
+  {
+   "office": "vice-premier-ministre-defense",
+   "kind": "projet",
+   "title": "Loi de programmation militaire 2026-2030",
+   "body": "Annoncée pour renforcer les capacités des forces armées face aux défis sécuritaires de la sous-région.",
+   "status": "annonce",
+   "source": {
+    "name": "AIP",
+    "date": "2025-12-12",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-ministre-de-la-defense-annonce-une-loi-de-programmation-militaire-2026-2030-face-aux-defis-terroristes/"
+   },
+   "due_at": "2030"
+  },
+  {
+   "office": "ministre-hydraulique",
+   "kind": "defi",
+   "title": "323 milliards de FCFA à trouver d'ici 2030 pour l'eau potable pour tous : où en est le financement ?",
+   "body": "L'État estime à 323 milliards de FCFA les moyens à mobiliser d'ici 2030 pour l'accès universel à l'eau potable et à l'assainissement, avec des défis techniques, financiers et institutionnels. Une table ronde des bailleurs était prévue en décembre 2025 : avec quels résultats ?",
+   "tags": [
+    "Eau"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2025-07-04",
+    "url": "https://www.aip.ci/aip-financement-de-odd-6-letat-ivoirien-et-ses-partenaires-se-concertent-a-abidjan-sur-le-defi-de-lacces-universel-a-leau-potable-et-a-lassainissement/"
+   }
+  },
+  {
+   "office": "ministre-hydraulique",
+   "kind": "projet",
+   "title": "Plan opérationnel eau et assainissement 2025-2030",
+   "body": "Plan intégré à une stratégie de 20 764 milliards de FCFA sur 25 ans ; un groupe de travail devait finaliser son financement avant la table ronde des bailleurs de décembre 2025.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2025-07-04",
+    "url": "https://www.aip.ci/aip-financement-de-odd-6-letat-ivoirien-et-ses-partenaires-se-concertent-a-abidjan-sur-le-defi-de-lacces-universel-a-leau-potable-et-a-lassainissement/"
+   },
+   "due_at": "2030"
+  },
+  {
+   "office": "ministre-urbanisme",
+   "kind": "defi",
+   "title": "Déficit de 800 000 logements : comment accélérer le logement social ?",
+   "body": "Le déficit est estimé à environ 800 000 logements. Le ministère cite trois obstacles : l'accès à un foncier sécurisé, le financement et la cadence de production. Quels objectifs chiffrés pour le nouveau gouvernement ?",
+   "tags": [
+    "Logement"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2025-02-21",
+    "url": "https://www.aip.ci/cote-divoire-aip-programme-presidentiel-de-logements-sociaux-kone-bruno-appelle-a-une-synergie-dactions-pour-accelerer-sa-mise-en-oeuvre/"
+   }
+  },
+  {
+   "office": "ministre-urbanisme",
+   "kind": "projet",
+   "title": "Programme présidentiel de logements sociaux",
+   "body": "1 405 logements sociaux et économiques remis symboliquement à Grand-Bassam en février 2025 ; l'État fournit des terrains viabilisés et prend en charge les voiries et réseaux primaires.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2025-02-21",
+    "url": "https://www.aip.ci/cote-divoire-aip-programme-presidentiel-de-logements-sociaux-kone-bruno-appelle-a-une-synergie-dactions-pour-accelerer-sa-mise-en-oeuvre/"
+   }
+  },
+  {
+   "office": "ministre-infrastructures",
+   "kind": "defi",
+   "title": "82 000 km de routes à entretenir : quelles priorités d'ici 2030 ?",
+   "body": "Changement climatique, hausse du trafic et contraintes budgétaires pèsent sur un réseau de 82 000 km. Le Gouvernement a défini en mai 2026 une nouvelle feuille de route à l'horizon 2030 : quelles routes seront traitées en premier ?",
+   "tags": [
+    "Routes"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-05-15",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-gouvernement-definit-la-nouvelle-feuille-de-route-du-reseau-routier-ivoirien-a-lhorizon-2030/"
+   }
+  },
+  {
+   "office": "ministre-infrastructures",
+   "kind": "projet",
+   "title": "Feuille de route du réseau routier 2026-2030",
+   "body": "Projets routiers structurants inscrits au PND 2026-2030, avec une action coordonnée de tous les acteurs du secteur.",
+   "status": "annonce",
+   "source": {
+    "name": "AIP",
+    "date": "2026-05-15",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-gouvernement-definit-la-nouvelle-feuille-de-route-du-reseau-routier-ivoirien-a-lhorizon-2030/"
+   },
+   "made_at": "2026-05",
+   "due_at": "2030"
+  },
+  {
+   "office": "ministre-jeunesse",
+   "kind": "defi",
+   "title": "Emploi des jeunes : combien des 86 000 opportunités de 2026 sont devenues des emplois ?",
+   "body": "La Foire nationale de l'emploi et du recrutement 2026 annonce plus de 86 000 opportunités (emplois, stages, formations, financements). Les jeunes aimeraient connaître le nombre de placements effectifs, région par région.",
+   "tags": [
+    "Emploi",
+    "Jeunesse"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-06-02",
+    "url": "https://www.aip.ci/electionpresidentielle2025/article.php?id=370704"
+   }
+  },
+  {
+   "office": "ministre-jeunesse",
+   "kind": "projet",
+   "title": "86 000 opportunités d'insertion en 2026",
+   "body": "Annoncées à la FNER 2026 : emplois directs, stages, formations et financements ; à Abengourou, plus de 3 900 opportunités et 155,2 millions de FCFA pour les activités génératrices de revenus.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2026-06-02",
+    "url": "https://www.aip.ci/electionpresidentielle2025/article.php?id=370704"
+   },
+   "due_at": "2026-12"
+  },
+  {
+   "office": "ministre-sante",
+   "kind": "defi",
+   "title": "CMU : comment financer durablement l'accès aux soins ?",
+   "body": "Le ministère place le financement durable et l'équité d'accès aux soins parmi ses défis majeurs. Quelles mesures pour que la couverture maladie universelle tienne dans la durée ?",
+   "tags": [
+    "Santé",
+    "CMU"
+   ],
+   "source": {
+    "name": "Ministère de la Santé",
+    "date": "2025",
+    "url": "https://www.sante.gouv.ci/actualite/1877"
+   }
+  },
+  {
+   "office": "ministre-delegue-enseignement-technique",
+   "kind": "projet",
+   "title": "Porter l'enseignement technique de 5 % à 15 % des élèves d'ici 2030",
+   "body": "Sept nouveaux établissements publics de formation professionnelle devaient ouvrir à la rentrée 2025-2026.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2025-06-03",
+    "url": "https://www.aip.ci/cote-divoire-aip-sept-nouveaux-etablissements-publics-de-formation-professionnelle-ouvriront-a-la-rentree-scolaire-2025-2026/"
+   },
+   "due_at": "2030"
+  },
+  {
+   "office": "ministre-delegue-enseignement-technique",
+   "kind": "defi",
+   "title": "Les sept nouveaux établissements de formation professionnelle ont-ils ouvert ?",
+   "body": "Sept établissements publics devaient ouvrir à la rentrée 2025-2026, pour rapprocher la formation des besoins de l'emploi. Combien fonctionnent, avec combien d'apprenants ?",
+   "tags": [
+    "Formation"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2025-06-03",
+    "url": "https://www.aip.ci/cote-divoire-aip-sept-nouveaux-etablissements-publics-de-formation-professionnelle-ouvriront-a-la-rentree-scolaire-2025-2026/"
+   }
+  },
+  {
+   "office": "ministre-education",
+   "kind": "projet",
+   "title": "Achever 14 lycées d'excellence avec internat pour jeunes filles",
+   "body": "Annoncé avec le déploiement du PNAPAS dans tous les cycles d'ici 2030.",
+   "status": "en_cours",
+   "source": {
+    "name": "Ministère de l'Éducation nationale",
+    "date": "2025-03-27",
+    "url": "https://www.education.gouv.ci/index.php/Activite/details/331"
+   },
+   "due_at": "2030"
+  },
+  {
+   "office": "ministre-tourisme",
+   "kind": "projet",
+   "title": "Réhabiliter les ponts de liane et bâtir un hôtel quatre étoiles à Man",
+   "body": "Annoncé en septembre 2025 : réhabilitation des sites et des ponts de liane, boutiques, restaurants et espaces de loisirs ; travaux de l'hôtel prévus pour démarrer en janvier 2026.",
+   "status": "annonce",
+   "source": {
+    "name": "AIP",
+    "date": "2025-09-30",
+    "url": "https://www.aip.ci/cote-divoire-aip-de-nouveaux-projets-pour-renforcer-lattractivite-touristique-a-man/"
+   },
+   "due_at": "2026-01"
+  },
+  {
+   "office": "ministre-cohesion-nationale",
+   "kind": "projet",
+   "title": "Popote familiale : phase 2026",
+   "body": "Après une phase pilote auprès de 2 000 ménages, la phase 2026 combine kits, transferts monétaires, formation et subventions pour des activités génératrices de revenus, pour des ménages du Registre social unique.",
+   "status": "en_cours",
+   "source": {
+    "name": "Ministère de la Cohésion nationale",
+    "date": "2026-04-29",
+    "url": "https://solidarite.gouv.ci/actualite/actudetail/popote-familiale-l-instrument-de-la-solidarit-gouv"
+   }
+  },
+  {
+   "office": "ministre-transition-numerique",
+   "kind": "defi",
+   "title": "Internet trop cher : quelles baisses de prix en 2026 ?",
+   "body": "Le Gouvernement cite le coût des services numériques parmi les défis à relever. Le ministre a présenté cinq priorités pour 2026 : quelles mesures concrètes sur les prix ?",
+   "tags": [
+    "Numérique"
+   ],
+   "source": {
+    "name": "Gouvernement de Côte d'Ivoire",
+    "date": "2025-12-31",
+    "url": "https://www.gouv.ci/actualite/transition-numerique-et-innovation-technologique-le-ministre-djibril-ouattara-decline-ses-cinq-priorites-pour-2026-1732"
+   }
+  },
+  {
+   "office": "ministre-transition-numerique",
+   "kind": "projet",
+   "title": "Cinq priorités pour 2026",
+   "body": "Présentées par le ministre pour accélérer la transformation numérique et l'innovation technologique.",
+   "status": "annonce",
+   "source": {
+    "name": "Gouvernement de Côte d'Ivoire",
+    "date": "2025-12-31",
+    "url": "https://www.gouv.ci/actualite/transition-numerique-et-innovation-technologique-le-ministre-djibril-ouattara-decline-ses-cinq-priorites-pour-2026-1732"
+   },
+   "due_at": "2026-12"
+  },
+  {
+   "office": "ministre-femme-famille",
+   "kind": "projet",
+   "title": "Renforcer les actions pour les femmes, les familles et les enfants en 2026",
+   "body": "Budget 2026 de 31,26 milliards de FCFA adopté par la commission compétente du Sénat.",
+   "status": "annonce",
+   "source": {
+    "name": "AIP",
+    "date": "2025-12-13",
+    "url": "https://www.aip.ci/cote-divoire-aip-la-ministre-nasseneba-toure-annonce-le-renforcement-des-actions-en-faveur-des-familles-en-2026/"
+   },
+   "due_at": "2026-12"
+  },
+  {
+   "office": "ministre-culture",
+   "kind": "projet",
+   "title": "Projet C2D Culture à Bouaké et centre culturel Jacques-Aka",
+   "body": "Lancé à Bouaké en septembre 2025 pour renforcer l'offre culturelle hors d'Abidjan.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2025-09-09",
+    "url": "https://www.aip.ci/cote-divoire-aip-lancement-du-projet-c2d-culture-a-bouake/"
+   }
+  },
+  {
+   "office": "ministre-delegue-integration-africaine",
+   "kind": "projet",
+   "title": "Des produits bancaires pour les investissements de la diaspora",
+   "body": "Convention signée avec la BNI : produits spécifiques et accompagnement financier des projets des Ivoiriens de l'extérieur.",
+   "status": "annonce",
+   "source": {
+    "name": "AIP",
+    "date": "2026-03-07",
+    "url": "https://www.aip.ci/cote-divoire-aip-diaspora-le-ministere-delegue-et-la-bni-signent-un-partenariat-pour-faciliter-linvestissement-des-ivoiriens-de-lexterieur/"
+   }
+  },
+  {
+   "office": "ministre-communication",
+   "kind": "defi",
+   "title": "Désinformation : quel dispositif pour les citoyens ?",
+   "body": "Le ministère place la lutte contre la désinformation parmi ses priorités, avec la modernisation des médias. Comment un citoyen peut-il signaler une fausse information et obtenir une vérification ?",
+   "tags": [
+    "Désinformation"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2025-02-04",
+    "url": "https://www.aip.ci/cote-divoire-aip-presentation-de-voeux-le-ministre-amadou-coulibaly-sengage-a-poursuivre-les-projets-innovants/"
+   }
+  },
+  {
+   "office": "ministre-environnement",
+   "kind": "projet",
+   "title": "Réviser la politique nationale de l'environnement",
+   "body": "Atelier de validation du 1er au 3 octobre 2025 à Abidjan pour adapter la politique aux défis climatiques.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2025-10-02",
+    "url": "https://www.aip.ci/cote-divoire-aip-la-politique-de-lenvironnement-en-cours-de-revision-pour-repondre-aux-defis-climatiques-actuels/"
+   }
+  },
+  {
+   "office": "ministre-sports",
+   "kind": "projet",
+   "title": "Plateforme numérique de gestion des fédérations sportives",
+   "body": "Projet pilote lancé avec cinq fédérations, avant extension aux autres.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2025-11-27",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-ministere-des-sports-renforce-la-bonne-gouvernance-des-federations-avec-loperationnalisation-dun-outil-digital-de-gestion-de-lecosysteme-sportif/"
+   }
+  },
+  {
+   "office": "ministre-delegue-productions-vivrieres",
+   "kind": "projet",
+   "title": "Engrais et semences gratuits pour les producteurs vivriers (2PAU-CI)",
+   "body": "Distribution commencée à Sassandra le 2 mai 2025 pour augmenter la production vivrière et réduire la dépendance aux importations.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2025-05-08",
+    "url": "https://www.aip.ci/cote-divoire-aip-des-engrais-et-des-semences-de-vivriers-distribues-dans-le-cadre-du-projet-gouvernemental-2pau-ci/"
+   }
+  },
+  {
+   "office": "ministre-delegue-affaires-maritimes",
+   "kind": "projet",
+   "title": "Ports, sécurité maritime, formation nautique : priorités du budget 2026",
+   "body": "Priorités défendues à la conférence budgétaire de juillet 2025 pour l'exercice 2026.",
+   "status": "annonce",
+   "source": {
+    "name": "AIP",
+    "date": "2025-07-31",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-ministere-delegue-aux-affaires-maritimes-defend-ses-priorites-pour-lexercice-2026-lors-de-la-conference-budgetaire-annuelle/"
+   },
+   "due_at": "2026-12"
+  }
+ ]
+}

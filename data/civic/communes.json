@@ -770,6 +770,564 @@
     "date": "2026-05-04",
     "url": "https://www.aip.ci/cote-divoire-aip-agnibilekrou-le-maire-siandou-fofana-annonce-de-grands-projets-urbains-structurants/"
    }
+  },
+  {
+   "office": "maire-abengourou",
+   "kind": "projet",
+   "title": "e-commune : mieux connaître et collecter les recettes de la commune",
+   "body": "Projet du CNTIG lancé par la mairie le 17 février 2024, après adoption en conseil municipal : base de données territoriale des activités, des équipements et des recettes fiscales, pour suivre et prioriser les projets.",
+   "status": "en_cours",
+   "made_at": "2024-02-17",
+   "source": {
+    "name": "AIP",
+    "date": "2024-02-18",
+    "url": "https://www.aip.ci/cote-divoire-aip-la-mairie-dabengourou-lance-son-projet-e-commune-pour-une-meilleure-maitrise-de-ses-recettes/"
+   }
+  },
+  {
+   "office": "maire-adiake",
+   "kind": "projet",
+   "title": "Construire trois collèges de proximité",
+   "body": "Annoncé par le conseil municipal lors de sa première session de 2024.",
+   "status": "annonce",
+   "source": {
+    "name": "AIP",
+    "date": "2024-05-05",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-municipal-dadiake-annonce-la-construction-de-trois-colleges-de-proximite/"
+   }
+  },
+  {
+   "office": "maire-adzope",
+   "kind": "defi",
+   "title": "Orpaillage illégal : comment protéger les terres autour d'Adzopé ?",
+   "body": "Un atelier des 4 et 5 décembre 2024 a décrit les conséquences environnementales et communautaires désastreuses de l'orpaillage illégal dans le département d'Adzopé et étudié la restauration des terres dégradées. Quel rôle la commune peut-elle jouer ?",
+   "tags": [
+    "Adzopé",
+    "Orpaillage"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2024-12-06",
+    "url": "https://www.aip.ci/cote-divoire-aip-un-atelier-de-reflexion-sur-les-mecanismes-de-lutte-contre-lorpaillage-illegal-et-la-restauration-des-terres-degradees-a-adzope/"
+   }
+  },
+  {
+   "office": "maire-adzope",
+   "kind": "projet",
+   "title": "Moderniser les services communaux avec l'ANSUT et le CNTIG",
+   "body": "Conventions validées par le conseil municipal en juillet 2025 ; le budget modificatif 2025 consacrait 1 198 039 000 FCFA, plus de 60 % des ressources, à des projets de développement.",
+   "status": "annonce",
+   "source": {
+    "name": "AIP",
+    "date": "2025-08-08",
+    "url": "https://www.aip.ci/cote-divoire-aip-la-commune-dadzope-renforce-ses-partenariats-strategiques-pour-moderniser-ses-services/"
+   }
+  },
+  {
+   "office": "maire-agboville",
+   "kind": "projet",
+   "title": "Programme triennal 2026-2028 : 48 projets pour plus de 2 milliards de FCFA",
+   "body": "Projets inscrits au programme triennal de la mairie d'Agboville.",
+   "status": "annonce",
+   "due_at": "2028-12",
+   "source": {
+    "name": "AIP",
+    "date": "2025-06-05",
+    "url": "https://www.aip.ci/cote-divoire-aip-plus-de-deux-milliards-fcfa-prevus-pour-48-projets-inscrits-au-programme-triennal-2026-2028-de-la-mairie-dagboville/"
+   }
+  },
+  {
+   "office": "maire-akoupe",
+   "kind": "projet",
+   "title": "Plan stratégique de développement et extension du marché communal",
+   "body": "Plan adopté par le conseil municipal, qui a aussi autorisé une étude d'évaluation du nouvel hôtel communal et examiné l'extension du marché en partenariat BOT.",
+   "status": "annonce",
+   "source": {
+    "name": "AIP",
+    "date": "2026-07-25",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-municipal-dakoupe-adopte-le-plan-strategique-de-developpement-de-la-commune/"
+   }
+  },
+  {
+   "office": "maire-alepe",
+   "kind": "projet",
+   "title": "Achever la gare routière, 80 magasins au nouveau marché et la piscine municipale",
+   "body": "Annoncés pour 2025 au vote du budget primitif : gare routière (28,79 millions de FCFA), 80 magasins du nouveau marché (200 millions), piscine municipale (29 millions).",
+   "status": "en_cours",
+   "due_at": "2025-12",
+   "source": {
+    "name": "AIP",
+    "date": "2025-04-15",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-budget-primitif-2025-de-la-mairie-dalepe-adopte-a-pres-de-700-millions-fcfa/"
+   }
+  },
+  {
+   "office": "maire-alepe",
+   "kind": "defi",
+   "title": "Taxes des motos-taxis : comment éviter de nouvelles tensions ?",
+   "body": "La hausse des taxes annuelles et journalières des motos-taxis et des deux- et trois-roues a provoqué des perturbations en mars 2025 ; le représentant du préfet a demandé au maire de prendre des dispositions pour qu'elles ne se reproduisent pas. Quel dialogue avec les conducteurs ?",
+   "tags": [
+    "Alépé"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2025-04-15",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-budget-primitif-2025-de-la-mairie-dalepe-adopte-a-pres-de-700-millions-fcfa/"
+   }
+  },
+  {
+   "office": "maire-arrah",
+   "kind": "defi",
+   "title": "Électricité dans les quartiers : où en sont les 200 millions annoncés ?",
+   "body": "La maire a annoncé 200 millions de FCFA pour améliorer l'accès à l'électricité dans plusieurs quartiers, et la mise à niveau du centre de santé mère-enfant face à des besoins croissants. Quels quartiers sont déjà raccordés ?",
+   "tags": [
+    "Arrah"
+   ],
+   "source": {
+    "name": "Abidjan.net",
+    "date": "2024-11-17",
+    "url": "https://news.abidjan.net/articles/736662/le-maire-darrah-devoile-des-projets-ambitieux-pour-le-bien-etre-des-populations"
+   }
+  },
+  {
+   "office": "maire-arrah",
+   "kind": "projet",
+   "title": "Marché de gros communal",
+   "body": "Construit par le conseil municipal et inauguré lors de la présentation des projets de la commune en novembre 2024.",
+   "status": "realise",
+   "source": {
+    "name": "Abidjan.net",
+    "date": "2024-11-17",
+    "url": "https://news.abidjan.net/articles/736662/le-maire-darrah-devoile-des-projets-ambitieux-pour-le-bien-etre-des-populations"
+   }
+  },
+  {
+   "office": "maire-arrah",
+   "kind": "projet",
+   "title": "Reprofilage avec caniveaux et dalots, nouvelles salles de classe",
+   "body": "Annoncés par la mairie avec la mise à niveau du centre de santé mère-enfant.",
+   "status": "annonce",
+   "source": {
+    "name": "Abidjan.net",
+    "date": "2024-11-17",
+    "url": "https://news.abidjan.net/articles/736662/le-maire-darrah-devoile-des-projets-ambitieux-pour-le-bien-etre-des-populations"
+   }
+  },
+  {
+   "office": "maire-ayame",
+   "kind": "projet",
+   "title": "Plan stratégique de développement de la commune",
+   "body": "Diagnostic de planification réalisé avec le BNETD et restitué en janvier 2025 ; le plan doit servir de cadre aux politiques locales.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2025-01-21",
+    "url": "https://www.aip.ci/cote-divoire-aip-plan-strategique-de-developpement-un-atelier-de-restitution-du-diagnostic-de-planification-et-de-programmation-ouvert-a-ayame/"
+   }
+  },
+  {
+   "office": "maire-azaguie",
+   "kind": "projet",
+   "title": "Construire 15 logements sociaux",
+   "body": "Premier coup de pioche donné par la mairie le 5 décembre 2025.",
+   "status": "en_cours",
+   "source": {
+    "name": "Mairie d'Azaguié",
+    "date": "2025-12-05",
+    "url": "https://www.systeme-integre-mairie-azaguie.com/detail?id=11"
+   }
+  },
+  {
+   "office": "maire-bangolo",
+   "kind": "projet",
+   "title": "Un nouvel hôtel de ville pour Bangolo",
+   "body": "Parmi les projets en cours de la municipalité depuis la réélection du maire en 2023 ; dix motos ont aussi été remises aux agents municipaux le 17 juillet 2025 pour la collecte des recettes et le contrôle des chantiers.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2025-07-21",
+    "url": "https://www.aip.ci/cote-divoire-aip-la-mairie-de-bangolo-renforce-la-mobilite-de-ses-agents-pour-ameliorer-lefficacite-des-services-publics/"
+   }
+  },
+  {
+   "office": "maire-bediala",
+   "kind": "defi",
+   "title": "Eau, santé, écoles, pistes : par quoi commencer le plan 2026-2030 ?",
+   "body": "Le diagnostic du Plan stratégique de développement 2026-2030 de Bédiala, réceptionné le 22 septembre 2026, relève des défis d'accès à l'eau, de santé, d'éducation, d'assainissement et de routes rurales, ainsi que de transformation des productions agricoles. Quelles priorités pour 2027 ?",
+   "tags": [
+    "Bédiala"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-09-25",
+    "url": "https://www.aip.ci/cote-divoire-aip-la-commune-de-bediala-dotee-dun-plan-strategique-de-developpement/"
+   }
+  },
+  {
+   "office": "maire-bediala",
+   "kind": "projet",
+   "title": "Plan stratégique de développement 2026-2030",
+   "body": "Élaboré après diagnostic et consultations locales, réceptionné le 22 septembre 2026 ; il oriente les investissements communaux jusqu'en 2030.",
+   "status": "realise",
+   "due_at": "2030",
+   "source": {
+    "name": "AIP",
+    "date": "2026-09-25",
+    "url": "https://www.aip.ci/cote-divoire-aip-la-commune-de-bediala-dotee-dun-plan-strategique-de-developpement/"
+   }
+  },
+  {
+   "office": "maire-beoumi",
+   "kind": "defi",
+   "title": "Orpaillage illicite : comment empêcher le retour sur les sites détruits ?",
+   "body": "Le préfet a appelé à maintenir la surveillance des anciens sites d'orpaillage détruits, notamment autour de Bodokro, pour éviter leur recolonisation ; l'AIP signale aussi des risques sanitaires liés au cyanure et au mercure.",
+   "tags": [
+    "Béoumi",
+    "Orpaillage"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-08-26",
+    "url": "https://www.aip.ci/electionpresidentielle2025/article.php?id=409618"
+   }
+  },
+  {
+   "office": "maire-bettie",
+   "kind": "defi",
+   "title": "Fosses septiques à ciel ouvert : quel accompagnement pour les ménages ?",
+   "body": "Le maire a menacé de sanctionner les propriétaires de fosses septiques à ciel ouvert et demandé la remise en état des puits perdus ouverts ou dégradés. Les ménages modestes auront-ils une aide pour se mettre en règle ?",
+   "tags": [
+    "Bettié"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-07-01",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-de-bettie-menace-de-sanctionner-les-proprietaires-de-fosses-septiques-a-ciel-ouvert/"
+   }
+  },
+  {
+   "office": "maire-bettie",
+   "kind": "projet",
+   "title": "Construire un stade olympique communal",
+   "body": "Annoncé par le maire pour moderniser les infrastructures sportives et mieux encadrer la jeunesse.",
+   "status": "annonce",
+   "source": {
+    "name": "AIP",
+    "date": "2026-10-06",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-de-bettie-annonce-la-construction-dun-stade-olympique-dans-la-commune/"
+   }
+  },
+  {
+   "office": "maire-bin-houye",
+   "kind": "defi",
+   "title": "Routes et ponts : un « besoin vital » pour sortir Bin-Houyé de l'enclavement",
+   "body": "Le maire décrit l'accès routier comme un besoin vital : des infrastructures inadéquates freinent le commerce et l'accès aux services. Quelles routes, ponts et pistes seront réhabilités en premier ?",
+   "tags": [
+    "BinHouyé"
+   ],
+   "source": {
+    "name": "Africa24",
+    "date": "2025-10-28",
+    "url": "https://africa24tv.com/cote-divoire-acces-a-lelectricite-pour-90-de-la-population-de-la-commune-de-bin-houye/"
+   }
+  },
+  {
+   "office": "maire-blolequin",
+   "kind": "projet",
+   "title": "Salles de classe et cantine scolaire dans les villages",
+   "body": "Bâtiments de trois classes achevés à Yoya, Goya et Duadokin, six classes construites à Médibly et une cantine à Goya, selon le bilan des sept premiers mois de mandature.",
+   "status": "realise",
+   "source": {
+    "name": "AIP",
+    "date": "2024-05-22",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-de-blolequin-evoque-ses-actions-de-developpement-en-sept-mois-de-mandature/"
+   }
+  },
+  {
+   "office": "maire-blolequin",
+   "kind": "projet",
+   "title": "Ouvrir des voies pour relier les quartiers, puis lancer des taxis communaux",
+   "body": "Travaux d'ouverture de voies en cours sur tout le périmètre communal en mai 2024, avant la mise en place annoncée de taxis communaux.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2024-05-22",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-de-blolequin-evoque-ses-actions-de-developpement-en-sept-mois-de-mandature/"
+   }
+  },
+  {
+   "office": "maire-bocanda",
+   "kind": "projet",
+   "title": "Un marché moderne pour Bocanda",
+   "body": "Promis par le maire et inscrit au programme triennal 2024-2026, avec un délai maximal d'un an annoncé le 1er décembre 2023.",
+   "status": "annonce",
+   "made_at": "2023-12-01",
+   "due_at": "2024-12",
+   "source": {
+    "name": "AIP",
+    "date": "2023-12-01",
+    "url": "https://www.aip.ci/cote-divoire-aip-bientot-un-hotel-de-ville-et-un-marche-modernes-a-bocanda/"
+   }
+  },
+  {
+   "office": "maire-bocanda",
+   "kind": "defi",
+   "title": "Animaux en divagation : accidents et bitume abîmé",
+   "body": "La divagation des animaux s'est amplifiée à Bocanda, provoquant des accidents et dégradant le bitume. Le préfet avait fixé au 6 août 2024 la date limite pour les mettre en enclos, la mairie pouvant les mettre en fourrière. La situation s'est-elle améliorée ?",
+   "tags": [
+    "Bocanda"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2024-08-06",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-prefet-somme-les-populations-de-bocanda-a-parquer-leurs-animaux/"
+   }
+  },
+  {
+   "office": "maire-bondoukou",
+   "kind": "projet",
+   "title": "Plan triennal 2025-2027 : 37 projets pour 1,72 milliard de FCFA",
+   "body": "Annoncé par le maire en janvier 2025 : 37 projets majeurs pour un coût global de 1 718 398 000 FCFA.",
+   "status": "annonce",
+   "due_at": "2027-12",
+   "source": {
+    "name": "AIP",
+    "date": "2025-01-14",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-de-bondoukou-reitere-son-engagement-pour-le-developpement-de-sa-commune/"
+   }
+  },
+  {
+   "office": "maire-bonon",
+   "kind": "defi",
+   "title": "41 campements déguerpis de la forêt classée : quelle solution pour les familles ?",
+   "body": "Depuis le 17 septembre 2024, les habitants de 41 campements de la forêt classée de Bonon ont été déguerpis, une situation décrite comme une tragédie humaine en attente d'une réponse urgente. Comment la commune les accompagne-t-elle ?",
+   "tags": [
+    "Bonon"
+   ],
+   "source": {
+    "name": "Koaci",
+    "date": "2024-12-02",
+    "url": "https://www.koaci.com/article/2024/12/02/cote-divoire/societe/cote-divoire-les-deguerpis-de-bonon-une-tragedie-humaine-en-attente-dune-reponse-urgente_182795.html"
+   }
+  },
+  {
+   "office": "maire-bonon",
+   "kind": "projet",
+   "title": "13 projets d'investissement : voies, caniveaux, écoles, électricité",
+   "body": "Au 12 février 2026, neuf projets étaient achevés et les autres exécutés de 15 % à 95 % : 20 km de voies, 550 m de caniveaux, deux bâtiments scolaires, et 4 000 m d'extension électrique (à l'arrêt à 15 %).",
+   "status": "partiellement_realise",
+   "source": {
+    "name": "AIP",
+    "date": "2026-02-12",
+    "url": "https://www.aip.ci/electionpresidentielle2025/article.php?id=324386"
+   }
+  },
+  {
+   "office": "maire-bonoua",
+   "kind": "defi",
+   "title": "Samo, Adiaho, Yaou inondés : quelles protections avant la prochaine saison des pluies ?",
+   "body": "Des pluies diluviennes ont inondé les localités de Samo, Adiaho et Yaou en juillet 2025, faisant des familles sinistrées et touchant des infrastructures ; le Gouvernement est venu en aide aux familles. Quels travaux sont prévus pour éviter que cela recommence ?",
+   "tags": [
+    "Bonoua",
+    "Inondations"
+   ],
+   "source": {
+    "name": "Ministère de la Solidarité",
+    "date": "2025-07-18",
+    "url": "https://solidarite.gouv.ci/actualite/actudetail/inondation-dans-la-commune-de-bonoua-le-gouvernement-porte-secours-aux-familles-sinistres649"
+   }
+  },
+  {
+   "office": "maire-bonoua",
+   "kind": "projet",
+   "title": "Rénover et agrandir le marché municipal",
+   "body": "Marché municipal rénové et étendu par la municipalité, puis inauguré pour dynamiser l'économie locale.",
+   "status": "realise",
+   "source": {
+    "name": "AIP",
+    "date": null,
+    "url": "https://www.aip.ci/cote-divoire-aip-le-marche-municipal-renove-de-bonoua-inaugure-pour-dynamiser-leconomie-locale/"
+   }
+  },
+  {
+   "office": "maire-booko",
+   "kind": "projet",
+   "title": "« À chaque jeune son permis »",
+   "body": "Dispositif lancé par la mairie pour permettre chaque année à un nombre défini de jeunes de la commune d'obtenir leur permis de conduire.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": null,
+    "url": "https://www.aip.ci/electionpresidentielle2025/article.php?id=419730"
+   }
+  },
+  {
+   "office": "maire-botro",
+   "kind": "defi",
+   "title": "Pénurie d'eau à Awahinou et dans d'autres quartiers : quand l'eau reviendra-t-elle durablement ?",
+   "body": "Une pénurie d'eau touchait en mars 2026 le quartier Awahinou et d'autres secteurs de Botro. Le maire a évoqué un projet de renforcement de l'approvisionnement en eau potable : avec quel calendrier ?",
+   "tags": [
+    "Botro",
+    "Eau"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-03-02",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-rassure-les-populations-de-botro-sur-la-penurie-deau/"
+   }
+  },
+  {
+   "office": "maire-botro",
+   "kind": "projet",
+   "title": "Programme triennal 2025-2027 de 1,04 milliard de FCFA",
+   "body": "Adopté par le conseil municipal en septembre 2024.",
+   "status": "en_cours",
+   "due_at": "2027-12",
+   "source": {
+    "name": "AIP",
+    "date": "2024-09-07",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-municipal-de-botro-adopte-un-programme-triennal-de-104-milliard-fcfa/"
+   }
+  },
+  {
+   "office": "maire-bouna",
+   "kind": "defi",
+   "title": "Boulevard 2x2 voies : comment accompagner les riverains déplacés ?",
+   "body": "Le dégagement des emprises du futur boulevard urbain à 2x2 voies suscite à Bouna à la fois l'espoir d'une transformation de la ville et des inquiétudes chez les personnes concernées. Quelles indemnisations et quel relogement ?",
+   "tags": [
+    "Bouna"
+   ],
+   "source": {
+    "name": "Fraternité Matin",
+    "date": null,
+    "url": "https://www.fratmat.info/article/2644141/regions/bounaamenagement-urbain-degagement-des-emprises-le-futur-boulevard-2x2-voies-suscite-espoir-et-inquietudes"
+   }
+  },
+  {
+   "office": "maire-bouna",
+   "kind": "projet",
+   "title": "Réhabiliter les écoles et les centres de santé de la commune",
+   "body": "Opération annoncée par le maire en avril 2024 ; les travaux du groupe scolaire Bouna 1 ont démarré le 26 août 2024.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2024-04-11",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-de-bouna-annonce-la-rehabilitation-decoles-et-de-centres-de-sante/"
+   },
+   "sources": [
+    {
+     "name": "AIP",
+     "date": "2024-04-11",
+     "url": "https://www.aip.ci/cote-divoire-aip-le-maire-de-bouna-annonce-la-rehabilitation-decoles-et-de-centres-de-sante/"
+    },
+    {
+     "name": "AIP",
+     "url": "https://www.aip.ci/cote-divoire-aip-le-maire-satisfait-de-letat-davancement-des-travaux-de-rehabilitation-du-groupe-scolaire-bouna-1/"
+    }
+   ]
+  },
+  {
+   "office": "maire-boundiali",
+   "kind": "projet",
+   "title": "Près de 80 % du budget primitif pour 26 projets",
+   "body": "La mairie a affecté près de 80 % de son budget primitif à la réalisation de 26 projets.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": null,
+    "url": "https://www.aip.ci/cote-divoire-aip-la-mairie-de-boundiali-alloue-pres-de-80-de-son-budget-primitif-a-la-realisation-de-26-projets/"
+   }
+  },
+  {
+   "office": "maire-brobo",
+   "kind": "defi",
+   "title": "Lotissement des réserves administratives : quel dialogue avec les jeunes ?",
+   "body": "En février 2024, des jeunes de Brobo se sont opposés au lotissement des réserves administratives et ont demandé au maire de suspendre l'opération. Où en est ce dossier foncier ?",
+   "tags": [
+    "Brobo",
+    "Foncier"
+   ],
+   "source": {
+    "name": "Koaci",
+    "date": "2024-02-24",
+    "url": "https://www.koaci.com/article/2024/02/24/cote-divoire/societe/cote-divoire-brobo-bras-de-fer-entre-le-maire-et-sa-population-des-jeunes-opposes-au-lotissement-des-reserves-administratives-sur-le-pied-de-guerre_176026.html"
+   }
+  },
+  {
+   "office": "maire-buyo",
+   "kind": "defi",
+   "title": "Belleville : quand arrivent la voirie et l'électricité ?",
+   "body": "Le maire a annoncé en juin 2026 des projets de voirie et d'électrification pour le quartier Belleville, qui en manque. Avec quel calendrier ?",
+   "tags": [
+    "Buyo"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-06-14",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-de-buyo-annonce-des-projets-de-voirie-et-delectrification-a-belleville/"
+   }
+  },
+  {
+   "office": "maire-dabakala",
+   "kind": "defi",
+   "title": "Des ressources propres trop faibles : comment financer la commune ?",
+   "body": "Au conseil municipal d'avril 2026, le maire a déploré le niveau des ressources internes de Dabakala et appelé à encourager les initiatives locales pour améliorer les recettes. Quelles pistes concrètes ?",
+   "tags": [
+    "Dabakala"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-04-12",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-de-dabakala-encourage-des-initiatives-locales-pour-accroitre-les-ressources-internes/"
+   }
+  },
+  {
+   "office": "maire-dabou",
+   "kind": "projet",
+   "title": "Des terrains pour une cité administrative",
+   "body": "Le conseil municipal a attribué des terrains à six directions régionales pour regrouper leurs services, aujourd'hui dispersés et en location coûteuse.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2025-03-05",
+    "url": "https://www.aip.ci/cote-divoire-aip-la-mairie-de-dabou-met-a-disposition-des-terrains-pour-la-creation-dun-centre-administratif/"
+   }
+  },
+  {
+   "office": "maire-daloa",
+   "kind": "projet",
+   "title": "Écoles et forages dans la commune",
+   "body": "Le maire a inauguré plusieurs écoles et forages en octobre 2024 ; d'autres chantiers municipaux étaient en cours de finalisation.",
+   "status": "partiellement_realise",
+   "source": {
+    "name": "Koaci",
+    "date": "2024-10-06",
+    "url": "https://www.koaci.com/article/2024/10/06/cote-divoire/societe/cote-divoire-daloa-le-maire-stephane-gbeuly-inaugure-plusieurs-infrastructures-dont-des-ecoles-et-des-forages-de-nombreux-autres-chantiers-en-cours-de-finalisation_181421.html"
+   }
+  },
+  {
+   "office": "maire-diabo",
+   "kind": "projet",
+   "title": "Centre d'incubation et de transformation de l'attiéké à Bouakro",
+   "body": "Première pierre posée par la mairie en août 2025.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2025-08-29",
+    "url": "https://www.aip.ci/cote-divoire-aip-pose-de-la-premiere-pierre-du-centre-dincubation-et-de-transformation-de-lattieke-a-diabo/"
+   }
+  },
+  {
+   "office": "maire-diabo",
+   "kind": "projet",
+   "title": "Une Maison des chefs à Ahougnanou",
+   "body": "Première pierre posée en juin 2026 : un lieu de concertation, de médiation et de règlement des conflits.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2026-06-19",
+    "url": "https://www.aip.ci/cote-divoire-aip-la-mairie-de-diabo-lance-la-construction-dune-maison-des-chefs-pour-consolider-la-cohesion-sociale/"
+   }
   }
  ]
 }
