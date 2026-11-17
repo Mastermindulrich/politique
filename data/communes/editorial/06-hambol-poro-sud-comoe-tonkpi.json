@@ -1,0 +1,534 @@
+[
+  {
+    "id": 161,
+    "tagline": "La ville carrefour du pays tagbana, entre route et rail",
+    "intro": "Tafiré est une ville du Hambol, dans le département de Niakaramadougou. Posée sur la nationale A3 qui relie Abidjan à Ouangolodougou et sur la ligne de chemin de fer Abidjan-Ouagadougou, elle vit du commerce, de l'agriculture et de l'élevage, au cœur du pays tagbana.",
+    "highlights": [
+      { "k": "site", "t": "La gare de Tafiré", "d": "Le train Abidjan-Ouagadougou s'y arrête. À chaque passage, le quai devient un marché où l'on vend fruits, ignames et beurre de karité aux voyageurs.", "photo": "Scene de gare de train Tafire.JPG" },
+      { "k": "culture", "t": "Le pays tagbana", "d": "Les Tagbana, Sénoufo du sud, forment la majorité de la population, aux côtés des Malinké et de communautés venues du Burkina Faso, de Guinée et du Mali." },
+      { "k": "economie", "t": "Une place de commerce", "d": "Sa position sur le grand axe du nord fait de Tafiré un point de passage et d'échange pour toute la sous-préfecture." }
+    ],
+    "products": ["Igname", "Anacarde", "Coton", "Beurre de karité", "Bétail"],
+    "photos": [
+      { "f": "Scene de gare de train Tafire.JPG", "c": "Scène de gare ferroviaire à Tafiré" },
+      { "f": "Scene de gare de train Tafire2.JPG", "c": "Vendeuses sur le quai de la gare de Tafiré" }
+    ]
+  },
+  {
+    "id": 162,
+    "tagline": "La ville née du diamant, au bord de la rivière Bou",
+    "intro": "Tortiya est une petite ville du Hambol, à une centaine de kilomètres au sud de Korhogo. Elle est née en 1947 de la découverte d'un gisement de diamants par le géologue Georges Malaurent, qui lui donna son nom en hommage au roman Tortilla Flat de John Steinbeck.",
+    "highlights": [
+      { "k": "site", "t": "Une ville minière", "d": "Une ville champignon a grandi autour des mines, d'abord industrielles. L'exploitation industrielle s'est arrêtée, mais des orpailleurs et diamineurs artisanaux y travaillent toujours." },
+      { "k": "nature", "t": "La rivière Bou", "d": "La Bou traverse la ville. Ses berges, marquées par des décennies de creusement, racontent l'histoire minière de Tortiya." },
+      { "k": "culture", "t": "Un nom venu d'un roman", "d": "Tortiya est l'une des rares villes ivoiriennes dont le nom vient de la littérature américaine : Tortilla Flat, que lisait le géologue au moment de sa découverte." }
+    ],
+    "products": ["Diamant artisanal", "Anacarde", "Igname", "Maïs"],
+    "photos": []
+  },
+  {
+    "id": 163,
+    "tagline": "La source de la colline Gloûli-glë",
+    "intro": "Bédiala est une commune du département de Daloa, dans le Haut-Sassandra. Cette localité agricole de l'ouest est connue dans la région pour sa source naturelle, qui sort d'une petite colline appelée Gloûli-glë, « la montagne des guerres ».",
+    "highlights": [
+      { "k": "nature", "t": "La source de Gloûli-glë", "d": "Une eau réputée douce et potable sort de la colline. On y trouve de petites écrevisses, loin de l'océan." },
+      { "k": "economie", "t": "Terre de cacao et de café", "d": "Comme tout le Haut-Sassandra, Bédiala vit des plantations de cacao et de café et des cultures vivrières." }
+    ],
+    "products": ["Cacao", "Café", "Riz", "Banane plantain"],
+    "photos": []
+  },
+  {
+    "id": 164,
+    "tagline": "Une commune agricole du pays bété, aux portes de Daloa",
+    "intro": "Gboguhé est une commune du département de Daloa, dans le Haut-Sassandra. La vie y est rythmée par les plantations et les marchés de cette grande région cacaoyère de l'ouest.",
+    "highlights": [
+      { "k": "economie", "t": "Le cacao du Haut-Sassandra", "d": "La commune appartient à l'une des grandes zones de production de cacao et de café du pays." },
+      { "k": "culture", "t": "Le pays bété", "d": "Gboguhé se trouve en pays bété, connu pour ses chants, ses danses et sa tradition orale." }
+    ],
+    "products": ["Cacao", "Café", "Riz", "Manioc"],
+    "photos": []
+  },
+  {
+    "id": 165,
+    "tagline": "La cité de Saï, chef-lieu de la tribu Digbeubouo",
+    "intro": "Saïoua est une commune du département d'Issia, dans le Haut-Sassandra. Selon la tradition orale, son nom vient de Saï, un guerrier qui fonda un campement devenu village : ses descendants, les « Yous » en bété, l'appelèrent Saïou.",
+    "highlights": [
+      { "k": "culture", "t": "L'héritage de Saï", "d": "Saïoua est le chef-lieu de la tribu Digbeubouo, qui regroupe plusieurs villages autour de la ville." },
+      { "k": "economie", "t": "Une grande sous-préfecture agricole", "d": "La sous-préfecture couvre 834 km² et compte plus d'une vingtaine de localités tournées vers le cacao, le café et le vivrier." },
+      { "k": "culture", "t": "Une jeunesse organisée", "d": "Les associations de jeunes sont réunies dans l'Union de la jeunesse communale de Saïoua." }
+    ],
+    "products": ["Cacao", "Café", "Riz", "Banane plantain"],
+    "photos": []
+  },
+  {
+    "id": 166,
+    "tagline": "Le village de Nanan Ettro, sous la forêt de l'Iffou",
+    "intro": "Ettrokro est une commune du département de Daoukro, dans l'Iffou, à environ 290 kilomètres d'Abidjan. Son nom signifie « village d'Ettro », du nom de Nanan Kouakou Ettro, qui y installa définitivement son peuple.",
+    "highlights": [
+      { "k": "culture", "t": "Une histoire akan", "d": "Les ancêtres des habitants sont venus de l'actuel Ghana au XVIIIe siècle, avec le grand mouvement des peuples akan." },
+      { "k": "nature", "t": "Plateaux et forêt", "d": "De hauts plateaux coupés de bas-fonds, et un couvert forestier qui occupe la plus grande partie de la commune." }
+    ],
+    "products": ["Cacao", "Café", "Igname", "Banane plantain"],
+    "photos": []
+  },
+  {
+    "id": 167,
+    "tagline": "La cité des lauréats, à trois kilomètres du Ghana",
+    "intro": "Niablé est une commune frontalière de l'Indénié-Djuablin, à 28 kilomètres d'Abengourou et à trois kilomètres du Ghana. On l'appelle la cité des lauréats, pour ses grands planteurs de café et de cacao plusieurs fois primés.",
+    "highlights": [
+      { "k": "economie", "t": "Les grands planteurs", "d": "Niablé doit son surnom à ses planteurs de café et de cacao, dont le plus célèbre est Sassan Kouao." },
+      { "k": "culture", "t": "La culture agni", "d": "La commune vit au rythme de la culture akan et plus particulièrement agni, avec son folklore et un centre culturel pour la jeunesse." },
+      { "k": "site", "t": "Une porte vers le Ghana", "d": "Le premier village ghanéen, Osseykodjokrom, est à trois kilomètres : les échanges entre les deux côtés sont quotidiens." }
+    ],
+    "products": ["Cacao", "Café", "Banane plantain", "Igname"],
+    "photos": []
+  },
+  {
+    "id": 168,
+    "tagline": "Un bourg malinké du Kabadougou et son grand marché",
+    "intro": "Bako est une ville du département d'Odienné, dans le Kabadougou. La population y est essentiellement malinké, et les jours de marché rassemblent les villages de toute la sous-préfecture.",
+    "highlights": [
+      { "k": "economie", "t": "Les marchés de la sous-préfecture", "d": "Les marchés hebdomadaires, comme celui de Férémandougou, sont le grand rendez-vous des producteurs et des commerçants.", "photo": "Jour du marché de Feremandougou à Bako.jpg" },
+      { "k": "culture", "t": "Le pays malinké", "d": "Bako appartient au Denguélé, terre malinké de tradition commerçante et musulmane." }
+    ],
+    "products": ["Anacarde", "Riz", "Maïs", "Igname"],
+    "photos": [
+      { "f": "Jour du marché de Feremandougou à Bako.jpg", "c": "Jour de marché à Férémandougou, dans la sous-préfecture de Bako" }
+    ]
+  },
+  {
+    "id": 169,
+    "tagline": "Une commune malinké du Denguélé, au nord-ouest",
+    "intro": "Dioulatièdougou est une ville du département d'Odienné, dans le Kabadougou. Sa population est essentiellement malinké et vit de l'agriculture de savane.",
+    "highlights": [
+      { "k": "culture", "t": "Le pays malinké", "d": "La commune partage l'histoire et les traditions du Denguélé, ancien pays du Kabadougou." },
+      { "k": "economie", "t": "L'agriculture de savane", "d": "L'anacarde est la grande culture de rente de la région, à côté du riz, du maïs et de l'igname." }
+    ],
+    "products": ["Anacarde", "Riz", "Maïs", "Igname"],
+    "photos": []
+  },
+  {
+    "id": 170,
+    "tagline": "Le village où René Caillié fut soigné en route vers Tombouctou",
+    "intro": "Tiémé est une sous-préfecture de six villages du Kabadougou, à 28 kilomètres à l'est d'Odienné. L'explorateur René Caillié y séjourna plusieurs mois en 1827 et 1828, malade, avant de reprendre sa route vers Tombouctou.",
+    "highlights": [
+      { "k": "site", "t": "Sur les pas de René Caillié", "d": "Tombé gravement malade pendant son voyage, l'explorateur français fut recueilli et soigné à Tiémé, épisode qu'il raconte dans son journal.", "photo": "René Caillié.jpg" },
+      { "k": "culture", "t": "Une société malinké", "d": "L'organisation traditionnelle repose sur les clans, les lignages et les alliances entre familles, comme dans le sud du Mali.", "photo": "Tiemeanim.jpg" },
+      { "k": "nature", "t": "Un plateau de 180 km²", "d": "Le territoire occupe le versant d'un plateau de savane, partagé entre six villages." }
+    ],
+    "products": ["Anacarde", "Riz", "Maïs", "Igname"],
+    "photos": [
+      { "f": "Tiemeanim.jpg", "c": "Groupe traditionnel d'animation à Tiémé" },
+      { "f": "René Caillié.jpg", "c": "René Caillié, qui séjourna à Tiémé en 1827 et 1828" }
+    ]
+  },
+  {
+    "id": 171,
+    "tagline": "Sé-dougou, « le village sous le karité »",
+    "intro": "Seydougou est une sous-préfecture du département de Gbéléban, dans le Kabadougou. Selon la tradition, le village aurait été créé au XVIIIe siècle par un marabout, Mema Moussa Fofana, sous un arbre à karité qui lui a donné son nom.",
+    "highlights": [
+      { "k": "culture", "t": "Le village sous le karité", "d": "« Sé-dougou » est devenu Seydougou au fil des années. Le karité reste un arbre familier du paysage." },
+      { "k": "economie", "t": "Des terres fertiles", "d": "L'anacarde est la principale culture de rente. On y cultive aussi le riz, le maïs, le fonio et l'arachide, et l'on y pratique l'élevage." },
+      { "k": "site", "t": "Un carrefour du département", "d": "Seydougou relie plusieurs villages et les sous-préfectures de Gbéléban et de Samango." }
+    ],
+    "products": ["Anacarde", "Riz", "Maïs", "Fonio", "Arachide", "Karité"],
+    "photos": []
+  },
+  {
+    "id": 172,
+    "tagline": "Grand Afféry, cité akyé de La Mé",
+    "intro": "Afféry est une commune du département d'Akoupé, dans La Mé, à 12 kilomètres d'Akoupé sur la voie qui mène à Agboville. Son nom viendrait de « maféri », une expression agni et ashanti qui signifie « je suis fatigué de ».",
+    "highlights": [
+      { "k": "culture", "t": "Un nom chargé d'histoire", "d": "« Maféri » rappelle les migrations des peuples akan venus de l'est avant de s'installer dans la région." },
+      { "k": "economie", "t": "La forêt cultivée", "d": "La Mé est une région de cacao, de café, d'hévéa et de palmier à huile, et Afféry en est l'un des gros bourgs agricoles." }
+    ],
+    "products": ["Cacao", "Café", "Hévéa", "Banane plantain", "Manioc"],
+    "photos": []
+  },
+  {
+    "id": 173,
+    "tagline": "La porte d'entrée du département d'Adzopé",
+    "intro": "Agou est une commune de La Mé, érigée en 1985 et située sur l'axe bitumé Abidjan-Adzopé. Elle réunit sept villages du canton Tchoya, en pays akyé, dans un paysage de forêt vallonnée et de bas-fonds.",
+    "highlights": [
+      { "k": "culture", "t": "Le pays akyé", "d": "La commune appartient à l'aire traditionnelle Tchoyasso. Selon la tradition, ce peuple est venu de l'actuel Ghana après un conflit autour du trône ashanti." },
+      { "k": "nature", "t": "Coteaux et cours d'eau", "d": "Un relief vallonné, vert toute l'année, arrosé par de nombreux cours d'eau et favorable à l'agriculture." },
+      { "k": "economie", "t": "Proche d'Abidjan", "d": "La proximité de la capitale économique et la route bitumée sont les premiers atouts de la commune." }
+    ],
+    "products": ["Cacao", "Café", "Hévéa", "Manioc", "Banane plantain"],
+    "photos": []
+  },
+  {
+    "id": 174,
+    "tagline": "La terre des Zikiyés, en pays dida",
+    "intro": "Zikisso est une commune du département de Lakota, dans le Lôh-Djiboua. Ses habitants, les Zikiyés, appartiennent au peuple dida.",
+    "highlights": [
+      { "k": "culture", "t": "Le pays dida", "d": "Les Dida sont connus pour leur artisanat, notamment les pagnes de raphia tissés et teints." },
+      { "k": "economie", "t": "Une commune agricole", "d": "Le Lôh-Djiboua est une région de cacao, de café et de cultures vivrières." }
+    ],
+    "products": ["Cacao", "Café", "Riz", "Banane plantain"],
+    "photos": []
+  },
+  {
+    "id": 175,
+    "tagline": "Une commune agni du Moronou",
+    "intro": "Anoumaba est une commune du département de M'Batto, dans le Moronou, à l'est du pays. Elle vit de l'agriculture, au cœur de l'ancienne boucle du cacao.",
+    "highlights": [
+      { "k": "culture", "t": "Le pays agni du Moronou", "d": "Le Moronou est une terre agni, attachée à ses chefferies et à ses fêtes traditionnelles." },
+      { "k": "economie", "t": "L'ancienne boucle du cacao", "d": "La région a été l'un des premiers grands foyers du cacao et du café ivoiriens." }
+    ],
+    "products": ["Cacao", "Café", "Igname", "Banane plantain"],
+    "photos": []
+  },
+  {
+    "id": 176,
+    "tagline": "Le campement d'Aka Tiémélé devenu ville",
+    "intro": "Tiémélékro est une commune du Moronou. Elle doit son nom à Aka Tiémélé, originaire du village de Ménou, qui fonda là un campement à l'écart lorsque son fils fut atteint par une épidémie de variole.",
+    "highlights": [
+      { "k": "culture", "t": "L'histoire du fondateur", "d": "Le campement d'Aka Tiémélé s'est agrandi autour d'Attakro, puis de quartiers comme Akpossi, Kamelankro et Kouakro." },
+      { "k": "economie", "t": "Une terre de plantations", "d": "Comme tout le Moronou, la commune cultive le cacao, le café et les vivriers." }
+    ],
+    "products": ["Cacao", "Café", "Igname", "Banane plantain"],
+    "photos": []
+  },
+  {
+    "id": 177,
+    "tagline": "Une grande sous-préfecture cacaoyère de la Nawa",
+    "intro": "Grand-Zattry est une ville du département de Soubré, dans la Nawa. Elle se trouve au cœur de la première région productrice de cacao de Côte d'Ivoire.",
+    "highlights": [
+      { "k": "economie", "t": "La boucle du cacao d'aujourd'hui", "d": "La Nawa est la plus grande zone de production de cacao du pays, et Grand-Zattry en est l'une des sous-préfectures les plus peuplées." },
+      { "k": "culture", "t": "Une terre d'accueil", "d": "Le pays bété y a accueilli des planteurs venus de toute la Côte d'Ivoire et de la sous-région." }
+    ],
+    "products": ["Cacao", "Café", "Hévéa", "Riz"],
+    "photos": []
+  },
+  {
+    "id": 178,
+    "tagline": "Une commune à part dans le département de Soubré",
+    "intro": "Mayo est une commune du département de Soubré, dans la Nawa, érigée en 1998. Depuis 2012, c'est le seul chef-lieu de commune du pays qui ne soit pas aussi chef-lieu de sous-préfecture.",
+    "highlights": [
+      { "k": "site", "t": "Une particularité administrative", "d": "Commune sans sous-préfecture, Mayo occupe une place unique dans le découpage territorial ivoirien." },
+      { "k": "economie", "t": "Au pays du cacao", "d": "La commune vit des plantations de la Nawa, première région cacaoyère du pays." }
+    ],
+    "products": ["Cacao", "Café", "Hévéa", "Riz"],
+    "photos": []
+  },
+  {
+    "id": 179,
+    "tagline": "Une commune sénoufo du sud du Poro",
+    "intro": "Guiembé est une commune du département de Dikodougou, dans le Poro. Elle appartient au pays sénoufo, dans la savane du nord.",
+    "highlights": [
+      { "k": "culture", "t": "Le pays sénoufo", "d": "La vie du village reste marquée par le poro, l'initiation qui a donné son nom à la région, et par la musique des balafons." },
+      { "k": "economie", "t": "Coton et anacarde", "d": "Le coton et l'anacarde font vivre les familles, avec l'igname, le maïs et l'arachide." }
+    ],
+    "products": ["Coton", "Anacarde", "Igname", "Maïs", "Arachide"],
+    "photos": []
+  },
+  {
+    "id": 180,
+    "tagline": "À l'est de Korhogo, entre Sinématiali et Napié",
+    "intro": "Karakoro est une localité du département de Korhogo, dans le Poro. Elle est bordée au nord par le département de Sinématiali, à l'est par Komborodougou et au sud par Napié.",
+    "highlights": [
+      { "k": "culture", "t": "Le pays sénoufo", "d": "Karakoro partage les traditions des villages sénoufo de la région de Korhogo : initiation, travail collectif des champs et fêtes au son du balafon." },
+      { "k": "economie", "t": "Les cultures de savane", "d": "Coton, anacarde, mangue et vivriers sont les productions de la zone." }
+    ],
+    "products": ["Coton", "Anacarde", "Mangue", "Maïs", "Arachide"],
+    "photos": []
+  },
+  {
+    "id": 181,
+    "tagline": "Le village traversé par Binger en janvier 1889",
+    "intro": "Komborodougou est une commune du département de Korhogo, dans le Poro. L'explorateur Louis-Gustave Binger la traversa le samedi 26 janvier 1889 et la nota sous le nom de Koroniodougou.",
+    "highlights": [
+      { "k": "site", "t": "Sur la route de Binger", "d": "Le passage de l'explorateur, lors de son voyage du Niger au golfe de Guinée, est l'une des premières mentions écrites du village." },
+      { "k": "economie", "t": "Les cultures de savane", "d": "Le coton, l'anacarde et la mangue font vivre la commune, à côté des cultures vivrières." }
+    ],
+    "products": ["Coton", "Anacarde", "Mangue", "Maïs"],
+    "photos": []
+  },
+  {
+    "id": 182,
+    "tagline": "Une commune sénoufo au sud de Korhogo",
+    "intro": "Napié est une commune du département de Korhogo, dans le Poro, sur la route qui descend de Korhogo vers le sud.",
+    "highlights": [
+      { "k": "culture", "t": "Le pays sénoufo", "d": "Comme dans tout le Poro, les bois sacrés et l'initiation gardent une place importante dans la vie des villages." },
+      { "k": "economie", "t": "Coton, anacarde et mangue", "d": "Les cultures de rente du nord s'ajoutent à l'igname, au maïs et à l'arachide." }
+    ],
+    "products": ["Coton", "Anacarde", "Mangue", "Igname", "Arachide"],
+    "photos": []
+  },
+  {
+    "id": 183,
+    "featured": true,
+    "tagline": "Le village sénoufo aux cases de banco et aux toits de chaume",
+    "intro": "Niofoin se trouve entre Boundiali et Korhogo, dans le Poro. C'est un village typiquement sénoufo, fait de cases en banco de style soudanais. Jean-Jacques Annaud y a tourné en 1976 La Victoire en chantant, Oscar du meilleur film étranger.",
+    "highlights": [
+      { "k": "site", "t": "Les cases de Niofoin", "d": "Greniers et cases de banco coiffés de hauts toits de chaume : le village est l'un des plus photographiés du pays sénoufo.", "photo": "Village de Niofoin à Korhogo.jpg" },
+      { "k": "culture", "t": "Un décor de cinéma", "d": "En 1976, le village a servi de décor au premier film de Jean-Jacques Annaud, La Victoire en chantant." },
+      { "k": "culture", "t": "Les cases à fétiches", "d": "Le village conserve des cases sacrées liées aux traditions sénoufo, que les guides locaux présentent aux visiteurs." }
+    ],
+    "products": ["Coton", "Anacarde", "Mangue", "Artisanat sénoufo"],
+    "photos": [
+      { "f": "Village de Niofoin à Korhogo.jpg", "c": "Le village de Niofoin, près de Korhogo" }
+    ]
+  },
+  {
+    "id": 184,
+    "tagline": "De l'eau, du coton et de l'anacarde",
+    "intro": "Sirasso est une ville du département de Korhogo, dans le Poro. C'est une localité essentiellement agricole, où l'on cultive en grande quantité le coton et l'anacarde.",
+    "highlights": [
+      { "k": "economie", "t": "Une terre agricole", "d": "Coton et anacarde pour la vente, igname, riz, maïs et arachide pour la table." },
+      { "k": "nature", "t": "L'eau en abondance", "d": "L'abondance d'eau et une végétation généreuse sont les grands atouts de Sirasso, où subsistent d'anciennes installations rizicoles." }
+    ],
+    "products": ["Coton", "Anacarde", "Riz", "Igname", "Maïs", "Arachide"],
+    "photos": []
+  },
+  {
+    "id": 185,
+    "tagline": "Tioro, le village des forgerons à 14 km de Korhogo",
+    "intro": "Tioroniaradougou, que l'on appelle Tioro, est une commune du Poro située à quatorze kilomètres de Korhogo. L'agriculture, l'élevage, le travail artisanal du fer et le commerce sont les principales activités de ses habitants.",
+    "highlights": [
+      { "k": "artisanat", "t": "Le travail du fer", "d": "Les forgerons de Tioro façonnent à la main houes, dabas et outils agricoles, un savoir-faire ancien du pays sénoufo." },
+      { "k": "economie", "t": "Aux portes de Korhogo", "d": "La proximité de la grande ville du nord offre un débouché aux produits des champs et de la forge." }
+    ],
+    "products": ["Outils forgés", "Coton", "Anacarde", "Mangue", "Bétail"],
+    "photos": []
+  },
+  {
+    "id": 186,
+    "tagline": "Une ville de forêt à l'extrême sud-ouest",
+    "intro": "Grabo est une ville du département de Tabou, dans la région de San-Pédro. Elle se trouve dans la grande zone forestière du sud-ouest, non loin du Libéria.",
+    "highlights": [
+      { "k": "nature", "t": "La grande forêt du sud-ouest", "d": "La région de Grabo appartient à l'un des derniers grands ensembles forestiers du pays, entre le fleuve Cavally et le parc national de Taï." },
+      { "k": "economie", "t": "Hévéa, palmier et cacao", "d": "Les plantations d'hévéa, de palmier à huile et de cacao font vivre la sous-préfecture." }
+    ],
+    "products": ["Hévéa", "Huile de palme", "Cacao", "Riz"],
+    "sources": [{ "l": "UNESCO, Parc national de Taï", "u": "https://whc.unesco.org/fr/list/195" }],
+    "photos": []
+  },
+  {
+    "id": 187,
+    "featured": true,
+    "tagline": "Une baie, des pirogues et des tortues marines",
+    "intro": "Grand-Béréby est une ville balnéaire du sud-ouest, dans la région de San-Pédro. Sa baie abritée, ses plages de sable fin et ses tortues marines en font l'une des plus belles escales du littoral ivoirien.",
+    "highlights": [
+      { "k": "nature", "t": "Les tortues marines", "d": "Tortues luth, vertes et olivâtres viennent pondre sur les plages. La zone est la première aire marine protégée de Côte d'Ivoire.", "photo": "Tortue Luth Grand Bereby.jpg" },
+      { "k": "site", "t": "La baie et ses plages", "d": "Une plage de sable fin bordée de cocotiers, protégée de la barre, où l'on se baigne en toute tranquillité.", "photo": "Plage Hôtel La Flotte.jpg" },
+      { "k": "saveurs", "t": "La pêche du jour", "d": "Langouste, carpe rouge, barracuda et carangue arrivent en pirogue. La pêche sportive attire aussi les amateurs.", "photo": "Pirogue pêcheurs Grand Bereby.jpg" }
+    ],
+    "products": ["Langouste", "Poisson frais", "Noix de coco", "Hévéa", "Huile de palme"],
+    "photos": [
+      { "f": "Plage Hôtel La Flotte.jpg", "c": "La plage de Grand-Béréby" },
+      { "f": "Pirogue pêcheurs Grand Bereby.jpg", "c": "Pirogue de pêcheurs à Grand-Béréby" },
+      { "f": "Pirogues Grand Bereby hôtel la Flotte.jpg", "c": "Pirogues sur la plage" },
+      { "f": "Tortue Luth Grand Bereby.jpg", "c": "Une tortue luth à Grand-Béréby" },
+      { "f": "Nero embouchure.jpg", "c": "L'embouchure de la Néro" }
+    ]
+  },
+  {
+    "id": 188,
+    "featured": true,
+    "tagline": "Entre lagune et océan, la station balnéaire du pays",
+    "intro": "Assinie-Mafia se trouve à 94 kilomètres à l'est d'Abidjan, sur une langue de sable entre la lagune et l'océan, près du Ghana. Premier comptoir de la côte ivoirienne dès le XVIIe siècle, c'est aujourd'hui un fleuron du tourisme balnéaire.",
+    "highlights": [
+      { "k": "site", "t": "La plage et la lagune", "d": "Des kilomètres de sable entre l'Atlantique et la lagune Aby, que l'on parcourt en pirogue jusqu'aux îles.", "photo": "RCI-Assinie-Ile Napoléon 6.jpg" },
+      { "k": "culture", "t": "Le premier comptoir", "d": "Des missionnaires capucins venus de Saint-Malo s'y installent dès 1637. En 1687, le jeune Aniaba quitte Assinie pour la cour de Louis XIV." },
+      { "k": "economie", "t": "Les villages de vacances", "d": "Assinie et Assouindé accueillent des villages de vacances depuis la fin des années 1960, et de nombreux hôtels et résidences depuis." },
+      { "k": "saveurs", "t": "Le poisson des pêcheurs", "d": "Les pirogues rentrent chaque jour avec le poisson servi braisé dans les maquis de la plage.", "photo": "2003 0314 152406AA.JPG" }
+    ],
+    "products": ["Poisson braisé", "Crustacés", "Noix de coco", "Attiéké"],
+    "photos": [
+      { "f": "RCI-Assinie-Ile Napoléon 6.jpg", "c": "Sur la lagune, à Assinie" },
+      { "f": "RCI-Assinie-Ile Napoléon 5.jpg", "c": "Rive de la lagune à Assinie" },
+      { "f": "RCI-Assinie-Ile Napoléon 2.jpg", "c": "Paysage lagunaire d'Assinie" },
+      { "f": "RCI-Assinie-Ile Napoléon Maquis épicerie.jpg", "c": "Maquis et épicerie au bord de la lagune" },
+      { "f": "2003 0314 152406AA.JPG", "c": "Retour de pêche à Assouindé" }
+    ]
+  },
+  {
+    "id": 189,
+    "tagline": "La ville du lac et du premier barrage du pays",
+    "intro": "Ayamé est une ville du Sud-Comoé, à 20 kilomètres au nord d'Aboisso et à 140 kilomètres d'Abidjan. En 1959, le vieux village a été recouvert par les eaux du barrage hydroélectrique Ayamé I, sur la Bia. La ville a été rebâtie sur les collines.",
+    "highlights": [
+      { "k": "site", "t": "Le barrage d'Ayamé I", "d": "Mis en service en 1959 sur la Bia, c'est le premier barrage hydroélectrique de Côte d'Ivoire." },
+      { "k": "nature", "t": "Le lac d'Ayamé", "d": "Un vaste lac navigable entouré de collines boisées, où l'on pêche et se promène en pirogue." },
+      { "k": "saveurs", "t": "Le poisson du lac", "d": "Tilapia et machoiron du lac sont la spécialité des tables d'Ayamé." }
+    ],
+    "products": ["Poisson du lac", "Cacao", "Café", "Hévéa", "Huile de palme"],
+    "photos": []
+  },
+  {
+    "id": 190,
+    "tagline": "Une commune agni du Sanwi",
+    "intro": "Maféré est une commune du département d'Aboisso, dans le Sud-Comoé. Elle appartient au pays sanwi, entre forêt, plantations et lagune Aby.",
+    "highlights": [
+      { "k": "culture", "t": "Le royaume du Sanwi", "d": "Maféré relève de l'aire culturelle agni sanwi, dont le roi siège à Krinjabo, près d'Aboisso." },
+      { "k": "economie", "t": "Les plantations du sud-est", "d": "Palmier à huile, hévéa, cacao et café occupent les terres de la commune." }
+    ],
+    "products": ["Huile de palme", "Hévéa", "Cacao", "Café", "Manioc"],
+    "photos": []
+  },
+  {
+    "id": 191,
+    "featured": true,
+    "tagline": "La capitale abouré, cité de l'ananas et du Popo Carnaval",
+    "intro": "Bonoua, « à l'orée de la forêt » en langue abouré, est la plus grande ville abouré. Siège de la cour royale, elle s'est fait connaître par ses plantations d'ananas et par son Popo Carnaval, né en 1972 de la fête annuelle des ignames.",
+    "highlights": [
+      { "k": "fete", "t": "Le Popo Carnaval", "d": "« Popo » veut dire masque en abouré. Chaque année, défilés, danses des générations et élection de la reine attirent des visiteurs de tout le pays.", "photo": "Danse Fôkwé des générations Abourés 24.jpg" },
+      { "k": "culture", "t": "La royauté abouré", "d": "La monarchie coutumière, transmise en lignée maternelle, s'appuie sur les familles claniques et les classes d'âge.", "photo": "Nanan Miéssan Kacou Venance, Roi des Abouré Ehivet de Bonoua.jpg" },
+      { "k": "site", "t": "Le parc M'ploussoué", "d": "Un espace culturel et végétal aménagé qui présente l'histoire et les traditions du peuple abouré.", "photo": "Parc M'ploussoué de Bonoua 25.jpg" },
+      { "k": "site", "t": "Notre-Dame de la Garde", "d": "Le sanctuaire marial de Bonoua est un lieu de pèlerinage pour les catholiques de la région.", "photo": "Sanctuaire notre dame de la garde de bonoua 01.jpg" }
+    ],
+    "products": ["Ananas", "Manioc et attiéké", "Hévéa", "Huile de palme", "Eau minérale"],
+    "events": [
+      { "t": "Popo Carnaval", "when": "Chaque année, autour de Pâques", "d": "Deux semaines de fête, de défilés et de concerts dans toute la ville." }
+    ],
+    "photos": [
+      { "f": "Danse Fôkwé des générations Abourés 24.jpg", "c": "Danse Fôkwé des générations abouré pendant le Popo Carnaval" },
+      { "f": "Parc M'ploussoué de Bonoua 25.jpg", "c": "Le parc M'ploussoué" },
+      { "f": "Sanctuaire notre dame de la garde de bonoua 01.jpg", "c": "Le sanctuaire Notre-Dame de la Garde" },
+      { "f": "Rond point centre ville de Bonoua 03.jpg", "c": "Le rond-point du centre-ville" },
+      { "f": "Nanan Miéssan Kacou Venance, Roi des Abouré Ehivet de Bonoua.jpg", "c": "Nanan Miéssan Kacou Venance, roi des Abouré Éhivet de Bonoua" },
+      { "f": "Mairie de Bonoua 19.jpg", "c": "La mairie de Bonoua" }
+    ]
+  },
+  {
+    "id": 192,
+    "tagline": "Le carrefour du nord sur la route du Mali",
+    "intro": "Diawala est une ville du Tchologo, à 135 kilomètres au nord de Korhogo. Située sur la route internationale qui relie la Côte d'Ivoire au Mali, c'est un passage obligé et un carrefour où se rencontrent plusieurs peuples de la sous-région.",
+    "highlights": [
+      { "k": "site", "t": "La route du Mali", "d": "Camions, cars et commerçants s'y arrêtent avant ou après la frontière : la ville vit au rythme de ce trafic." },
+      { "k": "economie", "t": "Coton, anacarde et bétail", "d": "Les cultures de savane et l'élevage complètent le commerce de transit." }
+    ],
+    "products": ["Coton", "Anacarde", "Mangue", "Bétail", "Maïs"],
+    "photos": []
+  },
+  {
+    "id": 193,
+    "tagline": "Niellé, « la cloche » des chasseurs sénoufo",
+    "intro": "Niellé est une commune du Tchologo, à 150 kilomètres au nord de Korhogo et à 30 kilomètres de la frontière malienne par la voie A3. Son nom signifie cloche en sénoufo : ses fondateurs, des chasseurs, accrochaient des cloches aux baobabs pour s'orienter.",
+    "highlights": [
+      { "k": "culture", "t": "Les cloches des baobabs", "d": "Agitées par le vent, les cloches guidaient les chasseurs dans la brousse. Ils décidèrent de fonder leur village à cet endroit." },
+      { "k": "site", "t": "Dernière étape avant le Mali", "d": "La ville est une halte sur le grand axe international du nord." }
+    ],
+    "products": ["Coton", "Anacarde", "Mangue", "Maïs", "Bétail"],
+    "photos": []
+  },
+  {
+    "id": 194,
+    "tagline": "Une commune rurale aux portes de Ferkessédougou",
+    "intro": "Koumbala est une commune rurale du Tchologo, à quelques kilomètres de Ferkessédougou. Elle réunit les villages de Nambekaha, Djongokaha, Koudio et Koumagbê, avec leurs campements.",
+    "highlights": [
+      { "k": "culture", "t": "Des villages sénoufo", "d": "La commune est un ensemble de villages et de campements liés par la terre et la tradition sénoufo." },
+      { "k": "economie", "t": "La savane cultivée", "d": "Coton, anacarde, maïs et élevage, à proximité des plantations de canne à sucre de Ferkessédougou." }
+    ],
+    "products": ["Coton", "Anacarde", "Maïs", "Arachide", "Bétail"],
+    "photos": []
+  },
+  {
+    "id": 195,
+    "tagline": "Le pays dan entre le Nuon et le Cavally",
+    "intro": "Bin-Houyé est une sous-préfecture du Tonkpi, dans l'ouest montagneux, près du Libéria. Elle compte quarante-cinq villages sur environ 500 km², peuplés en majorité de Dan, aussi appelés Yacouba.",
+    "highlights": [
+      { "k": "nature", "t": "Deux fleuves et des forêts-galeries", "d": "Le Nuon et le Cavally bordent le territoire, avec leurs forêts-galeries et des forêts classées." },
+      { "k": "culture", "t": "La culture dan", "d": "Le pays dan est celui des masques et des danseurs, que l'on retrouve dans les fêtes de village." }
+    ],
+    "products": ["Cacao", "Café", "Hévéa", "Riz", "Cola"],
+    "photos": []
+  },
+  {
+    "id": 196,
+    "tagline": "La capitale du pays toura, sa fête de l'igname et ses masques",
+    "intro": "Gbonné est une commune du Tonkpi, érigée en 1995, à 29 kilomètres de Man. Capitale du pays toura, elle est réputée pour le Yabele, sa fête de l'igname et des masques.",
+    "highlights": [
+      { "k": "fete", "t": "Le Yabele", "d": "La fête de l'igname et des masques est le moment où l'on s'adresse aux ancêtres pour leur confier ses attentes, personnelles et communautaires." },
+      { "k": "nature", "t": "Les montagnes du Tonkpi", "d": "La route de Man serpente entre des reliefs verts et des villages perchés.", "photo": "Montagne Gbonné.jpg" },
+      { "k": "culture", "t": "Trois cantons toura", "d": "La sous-préfecture réunit les cantons de Gorsé, de Yrigué et de Walou." }
+    ],
+    "products": ["Igname", "Café", "Cacao", "Riz", "Cola"],
+    "events": [
+      { "t": "Yabele", "when": "Chaque année, à la récolte de l'igname", "d": "Fête de l'igname et sortie des masques du pays toura." }
+    ],
+    "photos": [
+      { "f": "Montagne Gbonné.jpg", "c": "Sur la route de Gbonné à Man" },
+      { "f": "Eglise Catholique Gbonné.jpg", "c": "L'église catholique de Gbonné" },
+      { "f": "Ecole Catholique de Gbonné.jpg", "c": "La cour de l'école catholique de Gbonné" }
+    ]
+  },
+  {
+    "id": 197,
+    "tagline": "Une étape du pays dan sur l'axe Duékoué-Man",
+    "intro": "Logoualé est une ville du département de Man, dans le Tonkpi, à 570 kilomètres d'Abidjan. Elle se trouve dans la partie la plus montagneuse et la plus pluvieuse du pays.",
+    "highlights": [
+      { "k": "culture", "t": "La légende du chasseur", "d": "La tradition fait venir les Dan de Logoualé de la région de Samatiguila, sous la conduite d'un grand chasseur d'éléphants, Mah Loh Dendeh." },
+      { "k": "nature", "t": "L'ouest montagneux", "d": "Collines, forêts et rivières dessinent le paysage, sur la route qui mène à Man." }
+    ],
+    "products": ["Café", "Cacao", "Riz", "Cola", "Banane plantain"],
+    "photos": []
+  },
+  {
+    "id": 198,
+    "tagline": "À mi-chemin de Man et de Danané",
+    "intro": "Sangouiné est une commune du département de Man, dans le Tonkpi. Elle se trouve sur l'axe Man-Danané, à 28 kilomètres de Man et à 42 kilomètres de Danané.",
+    "highlights": [
+      { "k": "site", "t": "Sur la route des montagnes", "d": "La commune est une étape entre les deux grandes villes de l'ouest montagneux." },
+      { "k": "culture", "t": "Le pays dan", "d": "Masques, danses et échassiers font la réputation culturelle de la région." }
+    ],
+    "products": ["Café", "Cacao", "Riz", "Cola", "Hévéa"],
+    "photos": []
+  },
+  {
+    "id": 199,
+    "tagline": "Karadjandougou, la terre du peuple Karadjan",
+    "intro": "Djibrosso est une sous-préfecture du département de Kani, dans le Worodougou. Elle réunit treize villages et porte aussi le nom de Karadjandougou, « terre du peuple Karadjan ».",
+    "highlights": [
+      { "k": "culture", "t": "Treize villages", "d": "Djibrosso, Madji, Moyako, Koumbara, Dabé, Souasso et les autres villages forment un même ensemble historique." },
+      { "k": "economie", "t": "L'anacarde et le vivrier", "d": "L'anacarde, le coton, le riz et l'igname sont les cultures de la zone." }
+    ],
+    "products": ["Anacarde", "Coton", "Riz", "Igname"],
+    "photos": []
+  },
+  {
+    "id": 200,
+    "tagline": "Une commune de savane au nord du Worodougou",
+    "intro": "Morondo est une localité du nord-ouest, à 64 kilomètres de Kani, son chef-lieu de département, dans la région du Worodougou.",
+    "highlights": [
+      { "k": "economie", "t": "Les cultures de savane", "d": "Anacarde, coton, igname et maïs font vivre la commune." },
+      { "k": "culture", "t": "Le Worodougou", "d": "« Worodougou » signifie le pays de la cola : la région a longtemps été un carrefour du commerce de la noix de cola." }
+    ],
+    "products": ["Anacarde", "Coton", "Igname", "Maïs"],
+    "photos": []
+  },
+  {
+    "id": 201,
+    "tagline": "Une petite commune du pays de Séguéla",
+    "intro": "Dualla est une commune du département de Séguéla, dans le Worodougou. C'est l'une des plus petites communes de la région.",
+    "highlights": [
+      { "k": "culture", "t": "Le Worodougou", "d": "La commune partage la culture malinké du pays de Séguéla, terre du masque Zaouli voisin et des danses de réjouissance." },
+      { "k": "economie", "t": "Anacarde et vivriers", "d": "L'anacarde est la première culture de rente, avec le riz et l'igname." }
+    ],
+    "products": ["Anacarde", "Riz", "Igname", "Maïs"],
+    "photos": []
+  },
+  {
+    "id": 202,
+    "tagline": "Une commune agricole à l'ouest de Séguéla",
+    "intro": "Sifié est une commune du département de Séguéla, dans le Worodougou.",
+    "highlights": [
+      { "k": "economie", "t": "Anacarde, cacao et vivriers", "d": "À la rencontre de la savane et de la forêt, la commune cultive l'anacarde, un peu de cacao, le riz et l'igname." },
+      { "k": "culture", "t": "Le pays de la cola", "d": "Le Worodougou tire son nom de la noix de cola, longtemps au cœur du commerce régional." }
+    ],
+    "products": ["Anacarde", "Cacao", "Riz", "Igname"],
+    "photos": []
+  },
+  {
+    "id": 203,
+    "tagline": "Une grande commune rurale du Worodougou",
+    "intro": "Worofla est une commune du département de Séguéla, dans le Worodougou, l'une des plus peuplées du département.",
+    "highlights": [
+      { "k": "economie", "t": "Une terre d'anacarde", "d": "L'anacarde, le coton et les cultures vivrières font vivre les villages de la commune." },
+      { "k": "culture", "t": "Le pays de la cola", "d": "« Woro » désigne la noix de cola en malinké : la région en a été l'une des grandes routes commerciales." }
+    ],
+    "products": ["Anacarde", "Coton", "Riz", "Igname", "Maïs"],
+    "photos": []
+  }
+]
