@@ -40,15 +40,6 @@ report="$OUT/_report.tsv"
   sha=$(sha256sum "$f" | cut -c1-16)
   printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' "$id" "$code" "$bytes" "${pages:-0}" "$chars" "$ocr" "$sha" "$url" >> "$report"
 done
-# Page images of short scanned texts that OCR cannot read (transcribed by hand afterwards).
-if [ -f scripts/library/page-images.tsv ]; then
-  mkdir -p "$OUT/img"
-  grep -v '^#' scripts/library/page-images.tsv | while IFS=$'\t' read -r id url; do
-    [ -z "$id" ] && continue
-    curl -sSL -m 120 -A "$UA" -o "/tmp/src/$id.img.pdf" "$url" || continue
-    pdftoppm -r 130 -gray -png "/tmp/src/$id.img.pdf" "$OUT/img/$id" || true
-  done
-fi
 : > "$OUT/_links.txt"; : > "$OUT/_html.txt"
 while read -r page; do
   [ -z "$page" ] && continue

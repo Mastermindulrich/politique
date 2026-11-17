@@ -41,6 +41,21 @@ export const configs: TextConfig[] = [
     preamble: "Ordonnance n° 2020-356 du 8 avril 2020",
     signature: /^Fait à Abidjan, le/,
     retitle: { "DE INCOMPATIBILITES L’ELIGIBILITE, DE L’INELIGIBILITE ET DES": "DE L’ELIGIBILITE, DE L’INELIGIBILITE ET DES INCOMPATIBILITES" },
+    // Ordonnance n° 2025-290 du 7 mai 2025 (copie certifiée publiée par la CEI), article 1.
+    post: (blocks) =>
+      blocks.map((b) =>
+        b.type === "article" && b.num === "51"
+          ? {
+              ...b,
+              paras: [
+                ...b.paras.map((p) =>
+                  p.replace("des districts autonomes et régions.", "des régions et dans chacun des districts autonomes d’Abidjan et de Yamoussoukro."),
+                ),
+                "[Alinéa 2 modifié par l’ordonnance n° 2025-290 du 7 mai 2025.]",
+              ],
+            }
+          : b,
+      ),
   },
   {
     id: "reglement-assemblee-nationale",

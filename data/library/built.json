@@ -7,7 +7,7 @@
   },
   "code-electoral": {
    "pages": 79,
-   "bytes": 531814,
+   "bytes": 533634,
    "articles": 206
   },
   "reglement-assemblee-nationale": {
@@ -17,7 +17,7 @@
   },
   "loi-cei": {
    "pages": 20,
-   "bytes": 250613,
+   "bytes": 250607,
    "articles": 50
   },
   "code-penal": {
@@ -32,7 +32,7 @@
   },
   "loi-conseil-constitutionnel": {
    "pages": 26,
-   "bytes": 287781,
+   "bytes": 287785,
    "articles": 61
   },
   "loi-cour-des-comptes": {
@@ -47,7 +47,7 @@
   },
   "loi-minorite": {
    "pages": 45,
-   "bytes": 365158,
+   "bytes": 365156,
    "articles": 161
   },
   "loi-mariage": {
@@ -57,11 +57,11 @@
   },
   "code-travail": {
    "pages": 139,
-   "bytes": 842471,
+   "bytes": 842473,
    "articles": 380
   }
  },
  "archive": {
-  "bytes": 5813147
+  "bytes": 5814165
  }
 }

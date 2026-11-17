@@ -50,11 +50,11 @@ export const library: LibraryEntry[] = [
     title: "Code électoral",
     short: "Code électoral",
     category: "elections",
-    reference: "Ordonnance n° 2020-356 du 8 avril 2020 portant révision du Code électoral",
+    reference: "Ordonnance n° 2020-356 du 8 avril 2020 portant révision du Code électoral, modifiée",
     summary: "Qui peut voter et être élu, les listes électorales, la campagne, le vote, le dépouillement et le contentieux, pour chaque élection.",
     officialUrl: "https://www.cei.ci/textes-de-loi/",
     officialLabel: "Commission électorale indépendante",
-    edition: { version: "Texte de 2020, sans la modification de l'article 51 (ordonnance n° 2025-290 du 7 mai 2025)" },
+    edition: { version: "Texte de 2020, à jour de l'ordonnance n° 2025-290 du 7 mai 2025 (article 51)" },
   },
   {
     id: "reglement-assemblee-nationale",
