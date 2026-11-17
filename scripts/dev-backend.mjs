@@ -335,5 +335,20 @@ export async function startBackend({ port = PORT, quiet = false } = {}) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const { db, files } = await startBackend();
   const seed = new URL("dev-seed.mjs", import.meta.url);
-  if (existsSync(seed)) await (await import(seed)).seed(db, files, `http://localhost:${PORT}`);
+  // DEV_DATA=civic: no made-up people, only the platform's editorial account and the
+  // sourced territory dossiers (supabase/seed/civic.sql), as production will have them.
+  if (process.env.DEV_DATA === "civic") await seedCivic(db);
+  else if (existsSync(seed)) await (await import(seed)).seed(db, files, `http://localhost:${PORT}`);
+}
+
+async function seedCivic(db) {
+  const r = await db.query(`insert into auth.users (email, raw_user_meta_data) values ('redaction@prototypex.org', '{"app":"politique"}') returning id`);
+  const id = r.rows[0].id;
+  // The production script also creates the auth user; here only its POLITIQUE half applies.
+  const sql = readFileSync(new URL("supabase/seed/editorial_account.sql", root), "utf8");
+  const politique = sql.slice(sql.indexOf("insert into profiles"));
+  await db.exec(`set search_path = politique, extensions, public;\n${politique}`);
+  await db.exec(readFileSync(new URL("supabase/seed/civic.sql", root), "utf8"));
+  const n = await db.query(`select (select count(*) from politique.interpellations) i, (select count(*) from politique.promises) p`);
+  console.log(`[dev-backend] civic data: editorial account ${id}, ${n.rows[0].i} interpellations, ${n.rows[0].p} promises`);
 }

@@ -11,7 +11,8 @@
     "brand": "node --experimental-strip-types scripts/brand.mts",
     "library": "node --experimental-strip-types scripts/build-library.mts",
     "officials": "node scripts/gen-officials-sql.mjs",
-    "communes": "node --experimental-strip-types scripts/communes/build.mts"
+    "communes": "node --experimental-strip-types scripts/communes/build.mts",
+    "civic": "node scripts/gen-civic-sql.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.8.0",
