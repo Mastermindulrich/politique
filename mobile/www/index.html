@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>POLITIQUE</title>
+<style>
+  :root { color-scheme: light dark; --bg:#ffffff; --ink:#16181C; --muted:#5b6170; --accent:#F07C00; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0e0f11; --ink:#f3f4f6; --muted:#9aa0ab; } }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink); font-family:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif; }
+  main { min-height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px; box-sizing:border-box; }
+  h1 { font-size:22px; margin:20px 0 8px; }
+  p { color:var(--muted); font-size:16px; line-height:1.5; margin:0 0 4px; max-width:320px; }
+  button { margin-top:24px; font:inherit; font-weight:600; font-size:16px; color:#fff; background:var(--accent); border:0; border-radius:999px; padding:12px 28px; }
+  .mark { width:64px; height:64px; border-radius:16px; background:#16181C; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:28px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="mark">P</div>
+  <h1 id="t">Pas de connexion</h1>
+  <p id="b">POLITIQUE a besoin d'internet. Vérifiez votre connexion puis réessayez.</p>
+  <button id="r" type="button">Réessayer</button>
+</main>
+<script>
+  var en = (navigator.language || "").toLowerCase().indexOf("fr") !== 0;
+  if (en) {
+    document.documentElement.lang = "en";
+    document.getElementById("t").textContent = "No connection";
+    document.getElementById("b").textContent = "POLITIQUE needs the internet. Check your connection and try again.";
+    document.getElementById("r").textContent = "Try again";
+  }
+  function retry() { location.href = "https://politique.prototypex.org/accueil"; }
+  document.getElementById("r").addEventListener("click", retry);
+  window.addEventListener("online", retry);
+</script>
+</body>
+</html>
