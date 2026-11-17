@@ -1,0 +1,58 @@
+{
+ "id": 81,
+ "name": "Issia",
+ "department": "Issia",
+ "region": "Haut-Sassandra",
+ "title": "Issia",
+ "url": "https://fr.wikipedia.org/wiki/Issia",
+ "wikidata": "Q2414060",
+ "coordinates": {
+  "lat": 6.4907,
+  "lon": -6.5856,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 126252,
+  "year": "2021"
+ },
+ "text": "Issia  est une ville de Côte d'Ivoire, située au centre-ouest du pays, dans la région du Haut-Sassandra, dite Boucle du cacao, proche de Gagnoa, Vavoua et Daloa.\n\n\n== Administration ==\nUne loi de 1978 a institué 27 communes de plein exercice sur le territoire du pays. Ladite ville est située au Nord-Est d'Abidjan, précisément à 384 km.\n\n\n== Personnages liées à cette ville ==\nAbdoul Karim Sango, ancien ministre de la culture, des Arts et du Tourisme du Burkina Faso, y est né.\n\n\n== Société ==\n\n\n=== Démographie ===\n\n\n=== Éducation ===\n\nCollège Louis Pasteur,\nCollège Union,\nCollège Jean 13,\nCollège St Trinité,\nCollège le Rocher,\nCollège des Professeurs,\nCollège privé divine providence constituent les principaux établissements secondaires de la ville.\n\n\n=== Sports ===\nLa ville dispose d'un club de football, le Issia Wazi, vainqueur de la Coupe de Côte d'Ivoire de football en 2006 et, finaliste en 2007 et qui évolue en MTN Ligue 1. Il dispute ses matchs sur le terrain du stade municipal, comportant 3000 places.\nComme dans la plupart des villes du pays, il est organisé, de façon informelle, des tournois de football à 7 joueurs qui, très populaires en Côte d'Ivoire, sont dénommés Maracanas.\nIl faut noter aussi que des équipes de football se constituent dans chaque village faisant partie de la commune, et participent à plusieurs tournois organisés par des personnalités ou des ivoiriens résidents à l'étranger.\n\n\n=== Paroisse ===\nLes lieux de cultes catholiques dépendent de la paroisse Notre-Dame-de-Lourdes, au sein du diocèse de Daloa.\n\n\n=== Sanctuaire Notre-Dame-de-la-Délivrance ===\nLe monument principal de la ville est le Sanctuaire fondé en 1990 par l'Église catholique au pied du grand rocher de la ville, avec une source à laquelle viennent puiser les croyants de toutes confessions. Les foules s'y rendent de toute la Côte d'Ivoire et des pays voisins, en particulier aux trois grands pèlerinages annuels : le dimanche de la Miséricorde (une semaine après Pâques), à la Pentecôte et à l'Assomption (15 août). On trouve de nombreuses explications sur le site du sanctuaire.\n\n\n== Personnalités liées à la commune ==\nPatrice Zéré (né en 1970), footballeur international ivoirien, est né à Issia.\nYves Bissouma, footballeur malien est né à Issia en 1996.\nIsmaël Guiré(né le 29 janvier 2008)est né à Issia\n\n\n== Villes voisines ==\n\n\n== Notes et références ==\n\n Portail de la Côte d’Ivoire",
+ "images": [
+  {
+   "file": "File:Hôtel le Versant, Issia.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/H%C3%B4tel_le_Versant%2C_Issia.jpg/1280px-H%C3%B4tel_le_Versant%2C_Issia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:H%C3%B4tel_le_Versant,_Issia.jpg",
+   "width": 2592,
+   "height": 1456,
+   "artist": "Sarmate09",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Hôtel le Versant, Issia, Côte d'Ivoire",
+   "via": "commons-search"
+  },
+  {
+   "file": "File:Issia, Côte d'Ivoire.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Issia%2C_C%C3%B4te_d%27Ivoire.jpg/1280px-Issia%2C_C%C3%B4te_d%27Ivoire.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Issia,_C%C3%B4te_d%27Ivoire.jpg",
+   "width": 2592,
+   "height": 1456,
+   "artist": "Sarmate09",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Arbre à Issia, Côte d'Ivoire",
+   "via": "commons-search"
+  },
+  {
+   "file": "File:Cymothoe egesta male.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Cymothoe_egesta_male.jpg/1280px-Cymothoe_egesta_male.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Cymothoe_egesta_male.jpg",
+   "width": 3125,
+   "height": 2744,
+   "artist": "Lsadonkey",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Cymothoe egesta male from Issia, Ivory Coast",
+   "via": "commons-search"
+  }
+ ]
+}

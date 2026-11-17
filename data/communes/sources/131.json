@@ -1,0 +1,21 @@
+{
+ "id": 131,
+ "name": "Booko",
+ "department": "Koro",
+ "region": "Bafing",
+ "title": "Booko",
+ "url": "https://fr.wikipedia.org/wiki/Booko",
+ "wikidata": "Q2910463",
+ "coordinates": {
+  "lat": 8.883333,
+  "lon": -7.783333,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 22894,
+  "year": "2021"
+ },
+ "text": "Booko est une localité située au nord-ouest de la Côte d'Ivoire, dans le Département de Koro et dans la Région du Bafing. La localité de Booko est un chef-lieu de commune. La langue parlée dans la localité de Booko est le Baralaka. L'activité principale est l'agriculture, surtout la culture d'igname. \n\n Portail de la Côte d’Ivoire",
+ "images": []
+}

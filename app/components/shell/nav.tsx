@@ -17,7 +17,7 @@ type Unread = { notifications: number; messages: number };
  * waiting on the server (300-700 ms per tap from Canada or Abidjan). Kept at most 30 s old
  * (next.config staleTimes). Notifications and messages are left out: they must be live.
  */
-const warm = (href: string) => href === "/accueil" || href === "/explorer" || href === "/mes-elus" || href === "/elus" || href.startsWith("/u/");
+const warm = (href: string) => href === "/accueil" || href === "/explorer" || href === "/decouvertes" || href === "/mes-elus" || href === "/elus" || href.startsWith("/u/");
 
 type Item = { href: string; label: string; icon: keyof typeof I; badge?: number; match?: string[] };
 type Lang = "fr" | "en";
@@ -29,10 +29,11 @@ function items(lang: Lang, handle: string | null, unread: Unread, isModerator: b
   const pub: Item[] = [
     { href: signedIn ? "/accueil" : "/explorer", label: signedIn ? t.home : t.explore, icon: signedIn ? "home" : "search" },
   ];
-  if (!signedIn) return [...pub, { href: "/elus", label: t.officials, icon: "landmark" }, { href: "/bibliotheque", label: lang === "fr" ? "Bibliothèque" : "Library", icon: "book" }];
+  if (!signedIn) return [...pub, { href: "/decouvertes", label: lang === "fr" ? "Découvertes" : "Discoveries", icon: "pin" }, { href: "/elus", label: t.officials, icon: "landmark" }, { href: "/bibliotheque", label: lang === "fr" ? "Bibliothèque" : "Library", icon: "book" }];
   return [
     ...pub,
     { href: "/explorer", label: t.explore, icon: "search", match: ["/explorer", "/t/"] },
+    { href: "/decouvertes", label: lang === "fr" ? "Découvertes" : "Discoveries", icon: "pin" },
     { href: "/mes-elus", label: t.myOfficials, icon: "landmark", match: ["/mes-elus", "/elus", "/interpellations", "/barometre", "/idees"] },
     { href: "/bibliotheque", label: lang === "fr" ? "Bibliothèque" : "Library", icon: "book" },
     { href: "/notifications", label: t.notifications, icon: "bell", badge: unread.notifications },
@@ -157,6 +158,7 @@ export function MobileNav({ lang, handle, name, avatar, unread: initial, signedI
       ]
     : [
         { href: "/explorer", label: t.explore, icon: "search" },
+        { href: "/decouvertes", label: lang === "fr" ? "Découvertes" : "Discoveries", icon: "pin" },
         { href: "/elus", label: t.officials, icon: "landmark" },
         { href: "/bibliotheque", label: lang === "fr" ? "Bibliothèque" : "Library", icon: "book" },
         { href: "/connexion", label: t.login, icon: "user" },
@@ -165,6 +167,7 @@ export function MobileNav({ lang, handle, name, avatar, unread: initial, signedI
   // Everything that does not fit in the bar lives in the menu sheet, so a phone reaches every page.
   const more: Item[] = signedIn
     ? [
+        { href: "/decouvertes", label: lang === "fr" ? "Découvertes" : "Discoveries", icon: "pin" },
         { href: `/u/${handle}`, label: t.profile, icon: "user" },
         { href: "/signets", label: t.bookmarks, icon: "bookmark" },
         { href: "/bibliotheque", label: lang === "fr" ? "Bibliothèque" : "Library", icon: "book" },

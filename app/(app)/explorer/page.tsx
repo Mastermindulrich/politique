@@ -9,6 +9,7 @@ import { Avatar } from "@/app/components/ui/avatar";
 import { NameBadge } from "@/app/components/ui/badge";
 import { I } from "@/app/components/ui/icons";
 import { communeById, communes } from "@/lib/ci-geo";
+import { coverTone, photoUrl, showcaseById, showcases } from "@/lib/communes";
 import { fetchByCommune, searchPosts } from "@/lib/data/posts";
 import { loadCommune } from "@/lib/feed-actions";
 import { t as dict } from "@/lib/i18n";
@@ -111,10 +112,30 @@ export default async function ExplorePage({ searchParams }: { searchParams: Prom
   const trends = (trendsRes.data ?? []) as { tag: string; posts_24h: number; posts_total: number }[];
   const officials = (officialsRes.data ?? []) as Official[];
   const cityName = cityId ? communeById.get(cityId)?.name : null;
+  const show = cityId ? showcaseById.get(cityId) : null;
+  const spot = !cityId ? showcases.filter((s) => s.featured && s.photos.length) : [];
+  const pick = spot.length ? spot[Math.floor(Date.now() / 86_400_000) % spot.length] : null;
+  const disc = show ?? pick;
 
   return (
     <>
       {header}
+      {disc && (
+        <Link href={`/decouvertes/${disc.slug}`} className="tap block border-b border-line px-4 py-3">
+          <span className="relative flex h-[120px] items-end overflow-hidden rounded-2xl" style={{ background: coverTone(disc.district) }}>
+            {disc.photos[0] && !viewer?.low_data && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={photoUrl(disc.photos[0], 500)} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+            )}
+            <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+            <span className="relative p-3 text-white">
+              <span className="block text-[12px] font-semibold uppercase tracking-[0.08em] text-white/85">{lang === "fr" ? (show ? "Découvrir la commune" : "Commune à découvrir") : (show ? "Discover the commune" : "Commune to discover")}</span>
+              <span className="block font-display text-[19px] font-bold leading-tight">{disc.name}</span>
+              <span className="line-clamp-1 text-[13px] text-white/90">{disc.tagline}</span>
+            </span>
+          </span>
+        </Link>
+      )}
       <section className="border-b border-line">
         <h2 className="px-4 pt-3 font-display text-[19px] font-bold">{cityName ? `${t.explore.trendsIn} ${cityName}` : t.explore.trends}</h2>
         {trends.length === 0 ? (

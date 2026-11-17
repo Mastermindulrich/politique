@@ -1,0 +1,129 @@
+{
+ "id": 13,
+ "name": "Songon",
+ "department": "Abidjan",
+ "region": "District autonome d'Abidjan",
+ "title": "Songon",
+ "url": "https://fr.wikipedia.org/wiki/Songon",
+ "wikidata": "Q3490368",
+ "coordinates": {
+  "lat": 5.31666667,
+  "lon": -4.25,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 89778,
+  "year": "2021"
+ },
+ "text": "Songon  est une collection de plusieurs villages situés à l'ouest de la commune de Yopougon, en Côte d'Ivoire. Administrativement, c'est une sous-préfecture, incluse depuis 2001 dans le district autonome d'Abidjan.\nLa sous-préfecture de Songon est essentiellement composée de plusieurs villages Ébriés tels que : Songon-Kassemblé ou Songon-Adjamé, Songon-Dagbé, Songon-Agban, Abiaté, Nonkouagon, Bago, Guebo, Djepote et bien d'autres. Le village de Kassemblé est le chef-lieu de la sous-préfecture et est hôte de l’hôpital de Songon et de l'agence de Société de distribution d'eau de la Côte d'Ivoire (SODECI). Le village de Songon-Agban est le centre commercial de cette sous-préfecture.\n\n\n== Références ==\n\n\n== Liens externes ==\n\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": [
+  {
+   "file": "Fichier:Bléssoué Agban d'Adiapoté (Songon).JPG",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Bl%C3%A9ssou%C3%A9_Agban_d%27Adiapot%C3%A9_%28Songon%29.JPG/1280px-Bl%C3%A9ssou%C3%A9_Agban_d%27Adiapot%C3%A9_%28Songon%29.JPG?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%A9ssou%C3%A9_Agban_d%27Adiapot%C3%A9_(Songon).JPG",
+   "width": 4608,
+   "height": 3456,
+   "artist": "ChefDuVillage",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Ceci est une image du genre Tenues et parures traditionnelles de :"
+  },
+  {
+   "file": "File:Photo de famille inauguration Espace Michel-Hidalgo 2009.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Photo_de_famille_inauguration_Espace_Michel-Hidalgo_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Photo_de_famille_inauguration_Espace_Michel-Hidalgo_2009.jpg",
+   "width": 960,
+   "height": 1280,
+   "artist": "Titinoci",
+   "license": "CC BY-SA 3.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "description": "Photo de Abdul Aziz Alibhaï avec Michel Hidalgo, Mme Alibhaï et ses deux filles. Photo de famille prise sur le site de Ivoire Academie, à Songon Dagbé près d'Abidjan, Côte d'Ivoire.",
+   "via": "commons-search"
+  },
+  {
+   "file": "File:Bléssoué Agban d'Adiapoté (Songon).JPG",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Bl%C3%A9ssou%C3%A9_Agban_d%27Adiapot%C3%A9_%28Songon%29.JPG/1280px-Bl%C3%A9ssou%C3%A9_Agban_d%27Adiapot%C3%A9_%28Songon%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%A9ssou%C3%A9_Agban_d%27Adiapot%C3%A9_(Songon).JPG",
+   "width": 4608,
+   "height": 3456,
+   "artist": "ChefDuVillage",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "This is an image of Cultural Fashion or Adornment from",
+   "via": "commons-search"
+  },
+  {
+   "file": "File:Rue Amonson (Songon).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Rue_Amonson_%28Songon%29.jpg/1280px-Rue_Amonson_%28Songon%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Rue_Amonson_(Songon).jpg",
+   "width": 4080,
+   "height": 3072,
+   "artist": "Koume marcel",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "description": "Rue Amonson dans la commune de Songon à Abidjan (Côte d'Ivoire)",
+   "via": "commons-search"
+  },
+  {
+   "file": "File:Rue Dr Jean-Baptiste Akré (Songon).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Rue_Dr_Jean-Baptiste_Akr%C3%A9_%28Songon%29.jpg/1280px-Rue_Dr_Jean-Baptiste_Akr%C3%A9_%28Songon%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Rue_Dr_Jean-Baptiste_Akr%C3%A9_(Songon).jpg",
+   "width": 4080,
+   "height": 3072,
+   "artist": "Koume marcel",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "description": "Rue Dr Jean-Baptiste Akré dans la commune de Songon (Côte d'Ivoire)",
+   "via": "commons-search"
+  },
+  {
+   "file": "File:Rue Doubou Danho (Songon).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Rue_Doubou_Danho_%28Songon%29.jpg/1280px-Rue_Doubou_Danho_%28Songon%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Rue_Doubou_Danho_(Songon).jpg",
+   "width": 4080,
+   "height": 3072,
+   "artist": "Koume marcel",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "description": "Rue Doubou Danho dans la commune de Songon (Côte d'Ivoire)",
+   "via": "commons-search"
+  },
+  {
+   "file": "File:Rue Beugré Agba (Songon).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Rue_Beugr%C3%A9_Agba_%28Songon%29.jpg/1280px-Rue_Beugr%C3%A9_Agba_%28Songon%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Rue_Beugr%C3%A9_Agba_(Songon).jpg",
+   "width": 4080,
+   "height": 3072,
+   "artist": "Koume marcel",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "description": "Rue Beugré Agba dans la commune de Songon (Côte d'Ivoire)",
+   "via": "commons-search"
+  },
+  {
+   "file": "File:Rue Pierre Claver Mignan (Songon).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Rue_Pierre_Claver_Mignan_%28Songon%29.jpg/1280px-Rue_Pierre_Claver_Mignan_%28Songon%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Rue_Pierre_Claver_Mignan_(Songon).jpg",
+   "width": 4080,
+   "height": 3072,
+   "artist": "Koume marcel",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "description": "Rue Pierre Claver Mignan dans la commune de Songon (Côte d'Ivoire)",
+   "via": "commons-search"
+  },
+  {
+   "file": "File:Rue Lamine Soro (Songon).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Rue_Lamine_Soro_%28Songon%29.jpg/1280px-Rue_Lamine_Soro_%28Songon%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Rue_Lamine_Soro_(Songon).jpg",
+   "width": 4080,
+   "height": 3072,
+   "artist": "Koume marcel",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "description": "Rue Lamine Soro dans la commune de Songon (Côte d'Ivoire)",
+   "via": "commons-search"
+  }
+ ]
+}

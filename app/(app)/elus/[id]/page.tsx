@@ -9,6 +9,7 @@ import { PostCard } from "@/app/components/post/post-card";
 import { Empty, PageHeader, Tabs } from "@/app/components/shell/shell";
 import { Avatar } from "@/app/components/ui/avatar";
 import { NameBadge } from "@/app/components/ui/badge";
+import { showcaseById } from "@/lib/communes";
 import { I } from "@/app/components/ui/icons";
 import * as geo from "@/lib/ci-geo";
 import { attachProfiles, fetchAuthors, officialPlace } from "@/lib/data/people";
@@ -230,6 +231,15 @@ export default async function OfficialPage({ params, searchParams }: { params: P
           </div>
         </div>
         {o.bio && <p className="mt-3 text-[15px] leading-snug">{o.bio}</p>}
+        {o.commune_id && showcaseById.has(o.commune_id) && (
+          <Link href={`/decouvertes/${showcaseById.get(o.commune_id)!.slug}`} className="mt-3 flex items-center gap-3 rounded-2xl border border-line px-3 py-2.5 transition-colors hover:bg-paper/60">
+            <span className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-orange-soft text-orange"><I.pin className="h-[18px] w-[18px]" /></span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-[12px] font-semibold uppercase tracking-wide text-muted">{lang === "fr" ? "Découvertes" : "Discoveries"}</span>
+              <span className="block truncate text-[15px] font-bold">{lang === "fr" ? `Découvrir ${showcaseById.get(o.commune_id)!.name}` : `Discover ${showcaseById.get(o.commune_id)!.name}`}</span>
+            </span>
+          </Link>
+        )}
         {o.vacant && o.note && <p className="mt-3 rounded-xl bg-orange-soft px-3 py-2 text-[14px] text-orange">{o.note}</p>}
         {o.personal && (
           <Link href={`/u/${o.personal.handle}`} className="mt-3 flex items-center gap-3 rounded-2xl border border-line px-3 py-2.5 transition-colors hover:bg-paper/60">

@@ -1,0 +1,33 @@
+{
+ "id": 6,
+ "name": "Marcory",
+ "department": "Abidjan",
+ "region": "District autonome d'Abidjan",
+ "title": "Marcory",
+ "url": "https://fr.wikipedia.org/wiki/Marcory",
+ "wikidata": "Q3290197",
+ "coordinates": {
+  "lat": 5.303333,
+  "lon": -4.009167,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 214061,
+  "year": "2021"
+ },
+ "text": "Marcory  est une commune de la ville d'Abidjan, en Côte d'Ivoire. Elle est située au sud de la ville, entre la commune de Treichville et celle de Koumassi, sur l’île de Petit-Bassam. En 2021, sa population est estimée à 214 061 habitants.\nOn trouve dans la commune l'un des plus célèbres maquis de la ville, le Marcory Gasoil – qui fait partie du quartier dit des Mille maquis –, ainsi que le stade Robert Champroux.\nMarcory concentre une grande partie de la diaspora libanaise en Côte d'Ivoire et est surnommé « le petit Beyrouth ». Une rue Beyrouth y a été inaugurée en 2017.\nLa commune de Marcory est reliée à celle de Cocody par le pont à péage autoroutier Henri Konan Bédié, inauguré le 16 décembre 2014.\nSon maire – élu par le conseil municipal, le lundi 17 juin 2013 – est Aby Raoul, qui a succédé à Lamine Diabagaté.\n\n\n== Géographie ==\n\n\n== Administration ==\nSon maire actuel est Aby Raoul. Et ce, depuis les élections municipales de 2013.\nMais avant lui, se sont succédé cinq maires :  \n\nLamine Diabagaté (2011 - 2013)\nMarcelin Assi Akanda (2001 - 2011)\nYves Mankambou (1996 - 2001)\nNorbert Kouamé Bohoussou (maire intérimaire, août 1995 - février 1996)\nVictor Amagou (1980 - 1995)\n\n\n== Les quartiers et villages ==\n\nLa commune de Marcory est composée de 12 quartiers et de trois villages.\nLes quartiers sont: \n\nRésidentiel;\nChamproux;\nMarie Koré;\nGnanzoua;\nKablan Brou Félix;\nHibiscus;\nKonan Raphaël;\nJean-Baptiste Mockey;\nAdeimin;\nBiétry;\nZone 4 C;\nAliodan.\nLes villages sont:\n\nAnoumabo;\nAbia-Koumassi;\nAbia-Abety.\n\n\n== Éducation ==\n\n\n== Infrastructures ==\n\n\n=== Pharmacies de Marcory ===\n\n\n=== Commissariat de police ===\nCommissariat du 9e arrondissement\nCommissariat du 26e Arrondissement\nCommissariat du 31e Arrondissement\nCommissariat du 4e Arrondissement\n\n\n== Jumelages ==\n Guelmim (Maroc) depuis le 20 décembre 2009\n\n\n== Références ==\n\n Portail de la Côte d’Ivoire",
+ "images": [
+  {
+   "file": "Fichier:Abidjan Marcory.png",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Abidjan_Marcory.png/1280px-Abidjan_Marcory.png?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Abidjan_Marcory.png",
+   "width": 4272,
+   "height": 2848,
+   "artist": "ព្រះមហាក្សត្ររាជ",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "description": "Vue du quartier de Marcory à Abidjan en janvier 2025 depuis la tour F en construction. En arrière-plan le dome du Parc des expositions d’Abidjan et l'océan Atlantique."
+  }
+ ]
+}

@@ -1,0 +1,199 @@
+1	Abobo	Abidjan	District autonome d'Abidjan
+2	Adjamé	Abidjan	District autonome d'Abidjan
+3	Attécoubé	Abidjan	District autonome d'Abidjan
+4	Cocody	Abidjan	District autonome d'Abidjan
+5	Koumassi	Abidjan	District autonome d'Abidjan
+6	Marcory	Abidjan	District autonome d'Abidjan
+7	Plateau	Abidjan	District autonome d'Abidjan
+8	Port-Bouët	Abidjan	District autonome d'Abidjan
+9	Treichville	Abidjan	District autonome d'Abidjan
+10	Yopougon	Abidjan	District autonome d'Abidjan
+11	Anyama	Abidjan	District autonome d'Abidjan
+12	Bingerville	Abidjan	District autonome d'Abidjan
+13	Songon	Abidjan	District autonome d'Abidjan
+14	Yamoussoukro	Yamoussoukro	District autonome de Yamoussoukro
+15	Attiégouakro	Attiégouakro	District autonome de Yamoussoukro
+16	Sassandra	Sassandra	Gbôklé
+17	Fresco	Fresco	Gbôklé
+18	Soubré	Soubré	Nawa
+19	Buyo	Buyo	Nawa
+20	Guéyo	Guéyo	Nawa
+21	Méagui	Méagui	Nawa
+22	San-Pédro	San-Pédro	San-Pédro
+23	Tabou	Tabou	San-Pédro
+24	Abengourou	Abengourou	Indénié-Djuablin
+25	Agnibilékrou	Agnibilékrou	Indénié-Djuablin
+26	Bettié	Bettié	Indénié-Djuablin
+27	Aboisso	Aboisso	Sud-Comoé
+28	Adiaké	Adiaké	Sud-Comoé
+29	Grand-Bassam	Grand-Bassam	Sud-Comoé
+30	Tiapoum	Tiapoum	Sud-Comoé
+31	Minignan	Minignan	Folon
+32	Kaniasso	Kaniasso	Folon
+33	Odienné	Odienné	Kabadougou
+34	Gbéléban	Gbéléban	Kabadougou
+35	Madinani	Madinani	Kabadougou
+36	Samatiguila	Samatiguila	Kabadougou
+37	Séguélon	Séguélon	Kabadougou
+38	Gagnoa	Gagnoa	Gôh
+39	Oumé	Oumé	Gôh
+40	Divo	Divo	Lôh-Djiboua
+41	Guitry	Guitry	Lôh-Djiboua
+42	Lakota	Lakota	Lôh-Djiboua
+43	Toumodi	Toumodi	Bélier
+44	Didiévi	Didiévi	Bélier
+45	Djékanou	Djékanou	Bélier
+46	Tiébissou	Tiébissou	Bélier
+47	Daoukro	Daoukro	Iffou
+48	M'Bahiakro	M'Bahiakro	Iffou
+49	Prikro	Prikro	Iffou
+50	Bongouanou	Bongouanou	Moronou
+51	Arrah	Arrah	Moronou
+52	M'Batto	M'Batto	Moronou
+53	Dimbokro	Dimbokro	N'Zi
+54	Bocanda	Bocanda	N'Zi
+55	Kouassi-Kouassikro	Kouassi-Kouassikro	N'Zi
+56	Agboville	Agboville	Agnéby-Tiassa
+57	Sikensi	Sikensi	Agnéby-Tiassa
+58	Taabo	Taabo	Agnéby-Tiassa
+59	Tiassalé	Tiassalé	Agnéby-Tiassa
+60	Dabou	Dabou	Grands-Ponts
+61	Grand-Lahou	Grand-Lahou	Grands-Ponts
+62	Jacqueville	Jacqueville	Grands-Ponts
+63	Adzopé	Adzopé	La Mé
+64	Akoupé	Akoupé	La Mé
+65	Alépé	Alépé	La Mé
+66	Yakassé-Attobrou	Yakassé-Attobrou	La Mé
+67	Guiglo	Guiglo	Cavally
+68	Bloléquin	Bloléquin	Cavally
+69	Taï	Taï	Cavally
+70	Toulépleu	Toulépleu	Cavally
+71	Duékoué	Duékoué	Guémon
+72	Bangolo	Bangolo	Guémon
+73	Facobly	Facobly	Guémon
+74	Kouibly	Kouibly	Guémon
+75	Man	Man	Tonkpi
+76	Biankouma	Biankouma	Tonkpi
+77	Danané	Danané	Tonkpi
+78	Sipilou	Sipilou	Tonkpi
+79	Zouan-Hounien	Zouan-Hounien	Tonkpi
+80	Daloa	Daloa	Haut-Sassandra
+81	Issia	Issia	Haut-Sassandra
+82	Vavoua	Vavoua	Haut-Sassandra
+83	Zoukougbeu	Zoukougbeu	Haut-Sassandra
+84	Bouaflé	Bouaflé	Marahoué
+85	Sinfra	Sinfra	Marahoué
+86	Zuénoula	Zuénoula	Marahoué
+87	Boundiali	Boundiali	Bagoué
+88	Kouto	Kouto	Bagoué
+89	Tengréla	Tengréla	Bagoué
+90	Korhogo	Korhogo	Poro
+91	Dikodougou	Dikodougou	Poro
+92	M'Bengué	M'Bengué	Poro
+93	Sinématiali	Sinématiali	Poro
+94	Ferkessédougou	Ferkessédougou	Tchologo
+95	Kong	Kong	Tchologo
+96	Ouangolodougou	Ouangolodougou	Tchologo
+97	Bouaké	Bouaké	Gbêkê
+98	Béoumi	Béoumi	Gbêkê
+99	Botro	Botro	Gbêkê
+100	Sakassou	Sakassou	Gbêkê
+101	Katiola	Katiola	Hambol
+102	Dabakala	Dabakala	Hambol
+103	Niakaramadougou	Niakaramadougou	Hambol
+104	Touba	Touba	Bafing
+105	Koro	Koro	Bafing
+106	Ouaninou	Ouaninou	Bafing
+107	Mankono	Mankono	Béré
+108	Dianra	Dianra	Béré
+109	Kounahiri	Kounahiri	Béré
+110	Séguéla	Séguéla	Worodougou
+111	Kani	Kani	Worodougou
+112	Bouna	Bouna	Bounkani
+113	Doropo	Doropo	Bounkani
+114	Nassian	Nassian	Bounkani
+115	Téhini	Téhini	Bounkani
+116	Bondoukou	Bondoukou	Gontougo
+117	Koun-Fao	Koun-Fao	Gontougo
+118	Sandégué	Sandégué	Gontougo
+119	Tanda	Tanda	Gontougo
+120	Transua	Transua	Gontougo
+125	Ouellé	Ouellé	Iffou
+126	Bonon	Bonon	Marahoué
+127	Gohitafla	Gohitafla	Marahoué
+128	Azaguié	Agboville	Agnéby-Tiassa
+129	Rubino	Agboville	Agnéby-Tiassa
+130	N'Douci	Tiassalé	Agnéby-Tiassa
+131	Booko	Koro	Bafing
+132	Borotou	Koro	Bafing
+133	Guintéguéla	Touba	Bafing
+134	Koonan	Ouaninou	Bafing
+135	Gbon	Kouto	Bagoué
+136	Kolia	Kouto	Bagoué
+137	Kanakono	Tengréla	Bagoué
+138	Kasséré	Boundiali	Bagoué
+139	Kokoumbo	Toumodi	Bélier
+140	Tié-N'Diékro	Didiévi	Bélier
+141	Kongasso	Kounahiri	Béré
+142	Sarhala	Mankono	Béré
+143	Tiéningboué	Mankono	Béré
+144	Goulia	Kaniasso	Folon
+145	Tienko	Minignan	Folon
+146	Bodokro	Béoumi	Gbêkê
+147	Brobo	Bouaké	Gbêkê
+148	Djébonoua	Bouaké	Gbêkê
+149	Diabo	Botro	Gbêkê
+150	Diégonéfla	Oumé	Gôh
+151	Guibéroua	Gagnoa	Gôh
+152	Ouragahio	Gagnoa	Gôh
+153	Assuéfry	Transua	Gontougo
+154	Kouassi-Datékro	Koun-Fao	Gontougo
+155	Bassawa	Dabakala	Hambol
+156	Boniérédougou	Dabakala	Hambol
+157	Foumbolo	Dabakala	Hambol
+158	Satama-Sokoro	Dabakala	Hambol
+159	Satama-Sokoura	Dabakala	Hambol
+160	Fronan	Katiola	Hambol
+161	Tafiré	Niakaramadougou	Hambol
+162	Tortiya	Niakaramadougou	Hambol
+163	Bédiala	Daloa	Haut-Sassandra
+164	Gboguhé	Daloa	Haut-Sassandra
+165	Saïoua	Issia	Haut-Sassandra
+166	Ettrokro	Daoukro	Iffou
+167	Niablé	Abengourou	Indénié-Djuablin
+168	Bako	Odienné	Kabadougou
+169	Dioulatièdougou	Odienné	Kabadougou
+170	Tiémé	Odienné	Kabadougou
+171	Seydougou	Gbéléban	Kabadougou
+172	Afféry	Akoupé	La Mé
+173	Agou	Adzopé	La Mé
+174	Zikisso	Lakota	Lôh-Djiboua
+175	Anoumaba	M'Batto	Moronou
+176	Tiémélékro	M'Batto	Moronou
+177	Grand-Zattry	Soubré	Nawa
+178	Mayo	Soubré	Nawa
+179	Guiembé	Dikodougou	Poro
+180	Karakoro	Korhogo	Poro
+181	Komborodougou	Korhogo	Poro
+182	Napié	Korhogo	Poro
+183	Niofoin	Korhogo	Poro
+184	Sirasso	Korhogo	Poro
+185	Tioroniaradougou	Korhogo	Poro
+186	Grabo	Tabou	San-Pédro
+187	Grand-Béréby	San-Pédro	San-Pédro
+188	Assinie-Mafia	Adiaké	Sud-Comoé
+189	Ayamé	Aboisso	Sud-Comoé
+190	Maféré	Aboisso	Sud-Comoé
+191	Bonoua	Grand-Bassam	Sud-Comoé
+192	Diawala	Ouangolodougou	Tchologo
+193	Niellé	Ouangolodougou	Tchologo
+194	Koumbala	Ferkessédougou	Tchologo
+195	Bin-Houyé	Zouan-Hounien	Tonkpi
+196	Gbonné	Biankouma	Tonkpi
+197	Logoualé	Man	Tonkpi
+198	Sangouiné	Man	Tonkpi
+199	Djibrosso	Kani	Worodougou
+200	Morondo	Kani	Worodougou
+201	Dualla	Séguéla	Worodougou
+202	Sifié	Séguéla	Worodougou
+203	Worofla	Séguéla	Worodougou

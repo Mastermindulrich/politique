@@ -1,0 +1,58 @@
+{
+ "id": 100,
+ "name": "Sakassou",
+ "department": "Sakassou",
+ "region": "Gbêkê",
+ "title": "Sakassou",
+ "url": "https://fr.wikipedia.org/wiki/Sakassou",
+ "wikidata": "Q25247576",
+ "coordinates": {
+  "lat": 7.447222,
+  "lon": -5.294444,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 69386,
+  "year": "2021"
+ },
+ "text": "Sakassou est une ville du centre de la Côte d'Ivoire. Elle est la capitale traditionnelle et le siège du royaume Baoulé. Située dans la région du Gbêkè, à 43 km de Bouaké en pays baoulé. Le département est peuplé par les Baoulés-Oualèbos (Sakassou, Waméla-kouassiklokro, Assandrè, Ngbèdjo, Toumodi) et les Baoulés-Ayahou, (Ayahou-Sopka) ; on y rencontre également des Yohouré.\n\n\n== Administration ==\nUne loi de 1978 a institué 27 communes de plein exercice sur le territoire du pays.\n\n\n== Démographie ==\n\n\n== Éducation ==\n\n\n== Sports ==\nLa localité dispose d'un club de football, le US Sakassou, qui évolue en Championnat de Division Régionale, équivalent d'une « 4e division ».\n\n\n== Personnalités liées à la ville ==\nPaul Yao Akoto, président de l'UDPCI\nAbla Pokou, reine mère des baoulés\n\n\n== Villes voisines ==\nBouaké vers le nord.\nBéoumi vers l'ouest.\nBouaflé reliée par une navette nautique sur le lac de Kossou.\nZédé-Dianhoun.\nTiébissou vers le sud.\nDjébonouan vers l'est.\n\n\n== Notes et références ==\n\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": [
+  {
+   "file": "File:Chorale sakassou.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Chorale_sakassou.jpg/1280px-Chorale_sakassou.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Chorale_sakassou.jpg",
+   "width": 5760,
+   "height": 3840,
+   "artist": "Jean Yves ESSIGAN",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Un Pupitre de la Chorale",
+   "via": "commons-search"
+  },
+  {
+   "file": "File:Chorale sakassou 1.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Chorale_sakassou_1.jpg/1280px-Chorale_sakassou_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Chorale_sakassou_1.jpg",
+   "width": 5760,
+   "height": 3840,
+   "artist": "Jean Yves ESSIGAN",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Un pupitre de la Chorale",
+   "via": "commons-search"
+  },
+  {
+   "file": "File:Chorale sakassou 2.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Chorale_sakassou_2.jpg/1280px-Chorale_sakassou_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Chorale_sakassou_2.jpg",
+   "width": 5760,
+   "height": 3840,
+   "artist": "Jean Yves ESSIGAN",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Un pupitre de la Chorale",
+   "via": "commons-search"
+  }
+ ]
+}

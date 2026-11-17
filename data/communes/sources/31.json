@@ -1,0 +1,21 @@
+{
+ "id": 31,
+ "name": "Minignan",
+ "department": "Minignan",
+ "region": "Folon",
+ "title": "Minignan",
+ "url": "https://fr.wikipedia.org/wiki/Minignan",
+ "wikidata": "Q3315058",
+ "coordinates": {
+  "lat": 10,
+  "lon": -7.83333,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 24251,
+  "year": "2021"
+ },
+ "text": "Minignan est une ville du nord-ouest de la Côte d'Ivoire, qui se situe au nord d'Odienné, proche de la Guinée et du Mali. C'est le chef-lieu de la région du Folon, district du Denguélé.\nLa population y est essentiellement constituée de peulh et Malinkés.\n\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": []
+}

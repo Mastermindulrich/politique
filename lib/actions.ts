@@ -589,3 +589,39 @@ export async function setLanguage(lang: "fr" | "en"): Promise<Result> {
   revalidatePath("/", "layout");
   return { ok: true };
 }
+
+// ---------------------------------------------------------------------------
+// Découvertes: the town hall's own words on its commune page
+// ---------------------------------------------------------------------------
+const showcaseSchema = z.object({
+  communeId: z.number().int().positive(),
+  tagline: z.string().trim().max(90),
+  message: z.string().trim().max(700),
+  eventTitle: z.string().trim().max(90),
+  eventDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).or(z.literal("")),
+  eventText: z.string().trim().max(300),
+  website: z.string().trim().max(200).regex(/^https:\/\/\S+$/).or(z.literal("")),
+});
+
+/** Saved by the commune's mayor or a moderator; the database checks the right (can_edit_showcase). */
+export async function saveShowcase(input: z.infer<typeof showcaseSchema>): Promise<Result> {
+  const viewer = await viewerOrFail();
+  const parsed = showcaseSchema.safeParse(input);
+  if (!parsed.success) return { ok: false, error: "invalid" };
+  const v = parsed.data;
+  const supabase = await createClient();
+  const { error } = await supabase.from("commune_showcases").upsert({
+    commune_id: v.communeId,
+    tagline: v.tagline || null,
+    message: v.message || null,
+    event_title: v.eventTitle || null,
+    event_date: v.eventDate || null,
+    event_text: v.eventText || null,
+    website: v.website || null,
+    updated_by: viewer.id,
+    updated_at: new Date().toISOString(),
+  });
+  if (error) return { ok: false, error: error.message };
+  revalidatePath("/decouvertes", "layout");
+  return { ok: true };
+}

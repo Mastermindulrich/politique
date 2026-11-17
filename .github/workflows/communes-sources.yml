@@ -1,0 +1,28 @@
+name: Communes sources
+# Fetches the public sources (French Wikipedia text, free Wikimedia Commons images,
+# Wikidata population) used to write each commune's Découvertes showcase, and commits
+# them to data/communes/sources/ on the same branch.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/communes/fetch.py
+      - scripts/communes/communes.tsv
+      - .github/workflows/communes-sources.yml
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/communes/fetch.py
+      - name: Commit sources
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/communes/sources
+          git diff --cached --quiet || git commit -m "Communes: public sources fetched"
+          git pull --rebase -q || true
+          git push

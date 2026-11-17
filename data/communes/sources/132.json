@@ -1,0 +1,34 @@
+{
+ "id": 132,
+ "name": "Borotou",
+ "department": "Koro",
+ "region": "Bafing",
+ "title": "Borotou",
+ "url": "https://fr.wikipedia.org/wiki/Borotou",
+ "wikidata": "Q2911258",
+ "coordinates": {
+  "lat": 8.73333333,
+  "lon": -7.5,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 5202,
+  "year": "2021"
+ },
+ "text": "Borotou est une localité située au nord-ouest de la Côte d'Ivoire, et appartenant au Département de Koro, dans la Région du Bafing. La localité de Borotou est un chef-lieu de commune.\n\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": [
+  {
+   "file": "File:Koro-complexe-sucrier-plantations-21.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Koro-complexe-sucrier-plantations-21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Koro-complexe-sucrier-plantations-21.jpg",
+   "width": 1200,
+   "height": 1600,
+   "artist": "Ypirétis",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Plantation de canne à sucre, Borotou-Koro, Côte d'Ivoire, 2014",
+   "via": "commons-search"
+  }
+ ]
+}

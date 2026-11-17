@@ -1,0 +1,152 @@
+[
+{"id":1,"featured":true,"tagline":"La commune qui ne dort jamais, et le premier musée d'art contemporain du pays","intro":"Deuxième commune la plus peuplée du district d'Abidjan, Abobo est née autour d'une des premières gares de la ligne Abidjan-Niger. Son nom viendrait de l'ébrié « a bor bor ». C'est une ville de commerçants, d'artisans et de transporteurs, à la lisière de la forêt du Banco.",
+ "highlights":[
+  {"k":"culture","t":"Le MuCAT","d":"Le musée des cultures contemporaines Adama Toungara, inauguré en mars 2020 sur 3 500 m² au centre-ville, est le premier musée consacré à l'art contemporain en Côte d'Ivoire."},
+  {"k":"economie","t":"Une ville de commerce et d'ateliers","d":"Plus de huit actifs sur dix travaillent dans le commerce, le transport et l'artisanat : ferronniers, couturiers, braiseurs et vendeuses font l'énergie de la commune.","photo":"Le ferronnier d'abobo.jpg"},
+  {"k":"site","t":"La gare d'Abobo","d":"La commune a grandi autour de sa gare, sur la ligne de chemin de fer qui relie Abidjan à Ouagadougou."},
+  {"k":"culture","t":"Les villages ébriés","d":"Abobo-Té, Abobo-Baoulé et Anonkoi-Kouté sont les villages d'origine, dont les terres ont donné naissance à la commune."}],
+ "products":["Commerce","Artisanat","Transport","Viande braisée"],
+ "photos":[{"f":"Des vendeuses ambulante.jpg","c":"Vendeuses au marché d'Abobo"},{"f":"Le ferronnier d'abobo.jpg","c":"Un ferronnier dans son atelier"},{"f":"Mairie Abobo.jpg","c":"La mairie d'Abobo"},{"f":"Le braiseur de viande d'abobo.jpg","c":"Un braiseur de viande"}]},
+
+{"id":2,"featured":true,"tagline":"« La rencontre » : le grand marché d'Abidjan et la porte de tout le pays","intro":"Adjamé signifie « la rencontre » ou « le centre » en tchaman. C'est la plus ancienne souche abidjanaise, le plus grand centre commercial de la ville et le point de départ des cars vers toute la Côte d'Ivoire et la sous-région.",
+ "highlights":[
+  {"k":"economie","t":"Une vingtaine de marchés","d":"C'est d'Adjamé que part l'essentiel des vivres qui nourrissent Abidjan. La commune compte une vingtaine de marchés, dont le Black market et trois grandes structures de vente en gros.","photo":"Black market d'Adjamé.jpg"},
+  {"k":"site","t":"Le boulevard Nangui Abrogoua","d":"Une des artères les plus fréquentées du pays. Elle porte le nom du chef ébrié qui défendit les droits fonciers des Djemian face à l'administration coloniale.","photo":"Magasin de vêtements dans la commune d'Adjamé.jpg"},
+  {"k":"economie","t":"La plus grande gare routière du pays","d":"Les lignes de cars et de bus partent d'ici vers toutes les régions et vers les pays voisins.","photo":"La gare nord d'Adjamé vu d'en haut.jpg"},
+  {"k":"site","t":"Les 220 Logements","d":"Un quartier historique aux bâtiments rénovés, autour du rond-point Liberté.","photo":"Les bâtiments des 220 logements à Adjamé.jpg"}],
+ "products":["Vivriers","Poisson et crevettes","Textile","Commerce de gros"],
+ "photos":[{"f":"Black market d'Adjamé.jpg","c":"Le Black market d'Adjamé"},{"f":"La gare nord d'Adjamé vu d'en haut.jpg","c":"La gare nord, vue d'en haut"},{"f":"Étale de produits viviers.jpg","c":"Étal de produits vivriers"},{"f":"Les bâtiments des 220 logements à Adjamé.jpg","c":"Les 220 Logements"},{"f":"Magasin de vêtements dans la commune d'Adjamé.jpg","c":"Boulevard Nangui Abrogoua"},{"f":"Rond-point Liberté Adjamé.jpg","c":"Le rond-point Liberté"}]},
+
+{"id":3,"tagline":"Entre la forêt du Banco et la lagune, le poumon vert d'Abidjan","intro":"Posée sur une butte qui domine la baie du Banco, Attécoubé (« le village en bas ») abrite la totalité du parc national du Banco. Sur ses 68 km², 40 sont couverts de forêt et 5 de lagune.",
+ "highlights":[
+  {"k":"nature","t":"Le parc national du Banco","d":"3 000 hectares de forêt primaire en pleine ville, entièrement sur le territoire de la commune."},
+  {"k":"site","t":"Le Sanctuaire marial national","d":"Le sanctuaire Notre-Dame d'Afrique, lieu de pèlerinage national, domine la lagune.","photo":"Sanctuaire Marial national de Côte d'Ivoire 07.jpg"},
+  {"k":"site","t":"Abobo-Doumé et Lokodjro","d":"Deux villages atchan au bord de l'eau : un port de pêche artisanale et la gare lagunaire d'où partent les bateaux-bus vers le Plateau.","photo":"Gare lagunaire d'Abobo-Doumé 01.jpg"},
+  {"k":"economie","t":"La mémoire du bois","d":"Au début du siècle dernier, les grumes d'acajou, de niangon et de samba transitaient ici par la lagune avant d'embarquer pour l'Europe."}],
+ "products":["Pêche artisanale","Bois"],
+ "photos":[{"f":"Sanctuaire Marial national de Côte d'Ivoire 07.jpg","c":"Le Sanctuaire marial national"},{"f":"Entrée du Sanctuaire Marial d'Attécoubé.JPG","c":"L'entrée du sanctuaire"},{"f":"Gare lagunaire d'Abobo-Doumé 01.jpg","c":"La gare lagunaire d'Abobo-Doumé"},{"f":"Sanctuaire Marial national de Côte d'Ivoire 06.jpg","c":"Dans l'enceinte du sanctuaire"}]},
+
+{"id":4,"featured":true,"tagline":"Universités, ambassades et Hôtel Ivoire : la commune du savoir et des grandes adresses","intro":"Cocody est l'un des tout premiers villages ébriés d'Abidjan. Elle accueille aujourd'hui l'université, de grands hôpitaux et le célèbre Hôtel Ivoire, et elle a inspiré un film et une chanson d'Alpha Blondy.",
+ "highlights":[
+  {"k":"site","t":"L'Hôtel Ivoire","d":"Le Sofitel Ivoire, entièrement rénové en 2011, a longtemps été le seul hôtel d'Afrique à posséder une patinoire."},
+  {"k":"artisanat","t":"Le marché N'Goan Aka Mathias","d":"Sur trois étages, le marché couvert de Cocody rassemble l'artisanat de toute l'Afrique de l'Ouest."},
+  {"k":"economie","t":"Pôle de santé et de recherche","d":"L'Institut Pasteur de Côte d'Ivoire (1972), le CHU de Cocody et la PISAM, dont le plateau technique est l'un des plus modernes de la sous-région."},
+  {"k":"culture","t":"Cocody à l'écran et en musique","d":"« Le Gentleman de Cocody » (1964), avec Jean Marais, et « Cocody Rock » d'Alpha Blondy portent le nom de la commune."},
+  {"k":"culture","t":"Les villages ébriés","d":"Blockauss, Danga et les autres villages tchaman rappellent que Cocody est née au bord de la lagune."}],
+ "products":["Artisanat","Enseignement supérieur","Santé"],
+ "photos":[{"f":"Mairiecocody.JPG","c":"L'hôtel communal de Cocody"}]},
+
+{"id":5,"tagline":"Une presqu'île sur la lagune, capitale du poisson braisé","intro":"Sur l'île de Petit-Bassam, Koumassi est une presqu'île de 874 hectares bordée par la lagune Ébrié. Son grand carrefour est l'un des plus larges boulevards d'Abidjan.",
+ "highlights":[
+  {"k":"saveurs","t":"Poisson et poulet braisés","d":"Kedjenou de poulet, poisson braisé et ses condiments : les maquis de Koumassi sont une adresse pour qui aime la cuisine ivoirienne.","photo":"File:Poisson braisé à Koumassi.jpg"},
+  {"k":"economie","t":"Le marché de Koumassi","d":"Le grand marché rythme la vie de la commune, avec ses bouchers, ses vivriers et ses étals.","photo":"File:Le marché de Koumassi.JPG"},
+  {"k":"nature","t":"Une façade lagunaire","d":"La lagune Ébrié borde la commune au nord-est et au sud-est."}],
+ "products":["Poisson braisé","Kedjenou","Commerce"],
+ "photos":[{"f":"Photograph of the 3D text I LOVE KOUMASSI 03.jpg","c":"« J'aime Koumassi »"},{"f":"File:Poisson braisé à Koumassi.jpg","c":"Poisson braisé"},{"f":"File:Le marché de Koumassi.JPG","c":"Le marché de Koumassi"},{"f":"File:Kedjenou de poulet à koumassi.jpg","c":"Kedjenou de poulet"},{"f":"File:Poulet braisé à Koumassi.jpg","c":"Poulet braisé"}]},
+
+{"id":6,"tagline":"Mille maquis, Zone 4 et « le petit Beyrouth »","intro":"Entre Treichville et Koumassi, sur l'île de Petit-Bassam, Marcory est connue pour ses nuits animées, son stade Robert-Champroux et sa communauté libanaise, qui lui vaut le surnom de « petit Beyrouth ».",
+ "highlights":[
+  {"k":"saveurs","t":"Le quartier des Mille maquis","d":"On y trouve l'un des maquis les plus célèbres de la ville, le Marcory Gasoil."},
+  {"k":"culture","t":"Le petit Beyrouth","d":"Marcory concentre une grande partie de la diaspora libanaise du pays. Une rue Beyrouth y a été inaugurée en 2017."},
+  {"k":"site","t":"Le pont Henri-Konan-Bédié","d":"Le troisième pont d'Abidjan relie Marcory à Cocody par-dessus la lagune."},
+  {"k":"culture","t":"Anoumabo","d":"Un des trois villages de la commune, avec Abia-Koumassi et Abia-Abety."}],
+ "products":["Restauration","Commerce","Services"],
+ "photos":[{"f":"Abidjan Marcory.png","c":"Marcory vue d'en haut, janvier 2025"}]},
+
+{"id":7,"featured":true,"tagline":"Le « petit Manhattan » : les tours d'Abidjan au-dessus de la lagune","intro":"Centre administratif, commercial et financier de la Côte d'Ivoire, le Plateau rassemble ministères, banques et sièges des grandes entreprises. Ses tours dominent la lagune Ébrié.",
+ "highlights":[
+  {"k":"site","t":"La cathédrale Saint-Paul","d":"Un des grands monuments modernistes du Plateau, avec le palais présidentiel."},
+  {"k":"economie","t":"Le quartier des banques","d":"La plupart des grandes firmes ivoiriennes ont leur siège ici, tout comme la Banque africaine de développement.","photo":"HQAFDBAbidjanPlateauMars2016.JPG"},
+  {"k":"site","t":"Une ville des années 1960 et 1970","d":"Le Plateau est un modèle d'urbanisme planifié, né avec le terminus du chemin de fer Abidjan-Niger dont les travaux ont commencé en 1903."},
+  {"k":"culture","t":"La Sorbonne","d":"L'espace de débat populaire le plus connu d'Abidjan porte ce nom."}],
+ "products":["Finance","Administration","Services"],
+ "photos":[{"f":"View of the Plateau, Abidjan.jpg","c":"Le Plateau"},{"f":"Abidjan Plateau.png","c":"Le quartier d'affaires, janvier 2025"},{"f":"QuartierBanquesAbidjan2016.jpg","c":"Le quartier des banques"},{"f":"HQAFDBAbidjanPlateauMars2016.JPG","c":"Le siège de la Banque africaine de développement"},{"f":"AbidjanHotelDeVilleMars2016.jpg","c":"L'hôtel de ville d'Abidjan"},{"f":"La commune de Plateau, vue de Lokodjoro..jpg","c":"Le Plateau vu de la lagune"}]},
+
+{"id":8,"tagline":"L'océan, le phare et la porte d'entrée du pays","intro":"Port-Bouët s'étire sur une dizaine de kilomètres le long du littoral, au-delà du canal de Vridi. Elle abrite l'aéroport international Félix-Houphouët-Boigny et le port autonome d'Abidjan.",
+ "highlights":[
+  {"k":"site","t":"Le phare de Port-Bouët","d":"Construit dans les années 1930 avec le wharf, il balaie toujours la mer."},
+  {"k":"nature","t":"Les plages","d":"Des kilomètres de sable face à l'Atlantique, de Vridi aux villages d'Abouabou et de Mafiblé."},
+  {"k":"economie","t":"Vridi, le port et l'aéroport","d":"Depuis l'ouverture du port en 1950, usines et entrepôts ont fait de Vridi la principale zone d'emplois d'Abidjan."},
+  {"k":"culture","t":"La statue d'Hortense Aka-Anghui","d":"Un hommage à celle qui fut maire de la commune.","photo":"Statue Horthense Aka Angui.jpg"}],
+ "products":["Pêche","Industrie","Logistique"],
+ "photos":[{"f":"Le paysage en mouvement de la commune de Port-Bouet.jpg","c":"Dans les rues de Port-Bouët"},{"f":"Statue Horthense Aka Angui.jpg","c":"La statue d'Hortense Aka-Anghui"},{"f":"Wôrô wôrô de Port-Bouët.jpg","c":"Les wôrô-wôrô de la commune"}]},
+
+{"id":9,"featured":true,"tagline":"La commune historique qui fait danser Abidjan","intro":"Treichville est la commune des vieilles familles d'Abidjan, face au Plateau. Elle porte depuis 1934 le nom de Marcel Treich-Laplène et reste l'un des quartiers les plus animés de la ville, surtout la nuit.",
+ "highlights":[
+  {"k":"culture","t":"Le Palais de la culture","d":"La grande scène d'Abidjan, au bord de la lagune.","photo":"Palais de la culture de Treichville.JPG"},
+  {"k":"fete","t":"La fête de génération","d":"Chez les Ébrié Tchaman, les jeunes initiés défilent dans les rues et exécutent une danse guerrière autour de leur chef."},
+  {"k":"site","t":"La gare de Treichville","d":"C'est d'ici que part la ligne de chemin de fer qui mène jusqu'à Ouagadougou."},
+  {"k":"economie","t":"Le port et l'industrie","d":"Depuis la construction du port autonome en 1950, la commune accueille de grandes entreprises comme les Grands Moulins d'Abidjan, Solibra ou Unilever."}],
+ "products":["Musique et spectacles","Industrie","Commerce"],
+ "events":[{"t":"Fête de génération","when":"Selon le calendrier des villages ébriés","d":"Processions et danse guerrière des jeunes initiés."}],
+ "photos":[{"f":"Palais de la culture de Treichville.JPG","c":"Le Palais de la culture"},{"f":"Treichville market 2.jpg","c":"Le marché de Treichville"},{"f":"Le ponton et le pont.jpg","c":"La gare lagunaire et le pont Charles-de-Gaulle"}]},
+
+{"id":10,"featured":true,"tagline":"Yop City : la plus grande commune du pays, capitale de l'ambiance","intro":"Avec plus d'un million et demi d'habitants, Yopougon est la plus grande commune de Côte d'Ivoire. Son nom signifie « les champs de Yopou », du patriarche qui offrit une partie de ses terres. Elle s'étend entre la forêt du Banco et la lagune Ébrié.",
+ "highlights":[
+  {"k":"culture","t":"Les maquis de Yop","d":"Yopougon est réputée dans tout le pays pour son ambiance populaire et ses nombreux maquis."},
+  {"k":"economie","t":"Deux zones industrielles","d":"Ciment, plastique, sidérurgie, pharmacie, agroalimentaire, et les pagnes Uniwax : une grande part de l'industrie ivoirienne est ici."},
+  {"k":"site","t":"La cathédrale Saint-André","d":"Avec Saint-Pierre de Niangon et Saint-Laurent de Kouté, elle fait partie du patrimoine de la commune.","photo":"StLaurentCI.JPG"},
+  {"k":"culture","t":"Quatorze villages","d":"Derrière la grande ville, quatorze villages ébriés gardent leurs traditions."}],
+ "products":["Pagne Uniwax","Industrie","Restauration"],
+ "photos":[{"f":"Carrefour Saint André Yopougon SICOGI.jpg","c":"Le carrefour Saint-André"},{"f":"StLaurentCI.JPG","c":"La paroisse Saint-Laurent"},{"f":"Couché de soleil sur voiture.jpg","c":"Coucher de soleil sur Yopougon"}]},
+
+{"id":11,"tagline":"La cité de la cola, terre de footballeurs","intro":"À dix kilomètres au nord d'Abidjan, sur la voie ferrée Abidjan-Ouagadougou, Anyama est la sixième ville du pays. Son nom vient des « Gnan », un groupe attié qui s'y installa le premier.",
+ "highlights":[
+  {"k":"economie","t":"Une ville de négoce","d":"En zone forestière, Anyama vit de ses marchés, de sa gare routière, du café (Unicafé, Sicafé) et du bois."},
+  {"k":"culture","t":"Une pépinière de champions","d":"Gervinho, Arouna Koné, Amadou Koné et Yahia Fofana sont liés à la commune."},
+  {"k":"site","t":"La gare d'Anyama","d":"La ville est reliée à Abidjan par la route express et par le train."}],
+ "products":["Cola","Café","Bois"],
+ "photos":[]},
+
+{"id":12,"featured":true,"tagline":"L'ancienne capitale, entre jardin botanique et école de sculpture","intro":"Au bord de la lagune Ébrié, Bingerville fut la capitale de la colonie de 1900 à 1934. Elle a gardé de cette époque de grands bâtiments, un jardin botanique et une tradition d'arts appliqués.",
+ "highlights":[
+  {"k":"site","t":"Le palais du gouverneur","d":"L'ancien palais du gouvernement rappelle les années où Bingerville était la capitale.","photo":"File:Bingerville-Palais du Gouvernement (Côte d'Ivoire).jpg"},
+  {"k":"nature","t":"Le jardin botanique","d":"Un immense jardin, héritage de la ville coloniale."},
+  {"k":"artisanat","t":"L'école de sculpture Combes","d":"L'école des arts appliqués porte le nom du sculpteur qui s'y installa dans les années 1950. Son musée conserve des sculptures de grande taille."},
+  {"k":"nature","t":"La réserve de Dahliafleur","d":"Une réserve naturelle aux portes de la ville, avec ses termitières géantes.","photo":"File:Termitière géante réserve naturelle de Dahliafleur Bingerville - Green Card 1.jpg"}],
+ "products":["Sculpture","Horticulture"],
+ "photos":[{"f":"File:Termitière géante réserve naturelle de Dahliafleur Bingerville - Green Card 1.jpg","c":"La réserve naturelle de Dahliafleur"},{"f":"File:Bingerville-Palais du Gouvernement (Côte d'Ivoire).jpg","c":"Le palais du gouvernement, carte postale ancienne"},{"f":"File:Fleur réserve naturelle de Dahliafleur Bingerville - Green Card 3.jpg","c":"Flore de Dahliafleur"},{"f":"File:Rue de Bingerville (Côte d'Ivoire).jpg","c":"Une rue de Bingerville autrefois"}]},
+
+{"id":13,"tagline":"Les villages ébriés de l'ouest d'Abidjan, entre lagune et plantations","intro":"Songon rassemble plusieurs villages ébriés à l'ouest de Yopougon : Songon-Kassemblé, Songon-Dagbé, Songon-Agban, Abiaté, Bago et d'autres. Songon-Agban en est le centre commercial.",
+ "highlights":[
+  {"k":"culture","t":"Les parures traditionnelles","d":"Lors des cérémonies, les familles sortent tenues et parures d'apparat.","photo":"Bléssoué Agban d'Adiapoté (Songon).JPG"},
+  {"k":"culture","t":"Une confédération de villages","d":"Chaque village a gardé son nom, sa chefferie et ses fêtes de génération."},
+  {"k":"nature","t":"Entre lagune et campagne","d":"À la sortie d'Abidjan, Songon offre encore des paysages de villages et de plantations."}],
+ "products":["Manioc et attiéké","Pêche lagunaire"],
+ "photos":[{"f":"Bléssoué Agban d'Adiapoté (Songon).JPG","c":"Parures traditionnelles à Songon"},{"f":"File:Rue Amonson (Songon).jpg","c":"La rue Amonson"}]},
+
+{"id":14,"featured":true,"tagline":"La capitale : la basilique, les lacs aux caïmans et de larges avenues","intro":"Capitale politique depuis 1983 et village natal de Félix Houphouët-Boigny, « Yakro » est la seule ville du pays dessinée selon son propre plan d'urbanisme : larges avenues bordées d'arbres et forêts urbaines. Son nom rend hommage à la reine baoulé Yamousso.",
+ "highlights":[
+  {"k":"site","t":"La basilique Notre-Dame de la Paix","d":"Le monument le plus connu du pays, d'où l'on embrasse toute la ville.","photo":"Yamoussoukro panorama.jpg"},
+  {"k":"culture","t":"Le pagne baoulé","d":"Tissé en bandes, il se porte lors des grandes cérémonies.","photo":"Pagne baoulé de Yamoussoukro 01.JPG"},
+  {"k":"site","t":"Une ville-jardin","d":"Avenues plantées en double rangée, bas-côtés engazonnés et espaces boisés : un urbanisme unique en Côte d'Ivoire."},
+  {"k":"economie","t":"Capitale des institutions","d":"Au centre du pays, à 248 km d'Abidjan, la ville accueille de grandes écoles et des institutions de la République."}],
+ "products":["Pagne baoulé","Igname","Enseignement supérieur"],
+ "photos":[{"f":"Yamoussoukro panorama.jpg","c":"Yamoussoukro vue de la basilique"},{"f":"Pagne baoulé de Yamoussoukro 01.JPG","c":"Pagne baoulé"},{"f":"Cihotelvilleyakro.jpg","c":"La mairie de Yamoussoukro"},{"f":"Ciprefectyakro.JPG","c":"La préfecture"}]},
+
+{"id":15,"tagline":"Aux portes de la capitale, le village de Nanan Boniki","intro":"À 18 km de Yamoussoukro, Attiégouakro a été fondée par Nanan Boniki, qui découvrit cette terre au retour d'une partie de chasse. Le village s'appelait Bonikikro avant de prendre le nom du chef Attiégoua.",
+ "highlights":[
+  {"k":"culture","t":"Une histoire de fondateurs","d":"La tradition garde la mémoire de Nanan Boniki et des chefs qui lui ont succédé."},
+  {"k":"economie","t":"Un chef-lieu agricole","d":"La commune accueille les services départementaux de l'agriculture, des eaux et forêts et de l'élevage."},
+  {"k":"culture","t":"Le pays baoulé","d":"La commune partage la langue et les traditions du pays baoulé qui entoure la capitale."}],
+ "products":["Igname","Vivriers"],
+ "photos":[]},
+
+{"id":16,"featured":true,"tagline":"Là où le fleuve rencontre l'océan : plages, langoustes et vieux comptoir","intro":"À l'embouchure du fleuve Sassandra, sur le golfe de Guinée, la ville doit son nom aux navigateurs portugais qui baptisèrent la rivière « San Andrea » en 1471. Ancien comptoir, elle a gardé des bâtiments de l'époque coloniale.",
+ "highlights":[
+  {"k":"saveurs","t":"La langouste de Sassandra","d":"La pêche, notamment celle de la langouste, fait la réputation de la ville. Elle est pratiquée en particulier par les pêcheurs fanti.","photo":"Sassandrafanti.jpg"},
+  {"k":"site","t":"Le vieux comptoir","d":"Les bâtiments coloniaux racontent cinq siècles d'échanges avec les navigateurs portugais, hollandais, français et anglais."},
+  {"k":"nature","t":"L'embouchure et les plages","d":"Le fleuve se jette ici dans l'Atlantique, entre plages et criques."},
+  {"k":"culture","t":"Le pays néyo","d":"Néyo, Kodia, Bakwé et Godié sont les peuples d'origine ; la langue historique de la ville est le néyo."}],
+ "products":["Langouste","Poisson","Cacao","Hévéa"],
+ "photos":[{"f":"Sassandrafanti.jpg","c":"Pêcheurs fanti à Sassandra"}]},
+
+{"id":17,"tagline":"Koyiri : une lagune, des falaises et le cacao de l'arrière-pays","intro":"Sur le littoral, à 220 km d'Abidjan, Fresco (Koyiri pour ses habitants) a reçu son nom d'un navigateur portugais en 1472. Menacée par la mer, la ville s'est déplacée en 1967 sur un site qui surplombe la lagune N'gni.",
+ "highlights":[
+  {"k":"nature","t":"La lagune de Fresco","d":"Pêche artisanale au crabe et au poisson. Tout près, une presqu'île n'a pour habitants que des éléphants, des hippopotames et des singes.","photo":"File:Marché de poisson de Fresco.JPG"},
+  {"k":"economie","t":"Un carrefour du cacao","d":"Les fèves récoltées dans l'arrière-pays sont regroupées ici avant de rejoindre les ports d'Abidjan et de San-Pédro."},
+  {"k":"saveurs","t":"L'attiéké des femmes de Fresco","d":"Le manioc cultivé en zone forestière est transformé en attiéké, une source de revenus importante pour les femmes."},
+  {"k":"culture","t":"Le pays godié","d":"La ville est majoritairement peuplée de Godié (Kognooa)."}],
+ "products":["Cacao","Attiéké","Crabe et poisson","Banane"],
+ "photos":[{"f":"File:Marché de poisson de Fresco.JPG","c":"Le marché au poisson de Fresco"}]}
+]

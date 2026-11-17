@@ -1,0 +1,21 @@
+{
+ "id": 200,
+ "name": "Morondo",
+ "department": "Kani",
+ "region": "Worodougou",
+ "title": "Morondo",
+ "url": "https://fr.wikipedia.org/wiki/Morondo",
+ "wikidata": "Q1801666",
+ "coordinates": {
+  "lat": 8.95,
+  "lon": -6.78333333,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 19283,
+  "year": "2021"
+ },
+ "text": "Morondo  est une localité du nord-ouest de la Côte d'Ivoire, distante de 64 km  de son chef-lieu de département, Kani. Elle fait partie de la région du Worodougou dont le chef-lieu de région est Séguéla.\n\n\n== Histoire ==\n\n\n== Géographie ==\n\n\n== Notes et références ==\n\n\n== Liens externes ==\n\n Portail de la Côte d’Ivoire",
+ "images": []
+}

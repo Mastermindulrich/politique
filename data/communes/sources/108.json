@@ -1,0 +1,33 @@
+{
+ "id": 108,
+ "name": "Dianra",
+ "department": "Dianra",
+ "region": "Béré",
+ "title": "Dianra (Côte d'Ivoire)",
+ "url": "https://fr.wikipedia.org/wiki/Dianra_(C%C3%B4te_d%27Ivoire)",
+ "wikidata": "Q3026296",
+ "coordinates": {
+  "lat": 8.95294,
+  "lon": -6.25471,
+  "primary": true,
+  "globe": "earth"
+ },
+ "population": {
+  "value": 61527,
+  "year": "2021"
+ },
+ "text": "Dianra  est une localité du Nord de la Côte d'Ivoire, et appartenant au département de Mankono, région du Béré . La localité de Dianra est un chef-lieu de commune.\n\n\n== Notes et références ==\n\n Portail de la Côte d’Ivoire   Portail de la géographie",
+ "images": [
+  {
+   "file": "Fichier:Infirmier en campagne de vaccination.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/56/Infirmier_en_campagne_de_vaccination.jpg?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Infirmier_en_campagne_de_vaccination.jpg",
+   "width": 1024,
+   "height": 768,
+   "artist": "IBRAHOUA",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "description": "Ceci est une image en rapport avec le thème \" Santé + Bien-être \" en/au :"
+  }
+ ]
+}
