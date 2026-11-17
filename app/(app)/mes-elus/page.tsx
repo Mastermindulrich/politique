@@ -113,7 +113,12 @@ export default async function MyOfficialsPage() {
           <h2 className="mt-2 font-display text-[17px] font-bold">{t.myOfficials.ideas}</h2>
           <p className="mt-1 text-[14px] text-muted">{t.ideas.intro}</p>
         </Link>
-        <Link href="/elus" className="rounded-2xl border border-line p-4 hover:bg-paper/60 sm:col-span-2">
+        <Link href={priv?.vote_commune_id ? `/decouvertes?commune=${priv.vote_commune_id}` : "/decouvertes"} className="rounded-2xl border border-line p-4 hover:bg-paper/60">
+          <I.pin className="h-6 w-6 text-orange" />
+          <h2 className="mt-2 font-display text-[17px] font-bold">{lang === "fr" ? "Découvertes" : "Discoveries"}</h2>
+          <p className="mt-1 text-[14px] text-muted">{lang === "fr" ? "Ce que votre commune a de spécial : sites, culture, saveurs et fêtes." : "What makes your commune special: sights, culture, flavours and festivals."}</p>
+        </Link>
+        <Link href="/elus" className="rounded-2xl border border-line p-4 hover:bg-paper/60">
           <I.landmark className="h-6 w-6 text-green-deep" />
           <h2 className="mt-2 font-display text-[17px] font-bold">{t.officials.title}</h2>
           <p className="mt-1 text-[14px] text-muted">{t.officials.intro}</p>

@@ -96,3 +96,13 @@ export type TownHallShowcase = {
 };
 
 export const formatPopulation = (n: number, lang: "fr" | "en") => new Intl.NumberFormat(lang === "fr" ? "fr-FR" : "en-GB").format(n);
+
+/** A photo at one of Wikimedia's standard thumbnail widths (500 for cards, 960 for the cover). */
+export function photoUrl(p: Photo, w: 250 | 500 | 960) {
+  const clean = p.thumb.split("?")[0]!;
+  if (p.width && p.width <= w) return clean;
+  return clean.replace(/\/\d+px-/, `/${w}px-`);
+}
+
+/** Folds accents and case, so "Beoumi" finds "Béoumi". */
+export const fold = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
