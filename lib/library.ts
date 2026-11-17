@@ -8,7 +8,7 @@
 // relative au droit d'auteur et aux droits voisins, art. 10). Only the version
 // published in the Journal officiel is authoritative; every edition says so.
 
-export type LibraryCategory = "fondamental" | "institutions" | "elections" | "codes";
+export type LibraryCategory = "fondamental" | "institutions" | "elections" | "codes" | "famille";
 
 export type LibraryEntry = {
   id: string;
@@ -19,6 +19,8 @@ export type LibraryEntry = {
   summary: string;
   officialUrl: string;
   officialLabel: string;
+  /** officialUrl is a faithful transcription of the Journal officiel (no born-digital official text online). */
+  transcription?: boolean;
   /** A POLITIQUE edition exists: data/library/<id>.json and public/bibliotheque/<id>.pdf. */
   edition?: { version: string };
 };
@@ -28,6 +30,7 @@ export const CATEGORY_LABEL: Record<LibraryCategory, { fr: string; en: string }>
   institutions: { fr: "Fonctionnement des institutions", en: "How institutions work" },
   elections: { fr: "Élections", en: "Elections" },
   codes: { fr: "Codes", en: "Codes" },
+  famille: { fr: "Personnes et famille", en: "Persons and family" },
 };
 
 export const library: LibraryEntry[] = [
@@ -47,10 +50,11 @@ export const library: LibraryEntry[] = [
     title: "Code électoral",
     short: "Code électoral",
     category: "elections",
-    reference: "Loi n° 2000-514 du 1er août 2000 portant Code électoral, modifiée notamment par l'ordonnance n° 2020-356 du 8 avril 2020",
+    reference: "Ordonnance n° 2020-356 du 8 avril 2020 portant révision du Code électoral, modifiée",
     summary: "Qui peut voter et être élu, les listes électorales, la campagne, le vote, le dépouillement et le contentieux, pour chaque élection.",
-    officialUrl: "https://www.assnat.ci/Code-Electoral.pdf",
-    officialLabel: "Assemblée nationale",
+    officialUrl: "https://www.cei.ci/textes-de-loi/",
+    officialLabel: "Commission électorale indépendante",
+    edition: { version: "Texte de 2020, à jour de l'ordonnance n° 2025-290 du 7 mai 2025 (article 51)" },
   },
   {
     id: "reglement-assemblee-nationale",
@@ -61,17 +65,121 @@ export const library: LibraryEntry[] = [
     summary: "Comment l'Assemblée s'organise et travaille : bureau, groupes, commissions, séances, procédure législative et contrôle du Gouvernement.",
     officialUrl: "https://www.assnat.ci/reglement-assembleenationaledecotedivoire.pdf",
     officialLabel: "Assemblée nationale",
+    edition: { version: "Texte publié par l'Assemblée nationale" },
+  },
+  {
+    id: "loi-cei",
+    title: "Loi relative à la Commission électorale indépendante",
+    short: "Loi sur la CEI",
+    category: "elections",
+    reference: "Loi n° 2001-634 du 9 octobre 2001 portant composition, organisation, attributions et fonctionnement de la CEI, modifiée",
+    summary: "Ce qu'est la CEI, ses missions, qui la compose au niveau central et local, comment elle fonctionne et se finance.",
+    officialUrl: "https://www.cei.ci/textes-de-loi/",
+    officialLabel: "Commission électorale indépendante",
+    edition: { version: "Compilation de la CEI à jour en 2020, sans la loi modificative n° 2022-886 du 23 novembre 2022" },
+  },
+  {
+    id: "code-penal",
+    title: "Code pénal",
+    short: "Code pénal",
+    category: "codes",
+    reference: "Loi n° 2019-574 du 26 juin 2019 portant Code pénal, modifiée",
+    summary: "Les infractions et leurs peines : règles générales de la responsabilité pénale, puis chaque crime, délit et contravention, contre l'État, les personnes et les biens.",
+    officialUrl: "https://assnat.ci/IMG/pdf/loi_portant_code_penal.pdf",
+    officialLabel: "Assemblée nationale (texte de 2019)",
+    edition: { version: "Texte consolidé, à jour des lois n° 2021-893 du 21 décembre 2021 et n° 2024-358 de juin 2024 (saisie loidici.biz)" },
+  },
+  {
+    id: "code-procedure-penale",
+    title: "Code de procédure pénale",
+    short: "Code de procédure pénale",
+    category: "codes",
+    reference: "Loi n° 2018-975 du 27 décembre 2018 portant Code de procédure pénale, modifiée",
+    summary: "Comment la justice pénale enquête, poursuit et juge : police judiciaire, garde à vue, instruction, tribunaux, voies de recours, exécution des peines et droits des personnes poursuivies.",
+    officialUrl: "https://loidici.biz/2019/06/08/le-code-de-procedure-penale-2018/",
+    officialLabel: "loidici.biz",
+    transcription: true,
+    edition: { version: "Texte consolidé, à jour des lois n° 2022-192 du 11 mars 2022, n° 2023-894 de 2023 et n° 2024-359 du 11 juin 2024 (saisie loidici.biz)" },
+  },
+  {
+    id: "loi-conseil-constitutionnel",
+    title: "Loi organique sur le Conseil constitutionnel",
+    short: "Loi sur le Conseil constitutionnel",
+    category: "institutions",
+    reference: "Loi organique n° 2022-222 du 25 mars 2022 déterminant l'organisation et le fonctionnement du Conseil constitutionnel",
+    summary: "Composition du Conseil constitutionnel, statut de ses membres, et procédures devant lui : contrôle des lois, contentieux des élections, référendum, prestation de serment et constat de vacance.",
+    officialUrl: "https://loidici.biz/2025/09/08/le-conseil-constitutionnel-2022/lois-article-par-article/plus-de-textes-de-lois/73735/naty/",
+    officialLabel: "loidici.biz",
+    transcription: true,
+    edition: { version: "Texte de 2022 (saisie loidici.biz)" },
+  },
+  {
+    id: "loi-cour-des-comptes",
+    title: "Loi organique sur la Cour des comptes",
+    short: "Loi sur la Cour des comptes",
+    category: "institutions",
+    reference: "Loi organique n° 2018-979 du 27 décembre 2018 déterminant les attributions, la composition, l'organisation et le fonctionnement de la Cour des comptes",
+    summary: "La juridiction qui contrôle l'argent public : ses attributions, ses magistrats, le jugement des comptes publics, les fautes de gestion et l'assistance qu'elle doit au Gouvernement et au Parlement.",
+    officialUrl: "https://loidici.biz/2019/06/23/la-cour-des-comptes/lois-article-par-article/les-institutions-de-la-rep/15161/naty/",
+    officialLabel: "loidici.biz",
+    transcription: true,
+    edition: { version: "Texte de 2018 (saisie loidici.biz)" },
+  },
+  {
+    id: "loi-successions",
+    title: "Loi relative aux successions",
+    short: "Loi sur les successions",
+    category: "famille",
+    reference: "Loi n° 2019-573 du 26 juin 2019 relative aux successions",
+    summary: "Qui hérite et comment : ouverture de la succession, ordre des héritiers (enfants, parents, frères et sœurs, conjoint survivant), acceptation ou renonciation, partage et paiement des dettes.",
+    officialUrl: "https://loidici.biz/2019/08/16/la-loi-relative-aux-successions/lois-article-par-article/droit-de-la-famille/15608/naty/",
+    officialLabel: "loidici.biz",
+    transcription: true,
+    edition: { version: "Texte de 2019 (saisie loidici.biz)" },
+  },
+  {
+    id: "loi-minorite",
+    title: "Loi relative à la minorité",
+    short: "Loi sur la minorité",
+    category: "famille",
+    reference: "Loi n° 2019-572 du 26 juin 2019 relative à la minorité",
+    summary: "Les droits de l'enfant mineur et qui les exerce : autorité parentale des deux parents, administration de ses biens, tutelle, émancipation et rôle du juge des tutelles.",
+    officialUrl: "https://loidici.biz/2019/08/16/la-loi-relative-a-la-minorite/lois-article-par-article/droit-de-la-famille/15577/naty/",
+    officialLabel: "loidici.biz",
+    transcription: true,
+    edition: { version: "Texte de 2019 (saisie loidici.biz)" },
+  },
+  {
+    id: "loi-mariage",
+    title: "Loi relative au mariage",
+    short: "Loi sur le mariage",
+    category: "famille",
+    reference: "Loi n° 2019-570 du 26 juin 2019 relative au mariage",
+    summary: "Conditions pour se marier, oppositions, célébration et preuve du mariage, droits et devoirs des époux, régimes des biens, nullités et dissolution.",
+    officialUrl: "https://loidici.biz/2019/08/15/droit-du-mariage-2019/",
+    officialLabel: "loidici.biz",
+    transcription: true,
+    edition: { version: "Texte de 2019 (saisie loidici.biz)" },
+  },
+  {
+    id: "code-travail",
+    title: "Code du travail",
+    short: "Code du travail",
+    category: "codes",
+    reference: "Loi n° 2015-532 du 20 juillet 2015 portant Code du travail, modifiée",
+    summary: "Les règles du travail salarié dans le secteur privé : embauche et contrat, durée du travail et congés, salaire, santé et sécurité, syndicats, délégués du personnel, conventions collectives, conflits et sanctions.",
+    officialUrl: "https://loidici.biz/2018/08/26/le-code-du-travail-2016/lois-article-par-article/codes/1695/naty/",
+    officialLabel: "loidici.biz",
+    transcription: true,
+    edition: { version: "Texte de 2015, à jour de l'ordonnance n° 2021-902 du 22 décembre 2021 (saisie loidici.biz)" },
   },
 ];
 
 /** Texts the library will carry next; shown so readers know what is coming. */
 export const upcoming = [
   "Règlement du Sénat",
-  "Code pénal et Code de procédure pénale",
-  "Code civil (personnes, famille, successions)",
-  "Code du travail",
+  "Lois sur le nom, l'état civil et la filiation",
   "Loi sur les collectivités territoriales",
-  "Lois organiques sur le Conseil constitutionnel, la CEI et la Cour des comptes",
 ];
 
 /** Written by `npm run library`: size of each built edition PDF and of the full archive. */
@@ -82,8 +190,10 @@ export const libraryById = new Map(library.map((e) => [e.id, e]));
 // Structure of an edition file (data/library/<id>.json).
 export type EditionBlock =
   | { type: "preambule"; title: string; paras: string[] }
+  | { type: "livre"; num: string; title: string }
   | { type: "titre"; num: string; title: string }
   | { type: "chapitre"; num: string; nouveau?: boolean; title: string }
+  | { type: "section"; num: string; title: string; /** "Paragraphe"; "" for lettered sub-headings (A-, b)…). Default "Section". */ label?: string }
   | { type: "article"; num: string; nouveau?: boolean; paras: string[] }
   | { type: "signature"; paras: string[] };
 export type Edition = { id: string; title: string; reference: string; source: string; blocks: EditionBlock[] };
@@ -91,6 +201,13 @@ export type Edition = { id: string; title: string; reference: string; source: st
 export function articleLabel(b: { num: string; nouveau?: boolean }) {
   return `Article ${b.num === "1" ? "premier" : b.num}${b.nouveau ? " (nouveau)" : ""}`;
 }
+
+/** "Section 2", "Paragraphe 1", or the letter of a lettered sub-heading ("A", "b)"). */
+export const sectionLabel = (b: { num: string; label?: string }) =>
+  b.label === "" ? (/^[a-z]$/.test(b.num) ? `${b.num})` : b.num) : `${b.label ?? "Section"} ${ordinal(b.num)}`;
+
+/** "1" reads "premier" in headings (Titre premier, Chapitre premier…). */
+export const ordinal = (num: string) => (num === "1" ? "premier" : num);
 
 export const EDITION_NOTICE =
   "Édition POLITIQUE établie à partir du texte officiel, à titre d'information. Les textes officiels ne sont pas protégés par le droit d'auteur (loi n° 2016-555 du 26 juillet 2016, art. 10). Seule la version publiée au Journal officiel de la République de Côte d'Ivoire fait foi.";

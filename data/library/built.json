@@ -2,11 +2,66 @@
  "editions": {
   "constitution": {
    "pages": 71,
-   "bytes": 461381,
+   "bytes": 461301,
    "articles": 180
+  },
+  "code-electoral": {
+   "pages": 79,
+   "bytes": 533634,
+   "articles": 206
+  },
+  "reglement-assemblee-nationale": {
+   "pages": 82,
+   "bytes": 566290,
+   "articles": 154
+  },
+  "loi-cei": {
+   "pages": 20,
+   "bytes": 250607,
+   "articles": 50
+  },
+  "code-penal": {
+   "pages": 222,
+   "bytes": 1211224,
+   "articles": 576
+  },
+  "code-procedure-penale": {
+   "pages": 328,
+   "bytes": 1670955,
+   "articles": 918
+  },
+  "loi-conseil-constitutionnel": {
+   "pages": 26,
+   "bytes": 287785,
+   "articles": 61
+  },
+  "loi-cour-des-comptes": {
+   "pages": 55,
+   "bytes": 425696,
+   "articles": 159
+  },
+  "loi-successions": {
+   "pages": 36,
+   "bytes": 321350,
+   "articles": 136
+  },
+  "loi-minorite": {
+   "pages": 45,
+   "bytes": 365156,
+   "articles": 161
+  },
+  "loi-mariage": {
+   "pages": 29,
+   "bytes": 289299,
+   "articles": 105
+  },
+  "code-travail": {
+   "pages": 139,
+   "bytes": 842473,
+   "articles": 380
   }
  },
  "archive": {
-  "bytes": 356784
+  "bytes": 5814165
  }
 }
