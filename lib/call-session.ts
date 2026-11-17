@@ -3,6 +3,7 @@
 import type { RealtimeChannel } from "@supabase/supabase-js";
 import { supabaseBrowser } from "@/lib/supabase/client";
 import { trace } from "@/lib/call-trace";
+import { AUDIO_MAX_BITRATE, tuneOpus } from "@/lib/call-sdp";
 
 /**
  * One call between two phones: the WebRTC connection plus its signalling channel.
@@ -18,14 +19,35 @@ import { trace } from "@/lib/call-trace";
 export type SigKind = "accept" | "taken" | "decline" | "busy" | "cancel" | "hangup" | "desc" | "cand" | "media";
 export type Sig = { k: SigKind; f: string; t?: string; u: string; d?: unknown };
 
-/** Video kept small on purpose: looks sharp on a phone and keeps relay data (and cost) low. */
+/**
+ * HD video (Ulrich, 2026-11-17): 720p at 30 images per second, up to 1080p where the camera and
+ * the network allow. The browser still lowers resolution or frame rate on its own when the
+ * connection is weak ("balanced"), so a call on poor mobile data keeps going.
+ */
 export const VIDEO_CONSTRAINTS: MediaTrackConstraints = {
-  width: { ideal: 640, max: 1280 },
-  height: { ideal: 480, max: 720 },
-  frameRate: { ideal: 24, max: 30 },
+  width: { ideal: 1280, max: 1920 },
+  height: { ideal: 720, max: 1080 },
+  frameRate: { ideal: 30, max: 30 },
 };
-const VIDEO_MAX_BITRATE = 600_000;
-export const AUDIO_CONSTRAINTS: MediaTrackConstraints = { echoCancellation: true, noiseSuppression: true, autoGainControl: true };
+const VIDEO_MAX_BITRATE = 2_500_000;
+/**
+ * Echo cancellation, noise suppression and automatic volume stay on: they are what keeps a call
+ * on a phone speaker free of echo and street noise. Mono 48 kHz is what Opus encodes best.
+ */
+export const AUDIO_CONSTRAINTS: MediaTrackConstraints = {
+  echoCancellation: { ideal: true },
+  noiseSuppression: { ideal: true },
+  autoGainControl: { ideal: true },
+  channelCount: { ideal: 1 },
+  sampleRate: { ideal: 48000 },
+  sampleSize: { ideal: 16 },
+};
+
+function describe(d: RTCSessionDescription | null) {
+  if (!d) return undefined;
+  const j = d.toJSON();
+  return { ...j, sdp: j.sdp ? tuneOpus(j.sdp) : j.sdp };
+}
 
 export function callsSupported() {
   return typeof window !== "undefined" && typeof RTCPeerConnection !== "undefined" && Boolean(navigator.mediaDevices?.getUserMedia);
@@ -141,6 +163,7 @@ export class CallSession {
     };
     pc.onconnectionstatechange = () => {
       trace(this.callId, `pc:${pc.connectionState}`);
+      if (pc.connectionState === "connected") void this.tuneSenders();
       this.h.onConnection(pc.connectionState);
     };
     pc.oniceconnectionstatechange = () => trace(this.callId, `ice:${pc.iceConnectionState}`);
@@ -155,7 +178,7 @@ export class CallSession {
         this.makingOffer = true;
         await pc.setLocalDescription();
         trace(this.callId, "offer-sent");
-        this.send("desc", pc.localDescription?.toJSON(), this.peerDevice);
+        this.send("desc", describe(pc.localDescription), this.peerDevice);
       } catch (e) {
         trace(this.callId, "offer-failed", String((e as Error)?.message || e).slice(0, 120));
         console.error("offer failed", e);
@@ -168,23 +191,42 @@ export class CallSession {
       const v = local.getVideoTracks()[0] ?? null;
       this.audioTx = pc.addTransceiver(a ?? "audio", { direction: "sendrecv", streams: [local] });
       this.videoTx = pc.addTransceiver(v ?? "video", { direction: "sendrecv", streams: [local] });
-      void this.capVideo();
+      void this.tuneSenders();
     }
     this.localForAnswer = local;
   }
 
   private localForAnswer: MediaStream | null = null;
 
-  private async capVideo() {
-    const sender = this.videoTx?.sender;
+  /**
+   * Sending side: voice first (high priority, up to 96 kb/s), then HD video up to 2.5 Mb/s at
+   * 30 images per second. When the network is short, the browser protects the voice.
+   */
+  private async tuneSenders() {
+    await this.tune(this.audioTx?.sender, { maxBitrate: AUDIO_MAX_BITRATE, priority: "high", networkPriority: "high" });
+    const track = this.videoTx?.sender.track;
+    if (track && "contentHint" in track && !track.contentHint) track.contentHint = "motion";
+    await this.tune(this.videoTx?.sender, { maxBitrate: VIDEO_MAX_BITRATE, maxFramerate: 30, scaleResolutionDownBy: 1, priority: "medium", networkPriority: "medium" }, "balanced");
+  }
+
+  private async tune(sender: RTCRtpSender | undefined, enc: Record<string, unknown>, degradation?: RTCDegradationPreference) {
     if (!sender) return;
     try {
-      const p = sender.getParameters();
+      const p = sender.getParameters() as RTCRtpSendParameters & { degradationPreference?: RTCDegradationPreference };
       if (!p.encodings || !p.encodings.length) p.encodings = [{}];
-      p.encodings[0].maxBitrate = VIDEO_MAX_BITRATE;
+      Object.assign(p.encodings[0], enc);
+      if (degradation) p.degradationPreference = degradation;
       await sender.setParameters(p);
     } catch {
-      // Some browsers refuse before negotiation; the browser's own limits apply then.
+      // Some browsers refuse a field or refuse before negotiation: retry with the bitrate only.
+      try {
+        const p = sender.getParameters();
+        if (!p.encodings || !p.encodings.length) return;
+        p.encodings[0].maxBitrate = enc.maxBitrate as number;
+        await sender.setParameters(p);
+      } catch {
+        // the browser's own limits apply then
+      }
     }
   }
 
@@ -201,7 +243,7 @@ export class CallSession {
         if (this.polite && !this.audioTx) this.fillSlots();
         await pc.setLocalDescription();
         trace(this.callId, "answer-sent");
-        this.send("desc", pc.localDescription?.toJSON(), this.peerDevice);
+        this.send("desc", describe(pc.localDescription), this.peerDevice);
         // A repeated offer means the caller may have missed our earlier messages.
         for (const c of this.sentCandidates) this.send("cand", c, this.peerDevice);
       }
@@ -232,8 +274,8 @@ export class CallSession {
       this.videoTx.direction = "sendrecv";
       void this.videoTx.sender.replaceTrack(v);
       this.videoTx.sender.setStreams?.(local);
-      void this.capVideo();
     }
+    void this.tuneSenders();
   }
 
   private async onCandidate(c: RTCIceCandidateInit | null) {
@@ -254,7 +296,7 @@ export class CallSession {
   async setVideoTrack(track: MediaStreamTrack | null) {
     if (!this.videoTx) return;
     await this.videoTx.sender.replaceTrack(track);
-    void this.capVideo();
+    void this.tuneSenders();
   }
 
   /**
@@ -264,7 +306,7 @@ export class CallSession {
   resend() {
     const pc = this.pc;
     if (!pc || this.polite || this.closed) return;
-    if (pc.signalingState === "have-local-offer" && pc.localDescription) this.send("desc", pc.localDescription.toJSON(), this.peerDevice);
+    if (pc.signalingState === "have-local-offer" && pc.localDescription) this.send("desc", describe(pc.localDescription), this.peerDevice);
     for (const c of this.sentCandidates) this.send("cand", c, this.peerDevice);
   }
 

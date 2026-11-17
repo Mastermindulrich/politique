@@ -9,7 +9,7 @@ import { VotingPlaceFields, votingPlaceComplete, type VotingPlace } from "@/app/
 import { deleteAccount, requestVerification, signOut, toggleBlock, toggleMute, updatePrefs, updatePrivateProfile, updateProfile, updateProfileImage } from "@/lib/actions";
 import { communes } from "@/lib/ci-geo";
 import { t as dict } from "@/lib/i18n";
-import { EDGE, shrinkImage } from "@/lib/image-shrink";
+import { prepareImage } from "@/lib/image-shrink";
 import { supabaseBrowser } from "@/lib/supabase/client";
 import type { AccountType, Official, Profile } from "@/lib/types";
 
@@ -47,13 +47,14 @@ const IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp"];
 
 async function uploadImage(userId: string, original: File, kind: "avatar" | "banner") {
   if (!IMAGE_TYPES.includes(original.type)) return null;
-  // An avatar shows at 40 px in every feed: a 2 MB phone photo becomes ~100 KB here, still sharp.
-  const small = await shrinkImage(original, kind === "avatar" ? EDGE.avatar : EDGE.banner);
-  const file: Blob = small?.blob ?? original;
-  const type = small?.mime ?? original.type;
-  if (file.size > 5 * 1024 * 1024) return null;
+  // Original quality: the same photo, only its hidden metadata (GPS position) removed.
+  const small = await prepareImage(original, kind);
+  if (!small) return null;
+  const file: Blob = small.blob;
+  const type = small.mime;
+  if (file.size > 10 * 1024 * 1024) return null;
   const supabase = supabaseBrowser();
-  const ext = small?.ext ?? (type === "image/png" ? "png" : type === "image/webp" ? "webp" : "jpg");
+  const ext = small.ext;
   const path = `${userId}/${kind}-${Date.now()}.${ext}`;
   const { error } = await supabase.storage.from("politique-media").upload(path, file, { contentType: type, cacheControl: "31536000" });
   if (error) return null;

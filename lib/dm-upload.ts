@@ -1,6 +1,6 @@
 "use client";
 // Browser side of attachments in direct messages: shrink photos, read sizes, upload.
-import { EDGE, shrinkImage } from "./image-shrink";
+import { prepareImage } from "./image-shrink";
 import { DM_BUCKET, DM_MAX_BYTES, kindOf, storageType } from "./dm-media";
 import { supabaseBrowser } from "./supabase/client";
 import type { DmAttachment } from "./types";
@@ -8,16 +8,19 @@ import type { DmAttachment } from "./types";
 export type Prepared = { blob: Blob; name: string; mime: string; kind: DmAttachment["type"]; width?: number; height?: number };
 
 /**
- * Photos are resized to at most 2048 px and re-encoded (WebP, or JPEG on older Safari):
- * a 4 MB iPhone photo becomes ~500 KB, which matters on mobile data. GIFs keep their
- * animation. A photo the browser cannot decode (HEIC on Chrome, for example) is sent as a file.
+ * Photos go in their original quality, with only their hidden metadata (GPS position) removed.
+ * They are re-encoded only when the browser cannot show the format (HEIC) or the file is over
+ * 15 MB. A photo the browser cannot decode at all (HEIC on Chrome, for example) is sent as a file.
  */
 export async function prepare(file: File): Promise<Prepared> {
   const mime = file.type || "application/octet-stream";
   const name = file.name || "fichier";
-  if (mime.startsWith("image/") && mime !== "image/gif") {
-    const small = await shrinkImage(file, EDGE.message);
-    if (small) return { blob: small.blob, name: name.replace(/\.[^.]+$/, "") + "." + small.ext, mime: small.mime, kind: "image", width: small.width, height: small.height };
+  if (mime.startsWith("image/")) {
+    const small = await prepareImage(file, "message");
+    if (small) {
+      const size = small.width && small.height ? { width: small.width, height: small.height } : await imageSize(small.blob);
+      return { blob: small.blob, name: small.reencoded ? name.replace(/\.[^.]+$/, "") + "." + small.ext : name, mime: small.mime, kind: "image", ...size };
+    }
   }
   const kind = kindOf(mime);
   if (kind === "image") {
