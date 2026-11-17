@@ -13,8 +13,9 @@ export const dynamic = "force-dynamic";
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   // One database trip for the member and their voting place; the switches come from the server cache.
   const [viewer, priv, settings] = await Promise.all([getViewer(), getViewerPrivate(), getSettings()]);
-  // Every account must say where it votes before using the app.
-  if (viewer && !priv?.vote_region_id) redirect("/bienvenue");
+  // Every person must say where they vote before using the app. Institution and media
+  // accounts (such as the platform's editorial account) don't vote anywhere.
+  if (viewer && !priv?.vote_region_id && viewer.account_type !== "institution" && viewer.account_type !== "media") redirect("/bienvenue");
   if (!supabaseConfigured) {
     const t = dict("fr");
     return (

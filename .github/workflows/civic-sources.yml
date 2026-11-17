@@ -1,0 +1,16 @@
+name: Civic sources
+# Checks that the sources cited by the territory dossiers (data/civic) still answer.
+# Runs on GitHub because the development container cannot reach most .ci sites.
+on:
+  pull_request:
+    paths: ["data/civic/**", "scripts/check-civic-sources.mjs"]
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/check-civic-sources.mjs
