@@ -16,7 +16,7 @@ type Ed = {
   id: number; tagline: string; intro: string;
   highlights: { k: string; t: string; d: string; photo?: string }[];
   products?: string[]; events?: { t: string; when: string; d: string }[];
-  photos?: PhotoRef[]; sources?: { l: string; u: string }[]; featured?: boolean;
+  photos?: PhotoRef[]; photoSources?: number[]; noWiki?: boolean; sources?: { l: string; u: string }[]; featured?: boolean;
   population?: { value: number; year: string; source: string };
 };
 
@@ -42,7 +42,12 @@ for (const c of communes) {
   const s: Src = existsSync(srcFile) ? JSON.parse(readFileSync(srcFile, "utf8")) : { id: c.id, name: c.name };
   // Editorial files name a photo with or without its "Fichier:" / "File:" prefix.
   const bare = (f: string) => f.replace(/^(Fichier|File):/, "");
-  const byFile = new Map((s.images ?? []).map((i) => [bare(i.file), i]));
+  // noWiki: the article found for this name is about something else; keep nothing from it.
+  if (e.noWiki) { s.url = undefined; s.images = []; s.population = null; s.coordinates = null; }
+  const pool = [...(s.images ?? [])];
+  // A photo of this commune that is filed under a neighbour's article.
+  for (const other of e.photoSources ?? []) pool.push(...((JSON.parse(readFileSync(new URL(`sources/${other}.json`, root), "utf8")) as Src).images ?? []));
+  const byFile = new Map(pool.map((i) => [bare(i.file), i]));
   const photos = (e.photos ?? []).map((p) => {
     const ref = typeof p === "string" ? { f: p } : p;
     const im = byFile.get(bare(ref.f));

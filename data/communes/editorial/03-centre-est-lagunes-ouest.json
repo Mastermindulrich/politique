@@ -1,0 +1,221 @@
+[
+{"id":50,"tagline":"La capitale du Moronou et de son festival Morofwè N'ganda","intro":"À 204 km d'Abidjan, Bongouanou est le chef-lieu du Moronou, en pays agni. Plusieurs festivals y célèbrent la culture agni, sa cuisine et son patrimoine.",
+ "highlights":[
+  {"k":"fete","t":"Le Morofwè N'ganda Festival","d":"Un festival culturel qui réunit les filles et fils du Moronou pour promouvoir le patrimoine et le tourisme de la région."},
+  {"k":"nature","t":"Le lac Sokotê","d":"Sa baie aux poissons-chats est l'un des sites de la commune."},
+  {"k":"culture","t":"Le pays agni Morofwè","d":"Royauté, pagnes kita et fête des ignames rythment l'année."},
+  {"k":"economie","t":"Cacao, café, hévéa","d":"Le Moronou est une vieille terre de plantations."}],
+ "products":["Cacao","Café","Hévéa","Igname"],
+ "events":[{"t":"Morofwè N'ganda Festival","when":"Chaque année","d":"Culture, gastronomie et patrimoine agni."}],
+ "photos":[]},
+
+{"id":51,"tagline":"La ville royale des Agni Ahua et sa fête des ignames, le Bédiélouo","intro":"Dans le Moronou, Arrah est la ville principale du peuple Agni Ahua. Elle est dirigée, au plan coutumier, par un roi, Nanan Téhua II.",
+ "highlights":[
+  {"k":"fete","t":"Le Bédiélouo","d":"La fête des ignames marque la célébration de la nouvelle année chez les Agni Ahua."},
+  {"k":"culture","t":"Une royauté vivante","d":"Le roi et sa cour tiennent une place centrale dans la vie de la cité."},
+  {"k":"economie","t":"Cacao et vivriers","d":"L'agriculture de plantation fait vivre la commune."}],
+ "products":["Igname","Cacao","Café"],
+ "events":[{"t":"Bédiélouo, fête des ignames","when":"Chaque année","d":"Le nouvel an des Agni Ahua."}],
+ "photos":[]},
+
+{"id":52,"noWiki":true,"tagline":"Une commune agni du Moronou, sur la route de Bongouanou","intro":"M'Batto est un chef-lieu de département du Moronou, dans le centre-est. Comme ses voisines Bongouanou et Arrah, c'est une terre agni de planteurs.",
+ "highlights":[
+  {"k":"culture","t":"Le pays agni","d":"La commune partage la langue, la royauté et les fêtes du Moronou."},
+  {"k":"economie","t":"Cacao, café et hévéa","d":"Les plantations dessinent le paysage."}],
+ "products":["Cacao","Café","Hévéa","Igname"],"photos":[]},
+
+{"id":53,"featured":true,"tagline":"La capitale des Lacs, au bord du N'Zi, élue commune la plus propre","intro":"À 240 km d'Abidjan et 80 km de Yamoussoukro, Dimbokro est la capitale du district des Lacs et le chef-lieu du N'Zi. C'est la terre des Baoulé Agba. Son nom vient de « Djingbokro ».",
+ "highlights":[
+  {"k":"site","t":"Le pont sur le N'Zi","d":"L'ancien pont de l'époque coloniale enjambe le fleuve.","photo":"Pont coloniale Dimbokro.jpg"},
+  {"k":"site","t":"Le Pango","d":"Un puits historique creusé pendant la période coloniale.","photo":"PANGO DIMBOKRO.JPG"},
+  {"k":"culture","t":"Le 30 janvier 1950","d":"Une date de l'histoire nationale : la répression d'une manifestation de planteurs et de militants a marqué la marche vers l'indépendance."},
+  {"k":"economie","t":"Prix d'excellence 2018","d":"Dimbokro a reçu le prix de la commune la plus propre."}],
+ "products":["Igname","Anacarde","Cacao"],
+ "photos":[{"f":"Mairie de Dimbokro 02.jpg","c":"La mairie de Dimbokro"},{"f":"Pont coloniale Dimbokro.jpg","c":"L'ancien pont sur le N'Zi"},{"f":"PANGO DIMBOKRO.JPG","c":"Le Pango, puits historique"},{"f":"Village de Dimbokro (Côte d'Ivoire).jpg","c":"Dimbokro autrefois"}],
+ "photoSources":[50]},
+
+{"id":54,"tagline":"Une ville baoulé du N'Zi, sur la route de Dimbokro à Daoukro","intro":"À environ 290 km d'Abidjan, Bocanda occupe une position stratégique sur l'axe Dimbokro-Daoukro. Elle a longtemps été un centre important de production de café et de cacao.",
+ "highlights":[
+  {"k":"economie","t":"Café, cacao, igname","d":"L'économie repose sur les cultures de rente et les vivriers : igname, manioc, maïs."},
+  {"k":"culture","t":"Traditions baoulé","d":"Cérémonies du cycle agricole et rites d'initiation, avec une vie associative très active."},
+  {"k":"nature","t":"L'axe Dimbokro-Bocanda","d":"La route traverse la savane arborée du centre.","photo":"Axe Dimbokro-Bocanda 1.jpg"}],
+ "products":["Igname","Cacao","Café","Manioc"],
+ "photos":[{"f":"Axe Dimbokro-Bocanda 1.jpg","c":"Sur l'axe Dimbokro-Bocanda"},{"f":"Axe Dimbokro-Bocanda 4.jpg","c":"Sur l'axe Dimbokro-Bocanda"},{"f":"Axe Dimbokro-Bocanda 6.jpg","c":"Sur l'axe Dimbokro-Bocanda"}]},
+
+{"id":55,"tagline":"Le grenier du N'Zi, fondé par deux frères","intro":"Commune depuis 1985, Kouassi-Kouassikro doit son existence à deux frères : Konan Koffi, cultivateur, et Konan Kouassi, éleveur.",
+ "highlights":[
+  {"k":"saveurs","t":"La koubba","d":"L'igname précoce, appelée ici « koubba », est une spécialité locale."},
+  {"k":"economie","t":"Le grenier de la région","d":"Arachide, manioc, piment, aubergine, tomate et anacarde poussent sur des terres très fertiles."},
+  {"k":"culture","t":"L'histoire des deux frères","d":"Le campement de l'aîné, Koffiklô, recevait la visite du commandant de cercle de Bocanda."}],
+ "products":["Igname koubba","Arachide","Piment","Aubergine","Anacarde"],"photos":[]},
+
+{"id":56,"featured":true,"tagline":"La capitale du pays abbey, ville du rail à 79 km d'Abidjan","intro":"Chef-lieu de l'Agnéby-Tiassa, Agboville est la ville des Abbey, des Krobou et des Attié. Elle s'est développée avec le chemin de fer Abidjan-Niger.",
+ "highlights":[
+  {"k":"site","t":"La gare d'Agboville","d":"Une des gares historiques de la ligne Abidjan-Ouagadougou.","photo":"Gare sitarail Agbovile.JPG"},
+  {"k":"culture","t":"Le peuple abbey","d":"Venus de l'actuel Ghana entre le XVIIe et le XVIIIe siècle, les Abbey ont donné son identité à la région."},
+  {"k":"economie","t":"Bois, cacao, café","d":"Les ressources de la commune sont le bois et les cultures de plantation."}],
+ "products":["Cacao","Café","Bois","Banane"],
+ "photos":[{"f":"Gare sitarail Agbovile.JPG","c":"La gare d'Agboville"},{"f":"La Mairie d’Agboville 04.jpg","c":"La mairie"},{"f":"Préfecture d’Agboville.jpg","c":"La préfecture"}]},
+
+{"id":57,"tagline":"La capitale du pays abidji","intro":"Dans l'Agnéby-Tiassa, Sikensi est la ville des Abidji. Ses deux quartiers, A et B, ont été réunifiés en 2008 après cinquante-neuf ans de séparation.",
+ "highlights":[
+  {"k":"culture","t":"Le peuple abidji","d":"Un peuple lagunaire dont les fêtes de génération et le Dipri, célébré dans les villages, sont connus dans tout le pays."},
+  {"k":"culture","t":"La réunification de 2008","d":"Le chef central Antoine Sassou N'Guessan a réuni les quartiers A et B."},
+  {"k":"site","t":"L'hôtel communal","d":"Réhabilité, il se dresse au centre de la ville.","photo":"Hôtel communal de Sikensi.jpg"},
+  {"k":"culture","t":"Les chants de Katadji","d":"Dans la nuit du 19 au 20 décembre 1972, des habitants de Katadji disent avoir entendu des cantiques dans le ciel : le récit a marqué la mémoire de Sikensi."}],
+ "products":["Hévéa","Palmier à huile","Cacao","Manioc"],
+ "photos":[{"f":"Hôtel communal de Sikensi.jpg","c":"L'hôtel communal de Sikensi"}]},
+
+{"id":58,"tagline":"La cité du barrage, voisine de la réserve de Lamto","intro":"À 160 km d'Abidjan, Taabo est née avec son barrage hydroélectrique sur le Bandama. L'ancien village a disparu sous les eaux et un nouveau a été bâti pour ses habitants.",
+ "highlights":[
+  {"k":"site","t":"Le barrage de Taabo","d":"Un des grands ouvrages hydroélectriques du pays, après Ayamé sur la Bia."},
+  {"k":"nature","t":"La réserve scientifique de Lamto","d":"Un site de recherche sur la savane et la forêt, réputé bien au-delà du pays.","photo":"Réserve Scientifique De Lamto.jpg"},
+  {"k":"economie","t":"Un site pilote de suivi démographique","d":"Depuis 2008, Taabo abrite le premier système de surveillance démographique de Côte d'Ivoire."}],
+ "products":["Poisson du lac","Cacao","Vivriers"],
+ "photos":[{"f":"Réserve Scientifique De Lamto.jpg","c":"La réserve scientifique de Lamto"},{"f":"Mairie de Taabo en 2025.jpg","c":"La mairie de Taabo"}]},
+
+{"id":59,"tagline":"Le vieux pont sur le Bandama, à mi-chemin des deux capitales","intro":"À 120 km d'Abidjan comme de Yamoussoukro, Tiassalé est une ville du Bandama où Baoulé et Abbey vivent côte à côte depuis le XVIIIe siècle.",
+ "highlights":[
+  {"k":"site","t":"Le pont de Tiassalé","d":"Construit en 1934, il franchit le Bandama.","photo":"Pont de Tiassalé.JPG"},
+  {"k":"culture","t":"Les descendants de Tanoh Adjo","d":"Les Baoulé de Tiassalé se disent issus de la princesse Tanoh Adjo, sœur de la reine Pokou."},
+  {"k":"nature","t":"Les rives du Bandama","d":"Forêt et fleuve font la richesse naturelle de la commune.","photo":"Tiassalé -Environnement et Biodiversité 01.jpg"}],
+ "products":["Banane","Cacao","Hévéa","Poisson"],
+ "photos":[{"f":"Pont de Tiassalé.JPG","c":"Le pont de Tiassalé, construit en 1934"},{"f":"Tiassalé -Environnement et Biodiversité 01.jpg","c":"Nature à Tiassalé"},{"f":"Tiassalé -Environnement et Biodiversité 06.jpg","c":"Nature à Tiassalé"},{"f":"Moyen de transport de passagers à Tiassalé.jpg","c":"Transport à Tiassalé"}]},
+
+{"id":60,"featured":true,"tagline":"Capitale traditionnelle des Adioukrou, au bord de la lagune","intro":"Aux portes d'Abidjan, Dabou est le chef-lieu des Grands-Ponts et la capitale traditionnelle du peuple adioukrou. Son wharf en fit un grand centre économique à l'époque coloniale.",
+ "highlights":[
+  {"k":"site","t":"Le fort de Dabou","d":"Construit au bord de la lagune Ébrié après le traité signé en 1843 avec la confédération de Débrimou, il subsiste à l'état de vestiges."},
+  {"k":"culture","t":"Les cérémonies adioukrou","d":"Chants et danses accompagnent les intronisations et les fêtes de classes d'âge.","photo":"Un groupe de femme chantant en dansant.jpg"},
+  {"k":"economie","t":"Palmier à huile et hévéa","d":"L'agriculture industrielle, portée notamment par la SAPH, fait vivre la région."},
+  {"k":"saveurs","t":"L'attiéké de Dabou","d":"Le pays adioukrou est l'un des berceaux de l'attiéké."}],
+ "products":["Attiéké","Huile de palme","Hévéa","Poisson de lagune"],
+ "photos":[{"f":"Un groupe de femme chantant en dansant.jpg","c":"Femmes chantant lors d'une intronisation"},{"f":"Un groupe d’homme et de femme chantant en marchant.jpg","c":"Cortège d'intronisation"},{"f":"Une femme interprétant des chants.jpg","c":"Une chanteuse"}]},
+
+{"id":61,"featured":true,"tagline":"« La ville des trois eaux » : l'océan, le Bandama et la lagune","intro":"À une centaine de kilomètres d'Abidjan, Grand-Lahou se trouve là où se rencontrent l'Atlantique, le Bandama et la lagune Tagba. Menacée par l'érosion, la ville a été déplacée en 1973, à 15 km du vieux Lahou.",
+ "highlights":[
+  {"k":"nature","t":"L'embouchure du Bandama","d":"Pêcheurs en pirogue, bancs de sable et mangrove.","photo":"Pêcheur sur le fleuve Badaman à Grand-Lahou.JPG"},
+  {"k":"site","t":"Lahou-Kpanda, le vieux Lahou","d":"L'ancien comptoir, sur sa langue de terre, lutte contre la mer. Il garde la mémoire de la traite.","photo":"RCI-Grand Lahou-Constructions sur côte attaquée par la mer 1.jpg"},
+  {"k":"nature","t":"L'île aux chimpanzés","d":"Un des sites les plus visités de la lagune.","photo":"Ile aux chimpanzés à Grand-Lahou.JPG"},
+  {"k":"fete","t":"Le festival Efrouba du livre","d":"Un festival ouest-africain consacré au livre et à la lecture."}],
+ "products":["Poisson","Noix de coco","Palmier à huile"],
+ "events":[{"t":"Festival Efrouba du livre","when":"Chaque année","d":"Livre et lecture."}],
+ "photos":[{"f":"Pêcheur sur le fleuve Badaman à Grand-Lahou.JPG","c":"Pêcheur sur le Bandama"},{"f":"Ile aux chimpanzés à Grand-Lahou.JPG","c":"L'île aux chimpanzés"},{"f":"RCI-Grand Lahou-Constructions sur côte attaquée par la mer 1.jpg","c":"La côte du vieux Lahou attaquée par la mer"},{"f":"Pont à l'entrée de la ville de Grand-Lahou.JPG","c":"Le pont à l'entrée de la ville"}]},
+
+{"id":62,"featured":true,"tagline":"La presqu'île aux cocotiers, à un pont d'Abidjan","intro":"Entre océan et lagune Ébrié, Jacqueville a longtemps été isolée du reste du pays. Depuis l'ouverture du pont Philippe-Yacé, le 25 mars 2015, c'est une station balnéaire très prisée.",
+ "highlights":[
+  {"k":"nature","t":"Les plages","d":"Des kilomètres de sable et de cocotiers, comme à Mougognini.","photo":"Wiknic Côte d'Ivoire 2015 3.jpg"},
+  {"k":"saveurs","t":"Le mâchoiron","d":"Le poisson de la lagune, piqué et cuit au feu de bois.","photo":"Machoiron piqué de jacqueville.JPG"},
+  {"k":"site","t":"Le pont Philippe-Yacé","d":"L'ouvrage qui a relié la presqu'île au continent."},
+  {"k":"culture","t":"Vingt-trois villages","d":"Alladian et Ahizi peuplent les villages de la bande de terre. Le nom de la ville viendrait de l'Union Jack."}],
+ "products":["Poisson","Noix de coco","Tourisme balnéaire"],
+ "photos":[{"f":"Wiknic Côte d'Ivoire 2015 3.jpg","c":"La plage de Mougognini"},{"f":"Cocotiers sur la plage de Jacqueville, Côte d'Ivoire, en 1973.jpg","c":"Les cocotiers de la plage, 1973"},{"f":"Machoiron piqué de jacqueville.JPG","c":"Mâchoiron piqué au feu de bois"},{"f":"Wiknic Côte d'Ivoire 2015 5.jpg","c":"À la plage"}]},
+
+{"id":63,"tagline":"« Le clan d'Adzo » : la capitale du pays akyé","intro":"À 105 km d'Abidjan, sur le fleuve Mé, Adzopé est le chef-lieu de La Mé. Son nom, « Adzopun », désigne tous ceux du clan d'Adzo, son fondateur.",
+ "highlights":[
+  {"k":"culture","t":"Quatre cantons akyé","d":"Anapé, Tchoya, N'kadjé et Kétun."},
+  {"k":"site","t":"La mission catholique","d":"Son clocher est un repère de la ville.","photo":"Le clocher de la mission catholique d'Adzopé.jpg"},
+  {"k":"economie","t":"Un pôle de santé","d":"Le centre hospitalier régional de 200 lits a été inauguré le 8 avril 2022."},
+  {"k":"economie","t":"Cacao, café, hévéa","d":"La Mé est une vieille région de plantations."}],
+ "products":["Cacao","Café","Hévéa","Banane plantain"],
+ "photos":[{"f":"Le clocher de la mission catholique d'Adzopé.jpg","c":"Le clocher de la mission catholique"}]},
+
+{"id":64,"tagline":"Une ville akyé de La Mé, département depuis 2007","intro":"À 142 km d'Abidjan, Akoupé est une ville du peuple attié, ou akyé. D'abord sous-préfecture d'Adzopé, elle est devenue chef-lieu de département.",
+ "highlights":[
+  {"k":"culture","t":"Le pays akyé","d":"Fêtes de génération et classes d'âge organisent la vie des villages."},
+  {"k":"economie","t":"Cacao et café","d":"Akoupé est une commune de planteurs."}],
+ "products":["Cacao","Café","Hévéa"],"photos":[]},
+
+{"id":65,"tagline":"« Ni une dette, ni un fardeau » : les Akyé Lepin au bord de la Comoé","intro":"À 45 km d'Abidjan, Alépé est une ville attié, avec des populations agni et gwa. Les Akyé Lepin ont suivi le cours de la Comoé sous la conduite de leur chef Alé.",
+ "highlights":[
+  {"k":"culture","t":"Les Akyé Lepin","d":"« Han-le-pin » : nous ne sommes ni une dette, ni un fardeau."},
+  {"k":"nature","t":"Le lac d'Alépé et la Comoé","d":"Près du village de Yakassé, un lac ; à la sortie de la ville, le fleuve.","photo":"Lac alépé.jpg"},
+  {"k":"economie","t":"Café, cacao, hévéa, palmier","d":"Les quatre cultures de la commune, avec les vivriers."}],
+ "products":["Cacao","Hévéa","Palmier à huile","Manioc"],
+ "photos":[{"f":"Lac alépé.jpg","c":"Le lac d'Alépé"}]},
+
+{"id":66,"tagline":"Des collines akyé à 103 km d'Abidjan","intro":"Près d'Adzopé, Yakassé-Attobrou est un chef-lieu de département de La Mé au relief vallonné. Sa nouvelle mairie a été inaugurée le 22 janvier 2022.",
+ "highlights":[
+  {"k":"nature","t":"Un relief de collines","d":"Le paysage est accidenté, sous un climat à deux saisons des pluies."},
+  {"k":"economie","t":"La route d'Adzopé","d":"L'axe Adzopé-Yakassé-Attobrou, réalisé en 2019, relie la commune au reste du Sud-Est."},
+  {"k":"culture","t":"Le pays akyé","d":"La population d'origine est attié."}],
+ "products":["Cacao","Café","Hévéa"],"photos":[]},
+
+{"id":67,"tagline":"« Le lieu où l'on juge » : la capitale du Cavally, au bord du N'zo","intro":"À environ 600 km d'Abidjan, Guiglo est le chef-lieu du Cavally. Son nom vient du guéré « Guin-glô », le lieu où l'on rend la justice. C'est le pays des Wê.",
+ "highlights":[
+  {"k":"nature","t":"Le fleuve N'zo","d":"Il coule près de la ville, sous un pont qui ouvre la route de l'Ouest.","photo":"Nzoguiglo.jpg"},
+  {"k":"culture","t":"Le pays wê","d":"Masques et danses font la renommée culturelle de l'Ouest forestier."},
+  {"k":"economie","t":"Cacao, café, bois","d":"La forêt et les plantations font vivre la région."}],
+ "products":["Cacao","Café","Hévéa","Bois"],
+ "photos":[{"f":"Nzoguiglo.jpg","c":"Le fleuve N'zo près de Guiglo"},{"f":"Pontnzo.jpg","c":"Le pont sur le N'zo"}]},
+
+{"id":68,"tagline":"« Près de la rivière Boo » : festival de masques et grandes forêts","intro":"Chef-lieu de département du Cavally, Bloléquin tient son nom du guéré « Gboe-Kin », près de la rivière Boo. Le village a été installé à son emplacement actuel en 1935, sur l'axe Guiglo-Toulépleu.",
+ "highlights":[
+  {"k":"fete","t":"Le festival de masques","d":"C'est le grand rendez-vous traditionnel et touristique du département."},
+  {"k":"nature","t":"Les forêts de Goin, Débé et Scio","d":"Elles abritent une grande variété d'animaux et de plantes."},
+  {"k":"economie","t":"Café, cacao, hévéa","d":"Avec l'igname, le manioc, le riz et l'exploitation forestière."}],
+ "products":["Cacao","Café","Hévéa","Riz"],
+ "events":[{"t":"Festival de masques","when":"Chaque année","d":"Sorties de masques wê."}],"photos":[]},
+
+{"id":69,"featured":true,"tagline":"Aux portes de la dernière grande forêt primaire d'Afrique de l'Ouest","intro":"Entre le parc national de Taï et le fleuve Cavally, qui fait frontière avec le Liberia, Taï est le fief des Oubi et un point de départ pour l'écotourisme.",
+ "highlights":[
+  {"k":"nature","t":"Le parc national de Taï","d":"Inscrit au patrimoine mondial de l'UNESCO, il est connu pour ses chimpanzés et sa forêt intacte.","photo":"Hypselodelphys poggeana (Marantaceae) (23817615873).jpg"},
+  {"k":"nature","t":"Le Cavally","d":"On traverse le fleuve en pirogue vers le Liberia.","photo":"Taï, commune de Côte d'Ivoire. Frontière avec le Libéria, point de passage sur le Cavally.JPG"},
+  {"k":"site","t":"Le marché de Taï","d":"Le cœur de la petite ville.","photo":"Le marché de la ville de Taï, aux portes du Parc national de Taï en Côte d'Ivoire..JPG"},
+  {"k":"economie","t":"Hévéa, cacao, cola","d":"Avec le riz, le plantain, la pêche et la pisciculture."}],
+ "products":["Cacao","Hévéa","Cola","Riz"],
+ "sources":[{"l":"UNESCO : Parc national de Taï","u":"https://whc.unesco.org/fr/list/195/"}],
+ "photos":[{"f":"Le marché de la ville de Taï, aux portes du Parc national de Taï en Côte d'Ivoire..JPG","c":"Le marché de Taï"},{"f":"Taï, commune de Côte d'Ivoire. Frontière avec le Libéria, point de passage sur le Cavally.JPG","c":"Le passage du Cavally"},{"f":"Piste de Taï.JPG","c":"La piste de Taï"},{"f":"Hypselodelphys poggeana (Marantaceae) (23817615873).jpg","c":"Flore du parc national de Taï"}]},
+
+{"id":70,"tagline":"À la frontière du Liberia, au pied du mont Séité","intro":"À 650 km d'Abidjan, Toulépleu a été fondée en 1913. Elle est bordée à l'ouest et au sud par le Liberia. Wê et Yacouba y vivent.",
+ "highlights":[
+  {"k":"nature","t":"Le mont Séité","d":"Le relief qui domine la commune."},
+  {"k":"site","t":"La paroisse Saint-Kizito","d":"Elle fait partie du patrimoine de la ville."},
+  {"k":"economie","t":"Cacao, café, riz","d":"L'agriculture de la zone forestière."}],
+ "products":["Cacao","Café","Riz","Hévéa"],"photos":[]},
+
+{"id":71,"tagline":"Le carrefour de l'Ouest, capitale du Guémon","intro":"Chef-lieu du Guémon, dans une zone de forêt et de montagnes, Duékoué est le grand carrefour routier de l'Ouest, vers Man, Guiglo et Daloa. Sa population d'origine est wê.",
+ "highlights":[
+  {"k":"economie","t":"Un carrefour","d":"Toutes les routes de l'Ouest se croisent ici.","photo":"Duékoué, Ouest de la Côte d'Ivoire.JPG"},
+  {"k":"culture","t":"Le pays wê","d":"Masques, danses et chefferies de la tradition guéré."},
+  {"k":"site","t":"La mission catholique","d":"Un lieu qui compte dans l'histoire de la ville.","photo":"Katholische Mission in Duékoué.jpg"},
+  {"k":"economie","t":"Cacao et café","d":"Le Guémon est une grande région de plantations."}],
+ "products":["Cacao","Café","Riz","Bois"],
+ "photos":[{"f":"Duékoué.jpg","c":"Vue de Duékoué"},{"f":"Duékoué, Ouest de la Côte d'Ivoire.JPG","c":"La route nationale"},{"f":"Katholische Mission in Duékoué.jpg","c":"La mission catholique"},{"f":"Baguettes in Duékoué.jpg","c":"Vente de pain"}]},
+
+{"id":72,"tagline":"Entre Duékoué et Man, une ville wê du Guémon","intro":"Bangolo est un chef-lieu de département du Guémon, sur la route qui monte de Duékoué vers Man.",
+ "highlights":[
+  {"k":"culture","t":"Le pays wê","d":"Bangolo partage les masques et les traditions de l'Ouest."},
+  {"k":"economie","t":"Cacao, café et riz","d":"L'agriculture de la zone forestière."}],
+ "products":["Cacao","Café","Riz"],"photos":[]},
+
+{"id":73,"tagline":"« Chez Fahé Cor » : le pays wobé, entre le Sassandra et les montagnes","intro":"Dans le Guémon, Facobly est bordée au nord par le fleuve Sassandra et au sud par Biankouma et Man. Elle est peuplée par les Wobé, du peuple wê.",
+ "highlights":[
+  {"k":"culture","t":"L'origine du mot wobé","d":"À une colonne militaire qui demandait le nom des habitants, on répondit « Wê-bè » : là-bas, ce sont les Wê."},
+  {"k":"economie","t":"Trois marchés","d":"Facobly-ville le mardi, Soakpé le jeudi, Tieny-Seably le samedi."},
+  {"k":"economie","t":"Cacao et café","d":"La forêt attire de nombreux planteurs."}],
+ "products":["Cacao","Café","Riz"],"photos":[]},
+
+{"id":74,"tagline":"Une commune wê du Guémon","intro":"Kouibly est un chef-lieu de département de l'Ouest. Son nom, en langue wê, réunit « koui », le Blanc, et « bly », chez : le lieu où s'installèrent les colons.",
+ "highlights":[
+  {"k":"culture","t":"Un nom wê","d":"Kouibly garde dans son nom la trace de l'époque coloniale."},
+  {"k":"economie","t":"Cacao, café et riz","d":"L'agriculture de la zone forestière."}],
+ "products":["Cacao","Café","Riz"],"photos":[]},
+
+{"id":75,"featured":true,"tagline":"La ville aux dix-huit montagnes : cascades, Dent de Man et ponts de lianes","intro":"Capitale du district des Montagnes et chef-lieu du Tonkpi, Man est l'une des grandes destinations touristiques du pays. Yacouba, Wobé et Toura y vivent, entourés de sommets.",
+ "highlights":[
+  {"k":"nature","t":"La cascade et la Dent de Man","d":"La chute d'eau, à la sortie de la ville, et le pic qui la domine.","photo":"Les cascades de Man.jpg"},
+  {"k":"nature","t":"Dix-huit montagnes","d":"Le mont Glas et ses voisins encerclent la ville, couverts de forêt humide.","photo":"Mont Glas, Man, Côte d'Ivoire.JPG"},
+  {"k":"culture","t":"Masques et danses","d":"La région est célèbre pour ses danses traditionnelles.","photo":"Masque de céréminie.jpeg"},
+  {"k":"site","t":"Les ponts de lianes","d":"Tressés selon la tradition, ils franchissent les rivières des environs."}],
+ "products":["Café","Cacao","Riz de montagne","Artisanat dan"],
+ "photos":[{"f":"Les cascades de Man.jpg","c":"Les cascades de Man"},{"f":"Mont Glas, Man, Côte d'Ivoire.JPG","c":"Le mont Glas"},{"f":"Woman with watering can, Dent de Man.jpg","c":"Sur la route de la cascade"},{"f":"Masque de céréminie.jpeg","c":"Masque de cérémonie"},{"f":"Village de Zadepleu.jpg","c":"Le village de Zadepleu"},{"f":"La Cascade de Man 1990.jpg","c":"La cascade en 1990"}]},
+
+{"id":76,"tagline":"« Au-dessus du mont Bian » : village yacouba, indigo et forgerons","intro":"À 46 km au nord de Man, Biankouma tient son nom de « Biangouin », au-dessus du mont Bian. Son vieux village est typique de l'habitat yacouba. Ses habitants sont les Bianois.",
+ "highlights":[
+  {"k":"artisanat","t":"Les toiles à l'indigo","d":"Les tisserands fabriquent des toiles bleu et blanc, teintes au véritable indigo."},
+  {"k":"site","t":"Gouan et son fromager","d":"À 60 km au nord, le village abrite un fromager bicentenaire de 8 mètres de diamètre."},
+  {"k":"artisanat","t":"Yo, village de forgerons","d":"Forgerons et sculpteurs y travaillent toujours."},
+  {"k":"nature","t":"Le parc national du Mont Sangbé","d":"Biankouma en est un point de départ."}],
+ "products":["Toiles à l'indigo","Sculpture","Café","Riz"],
+ "photos":[{"f":"Biankouma1.jpg","c":"Vue de Biankouma"},{"f":"Village Gan 1.jpg","c":"Le village de Gan"},{"f":"MairieBiankouma.jpg","c":"La mairie"}]}
+]
