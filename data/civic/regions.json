@@ -2,13 +2,375 @@
  "about": "Programmes et budgets des conseils régionaux, d'après des sources publiques.",
  "checked": "2026-11-16",
  "items": [
-  {"office":"conseil-regional-san-pedro","kind":"projet","title":"Programme triennal 2027-2029 : 15,06 milliards de FCFA","body":"Adopté en session ordinaire le 20 août 2026 : 27 actions et 134 opérations (dont 41 nouvelles) dans l'éducation, la santé, l'eau potable et la réhabilitation des pistes rurales ; 236 millions de FCFA d'actions financées sur ressources propres (associations, éducation, femmes et jeunes).","status":"annonce","made_at":"2026-08-20","due_at":"2029-12","source":{"name":"AIP","date":"2026-08-21","url":"https://www.aip.ci/cote-divoire-aip-san-pedro-plus-de-15-milliards-fcfa-programmes-pour-accelerer-le-developpement-local-sur-trois-ans/"}},
-  {"office":"conseil-regional-la-me","kind":"projet","title":"Budget 2026 : 5,08 milliards de FCFA pour 89 opérations de terrain","body":"Budget primitif 2026 de 6 425 299 000 FCFA adopté le 14 novembre 2025 à Yakassé-Attobrou, en hausse de 29 %. L'investissement (79 %) couvre 25 actions et 89 opérations : éducation, santé, insertion des jeunes, autonomisation des femmes, environnement.","status":"annonce","made_at":"2025-11-14","source":{"name":"AIP","date":"2025-11-15","url":"https://www.aip.ci/cote-divoire-aip-le-budget-primitif-de-lexercice-2026-du-conseil-regional-de-la-me-adopte-a-plus-de-six-milliards-de-francs-cfa/"}},
-  {"office":"conseil-regional-belier","kind":"projet","title":"Budget 2027 de 8,68 milliards de FCFA","body":"Adopté à l'unanimité le 9 octobre 2026 à Molonou (Tiébissou), en hausse de 1,744 milliard de FCFA par rapport à 2026 (6,937 milliards).","status":"annonce","made_at":"2026-10-09","source":{"name":"AIP","date":"2026-10-11","url":"https://www.aip.ci/cote-divoire-aip-le-conseil-regional-du-belier-adopte-un-budget-primitif-2027-de-8681-milliards-fcfa-en-hausse-de-1744-milliard-fcfa/"}},
-  {"office":"conseil-regional-indenie-djuablin","kind":"projet","title":"Livrer 2 500 tables-bancs aux collèges de proximité","body":"Quatre collèges de proximité ont ouvert pour l'année 2025-2026 ; 2 500 tables-bancs ont été annoncées pour ces établissements, livraison en attente au 6 octobre 2025. Le budget 2026 adopté ce jour-là atteint 6,64 milliards de FCFA, dont 5,30 milliards d'investissement.","status":"en_cours","made_at":"2025-10-06","source":{"name":"AllAfrica","date":"2025-10-10","url":"https://fr.allafrica.com/stories/202510100538.html"}},
-  {"office":"conseil-regional-poro","kind":"projet","title":"600 millions de FCFA pour les cantines scolaires en 2026","body":"Inscrits au budget primitif 2026 de la région du Poro (7,33 milliards de FCFA, +34,28 %), adopté le 22 novembre 2025 à Korhogo.","status":"annonce","made_at":"2025-11-22","source":{"name":"AIP","date":"2025-11-23","url":"https://www.aip.ci/cote-divoire-aip-le-budget-primitif-2026-de-la-region-du-poro-en-hausse-de-3428/"}},
-  {"office":"conseil-regional-poro","kind":"defi","title":"36,64 % des recettes 2025 recouvrées fin septembre : comment tenir le budget 2026 ?","body":"Au 30 septembre 2025, la région du Poro avait mobilisé 1,99 milliard de FCFA, soit un taux de recouvrement cumulé de 36,64 %. Le budget 2026 adopté en novembre 2025 grimpe pourtant de 34,28 %, à 7,33 milliards. Comment les recettes suivront-elles ?","tags":["Poro","Korhogo"],"source":{"name":"AIP","date":"2025-11-23","url":"https://www.aip.ci/cote-divoire-aip-le-budget-primitif-2026-de-la-region-du-poro-en-hausse-de-3428/"}},
-  {"office":"conseil-regional-agneby-tiassa","kind":"projet","title":"Programme triennal 2027-2029 : 11,56 milliards de FCFA, dont 4,15 pour l'éducation","body":"Adopté à l'unanimité le 5 juin 2026 : 107 opérations (83 reconduites, 24 nouvelles) ; éducation 4,15 milliards, routes 1,1 milliard, eau 630 millions, sécurité 487 millions. Le siège du conseil régional (822 millions) est en construction.","status":"en_cours","made_at":"2026-06-05","due_at":"2029-12","source":{"name":"AIP","date":"2026-06-08","url":"https://www.aip.ci/cote-divoire-aip-lagneby-tiassa-adopte-son-programme-triennal-2027-2029-de-plus-de-115-milliards-fcfa/"}},
-  {"office":"conseil-regional-cavally","kind":"projet","title":"Programme triennal 2026-2028 : 11,42 milliards de FCFA","body":"Adopté le 18 avril 2025 à Guiglo : éducation 4,30 milliards, santé 1,14 milliard, routes 1,09 milliard, électrification 644 millions, eau 611 millions, et 900 millions d'appui direct aux populations. 7,35 milliards sont programmés dès 2026.","status":"en_cours","made_at":"2025-04-18","due_at":"2028-12","source":{"name":"AIP","date":"2025-04-19","url":"https://www.aip.ci/cote-divoire-aip-2eme-session-2025-le-conseil-regional-du-cavally-adopte-son-programme-triennal-2026-2028/"}}
+  {
+   "office": "conseil-regional-san-pedro",
+   "kind": "projet",
+   "title": "Programme triennal 2027-2029 : 15,06 milliards de FCFA",
+   "body": "Adopté en session ordinaire le 20 août 2026 : 27 actions et 134 opérations (dont 41 nouvelles) dans l'éducation, la santé, l'eau potable et la réhabilitation des pistes rurales ; 236 millions de FCFA d'actions financées sur ressources propres (associations, éducation, femmes et jeunes).",
+   "status": "annonce",
+   "made_at": "2026-08-20",
+   "due_at": "2029-12",
+   "source": {
+    "name": "AIP",
+    "date": "2026-08-21",
+    "url": "https://www.aip.ci/cote-divoire-aip-san-pedro-plus-de-15-milliards-fcfa-programmes-pour-accelerer-le-developpement-local-sur-trois-ans/"
+   }
+  },
+  {
+   "office": "conseil-regional-la-me",
+   "kind": "projet",
+   "title": "Budget 2026 : 5,08 milliards de FCFA pour 89 opérations de terrain",
+   "body": "Budget primitif 2026 de 6 425 299 000 FCFA adopté le 14 novembre 2025 à Yakassé-Attobrou, en hausse de 29 %. L'investissement (79 %) couvre 25 actions et 89 opérations : éducation, santé, insertion des jeunes, autonomisation des femmes, environnement.",
+   "status": "annonce",
+   "made_at": "2025-11-14",
+   "source": {
+    "name": "AIP",
+    "date": "2025-11-15",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-budget-primitif-de-lexercice-2026-du-conseil-regional-de-la-me-adopte-a-plus-de-six-milliards-de-francs-cfa/"
+   }
+  },
+  {
+   "office": "conseil-regional-belier",
+   "kind": "projet",
+   "title": "Budget 2027 de 8,68 milliards de FCFA",
+   "body": "Adopté à l'unanimité le 9 octobre 2026 à Molonou (Tiébissou), en hausse de 1,744 milliard de FCFA par rapport à 2026 (6,937 milliards).",
+   "status": "annonce",
+   "made_at": "2026-10-09",
+   "source": {
+    "name": "AIP",
+    "date": "2026-10-11",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-regional-du-belier-adopte-un-budget-primitif-2027-de-8681-milliards-fcfa-en-hausse-de-1744-milliard-fcfa/"
+   }
+  },
+  {
+   "office": "conseil-regional-indenie-djuablin",
+   "kind": "projet",
+   "title": "Livrer 2 500 tables-bancs aux collèges de proximité",
+   "body": "Quatre collèges de proximité ont ouvert pour l'année 2025-2026 ; 2 500 tables-bancs ont été annoncées pour ces établissements, livraison en attente au 6 octobre 2025. Le budget 2026 adopté ce jour-là atteint 6,64 milliards de FCFA, dont 5,30 milliards d'investissement.",
+   "status": "en_cours",
+   "made_at": "2025-10-06",
+   "source": {
+    "name": "AllAfrica",
+    "date": "2025-10-10",
+    "url": "https://fr.allafrica.com/stories/202510100538.html"
+   }
+  },
+  {
+   "office": "conseil-regional-poro",
+   "kind": "projet",
+   "title": "600 millions de FCFA pour les cantines scolaires en 2026",
+   "body": "Inscrits au budget primitif 2026 de la région du Poro (7,33 milliards de FCFA, +34,28 %), adopté le 22 novembre 2025 à Korhogo.",
+   "status": "annonce",
+   "made_at": "2025-11-22",
+   "source": {
+    "name": "AIP",
+    "date": "2025-11-23",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-budget-primitif-2026-de-la-region-du-poro-en-hausse-de-3428/"
+   }
+  },
+  {
+   "office": "conseil-regional-poro",
+   "kind": "defi",
+   "title": "36,64 % des recettes 2025 recouvrées fin septembre : comment tenir le budget 2026 ?",
+   "body": "Au 30 septembre 2025, la région du Poro avait mobilisé 1,99 milliard de FCFA, soit un taux de recouvrement cumulé de 36,64 %. Le budget 2026 adopté en novembre 2025 grimpe pourtant de 34,28 %, à 7,33 milliards. Comment les recettes suivront-elles ?",
+   "tags": [
+    "Poro",
+    "Korhogo"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2025-11-23",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-budget-primitif-2026-de-la-region-du-poro-en-hausse-de-3428/"
+   }
+  },
+  {
+   "office": "conseil-regional-agneby-tiassa",
+   "kind": "projet",
+   "title": "Programme triennal 2027-2029 : 11,56 milliards de FCFA, dont 4,15 pour l'éducation",
+   "body": "Adopté à l'unanimité le 5 juin 2026 : 107 opérations (83 reconduites, 24 nouvelles) ; éducation 4,15 milliards, routes 1,1 milliard, eau 630 millions, sécurité 487 millions. Le siège du conseil régional (822 millions) est en construction.",
+   "status": "en_cours",
+   "made_at": "2026-06-05",
+   "due_at": "2029-12",
+   "source": {
+    "name": "AIP",
+    "date": "2026-06-08",
+    "url": "https://www.aip.ci/cote-divoire-aip-lagneby-tiassa-adopte-son-programme-triennal-2027-2029-de-plus-de-115-milliards-fcfa/"
+   }
+  },
+  {
+   "office": "conseil-regional-cavally",
+   "kind": "projet",
+   "title": "Programme triennal 2026-2028 : 11,42 milliards de FCFA",
+   "body": "Adopté le 18 avril 2025 à Guiglo : éducation 4,30 milliards, santé 1,14 milliard, routes 1,09 milliard, électrification 644 millions, eau 611 millions, et 900 millions d'appui direct aux populations. 7,35 milliards sont programmés dès 2026.",
+   "status": "en_cours",
+   "made_at": "2025-04-18",
+   "due_at": "2028-12",
+   "source": {
+    "name": "AIP",
+    "date": "2025-04-19",
+    "url": "https://www.aip.ci/cote-divoire-aip-2eme-session-2025-le-conseil-regional-du-cavally-adopte-son-programme-triennal-2026-2028/"
+   }
+  },
+  {
+   "office": "conseil-regional-hambol",
+   "kind": "projet",
+   "title": "Construire 40 logements sociaux pour les enseignants du Hambol",
+   "body": "Principe arrêté à la session du 31 octobre 2025 : quatre logements dans chaque localité dotée d'un collège de proximité, avant une extension à toute la région. Le budget primitif 2026 a été fixé à 6,69 milliards FCFA, dont 5,469 milliards d'investissement.",
+   "status": "annoncee",
+   "made_at": "2025-10-31",
+   "source": {
+    "name": "KOACI",
+    "date": "2025-10-31",
+    "url": "https://www.koaci.com/index.php/article/2025/10/31/cote-divoire/societe/cote-divoire-region-du-hambol-un-programme-de-construction-de-40-logements-sociaux-pour-enseignants-lance-le-budget-primitif-2026-arrete-a-6690-milliards-fcfa_191653.html"
+   }
+  },
+  {
+   "office": "conseil-regional-bere",
+   "kind": "projet",
+   "title": "Réaliser 44 marchés en 2026 : santé, écoles, voirie et eau",
+   "body": "Budget 2026 de 5 428 716 000 FCFA adopté le 28 février 2026, dont 4,37 milliards d'investissement. Parmi les marchés programmés : 13 en santé (475 millions FCFA), 6 en éducation (220 millions) et 13 en voirie (128 millions).",
+   "status": "en_cours",
+   "made_at": "2026-02-28",
+   "due_at": "2026-12",
+   "source": {
+    "name": "AIP",
+    "date": "2026-03-01",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-regional-du-bere-adopte-un-budget-2026-de-plus-de-54-milliards-fcfa/"
+   }
+  },
+  {
+   "office": "conseil-regional-haut-sassandra",
+   "kind": "projet",
+   "title": "Programme 2026-2028 : 106 projets pour plus de 11 milliards FCFA",
+   "body": "Adopté à l'unanimité le 17 mai 2025 : 7 actions sur fonds propres (416 millions FCFA) et 99 opérations structurantes (10,842 milliards), financées à 88,79 % par l'État.",
+   "status": "en_cours",
+   "made_at": "2025-05-17",
+   "due_at": "2028-12",
+   "source": {
+    "name": "AIP",
+    "date": "2025-05-18",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-regional-du-haut-sassandra-engage-un-programme-dinvestissements-de-11-milliards-de-fcfa-sur-trois-ans/"
+   }
+  },
+  {
+   "office": "conseil-regional-haut-sassandra",
+   "kind": "projet",
+   "title": "Livrer deux écoles et un centre de santé dans le département d'Issia",
+   "body": "Remis les 16, 17 et 19 octobre 2026 : trois classes à Makua (28,3 millions FCFA), trois classes avec bureau à Joachimkro (près de 31 millions) et un centre de santé à Sedibia (52 millions).",
+   "status": "tenue",
+   "made_at": "2026-10-19",
+   "source": {
+    "name": "KOACI",
+    "date": "2026-10-27",
+    "url": "https://www.koaci.com/article/2026/10/27/cote-divoire/politique/cote-divoire-issia-le-conseil-regional-du-haut-sassandra-livre-deux-ecoles-et-un-centre-de-sante_202032.html"
+   }
+  },
+  {
+   "office": "conseil-regional-worodougou",
+   "kind": "projet",
+   "title": "Construire dispensaires et maternités dans les villages du Worodougou",
+   "body": "Deuxième phase lancée le 11 août 2025 : dispensaire à Suinla, maternité à Lenguèkoro, après le dispensaire de Gbohovo et une école à Teguela. Plus de 30 projets étaient alors en cours dans la région.",
+   "status": "en_cours",
+   "made_at": "2025-08-11",
+   "source": {
+    "name": "AIP",
+    "date": "2025-08-13",
+    "url": "https://www.aip.ci/cote-divoire-aip-lancement-de-nouveaux-projets-dinfrastructures-dans-la-region-du-worodougou/"
+   }
+  },
+  {
+   "office": "conseil-regional-tonkpi",
+   "kind": "projet",
+   "title": "Construire le stade de Danané",
+   "body": "Première phase annoncée à la session du 10 avril 2026 : clôture, pelouse, vestiaires et toilettes. Les phases suivantes prévoient des terrains de sport, une arène de lutte traditionnelle, une piste pour les courses de masques et des tribunes.",
+   "status": "en_cours",
+   "made_at": "2026-04-10",
+   "source": {
+    "name": "AIP",
+    "date": "2026-04-11",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-regional-du-tonkpi-engage-de-nouveaux-projets-a-danane/"
+   }
+  },
+  {
+   "office": "conseil-regional-nawa",
+   "kind": "defi",
+   "title": "Des classes surchargées à Soubré : les élèves dans la rue",
+   "body": "En novembre 2026, des élèves des écoles publiques de Soubré ont perturbé les cours plusieurs jours pour dénoncer le manque d'infrastructures et les effectifs pléthoriques. Le conseil régional a promis 75 tables-bancs et un bâtiment par établissement « dans les meilleurs délais » : quel calendrier précis ?",
+   "tags": [
+    "Écoles",
+    "Soubré"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-11-14",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-regional-de-la-nawa-annonce-75-tables-bancs-et-des-batiments-scolaires-pour-apaiser-la-crise/"
+   }
+  },
+  {
+   "office": "conseil-regional-nawa",
+   "kind": "projet",
+   "title": "Livrer 75 tables-bancs et un bâtiment scolaire par école en crise à Soubré",
+   "body": "Annonce du 13 novembre 2026, en réponse aux manifestations d'élèves contre les classes surchargées.",
+   "status": "annoncee",
+   "made_at": "2026-11-13",
+   "source": {
+    "name": "AIP",
+    "date": "2026-11-14",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-regional-de-la-nawa-annonce-75-tables-bancs-et-des-batiments-scolaires-pour-apaiser-la-crise/"
+   }
+  },
+  {
+   "office": "conseil-regional-n-zi",
+   "kind": "projet",
+   "title": "Programme triennal de 12,9 milliards FCFA pour le N'Zi",
+   "body": "Adopté le 5 septembre 2026 à Dimbokro : 8 actions (265 millions FCFA, dont manioc, porcheries, palmeraies et bons de permis de conduire) et 174 opérations (12,68 milliards) en santé, éducation, électrification rurale et eau potable.",
+   "status": "annoncee",
+   "made_at": "2026-09-05",
+   "due_at": "2029-12",
+   "source": {
+    "name": "AIP",
+    "date": "2026-09-07",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-regional-du-nzi-se-dote-dun-programme-triennal-de-pres-de-13-milliards-fcfa/"
+   }
+  },
+  {
+   "office": "conseil-regional-gbokle",
+   "kind": "projet",
+   "title": "Construire 55 écoles primaires et 50 pompes solaires dans le Gbôklè",
+   "body": "Priorités 2026-2028 présentées le 7 février 2026 : 55 bâtiments de trois classes, un lycée agropastoral, sept dispensaires, quatre maternités, 50 pompes à motricité solaire et une usine de riz local.",
+   "status": "annoncee",
+   "made_at": "2026-02-07",
+   "due_at": "2028-12",
+   "source": {
+    "name": "AIP",
+    "date": "2026-02-10",
+    "url": "https://www.aip.ci/cote-divoire-aip-infrastructures-et-developpement-local-le-conseil-regional-du-gbokle-presente-ses-priorites-2026-2028/"
+   }
+  },
+  {
+   "office": "conseil-regional-folon",
+   "kind": "projet",
+   "title": "Programme 2027-2029 : 24 projets pour plus de 2 milliards FCFA",
+   "body": "Adopté à l'unanimité le 27 juin 2026 à Minignan : éducation, santé, routes, eau potable et une caserne de la protection civile (ONPC).",
+   "status": "annoncee",
+   "made_at": "2026-06-27",
+   "due_at": "2029-12",
+   "source": {
+    "name": "AIP",
+    "date": "2026-06-29",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-regional-du-folon-adopte-un-programme-triennal-de-plus-de-deux-milliards-de-fcfa/"
+   }
+  },
+  {
+   "office": "conseil-regional-bagoue",
+   "kind": "defi",
+   "title": "Freiner l'orpaillage illégal dans la Bagoué",
+   "body": "À la session du 30 octobre 2026, le président du conseil régional a appelé les habitants à ne pas se livrer à l'exploitation clandestine de l'or, qui inquiète les autorités. Quelles alternatives économiques la région propose-t-elle aux jeunes ?",
+   "tags": [
+    "Orpaillage",
+    "Bagoué"
+   ],
+   "source": {
+    "name": "KOACI",
+    "date": "2026-11-01",
+    "url": "https://www.koaci.com/article/2026/11/01/cote-divoire/politique/cote-divoire-bagoue-bruno-nabagne-kone-met-en-avant-trois-ans-dinvestissements-et-appelle-a-la-mobilisation-contre-lorpaillage-illegal_202166.html"
+   }
+  },
+  {
+   "office": "conseil-regional-bagoue",
+   "kind": "projet",
+   "title": "Ouvrir l'école de balafon de Kouto",
+   "body": "Projet inscrit à l'ordre du jour de la session du 30 octobre 2026 à Ganaoni, pour valoriser le patrimoine culturel local.",
+   "status": "annoncee",
+   "made_at": "2026-10-30",
+   "source": {
+    "name": "KOACI",
+    "date": "2026-11-01",
+    "url": "https://www.koaci.com/article/2026/11/01/cote-divoire/politique/cote-divoire-bagoue-bruno-nabagne-kone-met-en-avant-trois-ans-dinvestissements-et-appelle-a-la-mobilisation-contre-lorpaillage-illegal_202166.html"
+   }
+  },
+  {
+   "office": "conseil-regional-gbeke",
+   "kind": "projet",
+   "title": "Budget 2027 de 10,866 milliards FCFA, dont 87 % d'investissement",
+   "body": "Adopté le 14 novembre 2026 : 9,416 milliards FCFA d'investissement, dont près de 5 milliards pour les services sociaux, culturels et de promotion humaine.",
+   "status": "annoncee",
+   "made_at": "2026-11-14",
+   "due_at": "2027-12",
+   "source": {
+    "name": "AIP",
+    "date": "2026-11-15",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-regional-de-gbeke-adopte-un-budget-de-10866-milliards-fcfa-pour-2027/"
+   }
+  },
+  {
+   "office": "conseil-regional-tchologo",
+   "kind": "projet",
+   "title": "Budget 2027 porté à 8,944 milliards FCFA",
+   "body": "Adopté le 17 octobre 2026 à Ouangolodougou, contre 6,602 milliards en 2026, grâce aux investissements reportés et à une hausse de la subvention de l'État.",
+   "status": "annoncee",
+   "made_at": "2026-10-17",
+   "due_at": "2027-12",
+   "source": {
+    "name": "AIP",
+    "date": "2026-10-19",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-budget-primitif-2027-du-conseil-regional-du-tchologo-en-hausse-de-plus-de-deux-milliards-de-fcfa/"
+   }
+  },
+  {
+   "office": "conseil-regional-gontougo",
+   "kind": "projet",
+   "title": "Réhabiliter pistes rurales et marchés avec le projet de connectivité rurale",
+   "body": "Présenté à la session du 7 novembre 2026, qui a adopté un budget 2027 de 4,5 milliards FCFA : pistes, marchés, centres de santé et ouvrages contre les maladies hydriques, avec la Banque mondiale.",
+   "status": "annoncee",
+   "made_at": "2026-11-07",
+   "source": {
+    "name": "AIP",
+    "date": "2026-11-08",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-regional-du-gontougo-mise-sur-des-projets-innovants-pour-le-bien-etre-des-populations/"
+   }
+  },
+  {
+   "office": "conseil-regional-loh-djiboua",
+   "kind": "projet",
+   "title": "Budget 2027 de 5,3 milliards FCFA pour les projets structurants",
+   "body": "Budget primitif de 5 307 593 000 FCFA adopté à l'unanimité le 31 octobre 2026 à Divo.",
+   "status": "annoncee",
+   "made_at": "2026-10-31",
+   "due_at": "2027-12",
+   "source": {
+    "name": "KOACI",
+    "date": "2026-11-02",
+    "url": "https://www.koaci.com/article/2026/11/02/cote-divoire/politique/cote-divoire-conseil-regional-du-loh-djiboua-une-enveloppe-de-5-307-593-000-fcfa-pour-accelerer-la-realisation-de-projets-structurants_202181.html"
+   }
+  },
+  {
+   "office": "conseil-regional-goh",
+   "kind": "projet",
+   "title": "Bâtir le programme 2027-2029 avec les 212 villages du Gôh",
+   "body": "Atelier du 16 juin 2026 : la méthode MODELI, inspirée du développement local japonais, ne retient que les projets qui font consensus dans les villages.",
+   "status": "en_cours",
+   "made_at": "2026-06-16",
+   "source": {
+    "name": "KOACI",
+    "date": "2026-06-17",
+    "url": "https://www.koaci.com/article/2026/06/17/cote-divoire/societe/cote-divoire-goh-le-conseil-regional-adopte-la-methode-modeli-pour-son-programme-triennal-2027-2029_197658.html"
+   }
+  },
+  {
+   "office": "conseil-regional-moronou",
+   "kind": "defi",
+   "title": "Rattraper les retards des projets du Moronou",
+   "body": "Le Conseil économique, social et environnemental régional a relevé en juillet 2025 des retards dans certains projets du budget régional et recommandé un meilleur suivi technique et une coordination plus étroite avec les prestataires. Quels chantiers sont en retard, et pour quand sont-ils prévus ?",
+   "tags": [
+    "Moronou",
+    "Redevabilité"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2025-07-19",
+    "url": "https://www.aip.ci/cote-divoire-aip-moronou-des-retards-releves-dans-lexecution-des-projets-du-budget-regional-2025/"
+   }
+  }
  ]
 }

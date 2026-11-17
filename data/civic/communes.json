@@ -1503,6 +1503,327 @@
     "date": "2025-04-23",
     "url": "https://www.aip.ci/183873/cote-divoire-aip-les-autorites-locales-sensibilisent-pour-latteinte-de-16-milliard-fcfa-de-recettes-propres-a-la-commune-de-san-pedro/"
    }
+  },
+  {
+   "office": "maire-toumodi",
+   "kind": "projet",
+   "title": "Budget 2026 de plus de 1,3 milliard FCFA : écoles, voirie et centres de santé",
+   "body": "Budget primitif adopté à l'unanimité le 27 septembre 2025, contre 1,039 milliard en 2025. Priorités : embellir les grandes avenues, réhabiliter et équiper les écoles, reprofiler les voies, moderniser les centres de santé communautaires et renforcer le réseau électrique de certains quartiers.",
+   "status": "en_cours",
+   "made_at": "2025-09-27",
+   "due_at": "2026-12",
+   "source": {
+    "name": "AIP",
+    "date": "2025-10-01",
+    "url": "https://www.aip.ci/256820/cote-divoire-aip-le-budget-primitif-2026-de-la-mairie-de-toumodi-adopte-a-plus-de-13-milliard-fcfa/"
+   }
+  },
+  {
+   "office": "maire-daoukro",
+   "kind": "projet",
+   "title": "Construire des centres de santé et des écoles avec un budget 2026 en hausse de 596 millions",
+   "body": "Budget primitif 2026 de 1 931 737 000 FCFA annoncé le 6 décembre 2025, contre 1 398 843 000 FCFA en 2025, grâce à un meilleur recouvrement des taxes. Le programme triennal 2026-2028 prévoit des centres de santé, des écoles et le recrutement d'agents municipaux.",
+   "status": "en_cours",
+   "made_at": "2025-12-06",
+   "due_at": "2028-12",
+   "source": {
+    "name": "AIP",
+    "date": "2025-12-08",
+    "url": "https://www.aip.ci/289562/cote-divoire-aip-le-budget-primitif-2026-de-la-mairie-de-daoukro-oriente-vers-des-projets-dinfrastructures/"
+   }
+  },
+  {
+   "office": "maire-dimbokro",
+   "kind": "projet",
+   "title": "Construire le marché moderne et la nouvelle gare routière de Dimbokro",
+   "body": "Projets annoncés au conseil municipal de début 2026, avec un centre artisanal et une quarantaine de boutiques. Le démarrage des travaux du marché, prévu le 5 mars 2026, a été reporté à fin avril à la demande des commerçants.",
+   "status": "en_cours",
+   "made_at": "2026-03-01",
+   "source": {
+    "name": "KOACI",
+    "date": "2026-03-01",
+    "url": "https://www.koaci.com/index.php/article/2026/03/01/cote-divoire/societe/cote-divoire-marche-moderne-gare-routiere-centres-sociaux-dimbokro-enclenche-sa-metamorphose-sous-limpulsion-du-maire-adama-coulibaly_194756.html"
+   }
+  },
+  {
+   "office": "maire-dimbokro",
+   "kind": "defi",
+   "title": "Réceptionner plus vite les chantiers achevés à Dimbokro",
+   "body": "En 2025, la commune n'a exécuté que 46,66 % de ses dépenses d'investissement, faute de réception des ouvrages terminés, alors que 99,74 % des recettes étaient mobilisées. Le comité de suivi doit réceptionner ces travaux sous trois mois : où en est-on ?",
+   "tags": [
+    "Finances",
+    "Dimbokro"
+   ],
+   "source": {
+    "name": "KOACI",
+    "date": "2026-03-01",
+    "url": "https://www.koaci.com/index.php/article/2026/03/01/cote-divoire/societe/cote-divoire-marche-moderne-gare-routiere-centres-sociaux-dimbokro-enclenche-sa-metamorphose-sous-limpulsion-du-maire-adama-coulibaly_194756.html"
+   }
+  },
+  {
+   "office": "maire-bouafle",
+   "kind": "projet",
+   "title": "Reprofiler les voies et construire des dalots dans les quartiers de Bouaflé",
+   "body": "Priorité du budget primitif 2026 de 2 239 704 000 FCFA adopté le 14 novembre 2025, avec l'assainissement des caniveaux, l'électrification de campements, la réhabilitation de 24 boxes du marché central et des feux tricolores.",
+   "status": "en_cours",
+   "made_at": "2025-11-14",
+   "due_at": "2026-12",
+   "source": {
+    "name": "AIP",
+    "date": "2025-11-16",
+    "url": "https://www.aip.ci/279232/cote-divoire-aip-le-conseil-municipal-de-bouafle-adopte-un-budget-2026-en-hausse-pour-accelerer-les-projets-prioritaires/"
+   }
+  },
+  {
+   "office": "maire-tiassale",
+   "kind": "projet",
+   "title": "Lancer une flotte d'une quinzaine de taxis communaux à Tiassalé",
+   "body": "Annonce du maire à la 11e Journée de redevabilité du 22 mai 2026, avec un transport gratuit ou à prix réduit le week-end subventionné par la commune.",
+   "status": "annoncee",
+   "made_at": "2026-05-22",
+   "source": {
+    "name": "AIP",
+    "date": "2026-05-23",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-assale-tiemoko-annonce-un-centre-commercial-une-flotte-de-taxis-communaux-et-la-gratuite-partielle-du-transport-public-a-tiassale/"
+   }
+  },
+  {
+   "office": "maire-tiassale",
+   "kind": "projet",
+   "title": "Construire un centre commercial en centre-ville sur fonds propres",
+   "body": "Prévu face au commissariat pour attirer banques et commerces. D'abord confié à un privé, le projet sera finalement réalisé par la commune après des retards, a annoncé le maire le 22 mai 2026.",
+   "status": "annoncee",
+   "made_at": "2026-05-22",
+   "source": {
+    "name": "AIP",
+    "date": "2026-05-23",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-assale-tiemoko-annonce-un-centre-commercial-une-flotte-de-taxis-communaux-et-la-gratuite-partielle-du-transport-public-a-tiassale/"
+   }
+  },
+  {
+   "office": "maire-touba",
+   "kind": "projet",
+   "title": "Achever le nouveau marché de Touba",
+   "body": "Chantier en cours avec boutiques, étals et espaces séparés pour la viande, le poisson et la volaille. Le budget 2027 adopté le 30 octobre 2026 (1,943 milliard FCFA, dont 80 % d'investissement) prévoit aussi une gare routière à côté.",
+   "status": "en_cours",
+   "source": {
+    "name": "KOACI",
+    "date": "2026-11-02",
+    "url": "https://www.koaci.com/article/2026/11/02/cote-divoire/politique/cote-divoire-touba-mise-sur-19-milliard-de-fcfa-pour-changer-de-visage-en-2027_202184.html"
+   }
+  },
+  {
+   "office": "maire-touba",
+   "kind": "projet",
+   "title": "Proposer les actes d'état civil en ligne sur touba.ci",
+   "body": "Les habitants peuvent désormais demander leurs actes d'état civil sur le site de la commune. Le centre-ville a aussi reçu un jardin public de 7 620 m².",
+   "status": "tenue",
+   "source": {
+    "name": "KOACI",
+    "date": "2026-11-02",
+    "url": "https://www.koaci.com/article/2026/11/02/cote-divoire/politique/cote-divoire-touba-mise-sur-19-milliard-de-fcfa-pour-changer-de-visage-en-2027_202184.html"
+   }
+  },
+  {
+   "office": "maire-sassandra",
+   "kind": "projet",
+   "title": "Construire une nouvelle gare routière de 10 hectares à Sassandra",
+   "body": "Coût annoncé de plus de 600 millions FCFA, sur un terrain de 10 hectares déjà acquis, inscrit au plan triennal pour 2026. L'actuelle gare, trop exiguë, est inondée à la saison des pluies.",
+   "status": "annoncee",
+   "made_at": "2025-04-16",
+   "due_at": "2026-12",
+   "source": {
+    "name": "AIP",
+    "date": "2025-04-20",
+    "url": "https://www.aip.ci/cote-divoire-aip-une-nouvelle-gare-routiere-sera-construite-a-plus-de-600-millions-de-f-cfa-a-sassandra-maire/"
+   }
+  },
+  {
+   "office": "maire-sassandra",
+   "kind": "defi",
+   "title": "Quand le nouvel hôtel de ville de Sassandra sera-t-il livré ?",
+   "body": "Prévu en dix mois, le chantier a pris du retard après l'ajout d'un sous-sol exigé à la validation du plan, ce qui a révisé le budget. Aucune nouvelle date n'a été donnée en octobre 2026.",
+   "tags": [
+    "Sassandra"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-10-13",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-explique-le-retard-des-travaux-de-lhotel-de-ville-de-sassandra/"
+   }
+  },
+  {
+   "office": "maire-zuenoula",
+   "kind": "defi",
+   "title": "Donner de l'eau et des toilettes aux écoles de Zuénoula",
+   "body": "À la rentrée 2026-2027, l'EPP Municipalité 1 n'a ni point d'eau, ni toilettes, ni électricité, ni clôture ; les enseignants vont parfois chercher l'eau dehors. Le budget 2027 de la commune (2,02 milliards FCFA, 79 % d'investissement) peut-il en faire une priorité ?",
+   "tags": [
+    "Écoles",
+    "Eau",
+    "Zuénoula"
+   ],
+   "sources": [
+    {
+     "name": "AIP",
+     "date": "2026-09-30",
+     "url": "https://www.aip.ci/cote-divoire-aip-rentree-scolaire-2026-2027-lacces-a-leau-et-aux-sanitaires-un-defi-persistant-dans-les-ecoles-a-zuenoula-reportage/"
+    },
+    {
+     "name": "AIP",
+     "date": "2026-11-08",
+     "url": "https://www.aip.ci/cote-divoire-aip-le-budget-primitif-2027-du-conseil-municipal-de-zuenoula-evalue-a-plus-de-2-milliards-de-fcfa-avec-79-consacres-aux-investissements/"
+    }
+   ]
+  },
+  {
+   "office": "maire-tanda",
+   "kind": "projet",
+   "title": "Apporter 400 millions FCFA au bitumage de voies de Tanda",
+   "body": "Contribution municipale inscrite au programme triennal 2027-2029 adopté le 25 juillet 2026 (2,337 milliards FCFA, 67 opérations), avec des postes de santé de premiers secours dans les villages et un réseau communal par Starlink.",
+   "status": "annoncee",
+   "made_at": "2026-07-25",
+   "due_at": "2029-12",
+   "source": {
+    "name": "AIP",
+    "date": "2026-07-27",
+    "url": "https://www.aip.ci/cote-divoire-aip-un-programme-triennal-de-plus-de-23-milliards-fcfa-pour-accelerer-son-developpement-a-tanda/"
+   }
+  },
+  {
+   "office": "maire-vavoua",
+   "kind": "projet",
+   "title": "Construire un hôtel de ville moderne de 350 millions FCFA à Vavoua",
+   "body": "Bâtiment R+1 de 1 200 m² annoncé au premier conseil municipal de 2026, le 11 avril, avec une livraison promise en 18 mois par l'entreprise chargée des travaux.",
+   "status": "annoncee",
+   "made_at": "2026-04-11",
+   "due_at": "2027-10",
+   "source": {
+    "name": "AIP",
+    "date": "2026-04-12",
+    "url": "https://www.aip.ci/cote-divoire-aip-vavoua-un-hotel-de-ville-moderne-de-350-millions-fcfa-bientot-erige-dans-la-ville/"
+   }
+  },
+  {
+   "office": "maire-meagui",
+   "kind": "projet",
+   "title": "Mobiliser 5,7 milliards FCFA sur cinq ans pour 21 initiatives à Méagui",
+   "body": "Plan stratégique de développement remis le 5 juin 2026, préparé avec l'ANADER : 5 698 901 000 FCFA à mobiliser sur cinq ans.",
+   "status": "annoncee",
+   "made_at": "2026-06-05",
+   "due_at": "2031-06",
+   "source": {
+    "name": "AIP",
+    "date": "2026-06-05",
+    "url": "https://www.aip.ci/cote-divoire-aip-meagui-prevoit-plus-de-56-milliards-fcfa-dinvestissements-dans-son-plan-de-developpement/"
+   }
+  },
+  {
+   "office": "maire-meagui",
+   "kind": "defi",
+   "title": "Des emplois et des formations pour les jeunes de Méagui",
+   "body": "Le diagnostic du plan de développement de la commune relève le manque d'emplois et de formations pour les jeunes, les conflits fonciers et une économie locale peu transformée, dans l'une des grandes zones cacaoyères du pays. Quelles actions viendront en premier ?",
+   "tags": [
+    "Jeunesse",
+    "Emploi",
+    "Méagui"
+   ],
+   "source": {
+    "name": "AIP",
+    "date": "2026-06-05",
+    "url": "https://www.aip.ci/cote-divoire-aip-meagui-prevoit-plus-de-56-milliards-fcfa-dinvestissements-dans-son-plan-de-developpement/"
+   }
+  },
+  {
+   "office": "maire-lakota",
+   "kind": "projet",
+   "title": "Équiper la mairie de Lakota de véhicules et d'engins sur fonds propres",
+   "body": "Trois pick-up, un camion-benne et une chargeuse sur pneus, d'une valeur de plus de 225 millions FCFA, remis le 12 octobre 2026 aux services techniques, financiers et à la police municipale.",
+   "status": "tenue",
+   "made_at": "2026-10-12",
+   "source": {
+    "name": "KOACI",
+    "date": "2026-10-13",
+    "url": "https://www.koaci.com/article/2026/10/13/cote-divoire/societe/cote-divoire-lakota-prince-arthur-dalli-injecte-plus-de-225-millions-fcfa-dans-lequipement-de-la-mairie_201562.html"
+   }
+  },
+  {
+   "office": "maire-lakota",
+   "kind": "projet",
+   "title": "Financer chaque trimestre une centaine de jeunes porteurs de projets",
+   "body": "Annonce du maire le 12 octobre 2026 : prêts remboursables sur un an avec deux mois de grâce, et lancement prochain d'une micro-finance pour la jeunesse de la commune.",
+   "status": "annoncee",
+   "made_at": "2026-10-12",
+   "source": {
+    "name": "KOACI",
+    "date": "2026-10-13",
+    "url": "https://www.koaci.com/article/2026/10/13/cote-divoire/societe/cote-divoire-lakota-prince-arthur-dalli-injecte-plus-de-225-millions-fcfa-dans-lequipement-de-la-mairie_201562.html"
+   }
+  },
+  {
+   "office": "maire-ferkessedougou",
+   "kind": "projet",
+   "title": "Payer les frais d'examen d'entrée en sixième de 1 782 élèves",
+   "body": "Mesure du maire pour l'année scolaire 2025-2026, au profit des élèves des inspections Ferké-Sud et Ferké-Nord.",
+   "status": "tenue",
+   "made_at": "2025-11-25",
+   "source": {
+    "name": "AIP",
+    "date": "2025-11-25",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-maire-de-ferkessedougou-ouattara-kaweli-prend-en-charge-les-frais-dentree-en-sixieme-pour-1-782-eleves/"
+   }
+  },
+  {
+   "office": "maire-bondoukou",
+   "kind": "projet",
+   "title": "Découper Bondoukou en neuf zones de salubrité",
+   "body": "Décidé au premier conseil municipal de 2026, le 7 février : chaque zone est suivie par des agents municipaux et des conseillers pour améliorer la gestion des ordures ménagères.",
+   "status": "en_cours",
+   "made_at": "2026-02-07",
+   "source": {
+    "name": "AIP",
+    "date": "2026-02-08",
+    "url": "https://www.aip.ci/316444/cote-divoire-aip-bondoukou-la-gestion-durable-des-ordures-menageres-au-rang-des-priorites-du-premier-conseil-municipal-de-2026/"
+   }
+  },
+  {
+   "office": "maire-sarhala",
+   "kind": "projet",
+   "title": "Construire l'hôtel de ville et une bibliothèque à Sarhala",
+   "body": "Chantiers en cours présentés au conseil municipal du 10 mars 2026 (budget 2026 de plus de 1,2 milliard FCFA, dont plus de 86 % d'investissement) : hôtel de ville, auberge municipale, centre culturel avec bibliothèque, dispensaire de Bougounon et réhabilitation de 13 bâtiments d'écoles.",
+   "status": "en_cours",
+   "source": {
+    "name": "AIP",
+    "date": "2026-03-12",
+    "url": "https://www.aip.ci/332427/cote-divoire-aip-le-conseil-municipal-de-sarhala-consacre-plus-de-86-du-budget-2026-a-linvestissement/"
+   }
+  },
+  {
+   "office": "maire-toulepleu",
+   "kind": "projet",
+   "title": "Programme 2027-2029 : 54 projets pour Toulépleu",
+   "body": "Adopté à l'unanimité le 18 juillet 2026, avec un budget 2026 porté de 1,141 à 1,294 milliard FCFA : éducation, action sociale, voirie, hydraulique et autonomisation des femmes.",
+   "status": "annoncee",
+   "made_at": "2026-07-18",
+   "due_at": "2029-12",
+   "source": {
+    "name": "Fraternité Matin",
+    "date": "2026-07-21",
+    "url": "https://www.fratmat.info/article/2643406/regions/toulepleu-le-budget-de-la-mairie-en-hausse"
+   }
+  },
+  {
+   "office": "maire-m-bengue",
+   "kind": "projet",
+   "title": "Réaliser 23 projets en 2027 à M'Bengué",
+   "body": "Prévus au budget primitif 2027 adopté le 13 novembre 2026. La commune a aussi reçu un camion-benne et un engin de reprofilage des routes pour la salubrité.",
+   "status": "annoncee",
+   "made_at": "2026-11-13",
+   "due_at": "2027-12",
+   "source": {
+    "name": "AIP",
+    "date": "2026-11-14",
+    "url": "https://www.aip.ci/cote-divoire-aip-le-conseil-municipal-de-mbengue-adopte-le-budget-primitif-2027-et-prevoit-23-projets/"
+   }
   }
  ]
 }
