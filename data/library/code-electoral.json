@@ -1,0 +1,2213 @@
+{
+ "id": "code-electoral",
+ "title": "Code électoral",
+ "reference": "Ordonnance n° 2020-356 du 8 avril 2020 portant révision du Code électoral",
+ "source": "texte de l'ordonnance publié par la Commission électorale indépendante (cei.ci)",
+ "blocks": [
+  {
+   "type": "preambule",
+   "title": "Ordonnance n° 2020-356 du 8 avril 2020",
+   "paras": [
+    "LE PRESIDENT DE LA REPUBLIQUE,",
+    "Sur rapport du Ministre de l’Administration du Territoire et de la Décentralisation,",
+    "Vu la Constitution ;",
+    "Vu la loi n° 59-231 du 7 novembre 1959 sur l’état d’urgence ;",
+    "Vu la loi n° 2019-1080 du 18 décembre 2019 portant Budget de l’État pour l’année 2020 ;",
+    "Le Conseil des Ministres entendu,",
+    "ORDONNE :"
+   ]
+  },
+  {
+   "type": "article",
+   "num": "1",
+   "paras": [
+    "La présente ordonnance détermine les conditions d’exercice par le peuple de sa souveraineté en ce qui concerne la désignation de ses représentants à la Présidence de la République, à l'Assemblée nationale, au Sénat, aux conseils régionaux et aux conseils municipaux."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "2",
+   "paras": [
+    "Le suffrage est universel, libre, égal et secret."
+   ]
+  },
+  {
+   "type": "titre",
+   "num": "1",
+   "title": "DISPOSITIONS GENERALES COMMUNES"
+  },
+  {
+   "type": "chapitre",
+   "num": "1",
+   "title": "DE L’ELECTORAT"
+  },
+  {
+   "type": "section",
+   "num": "1",
+   "title": "De la qualité d’électeur"
+  },
+  {
+   "type": "article",
+   "num": "3",
+   "paras": [
+    "Sont électeurs les ivoiriens des deux sexes et les personnes ayant acquis la nationalité ivoirienne soit par naturalisation soit par mariage, âgés de dix-huit ans accomplis, inscrits sur une liste électorale, jouissant de leurs droits civils et politiques et ne se trouvant dans aucun des cas d’incapacité prévus par la loi.",
+    "Les personnes visées à l’alinéa précédent, vivant à l’étranger et immatriculées dans une représentation diplomatique ou consulaire, peuvent prendre part à l’élection du Président de la République selon les modalités fixées par décret en Conseil des ministres, sur proposition de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "4",
+   "paras": [
+    "Ne sont pas électeurs les individus frappés d’incapacité ou d’indignité notamment :",
+    "les individus condamnés pour crime ;",
+    "les individus condamnés à une peine d’emprisonnement sans sursis pour vol, escroquerie, abus de confiance, détournement de deniers publics, faux et usage de faux, corruption et trafic d’influence, attentats aux mœurs ;",
+    "les faillis non réhabilités ;",
+    "les individus en état de contumace ;",
+    "les interdits ;",
+    "les individus auxquels les tribunaux ont interdit le droit de vote et, plus généralement, ceux pour lesquels les lois ont édicté cette interdiction."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "5",
+   "paras": [
+    "La qualité d’électeur est constatée par l’inscription sur une liste électorale. Cette inscription est de droit."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "2",
+   "title": "De la liste électorale"
+  },
+  {
+   "type": "article",
+   "num": "6",
+   "paras": [
+    "La liste électorale est un document administratif sur lequel sont inscrits l'ensemble des électeurs.",
+    "Elle est permanente et publique.",
+    "La liste électorale est tenue à jour annuellement par la Commission chargée des élections, pour tenir compte des mutations intervenues dans le corps électoral."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "7",
+   "paras": [
+    "La liste électorale contient les éléments d’identification des électeurs, à savoir:",
+    "numéro d’ordre ;",
+    "numéro d’enregistrement unique ;",
+    "nom et prénoms ;",
+    "date et lieu de naissance ;",
+    "sexe ;",
+    "profession ;",
+    "domicile ;",
+    "nom et prénoms du père ;",
+    "date et lieu de naissance du père ;",
+    "nom et prénoms de la mère ;",
+    "date et lieu de naissance de la mère ;",
+    "photo d’identité ;",
+    "empreintes digitales de tous les doigts en code barre."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "8",
+   "paras": [
+    "Il est établi une liste électorale par circonscription administrative, par commune et, le cas échéant, par représentation diplomatique ou consulaire.",
+    "La liste électorale peut être scindée par secteur électoral, quartier, village, campement, lieu ou bureau de vote selon des modalités définies par décret en Conseil des ministres, sur proposition de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "9",
+   "paras": [
+    "Tout ivoirien remplissant les conditions pour être électeur peut s’inscrire, au choix, sur la liste électorale de l’une des circonscriptions électorales suivantes :",
+    "celle dans laquelle il a son domicile ;",
+    "celle dans laquelle il a sa résidence depuis au moins six mois, à la date de démarrage de la révision de la liste électorale ;",
+    "celle au titre de laquelle il figure pour la cinquième fois sans interruption au rôle de l’une des contributions directes ;",
+    "celle de la représentation diplomatique ou consulaire dans laquelle il est immatriculé, s’il se trouve à l’étranger.",
+    "Le domicile de tout électeur s’entend du lieu où il a son principal établissement.",
+    "Le principal établissement est le lieu où tout électeur a choisi de vivre de façon permanente.",
+    "La résidence de tout électeur s’entend du lieu où il vit de manière temporaire pour toute raison rendant nécessaire la vie en dehors de son domicile.",
+    "Doivent faire la preuve du domicile ou de la résidence, de l’inscription au rôle des contributions ou de leur immatriculation dans la représentation diplomatique ou consulaire, les électeurs qui sollicitent un changement de lieu de vote.",
+    "Sont dispensés de cette preuve, les Ivoiriens qui sollicitent une première inscription sur la liste électorale.",
+    "Quiconque s’inscrit sur la liste électorale d’une circonscription électorale où il n’a ni son domicile ni sa résidence ou dans laquelle il n’est pas inscrit au rôle des contributions ou n’est pas immatriculé, est puni d’un emprisonnement de six mois à un an et d’une amende de cinq cent mille à un million de francs.",
+    "La Commission chargée des élections peut ordonner sa radiation de la liste électorale de la circonscription concernée.",
+    "Les modalités relatives à la preuve du domicile ou de la résidence, de l’inscription au rôle des contributions ou de l’immatriculation sont déterminées par décret en Conseil des ministres, sur proposition de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "10",
+   "paras": [
+    "Nul ne peut être inscrit dans plus d'une circonscription électorale, ni sur plusieurs listes électorales de la même circonscription."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "11",
+   "paras": [
+    "La période d’établissement de la liste électorale ainsi que les modalités pratiques de son exécution sont fixées par décret pris en Conseil des ministres, sur proposition de la Commission chargée des élections.",
+    "Dans tous les cas, la liste électorale provisoire doit être publiée trois mois au plus tard avant les élections, par voie d’affichage, dans tous les lieux de vote, afin de permettre sa consultation par les électeurs.",
+    "Tout parti politique ou toute personne ayant fait acte de candidature peut se faire délivrer une copie de la liste électorale à ses frais.",
+    "La liste électorale est arrêtée définitivement après la fin du contentieux prévu à l’article 12."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "12",
+   "paras": [
+    "Tout électeur inscrit sur la liste de la circonscription électorale peut réclamer l’inscription d’une personne omise.",
+    "Tout électeur a le droit de réclamer la radiation d’une personne décédée, de celle qui a perdu sa qualité d’électeur, de celle dont la radiation a été ordonnée par décision de l’autorité compétente ou d’une personne indûment inscrite.",
+    "Ces mêmes droits peuvent être exercés par chacun des membres de la Commission chargée des élections.",
+    "Les demandes émanant des tiers ne peuvent avoir pour objet que des inscriptions ou des radiations éventuelles et doivent préciser le nom de chacun de ceux dont l’inscription ou la radiation est réclamée.",
+    "La réclamation écrite et motivée est adressée à la Commission chargée des élections.",
+    "La décision de la Commission chargée des élections est susceptible de recours devant le président du tribunal territorialement compétent sans frais, par déclaration au greffe dans le délai de trois jours à compter de son prononcé.",
+    "La décision du président du tribunal est rendue dans le délai de cinq jours à compter de sa saisine.",
+    "Elle ne fait l’objet d’aucun recours.",
+    "La charge de la preuve incombe au demandeur.",
+    "Les omissions et irrégularités matérielles constatées par l’intéressé ou par la Commission chargée des élections relatives à la mention des noms, prénoms, sexe, profession, résidence ou domicile des électeurs, peuvent faire l’objet d’une rectification par la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "13",
+   "paras": [
+    "La reconstitution de la liste électorale peut être opérée par la Commission chargée des élections dans les cas suivants :",
+    "- perte, vol, dégradation, altération, destruction totale ou partielle pour quelque cause que ce soit ;",
+    "- modification du ressort de la circonscription électorale soit par scission, soit par fusion ou par extension."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "3",
+   "title": "De la carte d’électeur"
+  },
+  {
+   "type": "article",
+   "num": "14",
+   "paras": [
+    "Il est délivré à tout électeur inscrit sur la liste électorale une carte d’électeur.",
+    "Les spécifications techniques et les modalités d’établissement des cartes d’électeur sont fixées par décret en Conseil des ministres sur proposition de la Commission chargée des élections.",
+    "La carte d’électeur est personnelle et non cessible. Elle ne doit comporter ni rature ni altération d’aucune sorte. Elle est valable pour tous les scrutins pendant la durée des mandats en cours."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "15",
+   "paras": [
+    "La distribution des cartes d’électeur s’achève à la date fixée par la Commission chargée des élections.",
+    "Ces cartes sont délivrées aux intéressés sur présentation d’une pièce d’identité."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "16",
+   "paras": [
+    "Les cartes non distribuées font retour à la Commission chargée des élections pour être remises au bureau de vote concerné où elles restent, le jour du scrutin, à la disposition de leurs titulaires.",
+    "A la clôture du scrutin, les cartes non retirées sont comptées et mises sous pli scellé par le président du bureau en présence de tous les membres du bureau de vote et transmises, contre décharge, à la Commission chargée des élections.",
+    "Les plis ainsi scellés ne pourront être ouverts que par la Commission chargée des élections lors de la plus prochaine élection ou révision de la liste électorale."
+   ]
+  },
+  {
+   "type": "chapitre",
+   "num": "2",
+   "title": "DE L’ELIGIBILITE, DE L’INELIGIBILITE ET DES INCOMPATIBILITES"
+  },
+  {
+   "type": "section",
+   "num": "1",
+   "title": "De l’éligibilité"
+  },
+  {
+   "type": "article",
+   "num": "17",
+   "paras": [
+    "Tout électeur peut faire acte de candidature aux élections organisées par le présent Code électoral, sous réserve des conditions particulières fixées pour chacune d’elles."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "2",
+   "title": "De l’inéligibilité"
+  },
+  {
+   "type": "article",
+   "num": "18",
+   "paras": [
+    "Tout électeur qui se trouve dans l’un des cas d’inéligibilité prévus dans les dispositions particulières relatives aux élections organisées par le présent Code électoral, ne peut faire acte de candidature."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "3",
+   "title": "Des incompatibilités"
+  },
+  {
+   "type": "article",
+   "num": "19",
+   "paras": [
+    "Lorsque des personnes élues sont frappées par les incompatibilités prévues par les dispositions du présent Code électoral, il leur est fait obligation de choisir l’une ou l’autre des deux fonctions selon les modalités prévues pour chaque élection."
+   ]
+  },
+  {
+   "type": "chapitre",
+   "num": "3",
+   "title": "DE L’ELECTION"
+  },
+  {
+   "type": "section",
+   "num": "1",
+   "title": "Des opérations préparatoires du scrutin"
+  },
+  {
+   "type": "article",
+   "num": "20",
+   "paras": [
+    "Le collège électoral est convoqué par décret en Conseil des ministres sur proposition de la Commission chargée des élections.",
+    "La date de l’élection et les heures d’ouverture et de clôture du scrutin sont fixées par le décret portant convocation du collège électoral."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "21",
+   "paras": [
+    "Il est créé dans chaque circonscription administrative, commune et dans certaines représentations diplomatiques ou consulaires, des bureaux de vote.",
+    "Chaque bureau de vote comprend six cents électeurs au maximum.",
+    "Les bureaux de vote sont installés dans les lieux et édifices publics. Toutefois, des lieux privés réquisitionnés et aménagés à cet effet peuvent abriter des bureaux de vote à l’exclusion des domiciles, des lieux de culte et des locaux appartenant à des partis politiques.",
+    "Le nombre et les lieux de bureaux de vote sont fixés par décret pris en Conseil des ministres, sur proposition de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "22",
+   "paras": [
+    "L’Etat prend à sa charge le coût d’impression des affiches, des enveloppes et des bulletins uniques de vote, les frais d’expédition de ces documents, ainsi que tous les frais relatifs aux opérations de vote.",
+    "Les spécifications techniques ainsi que le nombre des affiches, enveloppes et bulletins de vote sont fixées par décret en Conseil des ministres sur proposition de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "23",
+   "paras": [
+    "L’Imprimerie nationale de Côte d’Ivoire est chargée de l’impression des documents électoraux sous l’autorité de la Commission chargée des élections.",
+    "La Commission chargée des élections et l’Imprimerie nationale de Côte d’Ivoire, sont chargées, sous le contrôle et la responsabilité de la Commission chargée des élections, du choix des autres imprimeurs pour l’impression des documents électoraux.",
+    "Les conditions d’établissement de la liste des imprimeurs sont fixées, sur proposition conforme de la Commission chargée des élections, par décret pris en Conseil des ministres."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "2",
+   "title": "De la présentation des candidatures"
+  },
+  {
+   "type": "article",
+   "num": "24",
+   "paras": [
+    "Toute candidature doit faire l’objet d’une déclaration.",
+    "La déclaration de candidature est assortie d’un cautionnement qui doit être versé, contre reçu, au Trésor public, avant le dépôt du dossier de candidature.",
+    "Le cautionnement est restitué aux personnes dont le dossier de candidature a été rejeté. Cette restitution a lieu quinze jours après la publication de la liste définitive des candidats.",
+    "Le cautionnement est de même restitué à tout candidat ou liste de candidats ayant obtenu cinq pour cent (5%) au moins des suffrages exprimés. Dans le cas contraire, il reste acquis à l’Etat.",
+    "Le cautionnement reste également acquis à l’Etat si le candidat ou la liste de candidats se retire après la publication de la liste définitive des candidats.",
+    "Dans les hypothèses prévues aux alinéas 3 et 4 du présent article, tout cautionnement non réclamé après un délai de douze mois à compter de la proclamation des résultats définitifs du scrutin, reste acquis à l’Etat.",
+    "En cas de décès d’un candidat, le cautionnement est restitué à ses ayants droit.",
+    "Si le décès intervient après le scrutin, le cautionnement est restitué à ses ayants droit à condition que le défunt ait obtenu au moins cinq pour cent (5%) des suffrages exprimés.",
+    "Les ayants droit doivent en faire la demande dans un délai de vingt-quatre mois à compter de la date du décès."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "25",
+   "paras": [
+    "Chaque candidat doit indiquer :",
+    "la circonscription électorale retenue, le cas échéant ;",
+    "la couleur, le sigle et le symbole choisis pour figurer sur le bulletin de vote ;",
+    "l’intitulé de la liste, s'il s'agit d'une liste de candidats ;",
+    "le parrainage obtenu, le cas échéant."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "26",
+   "paras": [
+    "L’utilisation combinée des trois couleurs du drapeau national est proscrite.",
+    "Est également proscrite, l’utilisation des armoiries de la République ou de la Collectivité territoriale concernée par l'élection, sous quelque forme que ce soit.",
+    "Plusieurs candidats ou listes de candidats d'une même circonscription électorale ne peuvent avoir ni le même intitulé, ni le même sigle, ni le même symbole, ni la même couleur sur le bulletin unique."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "27",
+   "paras": [
+    "Nul ne peut être inscrit sur plus d’une liste de candidature.",
+    "Tout candidat qui se présente sur plus d’une liste de candidature ou simultanément dans plus d’une circonscription, est radié d’office de ces listes sans préjudice des peines prévues par les lois pour sanctionner les crimes et délits relatifs à l’exercice des droits civiques."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "3",
+   "title": "De la propagande électorale"
+  },
+  {
+   "type": "article",
+   "num": "28",
+   "paras": [
+    "Les dates d’ouverture et de clôture de la campagne électorale sont fixées par décret en Conseil des ministres sur proposition de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "29",
+   "paras": [
+    "Tous les candidats ou listes de candidats retenus, disposent d’une période réglementaire au cours de laquelle ils font campagne."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "30",
+   "paras": [
+    "Pendant la période de la campagne électorale, les candidats retenus ont un égal accès aux organes officiels de presse et de production d’informations numériques ainsi qu’aux médias du secteur public de la communication audiovisuelle.",
+    "La durée de la campagne électorale ainsi que les modalités de cette égalité sont fixées par décret pris en Conseil des Ministres, sur proposition de la Commission chargée des élections.",
+    "L’égalité d’accès aux organes officiels de presse et de production d’informations numériques ainsi qu’aux médias du secteur public de la communication audiovisuelle est garantie par les autorités en charge de la régulation de la presse et de la communication audiovisuelle.",
+    "L’utilisation des véhicules administratifs par les candidats et leur état-major à des fins de propagande électorale est proscrite.",
+    "Les autorités préfectorales, les militaires et paramilitaires en activité doivent s’abstenir de prendre part aux réunions politiques et aux campagnes électorales."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "31",
+   "paras": [
+    "Il est interdit d’apposer des affiches, de signer, d’envoyer ou de distribuer des bulletins de vote, circulaires ou professions de foi dans l’intérêt d’un candidat ou liste de candidats en dehors de la période réglementaire de campagne."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "32",
+   "paras": [
+    "Sont interdites toutes réunions électorales et toute propagande électorale par quelque mode que ce soit, en dehors de la durée réglementaire de la campagne électorale."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "4",
+   "title": "Des opérations de vote et de la proclamation des résultats"
+  },
+  {
+   "type": "article",
+   "num": "33",
+   "paras": [
+    "Les opérations de vote ont toujours lieu un samedi. Elles ne durent qu’un jour, sauf cas de force majeure.",
+    "Le scrutin est ouvert et clos aux heures fixées par le décret portant convocation du collège électoral, sur proposition de la Commission chargée des élections.",
+    "Aucun bureau de vote ne peut être ouvert ou fermé avant l’heure légale.",
+    "Les électeurs présents sur les lieux de vote et en attente d'exercer leur droit de vote après l'heure légale de clôture ne peuvent être empêchés de l’exercer. A cet effet, le président du bureau de vote fait ramasser leurs cartes d'électeurs et les autorise à voter. Mention en est faite au procès-verbal."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "34",
+   "paras": [
+    "Nul ne peut être admis à voter s’il n’est inscrit sur la liste électorale. Le vote par correspondance, par ordonnance ou par procuration est interdit."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "35",
+   "paras": [
+    "Chaque bureau de vote comprend un président et deux secrétaires désignés par la Commission chargée des élections. Les membres des bureaux de vote doivent être inscrits sur la liste électorale de la circonscription.",
+    "Chaque candidat ou liste de candidats peut désigner au titre de ses représentants un titulaire et un suppléant dans chaque bureau de vote.",
+    "L’organisation et le fonctionnement des bureaux de vote sont fixés par décret pris en Conseil des ministres, sur proposition de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "36",
+   "paras": [
+    "Chaque bureau de vote dispose d’une urne et d’un ou plusieurs isoloirs.",
+    "L’urne doit être transparente au moins sur un côté et présenter des garanties de sécurité et d’inviolabilité. Elle est pourvue d’une ouverture unique. Cette ouverture est destinée à laisser passer l’enveloppe contenant le bulletin de vote.",
+    "Avant le début du scrutin, l’urne est vidée, fermée et scellée par le président du bureau de vote en présence des membres du bureau de vote, du ou des délégués de la Commission chargée des élections le cas échéant, ainsi que des électeurs et observateurs présents.",
+    "Les isoloirs doivent permettre le secret du vote de chaque électeur. Ils doivent être placés de façon à ne pas dissimuler au public les opérations de vote.",
+    "Les spécifications techniques des urnes et isoloirs sont fixées par décret en Conseil des ministres, sur proposition de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "37",
+   "paras": [
+    "Le vote a lieu au moyen d'un bulletin unique de vote fourni par la Commission chargée des élections.",
+    "Nul ne peut être admis à voter s'il ne justifie de son identité.",
+    "L’électeur inscrit sur la liste électorale fait vérifier son identité au moyen de sa carte d’électeur ou de sa carte nationale d’identité et reçoit d’un membre du bureau, le bulletin unique de vote. Il passe par l’isoloir pour faire son choix et revient introduire son bulletin plié dans l'urne.",
+    "Son vote est constaté par sa signature ou par l’apposition de l’empreinte de son index gauche sur la liste en marge de son nom.",
+    "L’index gauche de l’électeur est ensuite marqué à l’encre indélébile.",
+    "Tout électeur atteint d’un handicap physique le mettant dans l’impossibilité d'accomplir les opérations décrites ci-dessus, est autorisé à se faire assister de toute personne de son choix n’ayant pas de handicap physique de même nature.",
+    "Si l’électeur est atteint d’une infirmité le privant de son index gauche, il peut apposer l’empreinte de tout autre doigt sur la liste d’émargement. S’il ne dispose d’aucun doigt, la personne qui l’assiste est autorisée par le président du bureau à apposer l’empreinte de son index gauche.",
+    "Les modalités particulières de vote des agents électoraux, des membres des commissions électorales et des agents des forces de sécurité sont déterminées par la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "38",
+   "paras": [
+    "Tout candidat ou candidat tête de liste a libre accès à tous les bureaux de vote.",
+    "Il a le droit par lui-même, par l’un des candidats de la liste ou par l’un de ses délégués, de contrôler toutes les opérations de vote, de dépouillement des bulletins et de décompte des voix dans les locaux où s’effectuent ces opérations, et d’exiger l’inscription au procès-verbal de toutes observations, protestations ou contestations sur lesdites opérations, soit avant soit après la proclamation des résultats du scrutin."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "39",
+   "paras": [
+    "Le dépouillement a lieu immédiatement après la clôture du scrutin, dans le bureau de vote. Les opérations de vote et de proclamation des résultats sont consignées dans les procès-verbaux de dépouillement.",
+    "Les procès-verbaux de dépouillement sont rédigés en autant d’exemplaires que de besoin dans la salle de vote et signés des membres du bureau. Ils comportent les observations, protestations ou contestations éventuelles des candidats, des listes de candidats ou de leurs représentants et sont versés aux dossiers de vote à transmettre aux juridictions compétentes.",
+    "L’annonce des résultats de chaque bureau de vote est faite par le président devant les électeurs présents.",
+    "Il est interdit à toute personne physique ou morale non habilitée à cet effet, de publier ou de diffuser des estimations de vote ou des résultats de sondage sous quelque forme que ce soit, à partir de quelque lieu que ce soit à compter de la publication de la liste électorale définitive.",
+    "Des dispositions particulières à chaque élection règlent les modalités de recensement général des votes et de proclamation des résultats définitifs."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "5",
+   "title": "Du contentieux électoral"
+  },
+  {
+   "type": "article",
+   "num": "40",
+   "paras": [
+    "Le droit de contestation des opérations de vote est reconnu à tout candidat selon les modalités prévues pour chaque élection."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "41",
+   "paras": [
+    "Toute infraction aux dispositions des articles 30, 31 et 32 du Code électoral est passible d'une amende de 2.500.000 à 10.000.000 de francs CFA.",
+    "En cas de condamnation pour l’infraction prévue à l'article 39 du Code électoral, le juge prononce à titre complémentaire, la suspension, pour trois à sept parutions, du journal ayant procédé à la publication ou, pour une semaine, s’il s’agit d’une production d’informations numériques."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "42",
+   "paras": [
+    "Les dispositions de l’article 41 ci-dessus ne font pas obstacle à l’application des peines prévues par les lois pour sanctionner les crimes et délits relatifs à l’exercice des droits civiques."
+   ]
+  },
+  {
+   "type": "titre",
+   "num": "2",
+   "title": "DISPOSITIONS PARTICULIERES A CHAQUE ELECTION"
+  },
+  {
+   "type": "chapitre",
+   "num": "1",
+   "title": "DE L’ELECTION DU PRESIDENT DE LA REPUBLIQUE"
+  },
+  {
+   "type": "section",
+   "num": "1",
+   "title": "Du mode de scrutin"
+  },
+  {
+   "type": "article",
+   "num": "43",
+   "paras": [
+    "Le Président de la République est élu pour cinq ans au suffrage universel direct.",
+    "Il n’est rééligible qu’une fois.",
+    "Le candidat à l’élection présidentielle doit jouir de ses droits civils et politiques et doit être âgé de trente-cinq ans au moins. Il doit être exclusivement de nationalité ivoirienne, né de père ou de mère ivoirien d'origine."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "44",
+   "paras": [
+    "L’élection du Président de la République est acquise à la majorité absolue des suffrages exprimés.",
+    "Si la majorité absolue n'est pas obtenue au premier tour, il est procédé à un second tour. Seuls peuvent s'y présenter les deux candidats ayant recueilli le plus grand nombre de suffrages exprimés au premier tour.",
+    "L'élection du Président de la République au second tour est acquise à la majorité des suffrages exprimés."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "45",
+   "paras": [
+    "Le premier tour du scrutin a lieu le dernier samedi du mois d'octobre de la cinquième année du mandat du Président de la République en fonction.",
+    "Le second tour a lieu le dernier samedi du mois de novembre de la cinquième année du mandat du Président de la République en fonction.",
+    "La convocation des électeurs est faite par décret pris en Conseil des Ministres, sur proposition de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "46",
+   "paras": [
+    "Si avant le premier tour, l’un des candidats retenus par le Conseil constitutionnel se trouve empêché ou décède, le Conseil constitutionnel peut prononcer le report de l’élection dans les soixante-douze heures, à compter de sa saisine par la Commission chargée des élections.",
+    "En cas de décès ou d'empêchement absolu de l’un des candidats arrivés en tête à l'issue du premier tour, le Président de la Commission chargée des élections saisit immédiatement le Conseil constitutionnel, qui décide, dans les soixante-douze heures à compter de sa saisine, du report de l’élection.",
+    "Dans les deux cas, l’élection du Président de la République se tient dans un délai ne pouvant excéder trente jours à compter de la décision du Conseil constitutionnel."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "47",
+   "paras": [
+    "En cas d’événements ou de circonstances graves notamment, d’atteinte à l’intégrité du territoire, de catastrophes naturelles rendant impossible le déroulement normal des élections ou la proclamation des résultats, le président de la Commission chargée des élections saisit immédiatement le Conseil constitutionnel aux fins de constatation de cette situation.",
+    "Le Conseil constitutionnel décide, dans les vingt-quatre heures, d'arrêter ou de poursuivre les opérations électorales ou de suspendre la proclamation des résultats.",
+    "Le Président de la République en informe la Nation par message. Il demeure en fonction.",
+    "Dans le cas où le Conseil constitutionnel ordonne l'arrêt des opérations électorales ou la suspension de la proclamation des résultats, la Commission chargée des élections établit et lui communique quotidiennement un état de l’évolution de la situation.",
+    "Lorsque le Conseil constitutionnel constate la cessation de ces événements ou de ces circonstances graves, il fixe un nouveau délai pour la proclamation des résultats ou pour la tenue de l’élection, sur proposition de la Commission chargée des élections"
+   ]
+  },
+  {
+   "type": "section",
+   "num": "2",
+   "title": "Des conditions d’éligibilité et d’inéligibilité"
+  },
+  {
+   "type": "article",
+   "num": "48",
+   "paras": [
+    "Tout Ivoirien qui a la qualité d’électeur peut être élu Président de la République dans les conditions prévues par la Constitution et sous les réserves énoncées ci-après."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "49",
+   "paras": [
+    "Sont inéligibles :",
+    "les personnes privées par décision judiciaire de leur droit d'éligibilité ;",
+    "les personnes pourvues d'un Conseil judiciaire."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "50",
+   "paras": [
+    "Ne peuvent être acceptées pendant l’exercice de leurs fonctions et pendant les six mois qui suivent la cessation de celles-ci, de quelque manière que ce soit, les candidatures à l’élection du Président de la République, de :",
+    "membre du Conseil constitutionnel ;",
+    "membre de la Cour de cassation, du Conseil d’Etat et de la Cour des Comptes ;",
+    "magistrat ;",
+    "membre du Corps préfectoral ;",
+    "agent comptable central et départemental ;",
+    "président et directeur d’établissements ou d’entreprises à Participation financière publique ;",
+    "fonctionnaire ;",
+    "militaire et assimilé ;",
+    "membre de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "51",
+   "paras": [
+    "Chaque candidat à l'élection du Président de la République est tenu de produire une déclaration de candidature revêtue de sa signature dûment légalisée.",
+    "En outre, il doit être parrainé par une liste d’électeurs représentant un pour cent (1%) de l’électorat local, dans au moins cinquante pour cent (50%) des régions et dans chacun des districts autonomes d’Abidjan et de Yamoussoukro.",
+    "[Alinéa 2 modifié par l’ordonnance n° 2025-290 du 7 mai 2025.]"
+   ]
+  },
+  {
+   "type": "article",
+   "num": "52",
+   "paras": [
+    "Les candidatures à l’élection du Président de la République sont reçues par la Commission chargée des élections, qui les transmet au Conseil constitutionnel au plus tard dans les soixante-douze heures qui suivent la date de clôture de réception desdites candidatures.",
+    "Le délai de réception des candidatures expire soixante jours avant le scrutin."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "53",
+   "paras": [
+    "La déclaration de candidature à l'élection du Président de la République doit indiquer, pour chaque candidat :",
+    "les nom et prénoms ;",
+    "la date et le lieu de naissance ;",
+    "la nationalité ;",
+    "la filiation ;",
+    "la nationalité du père ou de la mère ;",
+    "le domicile et la profession ;",
+    "le ou les partis politiques l’ayant investi, le cas échéant ;",
+    "la couleur, le sigle et le symbole choisis pour le bulletin unique de vote ;",
+    "les districts autonomes ou régions où le parrainage a été obtenu ainsi que le pourcentage d’électeurs y ayant parrainé la candidature."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "54",
+   "paras": [
+    "La déclaration de candidature à l'élection du Président de la République est obligatoirement accompagnée, pour chaque candidat, des pièces ci-après :",
+    "1) un extrait de l’acte de naissance ou du jugement supplétif en tenant lieu ;",
+    "2) un certificat de nationalité ;",
+    "3) un extrait du casier judiciaire ;",
+    "4) une attestation de régularité fiscale ;",
+    "5) une copie du reçu de cautionnement.",
+    "Les pièces ci-dessus énumérées doivent être établies depuis moins de trois mois avant la date de clôture des candidatures.",
+    "La déclaration de candidature à l'élection du Président de la République doit, en outre, être accompagnée des pièces suivantes :",
+    "une lettre d’investiture du ou des partis ou groupements politiques, le cas échéant ;",
+    "la liste des électeurs qui parrainent la candidature, avec en regard, les prénoms, nom, date et lieu de naissance, la circonscription électorale d’inscription, le numéro de la carte d’électeur et de la carte d’identité, le cas échéant, ainsi que la signature de l’intéressé.",
+    "Un électeur ne peut parrainer qu’un candidat.",
+    "Dans le cas d'une présence sur plus d'une liste, le parrainage sur la première liste contrôlée, selon l'ordre de dépôt, est validé et est invalidé sur les autres.",
+    "Toutefois, si du fait de cette invalidation, une candidature n'atteint pas le minimum requis des électeurs inscrits au fichier ou le minimum requis par district autonome et par région, notification en est faite au mandataire concerné. Celuici peut procéder à la régularisation par le remplacement jusqu'à concurrence du nombre de parrainages invalidés pour ce fait dans les quarante-huit heures.",
+    "Tout électeur qui parraine plusieurs candidatures, est puni d’une peine d’emprisonnement d’un mois à un an et d’une amende de cent mille à un million de francs.",
+    "Quiconque aura organisé ou planifié des actes qualifiés de fraude ou de tentative de fraude sur le parrainage sera puni des mêmes peines.",
+    "La collecte de parrains est interdite dans les cantonnements militaires, paramilitaires, dans les services militaires, paramilitaires ainsi que dans les établissements de santé.",
+    "Quiconque procède à la collecte de parrains dans les cantonnements militaires, paramilitaires, dans les services militaires, paramilitaires ou dans les établissements de santé est puni d’une peine d’emprisonnement de six à douze mois et d’une amende d’un à cinq millions de francs.",
+    "Les listes de parrainage sont dressées par des collecteurs désignés par le candidat. Elles portent sur chacune d’elle l’identité du collecteur responsable.",
+    "Le Conseil constitutionnel, en relation avec la Commission chargée des élections, procède au contrôle des listes de parrainage de candidature.",
+    "Pour le recueil des signatures, un modèle de fiche de collecte est élaboré, en format papier et électronique, et mis à la disposition de chaque candidat à la candidature par la Commission chargée des élections.",
+    "Les modalités d'organisation de la collecte de signatures sont fixées par décret en Conseil des Ministres, sur proposition de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "55",
+   "paras": [
+    "Le cautionnement est fixé à cinquante millions de francs."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "56",
+   "paras": [
+    "Dès réception des candidatures, celles-ci sont publiées par le Conseil constitutionnel. Les candidats ou les partis politiques les ayant investis éventuellement, adressent au Conseil constitutionnel leurs réclamations ou observations dans les soixante-douze heures suivant la publication des candidatures.",
+    "Le Conseil constitutionnel procède au contrôle de l’éligibilité des candidats et à la vérification des parrainages des électeurs, conformément aux dispositions du Code électoral. A cet effet, le Conseil constitutionnel met en place un dispositif de vérification des parrainages. Les modalités de fonctionnement de ce dispositif sont fixées par le Conseil constitutionnel.",
+    "Le Conseil constitutionnel établit la liste des candidats après vérification de leur éligibilité.",
+    "Il arrête et publie la liste définitive des candidats quarante-cinq jours avant le premier tour du scrutin."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "57",
+   "paras": [
+    "Est rejetée toute candidature dont la composition du dossier n’est pas conforme aux dispositions ci-dessus."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "3",
+   "title": "Du recensement des votes, de la proclamation des résultats et du contentieux électoral"
+  },
+  {
+   "type": "article",
+   "num": "58",
+   "paras": [
+    "A la fin des opérations de vote, chaque président de bureau de vote procède séance tenante, au dépouillement des bulletins, en présence des représentants présents des candidats et de la Commission chargée des élections.",
+    "Le président du bureau de vote proclame les résultats provisoires.",
+    "Le président du bureau de vote rédige les procès-verbaux de dépouillement.",
+    "Ces procès-verbaux sont signés par les membres du bureau de vote et les représentants présents des candidats. Ceux-ci doivent être inscrits sur la liste électorale de la circonscription concernée.",
+    "Le président de bureau de vote remet à chaque délégué de candidat présent, un exemplaire du procès-verbal. Un exemplaire de ce procès-verbal est également remis au représentant de la Commission chargée des élections.",
+    "Chaque président de bureau de vote transmet immédiatement quatre exemplaires du procès-verbal des opérations électorales accompagnées des pièces qui doivent y être annexées, à la Commission chargée des élections en vue d’un recensement général des votes au niveau de la circonscription administrative."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "59",
+   "paras": [
+    "La Commission chargée des élections procède au recensement général des votes et à la proclamation des résultats provisoires du scrutin, au niveau de la circonscription administrative, en présence des représentants présents des candidats.",
+    "Trois exemplaires du procès-verbal accompagnés des pièces justificatives sont transmis à la Commission chargée des élections. Celle-ci procède aux opérations de collecte et à la proclamation des résultats provisoires, au niveau national au plus tard dans les cinq jours qui suivent la clôture du scrutin et en présence des représentants présents des candidats.",
+    "La proclamation solennelle est faite par la Commission chargée des élections.",
+    "La Commission chargée des élections communique au Conseil constitutionnel un exemplaire des procès-verbaux accompagné des pièces justificatives dans les trois jours qui suivent la proclamation solennelle des résultats provisoires.",
+    "Les autres exemplaires des procès-verbaux restent respectivement dans les archives de la Commission électorale locale et au siège de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "60",
+   "paras": [
+    "Tout candidat à l’élection du Président de la République peut présenter, par requête écrite adressée au Président du Conseil constitutionnel, une réclamation concernant la régularité du scrutin ou de son dépouillement.",
+    "La requête doit être déposée dans les cinq jours qui suivent la proclamation des résultats provisoires."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "61",
+   "paras": [
+    "Le requérant doit annexer à sa requête les pièces produites au soutien de ses moyens.",
+    "Le Conseil constitutionnel, après examen de la requête, statue dans les sept jours de sa saisine. Toutefois, il peut, sans instruction contradictoire préalable, rejeter les requêtes irrecevables ou ne contenant que des griefs manifestement sans influence sur l’élection contestée."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "62",
+   "paras": [
+    "L’examen des réclamations éventuelles est effectué par le Conseil constitutionnel dans les sept jours à compter de la date de réception des procèsverbaux."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "63",
+   "paras": [
+    "Le résultat définitif de l’élection du Président de la République est proclamé, après examen des réclamations éventuelles, par le Conseil constitutionnel et publié selon la procédure d’urgence."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "64",
+   "paras": [
+    "Dans le cas où le Conseil constitutionnel constate des irrégularités graves de nature à entacher la sincérité du scrutin et à en affecter le résultat d’ensemble, il prononce l’annulation de l’élection.",
+    "La date du nouveau scrutin est fixée par décret en Conseil des ministres sur proposition de la Commission chargée des élections. Le scrutin a lieu au plus tard quarante-cinq jours à compter de la date de la décision du Conseil constitutionnel."
+   ]
+  },
+  {
+   "type": "chapitre",
+   "num": "2",
+   "title": "DE L’ELECTION DES DEPUTES"
+  },
+  {
+   "type": "article",
+   "num": "65",
+   "paras": [
+    "Le nombre des députés est fixé par une loi organique."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "66",
+   "paras": [
+    "Les pouvoirs de l’Assemblée Nationale expirent à la fin de la session ordinaire de la dernière année de sa législature.",
+    "Les élections des Députés ont lieu avant l’expiration des pouvoirs de l’Assemblée Nationale.",
+    "Toutefois, dans l’impossibilité d’organiser les élections des Députés avant l’expiration des pouvoirs de l’Assemblée Nationale, l’Assemblée Nationale demeure en fonction jusqu’à l’organisation desdites élections."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "1",
+   "title": "Du mode de scrutin"
+  },
+  {
+   "type": "article",
+   "num": "67",
+   "paras": [
+    "Les députés sont élus pour cinq ans. Ils sont rééligibles."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "68",
+   "paras": [
+    "Les circonscriptions électorales comportent chacune un ou plusieurs sièges.",
+    "Dans les circonscriptions électorales comportant plusieurs sièges, les candidats fournissent des listes complètes.",
+    "L’élection des députés à l’Assemblée nationale a lieu, dans chaque circonscription électorale, au suffrage universel direct et au scrutin majoritaire à un tour.",
+    "Les députés sont élus au scrutin de liste majoritaire bloquée à un tour, sans vote préférentiel ni panachage dans les circonscriptions comportant plusieurs sièges. Dans les circonscriptions comportant un seul siège, les élections ont lieu au scrutin uninominal à un tour.",
+    "En cas d’égalité de voix entre les candidats ou listes de candidats arrivés en tête, il est procédé à un nouveau scrutin pour les départager.",
+    "Le scrutin a lieu au plus tard quinze jours après la proclamation des résultats.",
+    "A l’issue de ces dernières élections et en cas de nouvelle égalité, est déclaré élu le candidat le plus âgé ou la liste de candidats ayant la moyenne d’âge la plus élevée."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "69",
+   "paras": [
+    "Le nombre et l’étendue des circonscriptions électorales pour l’élection des députés sont fixés par décret en Conseil des ministres sur proposition de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "2",
+   "title": "De l’éligibilité et de l’inéligibilité"
+  },
+  {
+   "type": "article",
+   "num": "70",
+   "paras": [
+    "Tout ivoirien qui a la qualité d’électeur peut se présenter dans toute circonscription électorale de son choix pour être élu à l'Assemblée nationale sous les réserves énoncées aux articles suivants."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "71",
+   "paras": [
+    "Le candidat à l'élection de député à l'Assemblée nationale doit :",
+    "être âgé de 25 ans au moins ;",
+    "être ivoirien de naissance ;",
+    "n’avoir jamais renoncé à la nationalité ivoirienne.",
+    "Il doit en outre avoir résidé de façon continue en Côte d’Ivoire pendant les cinq années précédant la date des élections. Cette restriction ne s'applique pas aux membres des représentations diplomatiques et consulaires, aux personnes désignées par l’Etat pour occuper un poste ou accomplir une mission à l’étranger, aux fonctionnaires internationaux et aux exilés politiques."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "72",
+   "paras": [
+    "Sont inéligibles :",
+    "les personnes ayant acquis la nationalité ivoirienne depuis moins de dix ans ;",
+    "les présidents de Conseil régional, les conseillers régionaux, les maires, les adjoints au maire et les conseillers municipaux démis d’office pour malversations, même s’ils n’ont pas encouru de peine privative de droits civiques sans préjudice des dispositions de la législation relative à l’organisation des Collectivités territoriales."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "73",
+   "paras": [
+    "Les candidatures à l'élection de député des personnes désignées ci-dessous, lorsqu’elles exercent leurs fonctions, ne peuvent être acceptées que si elles sont accompagnées d’une demande de mise en disponibilité pour une durée exceptionnellement égale à celle du mandat :",
+    "les membres du Conseil constitutionnel ;",
+    "les membres de la Cour de cassation, du Conseil d’Etat et de la Cour des Comptes;",
+    "les magistrats ;",
+    "les membres du Corps préfectoral ;",
+    "les comptables publics ;",
+    "les présidents et directeurs d’établissements ou d’entreprises à participation financière publique ;",
+    "les fonctionnaires, exception faite des professeurs titulaires de l’enseignement supérieur et des Directeurs de recherches exerçant dans les universités, instituts et centres de recherches ;",
+    "les militaires et assimilés.",
+    "En cas de non-élection ou de non-réélection au terme de leur mandat, les personnes ci-dessus désignées réintègrent de plein droit leur emploi d’origine."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "3",
+   "title": "De la présentation des candidatures"
+  },
+  {
+   "type": "article",
+   "num": "74",
+   "paras": [
+    "Chaque candidat est tenu de produire une déclaration de candidature revêtue de sa signature dûment légalisée."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "75",
+   "paras": [
+    "La déclaration de candidature à l’élection de député à l'Assemblée nationale est déposée en double exemplaire auprès de la Commission chargée des élections au plus tard quarante-cinq jours avant la date d'ouverture du scrutin.",
+    "Les candidatures sont examinées par la Commission chargée des élections.",
+    "S’il apparaît qu’une candidature a été déposée par une personne inéligible, la Commission sursoit à l’enregistrement de la candidature avec notification dans les quarante-huit heures de la décision à l’intéressé. Celui-ci dispose d’un délai de trois jours pour saisir le Conseil constitutionnel qui statue dans les trois jours de sa saisine.",
+    "Si le délai de notification n’est pas respecté, la candidature doit être enregistrée."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "76",
+   "paras": [
+    "La déclaration de candidature doit mentionner :",
+    "les nom et prénoms du candidat ;",
+    "la date et le lieu de sa naissance ;",
+    "sa filiation ;",
+    "son domicile et sa profession.",
+    "La déclaration doit, en outre, indiquer l’ordre de présentation des candidats, s'il s'agit d'une liste."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "77",
+   "paras": [
+    "La déclaration de candidature est obligatoirement accompagnée, pour chaque candidat, des pièces suivantes :",
+    "- un extrait de l’acte de naissance ou du jugement supplétif en tenant lieu ;",
+    "- un certificat de nationalité ;",
+    "un extrait du casier judiciaire ;",
+    "une attestation de régularité fiscale ;",
+    "une copie du reçu de cautionnement ;",
+    "une déclaration sur l’honneur du candidat suppléant exprimant son acceptation de la candidature à la suppléance.",
+    "Les pièces ci-dessus énumérées doivent être établies depuis moins de trois mois avant la date de clôture des candidatures.",
+    "La déclaration doit, en outre, être accompagnée d’une lettre d'investiture du ou des partis ou groupements politiques qui présentent la candidature, le cas échéant."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "78",
+   "paras": [
+    "Pour les circonscriptions à un siège, les candidatures sont présentées individuellement.",
+    "Pour les circonscriptions à plusieurs sièges, les candidatures sont présentées sous forme de liste.",
+    "Aucune liste de candidature à l'élection des députés ne peut être acceptée si elle ne comprend un nombre de candidats titulaires et de candidats à la suppléance égal à celui des sièges à pourvoir dans la circonscription électorale considérée.",
+    "Pour les circonscriptions de plus de deux sièges, les listes doivent comporter au moins trente pour cent (30%) de candidatures féminines.",
+    "Aucune liste de candidature à l'élection des députés pour les circonscriptions de plus de deux sièges, ne peut être acceptée, si elle ne comporte au moins trente pour cent (30%) de candidatures féminines."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "79",
+   "paras": [
+    "Le cautionnement est fixé à cent mille francs par candidat. La caution payée par le candidat titulaire vaut pour le candidat à sa suppléance."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "80",
+   "paras": [
+    "Les candidatures à l’élection de député sont transmises à la Commission chargée des élections au plus tard quarante-cinq jours avant le début du scrutin.",
+    "La Commission chargée des élections dispose d’un délai de dix jours à compter de la date de dépôt pour arrêter et publier la liste.",
+    "La Commission chargée des élections établit la liste des candidats après le contrôle de leur éligibilité, conformément aux dispositions des articles 17 et 73 à 80 du Code électoral."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "81",
+   "paras": [
+    "La Commission chargée des élections communique la liste des candidats au Conseil constitutionnel dans les vingt-quatre heures qui suivent la publication de cette liste."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "82",
+   "paras": [
+    "Toute candidature dont la composition du dossier n’est pas conforme aux dispositions ci-dessus est rejetée par la Commission chargée des élections.",
+    "Le Conseil constitutionnel peut être saisi par le candidat ou le Parti ou Groupement politique qui a parrainé sa candidature dans un délai de trois jours à compter de la date de notification de la décision de rejet.",
+    "Le Conseil constitutionnel statue dans un délai de trois jours à compter du jour de sa saisine.",
+    "Si le Conseil constitutionnel ne s’est pas prononcé dans le délai susmentionné, la candidature doit être enregistrée."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "83",
+   "paras": [
+    "En cas de radiation d’un candidat en application de l’article 27 du Code électoral, de constatation d’inéligibilité ou de décès d’un candidat, il est procédé à son remplacement par un nouveau candidat au rang qui convient. Ce remplacement fait l’objet d’une déclaration complémentaire soumise aux dispositions du Code électoral, à l’exclusion des délais fixés à l’alinéa 2 de l'article 24 ci-dessus."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "84",
+   "paras": [
+    "En cas de décès d’un candidat au cours de la campagne électorale ou pendant le déroulement du scrutin, il est sursis de plein droit à l’élection dans la circonscription concernée.",
+    "Il est procédé à de nouvelles élections dans un délai d’un mois à compter de la date initialement prévue pour la tenue du scrutin."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "4",
+   "title": "Du recensement des votes et de la proclamation des résultats"
+  },
+  {
+   "type": "article",
+   "num": "85",
+   "paras": [
+    "A la fin des opérations de vote, chaque président de bureau de vote procède séance tenante au dépouillement des bulletins, en présence des représentants présents des candidats et de la Commission chargée des élections.",
+    "Le président du bureau de vote proclame les résultats provisoires.",
+    "Le président du bureau de vote rédige les procès-verbaux de dépouillement.",
+    "Les procès-verbaux sont signés par les représentants des listes des candidats ou leurs suppléants. Ceux-ci doivent être inscrits sur la liste électorale de la circonscription concernée.",
+    "Le président de bureau de vote remet à chaque délégué de candidat présent, un exemplaire du procès-verbal. Un exemplaire de ce procès-verbal est également remis au représentant de la Commission chargée des élections.",
+    "Chaque président de bureau de vote transmet immédiatement cinq exemplaires du procès-verbal des opérations électorales, le tout accompagné des pièces qui doivent y être annexées, à la Commission chargée des élections en vue d’un recensement général des votes au niveau de la circonscription électorale."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "86",
+   "paras": [
+    "La Commission chargée des élections procède au recensement général des votes et à la proclamation des résultats provisoires du scrutin au niveau de chaque circonscription administrative en présence des représentants présents des candidats ou des listes de candidats.",
+    "La proclamation solennelle des résultats provisoires du scrutin au niveau national est faite par le Président de la Commission chargée des élections.",
+    "La Commission chargée des élections communique au Conseil constitutionnel un exemplaire des procès-verbaux accompagné des pièces justificatives dans les trois jours qui suivent la proclamation solennelle des résultats provisoires.",
+    "La proclamation des résultats définitifs des élections est faite par la Commission chargée des élections à l’issue du contentieux devant le Conseil Constitutionnel."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "5",
+   "title": "Des incompatibilités"
+  },
+  {
+   "type": "article",
+   "num": "87",
+   "paras": [
+    "Le mandat de député est incompatible avec :",
+    "le mandat de Sénateur ;",
+    "les fonctions de membre du Conseil constitutionnel ;",
+    "les fonctions de membre de la Cour de cassation, du Conseil d’Etat et de la Cour des Comptes;",
+    "les fonctions de membre du Conseil économique, social, environnemental et culturel ;",
+    "les fonctions de Médiateur de la République et de Médiateur Délégué ;",
+    "les fonctions de membre des Cabinets présidentiel et ministériel ;",
+    "les fonctions de membre de la Commission chargée des élections ;",
+    "les fonctions de membre de la Chambre Nationale des Rois et Chefs Traditionnels ;",
+    "les fonctions de membre de la Haute Autorité pour la bonne gouvernance ;",
+    "les fonctions de membre de la Haute Autorité de la Communication Audiovisuelle ;",
+    "les fonctions de membre du Conseil de l’Autorité Nationale de la Presse ;",
+    "les fonctions de membre du bureau exécutif du Conseil National des Droits de l’Homme."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "88",
+   "paras": [
+    "L’exercice des fonctions publiques non électives est incompatible avec le mandat de député, exception faite des professeurs titulaires de l’enseignement supérieur et des Directeurs de recherches exerçant dans les universités, instituts et centres de recherches.",
+    "Toute personne visée à l’alinéa précédent, élue à l'Assemblée nationale, est remplacée dans ses fonctions et placée dans la position prévue à l’article 73 alinéa 1 du Code électoral, dans les huit jours qui suivent le début de son mandat."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "89",
+   "paras": [
+    "Les personnes visées à l’article 88 ci-dessus, élues à l'Assemblée nationale, peuvent être chargées par le Gouvernement d’une mission temporaire pendant une durée n’excédant pas six mois. Elles peuvent, pendant cette période, cumuler l’exercice de cette mission avec leur mandat de député."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "90",
+   "paras": [
+    "Sont incompatibles avec le mandat de député :",
+    "les fonctions de président et de membre de conseil d’administration ainsi que celles de directeur général et de directeur général adjoint de société d’Etat et de société à participation financière publique ;",
+    "les fonctions de directeur général, de directeur adjoint et de directeur des Etablissements publics nationaux.",
+    "Il en est de même de toute fonction exercée de façon permanente en qualité de Conseil auprès de ces sociétés ou établissements."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "91",
+   "paras": [
+    "Sont également incompatibles avec le mandat de député, les fonctions de chef d’entreprise, de président de conseil d’administration, d’administrateur délégué, de directeur général, de directeur adjoint ou de gérant exercées dans :",
+    "- les sociétés, entreprises ou établissements jouissant sous forme de garantie d’intérêts, de subventions ou sous une forme équivalente, d’avantages assurés par l’Etat ou par une Collectivité publique, sauf dans le cas où ces avantages découlent de l’application automatique d’une législation générale ou d’une réglementation générale ;",
+    "- les sociétés ayant exclusivement un objet financier et faisant publiquement appel à l’épargne et au crédit ;",
+    "- les sociétés ou entreprises dont l’activité consiste principalement en l’exécution de travaux, la prestation de fournitures ou de services pour le compte ou sous le contrôle de l’Etat, d’une Collectivité ou d'un Etablissement public national ou d'un Etat étranger ;",
+    "- les sociétés dont plus de la moitié du capital est constitué par des participations de sociétés, entreprises ou établissements visés ci-dessus.",
+    "Cette incompatibilité est étendue aux dirigeants des associations reconnues d’utilité publique."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "92",
+   "paras": [
+    "Il est interdit à tout député d’accepter, en cours de mandat, une fonction de membre de conseil d’administration ou de surveillance ou toute fonction exercée de façon permanente en qualité de conseil dans l’un des établissements, sociétés ou entreprises visés à l’article précédent."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "93",
+   "paras": [
+    "Nonobstant les dispositions des articles 90 et 91 ci-dessus, les députés membres d’un Conseil régional ou d’un Conseil municipal, peuvent être désignés par ces conseils pour représenter la région ou la commune dans des organismes d’intérêt régional ou local, à la condition que ces organismes n’aient pas pour objet propre de faire distribuer des bénéfices et que les intéressés n’y occupent pas de fonctions rémunérées."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "94",
+   "paras": [
+    "Il est interdit à tout avocat inscrit au barreau lorsqu’il est investi d’un mandat parlementaire, d’accomplir, directement ou indirectement par l’intermédiaire d’un associé, d’un collaborateur ou d’un avocat stagiaire, sauf devant la Haute Cour de Justice, tout acte de sa profession concernant des affaires à l’occasion desquelles des poursuites pénales sont engagées devant les Juridictions répressives pour crimes ou délits contre la chose publique.",
+    "Il lui est interdit, dans les mêmes conditions de plaider contre l’une des sociétés, entreprises, ou établissements visés aux articles 90 et 91 ci-dessus ou contre l’Etat, les sociétés nationales, les Collectivités locales ou Etablissements publics."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "95",
+   "paras": [
+    "Il est interdit à tout député de faire ou de laisser figurer son nom suivi de l’indication de sa qualité dans toute publicité relative à une entreprise financière, industrielle ou commerciale.",
+    "Est puni d’un emprisonnement de six mois à un an et d’une amende d’un million à cinq millions de francs, ou de l’une de ces deux peines seulement, tout fondateur, directeur ou gérant de sociétés ou d’établissements à objet commercial, industriel ou financier qui aura fait ou laissé figurer le nom d’un député avec mention de sa qualité dans toute publicité faite dans l’intérêt de l’entreprise qu’il dirige ou qu’il se propose de fonder.",
+    "En cas de récidive, les peines ci-dessus peuvent être portées à un an d’emprisonnement et à dix millions de francs d’amende."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "96",
+   "paras": [
+    "Le député qui se trouve dans l'un des cas d'incompatibilité prévus aux articles 87 à 92 ci-dessus peut, avant tout avertissement, se démettre volontairement de son mandat.",
+    "A défaut, le bureau de l'Assemblée nationale, l’avise par lettre recommandée en indiquant sommairement les motifs qui justifient l’application de l’un des articles qui précèdent, que la question de sa démission d’office sera portée à l’ordre du jour de la première séance de l'Assemblée nationale qui suivra l’expiration du délai de huitaine après son avertissement.",
+    "Avant la séance ainsi fixée, si l’intéressé ne fait parvenir aucune opposition formulée par écrit adressée au Président de l'Assemblée nationale, celui-ci donne acte de la démission d’office, sans débat.",
+    "Dans le cas contraire, le mis en cause est admis à fournir ses explications à huis clos, et l'Assemblée nationale se prononce immédiatement ou, s’il y a lieu, après renvoi devant une Commission spéciale."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "6",
+   "title": "Du contentieux électoral"
+  },
+  {
+   "type": "article",
+   "num": "97",
+   "paras": [
+    "Le contentieux des élections à l'Assemblée nationale relève de la compétence du Conseil constitutionnel."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "98",
+   "paras": [
+    "Le droit de contester une éligibilité à l’élection des députés à l’Assemblée nationale appartient à tout électeur dans le délai de huit jours à compter de la date de publication de la liste provisoire des candidats par la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "99",
+   "paras": [
+    "Le requérant doit annexer à sa requête les pièces produites au soutien de ses moyens.",
+    "Le Conseil constitutionnel instruit l’affaire dont il est saisi. Toutefois, il peut, sans instruction contradictoire préalable, rejeter les requêtes irrecevables ou ne contenant que des griefs qui, manifestement, sont sans influence sur l’éligibilité contestée.",
+    "Si la requête est jugée recevable, avis en est donné au candidat concerné qui dispose d’un délai de quarante-huit heures pour prendre connaissance de la requête et des pièces jointes, et produire ses observations écrites."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "100",
+   "paras": [
+    "Le Conseil constitutionnel statue, par décision motivée, dans les quinze jours de sa saisine."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "101",
+   "paras": [
+    "Le droit de contester une élection à l’Assemblée nationale dans une circonscription électorale donnée appartient à tout candidat ou à toute liste de candidats de ladite circonscription, à tout parti ou groupement politique ayant présenté une candidature dans le délai de cinq jours, à compter de la date de proclamation solennelle des résultats provisoires faite par la Commission chargée des élections.",
+    "Le requérant doit adresser sa requête au Conseil Constitutionnel en y annexant les pièces produites au soutien de ses moyens. Il adresse immédiatement une copie de ladite requête à la Commission chargée des élections.",
+    "Le Conseil Constitutionnel instruit l'affaire dont il est saisi. Il avise l’élu concerné et lui impartit un délai de quarante-huit heures, pour prendre connaissance de la requête ainsi que des pièces jointes et produire ses observations écrites, sous réserve des dispositions en vigueur.",
+    "Le Conseil Constitutionnel statue par décision motivée, dans un délai de trente jours à compter de sa saisine.",
+    "Le Conseil Constitutionnel notifie sa décision motivée à la Commission chargée des élections, qui établit la liste des députés élus.",
+    "La Commission chargée des élections proclame les résultats définitifs par la publication de la liste des députés élus."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "102",
+   "paras": [
+    "Pendant toute la durée de la législature, le député qui, pour une cause quelconque survenue après son élection, se trouve dans l’un des cas d’inéligibilité prévus par le Code électoral, est déchu de son mandat par le Conseil constitutionnel saisi à cet effet par tout électeur."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "7",
+   "title": "De la vacance d’un poste de Député"
+  },
+  {
+   "type": "article",
+   "num": "103",
+   "paras": [
+    "En cas de vacance du siège de député par décès, démission ou pour toute autre cause, des élections partielles ont lieu dans les six mois qui suivent la vacance dans la circonscription électorale concernée, conformément au mode de scrutin fixé par le présent Code électoral. Ce délai peut être prorogé par décret en Conseil des ministres sur proposition de la Commission chargée des élections, pour une durée n’excédant pas six mois.",
+    "En cas de vacance d’un siège sur une liste, l’élection a lieu exceptionnellement au scrutin uninominal."
+   ]
+  },
+  {
+   "type": "chapitre",
+   "num": "3",
+   "title": "DE L’ELECTION DES SENATEURS"
+  },
+  {
+   "type": "article",
+   "num": "104",
+   "paras": [
+    "Les pouvoirs du Sénat expirent à la fin de la session ordinaire de la dernière année de sa législature.",
+    "Les élections des Sénateurs ont lieu avant l’expiration des pouvoirs du Sénat.",
+    "Toutefois, dans l’impossibilité d’organiser les élections des Sénateurs avant l’expiration des pouvoirs du Sénat, le Sénat demeure en fonction jusqu’à l’organisation desdites élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "105",
+   "paras": [
+    "Le nombre des sénateurs est fixé par une loi organique."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "1",
+   "title": "Du mode de scrutin"
+  },
+  {
+   "type": "article",
+   "num": "106",
+   "paras": [
+    "Les sénateurs sont élus au suffrage universel indirect pour cinq ans. Ils sont rééligibles."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "107",
+   "paras": [
+    "Les sénateurs sont élus dans chaque District Autonome et Région."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "108",
+   "paras": [
+    "L’élection des sénateurs a lieu au scrutin majoritaire à un tour.",
+    "Les sénateurs sont élus, pour deux tiers, au scrutin de liste majoritaire bloquée à un tour, sans vote préférentiel ni panachage.",
+    "En cas d’égalité de voix entre les listes de candidats arrivées en tête, il est procédé à un nouveau scrutin pour les départager. Le scrutin a lieu dans les dix jours qui suivent la date de proclamation des résultats.",
+    "A l’issue de ces dernières élections et en cas de nouvelle égalité, est déclarée élue la liste de candidats ayant la moyenne d’âge la plus élevée."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "2",
+   "title": "Du collège électoral"
+  },
+  {
+   "type": "article",
+   "num": "109",
+   "paras": [
+    "Le collège électoral des sénateurs est composé :",
+    "- des conseillers de Districts élus ;",
+    "- des conseillers régionaux ;",
+    "- des conseillers municipaux ;",
+    "- des candidats à l’élection des sénateurs autres que les élus précédemment cités."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "110",
+   "paras": [
+    "La liste des électeurs à l’élection des sénateurs est dressée et actualisée, dans chaque circonscription électorale, par la Commission chargée des élections.",
+    "Figurent sur cette liste, les nom et prénoms de chaque électeur sénatorial, suivant un ordre alphabétique ainsi que les date et lieu de sa naissance, la nature de son mandat électif, sa profession et son domicile ou sa résidence.",
+    "La liste actualisée des électeurs tient compte, le cas échéant, des additions et retranchements issus notamment des décès, déchéances, élections partielles et des cas d’inéligibilité et d’incompatibilité prévus par la loi."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "111",
+   "paras": [
+    "La liste actualisée des électeurs est publiée quinze jours au moins avant la date du scrutin.",
+    "Elle peut être copiée par toute personne intéressée ou communiquée à tout requérant."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "3",
+   "title": "De l’éligibilité et de l’inéligibilité"
+  },
+  {
+   "type": "article",
+   "num": "112",
+   "paras": [
+    "Est éligible dans la circonscription électorale de son choix, tout ivoirien âgé de 35 ans au moins, qui a la qualité d’électeur et qui jouit de ses droits civils et politiques et justifie d’une résidence effective dans la circonscription électorale choisie."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "113",
+   "paras": [
+    "Sont inéligibles :",
+    "les personnes ayant acquis la nationalité ivoirienne depuis moins de dix ans ;",
+    "les présidents de Conseil régional, les conseillers régionaux, les maires, les adjoints au maire et les conseillers municipaux démis d’office pour malversations, même s’ils n’ont pas encouru de peine privative de droits civiques sans préjudice des dispositions de la législation relative à l’organisation des Collectivités territoriales."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "114",
+   "paras": [
+    "Les candidatures à l'élection de sénateur des personnes désignées ci-dessous, lorsqu’elles exercent leurs fonctions, ne peuvent être acceptées que si elles sont accompagnées d’une demande de mise en disponibilité pour une durée exceptionnellement égale à celle du mandat :",
+    "- les membres du Conseil constitutionnel,",
+    "- les membres de la Cour de Cassation, du Conseil d’Etat et de la Cour des Comptes ;",
+    "- les magistrats ;",
+    "- les membres du Corps préfectoral ;",
+    "- les comptables publics ;",
+    "les présidents et directeurs d’établissements ou d’entreprises à participation financière publique ;",
+    "les fonctionnaires, exception faite des professeurs titulaires de l’enseignement supérieur et des Directeurs de recherches exerçant dans les universités, instituts et centres de recherches ;",
+    "les militaires et assimilés.",
+    "En cas de non-élection ou de non-réélection au terme de leur mandat, les personnes ci-dessus désignées réintègrent de plein droit leur emploi d’origine."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "4",
+   "title": "De la présentation et de l’examen des candidatures"
+  },
+  {
+   "type": "article",
+   "num": "115",
+   "paras": [
+    "Chaque candidat est tenu de produire une déclaration de candidature revêtue de sa signature dûment légalisée et mentionnant :",
+    "- ses nom et prénoms ;",
+    "- ses date et lieu de naissance ;",
+    "- sa filiation ;",
+    "- son domicile et sa profession ;",
+    "- l’ordre de présentation des candidatures."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "116",
+   "paras": [
+    "La déclaration de candidature est obligatoirement accompagnée pour chaque candidat des pièces suivantes :",
+    "- un extrait de l’acte de naissance ou du jugement supplétif en tenant lieu ;",
+    "- un certificat de nationalité ;",
+    "- un extrait du casier judiciaire ;",
+    "- un certificat de domicile ou de résidence ;",
+    "- une attestation de régularité fiscale ;",
+    "- une copie du reçu de cautionnement.",
+    "Ces pièces doivent être établies depuis moins de trois mois avant la date de clôture des candidatures.",
+    "La déclaration doit, en outre, être accompagnée, le cas échéant, d’une lettre d’investiture du ou des partis ou groupements politiques qui présentent la candidature."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "117",
+   "paras": [
+    "Aucune liste de candidature à l'élection des sénateurs ne peut être acceptée si elle ne comprend un nombre de candidats égal à celui des sièges à pourvoir dans la circonscription électorale considérée.",
+    "Pour les circonscriptions de plus de deux sièges, les listes doivent comporter au moins trente pour cent (30%) de candidatures féminines.",
+    "Aucune liste de candidature à l’élection des sénateurs ne peut être acceptée si elle ne remplit les conditions fixées à l’alinéa précédent."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "118",
+   "paras": [
+    "Le cautionnement est fixé à cent mille francs par candidat."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "119",
+   "paras": [
+    "Les candidatures sont déposées à la Commission chargée des élections, à la période fixée par celle-ci, sur présentation de l’original du reçu de cautionnement.",
+    "Cette période s’achève au plus tard trente jours avant le début du scrutin.",
+    "Tout dossier incomplet ne peut être reçu.",
+    "Un récépissé de dépôt est remis au déposant. Ce récépissé ne vaut pas validation de la candidature.",
+    "La Commission chargée des élections examine les candidatures, notamment, en vérifiant l’éligibilité des candidats et la conformité des pièces produites."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "120",
+   "paras": [
+    "La Commission chargée des élections valide les candidatures remplissant les conditions prévues aux articles précédents.",
+    "S’il apparaît qu’une candidature a été déposée par une personne inéligible, la Commission chargée des élections sursoit à la validation de la candidature avec notification dans les quarante-huit heures de la décision à l’intéressé. Celui-ci dispose d’un délai de quinze jours pour saisir le Conseil constitutionnel qui statue dans les trois jours de sa saisine.",
+    "Si le délai de notification n’est pas respecté ou si le Conseil Constitutionnel ne s’est pas prononcé dans le délai susmentionné, la candidature doit être validée."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "121",
+   "paras": [
+    "Toute candidature dont la composition du dossier n’est pas conforme aux dispositions ci-dessus est rejetée par la Commission chargée des élections.",
+    "Le Conseil constitutionnel peut être saisi par le candidat ou le parti ou groupement politique qui a présenté sa candidature dans un délai de trois jours à compter de la date de notification de la décision de rejet.",
+    "Le Conseil constitutionnel statue dans un délai de trois jours à compter du jour de sa saisine.",
+    "Si le Conseil constitutionnel ne s’est pas prononcé dans le délai susmentionné, la candidature doit être validée."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "122",
+   "paras": [
+    "La Commission chargée des élections arrête et publie la liste provisoire des candidats dans les dix jours suivant la date de clôture de la réception des dossiers.",
+    "La liste définitive des candidats est publiée par la Commission chargée des élections à l’issue du contentieux de l’éligibilité prévu aux articles 120 et 121 du Code électoral."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "123",
+   "paras": [
+    "En cas de radiation d’un candidat en application de l’article 27 du Code électoral, de constatation d’inéligibilité ou de décès d’un candidat, il est procédé à son remplacement par un nouveau candidat au rang qui convient. Ce remplacement fait l’objet d’une déclaration complémentaire soumise aux dispositions du Code électoral."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "124",
+   "paras": [
+    "En cas de décès d’un candidat au cours de la campagne électorale ou pendant le déroulement du scrutin, il est sursis de plein droit à l’élection dans la circonscription concernée.",
+    "Il est procédé à de nouvelles élections dans un délai d’un mois à compter de la date initialement prévue pour la tenue du scrutin."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "5",
+   "title": "Du recensement des votes et de la proclamation des résultats"
+  },
+  {
+   "type": "article",
+   "num": "125",
+   "paras": [
+    "A la fin des opérations de vote, chaque président de bureau de vote procède séance tenante au dépouillement des bulletins, en présence des représentants présents des candidats et du délégué présent de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "126",
+   "paras": [
+    "Le président du bureau de vote proclame les résultats provisoires."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "127",
+   "paras": [
+    "Le président du bureau de vote rédige les procès-verbaux de dépouillement.",
+    "Les procès-verbaux sont signés par les membres du bureau de vote et les représentants des listes des candidats. Ceux-ci doivent être inscrits sur la liste électorale de la circonscription concernée.",
+    "Le président de bureau de vote remet à chaque représentant de liste de candidats présent et du délégué de la Commission chargée des élections, un exemplaire du procès-verbal. Un exemplaire de ce procès-verbal est également remis au représentant de la Commission chargée des élections.",
+    "Chaque président de bureau de vote transmet immédiatement cinq exemplaires du procès-verbal des opérations électorales, le tout accompagné des pièces qui doivent y être annexées, à la Commission chargée des élections en vue d’un recensement général des votes au niveau de la circonscription électorale."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "128",
+   "paras": [
+    "La Commission chargée des élections procède au recensement général des votes et à la proclamation des résultats provisoires du scrutin au niveau de chaque circonscription administrative en présence des représentants présents des candidats ou des listes de candidats.",
+    "La Commission chargée des élections communique au Conseil Constitutionnel un exemplaire des procès-verbaux accompagné des pièces justificatives dans les trois jours qui suivent la proclamation solennelle des résultats.",
+    "La proclamation solennelle des résultats provisoires du scrutin au niveau national est faite par le Président de la Commission chargée des élections.",
+    "La proclamation des résultats définitifs des élections est faite par la Commission chargée des élections à l’issue du contentieux devant le Conseil constitutionnel."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "6",
+   "title": "Des incompatibilités"
+  },
+  {
+   "type": "article",
+   "num": "129",
+   "paras": [
+    "Le mandat de sénateur est incompatible avec :",
+    "le mandat de député ;",
+    "les fonctions de membre du Conseil constitutionnel ;",
+    "les fonctions de membre de la Cour de Cassation, du Conseil d’Etat et de la Cour des Comptes ;",
+    "les fonctions de membre du Conseil économique, social, environnemental et culturel ;",
+    "les fonctions de Médiateur de la République et de Médiateur Délégué ;",
+    "les fonctions de membre des Cabinets présidentiel et ministériel ;",
+    "les fonctions de membre de la Commission chargée des élections ;",
+    "les fonctions de membre de la Chambre Nationale des Rois et Chefs Traditionnels ;",
+    "les fonctions de membre de la Haute Autorité pour la bonne gouvernance ;",
+    "les fonctions de membre de la Haute Autorité de la Communication Audiovisuelle ;",
+    "les fonctions de membre du Conseil de l’Autorité Nationale de la Presse ;",
+    "les fonctions de membre du bureau exécutif du Conseil National des Droits de l’Homme."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "130",
+   "paras": [
+    "L’exercice des fonctions publiques non électives est incompatible avec le mandat de sénateur, exception faite de celles des professeurs titulaires de l’enseignement supérieur et des Directeurs de recherches exerçant dans les universités, instituts et centres de recherches.",
+    "Toute personne visée à l’alinéa précédent, élue au Sénat, est remplacée dans ses fonctions et placée dans la position prévue à l’article 114 du Code électoral, dans les huit jours qui suivent le début de son mandat."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "131",
+   "paras": [
+    "Les personnes visées à l’article 130 du Code électoral, élues au Sénat, peuvent être chargées par le Gouvernement d’une mission temporaire pendant une durée n’excédant pas six mois. Elles peuvent, pendant cette période, cumuler l’exercice de cette mission avec leur mandat de sénateur."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "132",
+   "paras": [
+    "Sont incompatibles avec le mandat de sénateur :",
+    "- les fonctions de président et de membre de conseil d’administration ainsi que celles de directeur général et de directeur général adjoint de société d’Etat et de société à participation financière publique ;",
+    "- les fonctions de directeur général, de directeur adjoint et de directeur des Etablissements publics nationaux.",
+    "Il en est de même de toute fonction exercée de façon permanente en qualité de Conseil auprès de ces sociétés ou établissements."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "133",
+   "paras": [
+    "Sont également incompatibles avec le mandat de sénateur, les fonctions de chef d’entreprise, de président de conseil d’administration, d’administrateur délégué, de directeur général, de directeur adjoint ou de gérant exercées dans :",
+    "- les sociétés, entreprises ou établissements jouissant sous forme de garantie d’intérêts, de subventions ou sous une forme équivalente, d’avantages assurés par l’Etat ou par une Collectivité publique, sauf dans le cas où ces avantages découlent de l’application automatique d’une législation générale ou d’une réglementation générale ;",
+    "- les sociétés ayant exclusivement un objet financier et faisant publiquement appel à l’épargne et au crédit ;",
+    "- les sociétés ou entreprises dont l’activité consiste principalement en l’exécution de travaux, la prestation de fournitures ou de services pour le compte ou sous le contrôle de l’Etat, d’une Collectivité ou d'un Etablissement public national ou d'un Etat étranger ;",
+    "- les sociétés dont plus de la moitié du capital est constitué par des participations de sociétés, entreprises ou établissements visés ci-dessus.",
+    "Cette incompatibilité est étendue aux dirigeants des associations reconnues d’utilité publique."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "134",
+   "paras": [
+    "Il est interdit à tout sénateur d’accepter, en cours de mandat, une fonction de membre de conseil d’administration ou de surveillance ou toute fonction exercée de façon permanente en qualité de conseil dans l’un des établissements, sociétés, entreprises ou associations, visés à l’article précédent."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "135",
+   "paras": [
+    "Nonobstant les dispositions des articles 133 et 134 du Code électoral, les sénateurs membres d’un Conseil régional ou d’un conseil municipal, peuvent être désignés par ces conseils pour représenter la région ou la commune dans des organismes d’intérêt régional ou local, à la condition que ces organismes n’aient pas pour objet propre de faire distribuer des bénéfices et que les intéressés n’y occupent pas de fonctions rémunérées."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "136",
+   "paras": [
+    "Il est interdit à tout avocat inscrit au barreau lorsqu’il est investi d’un mandat de sénateur, d’accomplir, directement ou indirectement par l’intermédiaire d’un associé, d’un collaborateur ou d’un avocat stagiaire, sauf devant la Haute Cour de Justice, tout acte de sa profession concernant des affaires à l’occasion desquelles des poursuites pénales sont engagées devant les juridictions répressives pour crimes ou délits contre la chose publique.",
+    "Il lui est interdit, dans les mêmes conditions, de plaider contre l’une des sociétés, entreprises ou établissements visés aux articles 190 et 191 du Code électoral ou contre l’Etat, les sociétés nationales, les collectivités locales ou établissements publics."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "137",
+   "paras": [
+    "Il est interdit à tout sénateur de faire ou de laisser figurer son nom suivi de l’indication de sa qualité dans toute publicité relative à une entreprise financière, industrielle ou commerciale.",
+    "Sont punis d’un emprisonnement de six mois à un an et d’une amende d’un million à cinq millions de francs, ou de l’une de ces deux peines seulement, les fondateurs, les directeurs ou gérants de sociétés ou d’établissements à objet commercial, industriel ou financier qui auront fait ou laissé figurer le nom d’un sénateur avec mention de sa qualité dans toute publicité faite dans l’intérêt de l’entreprise qu’ils dirigent ou qu’ils se proposent de fonder.",
+    "En cas de récidive, les peines ci-dessus peuvent être portées à un an d’emprisonnement et à dix millions de francs d’amende."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "138",
+   "paras": [
+    "Le sénateur qui se trouve dans l'un des cas d'incompatibilité prévus aux articles 129 à 134 du Code électoral peut, avant tout avertissement, se démettre volontairement de son mandat.",
+    "A défaut, le bureau du Sénat l’avise, par lettre recommandée en indiquant sommairement les motifs qui justifient l’application de l’un des articles qui précèdent, que la question de sa démission d’office sera portée à l’ordre du jour de la première séance du Sénat qui suivra l’expiration du délai de huitaine après son avertissement.",
+    "Avant la séance ainsi fixée, si l’intéressé ne fait parvenir aucune opposition formulée par écrit adressée au Président du Sénat, celui-ci donne acte de la démission d’office, sans débat.",
+    "Dans le cas contraire, le mis en cause est admis à fournir ses explications à huis clos, et le Sénat se prononce immédiatement ou, s’il y a lieu, après renvoi devant une Commission spéciale."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "7",
+   "title": "Du contentieux électoral"
+  },
+  {
+   "type": "article",
+   "num": "139",
+   "paras": [
+    "Le contentieux des élections au Senat relève de la compétence du Conseil Constitutionnel."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "140",
+   "paras": [
+    "Le droit de contester une éligibilité à l’élection des sénateurs appartient à tout électeur dans le délai de trois jours à compter de la date de publication de la candidature par la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "141",
+   "paras": [
+    "Le requérant doit annexer à sa requête les pièces produites au soutien de ses moyens.",
+    "Le Conseil constitutionnel instruit l’affaire dont il est saisi. Toutefois, il peut, sans instruction contradictoire préalable, rejeter les requêtes irrecevables ou ne contenant que des griefs qui, manifestement, sont sans influence sur l’éligibilité contestée.",
+    "Si la requête est jugée recevable, avis en est donné au candidat concerné qui dispose d’un délai de quarante-huit heures pour prendre connaissance de la requête et des pièces jointes, et produire ses observations écrites."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "142",
+   "paras": [
+    "Le droit de contester une élection au Sénat dans une circonscription électorale donnée appartient à tout candidat ou toute liste de candidats de ladite circonscription, tout parti ou groupement politique ayant présenté une candidature dans le délai de trois jours, à compter de la date de proclamation solennelle des résultats provisoires faite par la Commission chargée des élections.",
+    "Le requérant doit adresser sa requête au Conseil Constitutionnel en y annexant les pièces produites au soutien de ses moyens. Il adresse immédiatement copie de ladite requête à la Commission chargée des élections.",
+    "Le Conseil Constitutionnel instruit l'affaire dont il est saisi. Il avise l’élu concerné et lui impartit un délai de quarante-huit heures, pour prendre connaissance de la requête ainsi que des pièces jointes et produire ses observations écrites, sous réserve des dispositions en vigueur.",
+    "Le Conseil Constitutionnel statue par décision motivée, dans un délai de quinze jours à compter de sa saisine.",
+    "Le Conseil Constitutionnel notifie sa décision motivée à la Commission chargée des élections, qui établit la liste des sénateurs élus.",
+    "La Commission chargée des élections proclame les résultats définitifs par la publication de la liste des sénateurs élus."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "143",
+   "paras": [
+    "Pendant toute la durée de la législature, le sénateur qui, pour une cause quelconque survenue après son élection, se trouve dans l’un des cas d’inéligibilité prévus par le Code électoral, est déchu de son mandat par le Conseil constitutionnel saisi à cet effet par tout électeur."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "8",
+   "title": "De la vacance d’un poste de sénateur"
+  },
+  {
+   "type": "article",
+   "num": "144",
+   "paras": [
+    "En cas de vacance du siège de sénateur élu par décès, démission ou pour toute autre cause, des élections partielles ont lieu dans les six mois qui suivent la vacance dans la circonscription électorale concernée, conformément au mode de scrutin fixé par le Code électoral. Ce délai peut être prorogé par décret en Conseil des Ministres, sur proposition de la Commission chargée des élections, pour une durée n’excédant pas six mois.",
+    "En cas de vacance d’un siège sur une liste, l’élection a lieu exceptionnellement au scrutin uninominal."
+   ]
+  },
+  {
+   "type": "chapitre",
+   "num": "4",
+   "title": "DE L’ELECTION DES CONSEILLERS REGIONAUX"
+  },
+  {
+   "type": "article",
+   "num": "145",
+   "paras": [
+    "Le nombre de conseillers régionaux, par région, est fixé par décret conformément à la loi portant organisation des régions."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "1",
+   "title": "Du mode de scrutin"
+  },
+  {
+   "type": "article",
+   "num": "146",
+   "paras": [
+    "La région forme une circonscription électorale unique."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "147",
+   "paras": [
+    "Les conseillers régionaux sont élus pour cinq ans sur des listes complètes. Ils sont rééligibles.",
+    "Les conseils régionaux sont renouvelés à une date fixée par décret en Conseil des ministres sur proposition de la Commission chargée des élections. La date est publiée au Journal officiel, au moins deux mois avant les élections.",
+    "Toutefois sur proposition de la Commission chargée des élections, un décret peut abréger ou proroger le mandat d’un conseil Régional pour faire coïncider son renouvellement avec la date des élections régionales."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "148",
+   "paras": [
+    "Les conseillers régionaux sont élus au suffrage universel direct et au scrutin de liste proportionnel et majoritaire à un tour sur des listes complètes sans vote préférentiel ni panachage.",
+    "La liste qui recueille le plus de suffrages exprimés obtient la moitié des sièges à pourvoir. L’autre moitié des sièges est répartie, entre toutes les listes, y compris la liste majoritaire, à la proportionnelle et aux plus forts restes.",
+    "Les sièges sont attribués aux candidats dans l’ordre de présentation sur la liste."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "149",
+   "paras": [
+    "En cas d’égalité des voix entre les listes arrivées en tête, il est procédé à un nouveau tour de scrutin pour toutes les listes. Le scrutin a lieu dans les quinze jours qui suivent la date de proclamation des résultats.",
+    "A l’issue de ces élections et en cas de nouvelle égalité, est déclarée élue la liste de candidats ayant la moyenne d’âge la plus élevée."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "2",
+   "title": "De l’éligibilité et de l’inéligibilité"
+  },
+  {
+   "type": "article",
+   "num": "150",
+   "paras": [
+    "Tout Ivoirien âgé de 25 ans révolus, qui a la qualité d’électeur, peut se présenter aux élections régionales dans toute circonscription électorale de son choix pour être élu conseiller régional sous les réserves énoncées aux articles suivants."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "151",
+   "paras": [
+    "Pour faire acte de candidature aux élections régionales, l’électeur doit être inscrit sur la liste électorale de la circonscription choisie et résider effectivement dans la région concernée.",
+    "Toutefois, des électeurs n’étant pas inscrits sur la liste électorale de la circonscription choisie ou ne résidant pas dans la région peuvent être éligibles s’ils y ont des intérêts économiques et sociaux certains. Le nombre de conseillers régionaux ainsi élus ne peut excéder le tiers de l’effectif du conseil."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "152",
+   "paras": [
+    "Les conjoints, les frères et sœurs, les ascendants et les descendants au premier degré ne peuvent être simultanément membres du même Conseil régional."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "153",
+   "paras": [
+    "Sont inéligibles :",
+    "- les personnes ayant acquis la nationalité ivoirienne depuis moins de dix ans ;",
+    "- les personnes secourues par un budget régional ;",
+    "- les présidents de Conseil régional, les conseillers régionaux, les maires, les adjoints au maire et les conseillers municipaux démis d’office pour malversations, même s’ils n’ont pas encouru de peine privative de droits civiques sans préjudice des dispositions de la loi portant organisation des régions."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "154",
+   "paras": [
+    "Sont inéligibles dans le ressort où ils exercent leurs fonctions :",
+    "les préfets, sous-préfets, secrétaires généraux de préfecture et chefs de Cabinet de préfet ;",
+    "les magistrats ;",
+    "les comptables des deniers régionaux et les entrepreneurs des services régionaux ;",
+    "les agents salariés de la région, non compris ceux qui étant fonctionnaires publics ou exerçant une profession indépendante, ne reçoivent une indemnité de la région qu’à raison des services qu’ils lui rendent dans l’exercice de cette profession ;",
+    "les militaires et assimilés."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "155",
+   "paras": [
+    "Tout conseiller régional qui, pour une cause quelconque survenue après son élection, se trouve dans l’un des cas d’inéligibilité est immédiatement démis de ses fonctions par l’autorité de tutelle, sur proposition de la Commission chargée des élections.",
+    "La décision de l’autorité de tutelle est susceptible de recours exercé par l’intéressé devant le Conseil d’Etat, dans les quinze jours de la notification.",
+    "Le recours est suspensif.",
+    "Le Conseil d’Etat statue dans un délai de quinze jours à compter de la date de sa saisine."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "3",
+   "title": "De la présentation des candidatures"
+  },
+  {
+   "type": "article",
+   "num": "156",
+   "paras": [
+    "Les candidatures aux élections régionales sont présentées sous forme de liste comportant autant de candidats que de sièges à pourvoir.",
+    "Aucune liste de candidature aux élections régionales ne peut être acceptée si elle ne comprend un nombre de candidats égal à celui des sièges à pourvoir dans la circonscription électorale considérée.",
+    "Les listes de candidature doivent comporter au moins trente pour cent (30%) de candidatures féminines.",
+    "L’inscription des candidats de sexe masculin doit être alternée avec celle des candidats de sexe féminin, sur la liste.",
+    "Toute liste de candidature doit comporter un nombre égal de candidats ressortissant de chacun des départements de la région. Ce nombre est fixé par décret pris en Conseil des ministres, sur proposition de la Commission chargée des élections.",
+    "Aucune liste de candidature aux élections régionales ne peut être acceptée si elle ne remplit les conditions fixées aux alinéas 3, 4 et 5 du présent article."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "157",
+   "paras": [
+    "La déclaration de candidature à l’élection au Conseil régional est déposée en double exemplaire auprès de la Commission chargée des élections au plus tard quarante-cinq jours avant la date d’ouverture du scrutin.",
+    "Aucun changement de l’ordre de présentation de candidat sur la liste de candidature n’est autorisé après la publication de la liste de candidature intervenue à la suite du contentieux de l’éligibilité."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "158",
+   "paras": [
+    "La liste portant déclaration de candidature est obligatoirement accompagnée pour chaque candidat :",
+    "d'une déclaration personnelle revêtue de sa signature dûment légalisée ;",
+    "d'un extrait de l’acte de naissance ou du jugement supplétif en tenant lieu ;",
+    "d'un certificat de nationalité ;",
+    "d'une déclaration sur l’honneur de non renonciation à la nationalité ivoirienne ;",
+    "d'un extrait du casier judiciaire ;",
+    "d'un certificat de résidence ;",
+    "et d'une attestation de régularité fiscale.",
+    "Ces pièces doivent avoir été établies depuis moins de trois mois.",
+    "La déclaration de candidature est accompagnée éventuellement de la lettre d’investiture du ou des partis ou groupements politiques qui parrainent la liste de candidature."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "159",
+   "paras": [
+    "Le cautionnement est fixé à dix mille francs par candidat."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "160",
+   "paras": [
+    "En cas de radiation d’un candidat en application de l’article 27 du Code électoral, de constatation d’inéligibilité ou de décès d’un candidat, il est procédé à son remplacement par un nouveau candidat au rang qui convient. Ce remplacement fait l’objet d’une déclaration complémentaire soumise aux dispositions du Code électoral, à l’exclusion des délais fixés à alinéa 2 de l'article 24 ci-dessus."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "161",
+   "paras": [
+    "Les listes des candidatures à l’élection des conseillers régionaux sont transmises, en double exemplaire, à la Commission chargée des élections au plus tard quarante-cinq jours avant le début du scrutin.",
+    "La Commission chargée des élections dispose d’un délai de dix jours à compter de la date de dépôt pour arrêter et publier la liste."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "162",
+   "paras": [
+    "Toute liste dont la composition du dossier n’est pas conforme aux dispositions des articles 156 et 158 du Code électoral, est rejetée par la Commission chargée des élections.",
+    "Le Conseil d’Etat peut être saisi par le candidat, le parti ou groupement politique ayant parrainé la liste dans un délai de trois jours à compter de la date de publication de la décision de rejet du dossier.",
+    "Le Conseil d’Etat statue dans un délai de trois jours à compter de sa saisine. Si le Conseil d’Etat ne s’est pas prononcé dans le délai susmentionné, la candidature doit être enregistrée."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "4",
+   "title": "Du recensement des votes et de la proclamation des résultats"
+  },
+  {
+   "type": "article",
+   "num": "163",
+   "paras": [
+    "A la fin des opérations de vote, chaque président de bureau de vote procède séance tenante au dépouillement des bulletins, en présence des représentants présents des candidats et de la Commission chargée des élections.",
+    "Le président du bureau de vote proclame les résultats provisoires.",
+    "Le président du bureau de vote rédige les procès-verbaux de dépouillement.",
+    "Les procès-verbaux sont signés par les représentants des candidats ou leurs suppléants. Ceux-ci doivent être inscrits sur la liste électorale de la circonscription concernée.",
+    "Chaque président de bureau de vote, après proclamation des résultats en présence des représentants présents des candidats et de la Commission chargée des élections, remet à chaque délégué de candidat présent, un exemplaire du procès-verbal.",
+    "Le président du bureau de vote transmet immédiatement quatre exemplaires du procès-verbal des opérations électorales, accompagnés des pièces qui doivent y être annexées, à la Commission chargée des élections en vue d’un recensement général des votes au niveau de la circonscription électorale."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "164",
+   "paras": [
+    "La Commission chargée des élections procède au recensement général des votes et à la proclamation provisoire des résultats du scrutin au niveau de la circonscription administrative, en présence des représentants présents des candidats.",
+    "Elle proclame les résultats définitifs du scrutin.",
+    "La Commission locale chargée des élections, le ministère de l’Intérieur et le chef-lieu de la circonscription administrative conservent chacun, un exemplaire du procès-verbal.",
+    "Un des exemplaires du procès-verbal est communiqué au Conseil d'Etat."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "5",
+   "title": "Des incompatibilités"
+  },
+  {
+   "type": "article",
+   "num": "165",
+   "paras": [
+    "Nul ne peut être membre de plusieurs Conseils régionaux.",
+    "Tout membre d’un Conseil régional, pour être candidat à une élection régionale dans une autre région, doit démissionner au préalable de son mandat."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "166",
+   "paras": [
+    "Les fonctions de conseiller régional sont incompatibles avec celles :",
+    "de Conseiller municipal ;",
+    "de Membre du Conseil constitutionnel et des Juridictions suprêmes ;",
+    "de Magistrat ;",
+    "d’Inspecteur Général d’Etat et d’Inspecteur d’Etat ;",
+    "de Préfet, de Sous-Préfet, de Secrétaire Général de Préfecture et de Chef de Cabinet de Préfet ;",
+    "de Comptable des deniers régionaux et entrepreneurs des services régionaux ;",
+    "de Fonctionnaire et autre agent de l’Etat chargé d’attributions de tutelle des collectivités décentralisées à quelque titre et à quelque niveau que ce soit ;",
+    "d’Agents salariés de la Région, non compris ceux qui, étant fonctionnaires publics ou exerçant une profession indépendante, ne reçoivent une indemnité de la Région qu'à raison des services qu’ils rendent dans l’exercice de cette profession ;",
+    "de Militaire et assimilé ;",
+    "de Membre de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "167",
+   "paras": [
+    "En cours de mandat, les élus régionaux nommés ou engagés au titre de l’une des fonctions déterminées à l’article 154 ci-dessus sont suspendus de plein droit de leur mandat durant la période pendant laquelle ladite fonction est exercée.",
+    "Notification de la suspension leur est donnée immédiatement par la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "6",
+   "title": "Du contentieux électoral"
+  },
+  {
+   "type": "article",
+   "num": "168",
+   "paras": [
+    "Le contentieux des élections aux Conseils régionaux relève de la compétence du Conseil d'Etat."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "169",
+   "paras": [
+    "Tout électeur ou candidat de la circonscription électorale peut contester une inscription sur les listes de candidatures au plus tard trente jours avant le jour du scrutin.",
+    "Dans ce cas, il est procédé comme prescrit aux articles 160,161 et 162 du Code électoral."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "170",
+   "paras": [
+    "Tout électeur, tout candidat ou toute liste de candidat peut contester la validité des opérations électorales de sa région.",
+    "Les réclamations peuvent être consignées au procès-verbal ou être déposées auprès de la Commission chargée des élections, dans les cinq jours à compter de la date de l’élection.",
+    "La Commission chargée des élections donne immédiatement connaissance de la réclamation par voie administrative aux conseillers dont l’élection est contestée. Elle les informe qu’ils ont quinze jours au maximum pour présenter leur défense.",
+    "Les dossiers de réclamation sont aussitôt transmis au Conseil d’Etat par la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "171",
+   "paras": [
+    "Le Conseil d’Etat statue dans le délai d’un mois à compter de la date de sa saisine."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "172",
+   "paras": [
+    "En cas d’annulation des opérations électorales, il est procédé dans les trois mois à de nouvelles élections.",
+    "Ce délai peut être prorogé par décret en Conseil des ministres. Il ne peut excéder douze mois sauf pour des raisons d’ordre public."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "7",
+   "title": "De la vacance de siège du Conseil Régional"
+  },
+  {
+   "type": "article",
+   "num": "173",
+   "paras": [
+    "La vacance de la moitié au moins des sièges d’un Conseil régional par décès, démission ou pour toute autre cause, est constatée immédiatement par l’autorité administrative d’office ou à la demande du président du Conseil régional ou un tiers des conseillers régionaux. Il est procédé au renouvellement intégral du Conseil régional dans les trois mois à compter de cette constatation.",
+    "Ce délai peut être prorogé par décret en Conseil des ministres sur proposition de la Commission chargée des élections. Cette prorogation ne peut excéder douze mois, sauf pour des raisons d’ordre public.",
+    "Toutefois, il n’est pas pourvu aux vacances survenues dans les dix-huit mois qui précédent le renouvellement des Conseils régionaux."
+   ]
+  },
+  {
+   "type": "chapitre",
+   "num": "5",
+   "title": "DE L’ELECTION DES CONSEILLERS MUNICIPAUX"
+  },
+  {
+   "type": "article",
+   "num": "174",
+   "paras": [
+    "Le nombre de conseillers municipaux par commune est fixé par décret en Conseil des ministres conformément à la loi relative à l’organisation municipale."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "1",
+   "title": "Du mode de scrutin"
+  },
+  {
+   "type": "article",
+   "num": "175",
+   "paras": [
+    "Les conseillers municipaux sont élus pour cinq ans sur des listes complètes. Ils sont rééligibles.",
+    "Les conseils municipaux sont renouvelés à une date fixée par décret en Conseil des ministres sur proposition de la Commission chargée des élections. La date est publiée au Journal officiel au moins deux mois avant les élections.",
+    "Toutefois sur proposition de la Commission chargée des élections, un décret peut abréger ou proroger le mandat d’un conseil municipal pour faire coïncider son renouvellement avec la date des élections municipales."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "176",
+   "paras": [
+    "Les conseillers municipaux sont élus au suffrage universel direct et au scrutin de liste proportionnel et majoritaire à un tour sur des listes complètes sans vote préférentiel ni panachage.",
+    "La liste qui recueille le plus de suffrages exprimés obtient la moitié des sièges à pourvoir. L’autre moitié des sièges est répartie, entre toutes les listes, y compris la liste majoritaire, à la proportionnelle et aux plus forts restes.",
+    "Les sièges sont attribués aux candidats dans l’ordre de présentation sur la liste."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "177",
+   "paras": [
+    "En cas d’égalité de voix entre les listes de candidats arrivées en tête, il est procédé à un nouveau scrutin pour les départager. Le scrutin a lieu dans les quinze jours qui suivent la date de proclamation des résultats.",
+    "A l’issue de ces élections et en cas de nouvelle égalité, est déclarée élue la liste de candidats ayant la moyenne d’âge la plus élevée."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "2",
+   "title": "De l’éligibilité et de l’inéligibilité"
+  },
+  {
+   "type": "article",
+   "num": "178",
+   "paras": [
+    "Tout Ivoirien âgé de vingt-cinq ans révolus, qui a la qualité d’électeur, peut se présenter aux élections municipales dans toute circonscription électorale de son choix pour être élu conseiller municipal sous les réserves énoncées aux articles suivants."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "179",
+   "paras": [
+    "Pour faire acte de candidature aux élections municipales, l’électeur doit être inscrit sur la liste électorale de la circonscription choisie et résider effectivement dans la commune concernée.",
+    "Toutefois, des électeurs n’étant pas inscrits sur la liste électorale de la circonscription choisie ou ne résidant pas dans la commune peuvent être éligibles s’ils y ont des intérêts économiques et sociaux certains. Le nombre des conseillers municipaux ainsi élus ne peut excéder le tiers de l’effectif du Conseil."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "180",
+   "paras": [
+    "Les conjoints, les frères et sœurs, les ascendants et les descendants au premier degré ne peuvent être simultanément membres du même Conseil municipal."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "181",
+   "paras": [
+    "Sont inéligibles :",
+    "- les personnes ayant acquis la nationalité ivoirienne depuis moins de dix ans ;",
+    "- les personnes secourues par un budget communal ;",
+    "- les présidents de Conseil régional, les conseillers régionaux, les maires, les adjoints au maire et les conseillers municipaux démis d’office pour malversations, même s’ils n’ont pas encouru de peine privative de droits civiques sans préjudice des dispositions de la loi relative à l’organisation municipale."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "182",
+   "paras": [
+    "Sont inéligibles dans le ressort où ils exercent leurs fonctions :",
+    "les préfets, sous-préfets, secrétaires généraux de préfecture et chefs de Cabinet de préfet ;",
+    "les magistrats ;",
+    "les comptables des deniers communaux et les entrepreneurs des services municipaux ;",
+    "les agents salariés de la commune, non compris ceux qui, étant fonctionnaires publics ou exerçant une profession indépendante, ne reçoivent une indemnité de la commune qu’à raison des services qu’ils lui rendent dans l’exercice de cette profession ;",
+    "les fonctionnaires ou autres agents de l'Etat chargés d'attribution de tutelle des Collectivités décentralisées à quelque titre et à quelque niveau que ce soit ;",
+    "les militaires et assimilés."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "183",
+   "paras": [
+    "Tout conseiller municipal qui, pour une cause quelconque survenue après son élection, se trouve dans l’un des cas d’inéligibilité est immédiatement démis de ses fonctions par l'autorité de tutelle sur proposition de la Commission chargée des élections.",
+    "La décision de l’autorité de tutelle est susceptible de recours par l’intéressé devant le Conseil d’Etat dans les sept jours de la notification.",
+    "Ce recours est suspensif.",
+    "Le Conseil d’Etat statue dans un délai de sept jours."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "3",
+   "title": "De la présentation des candidatures"
+  },
+  {
+   "type": "article",
+   "num": "184",
+   "paras": [
+    "Toute déclaration de candidature aux élections municipales est présentée sous la forme d’une liste comportant autant de noms que de sièges de conseillers municipaux à pourvoir."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "185",
+   "paras": [
+    "La déclaration de candidature aux élections municipales est déposée en double exemplaire auprès de la Commission chargée des élections au plus tard quarante-cinq jours avant la date d’ouverture du scrutin.",
+    "Aucun changement de l’ordre de présentation de candidat sur la liste de candidature n’est autorisé après la publication de la liste de candidature intervenue à la suite du contentieux de l’éligibilité."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "186",
+   "paras": [
+    "La liste portant déclaration de candidature doit être accompagnée pour chaque candidat :",
+    "d’une déclaration personnelle revêtue de sa signature dûment légalisée ;",
+    "d’un extrait de l’acte de naissance ou du jugement supplétif en tenant lieu ;",
+    "d’un certificat de nationalité ;",
+    "d’un extrait de casier judiciaire ;",
+    "d’un certificat de résidence ;",
+    "d’une attestation de régularité fiscale.",
+    "Ces pièces doivent avoir été établies depuis moins de trois mois.",
+    "La déclaration est accompagnée éventuellement de la lettre d’investiture du ou des Partis ou Groupements politiques qui parrainent la liste de candidatures."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "187",
+   "paras": [
+    "Les candidatures à l’élection des conseillers municipaux sont présentées sous forme de liste comportant autant de candidats que de sièges à pourvoir.",
+    "Aucune liste de candidature à l’élection au conseil municipal ne peut être acceptée si elle ne comprend un nombre de candidats égal à celui des sièges à pourvoir dans la circonscription électorale considérée.",
+    "Les listes de candidature doivent comporter au moins trente pour cent (30%) de candidatures féminines.",
+    "L’inscription des candidats de sexe masculin doit être alternée avec celle des candidats de sexe féminin, sur la liste.",
+    "Pour chaque liste de candidature doit être produite une déclaration de candidature, revêtue de la signature de la tête de liste dûment légalisée et mentionnant les nom et prénoms, les date et lieu de naissance, le domicile et la profession de tous les candidats de la liste.",
+    "Aucune liste de candidature à l’élection des conseillers municipaux ne peut être acceptée si elle ne remplit les conditions fixées aux alinéas 3, 4 et 5 du présent article."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "188",
+   "paras": [
+    "Le cautionnement est fixé à dix mille francs par candidat."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "189",
+   "paras": [
+    "En cas de radiation d’un candidat en application de l’article 27 du Code électoral, de constatation d’inéligibilité ou de décès d’un candidat, il est procédé à son remplacement par un nouveau candidat au rang qui convient. Ce remplacement fait l’objet d’une déclaration complémentaire soumise aux dispositions du Code électoral, à l’exclusion des délais fixés à l’alinéa 2 de l'article 24 ci-dessus."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "190",
+   "paras": [
+    "Les candidatures à l’élection des conseillers municipaux sont reçues en double exemplaire par la Commission chargée des élections au plus tard quarante-cinq jours avant la tenue du scrutin. La Commission chargée des élections dispose d’un délai de dix jours à compter de la date de dépôt pour arrêter et publier la liste."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "191",
+   "paras": [
+    "Toute liste dont la composition du dossier n’est pas conforme aux dispositions des articles 186 et 187 du Code électoral est rejetée par la Commission chargée des élections.",
+    "Le Conseil d’Etat peut être saisi par le candidat, le parti ou le groupement politique qui a parrainé la candidature dans un délai de trois jours à compter de la publication de la décision de rejet. Le Conseil d’Etat statue dans un délai de trois jours à compter de sa saisine. Si le Conseil d’Etat ne se prononce pas dans le délai, la candidature doit être enregistrée.",
+    "Lorsque la Commission chargée des élections déclare un candidat inéligible, celui-ci dispose d’un délai de trois jours à compter de la notification de l’inéligibilité pour saisir le Conseil d’Etat qui statue dans les sept jours à compter de sa saisine."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "4",
+   "title": "Du recensement des votes et de la proclamation des résultats"
+  },
+  {
+   "type": "article",
+   "num": "192",
+   "paras": [
+    "A la fin des opérations de vote, chaque président de bureau de vote procède séance tenante au dépouillement des bulletins, en présence des représentants présents des candidats et de la Commission chargée des élections.",
+    "Le président du bureau de vote proclame les résultats provisoires.",
+    "Le président du bureau de vote rédige les procès-verbaux de dépouillement.",
+    "Les procès-verbaux sont signés par les représentants des candidats ou leurs suppléants. Ceux-ci doivent être inscrits sur la liste électorale de la circonscription concernée.",
+    "Chaque président de bureau de vote, après proclamation des résultats en présence des représentants présents des candidats et de la Commission chargée des élections, remet à chaque délégué de candidat présent, un exemplaire du procès-verbal.",
+    "Le président du bureau de vote transmet immédiatement quatre exemplaires du procès-verbal des opérations électorales, accompagnés des pièces qui doivent y être annexées, à la Commission chargée des élections en vue d’un recensement général des votes au niveau de la circonscription électorale."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "193",
+   "paras": [
+    "La Commission chargée des élections procède au recensement général des votes et à la proclamation provisoire des résultats du scrutin au niveau de la circonscription administrative, en présence des représentants présents des candidats.",
+    "Elle proclame les résultats définitifs du scrutin.",
+    "La Commission locale chargée des élections, le ministère de l’Intérieur et le chef-lieu de la circonscription administrative conservent chacun, un exemplaire du procès-verbal. Un des exemplaires du procès-verbal est communiqué au Conseil d’Etat."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "5",
+   "title": "Des incompatibilités"
+  },
+  {
+   "type": "article",
+   "num": "194",
+   "paras": [
+    "Nul ne peut être membre de plusieurs conseils municipaux.",
+    "Tout membre d’un conseil municipal, pour être candidat à une élection municipale dans une autre commune, doit démissionner au préalable de son mandat."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "195",
+   "paras": [
+    "Les fonctions de conseiller municipal sont incompatibles avec celles de :",
+    "Conseiller régional ;",
+    "Inspecteur général d’Etat et inspecteur d’Etat ;",
+    "Inspecteur général de ministère, Membre du Conseil constitutionnel et des Juridictions suprêmes ;",
+    "Magistrat ;",
+    "Fonctionnaire ou autre agent de l’Etat chargé d’attributions de tutelle des Collectivités décentralisées à quelque titre et à quelque niveau que ce soit ;",
+    "Militaire et assimilé ;",
+    "Membre de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "196",
+   "paras": [
+    "En cours de mandat, les élus municipaux nommés ou engagés au titre de l’une des fonctions déterminées à l’article 182 ci-dessus sont suspendus de plein droit de leur mandat durant la période pendant laquelle ladite fonction est exercée.",
+    "Notification de la suspension leur est donnée immédiatement par l’Autorité de tutelle."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "6",
+   "title": "Du contentieux électoral"
+  },
+  {
+   "type": "article",
+   "num": "197",
+   "paras": [
+    "Le contentieux des élections aux conseils municipaux relève de la compétence du Conseil d'Etat."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "198",
+   "paras": [
+    "Tout électeur ou tout candidat de la circonscription électorale concernée peut contester une inscription sur les listes de candidatures au plus tard trente jours avant le scrutin.",
+    "Dans ce cas, il est procédé comme prescrit aux articles 189, 190 et 191 du Code électoral."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "199",
+   "paras": [
+    "Le droit de contester une élection dans une circonscription électorale appartient à tout candidat, toute liste de candidats ou tout électeur de la circonscription dans le délai de cinq jours francs, à compter de la date de proclamation des résultats.",
+    "Les réclamations peuvent être consignées au procès-verbal, ou être déposées auprès de la Commission chargée des élections, dans les cinq jours à compter de la date de l’élection.",
+    "La Commission chargée des élections donne immédiatement connaissance de la réclamation par voie administrative aux Conseillers dont l’élection est contestée. Elle les prévient qu’ils ont quinze jours au maximum pour présenter leur défense.",
+    "Les dossiers de réclamation sont aussitôt transmis au Conseil d’Etat par la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "200",
+   "paras": [
+    "Le Conseil d’Etat statue dans un délai d’un mois à compter de la date de sa saisine."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "201",
+   "paras": [
+    "En cas d’annulation des opérations électorales, il est procédé dans les trois mois à de nouvelles élections.",
+    "Ce délai peut être prorogé par décret en Conseil des ministres sur proposition de la Commission chargée des élections. Il ne peut excéder douze mois sauf pour des raisons d’ordre public."
+   ]
+  },
+  {
+   "type": "section",
+   "num": "7",
+   "title": "De la vacance de siège du Conseil municipal"
+  },
+  {
+   "type": "article",
+   "num": "202",
+   "paras": [
+    "La vacance de la moitié au moins des sièges d'un Conseil municipal par décès, démission ou toute autre cause, est constatée immédiatement par l'autorité administrative ou à la demande du tiers des Conseillers municipaux. Il est procédé au renouvellement intégral du conseil municipal dans les trois mois, à compter de la nomination de la délégation spéciale, conformément à la loi relative à l’organisation municipale.",
+    "Ce délai peut être prorogé par décret en Conseil des ministres sur proposition de la Commission chargée des élections. Cette prorogation ne peut excéder douze mois, sauf pour des raisons d’ordre public.",
+    "Toutefois, il n’est pas pourvu aux vacances survenues dans les dix-huit mois qui précèdent le renouvellement des conseils municipaux."
+   ]
+  },
+  {
+   "type": "titre",
+   "num": "3",
+   "title": "DISPOSITIONS DIVERSES ET FINALES"
+  },
+  {
+   "type": "article",
+   "num": "203",
+   "paras": [
+    "Tous les délais de procédure devant les juridictions sont francs."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "204",
+   "paras": [
+    "Les modalités d’application du Code électoral seront déterminées par décrets, sur proposition de la Commission chargée des élections."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "205",
+   "paras": [
+    "La présente ordonnance modifie la loi n° 2000-514 du 1er aout 2000 portant code électoral telle que modifiée par les lois n°2012-1130 du 13 décembre 2012, n°2012-1193 du 27 décembre 2012, n°2015-216 du 02 avril 2015, n°2016-840 du 18 octobre 2016 et l’ordonnance n°2018-939 du 18 décembre 2018."
+   ]
+  },
+  {
+   "type": "article",
+   "num": "206",
+   "paras": [
+    "La présente ordonnance sera publiée au Journal Officiel de la République de Côte d’Ivoire et exécutée comme loi de l’Etat."
+   ]
+  },
+  {
+   "type": "signature",
+   "paras": [
+    "Fait à Abidjan, le 08 avril 2020",
+    "Alassane OUATTARA"
+   ]
+  }
+ ]
+}

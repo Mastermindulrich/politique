@@ -12,6 +12,13 @@ import { Avatar } from "../ui/avatar";
 import { I } from "../ui/icons";
 
 type Unread = { notifications: number; messages: number };
+/**
+ * Main tabs whose whole page is fetched ahead of time, so a tap shows it at once instead of
+ * waiting on the server (300-700 ms per tap from Canada or Abidjan). Kept at most 30 s old
+ * (next.config staleTimes). Notifications and messages are left out: they must be live.
+ */
+const warm = (href: string) => href === "/accueil" || href === "/explorer" || href === "/mes-elus" || href === "/elus" || href.startsWith("/u/");
+
 type Item = { href: string; label: string; icon: keyof typeof I; badge?: number; match?: string[] };
 type Lang = "fr" | "en";
 
@@ -22,11 +29,12 @@ function items(lang: Lang, handle: string | null, unread: Unread, isModerator: b
   const pub: Item[] = [
     { href: signedIn ? "/accueil" : "/explorer", label: signedIn ? t.home : t.explore, icon: signedIn ? "home" : "search" },
   ];
-  if (!signedIn) return [...pub, { href: "/elus", label: t.officials, icon: "landmark" }];
+  if (!signedIn) return [...pub, { href: "/elus", label: t.officials, icon: "landmark" }, { href: "/bibliotheque", label: lang === "fr" ? "Bibliothèque" : "Library", icon: "book" }];
   return [
     ...pub,
     { href: "/explorer", label: t.explore, icon: "search", match: ["/explorer", "/t/"] },
     { href: "/mes-elus", label: t.myOfficials, icon: "landmark", match: ["/mes-elus", "/elus", "/interpellations", "/barometre", "/idees"] },
+    { href: "/bibliotheque", label: lang === "fr" ? "Bibliothèque" : "Library", icon: "book" },
     { href: "/notifications", label: t.notifications, icon: "bell", badge: unread.notifications },
     { href: "/messages", label: t.messages, icon: "mail", badge: unread.messages },
     { href: "/signets", label: t.bookmarks, icon: "bookmark" },
@@ -89,7 +97,7 @@ export function NavLinks({ lang, handle, unread: initial, isModerator, isStaff =
           const Icon = I[it.icon];
           const on = active(pathname, it);
           return (
-            <Link key={it.href + it.label} href={it.href} aria-current={on ? "page" : undefined} className={`tap flex h-12 items-center gap-4 rounded-full px-3 text-[18px] hover:bg-paper active:bg-line/60 ${on ? "font-bold" : "font-medium"}`}>
+            <Link key={it.href + it.label} href={it.href} prefetch={warm(it.href) || undefined} aria-current={on ? "page" : undefined} className={`tap flex h-12 items-center gap-4 rounded-full px-3 text-[18px] hover:bg-paper active:bg-line/60 ${on ? "font-bold" : "font-medium"}`}>
               <span className="relative">
                 <Icon className="h-[26px] w-[26px]" filled={on} />
                 <Badge n={it.badge} />
@@ -150,6 +158,7 @@ export function MobileNav({ lang, handle, name, avatar, unread: initial, signedI
     : [
         { href: "/explorer", label: t.explore, icon: "search" },
         { href: "/elus", label: t.officials, icon: "landmark" },
+        { href: "/bibliotheque", label: lang === "fr" ? "Bibliothèque" : "Library", icon: "book" },
         { href: "/connexion", label: t.login, icon: "user" },
       ];
 
@@ -158,6 +167,7 @@ export function MobileNav({ lang, handle, name, avatar, unread: initial, signedI
     ? [
         { href: `/u/${handle}`, label: t.profile, icon: "user" },
         { href: "/signets", label: t.bookmarks, icon: "bookmark" },
+        { href: "/bibliotheque", label: lang === "fr" ? "Bibliothèque" : "Library", icon: "book" },
         { href: "/barometre", label: lang === "fr" ? "Baromètre" : "Barometer", icon: "chart" },
         { href: "/idees", label: lang === "fr" ? "Boîte à idées" : "Idea box", icon: "bulb" },
         { href: "/parametres", label: t.settings, icon: "settings" },
@@ -169,15 +179,16 @@ export function MobileNav({ lang, handle, name, avatar, unread: initial, signedI
 
   return (
     <>
-      <nav aria-label="Navigation" className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-bg/90 backdrop-blur-lg sm:hidden" style={{ paddingBottom: "env(safe-area-inset-bottom)" }}>
+      <nav aria-label="Navigation" className="bar fixed inset-x-0 bottom-0 z-40 border-t sm:hidden" style={{ paddingBottom: "env(safe-area-inset-bottom)" }}>
         <div className="mx-auto flex h-[58px] max-w-[620px] items-stretch px-1">
           {list.map((it) => {
             const Icon = I[it.icon];
             const on = active(pathname, it);
             return (
-              <Link key={it.href} href={it.href} aria-label={it.label} aria-current={on ? "page" : undefined} className={`tap group relative flex flex-1 flex-col items-center justify-center active:scale-90 ${on ? "text-ink" : "text-muted"}`}>
-                <span className={`relative flex h-9 w-12 items-center justify-center rounded-full transition-colors duration-150 group-active:bg-line/60 ${on ? "bg-paper" : ""}`}>
-                  <Icon className="h-[25px] w-[25px]" filled={on} />
+              <Link key={it.href} href={it.href} prefetch={warm(it.href) || undefined} aria-label={it.label} aria-current={on ? "page" : undefined} className={`tap group relative flex flex-1 flex-col items-center justify-center active:scale-90 ${on ? "text-ink" : "text-muted"}`}>
+                {/* Like X: the current tab is the filled, darker icon; no pill behind it. */}
+                <span className="relative flex h-10 w-12 items-center justify-center rounded-full transition-colors duration-150 group-active:bg-line/60">
+                  <Icon className="h-[26px] w-[26px]" filled={on} />
                   <Badge n={it.badge} small />
                 </span>
               </Link>
@@ -185,8 +196,8 @@ export function MobileNav({ lang, handle, name, avatar, unread: initial, signedI
           })}
           {signedIn && (
             <button type="button" aria-label={t.more} aria-haspopup="dialog" aria-expanded={menu} onClick={() => setMenu(true)} className="tap group flex flex-1 items-center justify-center active:scale-90">
-              <span className={`flex h-9 w-12 items-center justify-center rounded-full transition-colors duration-150 group-active:bg-line/60 ${menuOn ? "bg-paper" : ""}`}>
-                <Avatar src={avatar} name={name || handle || "?"} size={28} className={menuOn ? "ring-2 ring-ink" : "ring-1 ring-line"} />
+              <span className="flex h-10 w-12 items-center justify-center rounded-full transition-colors duration-150 group-active:bg-line/60">
+                <Avatar src={avatar} name={name || handle || "?"} size={28} className={menuOn ? "ring-2 ring-ink ring-offset-2 ring-offset-bg" : "ring-1 ring-line"} />
               </span>
             </button>
           )}
@@ -212,7 +223,7 @@ export function MobileNav({ lang, handle, name, avatar, unread: initial, signedI
                 return (
                   <li key={it.href}>
                     <Link href={it.href} aria-current={on ? "page" : undefined} className={`tap-row flex h-[52px] items-center gap-4 rounded-2xl px-3 text-[16px] ${on ? "font-bold" : "font-medium"}`}>
-                      <Icon className="h-6 w-6 text-muted" />
+                      <Icon className="h-6 w-6" filled={on} />
                       {it.label}
                     </Link>
                   </li>
@@ -257,15 +268,15 @@ export function ComposeFab({ lang }: { lang: Lang }) {
         type="button"
         aria-label={t.nav.post}
         onClick={() => setOpen(true)}
-        className="tap fixed right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-green text-white shadow-[0_10px_24px_-8px_rgba(10,122,74,0.8)] active:scale-90 active:bg-[#085C39] sm:hidden"
+        className="tap fixed right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-green text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_4px_12px_rgba(10,122,74,0.28),0_1px_3px_rgba(0,0,0,0.12)] active:scale-90 active:bg-[#085C39] sm:hidden"
         style={{ bottom: "calc(env(safe-area-inset-bottom) + 74px)" }}
       >
         <I.plus className="h-7 w-7" />
       </button>
       {open && (
         <div role="dialog" aria-modal="true" aria-label={t.nav.post} className="sheet-up fixed inset-0 z-50 overflow-y-auto bg-card p-4 sm:hidden">
-          <div className="mb-2 flex justify-between">
-            <button type="button" onClick={() => setOpen(false)} className="tap -ml-2 rounded-full px-3 py-1.5 text-[15px] font-semibold active:bg-line/60">{t.common.cancel}</button>
+          <div className="-mx-4 -mt-4 mb-3 flex h-[54px] items-center px-2" style={{ marginTop: "calc(-1rem + env(safe-area-inset-top))" }}>
+            <button type="button" onClick={() => setOpen(false)} className="tap rounded-full px-3 py-2 text-[16px] font-medium text-ink hover:bg-paper active:bg-line/60">{t.common.cancel}</button>
           </div>
           <Composer lang={lang} autoFocus onPosted={(id) => { setOpen(false); router.push(`/p/${id}`); }} />
         </div>

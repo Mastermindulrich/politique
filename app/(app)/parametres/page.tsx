@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { OfficeOption } from "./settings-forms";
 import { redirect } from "next/navigation";
 import { PageHeader } from "@/app/components/shell/shell";
 import { fetchAuthors, getMyPrivate } from "@/lib/data/people";
@@ -15,15 +16,15 @@ export const metadata: Metadata = { title: "Paramètres", robots: { index: false
 function Section({ id, title, help, children }: { id: string; title: string; help?: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-16 border-b border-line px-4 py-6">
-      <h2 className="font-display text-[19px] font-bold">{title}</h2>
+      <h2 className="section-title">{title}</h2>
       {help && <p className="mt-1 text-[14px] leading-relaxed text-muted">{help}</p>}
       <div className="mt-4">{children}</div>
     </section>
   );
 }
 
-export default async function SettingsPage({ searchParams }: { searchParams: Promise<{ badge?: string }> }) {
-  const { badge } = await searchParams;
+export default async function SettingsPage({ searchParams }: { searchParams: Promise<{ badge?: string; fonction?: string; lien?: string }> }) {
+  const { badge, fonction, lien } = await searchParams;
   const viewer = await getViewer();
   if (!viewer) redirect("/connexion");
   const lang = viewer.lang;
@@ -34,7 +35,7 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
     getMyPrivate(),
     supabase.auth.getUser(),
     supabase.from("verification_requests").select("*").eq("user_id", viewer.id).order("created_at", { ascending: false }).limit(1).maybeSingle(),
-    supabase.from("officials").select("id, full_name, mandate, title").is("profile_id", null).order("full_name").limit(1000),
+    supabase.from("officials").select("id, full_name, mandate, title, institution, profile_id, personal_profile_id, vacant").order("institution").order("rank").order("full_name").limit(2000),
     supabase.from("blocks").select("blocked_id").eq("blocker_id", viewer.id).limit(200),
     supabase.from("mutes").select("muted_id").eq("muter_id", viewer.id).limit(200),
     supabase.from("notification_prefs").select("inapp, push, sound, previews, quiet_start, quiet_end").eq("user_id", viewer.id).maybeSingle(),
@@ -75,7 +76,7 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
         <NotificationSettings lang={lang} initial={notifPrefs} />
       </Section>
       <Section id="verification" title={t.settings.verification} help={viewer.verified ? undefined : t.settings.verificationIntro}>
-        {viewer.verified ? (
+        {viewer.verified && !fonction ? (
           <p className="rounded-2xl bg-green-soft px-4 py-3 text-[14px] font-semibold text-green-deep">{t.settings.approved}</p>
         ) : request?.status === "pending" ? (
           <p className="rounded-2xl bg-orange-soft px-4 py-3 text-[14px] font-semibold text-orange">{t.settings.pending}</p>
@@ -86,7 +87,7 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
                 <b className="text-ink">{t.settings.rejected}.</b> {request.notes}
               </p>
             )}
-            <VerificationForm lang={lang} userId={viewer.id} defaultType={wanted} defaultName={viewer.display_name} officials={(officialsRes.data ?? []) as Pick<Official, "id" | "full_name" | "mandate" | "title">[]} />
+            <VerificationForm lang={lang} userId={viewer.id} defaultType={wanted} defaultName={viewer.display_name} officials={(officialsRes.data ?? []) as OfficeOption[]} defaultOfficial={fonction && /^[0-9a-f-]{36}$/.test(fonction) ? fonction : ""} defaultKind={lien === "personnel" ? "personal" : "office"} />
           </>
         )}
       </Section>

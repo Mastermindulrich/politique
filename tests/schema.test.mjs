@@ -28,6 +28,10 @@ await db.exec(readFileSync(new URL("../supabase/migrations/0002_auth_email_log.s
 await db.exec(readFileSync(new URL("../supabase/migrations/0003_control_center.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/migrations/0004_notifications.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/migrations/0005_owner_badge.sql", import.meta.url), "utf8"));
+await db.exec(readFileSync(new URL("../supabase/migrations/0006_dm_attachments.sql", import.meta.url), "utf8"));
+// 0008 (speed) also runs here so every RLS check below exercises the rewritten rules; it runs
+// again after 0007 further down, like in production where 0007 is already applied.
+await db.exec(readFileSync(new URL("../supabase/migrations/0008_speed.sql", import.meta.url), "utf8"));
 await db.exec(readFileSync(new URL("../supabase/seed/ci_geo.sql", import.meta.url), "utf8"));
 await db.exec(`set search_path = politique, public`);
 
@@ -320,6 +324,143 @@ const fake = await u("fakeboss", { display_name: "Le Fondateur" });
 const fk = (await sql(`select is_owner, display_name from profiles where id = $1`, [fake])).rows[0];
 assert(fk.is_owner === false && fk.display_name === "fakeboss", "a second claimed e-mail cannot become owner, reserved name replaced: " + JSON.stringify(fk));
 assert((await sql(`select count(*)::int n from profiles where is_owner`)).rows[0].n === 1, "exactly one owner");
+
+// --- Attachments in direct messages ----------------------------------------------
+const dmBucket = (await sql(`select public, allowed_mime_types from storage.buckets where id = 'politique-dm'`)).rows[0];
+assert(dmBucket.public === false, "DM bucket is private");
+assert(!dmBucket.allowed_mime_types.some((m) => m.startsWith("video/")), "no videos in the DM bucket");
+const dmPath = (who, f = "a1.jpg") => `${cid}/${who}/${f}`;
+await asRole(kof, async () => {
+  assert((await sql(`select dm_object_allowed($1, 'write') ok`, [dmPath(kof)])).rows[0].ok === true, "member uploads into own folder");
+  assert((await sql(`select dm_object_allowed($1, 'write') ok`, [dmPath(awa)])).rows[0].ok === false, "not into the other member's folder");
+  assert((await sql(`select dm_object_allowed($1, 'read') ok`, [dmPath(awa)])).rows[0].ok === true, "member reads the other member's file");
+  assert((await sql(`select dm_object_allowed('not-a-uuid/x/y.jpg', 'read') ok`)).rows[0].ok === false, "malformed path refused without error");
+  assert((await sql(`select dm_object_allowed($1, 'read') ok`, [`${cid}/${kof}`])).rows[0].ok === false, "folder only refused");
+  await sql(`insert into messages (conversation_id, sender_id, text, media) values ($1, $2, '', $3)`,
+    [cid, kof, JSON.stringify([{ type: "image", path: dmPath(kof), name: "photo.jpg", size: 1200, mime: "image/jpeg" }, { type: "file", path: dmPath(kof, "b2.pdf"), name: "Programme.pdf" }])]);
+  await fails(() => sql(`insert into messages (conversation_id, sender_id, media) values ($1, $2, $3)`, [cid, kof, JSON.stringify([{ type: "image", path: dmPath(awa) }])]), "attachment from someone else's folder");
+  await fails(() => sql(`insert into messages (conversation_id, sender_id, media) values ($1, $2, $3)`, [cid, kof, JSON.stringify([{ type: "image", path: dmPath(kof), url: "https://evil.example/x.jpg" }])]), "attachment with an outside URL");
+  await fails(() => sql(`insert into messages (conversation_id, sender_id, media) values ($1, $2, $3)`, [cid, kof, JSON.stringify([{ type: "script", path: dmPath(kof) }])]), "unknown attachment type");
+  await fails(() => sql(`insert into messages (conversation_id, sender_id, media) values ($1, $2, $3)`, [cid, kof, JSON.stringify([{ type: "video", path: dmPath(kof, "v.mp4") }])]), "video attachment");
+  await fails(() => sql(`insert into messages (conversation_id, sender_id, media) values ($1, $2, $3)`, [cid, kof, JSON.stringify([{ type: "image", path: `${cid}/${kof}/../x.jpg` }])]), "path escaping the folder");
+});
+await asRole(yao, async () => {
+  assert((await sql(`select dm_object_allowed($1, 'read') ok`, [dmPath(kof)])).rows[0].ok === false, "outsider cannot read DM files");
+  assert((await sql(`select dm_object_allowed($1, 'write') ok`, [`${cid}/${yao}/x.jpg`])).rows[0].ok === false, "outsider cannot upload into the conversation");
+});
+await asRole(null, async () => {
+  await fails(() => sql(`select dm_object_allowed($1, 'read')`, [dmPath(kof)]), "visitor calling the storage check");
+}, "anon");
+
+// --- Editing, pinning, link cards, groups, anti-spam, word filter (0007) ------------
+await db.exec(readFileSync(new URL("../supabase/migrations/0007_social_features.sql", import.meta.url), "utf8"));
+await db.exec(readFileSync(new URL("../supabase/migrations/0007_social_features.sql", import.meta.url), "utf8")); // safe to run twice
+await db.exec(readFileSync(new URL("../supabase/migrations/0008_speed.sql", import.meta.url), "utf8"));
+// 0008 twice: it must be safe to re-run.
+await db.exec(readFileSync(new URL("../supabase/migrations/0008_speed.sql", import.meta.url), "utf8"));
+await db.exec(`set search_path = politique, public`);
+const service = async (fn) => {
+  await db.exec(`select set_config('request.jwt.claims', '{"role":"service_role"}', false)`);
+  try { return await fn(); } finally { await db.exec(`select set_config('request.jwt.claims', '', false)`); }
+};
+const failsWith = async (fn, code, m) => { let msg = ""; try { await fn(); } catch (e) { msg = String(e.message); } assert(msg.includes(code), `should be refused with ${code}: ${m} (got "${msg}")`); };
+const sam = await u("samedit");
+const lea = await u("leaedit");
+const max = await u("maxedit");
+let ep;
+await asRole(sam, async () => {
+  ep = (await sql(`insert into posts (author_id, text, link, is_pinned) values ($1, 'Réunion publique #Cocody demain https://example.org/a', '{"url":"https://evil.example","title":"x","site":"x"}', true) returning id, link, is_pinned`, [sam])).rows[0];
+  assert(ep.link === null && ep.is_pinned === false, "a member cannot write a link card or pin through an insert");
+  await fails(() => sql(`update posts set text = 'réécrit' where id = $1`, [ep.id]), "direct update of the text");
+  await fails(() => sql(`update posts set link = '{"url":"https://evil.example"}' where id = $1`, [ep.id]), "direct update of the link card");
+  await fails(() => sql(`update posts set like_count = 999 where id = $1`, [ep.id]), "direct update of a counter");
+  const e1 = (await sql(`select text, edited_at, hashtags from edit_post($1, 'Réunion publique #Abobo demain, merci @leaedit')`, [ep.id])).rows[0];
+  assert(e1.text.includes("#Abobo") && e1.edited_at !== null && e1.hashtags[0] === "abobo", "edit_post changes the text and re-reads hashtags: " + JSON.stringify(e1));
+  const hist = (await sql(`select text from post_edits where post_id = $1`, [ep.id])).rows;
+  assert(hist.length === 1 && hist[0].text.includes("#Cocody"), "the earlier version is kept");
+  await fails(() => sql(`insert into post_edits (post_id, text) values ($1, 'faux historique')`, [ep.id]), "writing the history by hand");
+  await fails(() => sql(`delete from post_edits where post_id = $1`, [ep.id]), "erasing the history");
+  await failsWith(() => sql(`select edit_post($1, '')`, [ep.id]), "invalid", "emptying a post without media");
+  await sql(`select pin_post($1, true)`, [ep.id]);
+  const second = (await sql(`insert into posts (author_id, text) values ($1, 'Deuxième publication') returning id`, [sam])).rows[0].id;
+  await sql(`select pin_post($1, true)`, [second]);
+  const pins = (await sql(`select id from posts where author_id = $1 and is_pinned`, [sam])).rows;
+  assert(pins.length === 1 && pins[0].id === second, "pinning another post replaces the first");
+  await failsWith(() => sql(`insert into posts (author_id, text) values ($1, 'Deuxième publication')`, [sam]), "duplicate_post", "same text twice in a row");
+  await sql(`update posts set deleted_at = now() where id = $1`, [second]);
+});
+assert((await sql(`select count(*)::int n from notifications where user_id = $1 and type = 'mention' and post_id = $2`, [lea, ep.id])).rows[0].n === 1, "a mention added by an edit notifies once");
+await asRole(lea, async () => {
+  assert((await sql(`select count(*)::int n from post_edits where post_id = $1`, [ep.id])).rows[0].n === 1, "anyone who sees the post sees its history");
+  await failsWith(() => sql(`select edit_post($1, 'piraté')`, [ep.id]), "forbidden", "editing someone else's post");
+  await failsWith(() => sql(`select pin_post($1, true)`, [ep.id]), "forbidden", "pinning someone else's post");
+});
+await asRole(null, async () => {
+  assert((await sql(`select count(*)::int n from post_edits where post_id = $1`, [ep.id])).rows[0].n === 1, "visitors read the history of a public post");
+  await fails(() => sql(`select edit_post($1, 'x')`, [ep.id]), "visitor editing");
+}, "anon");
+// The server (service role) attaches the link card; an edit that drops the link drops the card.
+await service(() => sql(`update posts set link = '{"url":"https://example.org/a","title":"Titre","site":"example.org"}' where id = $1`, [ep.id]));
+assert((await sql(`select link->>'title' t from posts where id = $1`, [ep.id])).rows[0].t === "Titre", "service role writes the link card");
+await asRole(sam, async () => {
+  const kept = (await sql(`select link from edit_post($1, 'Toujours le lien https://example.org/a ici')`, [ep.id])).rows[0];
+  assert(kept.link !== null, "the card stays while its link is in the text");
+  const gone = (await sql(`select link from edit_post($1, 'Plus de lien du tout')`, [ep.id])).rows[0];
+  assert(gone.link === null, "the card goes with its link");
+});
+// One hour, five edits, no edit once a poll has votes.
+await sql(`update posts set created_at = now() - interval '2 hours' where id = $1`, [ep.id]);
+await asRole(sam, () => failsWith(() => sql(`select edit_post($1, 'trop tard')`, [ep.id]), "edit_window", "editing after one hour"));
+await sql(`update posts set created_at = now() where id = $1`, [ep.id]);
+await asRole(sam, async () => {
+  for (let i = 0; i < 2; i++) await sql(`select edit_post($1, $2)`, [ep.id, `version ${i}`]);
+  await failsWith(() => sql(`select edit_post($1, 'une de trop')`, [ep.id]), "edit_limit", "sixth edit");
+});
+await asRole(awa, () => failsWith(() => sql(`select edit_post($1, 'sondage modifié')`, [post.id]), "poll_has_votes", "editing a poll that has votes"));
+
+// Word filter: moderators only; accents and capitals do not matter; whole words only.
+await asRole(lea, () => fails(() => sql(`insert into blocked_terms (term) values ('interdit')`), "a member adding a blocked word"));
+await sql(`update profiles set is_moderator = true where id = $1`, [max]);
+await asRole(max, () => sql(`insert into blocked_terms (term, created_by) values ('Mot Interdit', $1), ('zut', $1)`, [max]));
+await asRole(lea, async () => {
+  assert((await sql(`select count(*)::int n from blocked_terms`)).rows[0].n === 0, "members cannot read the list");
+  await failsWith(() => sql(`insert into posts (author_id, text) values ($1, 'Voici un MOT  INTERDIT.')`, [lea]), "blocked_term", "blocked expression, other case");
+  await failsWith(() => sql(`insert into posts (author_id, text) values ($1, 'Zùt alors')`, [lea]), "blocked_term", "blocked word with an accent");
+  await sql(`insert into posts (author_id, text) values ($1, 'Le mazut coûte cher')`, [lea]); // "zut" inside another word is fine
+  await failsWith(() => sql(`insert into posts (author_id, text) values ($1, 'a http://a.ci b http://b.ci c http://c.ci d http://d.ci e http://e.ci')`, [lea]), "too_many_links", "five links");
+  const ok = (await sql(`insert into posts (author_id, text) values ($1, 'Texte propre') returning id`, [lea])).rows[0].id;
+  await failsWith(() => sql(`select edit_post($1, 'zut')`, [ok]), "blocked_term", "blocked word through an edit");
+});
+
+// Anti-spam: the ninth post within a minute is refused; the server is not limited.
+await asRole(max, async () => {
+  for (let i = 0; i < 8; i++) await sql(`insert into posts (author_id, text) values ($1, $2)`, [max, `publication ${i}`]);
+  await failsWith(() => sql(`insert into posts (author_id, text) values ($1, 'la neuvième')`, [max]), "rate_limit", "ninth post in a minute");
+});
+await service(() => sql(`insert into posts (author_id, text) values ($1, 'écrit par le serveur')`, [max]));
+
+// Groups: three people or more, the creator included; leaving is one's own decision.
+let gid;
+await asRole(sam, async () => {
+  await failsWith(() => sql(`select create_group('Seul', $1::uuid[])`, [[lea]]), "invalid", "a group of two");
+  gid = (await sql(`select create_group('  Comité  ', $1::uuid[]) id`, [[lea, max, sam]])).rows[0].id;
+  const g = (await sql(`select is_group, title from conversations where id = $1`, [gid])).rows[0];
+  assert(g.is_group === true && g.title === "Comité", "group created with a trimmed title");
+  assert((await sql(`select count(*)::int n from conversation_members where conversation_id = $1`, [gid])).rows[0].n === 3, "three members, creator counted once");
+  await sql(`insert into messages (conversation_id, sender_id, text) values ($1, $2, 'Bienvenue')`, [gid, sam]);
+});
+await asRole(lea, async () => {
+  assert((await sql(`select count(*)::int n from messages where conversation_id = $1`, [gid])).rows[0].n === 1, "a member reads the group");
+  await sql(`select leave_conversation($1)`, [gid]);
+  assert((await sql(`select count(*)::int n from messages where conversation_id = $1`, [gid])).rows[0].n === 0, "after leaving, the messages are out of reach");
+  await fails(() => sql(`insert into messages (conversation_id, sender_id, text) values ($1, $2, 'encore là ?')`, [gid, lea]), "writing after leaving");
+  await failsWith(() => sql(`select leave_conversation($1)`, [cid]), "invalid", "leaving a one-to-one conversation");
+});
+await asRole(yao, async () => {
+  assert((await sql(`select count(*)::int n from messages where conversation_id = $1`, [gid])).rows[0].n === 0, "outsider cannot read the group");
+});
+await sql(`insert into blocks (blocker_id, blocked_id) values ($1, $2)`, [max, sam]);
+await asRole(sam, () => failsWith(() => sql(`select create_group('Avec bloqué', $1::uuid[])`, [[max, lea]]), "blocked", "adding someone who blocked you"));
 
 console.log("schema OK: all smoke and RLS checks passed");
 await db.close();

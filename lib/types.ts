@@ -1,8 +1,12 @@
 export type AccountType = "citoyen" | "elu" | "institution" | "media";
 export type Mandate =
-  | "president" | "ministre" | "depute" | "senateur" | "maire"
+  | "president" | "vice_president" | "premier_ministre" | "ministre"
+  | "president_institution" | "depute" | "senateur" | "maire"
   | "president_conseil_regional" | "gouverneur_district"
+  | "prefet" | "sous_prefet"
   | "conseiller_municipal" | "conseiller_regional" | "autre";
+
+export type Institution = "presidence" | "gouvernement" | "assemblee" | "senat" | "district" | "region" | "commune" | "prefectoral";
 
 export type Profile = {
   id: string;
@@ -51,6 +55,9 @@ export type Media = {
   poster?: string;
 };
 
+/** The card shown under a post that contains a link. Fetched and written by the server. */
+export type LinkPreview = { url: string; title: string; description?: string; image?: string; site: string };
+
 export type Poll = {
   post_id: string;
   options: string[];
@@ -70,6 +77,7 @@ export type Post = {
   quoted_id: string | null;
   visibility: "public" | "followers";
   media: Media[];
+  link?: LinkPreview | null;
   commune_id: number | null;
   hashtags: string[];
   mentions: string[];
@@ -125,7 +133,19 @@ export type Official = {
   photo_url: string | null;
   bio: string | null;
   claimed_at: string | null;
+  office_key?: string | null;
+  institution?: Institution | null;
+  role?: string | null;
+  rank?: number;
+  gender?: "F" | "M" | null;
+  vacant?: boolean;
+  note?: string | null;
+  source_url?: string | null;
+  source_label?: string | null;
+  source_checked?: string | null;
+  personal_profile_id?: string | null;
   profile?: Pick<Profile, "id" | "handle" | "display_name" | "avatar_url" | "verified" | "is_owner"> | null;
+  personal?: Pick<Profile, "id" | "handle" | "display_name" | "avatar_url" | "verified" | "is_owner"> | null;
 };
 
 export type Interpellation = {
@@ -194,7 +214,25 @@ export type Conversation = {
   title: string | null;
   last_message_at: string | null;
   members: { user_id: string; last_read_at: string | null; profile: FeedPost["author"] }[];
-  last_message?: Pick<Message, "text" | "sender_id" | "created_at"> | null;
+  last_message?: Pick<Message, "text" | "sender_id" | "created_at" | "media"> | null;
+};
+
+/** One photo or file sent in a direct message (private bucket "politique-dm"). */
+export type DmAttachment = {
+  type: "image" | "file";
+  /** <conversation_id>/<sender_id>/<file> inside the private bucket. */
+  path: string;
+  name?: string;
+  size?: number;
+  mime?: string;
+  width?: number;
+  height?: number;
+  /** Voice note recorded in the app (type "file", audio mime). */
+  voice?: boolean;
+  /** Seconds, for voice notes. */
+  duration?: number;
+  /** 0-100 loudness samples drawn as the voice note's waveform. */
+  peaks?: number[];
 };
 
 export type Message = {
@@ -202,7 +240,7 @@ export type Message = {
   conversation_id: string;
   sender_id: string;
   text: string;
-  media: Media[];
+  media: DmAttachment[];
   created_at: string;
   deleted_at: string | null;
 };

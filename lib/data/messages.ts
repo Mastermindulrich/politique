@@ -1,5 +1,6 @@
 import type { Db as SupabaseClient } from "@/lib/supabase/schema";
 import type { Conversation, Message } from "@/lib/types";
+import { DM_BUCKET, DM_URL_TTL, attachmentsOf } from "@/lib/dm-media";
 import { fetchAuthors } from "./people";
 
 export async function fetchConversations(supabase: SupabaseClient, viewerId: string): Promise<Conversation[]> {
@@ -7,7 +8,8 @@ export async function fetchConversations(supabase: SupabaseClient, viewerId: str
   const ids = ((mine ?? []) as { conversation_id: string }[]).map((m) => m.conversation_id);
   if (!ids.length) return [];
   const [convRes, memRes] = await Promise.all([
-    supabase.from("conversations").select("*").in("id", ids).not("last_message_at", "is", null).order("last_message_at", { ascending: false }).limit(50),
+    // A one-to-one conversation shows up with its first message; a group as soon as it exists.
+    supabase.from("conversations").select("*").in("id", ids).or("last_message_at.not.is.null,is_group.eq.true").order("last_message_at", { ascending: false, nullsFirst: true }).limit(50),
     supabase.from("conversation_members").select("conversation_id, user_id, last_read_at").in("conversation_id", ids),
   ]);
   const convs = (convRes.data ?? []) as Omit<Conversation, "members">[];
@@ -15,7 +17,7 @@ export async function fetchConversations(supabase: SupabaseClient, viewerId: str
   const authors = await fetchAuthors(supabase, members.map((m) => m.user_id));
   // last message of each conversation (one small query each; the list is capped at 50)
   const lasts = await Promise.all(
-    convs.map((c) => supabase.from("messages").select("text, sender_id, created_at").eq("conversation_id", c.id).is("deleted_at", null).order("created_at", { ascending: false }).limit(1).maybeSingle()),
+    convs.map((c) => supabase.from("messages").select("text, sender_id, created_at, media").eq("conversation_id", c.id).is("deleted_at", null).order("created_at", { ascending: false }).limit(1).maybeSingle()),
   );
   return convs.map((c, i) => ({
     ...c,
@@ -43,4 +45,16 @@ export async function fetchConversation(supabase: SupabaseClient, id: string, vi
     } as Conversation,
     messages: ((msgRes.data ?? []) as Message[]).reverse(),
   };
+}
+
+/** Short-lived links to the photos, videos and files of these messages (RLS: members only). */
+export async function signAttachments(supabase: SupabaseClient, messages: Message[]): Promise<Record<string, string>> {
+  const paths = Array.from(new Set(messages.flatMap((m) => attachmentsOf(m.media).map((a) => a.path))));
+  if (!paths.length) return {};
+  const { data } = await supabase.storage.from(DM_BUCKET).createSignedUrls(paths, DM_URL_TTL);
+  const out: Record<string, string> = {};
+  for (const row of (data ?? []) as { path: string | null; signedUrl: string | null; error: string | null }[]) {
+    if (row.path && row.signedUrl && !row.error) out[row.path] = row.signedUrl;
+  }
+  return out;
 }

@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { messagePreview } from "@/lib/dm-media";
 import { describe, hrefFor, type Lang, type NotifType } from "@/lib/notify";
 import { initNative } from "@/lib/native";
 import { forgetDevice, registerWorker, syncPush } from "@/lib/push-client";
-import { supabaseBrowser } from "@/lib/supabase/client";
+import { browserClient } from "@/lib/supabase/lazy";
 import { unreadStore, useUnread } from "@/lib/unread-store";
 import { Avatar } from "../ui/avatar";
 import { I } from "../ui/icons";
@@ -75,18 +76,15 @@ export function NotificationCenter({ lang, viewerId, initial }: { lang: Lang; vi
   }, [initial]);
 
   const refresh = useCallback(async () => {
-    const { data } = await supabaseBrowser().rpc("unread_counts");
+    const { data } = await (await browserClient()).rpc("unread_counts");
     const u = (data as { notifications: number; messages: number }[] | null)?.[0];
     if (u) unreadStore.set({ notifications: Number(u.notifications), messages: Number(u.messages) });
   }, []);
 
   // Sound preference, read once and updated live by the settings form.
   useEffect(() => {
-    supabaseBrowser()
-      .from("notification_prefs")
-      .select("sound")
-      .eq("user_id", viewerId)
-      .maybeSingle()
+    void browserClient()
+      .then((supabase) => supabase.from("notification_prefs").select("sound").eq("user_id", viewerId).maybeSingle())
       .then(({ data }: { data: { sound: boolean } | null }) => {
         if (data) sound.current = data.sound;
       });
@@ -102,12 +100,12 @@ export function NotificationCenter({ lang, viewerId, initial }: { lang: Lang; vi
 
   const show = useCallback(
     async (row: Row) => {
-      const supabase = supabaseBrowser();
+      const supabase = await browserClient();
       const [actor, post, msg] = await Promise.all([
         row.actor_id ? supabase.from("profiles").select("display_name, handle, avatar_url").eq("id", row.actor_id).maybeSingle() : Promise.resolve({ data: null }),
         row.post_id ? supabase.from("posts").select("text").eq("id", row.post_id).maybeSingle() : Promise.resolve({ data: null }),
         row.type === "message" && row.ref_id
-          ? supabase.from("messages").select("text").eq("conversation_id", row.ref_id).order("created_at", { ascending: false }).limit(1).maybeSingle()
+          ? supabase.from("messages").select("text, media").eq("conversation_id", row.ref_id).order("created_at", { ascending: false }).limit(1).maybeSingle()
           : Promise.resolve({ data: null }),
       ]);
       const a = actor.data as { display_name: string; handle: string; avatar_url: string | null } | null;
@@ -115,7 +113,7 @@ export function NotificationCenter({ lang, viewerId, initial }: { lang: Lang; vi
         type: row.type,
         actorName: a?.display_name ?? null,
         postText: (post.data as { text: string } | null)?.text ?? null,
-        messageText: (msg.data as { text: string } | null)?.text ?? null,
+        messageText: msg.data ? messagePreview((msg.data as { text: string; media: unknown }).text, (msg.data as { media: unknown }).media, lang) || null : null,
         lang,
       });
       const toast: Toast = { id: row.id, title, body, href: hrefFor({ ...row, actorHandle: a?.handle }), avatar: a?.avatar_url ?? null, name: a?.display_name ?? "POLITIQUE", type: row.type };
@@ -128,27 +126,33 @@ export function NotificationCenter({ lang, viewerId, initial }: { lang: Lang; vi
 
   // Live notifications over Supabase Realtime.
   useEffect(() => {
-    const supabase = supabaseBrowser();
-    const channel = supabase
-      .channel(`notify-${viewerId}`)
-      .on("postgres_changes", { event: "INSERT", schema: "politique", table: "notifications", filter: `user_id=eq.${viewerId}` }, (payload: { new: Row }) => {
-        const row = payload.new;
-        const openChat = row.type === "message" && path.current === `/messages/${row.ref_id}`;
-        if (row.type === "message") {
-          // The conversation on screen is read as it arrives: no badge, no banner.
-          if (!openChat && !path.current.startsWith("/messages")) unreadStore.set((u) => ({ ...u, messages: u.messages + 1 }));
-          if (openChat) return;
-        } else if (path.current === "/notifications") {
-          // Already looking at the list: it refreshes, no badge.
-          router.refresh();
-        } else {
-          unreadStore.set((u) => ({ ...u, notifications: u.notifications + 1 }));
-        }
-        void show(row);
-      })
-      .subscribe();
+    let gone = false;
+    let stop: (() => void) | null = null;
+    void browserClient().then((supabase) => {
+      if (gone) return;
+      const channel = supabase
+        .channel(`notify-${viewerId}`)
+        .on("postgres_changes", { event: "INSERT", schema: "politique", table: "notifications", filter: `user_id=eq.${viewerId}` }, (payload: { new: Row }) => {
+          const row = payload.new;
+          const openChat = row.type === "message" && path.current === `/messages/${row.ref_id}`;
+          if (row.type === "message") {
+            // The conversation on screen is read as it arrives: no badge, no banner.
+            if (!openChat && !path.current.startsWith("/messages")) unreadStore.set((u) => ({ ...u, messages: u.messages + 1 }));
+            if (openChat) return;
+          } else if (path.current === "/notifications") {
+            // Already looking at the list: it refreshes, no badge.
+            router.refresh();
+          } else {
+            unreadStore.set((u) => ({ ...u, notifications: u.notifications + 1 }));
+          }
+          void show(row);
+        })
+        .subscribe();
+      stop = () => void supabase.removeChannel(channel);
+    });
     return () => {
-      supabase.removeChannel(channel);
+      gone = true;
+      stop?.();
     };
   }, [viewerId, show, router]);
 

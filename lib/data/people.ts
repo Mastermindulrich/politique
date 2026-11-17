@@ -17,8 +17,12 @@ export const getMyPrivate = getViewerPrivate;
 
 /** Officials with their claimed profile attached. */
 export async function attachProfiles(supabase: SupabaseClient, officials: Official[]): Promise<Official[]> {
-  const authors = await fetchAuthors(supabase, officials.map((o) => o.profile_id));
-  return officials.map((o) => ({ ...o, profile: o.profile_id ? authors.get(o.profile_id) ?? null : null }));
+  const authors = await fetchAuthors(supabase, officials.flatMap((o) => [o.profile_id, o.personal_profile_id ?? null]));
+  return officials.map((o) => ({
+    ...o,
+    profile: o.profile_id ? authors.get(o.profile_id) ?? null : null,
+    personal: o.personal_profile_id ? authors.get(o.personal_profile_id) ?? null : null,
+  }));
 }
 
 export function officialPlace(o: Pick<Official, "commune_id" | "department_id" | "region_id" | "circonscription">, geo: typeof import("@/lib/ci-geo")) {

@@ -1,16 +1,21 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import { useRef, useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { createPost } from "@/lib/actions";
+import { previewLink } from "@/lib/social-actions";
 import { communes } from "@/lib/ci-geo";
 import { t as dict } from "@/lib/i18n";
-import { supabaseBrowser } from "@/lib/supabase/client";
-import type { FeedPost, Media } from "@/lib/types";
+import { errorText } from "@/lib/i18n-social";
+import { EDGE, shrinkImage } from "@/lib/image-shrink";
+import { browserClient } from "@/lib/supabase/lazy";
+import type { FeedPost, LinkPreview, Media } from "@/lib/types";
+import { LinkCard } from "./post/link-card";
 import { I } from "./ui/icons";
 
 const MAX = 500;
 const IMAGE_MAX = 8 * 1024 * 1024;
 const VIDEO_MAX = 50 * 1024 * 1024;
+const URL_RE = /https?:\/\/[^\s<]+[^\s<.,;:!?)"']/i;
 
 type Props = {
   lang: "fr" | "en";
@@ -37,6 +42,21 @@ export function Composer({ lang, parentId, replyTo, quotedId, quotedPreview, aut
   const fileRef = useRef<HTMLInputElement>(null);
   const areaRef = useRef<HTMLTextAreaElement>(null);
 
+  // The card for the first link in the text, fetched once the person pauses typing.
+  const [link, setLink] = useState<{ preview: LinkPreview; sig: string } | null>(null);
+  const [noCard, setNoCard] = useState<string | null>(null);
+  const url = !quotedId && !poll && media.length === 0 ? (URL_RE.exec(text)?.[0] ?? null) : null;
+  useEffect(() => {
+    if (!url || url === noCard) return setLink(null);
+    if (link?.preview.url === url) return;
+    setLink(null);
+    let live = true;
+    const timer = setTimeout(() => {
+      previewLink(url).then((r) => { if (live) setLink(r); }).catch(() => {});
+    }, 700);
+    return () => { live = false; clearTimeout(timer); };
+  }, [url, noCard]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const left = MAX - text.length;
   const pollOk = !poll || poll.options.filter((o) => o.trim()).length >= 2;
   const canPost = !pending && !uploading && left >= 0 && pollOk && (text.trim().length > 0 || media.length > 0);
@@ -46,20 +66,24 @@ export function Composer({ lang, parentId, replyTo, quotedId, quotedPreview, aut
     setError(null);
     setUploading(true);
     try {
-      const supabase = supabaseBrowser();
+      const supabase = await browserClient();
       const { data: auth } = await supabase.auth.getUser();
       const uid = auth.user?.id;
       if (!uid) throw new Error("auth");
       const next: Media[] = [];
-      for (const file of Array.from(files).slice(0, 4 - media.length)) {
-        const isVideo = file.type.startsWith("video/");
+      for (const original of Array.from(files).slice(0, 4 - media.length)) {
+        const isVideo = original.type.startsWith("video/");
+        // Photos are resized before upload (a 4 MB phone photo becomes ~500 KB at full sharpness).
+        const small = isVideo ? null : await shrinkImage(original, EDGE.post);
+        const file: Blob = small?.blob ?? original;
+        const type = small?.mime ?? original.type;
         if (file.size > (isVideo ? VIDEO_MAX : IMAGE_MAX)) {
           setError(lang === "fr" ? `Fichier trop lourd (max ${isVideo ? "50" : "8"} Mo).` : `File too large (max ${isVideo ? "50" : "8"} MB).`);
           continue;
         }
-        const ext = (file.name.split(".").pop() || "bin").toLowerCase().replace(/[^a-z0-9]/g, "");
+        const ext = small?.ext ?? ((original.name.split(".").pop() || "bin").toLowerCase().replace(/[^a-z0-9]/g, ""));
         const path = `${uid}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
-        const { error: upErr } = await supabase.storage.from("politique-media").upload(path, file, { contentType: file.type, cacheControl: "31536000" });
+        const { error: upErr } = await supabase.storage.from("politique-media").upload(path, file, { contentType: type, cacheControl: "31536000" });
         if (upErr) {
           setError(upErr.message);
           continue;
@@ -88,11 +112,15 @@ export function Composer({ lang, parentId, replyTo, quotedId, quotedPreview, aut
         media,
         communeId,
         poll: poll ? { options: poll.options.map((o) => o.trim()).filter(Boolean), days: poll.days } : null,
+        link: link && link.preview.url === url ? link : null,
+        noLink: Boolean(url && url === noCard),
       });
       if (!r.ok) {
-        setError(t.common.error);
+        setError(errorText(r.error, lang, t.common.error));
         return;
       }
+      setLink(null);
+      setNoCard(null);
       setText("");
       setMedia([]);
       setPoll(null);
@@ -152,12 +180,18 @@ export function Composer({ lang, parentId, replyTo, quotedId, quotedPreview, aut
                   onChange={(e) => setMedia((x) => x.map((y, j) => (j === i ? { ...y, alt: e.target.value } : y)))}
                   placeholder={t.composer.alt}
                   aria-label={t.composer.alt}
-                  className="w-full border-t border-line bg-card px-3 py-2 text-[13px] focus:outline-none"
+                  className="w-full border-t border-line bg-card px-3 py-2 text-[16px] focus:outline-none sm:text-[13px]"
                 />
               )}
             </li>
           ))}
         </ul>
+      )}
+
+      {link && url && (
+        <div className="mb-2">
+          <LinkCard link={link.preview} onRemove={() => { setNoCard(url); setLink(null); }} />
+        </div>
       )}
 
       {poll && (
@@ -189,7 +223,7 @@ export function Composer({ lang, parentId, replyTo, quotedId, quotedPreview, aut
             ) : <span />}
             <label className="flex items-center gap-2 text-[13px] text-muted">
               {t.composer.pollDays}
-              <select className="rounded-lg border border-line bg-card px-2 py-1 text-ink" value={poll.days} onChange={(e) => setPoll((p) => p && { ...p, days: Number(e.target.value) })}>
+              <select className="rounded-lg border border-line bg-card px-2 py-1 text-[16px] text-ink sm:text-[14px]" value={poll.days} onChange={(e) => setPoll((p) => p && { ...p, days: Number(e.target.value) })}>
                 {[1, 2, 3, 5, 7].map((d) => (
                   <option key={d} value={d}>{d} {d > 1 ? t.composer.days : t.composer.day}</option>
                 ))}

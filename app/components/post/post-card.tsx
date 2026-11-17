@@ -5,12 +5,17 @@ import { joinHref } from "@/lib/join";
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { deletePost, toggleBookmark, toggleLike, toggleRepost } from "@/lib/actions";
+import { pinPost } from "@/lib/social-actions";
 import { formatCount, t as dict, timeAgo } from "@/lib/i18n";
+import { social } from "@/lib/i18n-social";
 import type { FeedPost } from "@/lib/types";
 import { communeLabel } from "@/lib/ci-geo";
 import { Avatar } from "../ui/avatar";
 import { NameBadge } from "../ui/badge";
 import { I } from "../ui/icons";
+import { S } from "../ui/icons-social";
+import { EditDialog, HistoryDialog } from "./edit-dialog";
+import { LinkCard } from "./link-card";
 import { MediaGrid } from "./media-grid";
 import { PollCard } from "./poll-card";
 import { TranslatableText } from "./translatable-text";
@@ -26,10 +31,13 @@ type Props = {
   variant?: "feed" | "detail" | "thread" | "compact";
   showReason?: boolean;
   isModerator?: boolean;
+  /** On a profile: show the "pinned" marker above the pinned post. */
+  showPinned?: boolean;
 };
 
-export function PostCard({ post, viewerId, lang, lowData = false, variant = "feed", showReason = false, isModerator = false }: Props) {
+export function PostCard({ post, viewerId, lang, lowData = false, variant = "feed", showReason = false, isModerator = false, showPinned = false }: Props) {
   const t = dict(lang);
+  const s = social(lang);
   const router = useRouter();
   const [liked, setLiked] = useState(post.liked);
   const [likes, setLikes] = useState(post.like_count);
@@ -42,12 +50,19 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
   const [replying, setReplying] = useState(false);
   const [gone, setGone] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [body, setBody] = useState({ text: post.text, edited_at: post.edited_at, link: post.link ?? null });
+  const [pinned, setPinned] = useState(post.is_pinned);
+  const [editing, setEditing] = useState(false);
+  const [history, setHistory] = useState(false);
   const [, start] = useTransition();
 
   if (gone) return null;
   const canAct = Boolean(viewerId);
   const detail = variant === "detail";
   const href = `/p/${post.id}`;
+  const mine = viewerId === post.author_id;
+  // Editing stays open for one hour; the database enforces the same window.
+  const canEdit = mine && !post.is_hidden && Date.now() - new Date(post.created_at).getTime() < 3600_000;
 
   function like() {
     if (!canAct) return router.push(joinHref());
@@ -73,11 +88,21 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
   async function share() {
     const url = `${window.location.origin}${href}`;
     if (navigator.share) {
-      try { await navigator.share({ url, text: post.text.slice(0, 120) }); return; } catch { /* cancelled */ }
+      try { await navigator.share({ url, text: body.text.slice(0, 120) }); return; } catch { /* cancelled */ }
     }
     await navigator.clipboard?.writeText(url);
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
+  }
+  function pin() {
+    const on = !pinned;
+    setMenu(false);
+    setPinned(on);
+    start(async () => {
+      const r = await pinPost(post.id, on);
+      if (!r.ok) setPinned(!on);
+      else router.refresh();
+    });
   }
   function remove() {
     setMenu(false);
@@ -114,6 +139,12 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
           {post.reposted_by.display_name} {t.feed.reposted}
         </div>
       )}
+      {showPinned && pinned && !post.reposted_by && (
+        <div className="mb-1 flex items-center gap-2 pl-8 text-[13px] font-semibold text-muted">
+          <S.pushpin className="h-4 w-4" />
+          {s.post.pinned}
+        </div>
+      )}
       {showReason && post.reason === "votre_elu" && (
         <div className="mb-1 flex items-center gap-2 pl-8 text-[13px] font-semibold text-green-deep">
           <I.landmark className="h-4 w-4" />
@@ -129,19 +160,23 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
         </div>
         <div className="min-w-0 flex-1">
           <div className="flex items-start justify-between gap-2">
-            <div className={`min-w-0 ${detail ? "flex flex-col" : "flex flex-wrap items-center gap-x-1.5"} text-[15px] leading-tight`}>
-              <Link href={`/u/${post.author.handle}`} className="inline-flex max-w-full items-center gap-1 truncate font-bold hover:underline">
+            {/* One line, like X: the name and handle shrink with an ellipsis, the time always shows. */}
+            <div className={`min-w-0 ${detail ? "flex flex-col gap-0.5" : "flex items-center gap-1"} text-[15px] leading-5`}>
+              <Link href={`/u/${post.author.handle}`} className={`inline-flex min-w-0 items-center gap-1 font-bold hover:underline ${detail ? "max-w-full" : "max-w-[72%] flex-none"}`}>
                 <span className="truncate">{post.author.display_name}</span>
                 <NameBadge p={post.author} lang={lang} verifiedTitle={t.profile.verified} />
               </Link>
-              <span className="truncate text-muted">@{post.author.handle}</span>
+              <span className="min-w-0 shrink truncate text-muted">@{post.author.handle}</span>
               {!detail && (
                 <>
-                  <span className="text-muted">·</span>
-                  <Link href={href} className="text-muted hover:underline" title={new Date(post.created_at).toLocaleString()}>
+                  <span aria-hidden="true" className="flex-none text-muted">·</span>
+                  <Link href={href} className="flex-none text-muted hover:underline" title={new Date(post.created_at).toLocaleString()}>
                     <time dateTime={post.created_at}>{timeAgo(post.created_at, lang)}</time>
                   </Link>
                 </>
+              )}
+              {!detail && body.edited_at && (
+                <button type="button" onClick={() => setHistory(true)} className="flex-none text-[13px] text-muted hover:underline">· {s.post.edited}</button>
               )}
             </div>
             <div className="relative flex-none">
@@ -151,26 +186,41 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
               {menu && (
                 <>
                   <div className="fixed inset-0 z-10" onClick={() => setMenu(false)} />
-                  <div role="menu" className="fade-in absolute right-0 z-20 mt-1 w-56 overflow-hidden rounded-2xl border border-line bg-card py-1 shadow-xl">
+                  <div role="menu" className="fade-in absolute right-0 z-20 mt-1 w-60 overflow-hidden rounded-2xl border border-line/70 bg-card py-1.5 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.18),0_2px_6px_rgba(0,0,0,0.06)]">
                     {canAct && (
-                      <button role="menuitem" type="button" onClick={bookmark} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] transition-colors hover:bg-paper active:bg-line/60">
-                        <I.bookmark className="h-4 w-4" filled={bookmarked} /> {bookmarked ? t.post.unbookmark : t.post.bookmark}
+                      <button role="menuitem" type="button" onClick={bookmark} className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] font-semibold transition-colors hover:bg-paper active:bg-line/60">
+                        <I.bookmark className="h-[18px] w-[18px]" filled={bookmarked} /> {bookmarked ? t.post.unbookmark : t.post.bookmark}
                       </button>
                     )}
-                    <button role="menuitem" type="button" onClick={() => { setMenu(false); share(); }} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] transition-colors hover:bg-paper active:bg-line/60">
-                      <I.share className="h-4 w-4" /> {t.post.share}
+                    <button role="menuitem" type="button" onClick={() => { setMenu(false); share(); }} className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] font-semibold transition-colors hover:bg-paper active:bg-line/60">
+                      <I.share className="h-[18px] w-[18px]" /> {t.post.share}
                     </button>
-                    <a role="menuitem" href={`https://wa.me/?text=${encodeURIComponent(post.text.slice(0, 200) + " " + (typeof window !== "undefined" ? window.location.origin : "") + href)}`} target="_blank" rel="noopener noreferrer" className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] transition-colors hover:bg-paper active:bg-line/60">
-                      <I.whatsapp className="h-4 w-4" /> {t.post.whatsapp}
+                    <a role="menuitem" href={`https://wa.me/?text=${encodeURIComponent(body.text.slice(0, 200) + " " + (typeof window !== "undefined" ? window.location.origin : "") + href)}`} target="_blank" rel="noopener noreferrer" className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] font-semibold transition-colors hover:bg-paper active:bg-line/60">
+                      <I.whatsapp className="h-[18px] w-[18px]" /> {t.post.whatsapp}
                     </a>
+                    {canEdit && (
+                      <button role="menuitem" type="button" onClick={() => { setMenu(false); setEditing(true); }} className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] font-semibold transition-colors hover:bg-paper active:bg-line/60">
+                        <S.pencil className="h-[18px] w-[18px]" /> {s.post.edit}
+                      </button>
+                    )}
+                    {mine && post.kind !== "reply" && (
+                      <button role="menuitem" type="button" onClick={pin} className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] font-semibold transition-colors hover:bg-paper active:bg-line/60">
+                        <S.pushpin className="h-[18px] w-[18px]" /> {pinned ? s.post.unpin : s.post.pin}
+                      </button>
+                    )}
+                    {body.edited_at && (
+                      <button role="menuitem" type="button" onClick={() => { setMenu(false); setHistory(true); }} className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] font-semibold transition-colors hover:bg-paper active:bg-line/60">
+                        <S.clock className="h-[18px] w-[18px]" /> {s.post.history}
+                      </button>
+                    )}
                     {canAct && viewerId !== post.author_id && (
-                      <button role="menuitem" type="button" onClick={() => { setMenu(false); setReport(true); }} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] transition-colors hover:bg-paper active:bg-line/60">
-                        <I.flag className="h-4 w-4" /> {t.post.report}
+                      <button role="menuitem" type="button" onClick={() => { setMenu(false); setReport(true); }} className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] font-semibold transition-colors hover:bg-paper active:bg-line/60">
+                        <I.flag className="h-[18px] w-[18px]" /> {t.post.report}
                       </button>
                     )}
                     {(viewerId === post.author_id || isModerator) && (
-                      <button role="menuitem" type="button" onClick={remove} className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] text-orange transition-colors hover:bg-paper active:bg-line/60">
-                        <I.trash className="h-4 w-4" /> {t.post.delete}
+                      <button role="menuitem" type="button" onClick={remove} className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] font-semibold text-orange transition-colors hover:bg-paper active:bg-line/60">
+                        <I.trash className="h-[18px] w-[18px]" /> {t.post.delete}
                       </button>
                     )}
                   </div>
@@ -188,7 +238,7 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
           {post.is_hidden ? (
             <p className="mt-2 rounded-xl border border-line bg-paper px-3 py-2 text-[14px] text-muted">{t.post.hidden}</p>
           ) : (
-            <TranslatableText postId={post.id} text={post.text} lang={lang} className={detail ? "mt-3 text-[19px] leading-snug" : "mt-1"} />
+            <TranslatableText key={body.edited_at ?? "0"} postId={post.id} text={body.text} lang={lang} className={detail ? "mt-3 text-[18px] leading-[1.4]" : "mt-0.5"} />
           )}
 
           {post.labels.map((l) => (
@@ -205,6 +255,7 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
           ))}
 
           {post.media.length > 0 && !post.is_hidden && <MediaGrid media={post.media} lowData={lowData} compact={variant === "compact"} />}
+          {body.link && !post.is_hidden && post.media.length === 0 && !post.poll && !post.quoted && <LinkCard link={body.link} lowData={lowData} />}
           {post.poll && <PollCard poll={post.poll} voted={post.voted} canVote={canAct} t={t.post} lang={lang} />}
 
           {post.quoted && (
@@ -223,8 +274,14 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
           {post.commune_id && <CommuneTag id={post.commune_id} />}
 
           {detail && (
-            <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-line pb-3 text-[14px] text-muted">
+            <div className="mt-4 flex flex-wrap items-center gap-x-1.5 gap-y-1 border-b border-line pb-3.5 text-[15px] text-muted">
               <time dateTime={post.created_at}>{new Date(post.created_at).toLocaleString(lang === "fr" ? "fr-FR" : "en-GB", { dateStyle: "long", timeStyle: "short" })}</time>
+              {body.edited_at && (
+                <>
+                  <span>·</span>
+                  <button type="button" onClick={() => setHistory(true)} className="underline decoration-line underline-offset-2 hover:text-ink">{s.post.edited}</button>
+                </>
+              )}
               <span>·</span>
               <span><b className="text-ink">{formatCount(post.view_count, lang)}</b> {t.post.views}</span>
               {reposts > 0 && <span><b className="text-ink">{formatCount(reposts, lang)}</b> {t.post.repost.toLowerCase()}s</span>}
@@ -271,10 +328,12 @@ export function PostCard({ post, viewerId, lang, lowData = false, variant = "fee
       </div>
 
       {report && <ReportDialog postId={post.id} t={t} onClose={() => setReport(false)} />}
+      {editing && <EditDialog postId={post.id} text={body.text} lang={lang} onClose={() => setEditing(false)} onSaved={(p) => { setBody(p); setEditing(false); }} />}
+      {history && <HistoryDialog postId={post.id} current={body.text} lang={lang} onClose={() => setHistory(false)} />}
       {quote && viewerId && (
         <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 sm:items-center sm:p-4" onClick={() => setQuote(false)}>
           <div className="w-full max-w-lg rounded-t-3xl bg-card p-4 sm:rounded-3xl" onClick={(e) => e.stopPropagation()}>
-            <Composer lang={lang} quotedId={post.id} quotedPreview={post} autoFocus onPosted={() => { setQuote(false); router.refresh(); }} />
+            <Composer lang={lang} quotedId={post.id} quotedPreview={{ ...post, text: body.text }} autoFocus onPosted={() => { setQuote(false); router.refresh(); }} />
           </div>
         </div>
       )}

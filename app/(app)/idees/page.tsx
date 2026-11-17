@@ -41,7 +41,7 @@ export default async function IdeasPage({ searchParams }: { searchParams: Promis
   return (
     <>
       <PageHeader title={t.ideas.title} subtitle={name ?? undefined} back={viewer ? "/mes-elus" : "/explorer"} />
-      <div className="border-b border-line bg-paper px-4 py-4">
+      <div className="border-b border-line px-4 py-3.5">
         <p className="text-[14px] leading-relaxed text-muted">{t.ideas.intro}</p>
         <form action="/idees" className="mt-3 flex gap-2">
           <label className="flex-1">

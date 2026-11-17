@@ -222,16 +222,16 @@ async function RightRail({ viewer, lang }: { viewer: Profile | null; lang: "fr" 
 /** Sticky page title bar for the main column. */
 export function PageHeader({ title, subtitle, back, children }: { title: string; subtitle?: string; back?: string; children?: React.ReactNode }) {
   return (
-    <div className="sticky top-0 z-30 border-b border-line bg-bg/90 backdrop-blur">
-      <div className="flex min-h-[56px] items-center gap-3 px-4 py-2">
+    <div className="bar sticky top-0 z-30 border-b">
+      <div className="flex min-h-[54px] items-center gap-2 px-4 py-1.5">
         {back && (
-          <Link href={back} aria-label="Retour" className="-ml-2 rounded-full p-2 hover:bg-paper">
-            <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="m15 5-7 7 7 7" /></svg>
+          <Link href={back} aria-label="Retour" className="tap -ml-2 mr-1 flex h-9 w-9 flex-none items-center justify-center rounded-full text-ink hover:bg-paper active:bg-line/70">
+            <svg aria-hidden="true" viewBox="0 0 24 24" className="h-[22px] w-[22px]" fill="none" stroke="currentColor" strokeWidth={2.1} strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5" /><path d="m11 18-6-6 6-6" /></svg>
           </Link>
         )}
         <div className="min-w-0 flex-1">
-          <h1 className="truncate font-display text-[20px] font-bold leading-tight">{title}</h1>
-          {subtitle && <p className="truncate text-[13px] text-muted">{subtitle}</p>}
+          <h1 className="truncate font-display text-[19px] font-bold leading-tight tracking-[-0.01em]">{title}</h1>
+          {subtitle && <p className="truncate text-[13px] leading-tight text-muted">{subtitle}</p>}
         </div>
         {children}
       </div>
@@ -239,6 +239,25 @@ export function PageHeader({ title, subtitle, back, children }: { title: string;
   );
 }
 
+/**
+ * Underlined tab strip (feed, profile, official). Like X: the green bar is as wide as the
+ * label, the strip scrolls sideways instead of wrapping when the labels don't fit.
+ */
+export function Tabs({ label, items, className = "" }: { label: string; items: { href: string; label: string; on: boolean }[]; className?: string }) {
+  return (
+    <nav aria-label={label} className={`no-scrollbar flex overflow-x-auto ${className}`}>
+      {items.map((x) => (
+        <Link key={x.href} href={x.href} aria-current={x.on ? "page" : undefined} className="tap-row flex h-[52px] min-w-fit flex-1 items-stretch justify-center whitespace-nowrap px-4 text-[15px]">
+          <span className={`relative flex items-center ${x.on ? "font-bold text-ink" : "font-medium text-muted"}`}>
+            {x.label}
+            <span aria-hidden="true" className={`absolute inset-x-0 bottom-0 h-1 rounded-full transition-colors ${x.on ? "bg-green" : "bg-transparent"}`} />
+          </span>
+        </Link>
+      ))}
+    </nav>
+  );
+}
+
 export function Empty({ children }: { children: React.ReactNode }) {
-  return <div className="px-6 py-14 text-center text-[15px] text-muted">{children}</div>;
+  return <div className="mx-auto max-w-[340px] px-6 py-16 text-center text-[15px] leading-relaxed text-muted">{children}</div>;
 }

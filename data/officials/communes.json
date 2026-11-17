@@ -1,0 +1,2000 @@
+{
+ "institution": "commune",
+ "source": "https://viepublique.ci",
+ "source_label": "Ministère de l'Intérieur et de la Sécurité (E-CONSEIL), conseils municipaux, mandature 2023-2028, mise à jour du 14/07/2026",
+ "checked": "2026-11-15",
+ "offices": [
+  {
+   "key": "maire-abengourou",
+   "mandate": "maire",
+   "title": "Maire d'Abengourou",
+   "name": "Adom Herve Patrick",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Abengourou",
+   "commune": "Abengourou"
+  },
+  {
+   "key": "maire-abobo",
+   "mandate": "maire",
+   "title": "Maire d'Abobo",
+   "name": "Kamissoko Kandia",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "Abidjan",
+   "commune": "Abobo"
+  },
+  {
+   "key": "maire-aboisso",
+   "mandate": "maire",
+   "title": "Maire d'Aboisso",
+   "name": "N'Gouan Jeremie Alfred",
+   "gender": "M",
+   "party": "PDCI-RDA / PPA-CI",
+   "department": "Aboisso",
+   "commune": "Aboisso"
+  },
+  {
+   "key": "maire-adiake",
+   "mandate": "maire",
+   "title": "Maire d'Adiaké",
+   "name": "Sie Hien",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Adiaké",
+   "commune": "Adiaké"
+  },
+  {
+   "key": "maire-adjame",
+   "mandate": "maire",
+   "title": "Maire d'Adjamé",
+   "name": "Soumahoro Farikou",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Abidjan",
+   "commune": "Adjamé"
+  },
+  {
+   "key": "maire-adzope",
+   "mandate": "maire",
+   "title": "Maire d'Adzopé",
+   "name": "Atse Bah Florence Sosterne épouse Achi",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "Adzopé",
+   "commune": "Adzopé"
+  },
+  {
+   "key": "maire-affery",
+   "mandate": "maire",
+   "title": "Maire d'Afféry",
+   "name": "Beda Assi Celaire",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Akoupé",
+   "commune": "Afféry"
+  },
+  {
+   "key": "maire-agboville",
+   "mandate": "maire",
+   "title": "Maire d'Agboville",
+   "name": "N'Cho Acho Albert",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Agboville",
+   "commune": "Agboville"
+  },
+  {
+   "key": "maire-agnibilekrou",
+   "mandate": "maire",
+   "title": "Maire d'Agnibilékrou",
+   "name": "Fofana Siandou",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Agnibilékrou",
+   "commune": "Agnibilékrou"
+  },
+  {
+   "key": "maire-agou",
+   "mandate": "maire",
+   "title": "Maire d'Agou",
+   "name": "Yapo Servais Euloge",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Adzopé",
+   "commune": "Agou"
+  },
+  {
+   "key": "maire-akoupe",
+   "mandate": "maire",
+   "title": "Maire d'Akoupé",
+   "name": "Sanon Koffi Marcel",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Akoupé",
+   "commune": "Akoupé"
+  },
+  {
+   "key": "maire-alepe",
+   "mandate": "maire",
+   "title": "Maire d'Alépé",
+   "name": "Ossin Yapi Simplice",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Alépé",
+   "commune": "Alépé"
+  },
+  {
+   "key": "maire-anoumaba",
+   "mandate": "maire",
+   "title": "Maire d'Anoumaba",
+   "name": "Assoumou Yah Beatrice",
+   "gender": "F",
+   "party": "PDCI-RDA",
+   "department": "M'Batto",
+   "commune": "Anoumaba"
+  },
+  {
+   "key": "maire-anyama",
+   "mandate": "maire",
+   "title": "Maire d'Anyama",
+   "name": "Bamba Fatima",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "Abidjan",
+   "commune": "Anyama"
+  },
+  {
+   "key": "maire-arrah",
+   "mandate": "maire",
+   "title": "Maire d'Arrah",
+   "name": "Kouame Badou Harlette",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "Arrah",
+   "commune": "Arrah"
+  },
+  {
+   "key": "maire-assinie-mafia",
+   "mandate": "maire",
+   "title": "Maire d'Assinie-Mafia",
+   "name": "Magne Woelffell Pierre Rene",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Adiaké",
+   "commune": "Assinie-Mafia"
+  },
+  {
+   "key": "maire-assuefry",
+   "mandate": "maire",
+   "title": "Maire d'Assuéfry",
+   "name": "Yoboua Kouabenan Ceverin",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Transua",
+   "commune": "Assuéfry"
+  },
+  {
+   "key": "maire-attecoube",
+   "mandate": "maire",
+   "title": "Maire d'Attécoubé",
+   "name": "Danho Paulin Claude",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Abidjan",
+   "commune": "Attécoubé"
+  },
+  {
+   "key": "maire-attiegouakro",
+   "mandate": "maire",
+   "title": "Maire d'Attiégouakro",
+   "name": "Kouame Kouakou N'Zouako Jerome",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Attiégouakro",
+   "commune": "Attiégouakro"
+  },
+  {
+   "key": "maire-ayame",
+   "mandate": "maire",
+   "title": "Maire d'Ayamé",
+   "name": "Ellogne Eba Koutoua Severin Christian",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Aboisso",
+   "commune": "Ayamé"
+  },
+  {
+   "key": "maire-azaguie",
+   "mandate": "maire",
+   "title": "Maire d'Azaguié",
+   "name": "Alain Ekissi",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Agboville",
+   "commune": "Azaguié"
+  },
+  {
+   "key": "maire-bako",
+   "mandate": "maire",
+   "title": "Maire de Bako",
+   "name": "Kone Mabana Dite Josephine épouse Fany",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "Odienné",
+   "commune": "Bako"
+  },
+  {
+   "key": "maire-bangolo",
+   "mandate": "maire",
+   "title": "Maire de Bangolo",
+   "name": "Gah Yemonli Arsene",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Bangolo",
+   "commune": "Bangolo"
+  },
+  {
+   "key": "maire-bassawa",
+   "mandate": "maire",
+   "title": "Maire de Bassawa",
+   "name": "Karidioula Souleymane",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Dabakala",
+   "commune": "Bassawa"
+  },
+  {
+   "key": "maire-bediala",
+   "mandate": "maire",
+   "title": "Maire de Bédiala",
+   "name": "Kouame Bah Jean Yves Yao",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Daloa",
+   "commune": "Bédiala"
+  },
+  {
+   "key": "maire-beoumi",
+   "mandate": "maire",
+   "title": "Maire de Béoumi",
+   "name": "Kouassi Kouadio Jean-Marc",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Béoumi",
+   "commune": "Béoumi"
+  },
+  {
+   "key": "maire-bettie",
+   "mandate": "maire",
+   "title": "Maire de Bettié",
+   "name": "Kouakou Amalaman Jean-Baptiste",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Bettié",
+   "commune": "Bettié"
+  },
+  {
+   "key": "maire-biankouma",
+   "mandate": "maire",
+   "title": "Maire de Biankouma",
+   "name": "Maniga Gba Jean Jacques",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Biankouma",
+   "commune": "Biankouma"
+  },
+  {
+   "key": "maire-bin-houye",
+   "mandate": "maire",
+   "title": "Maire de Bin-Houyé",
+   "name": "Meman Andre Narcisse",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Zouan-Hounien",
+   "commune": "Bin-Houyé"
+  },
+  {
+   "key": "maire-bingerville",
+   "mandate": "maire",
+   "title": "Maire de Bingerville",
+   "name": "Doumbia Issouf",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Abidjan",
+   "commune": "Bingerville"
+  },
+  {
+   "key": "maire-blolequin",
+   "mandate": "maire",
+   "title": "Maire de Bloléquin",
+   "name": "Ouahi Thiery",
+   "gender": "M",
+   "party": "PDCI-RDA / PPA-CI",
+   "department": "Bloléquin",
+   "commune": "Bloléquin"
+  },
+  {
+   "key": "maire-bocanda",
+   "mandate": "maire",
+   "title": "Maire de Bocanda",
+   "name": "Kramo Kouassi",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Bocanda",
+   "commune": "Bocanda"
+  },
+  {
+   "key": "maire-bodokro",
+   "mandate": "maire",
+   "title": "Maire de Bodokro",
+   "name": "Atse Akissi Alice",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "Béoumi",
+   "commune": "Bodokro"
+  },
+  {
+   "key": "maire-bondoukou",
+   "mandate": "maire",
+   "title": "Maire de Bondoukou",
+   "name": "Ouattara Anzoumana",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Bondoukou",
+   "commune": "Bondoukou"
+  },
+  {
+   "key": "maire-bongouanou",
+   "mandate": "maire",
+   "title": "Maire de Bongouanou",
+   "name": "Assougba Jacob Amoin",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Bongouanou",
+   "commune": "Bongouanou"
+  },
+  {
+   "key": "maire-bonieredougou",
+   "mandate": "maire",
+   "title": "Maire de Boniérédougou",
+   "name": "Ouattara Pemignan Olivier",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Dabakala",
+   "commune": "Boniérédougou"
+  },
+  {
+   "key": "maire-bonon",
+   "mandate": "maire",
+   "title": "Maire de Bonon",
+   "name": "Yacouba Kone",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Bonon",
+   "commune": "Bonon"
+  },
+  {
+   "key": "maire-bonoua",
+   "mandate": "maire",
+   "title": "Maire de Bonoua",
+   "name": "Amethier Koua Jean Paul",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Grand-Bassam",
+   "commune": "Bonoua"
+  },
+  {
+   "key": "maire-booko",
+   "mandate": "maire",
+   "title": "Maire de Booko",
+   "name": "Fofana Salif",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Koro",
+   "commune": "Booko"
+  },
+  {
+   "key": "maire-borotou",
+   "mandate": "maire",
+   "title": "Maire de Borotou",
+   "name": "Diomande Adama",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Koro",
+   "commune": "Borotou"
+  },
+  {
+   "key": "maire-botro",
+   "mandate": "maire",
+   "title": "Maire de Botro",
+   "name": "N'Guessan N'Goran",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Botro",
+   "commune": "Botro"
+  },
+  {
+   "key": "maire-bouafle",
+   "mandate": "maire",
+   "title": "Maire de Bouaflé",
+   "name": "Yao Etienne",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Bouaflé",
+   "commune": "Bouaflé"
+  },
+  {
+   "key": "maire-bouake",
+   "mandate": "maire",
+   "title": "Maire de Bouaké",
+   "name": "Kone Amadou",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Bouaké",
+   "commune": "Bouaké"
+  },
+  {
+   "key": "maire-bouna",
+   "mandate": "maire",
+   "title": "Maire de Bouna",
+   "name": "Ouattara Bouraima",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Bouna",
+   "commune": "Bouna"
+  },
+  {
+   "key": "maire-boundiali",
+   "mandate": "maire",
+   "title": "Maire de Boundiali",
+   "name": "Kone Mariatou",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "Boundiali",
+   "commune": "Boundiali"
+  },
+  {
+   "key": "maire-brobo",
+   "mandate": "maire",
+   "title": "Maire de Brobo",
+   "name": "Kouakou-Habonouan Louis",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Bouaké",
+   "commune": "Brobo"
+  },
+  {
+   "key": "maire-buyo",
+   "mandate": "maire",
+   "title": "Maire de Buyo",
+   "name": "Yao Yao Lazare",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Buyo",
+   "commune": "Buyo"
+  },
+  {
+   "key": "maire-cocody",
+   "mandate": "maire",
+   "title": "Maire de Cocody",
+   "name": "Yace Jean-Marc",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Abidjan",
+   "commune": "Cocody"
+  },
+  {
+   "key": "maire-dabakala",
+   "mandate": "maire",
+   "title": "Maire de Dabakala",
+   "name": "Coulibaly Adama",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Dabakala",
+   "commune": "Dabakala"
+  },
+  {
+   "key": "maire-dabou",
+   "mandate": "maire",
+   "title": "Maire de Dabou",
+   "name": "Yede Niangne Jean Claude",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Dabou",
+   "commune": "Dabou"
+  },
+  {
+   "key": "maire-daloa",
+   "mandate": "maire",
+   "title": "Maire de Daloa",
+   "name": "Gbeuly Stephane Auguste",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Daloa",
+   "commune": "Daloa"
+  },
+  {
+   "key": "maire-danane",
+   "mandate": "maire",
+   "title": "Maire de Danané",
+   "name": "Kalifa Lancine Diabate",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Danané",
+   "commune": "Danané"
+  },
+  {
+   "key": "maire-daoukro",
+   "mandate": "maire",
+   "title": "Maire de Daoukro",
+   "name": "Dje Koffi",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Daoukro",
+   "commune": "Daoukro"
+  },
+  {
+   "key": "maire-diabo",
+   "mandate": "maire",
+   "title": "Maire de Diabo",
+   "name": "Dieto Kouame Marcel",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Botro",
+   "commune": "Diabo"
+  },
+  {
+   "key": "maire-dianra",
+   "mandate": "maire",
+   "title": "Maire de Dianra",
+   "name": "Kone Amourlaye",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Dianra",
+   "commune": "Dianra"
+  },
+  {
+   "key": "maire-diawala",
+   "mandate": "maire",
+   "title": "Maire de Diawala",
+   "name": "Ouattara Mamadou",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Ouangolodougou",
+   "commune": "Diawala"
+  },
+  {
+   "key": "maire-didievi",
+   "mandate": "maire",
+   "title": "Maire de Didiévi",
+   "name": "Kouassi Kouame Brice",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Didiévi",
+   "commune": "Didiévi"
+  },
+  {
+   "key": "maire-diegonefla",
+   "mandate": "maire",
+   "title": "Maire de Diégonéfla",
+   "name": "Bagrou Goli",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Oumé",
+   "commune": "Diégonéfla"
+  },
+  {
+   "key": "maire-dikodougou",
+   "mandate": "maire",
+   "title": "Maire de Dikodougou",
+   "name": "Soro Abou Dramane",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Dikodougou",
+   "commune": "Dikodougou"
+  },
+  {
+   "key": "maire-dimbokro",
+   "mandate": "maire",
+   "title": "Maire de Dimbokro",
+   "name": "Coulibaly Adama",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Dimbokro",
+   "commune": "Dimbokro"
+  },
+  {
+   "key": "maire-dioulatiedougou",
+   "mandate": "maire",
+   "title": "Maire de Dioulatièdougou",
+   "name": "Diarra Cedric Tidiane",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Odienné",
+   "commune": "Dioulatièdougou"
+  },
+  {
+   "key": "maire-divo",
+   "mandate": "maire",
+   "title": "Maire de Divo",
+   "name": "Toure Ali Amadou",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Divo",
+   "commune": "Divo"
+  },
+  {
+   "key": "maire-djebonoua",
+   "mandate": "maire",
+   "title": "Maire de Djébonoua",
+   "name": "Yao Kouadio Roland",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Bouaké",
+   "commune": "Djébonoua"
+  },
+  {
+   "key": "maire-djekanou",
+   "mandate": "maire",
+   "title": "Maire de Djékanou",
+   "name": "Diallo Ibrahiman Ernest",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Djékanou",
+   "commune": "Djékanou"
+  },
+  {
+   "key": "maire-djibrosso",
+   "mandate": "maire",
+   "title": "Maire de Djibrosso",
+   "name": "Diomande Salimata",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "Kani",
+   "commune": "Djibrosso"
+  },
+  {
+   "key": "maire-doropo",
+   "mandate": "maire",
+   "title": "Maire de Doropo",
+   "name": "Ouattara Siaka",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Doropo",
+   "commune": "Doropo"
+  },
+  {
+   "key": "maire-dualla",
+   "mandate": "maire",
+   "title": "Maire de Dualla",
+   "name": "Diomande Inza",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Séguéla",
+   "commune": "Dualla"
+  },
+  {
+   "key": "maire-duekoue",
+   "mandate": "maire",
+   "title": "Maire de Duékoué",
+   "name": "Flanizara Toure",
+   "gender": "F",
+   "party": "Indépendant",
+   "department": "Duékoué",
+   "commune": "Duékoué"
+  },
+  {
+   "key": "maire-ettrokro",
+   "mandate": "maire",
+   "title": "Maire d'Ettrokro",
+   "name": "Kouame Issouf",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Daoukro",
+   "commune": "Ettrokro"
+  },
+  {
+   "key": "maire-facobly",
+   "mandate": "maire",
+   "title": "Maire de Facobly",
+   "name": "Moise Gnamke",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Facobly",
+   "commune": "Facobly"
+  },
+  {
+   "key": "maire-ferkessedougou",
+   "mandate": "maire",
+   "title": "Maire de Ferkessédougou",
+   "name": "Ouattara Kaweli",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Ferkessédougou",
+   "commune": "Ferkessédougou"
+  },
+  {
+   "key": "maire-foumbolo",
+   "mandate": "maire",
+   "title": "Maire de Foumbolo",
+   "name": "Coulibaly Keletiennabele",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Dabakala",
+   "commune": "Foumbolo"
+  },
+  {
+   "key": "maire-fresco",
+   "mandate": "maire",
+   "title": "Maire de Fresco",
+   "name": "Beugrefoh Tchekre Fulbert",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Fresco",
+   "commune": "Fresco"
+  },
+  {
+   "key": "maire-fronan",
+   "mandate": "maire",
+   "title": "Maire de Fronan",
+   "name": "Coulibaly Kinapara Ange Thierry",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Katiola",
+   "commune": "Fronan"
+  },
+  {
+   "key": "maire-gagnoa",
+   "mandate": "maire",
+   "title": "Maire de Gagnoa",
+   "name": "Yssouf Diabate",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Gagnoa",
+   "commune": "Gagnoa"
+  },
+  {
+   "key": "maire-gbeleban",
+   "mandate": "maire",
+   "title": "Maire de Gbéléban",
+   "name": "Ouattara Aissiata",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "Gbéléban",
+   "commune": "Gbéléban"
+  },
+  {
+   "key": "maire-gboguhe",
+   "mandate": "maire",
+   "title": "Maire de Gboguhé",
+   "name": "Ouattara Bakary",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Daloa",
+   "commune": "Gboguhé"
+  },
+  {
+   "key": "maire-gbon",
+   "mandate": "maire",
+   "title": "Maire de Gbon",
+   "name": "Toure Alpha Yaya",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Kouto",
+   "commune": "Gbon"
+  },
+  {
+   "key": "maire-gbonne",
+   "mandate": "maire",
+   "title": "Maire de Gbonné",
+   "name": "Kesse Feh Lambert",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Biankouma",
+   "commune": "Gbonné"
+  },
+  {
+   "key": "maire-gohitafla",
+   "mandate": "maire",
+   "title": "Maire de Gohitafla",
+   "name": "Zamble Naya Naomi Jarvis",
+   "gender": "F",
+   "party": "Indépendant",
+   "department": "Gohitafla",
+   "commune": "Gohitafla"
+  },
+  {
+   "key": "maire-goulia",
+   "mandate": "maire",
+   "title": "Maire de Goulia",
+   "name": "Kone Djakaridja",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Kaniasso",
+   "commune": "Goulia"
+  },
+  {
+   "key": "maire-grabo",
+   "mandate": "maire",
+   "title": "Maire de Grabo",
+   "name": "Coulibaly Yaya",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Tabou",
+   "commune": "Grabo"
+  },
+  {
+   "key": "maire-grand-bassam",
+   "mandate": "maire",
+   "title": "Maire de Grand-Bassam",
+   "name": "Moulot Moise Jean Louis Coffi",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Grand-Bassam",
+   "commune": "Grand-Bassam"
+  },
+  {
+   "key": "maire-grand-bereby",
+   "mandate": "maire",
+   "title": "Maire de Grand-Béréby",
+   "name": "Konan Kouame Armand",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "San-Pédro",
+   "commune": "Grand-Béréby"
+  },
+  {
+   "key": "maire-grand-lahou",
+   "mandate": "maire",
+   "title": "Maire de Grand-Lahou",
+   "name": "Ali Sissoko",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Grand-Lahou",
+   "commune": "Grand-Lahou"
+  },
+  {
+   "key": "maire-grand-zattry",
+   "mandate": "maire",
+   "title": "Maire de Grand-Zattry",
+   "name": "Seri Hortense Emma",
+   "gender": "F",
+   "party": "PDCI-RDA / PPA-CI",
+   "department": "Soubré",
+   "commune": "Grand-Zattry"
+  },
+  {
+   "key": "maire-gueyo",
+   "mandate": "maire",
+   "title": "Maire de Guéyo",
+   "name": "Boni Tano N'Guessan Noelle Marie",
+   "gender": "F",
+   "party": "Indépendant",
+   "department": "Guéyo",
+   "commune": "Guéyo"
+  },
+  {
+   "key": "maire-guiberoua",
+   "mandate": "maire",
+   "title": "Maire de Guibéroua",
+   "name": "Zeze Souassou Nicole Princesse Gohourou",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "Gagnoa",
+   "commune": "Guibéroua"
+  },
+  {
+   "key": "maire-guiembe",
+   "mandate": "maire",
+   "title": "Maire de Guiembé",
+   "name": "Yeo Kolo",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Dikodougou",
+   "commune": "Guiembé"
+  },
+  {
+   "key": "maire-guiglo",
+   "mandate": "maire",
+   "title": "Maire de Guiglo",
+   "name": "Baillet Benoit Severin",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Guiglo",
+   "commune": "Guiglo"
+  },
+  {
+   "key": "maire-guinteguela",
+   "mandate": "maire",
+   "title": "Maire de Guintéguéla",
+   "name": "Dosso Namory",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Touba",
+   "commune": "Guintéguéla"
+  },
+  {
+   "key": "maire-guitry",
+   "mandate": "maire",
+   "title": "Maire de Guitry",
+   "name": "Koko Patricia Sylvie épouse Yao",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "Guitry",
+   "commune": "Guitry"
+  },
+  {
+   "key": "maire-issia",
+   "mandate": "maire",
+   "title": "Maire d'Issia",
+   "name": "Fany Karim",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Issia",
+   "commune": "Issia"
+  },
+  {
+   "key": "maire-jacqueville",
+   "mandate": "maire",
+   "title": "Maire de Jacqueville",
+   "name": "Beugre Joachim",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Jacqueville",
+   "commune": "Jacqueville"
+  },
+  {
+   "key": "maire-kanakono",
+   "mandate": "maire",
+   "title": "Maire de Kanakono",
+   "name": "Kone Safana Nambaha",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Tengréla",
+   "commune": "Kanakono"
+  },
+  {
+   "key": "maire-kani",
+   "mandate": "maire",
+   "title": "Maire de Kani",
+   "name": "Meite Yaya",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Kani",
+   "commune": "Kani"
+  },
+  {
+   "key": "maire-kaniasso",
+   "mandate": "maire",
+   "title": "Maire de Kaniasso",
+   "name": "Diarrassouba Anzoumana Almamy",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Kaniasso",
+   "commune": "Kaniasso"
+  },
+  {
+   "key": "maire-karakoro",
+   "mandate": "maire",
+   "title": "Maire de Karakoro",
+   "name": "Tuo Tieba",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Korhogo",
+   "commune": "Karakoro"
+  },
+  {
+   "key": "maire-kassere",
+   "mandate": "maire",
+   "title": "Maire de Kasséré",
+   "name": "Ouattara Guibessongui Issa",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Boundiali",
+   "commune": "Kasséré"
+  },
+  {
+   "key": "maire-katiola",
+   "mandate": "maire",
+   "title": "Maire de Katiola",
+   "name": "Camara Pogabaha Thomas",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Katiola",
+   "commune": "Katiola"
+  },
+  {
+   "key": "maire-kokoumbo",
+   "mandate": "maire",
+   "title": "Maire de Kokoumbo",
+   "name": "Kouame Noel Faustin",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Toumodi",
+   "commune": "Kokoumbo"
+  },
+  {
+   "key": "maire-kolia",
+   "mandate": "maire",
+   "title": "Maire de Kolia",
+   "name": "Kone Karim Dotieme",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Kouto",
+   "commune": "Kolia"
+  },
+  {
+   "key": "maire-komborodougou",
+   "mandate": "maire",
+   "title": "Maire de Komborodougou",
+   "name": "Soro Gona Ali",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Korhogo",
+   "commune": "Komborodougou"
+  },
+  {
+   "key": "maire-kong",
+   "mandate": "maire",
+   "title": "Maire de Kong",
+   "name": "Berte Abdramane Tiemoko",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Kong",
+   "commune": "Kong"
+  },
+  {
+   "key": "maire-kongasso",
+   "mandate": "maire",
+   "title": "Maire de Kongasso",
+   "name": "Bamba Abou",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Kounahiri",
+   "commune": "Kongasso"
+  },
+  {
+   "key": "maire-koonan",
+   "mandate": "maire",
+   "title": "Maire de Koonan",
+   "name": "Bamba Abou",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Ouaninou",
+   "commune": "Koonan"
+  },
+  {
+   "key": "maire-korhogo",
+   "mandate": "maire",
+   "title": "Maire de Korhogo",
+   "name": "Ouattara Lacina",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Korhogo",
+   "commune": "Korhogo"
+  },
+  {
+   "key": "maire-koro",
+   "mandate": "maire",
+   "title": "Maire de Koro",
+   "name": "Bakayoko Abdoul Dramane",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Koro",
+   "commune": "Koro"
+  },
+  {
+   "key": "maire-kouassi-datekro",
+   "mandate": "maire",
+   "title": "Maire de Kouassi-Datékro",
+   "name": "Sinan Bakari",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Koun-Fao",
+   "commune": "Kouassi-Datékro"
+  },
+  {
+   "key": "maire-kouassi-kouassikro",
+   "mandate": "maire",
+   "title": "Maire de Kouassi-Kouassikro",
+   "name": "Kouakou Kouadio Joseph",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Kouassi-Kouassikro",
+   "commune": "Kouassi-Kouassikro"
+  },
+  {
+   "key": "maire-kouibly",
+   "mandate": "maire",
+   "title": "Maire de Kouibly",
+   "name": "Zae Gnondjouowi Alexis",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Kouibly",
+   "commune": "Kouibly"
+  },
+  {
+   "key": "maire-koumassi",
+   "mandate": "maire",
+   "title": "Maire de Koumassi",
+   "name": "Balley Narcisse Toussaint",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Abidjan",
+   "commune": "Koumassi"
+  },
+  {
+   "key": "maire-koumbala",
+   "mandate": "maire",
+   "title": "Maire de Koumbala",
+   "name": "Teneyoumon Coulibaly",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Ferkessédougou",
+   "commune": "Koumbala"
+  },
+  {
+   "key": "maire-koun-fao",
+   "mandate": "maire",
+   "title": "Maire de Koun-Fao",
+   "name": "Yao Kouame Noel",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Koun-Fao",
+   "commune": "Koun-Fao"
+  },
+  {
+   "key": "maire-kounahiri",
+   "mandate": "maire",
+   "title": "Maire de Kounahiri",
+   "name": "Bissa Augustin",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Kounahiri",
+   "commune": "Kounahiri"
+  },
+  {
+   "key": "maire-kouto",
+   "mandate": "maire",
+   "title": "Maire de Kouto",
+   "name": "Kone Domia",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Kouto",
+   "commune": "Kouto"
+  },
+  {
+   "key": "maire-lakota",
+   "mandate": "maire",
+   "title": "Maire de Lakota",
+   "name": "Dalli Arthur Prince - Richard",
+   "gender": "M",
+   "party": "PDCI-RDA / PPA-CI",
+   "department": "Lakota",
+   "commune": "Lakota"
+  },
+  {
+   "key": "maire-logouale",
+   "mandate": "maire",
+   "title": "Maire de Logoualé",
+   "name": "Ouehi Feh Biayo Gisele épouse Koffi",
+   "gender": "F",
+   "party": "Indépendant",
+   "department": "Man",
+   "commune": "Logoualé"
+  },
+  {
+   "key": "maire-m-bahiakro",
+   "mandate": "maire",
+   "title": "Maire de M'Bahiakro",
+   "name": "Diamala Kouassi Raphael",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "M'Bahiakro",
+   "commune": "M'Bahiakro"
+  },
+  {
+   "key": "maire-m-batto",
+   "mandate": "maire",
+   "title": "Maire de M'Batto",
+   "name": "Kanga Kacou Antoine",
+   "gender": "M",
+   "party": "PPA-CI",
+   "department": "M'Batto",
+   "commune": "M'Batto"
+  },
+  {
+   "key": "maire-m-bengue",
+   "mandate": "maire",
+   "title": "Maire de M'Bengué",
+   "name": "Coulibaly Ali Kader",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "M'Bengué",
+   "commune": "M'Bengué"
+  },
+  {
+   "key": "maire-madinani",
+   "mandate": "maire",
+   "title": "Maire de Madinani",
+   "name": "Konate Ladji",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Madinani",
+   "commune": "Madinani"
+  },
+  {
+   "key": "maire-mafere",
+   "mandate": "maire",
+   "title": "Maire de Maféré",
+   "name": "Elidje Angora",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Aboisso",
+   "commune": "Maféré"
+  },
+  {
+   "key": "maire-man",
+   "mandate": "maire",
+   "title": "Maire de Man",
+   "name": "Fofana Aboubakar Sidiki",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Man",
+   "commune": "Man"
+  },
+  {
+   "key": "maire-mankono",
+   "mandate": "maire",
+   "title": "Maire de Mankono",
+   "name": "Vagbama Tambla",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Mankono",
+   "commune": "Mankono"
+  },
+  {
+   "key": "maire-marcory",
+   "mandate": "maire",
+   "title": "Maire de Marcory",
+   "name": "Aby Akrobou Raoul Modeste",
+   "gender": "M",
+   "party": "PDCI-RDA / PPA-CI",
+   "department": "Abidjan",
+   "commune": "Marcory"
+  },
+  {
+   "key": "maire-mayo",
+   "mandate": "maire",
+   "title": "Maire de Mayo",
+   "name": "Baflan Laure épouse Donwahi",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "Soubré",
+   "commune": "Mayo"
+  },
+  {
+   "key": "maire-meagui",
+   "mandate": "maire",
+   "title": "Maire de Méagui",
+   "name": "Yepi Gnonkothe Senghor",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Méagui",
+   "commune": "Méagui"
+  },
+  {
+   "key": "maire-minignan",
+   "mandate": "maire",
+   "title": "Maire de Minignan",
+   "name": "Diakite El Hadj Mory",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Minignan",
+   "commune": "Minignan"
+  },
+  {
+   "key": "maire-morondo",
+   "mandate": "maire",
+   "title": "Maire de Morondo",
+   "name": "Traore Moussa Koudougou",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Kani",
+   "commune": "Morondo"
+  },
+  {
+   "key": "maire-n-douci",
+   "mandate": "maire",
+   "title": "Maire de N'Douci",
+   "name": "Oboumou Gole Marcelin",
+   "gender": "M",
+   "party": "PDCI-RDA / PPA-CI",
+   "department": "Tiassalé",
+   "commune": "N'Douci"
+  },
+  {
+   "key": "maire-napie",
+   "mandate": "maire",
+   "title": "Maire de Napié",
+   "name": "Diarrassouba Nagaky",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Korhogo",
+   "commune": "Napié"
+  },
+  {
+   "key": "maire-nassian",
+   "mandate": "maire",
+   "title": "Maire de Nassian",
+   "name": "Kouadio Deglegui Edmond",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Nassian",
+   "commune": "Nassian"
+  },
+  {
+   "key": "maire-niable",
+   "mandate": "maire",
+   "title": "Maire de Niablé",
+   "name": "Messou Bouadou Edouard",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Abengourou",
+   "commune": "Niablé"
+  },
+  {
+   "key": "maire-niakaramadougou",
+   "mandate": "maire",
+   "title": "Maire de Niakaramadougou",
+   "name": "Kone Pierre",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Niakaramadougou",
+   "commune": "Niakaramadougou"
+  },
+  {
+   "key": "maire-nielle",
+   "mandate": "maire",
+   "title": "Maire de Niellé",
+   "name": "Ouattara Alassane",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Ouangolodougou",
+   "commune": "Niellé"
+  },
+  {
+   "key": "maire-niofoin",
+   "mandate": "maire",
+   "title": "Maire de Niofoin",
+   "name": "Soro Fobeh",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Korhogo",
+   "commune": "Niofoin"
+  },
+  {
+   "key": "maire-odienne",
+   "mandate": "maire",
+   "title": "Maire d'Odienné",
+   "name": "Toure Nasseneba",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "Odienné",
+   "commune": "Odienné"
+  },
+  {
+   "key": "maire-ouangolodougou",
+   "mandate": "maire",
+   "title": "Maire d'Ouangolodougou",
+   "name": "Toungara Moussa",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Ouangolodougou",
+   "commune": "Ouangolodougou"
+  },
+  {
+   "key": "maire-ouaninou",
+   "mandate": "maire",
+   "title": "Maire d'Ouaninou",
+   "name": "Diomande Abdoul Ahmara",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Ouaninou",
+   "commune": "Ouaninou"
+  },
+  {
+   "key": "maire-ouelle",
+   "mandate": "maire",
+   "title": "Maire d'Ouellé",
+   "name": "Ya Komenan Raphael",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Ouellé",
+   "commune": "Ouellé"
+  },
+  {
+   "key": "maire-oume",
+   "mandate": "maire",
+   "title": "Maire d'Oumé",
+   "name": "Lagui Kouassi Joachim",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Oumé",
+   "commune": "Oumé"
+  },
+  {
+   "key": "maire-ouragahio",
+   "mandate": "maire",
+   "title": "Maire d'Ouragahio",
+   "name": "Dacoury-Tabley Pierre",
+   "gender": "M",
+   "party": "PPA-CI",
+   "department": "Gagnoa",
+   "commune": "Ouragahio"
+  },
+  {
+   "key": "maire-plateau",
+   "mandate": "maire",
+   "title": "Maire du Plateau",
+   "name": "Ehouo Jacques Gabriel",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Abidjan",
+   "commune": "Plateau"
+  },
+  {
+   "key": "maire-port-bouet",
+   "mandate": "maire",
+   "title": "Maire de Port-Bouët",
+   "name": "Emmou Ackah Georges Sylvestre",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Abidjan",
+   "commune": "Port-Bouët"
+  },
+  {
+   "key": "maire-prikro",
+   "mandate": "maire",
+   "title": "Maire de Prikro",
+   "name": "Adi Kouame Isac",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Prikro",
+   "commune": "Prikro"
+  },
+  {
+   "key": "maire-rubino",
+   "mandate": "maire",
+   "title": "Maire de Rubino",
+   "name": "Kouassi Marie Virginie",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "Agboville",
+   "commune": "Rubino"
+  },
+  {
+   "key": "maire-saioua",
+   "mandate": "maire",
+   "title": "Maire de Saïoua",
+   "name": "Lopko Brahima",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Issia",
+   "commune": "Saïoua"
+  },
+  {
+   "key": "maire-sakassou",
+   "mandate": "maire",
+   "title": "Maire de Sakassou",
+   "name": "Koffi Kouame Eugene",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Sakassou",
+   "commune": "Sakassou"
+  },
+  {
+   "key": "maire-samatiguila",
+   "mandate": "maire",
+   "title": "Maire de Samatiguila",
+   "name": "Diaby Lancine",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Samatiguila",
+   "commune": "Samatiguila"
+  },
+  {
+   "key": "maire-san-pedro",
+   "mandate": "maire",
+   "title": "Maire de San-Pédro",
+   "name": "Keita épouse Cisse Nakaridja",
+   "gender": "F",
+   "party": "Indépendant",
+   "department": "San-Pédro",
+   "commune": "San-Pédro"
+  },
+  {
+   "key": "maire-sandegue",
+   "mandate": "maire",
+   "title": "Maire de Sandégué",
+   "name": "Ouattara Daouda",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Sandégué",
+   "commune": "Sandégué"
+  },
+  {
+   "key": "maire-sangouine",
+   "mandate": "maire",
+   "title": "Maire de Sangouiné",
+   "name": "Dion Remi",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Man",
+   "commune": "Sangouiné"
+  },
+  {
+   "key": "maire-sarhala",
+   "mandate": "maire",
+   "title": "Maire de Sarhala",
+   "name": "Kanate Mamadou",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Mankono",
+   "commune": "Sarhala"
+  },
+  {
+   "key": "maire-sassandra",
+   "mandate": "maire",
+   "title": "Maire de Sassandra",
+   "name": "Kacou Mea D'Assie Justin Kevin",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Sassandra",
+   "commune": "Sassandra"
+  },
+  {
+   "key": "maire-satama-sokoro",
+   "mandate": "maire",
+   "title": "Maire de Satama-Sokoro",
+   "name": "Fofana Alimata épouse Coulibaly",
+   "gender": "F",
+   "party": "Indépendant",
+   "department": "Dabakala",
+   "commune": "Satama-Sokoro"
+  },
+  {
+   "key": "maire-satama-sokoura",
+   "mandate": "maire",
+   "title": "Maire de Satama-Sokoura",
+   "name": "Fofana Bassatigui",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Dabakala",
+   "commune": "Satama-Sokoura"
+  },
+  {
+   "key": "maire-seguela",
+   "mandate": "maire",
+   "title": "Maire de Séguéla",
+   "name": null,
+   "gender": null,
+   "party": null,
+   "department": "Séguéla",
+   "commune": "Séguéla",
+   "vacant": true,
+   "note": "Le maire élu en 2023 est décédé ; l'intérim n'est pas encore publié."
+  },
+  {
+   "key": "maire-seguelon",
+   "mandate": "maire",
+   "title": "Maire de Séguélon",
+   "name": "Kone Matogoma",
+   "gender": "F",
+   "party": "Indépendant",
+   "department": "Séguélon",
+   "commune": "Séguélon"
+  },
+  {
+   "key": "maire-seydougou",
+   "mandate": "maire",
+   "title": "Maire de Seydougou",
+   "name": "Vakaba Fofana",
+   "gender": "M",
+   "party": "URD",
+   "department": "Gbéléban",
+   "commune": "Seydougou"
+  },
+  {
+   "key": "maire-sifie",
+   "mandate": "maire",
+   "title": "Maire de Sifié",
+   "name": "Zoumana Anlyou Meite",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Séguéla",
+   "commune": "Sifié"
+  },
+  {
+   "key": "maire-sikensi",
+   "mandate": "maire",
+   "title": "Maire de Sikensi",
+   "name": "N'Gata Brie Joseph",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Sikensi",
+   "commune": "Sikensi"
+  },
+  {
+   "key": "maire-sinematiali",
+   "mandate": "maire",
+   "title": "Maire de Sinématiali",
+   "name": "Donasso Abou Coulibaly",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Sinématiali",
+   "commune": "Sinématiali"
+  },
+  {
+   "key": "maire-sinfra",
+   "mandate": "maire",
+   "title": "Maire de Sinfra",
+   "name": "Meite Soualiho",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Sinfra",
+   "commune": "Sinfra"
+  },
+  {
+   "key": "maire-sipilou",
+   "mandate": "maire",
+   "title": "Maire de Sipilou",
+   "name": "Diomande Manga",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Sipilou",
+   "commune": "Sipilou"
+  },
+  {
+   "key": "maire-sirasso",
+   "mandate": "maire",
+   "title": "Maire de Sirasso",
+   "name": "Siriki Sekongo Pelegnon",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Korhogo",
+   "commune": "Sirasso"
+  },
+  {
+   "key": "maire-songon",
+   "mandate": "maire",
+   "title": "Maire de Songon",
+   "name": "Gbrou Aloboue",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Abidjan",
+   "commune": "Songon"
+  },
+  {
+   "key": "maire-soubre",
+   "mandate": "maire",
+   "title": "Maire de Soubré",
+   "name": "Traore Lassina",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Soubré",
+   "commune": "Soubré"
+  },
+  {
+   "key": "maire-taabo",
+   "mandate": "maire",
+   "title": "Maire de Taabo",
+   "name": "Kouadio Beugre Bernard",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Taabo",
+   "commune": "Taabo"
+  },
+  {
+   "key": "maire-tabou",
+   "mandate": "maire",
+   "title": "Maire de Tabou",
+   "name": "Ouallo Jean Luc",
+   "gender": "M",
+   "party": "PDCI-RDA / PPA-CI",
+   "department": "Tabou",
+   "commune": "Tabou"
+  },
+  {
+   "key": "maire-tafire",
+   "mandate": "maire",
+   "title": "Maire de Tafiré",
+   "name": "Coulibaly Sounkalo",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Niakaramadougou",
+   "commune": "Tafiré"
+  },
+  {
+   "key": "maire-tai",
+   "mandate": "maire",
+   "title": "Maire de Taï",
+   "name": "Bayallai Kouye Maya Hippolyte",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Taï",
+   "commune": "Taï"
+  },
+  {
+   "key": "maire-tanda",
+   "mandate": "maire",
+   "title": "Maire de Tanda",
+   "name": "Kone Amadou",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Tanda",
+   "commune": "Tanda"
+  },
+  {
+   "key": "maire-tehini",
+   "mandate": "maire",
+   "title": "Maire de Téhini",
+   "name": "Pale Sansan",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Téhini",
+   "commune": "Téhini"
+  },
+  {
+   "key": "maire-tengrela",
+   "mandate": "maire",
+   "title": "Maire de Tengréla",
+   "name": "Diarrassouba Soumaila",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Tengréla",
+   "commune": "Tengréla"
+  },
+  {
+   "key": "maire-tiapoum",
+   "mandate": "maire",
+   "title": "Maire de Tiapoum",
+   "name": "N'Serebe Ebily Pascal",
+   "gender": "M",
+   "party": "PDCI-RDA / PPA-CI",
+   "department": "Tiapoum",
+   "commune": "Tiapoum"
+  },
+  {
+   "key": "maire-tiassale",
+   "mandate": "maire",
+   "title": "Maire de Tiassalé",
+   "name": "Assale Tiemoko Antoine",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Tiassalé",
+   "commune": "Tiassalé"
+  },
+  {
+   "key": "maire-tie-n-diekro",
+   "mandate": "maire",
+   "title": "Maire de Tié-N'Diékro",
+   "name": "Yao-Bhorey Kouakou Casimir",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Didiévi",
+   "commune": "Tié-N'Diékro"
+  },
+  {
+   "key": "maire-tiebissou",
+   "mandate": "maire",
+   "title": "Maire de Tiébissou",
+   "name": "Brou N'Gauran Vincent",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Tiébissou",
+   "commune": "Tiébissou"
+  },
+  {
+   "key": "maire-tieme",
+   "mandate": "maire",
+   "title": "Maire de Tiémé",
+   "name": "Sylla Ousmane",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Odienné",
+   "commune": "Tiémé"
+  },
+  {
+   "key": "maire-tiemelekro",
+   "mandate": "maire",
+   "title": "Maire de Tiémélékro",
+   "name": "Kouadio Kendriche Tania Samira Emmanuella",
+   "gender": "F",
+   "party": "RHDP",
+   "department": "M'Batto",
+   "commune": "Tiémélékro"
+  },
+  {
+   "key": "maire-tieningboue",
+   "mandate": "maire",
+   "title": "Maire de Tiéningboué",
+   "name": "Hamadou Kamagate",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Mankono",
+   "commune": "Tiéningboué"
+  },
+  {
+   "key": "maire-tienko",
+   "mandate": "maire",
+   "title": "Maire de Tienko",
+   "name": "Doumbia Yacouba",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Minignan",
+   "commune": "Tienko"
+  },
+  {
+   "key": "maire-tioroniaradougou",
+   "mandate": "maire",
+   "title": "Maire de Tioroniaradougou",
+   "name": "Silue Sekou",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Korhogo",
+   "commune": "Tioroniaradougou"
+  },
+  {
+   "key": "maire-tortiya",
+   "mandate": "maire",
+   "title": "Maire de Tortiya",
+   "name": "Blaise Kinampinan Coulibaly",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Niakaramadougou",
+   "commune": "Tortiya"
+  },
+  {
+   "key": "maire-touba",
+   "mandate": "maire",
+   "title": "Maire de Touba",
+   "name": "Sanogo Moussa",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Touba",
+   "commune": "Touba"
+  },
+  {
+   "key": "maire-toulepleu",
+   "mandate": "maire",
+   "title": "Maire de Toulépleu",
+   "name": "Zion Kah Denis",
+   "gender": "M",
+   "party": "PDCI-RDA / PPA-CI",
+   "department": "Toulépleu",
+   "commune": "Toulépleu"
+  },
+  {
+   "key": "maire-toumodi",
+   "mandate": "maire",
+   "title": "Maire de Toumodi",
+   "name": "Kone Idrissa",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Toumodi",
+   "commune": "Toumodi"
+  },
+  {
+   "key": "maire-transua",
+   "mandate": "maire",
+   "title": "Maire de Transua",
+   "name": "Tano Kouabenan Isaac",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Transua",
+   "commune": "Transua"
+  },
+  {
+   "key": "maire-treichville",
+   "mandate": "maire",
+   "title": "Maire de Treichville",
+   "name": "Amichia Francois Albert",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Abidjan",
+   "commune": "Treichville"
+  },
+  {
+   "key": "maire-vavoua",
+   "mandate": "maire",
+   "title": "Maire de Vavoua",
+   "name": "Kalou Bonaventure",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Vavoua",
+   "commune": "Vavoua"
+  },
+  {
+   "key": "maire-worofla",
+   "mandate": "maire",
+   "title": "Maire de Worofla",
+   "name": "Bamba Bouake",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Séguéla",
+   "commune": "Worofla"
+  },
+  {
+   "key": "maire-yakasse-attobrou",
+   "mandate": "maire",
+   "title": "Maire de Yakassé-Attobrou",
+   "name": "Assi N'Din Theodore",
+   "gender": "M",
+   "party": "PDCI-RDA / PPA-CI",
+   "department": "Yakassé-Attobrou",
+   "commune": "Yakassé-Attobrou"
+  },
+  {
+   "key": "maire-yamoussoukro",
+   "mandate": "maire",
+   "title": "Maire de Yamoussoukro",
+   "name": "Kouassi Kouame Patrice",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "department": "Yamoussoukro",
+   "commune": "Yamoussoukro"
+  },
+  {
+   "key": "maire-yopougon",
+   "mandate": "maire",
+   "title": "Maire de Yopougon",
+   "name": "Adama Bictogo",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Abidjan",
+   "commune": "Yopougon"
+  },
+  {
+   "key": "maire-zikisso",
+   "mandate": "maire",
+   "title": "Maire de Zikisso",
+   "name": "Abadi Miezan Charles",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Lakota",
+   "commune": "Zikisso"
+  },
+  {
+   "key": "maire-zouan-hounien",
+   "mandate": "maire",
+   "title": "Maire de Zouan-Hounien",
+   "name": "Medard Dehoudo Doho",
+   "gender": "M",
+   "party": "Indépendant",
+   "department": "Zouan-Hounien",
+   "commune": "Zouan-Hounien"
+  },
+  {
+   "key": "maire-zoukougbeu",
+   "mandate": "maire",
+   "title": "Maire de Zoukougbeu",
+   "name": "Deabo Poka Maurice",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Zoukougbeu",
+   "commune": "Zoukougbeu"
+  },
+  {
+   "key": "maire-zuenoula",
+   "mandate": "maire",
+   "title": "Maire de Zuénoula",
+   "name": "Souleymane Kone",
+   "gender": "M",
+   "party": "RHDP",
+   "department": "Zuénoula",
+   "commune": "Zuénoula"
+  }
+ ]
+}

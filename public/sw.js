@@ -37,6 +37,9 @@ self.addEventListener("push", (event) => {
         timestamp: data.ts || Date.now(),
         data: { url },
         lang: "fr",
+        // An incoming call stays on screen and buzzes until it is answered or replaced by "missed call".
+        requireInteraction: data.type === "call",
+        vibrate: data.type === "call" ? [400, 200, 400, 200, 400] : undefined,
       });
     })(),
   );

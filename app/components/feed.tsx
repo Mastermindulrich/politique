@@ -13,12 +13,13 @@ type Props = {
   lowData?: boolean;
   isModerator?: boolean;
   showReason?: boolean;
+  showPinned?: boolean;
   empty?: React.ReactNode;
   /** Server action returning the next page given the last item's timestamp. Omit for a fixed list. */
   loadMore?: (before: string, count: number) => Promise<FeedPost[]>;
 };
 
-export function Feed({ initial, viewerId, lang, lowData, isModerator, showReason, empty, loadMore }: Props) {
+export function Feed({ initial, viewerId, lang, lowData, isModerator, showReason, showPinned, empty, loadMore }: Props) {
   const t = dict(lang);
   const [posts, setPosts] = useState(initial);
   const [done, setDone] = useState(!loadMore || initial.length < 10);
@@ -65,7 +66,7 @@ export function Feed({ initial, viewerId, lang, lowData, isModerator, showReason
   return (
     <div>
       {posts.map((p) => (
-        <PostCard key={p.id} post={p} viewerId={viewerId} lang={lang} lowData={lowData} isModerator={isModerator} showReason={showReason} />
+        <PostCard key={p.id} post={p} viewerId={viewerId} lang={lang} lowData={lowData} isModerator={isModerator} showReason={showReason} showPinned={showPinned} />
       ))}
       {!done && (
         <div ref={sentinel} className="flex justify-center py-6">

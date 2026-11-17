@@ -71,11 +71,13 @@ export default async function NotificationsPage() {
             const post = n.post_id ? posts.get(n.post_id) : null;
             return (
               <li key={n.id}>
-                <Link href={href(n)} className={`flex gap-3 border-b border-line px-4 py-3 hover:bg-paper/60 ${n.read_at ? "" : "bg-green-soft/40"}`}>
-                  <Icon className={`mt-1 h-6 w-6 flex-none ${meta.tone}`} filled />
+                <Link href={href(n)} className={`flex gap-3 border-b border-line px-4 py-3 transition-colors duration-150 hover:bg-paper/60 active:bg-paper ${n.read_at ? "" : "bg-green-soft/40"}`}>
+                  <span className="flex w-10 flex-none justify-end pt-0.5">
+                    <Icon className={`h-7 w-7 ${meta.tone}`} filled />
+                  </span>
                   <div className="min-w-0 flex-1">
                     {actor && <Avatar src={actor.avatar_url} name={actor.display_name} size={32} />}
-                    <p className="mt-1 text-[15px] leading-snug">
+                    <p className="mt-2 text-[15px] leading-snug">
                       {actor && (
                         <span className="inline-flex items-center gap-1 font-bold">
                           {actor.display_name}
@@ -83,9 +85,9 @@ export default async function NotificationsPage() {
                         </span>
                       )}{" "}
                       {t.notifications[n.type]}
-                      <span className="text-muted"> · {timeAgo(n.created_at, lang)}</span>
+                      <span className="whitespace-nowrap text-muted"> · {timeAgo(n.created_at, lang)}</span>
                     </p>
-                    {post && <p className="mt-1 line-clamp-2 text-[14px] text-muted">{post.text}</p>}
+                    {post && <p className="mt-1 line-clamp-2 text-[15px] leading-snug text-muted">{post.text}</p>}
                   </div>
                 </Link>
               </li>

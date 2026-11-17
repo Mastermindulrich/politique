@@ -5,7 +5,9 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { z } from "zod";
 import { createClient, createServiceClient, getViewer } from "@/lib/supabase/server";
-import type { Media } from "@/lib/types";
+import { DM_MAX_FILES } from "@/lib/dm-media";
+import { attachLink } from "@/lib/social-actions";
+import type { DmAttachment, Media } from "@/lib/types";
 
 type Result<T = undefined> = { ok: true; data?: T } | { ok: false; error: string };
 
@@ -30,13 +32,16 @@ const postSchema = z.object({
   communeId: z.number().int().nullable().optional(),
   poll: z.object({ options: z.array(z.string().min(1).max(40)).min(2).max(4), days: z.number().int().min(1).max(7) }).nullable().optional(),
   visibility: z.enum(["public", "followers"]).optional(),
+  /** The link card the composer already fetched (signed by the server), or noLink when the author removed it. */
+  link: z.object({ preview: z.object({ url: z.string(), title: z.string(), description: z.string().optional(), image: z.string().optional(), site: z.string() }), sig: z.string() }).nullable().optional(),
+  noLink: z.boolean().optional(),
 });
 
 export async function createPost(input: z.infer<typeof postSchema>): Promise<Result<{ id: string }>> {
   const viewer = await viewerOrFail();
   const parsed = postSchema.safeParse(input);
   if (!parsed.success) return { ok: false, error: "invalid" };
-  const { text, parentId, quotedId, media, communeId, poll, visibility } = parsed.data;
+  const { text, parentId, quotedId, media, communeId, poll, visibility, link, noLink } = parsed.data;
   if (!text.trim() && !(media && media.length)) return { ok: false, error: "empty" };
   const supabase = await createClient();
   const kind = parentId ? "reply" : quotedId ? "quote" : "post";
@@ -50,6 +55,7 @@ export async function createPost(input: z.infer<typeof postSchema>): Promise<Res
     const ends = new Date(Date.now() + poll.days * 86400_000).toISOString();
     await supabase.from("polls").insert({ post_id: data.id, options: poll.options, ends_at: ends });
   }
+  if (!noLink && !(media && media.length) && !poll && !quotedId) await attachLink(data.id, text, link).catch(() => undefined);
   revalidatePath("/accueil");
   if (parentId) revalidatePath(`/p/${parentId}`);
   return { ok: true, data: { id: data.id } };
@@ -237,6 +243,7 @@ const verifSchema = z.object({
   requested_type: z.enum(["elu", "institution", "media"]),
   full_name: z.string().min(2).max(120),
   official_id: z.string().uuid().nullable(),
+  link_kind: z.enum(["office", "personal"]).default("office"),
   organisation: z.string().max(120).nullable(),
   document_path: z.string().nullable(),
   proof_path: z.string().nullable(),
@@ -432,13 +439,35 @@ export async function startConversation(userId: string): Promise<Result<{ id: st
   if (error) return { ok: false, error: error.message };
   return { ok: true, data: { id: data as string } };
 }
-export async function sendMessage(conversationId: string, text: string, media: Media[] = []): Promise<Result> {
+const dmAttachment = z.object({
+  type: z.enum(["image", "file"]),
+  path: z.string().max(300),
+  name: z.string().max(200).optional(),
+  size: z.number().int().nonnegative().optional(),
+  mime: z.string().max(120).optional(),
+  width: z.number().int().positive().max(20000).optional(),
+  height: z.number().int().positive().max(20000).optional(),
+  voice: z.boolean().optional(),
+  duration: z.number().nonnegative().max(3600).optional(),
+  peaks: z.array(z.number().int().min(0).max(100)).max(64).optional(),
+});
+
+export async function sendMessage(conversationId: string, text: string, media: DmAttachment[] = []): Promise<Result<{ id: string }>> {
   const viewer = await viewerOrFail();
-  if (!text.trim() && !media.length) return { ok: false, error: "empty" };
+  const parsed = z.array(dmAttachment).max(DM_MAX_FILES).safeParse(media);
+  if (!parsed.success) return { ok: false, error: "invalid" };
+  // Attachments must sit in the sender's own folder of this conversation (the database checks it too).
+  const prefix = `${conversationId}/${viewer.id}/`;
+  if (parsed.data.some((m) => !m.path.startsWith(prefix) || m.path.slice(prefix.length).includes("/"))) return { ok: false, error: "invalid" };
+  if (!text.trim() && !parsed.data.length) return { ok: false, error: "empty" };
   const supabase = await createClient();
-  const { error } = await supabase.from("messages").insert({ conversation_id: conversationId, sender_id: viewer.id, text: text.trim().slice(0, 4000), media });
+  const { data, error } = await supabase
+    .from("messages")
+    .insert({ conversation_id: conversationId, sender_id: viewer.id, text: text.trim().slice(0, 4000), media: parsed.data })
+    .select("id")
+    .single();
   if (error) return { ok: false, error: error.message };
-  return { ok: true };
+  return { ok: true, data: { id: (data as { id: string }).id } };
 }
 export async function markConversationRead(conversationId: string) {
   const viewer = await viewerOrFail();
@@ -503,7 +532,7 @@ export async function checkHandle(handle: string): Promise<boolean> {
 const officialSchema = z.object({
   id: z.string().uuid().optional(),
   full_name: z.string().min(2).max(120),
-  mandate: z.enum(["president", "ministre", "depute", "senateur", "maire", "president_conseil_regional", "gouverneur_district", "conseiller_municipal", "conseiller_regional", "autre"]),
+  mandate: z.enum(["president", "vice_president", "premier_ministre", "president_institution", "prefet", "sous_prefet", "ministre", "depute", "senateur", "maire", "president_conseil_regional", "gouverneur_district", "conseiller_municipal", "conseiller_regional", "autre"]),
   title: z.string().max(140).nullable(),
   party: z.string().max(80).nullable(),
   region_id: z.number().int().nullable(),

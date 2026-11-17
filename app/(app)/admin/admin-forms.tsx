@@ -62,11 +62,12 @@ export function VerificationActions({ id, lang }: { id: string; lang: Lang }) {
   );
 }
 
-const MANDATES: Mandate[] = ["maire", "depute", "senateur", "president_conseil_regional", "gouverneur_district", "ministre", "president", "conseiller_municipal", "conseiller_regional", "autre"];
+const MANDATES: Mandate[] = ["maire", "depute", "senateur", "president_conseil_regional", "gouverneur_district", "prefet", "sous_prefet", "ministre", "premier_ministre", "vice_president", "president", "president_institution", "conseiller_municipal", "conseiller_regional", "autre"];
 // Which level of geography a mandate is attached to.
 const LEVEL: Record<Mandate, "commune" | "department" | "region" | "national"> = {
   maire: "commune", conseiller_municipal: "commune", depute: "department", senateur: "region", president_conseil_regional: "region",
   conseiller_regional: "region", gouverneur_district: "region", ministre: "national", president: "national", autre: "national",
+  vice_president: "national", premier_ministre: "national", president_institution: "national", prefet: "department", sous_prefet: "department",
 };
 
 export function OfficialForm({ lang }: { lang: Lang }) {

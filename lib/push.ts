@@ -1,5 +1,6 @@
 import webpush from "web-push";
 import { createServiceClient } from "@/lib/supabase/server";
+import { messagePreview } from "@/lib/dm-media";
 import { apnsConfigured, fcmConfigured, NATIVE_PREFIX, sendNative } from "@/lib/native-push";
 import { DEFAULT_PREFS, describe, hrefFor, type Lang, type NotifType } from "@/lib/notify";
 
@@ -21,7 +22,7 @@ function webPushConfigured() {
 
 type Row = { id: string; user_id: string; actor_id: string | null; type: NotifType; post_id: string | null; ref_id: string | null; created_at: string };
 type Sub = { id: string; user_id: string; endpoint: string; p256dh: string; auth: string };
-export type PushPayload = { title: string; body: string; url: string; tag: string; icon?: string; badge?: string; ts: number; type: NotifType; unread?: number };
+export type PushPayload = { title: string; body: string; url: string; tag: string; icon?: string; badge?: string; ts: number; type: NotifType | "call"; unread?: number };
 
 const URGENT: NotifType[] = ["message", "reply", "mention", "quote", "official_post", "interpellation_answer", "moderation", "verification"];
 
@@ -40,8 +41,8 @@ async function sendTo(subs: Sub[], payload: PushPayload) {
           url: payload.url,
           tag: payload.tag,
           type: payload.type,
-          urgent: URGENT.includes(payload.type),
-          ttlSeconds: payload.type === "message" ? 60 * 60 * 24 : 60 * 60 * 12,
+          urgent: payload.type === "call" || URGENT.includes(payload.type),
+          ttlSeconds: payload.type === "call" ? 60 : payload.type === "message" ? 60 * 60 * 24 : 60 * 60 * 12,
           badge: payload.unread,
         });
         if (r === "ok") used.push(s.id);
@@ -51,8 +52,9 @@ async function sendTo(subs: Sub[], payload: PushPayload) {
       if (!webPushConfigured()) return;
       try {
         await webpush.sendNotification({ endpoint: s.endpoint, keys: { p256dh: s.p256dh, auth: s.auth } }, JSON.stringify(payload), {
-          TTL: payload.type === "message" ? 60 * 60 * 24 : 60 * 60 * 12,
-          urgency: URGENT.includes(payload.type) ? "high" : "normal",
+          // A ringing call is worthless a minute later; messages keep for a day.
+          TTL: payload.type === "call" ? 60 : payload.type === "message" ? 60 * 60 * 24 : 60 * 60 * 12,
+          urgency: payload.type === "call" || URGENT.includes(payload.type) ? "high" : "normal",
           topic: payload.tag.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 32) || undefined,
         });
         used.push(s.id);
@@ -88,7 +90,7 @@ export async function dispatchNotifications(ids: string[]) {
     postIds.length ? svc.from("posts").select("id, text").in("id", postIds) : Promise.resolve({ data: [] }),
     svc.from("notification_prefs").select("user_id, previews").in("user_id", users),
     // The newest message per conversation is the one that just arrived.
-    convIds.length ? svc.from("messages").select("conversation_id, sender_id, text, created_at").in("conversation_id", convIds).is("deleted_at", null).order("created_at", { ascending: false }).limit(convIds.length * 5) : Promise.resolve({ data: [] }),
+    convIds.length ? svc.from("messages").select("conversation_id, sender_id, text, media, created_at").in("conversation_id", convIds).is("deleted_at", null).order("created_at", { ascending: false }).limit(convIds.length * 5) : Promise.resolve({ data: [] }),
     svc.from("notifications").select("user_id").in("user_id", users).is("read_at", null).neq("type", "message").limit(5000),
   ]);
 
@@ -97,7 +99,7 @@ export async function dispatchNotifications(ids: string[]) {
   const actor = new Map(((actorRes.data ?? []) as { id: string; display_name: string; handle: string; avatar_url: string | null }[]).map((p) => [p.id, p]));
   const post = new Map(((postRes.data ?? []) as { id: string; text: string }[]).map((p) => [p.id, p.text]));
   const previews = new Map(((prefRes.data ?? []) as { user_id: string; previews: boolean }[]).map((p) => [p.user_id, p.previews]));
-  const msgs = (msgRes.data ?? []) as { conversation_id: string; sender_id: string; text: string }[];
+  const msgs = (msgRes.data ?? []) as { conversation_id: string; sender_id: string; text: string; media: unknown }[];
   const unread = new Map<string, number>();
   for (const r of (unreadRes.data ?? []) as { user_id: string }[]) unread.set(r.user_id, (unread.get(r.user_id) ?? 0) + 1);
 
@@ -111,7 +113,7 @@ export async function dispatchNotifications(ids: string[]) {
       type: r.type,
       actorName: a?.display_name ?? null,
       postText: r.post_id ? post.get(r.post_id) : null,
-      messageText: msg?.text ?? null,
+      messageText: msg ? messagePreview(msg.text, msg.media, lang.get(r.user_id) ?? "fr") || null : null,
       lang: lang.get(r.user_id) ?? "fr",
       previews: previews.get(r.user_id) ?? DEFAULT_PREFS.previews,
     });
@@ -149,4 +151,19 @@ export async function sendTestPush(userId: string, lang: Lang) {
     type: "verification",
   });
   return { ...res, configured: true };
+}
+
+/**
+ * Incoming call (or missed call) on a member's phones. Same tag for both, so "missed" replaces "ringing".
+ * Respects the member's "messages on my devices" switch.
+ */
+export async function pushCall(userId: string, p: { title: string; body: string; url: string; tag: string; icon?: string | null; ringing: boolean }) {
+  const svc = createServiceClient();
+  if (!svc || !pushConfigured()) return { sent: 0, removed: 0 };
+  const [{ data: subs }, { data: pref }] = await Promise.all([
+    svc.from("push_subscriptions").select("id, user_id, endpoint, p256dh, auth").eq("user_id", userId),
+    svc.from("notification_prefs").select("push").eq("user_id", userId).maybeSingle(),
+  ]);
+  if ((pref as { push?: Record<string, boolean> } | null)?.push?.messages === false) return { sent: 0, removed: 0 };
+  return sendTo((subs ?? []) as Sub[], { title: p.title, body: p.body, url: p.url, tag: p.tag, icon: p.icon || "/icons/icon-192.png", badge: "/icons/badge-96.png", ts: Date.now(), type: p.ringing ? "call" : "message" });
 }

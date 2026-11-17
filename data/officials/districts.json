@@ -1,0 +1,26 @@
+{
+ "institution": "district",
+ "source": "https://www.aip.ci",
+ "source_label": "Agence ivoirienne de presse, 26 janvier 2026 : seuls les gouverneurs des districts autonomes d'Abidjan et de Yamoussoukro restent en fonction après la suppression des districts de l'intérieur (7 janvier 2026)",
+ "checked": "2026-11-15",
+ "offices": [
+  {
+   "key": "gouverneur-district-abidjan",
+   "mandate": "gouverneur_district",
+   "title": "Ministre-Gouverneur du District autonome d'Abidjan",
+   "name": "Ibrahim Cissé Bacongo",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "District autonome d'Abidjan"
+  },
+  {
+   "key": "gouverneur-district-yamoussoukro",
+   "mandate": "gouverneur_district",
+   "title": "Ministre-Gouverneur du District autonome de Yamoussoukro",
+   "name": "Augustin Abdoulaye Thiam Houphouët",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "District autonome de Yamoussoukro"
+  }
+ ]
+}

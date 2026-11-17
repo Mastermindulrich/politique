@@ -46,13 +46,13 @@ export default async function MyOfficialsPage() {
   return (
     <>
       <PageHeader title={t.myOfficials.title} />
-      <div className="border-b border-line bg-paper px-4 py-4">
+      <div className="border-b border-line px-4 py-3.5">
         <p className="text-[14px] leading-relaxed text-muted">{t.myOfficials.intro}</p>
         {placeText && (
-          <p className="mt-3 flex flex-wrap items-center gap-2 rounded-2xl border border-line bg-card px-3 py-2 text-[13px]">
+          <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1.5 rounded-2xl bg-paper px-3.5 py-3 text-[14px]">
             <I.pin className="h-4 w-4 text-green-deep" />
             <span>{t.myOfficials.yourVotingPlace} <b>{placeText}</b></span>
-            <span className="chip bg-paper text-muted">{t.myOfficials.privateNote}</span>
+            <span className="chip bg-bg text-muted">{t.myOfficials.privateNote}</span>
             <Link href="/parametres#vote" className="font-semibold text-green-deep hover:underline">{t.common.edit}</Link>
           </p>
         )}

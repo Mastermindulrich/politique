@@ -21,9 +21,18 @@
         </activity>
 
         <!-- Push: small status-bar icon, accent color and default channel (channels are created by the site, see lib/native.ts). -->
-        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/ic_stat_politique" />
-        <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/notificationAccent" />
-        <meta-data android:name="com.google.firebase.messaging.default_notification_channel_id" android:value="general" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_politique"
+        />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/notificationAccent"
+        />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="general"
+        />
 
         <provider
             android:name="androidx.core.content.FileProvider"

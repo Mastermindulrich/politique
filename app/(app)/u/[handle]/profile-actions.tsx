@@ -19,18 +19,18 @@ export function ProfileActions({ userId, lang, signedIn, following, blocked: b0,
   const [report, setReport] = useState(false);
   const [pending, start] = useTransition();
 
-  const item = "flex w-full items-center gap-3 px-4 py-2.5 text-left text-[14px] hover:bg-paper";
+  const item = "flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] font-semibold transition-colors hover:bg-paper active:bg-line/60";
   return (
     <div className="flex items-center gap-2">
       {signedIn && (
         <div className="relative">
-          <button type="button" aria-label={t.nav.more} aria-haspopup="menu" aria-expanded={menu} onClick={() => setMenu((m) => !m)} className="btn-ghost btn-sm !px-2.5">
+          <button type="button" aria-label={t.nav.more} aria-haspopup="menu" aria-expanded={menu} onClick={() => setMenu((m) => !m)} className="btn-ghost btn-sm w-9 !px-0">
             <I.more className="h-5 w-5" />
           </button>
           {menu && (
             <>
               <div className="fixed inset-0 z-10" onClick={() => setMenu(false)} />
-              <div role="menu" className="absolute right-0 z-20 mt-1 w-60 overflow-hidden rounded-2xl border border-line bg-card py-1 shadow-xl">
+              <div role="menu" className="fade-in absolute right-0 z-20 mt-1 w-60 overflow-hidden rounded-2xl border border-line/70 bg-card py-1.5 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.18),0_2px_6px_rgba(0,0,0,0.06)]">
                 <button role="menuitem" type="button" className={item} onClick={() => { setMenu(false); const on = !muted; setMuted(on); start(() => void toggleMute(userId, on)); }}>
                   {muted ? t.profile.unmute : t.profile.mute}
                 </button>
@@ -38,7 +38,7 @@ export function ProfileActions({ userId, lang, signedIn, following, blocked: b0,
                   {blocked ? t.profile.unblock : t.profile.block}
                 </button>
                 <button role="menuitem" type="button" className={item} onClick={() => { setMenu(false); setReport(true); }}>
-                  <I.flag className="h-4 w-4" /> {t.profile.report}
+                  <I.flag className="h-[18px] w-[18px]" /> {t.profile.report}
                 </button>
                 {isModerator && (
                   <>
@@ -69,7 +69,7 @@ export function ProfileActions({ userId, lang, signedIn, following, blocked: b0,
           type="button"
           aria-label={t.profile.message}
           disabled={pending}
-          className="btn-ghost btn-sm !px-2.5"
+          className="btn-ghost btn-sm w-9 !px-0"
           onClick={() =>
             start(async () => {
               const r = await startConversation(userId);

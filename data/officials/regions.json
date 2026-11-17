@@ -1,0 +1,287 @@
+{
+ "institution": "region",
+ "source": "https://viepublique.ci",
+ "source_label": "Ministère de l'Intérieur et de la Sécurité (E-CONSEIL), conseils régionaux, mandature 2023-2028, mise à jour du 05/04/2026",
+ "checked": "2026-11-15",
+ "offices": [
+  {
+   "key": "conseil-regional-agneby-tiassa",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional de l'Agnéby-Tiassa",
+   "name": "Dimba N'Gou Pierre",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Agnéby-Tiassa"
+  },
+  {
+   "key": "conseil-regional-bafing",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Bafing",
+   "name": "Mamadou Sanogo",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Bafing"
+  },
+  {
+   "key": "conseil-regional-bagoue",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional de la Bagoué",
+   "name": "Kone Nabagne Bruno",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Bagoué"
+  },
+  {
+   "key": "conseil-regional-belier",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Bélier",
+   "name": "Konan Kouakou Raymond",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "region": "Bélier"
+  },
+  {
+   "key": "conseil-regional-bere",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Béré",
+   "name": "Dosso Moussa",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Béré"
+  },
+  {
+   "key": "conseil-regional-bounkani",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Bounkani",
+   "name": "Hien Philippe",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Bounkani"
+  },
+  {
+   "key": "conseil-regional-cavally",
+   "mandate": "president_conseil_regional",
+   "title": "Présidente du Conseil régional du Cavally",
+   "name": "Ouloto Anne Desiree",
+   "gender": "F",
+   "party": "RHDP",
+   "region": "Cavally"
+  },
+  {
+   "key": "conseil-regional-folon",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Folon",
+   "name": "Cisse Sindou",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Folon"
+  },
+  {
+   "key": "conseil-regional-gbeke",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Gbêkê",
+   "name": "Assahore Konan Jacques",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Gbêkê"
+  },
+  {
+   "key": "conseil-regional-gbokle",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Gbôklé",
+   "name": "Kebe Mahamadou",
+   "gender": "M",
+   "party": "Indépendant",
+   "region": "Gbôklé"
+  },
+  {
+   "key": "conseil-regional-goh",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Gôh",
+   "name": "Djedje Joachim",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Gôh"
+  },
+  {
+   "key": "conseil-regional-gontougo",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Gontougo",
+   "name": "Kobenan Kouassi Adjoumani",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Gontougo"
+  },
+  {
+   "key": "conseil-regional-grands-ponts",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional des Grands-Ponts",
+   "name": "Essis Esmel de Emmanuel",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Grands-Ponts"
+  },
+  {
+   "key": "conseil-regional-guemon",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Guémon",
+   "name": "Serey Doh Celestin",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Guémon"
+  },
+  {
+   "key": "conseil-regional-hambol",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Hambol",
+   "name": "Konate Ibrahim Kalil",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Hambol"
+  },
+  {
+   "key": "conseil-regional-haut-sassandra",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Haut-Sassandra",
+   "name": "Toure Mamadou",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Haut-Sassandra"
+  },
+  {
+   "key": "conseil-regional-iffou",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional de l'Iffou",
+   "name": "Traore Adam Kolia",
+   "gender": "M",
+   "party": "PDCI-RDA",
+   "region": "Iffou"
+  },
+  {
+   "key": "conseil-regional-indenie-djuablin",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional de l'Indénié-Djuablin",
+   "name": "Wouadja Essay",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Indénié-Djuablin"
+  },
+  {
+   "key": "conseil-regional-kabadougou",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Kabadougou",
+   "name": "Kone Souleymane",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Kabadougou"
+  },
+  {
+   "key": "conseil-regional-la-me",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional de La Mé",
+   "name": "Achi Patrick Jérôme",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "La Mé"
+  },
+  {
+   "key": "conseil-regional-loh-djiboua",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Lôh-Djiboua",
+   "name": "Kouakou Koffi Amede",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Lôh-Djiboua"
+  },
+  {
+   "key": "conseil-regional-marahoue",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional de la Marahoué",
+   "name": "Zoro Epiphane Ballo",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Marahoué"
+  },
+  {
+   "key": "conseil-regional-moronou",
+   "mandate": "president_conseil_regional",
+   "title": "Présidente du Conseil régional du Moronou",
+   "name": "Aka Amanan Veronique",
+   "gender": "F",
+   "party": "PDCI-RDA",
+   "region": "Moronou"
+  },
+  {
+   "key": "conseil-regional-n-zi",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du N'Zi",
+   "name": "N'Guessan Lataille Koffi",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "N'Zi"
+  },
+  {
+   "key": "conseil-regional-nawa",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional de la Nawa",
+   "name": "Netro Tagbo Rene",
+   "gender": "M",
+   "party": "PPA-CI / PDCI-RDA",
+   "region": "Nawa"
+  },
+  {
+   "key": "conseil-regional-poro",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Poro",
+   "name": "Sarassoro Gboroton Fidele",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Poro"
+  },
+  {
+   "key": "conseil-regional-san-pedro",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional de San-Pédro",
+   "name": "Boueka Nabo Clement",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "San-Pédro"
+  },
+  {
+   "key": "conseil-regional-sud-comoe",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Sud-Comoé",
+   "name": "Aka Aouele",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Sud-Comoé"
+  },
+  {
+   "key": "conseil-regional-tchologo",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Tchologo",
+   "name": "Ouattara Tene Birahima",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Tchologo"
+  },
+  {
+   "key": "conseil-regional-tonkpi",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Tonkpi",
+   "name": "Mabri Toikeusse Albert Abdallah",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Tonkpi"
+  },
+  {
+   "key": "conseil-regional-worodougou",
+   "mandate": "president_conseil_regional",
+   "title": "Président du Conseil régional du Worodougou",
+   "name": "Fofana Bouake",
+   "gender": "M",
+   "party": "RHDP",
+   "region": "Worodougou"
+  }
+ ]
+}

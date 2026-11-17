@@ -4,7 +4,7 @@ import { getLang } from "@/lib/lang";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Feed } from "@/app/components/feed";
-import { Empty, PageHeader } from "@/app/components/shell/shell";
+import { Empty, PageHeader, Tabs } from "@/app/components/shell/shell";
 import { Avatar } from "@/app/components/ui/avatar";
 import { NameBadge, OwnerChip, TypeChip } from "@/app/components/ui/badge";
 import { I } from "@/app/components/ui/icons";
@@ -56,7 +56,7 @@ export default async function ProfilePage({ params, searchParams }: { params: Pr
     viewer && !isMe ? supabase.from("follows").select("follower_id").eq("follower_id", profile.id).eq("followee_id", viewer.id).maybeSingle() : Promise.resolve({ data: null }),
     viewer && !isMe ? supabase.from("blocks").select("blocker_id").eq("blocker_id", viewer.id).eq("blocked_id", profile.id).maybeSingle() : Promise.resolve({ data: null }),
     viewer && !isMe ? supabase.from("mutes").select("muter_id").eq("muter_id", viewer.id).eq("muted_id", profile.id).maybeSingle() : Promise.resolve({ data: null }),
-    supabase.from("officials").select("*").eq("profile_id", profile.id),
+    supabase.from("officials").select("*").or(`profile_id.eq.${profile.id},personal_profile_id.eq.${profile.id}`),
     fetchProfilePosts(supabase, profile.id, tab, viewer?.id ?? null),
   ]);
   const officials = (officialsRes.data ?? []) as Official[];
@@ -73,7 +73,7 @@ export default async function ProfilePage({ params, searchParams }: { params: Pr
     <>
       <PageHeader title={profile.display_name} subtitle={`${formatCount(profile.posts_count, lang)} ${t.profile.posts.toLowerCase()}`} back={viewer ? "/accueil" : "/explorer"} />
       <div className="relative">
-        <div className="h-32 bg-paper sm:h-44">
+        <div className="h-32 bg-[linear-gradient(135deg,rgb(var(--green-soft))_0%,rgb(var(--paper))_55%,rgb(var(--orange-soft))_100%)] sm:h-44">
           {profile.banner_url && <img src={profile.banner_url} alt="" className="h-full w-full object-cover" />}
         </div>
         <div className="px-4">
@@ -116,7 +116,7 @@ export default async function ProfilePage({ params, searchParams }: { params: Pr
               <I.landmark className="h-5 w-5 flex-none text-green-deep" />
               <span className="min-w-0 flex-1">
                 <span className="block truncate text-[15px] font-bold text-green-deep">{o.title ?? t.officials.mandates[o.mandate]}</span>
-                <span className="block text-[13px] text-muted">{t.profile.officialPage} · {t.officials.interpellations}, {t.officials.promises.toLowerCase()}, {t.officials.permanences.toLowerCase()}</span>
+                <span className="block text-[13px] text-muted">{o.profile_id === profile.id ? t.profile.officialPage : lang === "fr" ? "Titulaire de la fonction" : "Holder of this office"} · {t.officials.interpellations}, {t.officials.promises.toLowerCase()}, {t.officials.permanences.toLowerCase()}</span>
               </span>
               <span className="text-[13px] font-semibold text-green-deep">{t.profile.interpellate} →</span>
             </Link>
@@ -137,14 +137,7 @@ export default async function ProfilePage({ params, searchParams }: { params: Pr
           </div>
         </div>
 
-        <nav aria-label="Profil" className="mt-3 flex border-b border-line">
-          {tabs.map((x) => (
-            <Link key={x.key} href={x.key === "posts" ? `/u/${profile.handle}` : `/u/${profile.handle}?tab=${x.key}`} aria-current={tab === x.key ? "page" : undefined} className="tab pt-3 text-[14px] sm:text-[15px]">
-              <span className={tab === x.key ? "font-bold" : "font-medium text-muted"}>{x.label}</span>
-              <span className={`h-1 w-12 rounded-full ${tab === x.key ? "bg-green" : "bg-transparent"}`} />
-            </Link>
-          ))}
-        </nav>
+        <Tabs label="Profil" className="mt-3 border-b border-line" items={tabs.map((x) => ({ href: x.key === "posts" ? `/u/${profile.handle}` : `/u/${profile.handle}?tab=${x.key}`, label: x.label, on: tab === x.key }))} />
       </div>
 
       <Feed
@@ -154,6 +147,7 @@ export default async function ProfilePage({ params, searchParams }: { params: Pr
         lang={lang}
         lowData={viewer?.low_data}
         isModerator={Boolean(viewer?.is_moderator || viewer?.is_admin)}
+        showPinned={tab === "posts"}
         loadMore={loadProfile.bind(null, profile.id, tab)}
         empty={lang === "fr" ? "Rien à afficher ici pour l'instant." : "Nothing to show here yet."}
       />
