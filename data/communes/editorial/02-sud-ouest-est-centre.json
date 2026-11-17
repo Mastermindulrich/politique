@@ -1,0 +1,252 @@
+[
+{"id":18,"tagline":"La capitale de la Nawa, entre cacao et grand barrage sur le Sassandra","intro":"Bâtie sur une courbe du fleuve Sassandra, Soubré est le chef-lieu de la Nawa et la dixième ville du pays. Ses habitants d'origine sont les Bété, les Bakwé et les Kouzié.",
+ "highlights":[
+  {"k":"economie","t":"Au cœur de la boucle du cacao","d":"La région produit principalement du cacao et du café, et accueille une grande usine de transformation du caoutchouc."},
+  {"k":"site","t":"Le barrage de Soubré","d":"Mis en service en 2017, le barrage hydroélectrique s'étire sur 4 500 mètres en travers du fleuve."},
+  {"k":"nature","t":"Le fleuve et le lac de Buyo","d":"La pêche se pratique sur le Sassandra et sur le lac de Buyo voisin."}],
+ "products":["Cacao","Café","Hévéa","Poisson"],
+ "photos":[{"f":"Vendeuse de pain à Soubré 02.JPG","c":"Vendeuse de pain à Soubré"}]},
+
+{"id":19,"tagline":"La ville du lac et du barrage","intro":"Chef-lieu de département dans la Nawa, Buyo est connue dans tout le pays pour son barrage sur le Sassandra et le grand lac qu'il a formé.",
+ "highlights":[
+  {"k":"site","t":"Le barrage de Buyo","d":"L'ouvrage qui a donné son nom au lac et sa notoriété à la ville."},
+  {"k":"nature","t":"Le lac de Buyo","d":"Un vaste plan d'eau où vivent de nombreux pêcheurs."},
+  {"k":"economie","t":"Terre de cacao","d":"Comme toute la Nawa, Buyo vit du cacao et du café."}],
+ "products":["Poisson du lac","Cacao","Café"],"photos":[]},
+
+{"id":20,"tagline":"« Les enfants de Gué »","intro":"Guéyo doit son nom à « Gué », le nom d'une femme, et « youo », les enfants. Chef-lieu de département dans la Nawa, c'est une ville de planteurs.",
+ "highlights":[
+  {"k":"culture","t":"Un nom, une histoire","d":"Guéyo signifie « les enfants de Gué » : la ville porte le souvenir de son ancêtre fondatrice."},
+  {"k":"economie","t":"Cacao et café de la Nawa","d":"La commune appartient à la première région cacaoyère du pays."}],
+ "products":["Cacao","Café"],"photos":[]},
+
+{"id":21,"tagline":"Une ville bakwé au cœur de la première région cacaoyère","intro":"Méagui est une localité bakwé de la Nawa, entre Soubré et San-Pédro. Sa population a fortement grandi avec l'essor du cacao.",
+ "highlights":[
+  {"k":"culture","t":"Le pays bakwé","d":"Les Bakwé, du groupe krou, sont le peuple d'origine de Méagui."},
+  {"k":"economie","t":"Sur la route du cacao","d":"La commune se trouve sur l'axe qui mène les fèves de la Nawa vers le port de San-Pédro."}],
+ "products":["Cacao","Café","Hévéa"],"photos":[]},
+
+{"id":22,"featured":true,"tagline":"Premier port cacaoyer du monde, et des plages face à l'Atlantique","intro":"Capitale du Bas-Sassandra et cinquième ville du pays, San-Pédro est née d'un grand projet d'aménagement lancé en 1968 pour ouvrir le Sud-Ouest. La côte porte ce nom depuis le XVe siècle.",
+ "highlights":[
+  {"k":"economie","t":"Le port de San-Pédro","d":"Deuxième pôle économique du pays, la ville vit de son port en eau profonde, d'où part une grande partie du cacao ivoirien.","photo":"Port de pêche de San-Pédro en 2024 09.jpg"},
+  {"k":"nature","t":"Les plages","d":"Le quartier Balmer et les plages voisines bordent l'océan.","photo":"San Pédro-plage5.JPG"},
+  {"k":"site","t":"Une ville de la CAN","d":"San-Pédro a accueilli des matchs de la Coupe d'Afrique des nations 2023.","photo":"San-Pédro lors de la CAN 2023 09.jpg"},
+  {"k":"economie","t":"L'université de San-Pédro","d":"La ville dispose de sa propre université.","photo":"Université de San-Pédro en 2024 11.jpg"}],
+ "products":["Cacao","Poisson","Bois","Hévéa"],
+ "photos":[{"f":"San Pédro-plage5.JPG","c":"La plage de San-Pédro"},{"f":"San-Pedro-Balmer.jpg","c":"Le quartier Balmer, au bord de l'océan"},{"f":"Port de pêche de San-Pédro en 2024 09.jpg","c":"Le port de pêche"},{"f":"San-Pédro lors de la CAN 2023 09.jpg","c":"La ville pendant la CAN 2023"},{"f":"Université de San-Pédro en 2024 11.jpg","c":"L'université de San-Pédro"},{"f":"Rond point San-Pédro en 2024 01.jpg","c":"Un rond-point de la ville"}]},
+
+{"id":23,"featured":true,"tagline":"Capitale du pays krou : quarante kilomètres de plages","intro":"À 20 km du Liberia et 100 km de San-Pédro, Tabou borde l'Atlantique près du cap des Palmes. C'est la capitale du pays krou.",
+ "highlights":[
+  {"k":"nature","t":"Quarante kilomètres de plages","d":"De l'embouchure du Nidja à celle du Cavally, les plages de Tabou comptent parmi les plus belles du pays.","photo":"Plage de Tabou 1.jpg"},
+  {"k":"culture","t":"Le pays krou","d":"Les Kroumen, marins réputés, ont fait l'histoire de cette côte."},
+  {"k":"site","t":"Le cap des Palmes","d":"Le cap qui marque la côte se trouve dans cette région frontalière."}],
+ "products":["Poisson","Hévéa","Palmier à huile","Noix de coco"],
+ "photos":[{"f":"Plage de Tabou 1.jpg","c":"La plage de Tabou"},{"f":"Plage de Tabou 3.jpg","c":"La plage de Tabou"},{"f":"Plage de Tabou 5.jpg","c":"La plage de Tabou"},{"f":"Plage de Tabou 7.jpg","c":"La plage de Tabou"}]},
+
+{"id":24,"featured":true,"tagline":"La cité royale de l'Indénié : « je n'aime pas les palabres »","intro":"Capitale du district de la Comoé, à 210 km d'Abidjan et près du Ghana, Abengourou est le fief des Agni. Son nom vient de « n'pé kro », « je n'aime pas les palabres ».",
+ "highlights":[
+  {"k":"site","t":"La cour royale de l'Indénié","d":"Le palais du roi des Agni de l'Indénié est le cœur de la ville.","photo":"RCI-Abengourou-Cour Royale de l'Indénié.jpg"},
+  {"k":"culture","t":"Le musée Charles et Marguerite Bieth","d":"Au quartier Plateau. À Zaranou, le musée Binger complète la visite."},
+  {"k":"economie","t":"Cacao et café","d":"Abengourou est une ville à vocation agricole, dans une des grandes zones de production de l'Est."},
+  {"k":"nature","t":"Le fleuve Comoé","d":"Le fleuve traverse la région.","photo":"Enfant sur fleuve comoe.jpg"}],
+ "products":["Cacao","Café","Vivriers"],
+ "photos":[{"f":"RCI-Abengourou-Cour Royale de l'Indénié.jpg","c":"La cour royale de l'Indénié"},{"f":"RCI-Abengourou-Cour Royale de l'Indénié 2.jpg","c":"La cour royale de l'Indénié"},{"f":"CiVivrier1.jpg","c":"Marché de vivriers sur la route d'Abengourou"},{"f":"Enfant sur fleuve comoe.jpg","c":"Sur le fleuve Comoé"},{"f":"Gare routière à l'Est de la Côte d'Ivoire (Abengourou).jpg","c":"La gare routière"}]},
+
+{"id":25,"tagline":"« Le village d'Agnini Bilé », carrefour commerçant aux portes du Ghana","intro":"Autrefois appelée Assikasso, Agnibilékrou est une ville frontalière à 270 km d'Abidjan, peuplée d'Agni Djuablin et d'Agni Abbè, avec une forte présence abron.",
+ "highlights":[
+  {"k":"culture","t":"Le royaume du Djuablin","d":"Le chef Agnini Bilé signa un traité avec Treich-Laplène en 1887, puis avec Binger en 1889."},
+  {"k":"artisanat","t":"Les sabres akan","d":"Des sabres d'apparat de la région d'Agnibilékrou sont conservés au musée national d'art africain de Washington.","photo":"Sabre afena Akan-National Museum of African Art (1).jpg"},
+  {"k":"economie","t":"Bois, cacao, volaille","d":"L'économie repose sur le commerce du bois, le café, le cacao, l'élevage de volaille et les échanges avec le Ghana."}],
+ "products":["Cacao","Café","Bois","Volaille"],
+ "photos":[{"f":"Mosqué à Agnibilékro en 2026.jpg","c":"Une mosquée d'Agnibilékrou"},{"f":"Sabre afena Akan-National Museum of African Art (1).jpg","c":"Sabre akan de la région d'Agnibilékrou"}]},
+
+{"id":26,"tagline":"Sur le fleuve Comoé, le village qui reçut Binger en grande pompe","intro":"Chef-lieu de département de l'Indénié-Djuablin, Bettié est posée au bord de la Comoé. Le 12 mars 1889, le roi Bénié Couamié y accueillit Binger et Treich-Laplène au son des tam-tams et des olifants.",
+ "highlights":[
+  {"k":"culture","t":"La réception du roi Bénié Couamié","d":"Binger a raconté la cérémonie : pavillon, musique et le roi drapé de soie en haut de la berge.","photo":"Pg293 Réception de Bénie Couamié.jpg"},
+  {"k":"nature","t":"Le fleuve Comoé","d":"Bettié fut un poste sur le fleuve, qui reste son paysage.","photo":"Sur le fleuve Comoé-Poste de Bettié (Côte d'Ivoire).jpg"},
+  {"k":"economie","t":"Hévéa, cacao et palmier","d":"La commune vit des cultures de rente de l'Est."}],
+ "products":["Hévéa","Cacao","Palmier à huile"],
+ "photos":[{"f":"Sur le fleuve Comoé-Poste de Bettié (Côte d'Ivoire).jpg","c":"Le poste de Bettié sur la Comoé, carte postale ancienne"},{"f":"Pg293 Réception de Bénie Couamié.jpg","c":"La réception de Bénié Couamié, gravure de 1889"},{"f":"Bénié, chef de Béttié (Côte d'Ivoire).jpg","c":"Bénié, chef de Bettié"}]},
+
+{"id":27,"featured":true,"tagline":"Capitale du royaume du Sanwi, « sur la pierre » au bord de la Bia","intro":"À 116 km à l'est d'Abidjan, Aboisso est la capitale du Sud-Comoé et l'une des villes du royaume du Sanwi, l'un des plus vieux du pays. Son nom, en agni, signifie « sur la pierre ».",
+ "highlights":[
+  {"k":"culture","t":"Le royaume du Sanwi","d":"Les Agni Sanwi, venus de l'actuel Ghana, sont les propriétaires coutumiers des terres."},
+  {"k":"nature","t":"La Bia et ses rapides","d":"La ville est sur le cours inférieur du fleuve Bia, dont les rapides étaient déjà photographiés il y a un siècle.","photo":"Rapides de la Bia entre Aboisso et Ahinta (Côte d'Ivoire).jpg"},
+  {"k":"site","t":"Une ville née vers 1700","d":"L'ancien débarcadère rappelle le temps où l'on arrivait à Aboisso par l'eau.","photo":"Aboisso-Débarcadère (Côte d'Ivoire).jpg"}],
+ "products":["Palmier à huile","Hévéa","Cacao","Ananas"],
+ "photos":[{"f":"Rapides de la Bia entre Aboisso et Ahinta (Côte d'Ivoire).jpg","c":"Les rapides de la Bia, carte postale ancienne"},{"f":"Aboisso-Débarcadère (Côte d'Ivoire).jpg","c":"Le débarcadère d'Aboisso autrefois"},{"f":"Pousseur de wotro 02.jpg","c":"Un pousseur de wotro"}]},
+
+{"id":28,"featured":true,"tagline":"La ville de la lagune Aby, entre cocotiers et pinasses","intro":"Dans le Sud-Comoé, Adiaké regarde la lagune Aby. Le Ghana est à l'est, l'océan et Assinie au sud.",
+ "highlights":[
+  {"k":"nature","t":"La lagune Aby","d":"Voiliers artisanaux et pinasses, appelées « tigne » par les gens de la lagune, y naviguent toujours.","photo":"Voilier artisanal sur la lagune Aby à Adiaké.JPG"},
+  {"k":"site","t":"Le débarcadère et la plage","d":"Le point de départ des traversées.","photo":"Adiaké Débarcadère et plage.jpg"},
+  {"k":"economie","t":"Cocotiers et pêche","d":"La cocoteraie et le poisson de la lagune font vivre la commune.","photo":"Adiaké cocotiers.jpg"}],
+ "products":["Poisson de lagune","Noix de coco","Palmier à huile"],
+ "photos":[{"f":"Voilier artisanal sur la lagune Aby à Adiaké.JPG","c":"Voilier artisanal sur la lagune Aby"},{"f":"Vue de lagune Aby à Adiaké..JPG","c":"La lagune Aby"},{"f":"Adiaké Débarcadère et plage.jpg","c":"Le débarcadère et la plage"},{"f":"Adiaké cocotiers.jpg","c":"Les cocotiers d'Adiaké"},{"f":"Pinasse au repos sur la lagune Aby..JPG","c":"Une pinasse au repos"}]},
+
+{"id":29,"featured":true,"tagline":"Première capitale, ville historique classée, plage et Abissa","intro":"À 43 km d'Abidjan, entre l'océan et la lagune, à l'embouchure de la Comoé, Grand-Bassam fut la première capitale de la Côte d'Ivoire de 1893 à 1900. La ville a été fondée au XVe siècle par les Nzema.",
+ "highlights":[
+  {"k":"site","t":"Le quartier France","d":"La ville historique, avec ses maisons coloniales, est inscrite au patrimoine mondial de l'UNESCO."},
+  {"k":"fete","t":"L'Abissa","d":"La grande fête du peuple nzema, moment de vérité et de réconciliation, rassemble chaque année la ville autour des tambours."},
+  {"k":"nature","t":"La plage","d":"Grand-Bassam est la station balnéaire la plus proche d'Abidjan."},
+  {"k":"artisanat","t":"Le village artisanal","d":"Sculpteurs, vanniers et tisserands bordent la route d'entrée de la ville."}],
+ "products":["Artisanat","Tourisme","Poisson","Noix de coco"],
+ "events":[{"t":"Abissa","when":"Chaque année, vers fin octobre et début novembre","d":"La fête du peuple nzema."}],
+ "sources":[{"l":"UNESCO : Ville historique de Grand-Bassam","u":"https://whc.unesco.org/fr/list/1322/"}],
+ "photos":[{"f":"Grand-Bassam-La lagune.jpg","c":"La lagune, carte postale ancienne"},{"f":"Grand-Bassam-Le Warf (2).jpg","c":"Le wharf autrefois"},{"f":"Grand-Bassam-Extrémité du wharf un jour de courrier.jpg","c":"Le wharf un jour de courrier"}]},
+
+{"id":30,"tagline":"Au bout de la lagune, le pays nzima face au Ghana","intro":"À 150 km d'Abidjan et 50 km d'Aboisso, Tiapoum réunit trois villes, Tiapoum, Noé et Nouamou, et plusieurs villages comme N'zobenou, Frambo et Edjembo. C'est une terre du royaume des Adouvlê, du peuple nzima.",
+ "highlights":[
+  {"k":"culture","t":"Le royaume des Adouvlê","d":"Tiapoum appartient à l'aire nzima, de part et d'autre de la frontière."},
+  {"k":"economie","t":"Noé, la porte du Ghana","d":"Le poste de Noé est le principal passage routier entre la Côte d'Ivoire et le Ghana."},
+  {"k":"nature","t":"Lagunes et villages sur l'eau","d":"La commune s'étend au bord des lagunes du Sud-Est."}],
+ "products":["Poisson","Noix de coco","Palmier à huile","Hévéa"],"photos":[]},
+
+{"id":31,"tagline":"La capitale du Folon, aux confins de la Guinée et du Mali","intro":"Au nord d'Odienné, Minignan est le chef-lieu de la région du Folon. Sa population est surtout peule et malinké.",
+ "highlights":[
+  {"k":"culture","t":"Pays malinké et peul","d":"Éleveurs peuls et cultivateurs malinkés partagent la savane."},
+  {"k":"economie","t":"Élevage et anacarde","d":"Comme dans tout le Denguélé, l'élevage, l'anacarde et les vivriers font vivre la commune."},
+  {"k":"nature","t":"La grande savane du Nord-Ouest","d":"Nérés, karités et anacardiers dessinent le paysage."}],
+ "products":["Bétail","Anacarde","Karité"],"photos":[]},
+
+{"id":32,"tagline":"Une ville malinké du Folon, qui accueille le Festilad","intro":"Chef-lieu de département dans le Folon, Kaniasso est une ville malinké du district du Denguélé.",
+ "highlights":[
+  {"k":"fete","t":"Le Festilad","d":"Un festival qui a reçu l'écrivain Tidiss Koné en 2026.","photo":"Tidiss Koné.jpg"},
+  {"k":"culture","t":"Le pays malinké","d":"La commune partage la langue et les traditions mandingues du Nord-Ouest."},
+  {"k":"economie","t":"Anacarde et vivriers","d":"L'agriculture de savane est la première activité."}],
+ "products":["Anacarde","Igname","Bétail"],
+ "photos":[{"f":"Tidiss Koné.jpg","c":"L'écrivain Tidiss Koné au Festilad 2026"}]},
+
+{"id":33,"featured":true,"tagline":"Cité précoloniale au pied du Denguélé, « fils unique de la montagne »","intro":"Capitale du Denguélé, à 867 km d'Abidjan, Odienné est l'une des rares villes précoloniales du pays, avec Bondoukou, Kong et Bouna. Ses habitants sont les Odiennéka.",
+ "highlights":[
+  {"k":"nature","t":"Le mont Denguélé","d":"Le massif domine la ville à l'ouest. Son nom, en malinké, signifie « fils unique de la montagne »."},
+  {"k":"culture","t":"Danses et masques","d":"Les cérémonies de la région font sortir danseurs et masques.","photo":"Masque et danseurs traditionnels en attraction 1.jpg"},
+  {"k":"saveurs","t":"Le karité, « arbre miracle »","d":"Son fruit se mange tel quel ou devient un beurre qui remplace l'huile en cuisine et sert en cosmétique."},
+  {"k":"economie","t":"Anacarde, coton, igname","d":"L'économie s'organise autour de l'agriculture et des agro-industries."}],
+ "products":["Beurre de karité","Anacarde","Coton","Igname","Néré"],
+ "photos":[{"f":"Prestation d'un groupe de danseurs à Odienné.jpg","c":"Danseurs à Odienné"},{"f":"Masque et danseurs traditionnels en attraction 1.jpg","c":"Masque et danseurs"},{"f":"Prestation de danseurs à Sokorodougou 11.jpg","c":"Danseurs à Sokorodougou"},{"f":"Masque et danseurs traditionnels en attraction 2.jpg","c":"Masque et danseurs"}]},
+
+{"id":34,"tagline":"Un village fondé au pied d'un arbre, à la frontière guinéenne","intro":"À 70 km d'Odienné, Gbéléban touche la Guinée. Selon la tradition, le village a été fondé au pied d'un arbre par les frères Koma et Fa Mossa, venus de Guinée.",
+ "highlights":[
+  {"k":"culture","t":"Une chefferie ancienne","d":"Après les fondateurs, la tradition retient les noms de Dagbo, Diébori, Jima, Manoroba et Va Moro, puis le passage des Traoré aux Cissé."},
+  {"k":"culture","t":"Le pays malinké","d":"La population est essentiellement malinké."},
+  {"k":"economie","t":"Commerce frontalier","d":"La proximité de la Guinée rythme les échanges."}],
+ "products":["Anacarde","Bétail","Vivriers"],"photos":[]},
+
+{"id":35,"tagline":"Entre Odienné et Boundiali, au pied d'une chaîne qui culmine à 894 mètres","intro":"Chef-lieu de département du Kabadougou, Madinani se trouve à environ 80 km d'Odienné et 57 km de Boundiali. Malinkés et Sénoufos y vivent ensemble.",
+ "highlights":[
+  {"k":"nature","t":"La chaîne de Madinani","d":"Près de la ville, une chaîne montagneuse atteint 894 mètres."},
+  {"k":"culture","t":"Malinkés et Sénoufos","d":"Le dioula est la langue de tous ; la langue d'origine est un parler sénoufo."},
+  {"k":"economie","t":"Agriculture de savane","d":"Coton, anacarde et vivriers."}],
+ "products":["Coton","Anacarde","Igname"],"photos":[]},
+
+{"id":36,"tagline":"« Chez le maître des éléphants », et une mosquée tenue pour la plus ancienne du pays","intro":"À 30 km d'Odienné, Samatiguila a été fondée par le chasseur N'golodjan Koné, dit « samatigui », le maître des éléphants. C'est un haut lieu de l'islam ivoirien.",
+ "highlights":[
+  {"k":"site","t":"La mosquée ancienne","d":"La ville abrite une mosquée réputée millénaire, présentée comme la plus ancienne de Côte d'Ivoire."},
+  {"k":"culture","t":"La ville des Koné","d":"Les Koné restent les propriétaires terriens. Les Camara, Diaby, Soumahoro, Bereté et Diabaté les ont rejoints."},
+  {"k":"culture","t":"Un foyer d'enseignement islamique","d":"La ville compte une école primaire islamique."}],
+ "products":["Anacarde","Vivriers","Bétail"],"photos":[]},
+
+{"id":37,"tagline":"« L'eau du champ » : un village fondé par un bouvier","intro":"Selon la tradition, Séguélon a été fondée au XIe siècle par un bouvier nommé Sénan. Son nom vient de « Séhé lô », l'eau du champ. Commune depuis 1995.",
+ "highlights":[
+  {"k":"culture","t":"La légende de Sénan","d":"Le bouvier demanda à Dieu un enfant qui irait lui chercher de l'eau au champ : c'est l'origine du nom."},
+  {"k":"economie","t":"Agriculture et commerce","d":"Ce sont les deux ressources de base de la commune."}],
+ "products":["Anacarde","Vivriers","Bétail"],"photos":[]},
+
+{"id":38,"featured":true,"tagline":"« Les habitants du fromager » : capitale du pays bété et de la boucle du cacao","intro":"Capitale du Gôh-Djiboua et neuvième ville du pays, Gagnoa tient son nom de « Go-gnoa », les habitants du fromager. C'est la terre des Bété et des Gagou.",
+ "highlights":[
+  {"k":"site","t":"La cathédrale Sainte-Anne","d":"Le grand monument de la ville. Les grilles du portail de la sous-préfecture, réalisées dans les années 1960 par les élèves du Centre technique, valent aussi le détour."},
+  {"k":"culture","t":"L'art bété","d":"Statuettes anciennes et proverbes peints disent la richesse de la culture bété.","photo":"Tableau de proverbes Krou 2.jpg"},
+  {"k":"economie","t":"Un grenier","d":"Manioc, cacao, maïs, igname, riz, café, plantain et hévéa : la région est avant tout agricole."},
+  {"k":"culture","t":"Les villages bété","d":"Autour de la ville, des villages comme Ziplignan.","photo":"ZIPLIGNAN Gagnoa Village BETE - panoramio.jpg"}],
+ "products":["Cacao","Café","Manioc","Banane plantain","Riz"],
+ "photos":[{"f":"ZIPLIGNAN Gagnoa Village BETE - panoramio.jpg","c":"Ziplignan, village bété"},{"f":"Tableau de proverbes Krou 2.jpg","c":"Proverbes bété de Gagnoa"},{"f":"Statuette féminine, Population Bété, Côte d'Ivoire, région de Gagnoa? 19e siècle.jpg","c":"Statuette bété, XIXe siècle"}]},
+
+{"id":39,"tagline":"Au carrefour de six peuples, entre cacao et or","intro":"À 250 km d'Abidjan, près de Gagnoa et de Toumodi, Oumé est une ville du Gôh où vivent Gagou, Gouro, Dida, Bété, Dioula et Baoulé. Région de café et de cacao, c'est aussi une zone minière.",
+ "highlights":[
+  {"k":"culture","t":"Le pays gagou","d":"Les Gagou comptent parmi les plus anciens habitants de la région."},
+  {"k":"economie","t":"Café, cacao et mines","d":"L'agriculture de plantation côtoie aujourd'hui une activité minière importante."},
+  {"k":"site","t":"Des quartiers qui racontent la ville","d":"Gota baoulé, Dioulabougou, N'guessankro, quartier Bété : chaque quartier porte le nom de ceux qui l'ont bâti."}],
+ "products":["Cacao","Café","Or"],
+ "photos":[{"f":"Transport de Briques de Gabia à Oumé en Côte d'Ivoire.jpg","c":"Chargement de briques à Gabia"}]},
+
+{"id":40,"featured":true,"tagline":"« Là où la panthère se promène » : la capitale du pays dida","intro":"À 188 km d'Abidjan, Divo est la capitale du Lôh-Djiboua et la ville du peuple Djiboua, de langue dida. Son nom vient de « dji bi », là où la panthère se promène.",
+ "highlights":[
+  {"k":"economie","t":"Capitale du palmier à huile","d":"Divo est un grand pôle de production de palmier à huile et un marché agricole régional."},
+  {"k":"artisanat","t":"Le gbako","d":"La hotte traditionnelle que portent les femmes âgées.","photo":"Le Gbako porté par une femme agée 01.jpg"},
+  {"k":"nature","t":"Le fleuve Boubo","d":"Il coule tout près de la ville.","photo":"Fleuve Boubo 01.jpg"},
+  {"k":"saveurs","t":"L'igname braisée","d":"À goûter au bord de la route.","photo":"Igname braisé à Divo.jpg"},
+  {"k":"culture","t":"Seize peuples alliés","d":"Les Dida entretiennent des alliances à plaisanterie avec seize peuples, des Abbey aux Kroumen."}],
+ "products":["Huile de palme","Cacao","Igname","Hévéa"],
+ "photos":[{"f":"La place de la réconciliation de la ville de Divo.jpg","c":"La place de la Réconciliation"},{"f":"Fleuve Boubo 01.jpg","c":"Le fleuve Boubo"},{"f":"Le Gbako porté par une femme agée 01.jpg","c":"Le gbako, hotte traditionnelle"},{"f":"Igname braisé à Divo.jpg","c":"Igname braisée"},{"f":"Case en terre pisé dans le village de Gbagroubé à Divo en Côte d'Ivoire.jpg","c":"Case en pisé à Gbagroubé"},{"f":"Stade municipal de Divo 01.jpg","c":"Le stade municipal"}]},
+
+{"id":41,"tagline":"« Guerriers indomptables » du pays dida","intro":"Chef-lieu de département dans le Lôh-Djiboua, Guitry tire son nom de « Gbitry », les guerriers indomptables. Les Dida en sont les premiers habitants.",
+ "highlights":[
+  {"k":"culture","t":"Quatre grandes familles dida","d":"Les Attrecoboua, les Djiboua, les Tocoboua et les Zebrehoua."},
+  {"k":"economie","t":"Terre de plantations","d":"Cacao, hévéa et palmier à huile font vivre la commune."}],
+ "products":["Cacao","Hévéa","Palmier à huile"],"photos":[]},
+
+{"id":42,"tagline":"« Il y a des éléphants ici » : la ville de François Lougah","intro":"Lakota vient du dida « Lôhokoda », « il y a des éléphants ici ». Commune depuis 1985, c'est une ville agricole du Lôh-Djiboua.",
+ "highlights":[
+  {"k":"site","t":"Le mausolée de François Lougah","d":"Le grand chanteur ivoirien repose près de Lakota.","photo":"Lougah1.JPG"},
+  {"k":"culture","t":"Le toukpè","d":"L'alliance de paix qui lie les Dida à leurs voisins."},
+  {"k":"economie","t":"L'hévéa","d":"La culture de l'hévéa a transformé l'économie de la commune."},
+  {"k":"saveurs","t":"Le marché du carrefour","d":"Aubergines et vivriers s'y vendent au bord de la route.","photo":"Aubergine au carrefour de Lakota.JPG"}],
+ "products":["Hévéa","Cacao","Aubergine","Vivriers"],
+ "photos":[{"f":"Lougah1.JPG","c":"Le mausolée de François Lougah"},{"f":"Aubergine au carrefour de Lakota.JPG","c":"Aubergines au carrefour de Lakota"}]},
+
+{"id":43,"featured":true,"tagline":"Le grand rond-point du pays, et le pagne baoulé tissé à la main","intro":"Chef-lieu du Bélier, près de Yamoussoukro, Toumodi est un carrefour : on dit que c'est l'un des plus grands ronds-points de Côte d'Ivoire. Ses habitants sont les Toumodilais.",
+ "highlights":[
+  {"k":"artisanat","t":"Les tisserands","d":"Le pagne baoulé se tisse en bandes dans les ateliers de la ville.","photo":"Tisserand au travail à Toumodi 17.jpg"},
+  {"k":"artisanat","t":"Les fabricants de mortiers","d":"Un savoir-faire du bois toujours vivant.","photo":"Un fabricant de mortier 17.jpg"},
+  {"k":"culture","t":"Tomidi","d":"Le nom d'origine rappelle que l'étranger de passage devait acheter ici sa nourriture : une ville d'étape, déjà."},
+  {"k":"saveurs","t":"L'agouti","d":"La viande de brousse la plus appréciée de la région fait aujourd'hui l'objet d'élevages."}],
+ "products":["Pagne baoulé","Igname","Mortiers en bois"],
+ "photos":[{"f":"Tisserand au travail à Toumodi 17.jpg","c":"Un tisserand de pagne baoulé"},{"f":"Un fabricant de mortier 17.jpg","c":"Un fabricant de mortiers"},{"f":"Tisserand au travail à Toumodi 19.jpg","c":"Dans l'atelier du tisserand"}]},
+
+{"id":44,"tagline":"« Cure-dents amers » : la terre des Baoulé N'gban et N'zipri","intro":"Chef-lieu de département du Bélier, Didiévi tient son nom de « Idjéwi », cure-dents amers. Le village s'appelait autrefois Allui-N'Guessankro.",
+ "highlights":[
+  {"k":"culture","t":"Les chefs en pagne","d":"Les chefs traditionnels portent le pagne baoulé lors des cérémonies.","photo":"Le port du pagne par les chefs traditionnel Baoulé de Didiévi 02.JPG"},
+  {"k":"culture","t":"Sur les pas de la reine Pokou","d":"Les Baoulé de Didiévi se disent venus du Ghana avec la reine Abla Pokou."},
+  {"k":"economie","t":"Igname et vivriers","d":"L'agriculture vivrière du centre."}],
+ "products":["Igname","Pagne baoulé","Anacarde"],
+ "photos":[{"f":"Le port du pagne par les chefs traditionnel Baoulé de Didiévi 02.JPG","c":"Chefs traditionnels baoulé de Didiévi"},{"f":"Le port du pagne par les chefs traditionnel Baoulé de Didiévi 01.JPG","c":"Le port du pagne"}]},
+
+{"id":45,"tagline":"Une commune baoulé du Bélier, entre Toumodi et Yamoussoukro","intro":"Djékanou est un chef-lieu de commune et de département du Bélier, en pays baoulé.",
+ "highlights":[
+  {"k":"culture","t":"Le pays baoulé","d":"Langue, pagnes et fêtes de l'igname sont ceux du centre."},
+  {"k":"economie","t":"Agriculture vivrière","d":"Igname, manioc et anacarde."}],
+ "products":["Igname","Manioc","Anacarde"],"photos":[]},
+
+{"id":46,"tagline":"« Là où se trouvent les pierres » des chasseurs","intro":"Dans le Bélier, Tiébissou doit son nom au baoulé « Tchewyssou », l'endroit où l'on trouvait les pierres qui servaient de munitions pour la chasse, à l'emplacement du quartier Baoulékro.",
+ "highlights":[
+  {"k":"economie","t":"Riz, manioc, igname","d":"Une commune à vocation agricole. Le marché de proximité de Lomokankro a été inauguré en mars 2025."},
+  {"k":"culture","t":"Aïtou et Nanafouè","d":"Les deux cantons baoulé du département."},
+  {"k":"site","t":"Sur l'axe Yamoussoukro-Bouaké","d":"L'échangeur de Lolobo marque l'entrée de la commune.","photo":"Echangeur de Lolobo axe Yamoussoukro-Tiébissou (Bosson) (2).jpg"}],
+ "products":["Riz","Manioc","Igname"],
+ "photos":[{"f":"Echangeur de Lolobo axe Yamoussoukro-Tiébissou (Bosson) (2).jpg","c":"L'échangeur de Lolobo"},{"f":"Pontiébissou.JPG","c":"Le pont à la sortie de Tiébissou"}]},
+
+{"id":47,"tagline":"Au cœur du pays baoulé, la capitale de l'Iffou","intro":"Chef-lieu de l'Iffou, dans le district des Lacs, Daoukro a reçu Binger le 17 février 1889 : « Nous avons été bien accueillis à Iaoukrou », écrivit-il.",
+ "highlights":[
+  {"k":"culture","t":"Une ville d'accueil","d":"La phrase de Binger est restée : l'hospitalité fait partie de l'histoire de Daoukro."},
+  {"k":"economie","t":"Café, cacao et vivriers","d":"L'Iffou est une région agricole du centre-est."},
+  {"k":"site","t":"La préfecture","d":"Au centre de la ville.","photo":"Daoukro Prefecture de la ville.jpg"}],
+ "products":["Cacao","Café","Igname"],
+ "photos":[{"f":"Daoukro Prefecture de la ville.jpg","c":"La préfecture de Daoukro"}]},
+
+{"id":48,"tagline":"Au bord du N'Zi, la terre des Sondo et des Adjé","intro":"À l'est de Bouaké, M'Bahiakro est peuplée de Sondo au nord, d'Adjé au sud, le long du fleuve N'Zi, et du canton Ngain au sud-est.",
+ "highlights":[
+  {"k":"culture","t":"Une chefferie respectée","d":"Le chef traditionnel tranche les litiges à côté de l'administration. M'bahia Kouamé (1914-2006) fut chef du canton Soundo."},
+  {"k":"nature","t":"Le fleuve N'Zi","d":"Il borde la commune au sud."},
+  {"k":"economie","t":"Riz et vivriers","d":"Les bas-fonds du N'Zi portent des rizières."}],
+ "products":["Riz","Igname","Anacarde"],"photos":[]},
+
+{"id":49,"tagline":"Le pays anoh et sa fête des ignames","intro":"Dans l'Iffou, Prikro est la terre des Anoh. Comme les Baoulé, ils célèbrent chaque année la fête des ignames dans des localités comme Watti et Tétessi.",
+ "highlights":[
+  {"k":"fete","t":"La fête des ignames","d":"Chaque fille et chaque fils du village revient renouer avec son histoire et sa communauté."},
+  {"k":"culture","t":"Le peuple anoh","d":"Un peuple akan du centre-est, voisin des Baoulé et des Agni."},
+  {"k":"economie","t":"Igname et anacarde","d":"Les cultures de la savane arborée."}],
+ "products":["Igname","Anacarde","Cacao"],
+ "events":[{"t":"Fête des ignames","when":"Chaque année, à la nouvelle récolte","d":"Célébrée notamment à Watti et Tétessi."}],
+ "photos":[]}
+]
