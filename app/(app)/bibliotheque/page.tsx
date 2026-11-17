@@ -5,13 +5,14 @@ import { I } from "@/app/components/ui/icons";
 import { getLang } from "@/lib/lang";
 import { CATEGORY_LABEL, EDITION_NOTICE, builtEditions, library, upcoming, type LibraryCategory } from "@/lib/library";
 import { getViewer } from "@/lib/supabase/server";
+import { LibraryPicker } from "./picker";
 
 export const metadata: Metadata = {
   title: "Bibliothèque de l'État",
   description: "La Constitution, les codes et les règlements qui fixent les règles de fonctionnement de la Côte d'Ivoire, en éditions POLITIQUE à lire en ligne et à télécharger.",
 };
 
-const ORDER: LibraryCategory[] = ["fondamental", "institutions", "elections", "codes"];
+const ORDER: LibraryCategory[] = ["fondamental", "institutions", "elections", "codes", "famille"];
 const ko = (b: number) => (b >= 1024 * 1024 ? `${(b / 1024 / 1024).toFixed(1).replace(".", ",")} Mo` : `${Math.max(1, Math.round(b / 1024))} Ko`);
 
 export default async function LibraryPage() {
@@ -39,6 +40,10 @@ export default async function LibraryPage() {
           </a>
         )}
       </section>
+
+      {editions.length > 1 && (
+        <LibraryPicker lang={lang} items={editions.map((e) => ({ id: e.id, title: e.title, short: e.short, bytes: built[e.id].bytes, pages: built[e.id].pages }))} />
+      )}
 
       {ORDER.map((cat) => {
         const items = library.filter((e) => e.category === cat);
@@ -70,7 +75,7 @@ export default async function LibraryPage() {
                           ) : (
                             <span className="chip bg-paper text-muted">{fr ? "Édition POLITIQUE en préparation" : "POLITIQUE edition in preparation"}</span>
                           )}
-                          <a href={e.officialUrl} target="_blank" rel="noopener noreferrer" className="text-[13px] font-semibold text-green-deep hover:underline">{fr ? "Texte officiel" : "Official text"} ↗</a>
+                          <a href={e.officialUrl} target="_blank" rel="noopener noreferrer" className="text-[13px] font-semibold text-green-deep hover:underline">{e.transcription ? (fr ? "Source du texte" : "Text source") : fr ? "Texte officiel" : "Official text"} ↗</a>
                         </div>
                       </div>
                     </div>

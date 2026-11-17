@@ -4,14 +4,12 @@ import { notFound } from "next/navigation";
 import { PageHeader } from "@/app/components/shell/shell";
 import { I } from "@/app/components/ui/icons";
 import { getLang } from "@/lib/lang";
-import { CATEGORY_LABEL, EDITION_NOTICE, articleLabel, builtEditions, library, libraryById, type Edition } from "@/lib/library";
+import { CATEGORY_LABEL, EDITION_NOTICE, articleLabel, builtEditions, library, libraryById, ordinal, sectionLabel, type Edition } from "@/lib/library";
 import { getViewer } from "@/lib/supabase/server";
 import { GoToArticle } from "./goto";
 
 // Edition texts, loaded only for the page that shows them.
-const EDITIONS: Record<string, () => Promise<{ default: unknown }>> = {
-  constitution: () => import("@/data/library/constitution.json"),
-};
+const loadEdition = (id: string) => import(`@/data/library/${id}.json`) as Promise<{ default: unknown }>;
 
 export function generateStaticParams() {
   return library.map((e) => ({ id: e.id }));
@@ -35,8 +33,10 @@ export default async function LibraryBook({ params }: { params: Promise<{ id: st
   const lang = viewer?.lang ?? (await getLang());
   const fr = lang === "fr";
   const built = (builtEditions.editions as Record<string, { pages: number; bytes: number; articles: number }>)[id];
-  const edition = built && EDITIONS[id] ? ((await EDITIONS[id]()).default as Edition) : null;
-  const titres = edition?.blocks.filter((b) => b.type === "titre") ?? [];
+  const edition = built && entry.edition ? ((await loadEdition(id)).default as Edition) : null;
+  // Top-level divisions for the contents: books (livres) when the text has them, else titres.
+  const top = edition?.blocks.some((b) => b.type === "livre") ? "livre" : "titre";
+  const heads = edition?.blocks.map((b, i) => ({ b, i })).filter(({ b }) => b.type === top) ?? [];
   const lastArticle = edition ? Math.max(...edition.blocks.filter((b) => b.type === "article").map((b) => Number(b.num) || 1)) : 0;
 
   return (
@@ -56,7 +56,7 @@ export default async function LibraryBook({ params }: { params: Promise<{ id: st
           ) : (
             <span className="chip bg-paper text-muted">{fr ? "Édition POLITIQUE en préparation" : "POLITIQUE edition in preparation"}</span>
           )}
-          <a href={entry.officialUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm">{fr ? "Texte officiel" : "Official text"} · {entry.officialLabel} ↗</a>
+          <a href={entry.officialUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm">{entry.transcription ? (fr ? "Source du texte" : "Text source") : fr ? "Texte officiel" : "Official text"} · {entry.officialLabel} ↗</a>
         </div>
         {entry.edition && built && <p className="mt-3 text-[12px] text-muted">{fr ? "Édition POLITIQUE" : "POLITIQUE edition"} · {entry.edition.version} · {built.articles} articles · {built.pages} {fr ? "pages" : "pages"}</p>}
       </section>
@@ -72,8 +72,8 @@ export default async function LibraryBook({ params }: { params: Promise<{ id: st
               </summary>
               <ol className="mt-2">
                 {edition.blocks.some((b) => b.type === "preambule") && <li><a href="#preambule" className="block border-b border-line py-2 text-[14px] hover:text-green-deep">{fr ? "Préambule" : "Preamble"}</a></li>}
-                {titres.map((t) => t.type === "titre" && (
-                  <li key={t.num}><a href={`#titre-${t.num}`} className="flex gap-3 border-b border-line py-2 text-[14px] hover:text-green-deep"><span className="w-16 flex-none text-[12px] font-semibold uppercase tracking-wide text-green-deep">Titre {t.num}</span>{cap(t.title)}</a></li>
+                {heads.map(({ b: t, i }) => (t.type === "titre" || t.type === "livre") && (
+                  <li key={i}><a href={`#d-${i}`} className="flex gap-3 border-b border-line py-2 text-[14px] hover:text-green-deep"><span className="w-16 flex-none text-[12px] font-semibold uppercase tracking-wide text-green-deep">{t.type === "livre" ? "Livre" : "Titre"} {t.num}</span>{cap(t.title)}</a></li>
                 ))}
               </ol>
             </details>
@@ -87,10 +87,23 @@ export default async function LibraryBook({ params }: { params: Promise<{ id: st
                     {b.paras.map((p, j) => <p key={j} className="mt-2">{p}</p>)}
                   </section>
                 );
+              if (b.type === "livre")
+                return (
+                  <h2 key={i} id={`d-${i}`} className="mt-12 scroll-mt-20 rounded-[14px] bg-ink px-4 py-5 text-bg">
+                    <span className="block text-[12px] font-semibold uppercase tracking-[0.16em] text-orange">Livre {ordinal(b.num)}</span>
+                    <span className="mt-1 block font-display text-[21px] font-bold leading-tight">{cap(b.title)}</span>
+                  </h2>
+                );
+              if (b.type === "section")
+                return (
+                  <h4 key={i} className="mt-5 text-[13px] font-bold uppercase tracking-[0.08em] text-muted">
+                    {sectionLabel(b)} · <span className="normal-case tracking-normal">{b.title}</span>
+                  </h4>
+                );
               if (b.type === "titre")
                 return (
-                  <h2 key={i} id={`titre-${b.num}`} className="mt-10 scroll-mt-20 border-t border-line pt-6">
-                    <span className="block text-[12px] font-semibold uppercase tracking-[0.16em] text-orange">Titre {b.num}</span>
+                  <h2 key={i} id={`d-${i}`} className="mt-10 scroll-mt-20 border-t border-line pt-6">
+                    <span className="block text-[12px] font-semibold uppercase tracking-[0.16em] text-orange">Titre {ordinal(b.num)}</span>
                     <span className="mt-1 block font-display text-[20px] font-bold leading-tight">{cap(b.title)}</span>
                   </h2>
                 );
