@@ -35,6 +35,24 @@ $$;
 -- ---------------------------------------------------------------------------
 alter table profiles add column if not exists needs_name boolean not null default false;
 
+-- From 0005_owner_badge.sql, which never reached production (repeated here, idempotent):
+-- one owner at most, and names that would pass for the founder are kept for the owner.
+create unique index if not exists profiles_single_owner on profiles ((true)) where is_owner;
+create or replace function trg_profiles_owner_claim() returns trigger
+language plpgsql security definer set search_path = politique, extensions, public as $$
+begin
+  new.is_owner := exists (
+    select 1 from auth.users u join owner_claims c on c.email = lower(u.email) where u.id = new.id)
+    and not exists (select 1 from profiles where is_owner);
+  return new;
+end $$;
+create or replace function is_reserved_name(s text) returns boolean
+language sql immutable set search_path = politique, extensions, public as $$
+  select coalesce(
+    s ~* '(fondat(eur|rice)|founder|owner|propri[eé]taire|proprio)'
+    or s ~ '[👑♔♕♚♛]', false)
+$$;
+
 -- Only these columns, whatever the row-level policy says. Roles, badge, sanctions and
 -- counters change only through the database's own functions and triggers.
 revoke update on profiles from authenticated, anon;
@@ -118,6 +136,10 @@ begin
   end if;
   return new;
 end $$;
+
+drop trigger if exists profiles_reserved_names on profiles;
+create trigger profiles_reserved_names before insert or update on profiles
+  for each row execute function trg_profiles_reserved_names();
 
 create or replace function handle_available(h text) returns boolean
 language sql stable security definer set search_path = politique, extensions, public as $$
