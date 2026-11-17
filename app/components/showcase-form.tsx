@@ -60,7 +60,7 @@ export function ShowcaseForm({ communeId, name, initial, lang }: { communeId: nu
       {error && <p role="alert" className="text-[13px] font-medium text-orange">{fr ? "L'enregistrement n'a pas abouti. Vérifiez les champs et réessayez." : "Saving failed. Check the fields and try again."}</p>}
       <div className="flex justify-end gap-2">
         <button type="button" className="btn-ghost btn-sm" onClick={() => setOpen(false)}>{fr ? "Annuler" : "Cancel"}</button>
-        <button type="submit" className="btn-primary btn-sm" disabled={pending}>{fr ? "Publier" : "Publish"}</button>
+        <button type="submit" className="btn-primary btn-sm" disabled={pending}>{fr ? "Enregistrer" : "Save"}</button>
       </div>
     </form>
   );

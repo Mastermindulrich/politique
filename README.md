@@ -17,6 +17,7 @@ Built for Ivorian politics:
 - **Permanences numériques.** Scheduled live question sessions held by an official.
 - **Baromètre.** One national question a month, with results per commune of vote once 50 people there have voted.
 - **Boîte à idées.** Proposals per commune that neighbours back and the town hall can mark as studied, adopted or declined.
+- **Découvertes.** A showcase page for each of the 199 communes (sights, culture, flavours, festivals, products, free-licence photos with their credits, sources). The mayor or a moderator adds the town hall's own welcome word, next event and website.
 - **Badges and labels.** Green for elected officials, grey for institutions, orange for media, granted after a document check. Moderators and verified media can attach context or fact-check labels to a post.
 - **Low-data mode, WhatsApp sharing, light and dark themes.**
 
@@ -73,6 +74,7 @@ Setup: environment variables `NEXT_PUBLIC_VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`
 - `lib/actions.ts`, `lib/auth-actions.ts`, `lib/feed-actions.ts`: server actions. `lib/data`: read queries. `lib/i18n.ts`: interface copy in French and English.
 - `lib/ci-geo.ts`: regions, departments and communes. After editing it, run `node scripts/gen-geo-sql.mjs` to regenerate the seed.
 - `supabase/migrations/0001_schema.sql`: tables, triggers, functions, row level security, storage buckets. `0002`: rate limit for login e-mails. `0003`: owner role, site settings, control center functions. `0007`: editing a post for one hour (with public history), pinning, link cards (written by the server only), group conversations, per-person frequency limits and the moderators' word filter.
+- `data/communes`, `scripts/communes`, `lib/communes.ts`, `app/(app)/decouvertes`: Découvertes. The workflow `communes-sources.yml` fetches the public sources into `data/communes/sources`; the editorial text lives in `data/communes/editorial/*.json`; `npm run communes -- --strict` merges both into `data/communes/showcase.json`. `0011` adds the town hall's own corner (`commune_showcases`).
 - `app/(app)/controle`, `lib/owner-actions.ts`, `lib/settings.ts`: the owner's control center.
 
 ## Hosting
