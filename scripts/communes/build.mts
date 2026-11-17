@@ -40,16 +40,19 @@ for (const c of communes) {
   if (!e) { problems.push(`missing editorial: ${c.id} ${c.name}`); continue; }
   const srcFile = new URL(`sources/${c.id}.json`, root);
   const s: Src = existsSync(srcFile) ? JSON.parse(readFileSync(srcFile, "utf8")) : { id: c.id, name: c.name };
-  const byFile = new Map((s.images ?? []).map((i) => [i.file, i]));
+  // Editorial files name a photo with or without its "Fichier:" / "File:" prefix.
+  const bare = (f: string) => f.replace(/^(Fichier|File):/, "");
+  const byFile = new Map((s.images ?? []).map((i) => [bare(i.file), i]));
   const photos = (e.photos ?? []).map((p) => {
     const ref = typeof p === "string" ? { f: p } : p;
-    const im = byFile.get(ref.f);
+    const im = byFile.get(bare(ref.f));
     if (!im) { problems.push(`${c.name}: unknown photo ${ref.f}`); return null; }
     return { file: im.file, thumb: im.thumb, page: im.page, artist: im.artist || "Wikimedia Commons", license: im.license, licenseUrl: im.licenseUrl || undefined, caption: ref.c, width: im.width, height: im.height };
   }).filter(Boolean);
   const highlights = e.highlights.map((h) => {
     if (!KINDS.has(h.k)) problems.push(`${c.name}: unknown kind ${h.k}`);
-    const photo = h.photo ? photos.findIndex((p) => p!.file === h.photo) : -1;
+    const photo = h.photo ? photos.findIndex((p) => bare(p!.file) === bare(h.photo!)) : -1;
+    if (h.photo && photo < 0) problems.push(`${c.name}: highlight photo not in photos: ${h.photo}`);
     return { k: h.k, t: h.t, d: h.d, ...(photo >= 0 ? { photo } : {}) };
   });
   if (e.tagline.length > 90) problems.push(`${c.name}: tagline too long`);
